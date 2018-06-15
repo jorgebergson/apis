@@ -18,7 +18,7 @@
     "title": "Integra Loja Franca",
     "description": "\n## Endereço de Produção\n    https://apigateway.serpro.gov.br/lojafranca/api/\n    \n## Endereço de Degustação\n    https://apigateway.serpro.gov.br/lojafranca-trial/api/"
   },
-  "basePath": "/api/lojafranca-trial",
+  "basePath": "/api-loja-franca-trial/api",
   "paths": {
     "Descrição": {
       "head": {
