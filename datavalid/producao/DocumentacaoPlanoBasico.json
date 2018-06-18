@@ -13,7 +13,10 @@
       "name": "1 Introdução"
     },
     {
-      "name": "2 Métodos do Serviço"
+      "name": "2 Metodos do Serviço"
+    },
+    {
+      "name": "3 Dados para Testes"
     }
   ],
   "schemes": [
@@ -181,6 +184,18 @@
 			"503":{
 				"description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
 				}
+        }
+      }
+    },
+        "Dados para testes": {
+       "head": {
+        "tags": [
+          "3 Dados para Testes"
+        ],
+        "summary": "Dados para testes",
+        "description": "Para facilitar a simulação de diversos cenários de validação de Pessoas Físicas, disponibilizamos abaixo dados falsos de Pessoas Físicas que podem ser utilizados nesse ambiente de demonstração: \n\n ([Link para Github](https://github.com/devserpro/datavalid-basico/blob/master/_layouts/DadosPessoasFisicas.csv)) \n\n([Download direto do arquivo](https://rawgit.com/devserpro/datavalid-basico/master/_layouts/DadosPessoasFisicas.csv))  ",
+        "responses": {
+			
         }
       }
     }

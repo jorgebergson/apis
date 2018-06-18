@@ -85,9 +85,9 @@
     "/validate/pf": {
       "post": {
         "tags": [
-          "2 Metodos do Serviço"
+          "2 Métodos do Serviço"
         ],
-                "summary": "Validar Dados de Pessoas Físicas",
+                "summary": "2.1 Validar Dados de Pessoas Físicas",
 		"description":"Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
@@ -138,9 +138,9 @@
     "/validate/pj": {
       "post": {
         "tags": [
-          "2 Metodos do Serviço"
+          "2 Métodos do Serviço"
         ],
-          "summary": "Validar Dados de Pessoas Juridicas",
+          "summary": "2.2 Validar Dados de Pessoas Juridicas",
           		"description":"Esse método recebe no corpo da requisição uma chave com o CNPJ da pessoa jurídica (objeto <code>key</code>) e os dados da pessoa jurídica que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
