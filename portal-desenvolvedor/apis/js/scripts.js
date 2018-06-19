@@ -3,27 +3,26 @@ var bearerTrial = '4e1a1858bdd584fdc077fb7d80f39283';
 var gatewaySPO = 'gateway.apiserpro.serpro.gov.br';
 var gatewayBSA = 'apigateway.serpro.gov.br';
 
+//class to work on tab divs
 function openTab(evt, name, classSufix) {
-    // Declare all variables
+
     var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent"+classSufix);
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
 
-    // Get all elements with class="tablinks" and remove the class "active"
     tablinks = document.getElementsByClassName("tablinks"+classSufix);
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
 
-    // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(name).style.display = "block";
     evt.currentTarget.className += " active";
 }
 
+//get parameters from URL
 function getURLParameter(sParam)
 {
     var sPageURL = window.location.search.substring(1);
@@ -36,4 +35,27 @@ function getURLParameter(sParam)
             return sParameterName[1];
         }
     }
+}
+
+function makeHTTPRequest(panelResult){
+
+  $.ajax({
+    url: "https://apigateway.serpro.gov.br/consulta-cpf-trial/1/cpf/21477093877",
+    type: 'GET',
+    headers: {"Authorization": "Bearer 4e1a1858bdd584fdc077fb7d80f39283"},
+    success: function(result, status, xhr){
+      panelResult.getElementsByClassName("resultCode")[0].textContent = xhr.status;
+      panelResult.getElementsByClassName("resultPanelCode")[0].textContent = JSON.stringify(result, null, "\t");
+    },
+    error: function(result){
+      panelResult.getElementsByClassName("resultCode")[0].textContent = result.status;
+      panelResult.getElementsByClassName("resultPanelCode")[0].textContent = result.responseText;;
+    }
+  });
+
+}
+
+function clearFieldsResult(panelResult){
+  panelResult.getElementsByClassName("resultCode")[0].textContent = "";
+  panelResult.getElementsByClassName("resultPanelCode")[0].textContent = "";
 }

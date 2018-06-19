@@ -69,7 +69,7 @@
 						gateway = gatewayBSA;
 					}
 					else{
-						if(environment == "spo"){
+						if(gateway == "spo"){
 							gateway = gatewaySPO;
 						}
 						else{
@@ -130,14 +130,16 @@
 										<div id="modalOp1" class="modal">
 										  <!-- Modal content -->
 										  <div class="modal-content">
-										    <span class="close">&times;</span>
+										    <span class="close" onmouseup="clearFieldsResult(document.getElementById('resultPanel'))">&times;</span>
 												<h3>Consulta dados de Pessoa Física pelo Número de Inscrição (NI)</h3>
 												<p><strong>Bearer:</strong> <span id="bearer"></span><br/>
 												<strong>URL:</strong> <span id="url"></span><br/>
 												<strong>Ambiente:</strong> <span id="amb"></span></p>
 												<h3>Parâmetros</h3>
 												<div clas="box">
-												ni: <input id="param1" type="text" id="param1"></input><br/><center><button id="req">Executar</button></center></div>
+														ni: <input id="param1" type="text" id="param1"></input><br/><center><button id="req" onclick="makeHTTPRequest(document.getElementById('resultPanel'))">Executar</button></center>
+														<div id=resultPanel><h4 class="resultCode"></h4><pre><code class="resultPanelCode"></code></pre></div>
+												</div>
 										  </div>
 										</div>
 										<h3>Informações de entrada e saída</h3>
