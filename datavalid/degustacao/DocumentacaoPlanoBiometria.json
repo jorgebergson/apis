@@ -18,7 +18,7 @@
       "name": "1 Introdução"
     },
     {
-      "name": "2 Métodos do Serviço"
+      "name": "2 Métodos do Serviço Básico"
     },
     {
       "name": "3 Métodos com Biometria"
@@ -30,7 +30,7 @@
   "schemes": [
     "https"
   ],
-  "basePath": "/datavalid-trial/biometria/vbeta1",
+  "basePath": "/datavalid-trial",
   "paths": {
     "Descrição": {
       "head": {
@@ -118,10 +118,10 @@
         }
       }
     },
-    "/validate/pf": {
+    "/basico/vbeta1/validate/pf": {
       "post": {
         "tags": [
-          "2 Métodos do Serviço"
+          "2 Métodos do Serviço Básico"
         ],
                 "summary": "2.1 Validar Dados de Pessoas Físicas",
     "description":"Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
@@ -171,10 +171,10 @@
         
       }
     },
-    "/validate/pj": {
+    "/basico/vbeta1/validate/pj": {
       "post": {
         "tags": [
-          "2 Métodos do Serviço"
+          "2 Métodos do Serviço Básico"
         ],
         "summary": "2.2 Validar Dados de Pessoas Juridicas",
         "description": "Esse método recebe no corpo da requisição uma chave com o CNPJ da pessoa jurídica (objeto <code>key</code>) e os dados da pessoa jurídica que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
@@ -222,12 +222,12 @@
         }
       }
     },
-    "/validate/pf-face": {
+    "/biometria/vbeta1/validate/pf-face": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
         ],
-        "summary": "3.1 Biometria Facial",
+        "summary": "3.1 Validar Dados com Biometria Facial",
         "description": "O Datavalid – Plano Biométrico permite a comparação entre a foto de uma face  de uma pessoa (identificada pela chave CPF) e uma foto da face dessa pessoa armazenada nas bases de dados do governo. Esse recurso denominado Biometria Facial pode ser utilizado para validar remotamente a identidade de uma pessoa. \n\nPara realizar a Biometria Facial, o método Validar Dados de Pessoas Físicas deve ser requisitado, passando-se no  atributo <code>biometria_face</code> dentro do objeto <code>answer</code> uma String com a foto da face codificada com <a href='https://pt.wikipedia.org/wiki/Base64' target='_blank'>Base64</a>. Codificar a foto com Base64 é uma atividade trivial que pode ser realizada com razoável facilidade em todas as plataformas de desenvolvimento (Ex. Java, .Net, Javascript). \n\nA Biometria Facial não é um recurso determinístico (não indica se a face da pessoa é ou não dela mesma), então cabe ao usuário utilizador do serviço utilizar os valores retornados na resposta para decidir sobre a autenticidade da face enviada pela pessoa. De qualquer forma é importante citar que em testes  realizados, em aproximadamente 99% das validações que retornaram Alta ou Altíssima probabilidade, o par de faces comparados eram da mesma pessoa. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar a Biometria Facial. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de Biometria.</b> \n\n Na seção Response Message, os atributos da resposta são explicados",
         "consumes": [
           "application/json"
@@ -258,13 +258,13 @@
         }
       }
     },
-    "/validate/pf-digitais": {
+    "/biometria/vbeta1/validate/pf-digitais": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
         ],
-        "summary": "3.2 Validar Dados de Biometria Digital",
-        "description": "Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>), incluíndo uma ou mais fotos da impressão digital da pessoa e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
+        "summary": "3.2 Validar Dados com Biometria Digital",
+        "description": "Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>), incluindo no atributo <code>digitais</code> uma ou mais fotos da impressão digital da pessoa e retorna se cada um dos dados é ou não válido. As fotos devem ser passadas como String codificadas em <a href='https://pt.wikipedia.org/wiki/Base64' target='_blank'>Base64</a>. \n\nPara os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
         ],
@@ -309,13 +309,13 @@
         }
       }
     },
-    "/validate/pf-imagem": {
+    "/biometria/vbeta1/validate/pf-imagem": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
         ],
-        "summary": "3.3 Validar Dados de Biometria Digital e Facial",
-        "description": "Este método permite fazer a validação de biometria de foto e digital com uma única chamada. O método recebe no corpo da requisição uma chave  com o CPF da pessoa (objeto <code>key</code>) e os dados da pessoa que serão  validados (objeto <code>answer</code>), incluindo uma foto da face,  e impressão(ões) digital(is) da pessoa. A resposta retorna se cada um  dos dados é ou não válido. Para os dados do tipo texto, também são  retornados o percentual de similaridade entre o dado enviado e o dado  oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
+        "summary": "3.3 Validar Dados com Biometria Digital e Facial",
+        "description": "Este método permite fazer a validação de biometria de foto e digital com uma única chamada. O método recebe no corpo da requisição uma chave com o CPF da pessoa (objeto <code>key</code>) e os dados da pessoa que serão  validados (objeto <code>answer</code>), incluindo uma foto da face e impressão(ões) digital(is) da pessoa, respectivamente nos campos  <code>biometria_face</code> e <code>digitais</code>. As imagens devem ser passadas como String codificadas em <a href='https://pt.wikipedia.org/wiki/Base64' target='_blank'>Base64</a>. \n\nA resposta retorna se cada um  dos dados é ou não válido. Para os dados do tipo texto, também são  retornados o percentual de similaridade entre o dado enviado e o dado  oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
         ],
