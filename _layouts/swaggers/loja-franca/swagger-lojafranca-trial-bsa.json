@@ -181,7 +181,7 @@
         }
       }
     },
-    "/viajante/venda": {
+    "/venda": {
       "post": {
         "summary": "Processa Venda de Viajante",
         "tags": [
