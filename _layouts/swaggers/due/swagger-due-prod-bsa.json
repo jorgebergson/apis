@@ -37,7 +37,7 @@
           "1 Introdução"
         ],
         "summary": "API DUE - Declaração Unica de Exportação",
-        "description": "\nPara informações de como se autenticar antes de consumir as API, por favor,\nconsulte a documentação em:\nhttps://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n### Bem vindo a API DUE - Perfil Instituição Financeira. \n    Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das instituições financeiras com os serviços do Portal Único do Comércio Exterior, baseado nas instruções de uso e contratação conforme a plataforma de habilitação API Serpro. A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8.\n\n### <br> API Serpro - Plataforma de Habilitação \n  Todas as Instituições Financeiras que possuem perfil de acesso para realizar a consulta DUE em tela no Portal Único do Comércio Exterior já estão aptas a celebrar o contrato comercial com o Serpro para consumo da API DUE.\n\n  <br> O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.\n\n  <br> Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf <br>\n  \n\n  <br>\n  **Até o dia 30/06/2018**, está disponível para testes em ambiente de VALIDAÇÃO, as credenciais de acesso (Consumer Key e Consumer Secret):\n  \n  * Consumer Key: QDoTNM8nPTbavwwFrgkBqgvYrqIa\n  * Consumer Secret: Hsm54sN7F_gl62ibusZfNFn4HwIa\n  \n  Para solicitar o token temporário que é exigido na chamada da API DU-E, é necessário realizar uma requisição HTTP POST para o endpoint Token https://apigateway.serpro.gov.br/token, informando as credenciais de acesso (consumerKey:consumerSecret) no HTTP Header Authorization, no formato base64, conforme o exemplo via cURL:<br><br>\n  \n    curl -k -d \"grant_type=client_credentials\" -H \"Authorization: Basic UURvVE5NOG5QVGJhdnd3RnJna0JxZ3ZZcnFJYTpIc201NHNON0ZfZ2w2MmlidXNaZk5GbjRId0lh\" https://apigateway.serpro.gov.br/token\n  \n  <br>\n  Com o token temporário, realizar a chamada na API DU-E em ambiente de VALIDAÇÃO:\n  \n  \n  * URL: https://apigateway.serpro.gov.br/api-consulta-due-val/api/v1/due/<numero>/<chave>\n  * Numero: 18BR0000017220\n  * Chave de Acesso: 18VFZ017228\n  * Bearer: tokenTemporario\n  \n  <br>\n  conforme o exemplo via cURL:\n\n    curl -X GET -H \"Authorization: Bearer d6d7dcbe94454ad82a271bb065232750\" \"https://apigateway.serpro.gov.br/api-consulta-due-val/api/v1/due/18BR0000017220/18VFZ017228\"          \n  \n           \nresponses: {}"
+        "description": "\nPara informações de como se autenticar antes de consumir as API, por favor,\nconsulte a documentação em:\nhttps://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf            \n\n### Bem vindo a API DUE - Perfil Instituição Financeira. \n    Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das instituições financeiras com os serviços do Portal Único do Comércio Exterior, baseado nas instruções de uso e contratação conforme a plataforma de habilitação API Serpro. A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8.\n\n### <br> API Serpro - Plataforma de Habilitação \n  Todas as Instituições Financeiras que possuem perfil de acesso para realizar a consulta DUE em tela no Portal Único do Comércio Exterior já estão aptas a celebrar o contrato comercial com o Serpro para consumo da API DUE.\n\n  <br> O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.\n\n  <br> Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf <br>\n  \n\n  <br>\n  **Até o dia 30/06/2018**, está disponível para testes em ambiente de VALIDAÇÃO, as credenciais de acesso (Consumer Key e Consumer Secret):\n  \n  * Consumer Key: QDoTNM8nPTbavwwFrgkBqgvYrqIa\n  * Consumer Secret: Hsm54sN7F_gl62ibusZfNFn4HwIa\n  \n  Para solicitar o token temporário que é exigido na chamada da API DU-E, é necessário realizar uma requisição HTTP POST para o endpoint Token https://apigateway.serpro.gov.br/token, informando as credenciais de acesso (consumerKey:consumerSecret) no HTTP Header Authorization, no formato base64, conforme o exemplo via cURL:<br><br>\n  \n    curl -k -d \"grant_type=client_credentials\" -H \"Authorization: Basic UURvVE5NOG5QVGJhdnd3RnJna0JxZ3ZZcnFJYTpIc201NHNON0ZfZ2w2MmlidXNaZk5GbjRId0lh\" https://apigateway.serpro.gov.br/token\n  \n  <br>\n  Com o token temporário, realizar a chamada na API DU-E em ambiente de VALIDAÇÃO:\n  \n  \n  * URL: https://apigateway.serpro.gov.br/api-consulta-due-val/api/v1/due/<numero>/<chave>\n  * Numero: 18BR0000017220\n  * Chave de Acesso: 18VFZ017228\n  * Bearer: tokenTemporario\n  \n  <br>\n  conforme o exemplo via cURL:\n\n    curl -X GET -H \"Authorization: Bearer d6d7dcbe94454ad82a271bb065232750\" \"https://apigateway.serpro.gov.br/api-consulta-due-val/api/v1/due/18BR0000017220/18VFZ017228\"          \n  \n  \nresponses: {}"
       }
     },
     "Formatos e Tipos": {
@@ -59,10 +59,27 @@
         "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 403   | Requisição não autorizada\n| 404   | Registro não encontrado\n| 408   | Request time-out\n| 500   | Erro interno do servidor\n| 503   | Serviço indisponível\n| 504   | Gateway time-out "
       }
     },
+    "null": null,
+    "/status": {
+      "get": {
+        "tags": [
+          "4 Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
+          }
+        }
+      }
+    },
     "/v1/due/{numero}/{chave}": {
       "get": {
         "tags": [
-          "4 Métodos e Testes Consulta"
+          "5 Métodos e Testes Consulta"
         ],
         "summary": "Consulta a DUE",
         "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo \n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga (RUC)|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|string\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|string\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico|string\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|string\n|moeda|Moeda da Operação|string\n|localDeDespacho|Localização do local do despacho|string\n|unidadeRFB|Unida da RFB|string\n|recintoAduaneiroDespacho|Recinto aduaneiro do despacho|string\n|localDeEmbarque|Localização do local de embarque|string\n|recintoAduaneiroDeEmbaque|Recinto aduaneiro do embarque|string\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|string\n|itens|Itens constante na DUE|string\n|exportador|Detalhamento do exportador|string\n|itemDaNotaFiscalDeExportacao|Informa detalhes dos itens da NF de exportação|string\n|ncm||string\n|descricaoDaMercadoria|Detalhamento das mercadorias da DUE|string\n|quantidadeNaUnidadeEstatistica||string\n|pesoLiquidoTotal|Peso líquido total dos itens da DUE|string\n|unidadeComercializada|Tipo da unidade comercializada|string\n|valorDaMercadoriaNaCondicaoDeVenda|Valor da mercadoria na venda|string\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque|string\n|valorDaMercadoriaNoLocalDeEmbarqueEmReais|Valor da mercadoria no local de embarque em reias|string\n|dataDeConversao|Data da conversão|string\n|importador|Detalhamento do importador|string\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
@@ -86,7 +103,43 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/ConsultaDUE"
+              "$ref": "#/definitions/ConsultaDUE-V1"
+            }
+          },
+          "422": {
+            "description": "Erros\nCódigos de erros possíveis: Veja item 3 Tabelas"
+          }
+        }
+      }
+    },
+    "/v2/due/{numero}/{chave}": {
+      "get": {
+        "tags": [
+          "5 Métodos e Testes Consulta"
+        ],
+        "summary": "Consulta a DUE",
+        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo \n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga (RUC)|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|string\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|string\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico|string\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|string\n|moeda|Moeda da Operação|string\n|localDeDespacho|Localização do local do despacho|string\n|unidadeRFB|Unida da RFB|string\n|recintoAduaneiroDespacho|Recinto aduaneiro do despacho|string\n|localDeEmbarque|Localização do local de embarque|string\n|recintoAduaneiroDeEmbaque|Recinto aduaneiro do embarque|string\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|string\n|itens|Itens constante na DUE|string\n|exportador|Detalhamento do exportador|string\n|itemDaNotaFiscalDeExportacao|Informa detalhes dos itens da NF de exportação|string\n|ncm||string\n|descricaoDaMercadoria|Detalhamento das mercadorias da DUE|string\n|quantidadeNaUnidadeEstatistica||string\n|pesoLiquidoTotal|Peso líquido total dos itens da DUE|string\n|unidadeComercializada|Tipo da unidade comercializada|string\n|valorDaMercadoriaNaCondicaoDeVenda|Valor da mercadoria na venda|string\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque|string\n|valorDaMercadoriaNoLocalDeEmbarqueEmReais|Valor da mercadoria no local de embarque em reias|string\n|dataDeConversao|Data da conversão|string\n|importador|Detalhamento do importador|string\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "numero",
+            "type": "string",
+            "description": "Número da DUE",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "chave",
+            "type": "string",
+            "description": "Chave de Acesso",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ConsultaDUE-V2"
             }
           },
           "422": {
@@ -103,7 +156,7 @@
     "https"
   ],
   "definitions": {
-    "ConsultaDUE": {
+    "ConsultaDUE-V1": {
       "type": "object",
       "properties": {
         "numero": {
@@ -472,6 +525,685 @@
               "informacoesAdicionais": {
                 "type": "string",
                 "example": "null"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ConsultaDUE-V2": {
+      "type": "object",
+      "properties": {
+        "numero": {
+          "type": "string",
+          "example": "18BR0000133506"
+        },
+        "ruc": {
+          "type": "string",
+          "example": "8BR00000000100000000000000000013602"
+        },
+        "chaveDeAcesso": {
+          "type": "string",
+          "example": "18ERM135006"
+        },
+        "situacao": {
+          "type": "string",
+          "example": "CARGA_APRESENTADA_PARA_DESPACHO"
+        },
+        "canal": {
+          "type": "string",
+          "example": "null"
+        },
+        "exigencia": {
+          "type": "string",
+          "example": "false"
+        },
+        "retificada": {
+          "type": "string",
+          "example": "false"
+        },
+        "tratamentoAdministrativo": {
+          "type": "string",
+          "example": "DISPENSADO"
+        },
+        "tratamentoAdministrativoComImpedimentoDeEmbarque": {
+          "type": "string",
+          "example": "false"
+        },
+        "tratamentoAdministrativoComRequerimentoDeInspecao": {
+          "type": "string",
+          "example": "false"
+        },
+        "situacaoDaCarga": {
+          "type": "string",
+          "example": "null"
+        },
+        "bloqueadaParaEmbarque": {
+          "type": "string",
+          "example": "false"
+        },
+        "tipoDeDocumentoFiscal": {
+          "type": "string",
+          "example": "NOTA_FISCAL_ELETRONICA"
+        },
+        "motivoDeDispensaDaNotaFiscal": {
+          "type": "string",
+          "example": "null"
+        },
+        "declarante": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "nome": {
+                "type": "string",
+                "example": "OWMKX NX OIWUQD UW"
+              },
+              "tipoDoDocumento": {
+                "type": "string",
+                "example": "CNPJ"
+              },
+              "estrangeiro": {
+                "type": "string",
+                "example": "false"
+              },
+              "nacionalidade": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "codigo": {
+                      "type": "string",
+                      "example": "105"
+                    },
+                    "nome": {
+                      "type": "string",
+                      "example": "BRASIL"
+                    },
+                    "nomeResumido": {
+                      "type": "string",
+                      "example": "BRA"
+                    }
+                  }
+                }
+              },
+              "numeroDoDocumento": {
+                "type": "string",
+                "example": "00000000000191"
+              },
+              "operadorEconomicoAutorizado": {
+                "type": "string",
+                "example": "false"
+              },
+              "formaDeExportacao": {
+                "type": "string",
+                "example": "POR_CONTA_PROPRIA"
+              },
+              "situacaoEspecial": {
+                "type": "string",
+                "example": "null"
+              },
+              "exportacaoConsorciada": {
+                "type": "string",
+                "example": "false"
+              },
+              "paisDoImportador": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "codigo": {
+                      "type": "string",
+                      "example": "676"
+                    },
+                    "nome": {
+                      "type": "string",
+                      "example": "RUSSIA, FEDERACAO DA"
+                    },
+                    "nomeResumido": {
+                      "type": "string",
+                      "example": "null"
+                    }
+                  }
+                }
+              },
+              "pesoLiquidoTotal": {
+                "type": "string",
+                "example": "49"
+              },
+              "tratamentoPrioritario": {
+                "type": "string",
+                "example": "true"
+              },
+              "valorTotalDasMercadorias": {
+                "type": "string",
+                "example": "3000"
+              },
+              "moeda": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "codigo": {
+                      "type": "string",
+                      "example": "220"
+                    },
+                    "descricao": {
+                      "type": "string",
+                      "example": "DOLAR DOS EUA"
+                    }
+                  }
+                }
+              },
+              "valorDasMercadoriasNoLocalDeEmbarque": {
+                "type": "string",
+                "example": "2000.1"
+              },
+              "contato": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "telefone": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "null"
+                    }
+                  }
+                }
+              },
+              "localDeDespacho": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "unidadeRFB": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "717600"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "PORTO DO RIO"
+                          }
+                        }
+                      }
+                    },
+                    "recintoAduaneiro": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "7929301"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR"
+                          },
+                          "latitude": {
+                            "type": "string",
+                            "example": "-20.812222"
+                          },
+                          "longitude": {
+                            "type": "string",
+                            "example": "-40.248333"
+                          }
+                        }
+                      }
+                    },
+                    "cnpjDoEstabelecimento": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "endereco": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "latitude": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "longitude": {
+                      "type": "string",
+                      "example": "null"
+                    }
+                  }
+                }
+              },
+              "localDeEmbarque": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "unidadeRFB": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "717600"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "PORTO DO RIO"
+                          }
+                        }
+                      }
+                    },
+                    "recintoAduaneiro": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "7929301"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR"
+                          },
+                          "latitude": {
+                            "type": "string",
+                            "example": "-20.812222"
+                          },
+                          "longitude": {
+                            "type": "string",
+                            "example": "-40.248333"
+                          }
+                        }
+                      }
+                    },
+                    "cnpjDoEstabelecimento": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "endereco": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "latitude": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "longitude": {
+                      "type": "string",
+                      "example": "null"
+                    }
+                  }
+                }
+              },
+              "viaEspecialDeTransporte": {
+                "type": "string",
+                "example": "null"
+              },
+              "usoObrigatorioDeTransito": {
+                "type": "string",
+                "example": "false"
+              },
+              "informacoesComplementares": {
+                "type": "string",
+                "example": "Observações Gerais"
+              },
+              "itens": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "numero": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "exportador": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "nome": {
+                            "type": "string",
+                            "example": "OWMKX NX OIWUQD UW"
+                          },
+                          "tipoDoDocumento": {
+                            "type": "string",
+                            "example": "CNPJ"
+                          },
+                          "estrangeiro": {
+                            "type": "string",
+                            "example": "false"
+                          },
+                          "nacionalidade": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "codigo": {
+                                  "type": "string",
+                                  "example": "105"
+                                },
+                                "nome": {
+                                  "type": "string",
+                                  "example": "BRASIL"
+                                },
+                                "nomeResumido": {
+                                  "type": "string",
+                                  "example": "BRA"
+                                }
+                              }
+                            }
+                          },
+                          "numeroDoDocumento": {
+                            "type": "string",
+                            "example": "00000000002720"
+                          }
+                        }
+                      }
+                    },
+                    "itemDaNotaFiscalDeExportacao": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "numeroDoItem": {
+                            "type": "string",
+                            "example": "1"
+                          },
+                          "chaveDeAcesso": {
+                            "type": "string",
+                            "example": "35180500000000002720550900006843201000000009"
+                          },
+                          "serie": {
+                            "type": "string",
+                            "example": "90"
+                          },
+                          "numeroDoDocumento": {
+                            "type": "string",
+                            "example": "684320"
+                          },
+                          "finalidade": {
+                            "type": "string",
+                            "example": "normal"
+                          },
+                          "notaFiscalEletronica": {
+                            "type": "string",
+                            "example": "true"
+                          },
+                          "cfop": {
+                            "type": "string",
+                            "example": "7101"
+                          },
+                          "codigoDoProduto": {
+                            "type": "string",
+                            "example": "000000000000021600001"
+                          }
+                        }
+                      }
+                    },
+                    "ncm": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "12011000"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "SOJA, MESMO TRITURADA."
+                          },
+                          "UnidadeEstatistica": {
+                            "type": "string",
+                            "example": "UNIDADE"
+                          },
+                          "atributos": {
+                            "type": "array",
+                            "items": {
+                              "properties": {
+                                "conteudo": {
+                                  "type": "string",
+                                  "example": "estampado"
+                                },
+                                "codigo": {
+                                  "type": "string",
+                                  "example": "001"
+                                },
+                                "descricao": {
+                                  "type": "string",
+                                  "example": "Tipo de tecido"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "descricaoDaMercadoria": {
+                      "type": "string",
+                      "example": "PRODUTO GENERICO TESTE - GRADE COMPOSTA 34."
+                    },
+                    "motivoDoTratamentoPrioritario": {
+                      "type": "string",
+                      "example": "CARGA VIVA"
+                    },
+                    "descricaoComplementar": {
+                      "type": "string",
+                      "example": "Descrição Complementar"
+                    },
+                    "quantidadeNaUnidadeEstatistica": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "pesoLiquidoTotal": {
+                      "type": "string",
+                      "example": "49"
+                    },
+                    "unidadeComercializada": {
+                      "type": "string",
+                      "example": "UN"
+                    },
+                    "quantidadeNaUnidadeComercializada": {
+                      "type": "string",
+                      "example": "1"
+                    },
+                    "valorTotal": {
+                      "type": "string",
+                      "example": "1000"
+                    },
+                    "percentualDeComissaoDoAgente": {
+                      "type": "string",
+                      "example": "null"
+                    },
+                    "condicaoDeVenda": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "DDP"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "DELIVERED DUTY PAID"
+                          }
+                        }
+                      }
+                    },
+                    "valorDaMercadoriaNaCondicaoDeVenda": {
+                      "type": "string",
+                      "example": "3000"
+                    },
+                    "valorDaMercadoriaNoLocalDeEmbarque": {
+                      "type": "string",
+                      "example": "200,1"
+                    },
+                    "valorDaMercadoriaNoLocalDeEmbarqueEmReais": {
+                      "type": "string",
+                      "example": "7143.55716"
+                    },
+                    "dataDeConversao": {
+                      "type": "string",
+                      "example": "2018-05-01T05:57:00.000+0000"
+                    },
+                    "importador": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "nome": {
+                            "type": "string",
+                            "example": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"
+                          },
+                          "endereco": {
+                            "type": "string",
+                            "example": "RUA ELISA SILVERIO - 45 - CENTRO - EXTERIOR - 86800270 - RUSSIA"
+                          },
+                          "pais": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "codigo": {
+                                  "type": "string",
+                                  "example": "676"
+                                },
+                                "nome": {
+                                  "type": "string",
+                                  "example": "RUSSIA, FEDERACAO DA"
+                                },
+                                "nomeResumido": {
+                                  "type": "string",
+                                  "example": "null"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "depuracaoEstatistica": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "justificativaDeValor": {
+                            "type": "string",
+                            "example": "null"
+                          },
+                          "justificativaDeQuantidade": {
+                            "type": "string",
+                            "example": "null"
+                          },
+                          "possuiDepuracao": {
+                            "type": "string",
+                            "example": "false"
+                          }
+                        }
+                      }
+                    },
+                    "enquadramentos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigo": {
+                            "type": "string",
+                            "example": "80000"
+                          },
+                          "descricao": {
+                            "type": "string",
+                            "example": "EXPORTACAO NORMAL"
+                          }
+                        }
+                      }
+                    },
+                    "paisesDeDestino": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "pais": {
+                            "type": "array",
+                            "properties": {
+                              "codigo": {
+                                "type": "string",
+                                "example": "249"
+                              },
+                              "nome": {
+                                "type": "string",
+                                "example": "ESTADIS UNIDOS"
+                              },
+                              "nomeResumido": {
+                                "type": "string",
+                                "example": "null"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "tratamentosAdministrativos": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "codigoLPCO": {
+                            "type": "string",
+                            "example": "null"
+                          },
+                          "orgao": {
+                            "type": "object",
+                            "example": "EXPORTACAO NORMAL"
+                          },
+                          "situacao": {
+                            "type": "object",
+                            "example": "null"
+                          },
+                          "mensagem": {
+                            "type": "object",
+                            "example": "null"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "eventosDoHistorico": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "dataEHoraDoEvento": {
+                      "type": "string",
+                      "example": "2018-05-02T07:07:47.002+0000"
+                    },
+                    "evento": {
+                      "type": "string",
+                      "example": "Registro"
+                    },
+                    "responsavel": {
+                      "type": "string",
+                      "example": "07073311703"
+                    },
+                    "informacoesAdicionais": {
+                      "type": "string",
+                      "example": "null"
+                    }
+                  }
+                }
               }
             }
           }
