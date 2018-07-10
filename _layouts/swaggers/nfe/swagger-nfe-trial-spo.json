@@ -26,8 +26,28 @@
   },
   "basePath": "/nfe-trial/1",
   "paths": {
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
+          }
+        }
+      }
+    },
     "/{chave}": {
       "get": {
+        "tags": [
+          "Consulta NF-e"
+        ],
+        "summary": "Consulta Nota Fiscal Eletrônica",
         "x-auth-type": "Bearer",
         "x-throttling-tier": "Unlimited",
         "description": "Retorna as informações da NF-e com a chave de acesso informada",
