@@ -88,10 +88,26 @@
         "description": "\n| Código | Mensagem\n| ------ | --------\n| 1   | Estrutura do JSON de entrada diferente da definição do serviço.\n| 2   | Chave obrigatória {0} sem conteúdo.\n| 3   | {0} com tamanho ou formato diferente da definição do serviço.\n| 4   | Certificado não foi informado, não é de Equipamento e/ou não é válido.\n| 9   | cnpjLoja {0} não existe como Loja.\n| 10  | cnpjLoja diferente do Certificado de Autenticação.\n| 11  | cnpjLoja {0} Suspenso.\n| 12  | cnpjLoja {0} Cancelado.\n| 13  | paisOrigem não localizado na Tabela de Países.\n| 14  | tipoDocumento inválido.\n| 15  | CPF inválido.\n| 16  | Viajante não localizado.\n| 17  | CPF obrigatório para brasileiros (paisOrigem = Brasil).\n| 18  | CPF diferente do CPF vinculado ao documento {0} através de venda no dia {1} .\n| 19  | CPF diferente do CPF vinculado ao documento {0} pela RFB.\n| 20  | dataNascimento e nomeNoDocumento obrigatórios para estrangeiro com CPF não informado.\n| 21  | Documento não pode ser vinculado ao CPF {0} pois desvinculado desse CPF pela RFB.\n| 22  | valorTotalItensImportados ou valorTotalItensNacionais deve ser maior que zero.\n| 23  | valorTotalItensNacionais não pode ser maior que saldo de cota: {0}\n| 24  | valorCotacaoLoja deve ser maior que zero.\n| 25  | produtoControleQuantitativo.codigoProduto {0} não localizado na Tabela de Produtos.\n| 26  | produtoControleQuantitativo.codigoProduto {0} já informado na venda.\n| 27  | produtoControleQuantitativo.quantidade deve ser maior que zero e não superior ao limite de {0} {1} .\n| 28  | produtoControleQuantitativo.valorTotalProdutos deve ser maior que zero.\n| 29  | Venda gera imposto inferior ao limite mínimo (R$ {0} ) para geração de DARF.\n| 30  | Somatório dos produtoControleQuantitativo.valorTotal maior que valorTotalItensImportados + valorTotalItensNacionais.\n| 31  | idVenda não localizado.\n| 32  | {0} DV inválido.\n| 33  | {0} emitida por CNPJ diferente da loja.\n| 34  | {0} já informada em outras operações.\n| 35  | {0} DV inválido.\n| 36  | {0} emitida por CNPJ diferente da loja.\n| 37  | {0} já informada em outras operações.\n| 38  | Venda foi entregue anteriormente.\n| 39  | Venda foi cancelada anteriormente.\n| 40  | Venda foi totalmente devolvida anteriormente.\n| 41  | Venda não foi entregue anteriormente.\n| 42  | produtoControleQuantitativo.codigoProduto {0} não informado na venda.\n| 43  | produtoControleQuantitativo.codigoProduto {0} já informado na devolução.\n| 44  | produtoControleQuantitativo.quantidade deve ser maior que zero e não superior ao saldo da venda.\n| 45  | produtoControleQuantitativo.valorTotal deve ser maior que zero e não superior ao saldo da venda.\n| 46  | valorTotalItensImportados + valorTotalItensNacionais maior que saldo da venda.\n| 52  | Data de nascimento diferente do {0}.\n| 54  | Venda desvinculada do Viajante.\n| 55  | CPF não localizado.\n| 56  | Data sem cotação do dólar.\n| 57  | Situação do CPF inválida.\n| 58  | notaFiscalSaida igual a notaFiscalEntrada\n| 99  | Erro no ambiente {0} . {1} .\n| -99  | Erro na comunicação com algum outro sistema externo que a API do Loja Franca de Fronteira se integra."
       }
     },
+    "/status": {
+      "get": {
+        "tags": [
+          "4 Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
+          }
+        }
+      }
+    },
     "/viajante/cota": {
       "post": {
         "tags": [
-          "4 Métodos de Consultas"
+          "5 Métodos de Consultas"
         ],
         "summary": "Consulta de Cota",
         "description": "Retorna a cota disponível para um determinado viajante. Para Viajante Brasileiro, a identificação pelo número de documento CPF é sempre obrigatória.\n## Parâmetros de Entrada\n### Parâmetros para Viajante (Brasileiro ou Estrangeiro) com CPF\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|cpf|CPF do Viajante|string|body|Obrigatório\n|dataNascimento|Data de nascimento do Viajante|string|body|Obrigatório\n### Parâmetros para Viajante Estrangeiro \n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|documento|Documento apresentado pelo viajante|documento|body|Obrigatório\n|codigoPaisOrigem|Código do pais de origem do Viajante|integer|body|Obrigatório. Ver tabela de países\n|codigoTipo|Código do tipo do documento do Viajante|integer|body|Obrigatório. Ver tabela de tipos de documentos\n|numero|Número do documento do Viajante|string|body|Obrigatório\n|dataNascimento|Data de nascimento do Viajante|stringr|body|Obrigatório\n|nomeNoDocumento|Nome do Viajante no documento apresentado|string|body|Obrigatório\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|nomeViajante|Nome do viajante cadastrado no Loja Franca|string|\n|dataUltimaVenda|Data da última venda|string|yyyy-MM-ddTHH:mm:ss\n|valorSaldoCota|Valor restante do saldo de cota|decimal|\n|saldoCotaProduto|Saldo de cota de cada produto|saldoCotaProduto|\n|codigoProduto|Código do produto|integer|Ver tabela de produtos\n|quantidade|Quantidade de produtos restantes na cota|integer|",
@@ -126,7 +142,7 @@
     "/viajante/consulta": {
       "post": {
         "tags": [
-          "4 Métodos de Consultas"
+          "5 Métodos de Consultas"
         ],
         "summary": "Consulta de Viajante",
         "description": "Retorna o nome, a data de nascimento e a data da última venda de um determinado viajante.\n## Parâmetros de Entrada\n### Parâmetros para Viajante Brasileiro com CPF\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|cpf|CPF do Viajante|string|body|Obrigatório\n### Parâmetros para Viajante Estrangeiro \n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|documento|Documento apresentado pelo viajante|documento|body|Obrigatório\n|codigoPaisOrigem|Código do pais de origem do Viajante|integer|body|Obrigatório. Ver tabela de países \n|codigoTipo|Código do tipo do documento do Viajante|integer|body|Obrigatório. Ver tabela de tipos de documentos\n|numero|Número do documento do Viajante|string|body|Obrigatório\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes \n|----|---------|----|--------\n|nomeViajante|Nome do viajante cadastrado no Loja Franca|string|\n|dataNascimento|Data de nascimento do Viajante|string|yyyy-MM-dd\n|dataUltimaVenda|Data da última venda|string|yyyy-MM-ddTHH:mm:ss",
@@ -155,7 +171,7 @@
     "/cotacaoDolar": {
       "get": {
         "tags": [
-          "4 Métodos de Consultas"
+          "5 Métodos de Consultas"
         ],
         "summary": "Consulta Cotação do Dólar",
         "description": "Retorna a cotação do dólar de uma determinada data.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|dataCotacao|Data da cotação a pesquisar|string|query|Obrigatório yyyy-MM-dd\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes \n|----|---------|----|--------\n|data|Data da cotação retornada|string|yyyy-MM-dd\n|valorOficial|Valor da cotação do dolar na data retornada|decimal|",
@@ -185,7 +201,7 @@
       "post": {
         "summary": "Processa Venda de Viajante",
         "tags": [
-          "5 Métodos de Venda"
+          "6 Métodos de Venda"
         ],
         "description": "Efetua uma operação de processamento de venda. Para Viajante Brasileiro, a identificação pelo número de documento de CPF é sempre obrigatória. A identificação por documento é sempre obrigatória independentemente se o Viajante for Brasileiro ou Estrangeiro.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|valorTotalItensImportados|Valor total (em US$) de itens importados na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensNacionais não for informado ou for igual a 0\n|valorTotalItensNacionais|Valor total (em US$) de itens nacionais na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensImportados não for informado ou for igual a 0\n|valorCotacaoLoja|Valor da cotação do dólar oferecido pela Loja Franca|decimal|body|Obrigatório\n|viajanteParametro|Identificação do viajante|viajante|body|Obrigatório. Formato segue os parâmetros da Consulta de Viajante. Documento é obrigatório para brasileiros na venda (atributos codigoPaisOrigems, codigoTipo e numero)\n|produtosControleQuantitativo|Representa a quantidade de produtos controlados presentes na venda do viajante|produtos|body|Obrigatório quando é registrada uma venda com produtos controlados.\n|codigoProduto|Código do produto|Integer|body|Obrigatório quando é registrada uma venda com produtos controlados. Ver tabela de produtos.\n|quantidade| Quantidade de produtos controlados na venda|integer|body|Obrigatório quando é registrada uma venda com produtos controlados\n|valorTotal|Valor total destes produtos na Venda|decimal|body|Obrigatório quando é registrada uma venda com produtos controlados\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|idVenda|Número da venda|string|\n|dataHoraVenda|Data do registro da venda|string|yyyy-MM-ddTHH:mm:ss\n|darf|Darf gerado caso a venda exceda a cota|darf|\n|numero|Número do Darf|number|\n|valor|Valor do Darf|decimal|\n|dataVencimento|Data de vencimento do Darf|string|yyyy-MM-dd\n|codigoReceita|Código da receita recolhida|integer|\n|pdf|PDF do boleto do Darf|byte|String encoded em base-64\n## Tipos de Viajantes\n### Viajante Brasileiro (sem produtos controlados)\nEste tipo está descrito no body abaixo.\n<br/> \n### Viajante Estrangeiro (sem produtos controlados)\n{\n\"valorTotalItensImportados\": 10,\n\"valorTotalItensNacionais\": 0,\n\"valorCotacaoLoja\": 3.24,\n\"viajanteParametro\": {\n  \"documento\": {\n    \"codigoPaisOrigem\": 1,\n    \"codigoTipo\": 1,\n    \"numero\": \"12345\"\n    \"dataNascimento\": \"1980-01-15\"\n    \"nomeNoDocumento\": \"Fulano de Tal\"\n    }\n  }\n},\n### Viajante Brasileiro (com produtos controlados)\n{\n\"valorTotalItensImportados\": 10,\n\"valorTotalItensNacionais\": 0,\n\"valorCotacaoLoja\": 3.24,\n\"viajanteParametro\": {\n  \"cpf\": \"00000000191\",\n  \"documento\": {\n    \"codigoPaisOrigem\": 105,\n    \"codigoTipo\": 1,\n    \"numero\": \"12345\"\n    }\n  }\n},\n{\n\"produtosControleQuantitativo\": [\n  { \"codigoProduto\": 10,\n    \"quantidade\": 2,\n    \"valorTotal\": 5.3\n    },\n  { \"codigoProduto\": 1,\n    \"quantidade\": 1,\n    \"valorTotal\": 4.7\n    }\n  ]\n}\n## Tipos de Saída \n### Sem o DARF\nidVenda: '2017000000020992652'\ndataHoraVenda: '2017-12-11T17:27:41'\n### Com o DARF\nEste tipo está descrito no response abaixo.",
         "consumes": [
@@ -220,7 +236,7 @@
       "put": {
         "summary": "Entrega Venda para Viajante",
         "tags": [
-          "5 Métodos de Venda"
+          "6 Métodos de Venda"
         ],
         "description": "Efetua a operação de entrega de venda\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|idVenda|Identificação do número da venda gerada pelo sistema Loja Franca de Fronteira na operação Processa venda de viajante|string|query|Obrigatório\n|notaFiscalSaida|Número da NF de saída gerada pelo sistema gerador de NF|string|query|Obrigatório\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|dataHoraEntrega|Data e hora da entrega da venda|string|yyyy-MM-ddTHH:mm:ss",
         "parameters": [
@@ -256,7 +272,7 @@
       "put": {
         "summary": "Cancela Venda de Viajante",
         "tags": [
-          "5 Métodos de Venda"
+          "6 Métodos de Venda"
         ],
         "description": "Efetua uma operação de cancelamento de venda\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|idVenda|Identificação do número da venda gerada pelo sistema Loja Franca de Fronteira na operação Processa venda de viajante|string|query|Obrigatório\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|dataHoraCancelamento|Data e hora do cancelamento da venda|string|yyyy-MM-ddTHH:mm:ss",
         "parameters": [
@@ -292,7 +308,7 @@
       "post": {
         "summary": "Devolução Parcial de Venda",
         "tags": [
-          "6 Métodos Devolucao e Troca"
+          "7 Métodos Devolucao e Troca"
         ],
         "description": "Efetua uma operação de devolução parcial de venda\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|valorTotalItensImportados|Valor total (em US$) de itens importados na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensNacionais não for informado ou for igual a 0\n|valorTotalItensNacionais|Valor total (em US$) de itens nacionais na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensImportados não for informado ou for igual a 0\n|produtosControleQuantitativo|Representa a quantidade de produtos controlados presentes na venda do viajante|produtos|body|Formato segue os parâmetros do Processa venda de viajante\n|codigoProduto|Código do produto|integer|body|Obrigatório quando é registrada uma venda com produtos controlados. Veja Tabela de Produtos\n|quantidade| Quantidade de produtos controlados na venda|integer|body|Obrigatório quando é registrada uma venda com produtos controlados\n|valorTotal|Valor total destes produtos na Venda|decimal|body|Obrigatório quando é registrada uma venda com produtos controlados\n|venda|Representa a Venda a ser devolvida|venda|body|Obrigatório\n|id|Identificação do número da venda gerado pelo sistema Loja Franca de Fronteira na operação Processa Venda de Viajante|string|body|obrigatório\n|notaFiscalEntrada|Número da Nota Fiscal de entrada gerada pelo sistema gerador de nota fiscal|string|body|obrigatorio\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|dataHoraDevolucaoParcial|Data e hora da devolução parcial|string|yyyy-MM-ddTHH:mm:ss\n## Tipos de Devolução Parcial de Venda\n### Devolução Parcial sem Produtos Controlados \n {\n\"valorTotalItensImportados\": 9.95,\n\"valorTotalItensNacionais\": 0,\n\"venda\": {\n\"id\": \"2017000000020992652\",\n\"numeroNotaFiscalEntrada\": \"42100484684182000157550010000000020108042108\"\n}}  \n### Devolução Parcial com Produtos Controlados\nEste tipo está descrito no body abaixo.",
         "consumes": [
@@ -327,7 +343,7 @@
       "put": {
         "summary": "Devolução Total de Venda",
         "tags": [
-          "6 Métodos Devolucao e Troca"
+          "7 Métodos Devolucao e Troca"
         ],
         "description": "Efetua uma operação de devolução total de venda\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|idVenda|Número da venda gerada pelo sistema Loja Franca|string|query|Obrigatório\n|notaFiscalSaida|Número da NF de saída gerada pelo sistema gerador de NF|string|query|Obrigatório\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|dataHoraDevolucaoTotal|Data e hora da devolucao total|string|yyyy-MM-ddTHH:mm:ss",
         "parameters": [
@@ -363,7 +379,7 @@
       "post": {
         "summary": "Troca Item Idêntico de Vendas",
         "tags": [
-          "6 Métodos Devolucao e Troca"
+          "7 Métodos Devolucao e Troca"
         ],
         "description": "Efetua uma operação de troca de itens idênticos de venda\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Local|Detalhes\n|----|---------|----|-----|--------\n|valorTotalItensImportados|Valor total (em US$) de itens importados na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensNacionais não for informado ou for igual a 0\n|valorTotalItensNacionais|Valor total (em US$) de itens nacionais na venda para o viajante|decimal|body|Obrigatório quando valorTotalItensImportados não for informado ou for igual a 0\n|produtosControleQuantitativo|Representa a quantidade de produtos controlados presentes na venda do viajante|produtos|body|Formato segue os parâmetros do Processa venda de viajante\n|codigoProduto|Código do produto|integer|body|Obrigatório quando é registrada uma venda com produtos controlados. Veja Tabela de Produtos\n|quantidade| Quantidade de produtos controlados na venda|integer|body|Obrigatório quando é registrada uma venda com produtos controlados\n|valorTotal|Valor total destes produtos na Venda|decimal|body|Obrigatório quando é registrada uma venda com produtos controlados\n|venda|Representa a Venda a ser devolvida|venda|body|Obrigatório\n|id|Identificação do número da venda gerado pelo sistema Loja Franca de Fronteira na operação Processa Venda de Viajante|string|body|obrigatório\n|notaFiscalEntrada|Número da Nota Fiscal de entrada gerada pelo sistema gerador de nota fiscal|string|body|obrigatorio\n## Atributos de Resposta\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|dataHoraTrocaItemIdentico|Data e hora da troca|string|yyyy-MM-ddTHH:mm:ss\n## Tipos de Troca de Itens Idênticos\n### Troca de Itens Idênticos sem Produtos Controlados \n {\n\"valorTotalItensImportados\": 9.95,\n\"valorTotalItensNacionais\": 0,\n\"venda\": {\n\"id\": \"2017000000020992652\",\n\"numeroNotaFiscalEntrada\": \"42100484684182000157550010000000020108042108\"\n}}  \n### Troca de Itens Idênticos com Produtos Controlados\nEste tipo está descrito no body abaixo.",
         "consumes": [
