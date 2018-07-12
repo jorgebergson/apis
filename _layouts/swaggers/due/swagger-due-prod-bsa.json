@@ -81,8 +81,8 @@
         "tags": [
           "5 Métodos e Testes Consulta"
         ],
-        "summary": "Consulta a DUE",
-        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição\n|----|---------\n|numero|Número da DUE\n|ruc|Registro Único de Carga (RUC)\n|chaveDeAcesso|Identificação da Chave de acesso\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo\n|situacaoDaCarga|Situação da Carga\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque\n|operadorEconomicoAutorizado|Indicador de autorização de operador econômico\n|tratamentoPrioritario|Indicador de Tratamento Prioritário\n|moeda|Moeda da Operação\n|localDeDespacho|Localização do local do despacho\n|unidadeRFB|Unida da RFB\n|recintoAduaneiroDespacho|Recinto aduaneiro do despacho\n|localDeEmbarque|Localização do local de embarque\n|recintoAduaneiroDeEmbaque|Recinto aduaneiro do embarque\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito\n|itens|Itens constante na DUE\n|exportador|Detalhamento do exportador\n|itemDaNotaFiscalDeExportacao|Informa detalhes dos itens da NF de exportação\n|ncm|texto\n|descricaoDaMercadoria|Detalhamento das mercadorias da DUE\n|quantidadeNaUnidadeEstatistica|Quantidade estatística\n|pesoLiquidoTotal|Peso líquido total dos itens da DUE\n|unidadeComercializada|Tipo da unidade comercializada\n|valorDaMercadoriaNaCondicaoDeVenda|Valor da mercadoria na venda\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque\n|valorDaMercadoriaNoLocalDeEmbarqueEmReais|Valor da mercadoria no local de embarque em reias\n|dataDeConversao|Data da conversão\n|importador|Detalhamento do importador\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
+        "summary": "Consulta a DUE - V1",
+        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|operadorEconomicoAutorizado|Indicador de autorização de operador econômico|boolean\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|boolean\n|moeda|Moeda da Operação|object\n|localDeDespacho|Localização do local do despacho|object\n|localDeEmbarque|Localização do local de embarque|object\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|boolean\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
         "parameters": [
           {
             "in": "path",
@@ -117,8 +117,8 @@
         "tags": [
           "5 Métodos e Testes Consulta"
         ],
-        "summary": "Consulta a DUE",
-        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição\n|----|---------\n|numero|Número da DUE\n|ruc|Registro Único de Carga (RUC)\n|chaveDeAcesso|Identificação da Chave de acesso\n|situacao|Situação\n|canal|Meio\n|exigencia|Obrigatoriedade\n|retificada|Quando houve alterações\n|tratamentoAdministrativo|Se a declaração possui algum tratamento\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo\n|tratamentoAdministrativoComRequerimentoDeInspecao|Se a declaração possui algum requerimento de inspeção\n|situacaoDaCarga|Situação da Carga\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque\n|tipoDeDocumentoFiscal|Qual o documento informado\n|motivoDeDispensaDeNotaFiscal|O motivo da dispensa da NF\n|Declarante|Dados como nome, nacionalidade e documentação\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico\n|formaDeExportacao|A maneira como o produto será exportado\n|situacaoEspecial|Se existe alguma condição especial\n|exportacaoConsorciada|Se a exportação é consorciada\n|paisDoImportador|Dados como nome, código e nome resumido do pais importador\n|pesoLiquidoTotal|Peso liquido total\n|tratamentoPrioritario|Se há tramento prioritario\n|valorTotalDasMercadorias|Valor total\n|moeda|Dados como código e descrição da moeda\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque\n|contato|Dados como nome, fone e email\n|localDeDespacho|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento\n|localDeEmbarque|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento\n|viasEspecialDeTransporte|Se há alguma via especial de transporte\n|usoObrigatorioDeTransito|Se há obrigatoriedade no trânsito\n|informacoesComplementares|Informações complementares\n|itens|Dados como número, exportador, NF exportação, ncm, informações das mercadorias\n|eventosDoHistorico|Dados como data, hora, responsável e informações adicionais da declaração\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
+        "summary": "Consulta a DUE - V2",
+        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|situacao|Situação|string\n|canal|Meio|string\n|exigencia|Obrigatoriedade|boolean\n|retificada|Quando houve alterações|boolean\n|tratamentoAdministrativo|Se a declaração possui algum tratamento|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|tratamentoAdministrativoComRequerimentoDeInspecao|Se a declaração possui algum requerimento de inspeção|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|tipoDeDocumentoFiscal|Qual o documento informado|string\n|motivoDeDispensaDeNotaFiscal|O motivo da dispensa da NF|string\n|Declarante|Dados como nome, nacionalidade e documentação|object\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico|boolean\n|formaDeExportacao|A maneira como o produto será exportado|string\n|situacaoEspecial|Se existe alguma condição especial|string\n|exportacaoConsorciada|Se a exportação é consorciada|boolean\n|paisDoImportador|Dados como nome, código e nome resumido do pais importador|object\n|pesoLiquidoTotal|Peso liquido total|number\n|tratamentoPrioritario|Se há tramento prioritario|boolean\n|valorTotalDasMercadorias|Valor total|number\n|moeda|Dados como código e descrição da moeda|object\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque|number\n|contato|Dados como nome, fone e email|object\n|localDeDespacho|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|localDeEmbarque|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|viasEspecialDeTransporte|Se há alguma via especial de transporte|string\n|usoObrigatorioDeTransito|Se há obrigatoriedade no trânsito|boolean\n|informacoesComplementares|Quaisquer informações adicionais|string\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
         "parameters": [
           {
             "in": "path",
@@ -172,7 +172,7 @@
           "example": "18ERM135006"
         },
         "tratamentoAdministrativoComImpedimentoDeEmbarque": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "situacaoDaCarga": {
@@ -180,22 +180,22 @@
           "example": "null"
         },
         "bloqueadaParaEmbarque": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "operadorEconomicoAutorizado": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "tratamentoPrioritario": {
-          "type": "string",
+          "type": "boolean",
           "example": "true"
         },
         "moeda": {
           "type": "object",
           "properties": {
             "codigo": {
-              "type": "string",
+              "type": "integer",
               "example": "220"
             },
             "descricao": {
@@ -283,7 +283,7 @@
           }
         },
         "usoObrigatorioDeDocumentoDeTransito": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "itens": {
@@ -292,141 +292,131 @@
             "type": "object",
             "properties": {
               "numero": {
-                "type": "string",
+                "type": "integer",
                 "example": "1"
               },
               "exportador": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "nome": {
-                      "type": "string",
-                      "example": "OWMKX NX OIWUQD UW"
-                    },
-                    "nacionalidade": {
-                      "type": "array",
-                      "items": {
-                        "properties": {
-                          "codigo": {
-                            "type": "string",
-                            "example": "105"
-                          },
-                          "nome": {
-                            "type": "string",
-                            "example": "BRASIL"
-                          },
-                          "nomeResumido": {
-                            "type": "string",
-                            "example": "BRA"
-                          }
-                        }
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "OWMKX NX OIWUQD UW"
+                  },
+                  "nacionalidade": {
+                    "type": "object",
+                    "properties": {
+                      "codigo": {
+                        "type": "integer",
+                        "example": "105"
+                      },
+                      "nome": {
+                        "type": "string",
+                        "example": "BRASIL"
+                      },
+                      "nomeResumido": {
+                        "type": "string",
+                        "example": "BRA"
                       }
-                    },
-                    "numeroDoDocumento": {
-                      "type": "string",
-                      "example": "00000000002720"
-                    },
-                    "tipoDoDocumento": {
-                      "type": "string",
-                      "example": "CNPJ"
-                    },
-                    "estrangeiro": {
-                      "type": "string",
-                      "example": "false"
                     }
+                  },
+                  "numeroDoDocumento": {
+                    "type": "string",
+                    "example": "00000000002720"
+                  },
+                  "tipoDoDocumento": {
+                    "type": "string",
+                    "example": "CNPJ"
+                  },
+                  "estrangeiro": {
+                    "type": "boolean",
+                    "example": "false"
                   }
                 }
               },
               "itemDaNotaFiscalDeExportacao": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "notaFiscalEletronica": {
-                      "type": "string",
-                      "example": "true"
-                    },
-                    "finalidade": {
-                      "type": "string",
-                      "example": "normal"
-                    },
-                    "serie": {
-                      "type": "string",
-                      "example": "90"
-                    },
-                    "cfop": {
-                      "type": "string",
-                      "example": "7101"
-                    },
-                    "numeroDoItem": {
-                      "type": "string",
-                      "example": "1"
-                    },
-                    "numeroDoDocumento": {
-                      "type": "string",
-                      "example": "684320"
-                    },
-                    "chaveDeAcesso": {
-                      "type": "string",
-                      "example": "35180500000000002720550900006843201000000009"
-                    },
-                    "codigoDoProduto": {
-                      "type": "string",
-                      "example": "000000000000021600001"
-                    }
+                "type": "object",
+                "properties": {
+                  "notaficalEletronica": {
+                    "type": "boolean",
+                    "example": "true"
+                  },
+                  "finalidade": {
+                    "type": "string",
+                    "example": "normal"
+                  },
+                  "serie": {
+                    "type": "integer",
+                    "example": "90"
+                  },
+                  "cfop": {
+                    "type": "integer",
+                    "example": "7101"
+                  },
+                  "numeroDoItem": {
+                    "type": "integer",
+                    "example": "1"
+                  },
+                  "numeroDoDocumento": {
+                    "type": "integer",
+                    "example": "684320"
+                  },
+                  "chaveDeAcesso": {
+                    "type": "string",
+                    "example": "35180500000000002720550900006843201000000009"
+                  },
+                  "codigoDoProduto": {
+                    "type": "string",
+                    "example": "000000000000021600001"
                   }
                 }
               },
               "ncm": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "codigo": {
-                      "type": "string",
-                      "example": "12011000"
-                    },
-                    "descricao": {
-                      "type": "string",
-                      "example": "SOJA, MESMO TRITURADA."
-                    },
-                    "UnidadeMedidaEstatistica": {
-                      "type": "string",
-                      "example": "UNIDADE"
-                    },
-                    "Atributos": {
-                      "type": "array",
-                      "items": {
-                        "properties": {
-                          "codigo": {
-                            "type": "string",
-                            "example": "001"
-                          },
-                          "conteudo": {
-                            "type": "string",
-                            "example": "Estampado"
-                          },
-                          "descricao": {
-                            "type": "string",
-                            "example": "Tipo de tecido"
-                          }
+                "type": "object",
+                "properties": {
+                  "codigo": {
+                    "type": "string",
+                    "example": "12011000"
+                  },
+                  "descricao": {
+                    "type": "string",
+                    "example": "SOJA, MESMO TRITURADA."
+                  },
+                  "unidadeEstatistica": {
+                    "type": "string",
+                    "example": "UNIDADE"
+                  },
+                  "atributos": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "codigo": {
+                          "type": "string",
+                          "example": "001"
+                        },
+                        "conteudo": {
+                          "type": "string",
+                          "example": "Estampado"
+                        },
+                        "descricao": {
+                          "type": "string",
+                          "example": "Tipo de tecido"
                         }
                       }
                     }
                   }
                 }
               },
-              "descricaoDaMercadoria": {
+              "descricaoDaMercadoria\"": {
                 "type": "string",
                 "example": "PRODUTO GENERICO TESTE - GRADE COMPOSTA 34."
               },
               "quantidadeNaUnidadeEstatistica": {
-                "type": "string",
+                "type": "number",
                 "example": "1"
               },
               "pesoLiquidoTotal": {
-                "type": "string",
+                "type": "number",
                 "example": "49"
               },
               "unidadeComercializada": {
@@ -434,15 +424,15 @@
                 "example": "UN"
               },
               "valorDaMercadoriaNaCondicaoDeVenda": {
-                "type": "string",
+                "type": "number",
                 "example": "3000"
               },
               "valorDaMercadoriaNoLocalDeEmbarque": {
-                "type": "string",
+                "type": "number",
                 "example": "200,1"
               },
-              "valorDaMercadoriaNoLocalDeEmbarqueEmReais": {
-                "type": "string",
+              "valorDaMercadoriaNoLocalDeEmbarqueEmReais\"": {
+                "type": "number",
                 "example": "7143.55716"
               },
               "dataDeConversao": {
@@ -450,32 +440,26 @@
                 "example": "2018-05-01T05:57:00.000+0000"
               },
               "importador": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "nome": {
-                      "type": "string",
-                      "example": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"
-                    },
-                    "endereco": {
-                      "type": "string",
-                      "example": "RUA ELISA SILVERIO - 45 - CENTRO - EXTERIOR - 86800270 - RUSSIA"
-                    },
-                    "pais": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "codigo": {
-                            "type": "string",
-                            "example": "676"
-                          },
-                          "nome": {
-                            "type": "string",
-                            "example": "RUSSIA, FEDERACAO DA"
-                          }
-                        }
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "example": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"
+                  },
+                  "endereco": {
+                    "type": "string",
+                    "example": "RUA ELISA SILVERIO - 45 - CENTRO - EXTERIOR - 86800270 - RUSSIA"
+                  },
+                  "pais": {
+                    "type": "object",
+                    "properties": {
+                      "codigo": {
+                        "type": "integer",
+                        "example": "676"
+                      },
+                      "nome": {
+                        "type": "string",
+                        "example": "RUSSIA, FEDERACAO DA"
                       }
                     }
                   }
@@ -534,11 +518,11 @@
           "example": "null"
         },
         "exigencia": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "retificada": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "tratamentoAdministrativo": {
@@ -546,11 +530,11 @@
           "example": "DISPENSADO"
         },
         "tratamentoAdministrativoComImpedimentoDeEmbarque": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "tratamentoAdministrativoComRequerimentoDeInspecao": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "situacaoDaCarga": {
@@ -558,7 +542,7 @@
           "example": "null"
         },
         "bloqueadaParaEmbarque": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "tipoDeDocumentoFiscal": {
@@ -581,14 +565,14 @@
               "example": "CNPJ"
             },
             "estrangeiro": {
-              "type": "string",
+              "type": "boolean",
               "example": "false"
             },
             "nacionalidade": {
               "type": "object",
               "properties": {
                 "codigo": {
-                  "type": "string",
+                  "type": "integer",
                   "example": "105"
                 },
                 "nome": {
@@ -608,7 +592,7 @@
           }
         },
         "operadorEconomicoAutorizado": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "formaDeExportacao": {
@@ -620,14 +604,14 @@
           "example": "null"
         },
         "exportacaoConsorciada": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "paisDoImportador": {
           "type": "object",
           "properties": {
             "codigo": {
-              "type": "string",
+              "type": "integer",
               "example": "676"
             },
             "nome": {
@@ -641,22 +625,22 @@
           }
         },
         "pesoLiquidoTotal": {
-          "type": "string",
+          "type": "number",
           "example": "49"
         },
         "tratamentoPrioritario": {
-          "type": "string",
+          "type": "boolean",
           "example": "true"
         },
         "valorTotalDasMercadorias": {
-          "type": "string",
+          "type": "number",
           "example": "3000"
         },
         "moeda": {
           "type": "object",
           "properties": {
             "codigo": {
-              "type": "string",
+              "type": "integer",
               "example": "220"
             },
             "descricao": {
@@ -666,7 +650,7 @@
           }
         },
         "valorDasMercadoriasNoLocalDeEmbarque": {
-          "type": "object",
+          "type": "number",
           "example": "2000.1"
         },
         "contato": {
@@ -801,7 +785,7 @@
           "example": "null"
         },
         "usoObrigatorioDeTransito": {
-          "type": "string",
+          "type": "boolean",
           "example": "false"
         },
         "informacoesComplementares": {
@@ -814,7 +798,7 @@
             "type": "object",
             "properties": {
               "numero": {
-                "type": "string",
+                "type": "integer",
                 "example": "1"
               },
               "exportador": {
@@ -829,14 +813,14 @@
                     "example": "CNPJ"
                   },
                   "estrangeiro": {
-                    "type": "string",
+                    "type": "boolean",
                     "example": "false"
                   },
                   "nacionalidade": {
                     "type": "object",
                     "properties": {
                       "codigo": {
-                        "type": "string",
+                        "type": "integer",
                         "example": "105"
                       },
                       "nome": {
@@ -859,7 +843,7 @@
                 "type": "object",
                 "properties": {
                   "numeroDoItem": {
-                    "type": "string",
+                    "type": "integer",
                     "example": "1"
                   },
                   "chaveDeAcesso": {
@@ -867,11 +851,11 @@
                     "example": "35180500000000002720550900006843201000000009"
                   },
                   "serie": {
-                    "type": "string",
+                    "type": "integer",
                     "example": "90"
                   },
                   "numeroDoDocumento": {
-                    "type": "string",
+                    "type": "integer",
                     "example": "684320"
                   },
                   "finalidade": {
@@ -879,11 +863,11 @@
                     "example": "normal"
                   },
                   "notaFiscalEletronica": {
-                    "type": "string",
+                    "type": "boolean",
                     "example": "true"
                   },
                   "cfop": {
-                    "type": "string",
+                    "type": "integer",
                     "example": "7101"
                   },
                   "codigoDoProduto": {
@@ -911,13 +895,13 @@
                     "type": "array",
                     "items": {
                       "properties": {
-                        "conteudo": {
-                          "type": "string",
-                          "example": "estampado"
-                        },
                         "codigo": {
                           "type": "string",
                           "example": "001"
+                        },
+                        "conteudo": {
+                          "type": "string",
+                          "example": "estampado"
                         },
                         "descricao": {
                           "type": "string",
@@ -941,11 +925,11 @@
                 "example": "Descrição Complementar"
               },
               "quantidadeNaUnidadeEstatistica": {
-                "type": "string",
+                "type": "number",
                 "example": "1"
               },
               "pesoLiquidoTotal": {
-                "type": "string",
+                "type": "number",
                 "example": "49"
               },
               "unidadeComercializada": {
@@ -953,15 +937,15 @@
                 "example": "UN"
               },
               "quantidadeNaUnidadeComercializada": {
-                "type": "string",
+                "type": "number",
                 "example": "1"
               },
               "valorTotal": {
-                "type": "string",
+                "type": "number",
                 "example": "1000"
               },
               "percentualDeComissaoDoAgente": {
-                "type": "string",
+                "type": "number",
                 "example": "null"
               },
               "condicaoDeVenda": {
@@ -978,15 +962,15 @@
                 }
               },
               "valorDaMercadoriaNaCondicaoDeVenda": {
-                "type": "string",
+                "type": "number",
                 "example": "3000"
               },
               "valorDaMercadoriaNoLocalDeEmbarque": {
-                "type": "string",
+                "type": "number",
                 "example": "200,1"
               },
               "valorDaMercadoriaNoLocalDeEmbarqueEmReais": {
-                "type": "string",
+                "type": "number",
                 "example": "7143.55716"
               },
               "dataDeConversao": {
@@ -1008,7 +992,7 @@
                     "type": "object",
                     "properties": {
                       "codigo": {
-                        "type": "string",
+                        "type": "integer",
                         "example": "676"
                       },
                       "nome": {
@@ -1035,7 +1019,7 @@
                     "example": "null"
                   },
                   "possuiDepuracao": {
-                    "type": "string",
+                    "type": "boolean",
                     "example": "false"
                   }
                 }
@@ -1063,12 +1047,12 @@
                       "type": "object",
                       "properties": {
                         "codigo": {
-                          "type": "string",
+                          "type": "integer",
                           "example": "249"
                         },
                         "nome": {
                           "type": "string",
-                          "example": "ESTADIS UNIDOS"
+                          "example": "ESTADOS UNIDOS"
                         },
                         "nomeResumido": {
                           "type": "string",
@@ -1077,7 +1061,7 @@
                       }
                     },
                     "quantidadeNaUnidadeEstatistica": {
-                      "type": "string",
+                      "type": "number",
                       "example": "1"
                     }
                   }
@@ -1092,15 +1076,18 @@
                       "example": "null"
                     },
                     "orgao": {
-                      "type": "object",
-                      "example": "EXPORTACAO NORMAL"
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "null"
+                      }
                     },
                     "situacao": {
-                      "type": "object",
+                      "type": "string",
                       "example": "null"
                     },
                     "mensagem": {
-                      "type": "object",
+                      "type": "string",
                       "example": "null"
                     }
                   }
