@@ -30,7 +30,7 @@
   "schemes": [
     "https"
   ],
-  "basePath": "/datavalid-trial/datavalid",
+  "basePath": "/datavalid-trial",
   "paths": {
     "Descrição": {
       "head": {
