@@ -825,7 +825,7 @@
       "properties": {
         "cpf": {
           "type": "string",
-          "example": "05137518743"
+          "example": "06177961657"
         }
       },
       "required": [
@@ -837,7 +837,7 @@
       "properties": {
         "cnpj": {
           "type": "string",
-          "example": "34238864000168"
+          "example": "33683111000107"
         }
       },
       "required": [
