@@ -223,7 +223,7 @@
         }
       }
     },
-    "/biometria/vbeta1/validate/pf-face": {
+    "/vbeta1/validate/pf-face": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
@@ -259,7 +259,7 @@
         }
       }
     },
-    "/biometria/vbeta1/validate/pf-digitais": {
+    "/vbeta1/validate/pf-digitais": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
@@ -310,7 +310,7 @@
         }
       }
     },
-    "/biometria/vbeta1/validate/pf-imagem": {
+    "/vbeta1/validate/pf-imagem": {
       "post": {
         "tags": [
           "3 Métodos com Biometria"
