@@ -26,7 +26,7 @@
   },
   "basePath": "/nfe-trial/1",
   "paths": {
-    "/status": {
+    "/monitor/status": {
       "get": {
         "tags": [
           "Status"
