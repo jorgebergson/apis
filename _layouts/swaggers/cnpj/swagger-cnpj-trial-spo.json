@@ -22,6 +22,10 @@
   "paths": {
     "/cnpj/{ni}": {
       "get": {
+       "tags": [
+         "Consulta CNPJ"
+        ],
+        "summary": "Consulta o CNPJ",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
         "description": "Retorna os dados do Cadastro Nacional de Pessoa Jurídica (CNPJ)\n### NI para Degustação\n| NI |\n| ---------------------- |\n| 34238864000168 |\n| 54447820000155 |\n| 46768703000165 |\n| 31151791000184 |\n| 34428654000132 |\n| 06115832000130 |\n| 78078291000128 |\n| 52293473000128 |\n| 07781066000105 |\n| 60367129000164 |\n --------------------------     \n\n## Exemplo\n\n  #### Chamada\n  \n    [GET] https://gateway.apiserpro.serpro.gov.br/consulta-cnpj-trial/1/cnpj/34238864000168\n    \n  #### Retorno\n  \n    {\n       \"ni\":\"34238864000168\",\n       \"data_abertura\":\"1967-06-30\",\n       \"nome_empresarial\":\"SERVICO DE E-COMERCE LTDA\",\n       \"nome_fantasia\":\"E-COMERCE\",\n       \"cnae_principal\":{\n          \"codigo\":\"6204000\",\n          \"descricao\":\"Consultoria em e-comerce\"\n       },\n       \"natureza_juridica\":{\n          \"codigo\":\"2011\",\n          \"descricao\":\"Empresa Privada\"\n       },\n       \"endereco\":{\n          \"logradouro\":\"ST DE GRANDE AREA NORTE\",\n          \"numero\":\"Q.601\",\n          \"complemento\":\"LOTE V\",\n          \"cep\":\"70836900\",\n          \"bairro\":\"ASA NORTE\",\n          \"municipio\":\"BRASILIA\",\n          \"uf\":\"DF\"\n       },\n       \"situacao_especial\":\"\",\n       \"situacao_cadastral\":{\n          \"codigo\":\"2\",\n          \"data\":\"2004-05-22\",\n          \"motivo\":\"\"\n       },\n       \"orgao\":\"0110100\",\n       \"tipo_estabelecimento\":\"1\",\n       \"correio_eletronico\":\"\",\n       \"capital_social\":0,\n       \"porte\":\"05\",\n       \"telefones\":[\n          {\n             \"ddd\":\"061\",\n             \"numero\":\"4338456\"\n          }\n       ],\n       \"nome_orgao\":\"BRASILIA\",\n       \"ente_federativo\":\"BR\"\n    }        ",
