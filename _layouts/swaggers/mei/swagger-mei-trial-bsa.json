@@ -20,31 +20,6 @@
   },
   "basePath": "/consulta-mei-trial/api",
   "paths": {
-    "/status": {
-      "get": {
-        "tags": [
-          "MEI"
-        ],
-        "summary": "Apresenta o Status da API",
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/status\n#### Retorno\n    { \n      \"Mensagem informando que a api está ativa\"\n    }",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "Processamento ok"
-          },
-          "500": {
-            "description": "Erro interno do servidor"
-          }
-        }
-      }
-    },
     "/v1/mei/cnpjs/{cpf}": {
       "get": {
         "tags": [
@@ -177,6 +152,22 @@
           },
           "500": {
             "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
           }
         }
       }

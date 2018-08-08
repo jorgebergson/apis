@@ -30,7 +30,7 @@
   "schemes": [
     "https"
   ],
-  "basePath": "/datavalid",
+  "basePath": "/datavalid-entidade",
   "paths": {
     "Descrição": {
       "head": {
