@@ -2290,7 +2290,7 @@
 
 	header.major > :last-child {
 		border-bottom: solid 3px #525dd1;
-		display: inline-block;
+	 	display: inline-block;
 		margin: 0 0 2em 0;
 		padding: 0 0.75em 0.5em 0;
 	}
@@ -3800,6 +3800,10 @@
 		display: -ms-flex;
 		display: flex;
 		border-bottom: solid 5px #525dd1;
+		-moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+	  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+	  border-image: linear-gradient(to right, #3987ab 0%, #525dd1 100%);
+	  border-image-slice: 1;
 		padding: 6em 0 1em 0;
 		position: relative;
 	}

@@ -1,0 +1,73 @@
+{
+    "nome":"API Consulta CPF",
+    "subtitulo":"Acesse dados de pessoas físicas diretamente das bases da receita federal",
+    "descricao":"A API CPF fornece consulta de informações do registro de pessoa física dos contribuintes brasileiros, # podendo ## 'blah' \n\n\n ~~blah~~ \n\n\nblah **blah** [https://www.google.com.br]\n\n\n[https://www.google.com.br]: https://www.google.com  _blah_ blah  blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah ",
+    "informacoes":{
+        "idProducao":"consulta-cpf",
+        "idDegustacao":"consulta-cpf-trial",
+        "formatos":[ "JSON" ]
+    },
+    "operacoes":[
+        {
+            "path":"/v1/cpf/{ni}",
+            "id":"op1",
+            "descricao":"Consulta dados de Pessoa Física pelo Número de Inscrição(NI)",
+            "metodo":"GET",
+            "entrada":[
+                {
+                    "campo":"ni",
+                    "descricao":"Número de inscrição no Cadastro de Pessoa Física",
+                    "tipo":"string"
+                }
+            ],
+            "saida":[
+                {
+                    "campo":"ni",
+                    "descricao":"Número de inscrição no Cadastro de Pessoa Física",
+                    "tipo":"string"
+                },
+                {
+                    "campo":"nome",
+                    "descricao":"Nome da Pessoa Física",
+                    "tipo":"string"
+                },
+                {
+                    "campo":"situacao",
+                    "descricao":"Situação cadastral da Pessoa Física. Composto por código e descrição.",
+                    "tipo":"object"
+                }
+            ],
+            "exemplos":[
+                {
+                    "linguagem":"CURL",
+                    "exemplo":"curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/consulta-cpf/api/v1/11111111111\""
+                },
+                {
+                    "linguagem":"VBA",
+                    "exemplo":"Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/consulta-cpf/v1/cpf/11111111111\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+                },
+                {
+                    "linguagem":"Node.js",
+                    "exemplo":"var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/consulta-cpf/v1/cpf/11111111111',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
+                }                               
+            ],
+            "respostas":[
+                {
+                    "codigo":"200",
+                    "mensagem":"OK",
+                    "exemplo":"{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"
+                },
+                {
+                    "codigo":"400",
+                    "mensagem":"BAD REQUEST",
+                    "exemplo":"[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CPF 11111111111 inválido\"\n\t}\n]"
+                },
+                {
+                    "codigo":"404",
+                    "mensagem":"NOT FOUND",
+                    "exemplo":"{}"
+                }                                
+            ]
+        }
+    ]
+}
