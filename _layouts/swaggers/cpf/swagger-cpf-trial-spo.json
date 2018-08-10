@@ -20,7 +20,7 @@
   },
   "basePath": "/consulta-cpf-trial/1",
   "paths": {
-    "/cpf/{ni}": {
+    "/{ni}": {
       "get": {
         "tags": [
           "Consulta CPF"
