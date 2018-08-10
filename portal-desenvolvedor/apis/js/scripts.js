@@ -40,7 +40,7 @@ function getURLParameter(sParam)
 function makeHTTPRequest(panelResult, param1){
 
   $.ajax({
-    url: "https://apigateway.serpro.gov.br/consulta-cpf-trial/1/cpf/"+param1,
+    url: "https://apigateway.serpro.gov.br/consulta-cpf-trial/1/"+param1,
     type: 'GET',
     headers: {"Authorization": "Bearer 4e1a1858bdd584fdc077fb7d80f39283"},
     success: function(result, status, xhr){

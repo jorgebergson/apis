@@ -53,3 +53,20 @@ function makeOperationBlock(operacao){
 
     return ent;
 }
+
+function makeAPIList(apis){
+
+    var ent = '';
+    apis.forEach(api => {
+        ent += "<article>";
+        ent += "<div class=\"badge\"><a href=\"apis/apis.html?api=" + api.modelo + "\" style=\"border:none;\"><img src=\"./images/badges/" + api.imagem + ".png\"></a></img></div>";
+        ent += "<div class=\"content\">";
+        ent += "<h3><a href=\"apis/apis.html?api=" + api.modelo + "\" style=\"border:none;\">" + api.nome + "</a></h3>";
+        ent += "<p>" + api.descricao + "</p>";
+        ent += "</div>";
+        ent += "</article>";    
+    })
+
+    return ent;
+
+}
