@@ -58,7 +58,7 @@
             }
           },
           "206": {
-          "description": "Partial content, as informações foram retornadas, mas não completamente."
+            "description": "Partial content, as informações foram retornadas, mas não completamente."
           },
           "400": {
             "description": "O número de CPF informado não é válido."
@@ -71,6 +71,22 @@
           },
           "503": {
             "description": "Erro em algum serviço de integração utilizado pelo Consulta CPF"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
           }
         }
       }
