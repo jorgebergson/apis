@@ -22,6 +22,9 @@
   "paths": {
     "/cpf/{ni}": {
       "get": {
+        "tags": [
+          "Status"
+        ],
         "summary": "Consulta CPF",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
