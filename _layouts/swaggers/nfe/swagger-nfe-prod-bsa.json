@@ -26,22 +26,6 @@
   },
   "basePath": "/nfe/1",
   "paths": {
-    "/monitor/status": {
-      "get": {
-        "tags": [
-          "Status"
-        ],
-        "summary": "Verifica status da API",
-        "responses": {
-          "200": {
-            "description": "API funcionando"
-          },
-          "500": {
-            "description": "API fora do ar"
-          }
-        }
-      }
-    },
     "/{chave}": {
       "get": {
         "tags": [
@@ -81,6 +65,22 @@
           },
           "500": {
             "description": "Ocorreu algum erro interno na API."
+          }
+        }
+      }
+    },
+    "/monitor/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "API funcionando"
+          },
+          "500": {
+            "description": "API fora do ar"
           }
         }
       }
