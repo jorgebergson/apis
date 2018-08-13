@@ -393,22 +393,6 @@
           }
         }
       }
-    },
-    "/status": {
-      "get": {
-        "tags": [
-          "7 Status"
-        ],
-        "summary": "Verifica status da API",
-        "responses": {
-          "200": {
-            "description": "API funcionando"
-          },
-          "500": {
-            "description": "API fora do ar"
-          }
-        }
-      }
     }
   },
   "consumes": [
