@@ -20,7 +20,7 @@
   },
   "basePath": "/consulta-cnpj-trial/1",
   "paths": {
-    "/cnpj/{ni}": {
+    "/{ni}": {
       "get": {
        "tags": [
          "Consulta CNPJ"
