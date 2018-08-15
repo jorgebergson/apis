@@ -63,7 +63,7 @@
     "/v1/due/{numero}/{chave}": {
       "get": {
         "tags": [
-          "5 Métodos e Testes Consulta"
+          "4 Métodos e Testes Consulta"
         ],
         "summary": "Consulta a DUE - V1",
         "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|operadorEconomicoAutorizado|Indicador de autorização de operador econômico|boolean\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|boolean\n|moeda|Moeda da Operação|object\n|localDeDespacho|Localização do local do despacho|object\n|localDeEmbarque|Localização do local de embarque|object\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|boolean\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
@@ -99,7 +99,7 @@
     "/v2/due/{numero}/{chave}": {
       "get": {
         "tags": [
-          "5 Métodos e Testes Consulta"
+          "4 Métodos e Testes Consulta"
         ],
         "summary": "Consulta a DUE - V2",
         "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|situacao|Situação|string\n|canal|Meio|string\n|exigencia|Obrigatoriedade|boolean\n|retificada|Quando houve alterações|boolean\n|tratamentoAdministrativo|Se a declaração possui algum tratamento|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|tratamentoAdministrativoComRequerimentoDeInspecao|Se a declaração possui algum requerimento de inspeção|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|tipoDeDocumentoFiscal|Qual o documento informado|string\n|motivoDeDispensaDeNotaFiscal|O motivo da dispensa da NF|string\n|Declarante|Dados como nome, nacionalidade e documentação|object\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico|boolean\n|formaDeExportacao|A maneira como o produto será exportado|string\n|situacaoEspecial|Se existe alguma condição especial|string\n|exportacaoConsorciada|Se a exportação é consorciada|boolean\n|paisDoImportador|Dados como nome, código e nome resumido do pais importador|object\n|pesoLiquidoTotal|Peso liquido total|number\n|tratamentoPrioritario|Se há tramento prioritario|boolean\n|valorTotalDasMercadorias|Valor total|number\n|moeda|Dados como código e descrição da moeda|object\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque|number\n|contato|Dados como nome, fone e email|object\n|localDeDespacho|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|localDeEmbarque|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|viasEspecialDeTransporte|Se há alguma via especial de transporte|string\n|usoObrigatorioDeTransito|Se há obrigatoriedade no trânsito|boolean\n|informacoesComplementares|Quaisquer informações adicionais|string\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
@@ -135,7 +135,7 @@
     "/status": {
       "get": {
         "tags": [
-          "4 Status"
+          "5 Status"
         ],
         "summary": "Verifica status da API",
         "responses": {
