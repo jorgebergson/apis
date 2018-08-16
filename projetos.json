@@ -37,8 +37,7 @@
         "logo": "images/datavalid_basico.png",
         "style": "width: 114px;",
 	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
-	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json
-",
+	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/basico/vbeta1",
 	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
     },
