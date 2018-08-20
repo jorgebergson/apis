@@ -40,7 +40,7 @@
 	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/basico/vbeta1",
 	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo.json"
-    },
+    }
     
 ]
 }
