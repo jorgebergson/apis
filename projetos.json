@@ -40,8 +40,8 @@
 	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/basico/vbeta1",
 	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
-},
-{
+    },
+    {
         "api": "datavalid",
         "nome": "Datavalid Biometria",
         "logo": "images/datavalid_biometria.png",
@@ -51,5 +51,6 @@
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
 	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
 }
+
 ]
 }
