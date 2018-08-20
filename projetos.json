@@ -33,14 +33,23 @@
     },
     {
         "api":"datavalid",
-        "nome": "Datavalid Plano Novo",
-        "logo": "images/datavalid.png",
+        "nome": "Datavalid Básico",
+        "logo": "images/datavalid_basico.png",
         "style": "width: 114px;",
 	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
-	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
+	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/basico/vbeta1",
-	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo.json"
-    }
-    
+	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
+},
+{
+        "api": "datavalid",
+        "nome": "Datavalid Biometria",
+        "logo": "images/datavalid_biometria.png",
+        "style": "width: 114px;",
+	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
+	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
+	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
+	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
+}
 ]
 }
