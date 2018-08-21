@@ -53,7 +53,7 @@
 },
     {
         "api": "datavalid",
-        "nome": "Datavalid - Plano Novo (Entidades)",
+        "nome": "Datavalid - Plano Novo Entidades",
         "logo": "images/datavalid_entidades-de-classe.png",
         "style": "width: 114px;",
 	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
