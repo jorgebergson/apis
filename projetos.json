@@ -33,8 +33,8 @@
     },
     {
         "api":"datavalid",
-        "nome": "Datavalid Básico",
-        "logo": "images/datavalid_basico.png",
+        "nome": "Datavalid - Plano Antigo",
+        "logo": "images/datavalid_plano-antigo.png",
         "style": "width: 114px;",
 	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
 	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
@@ -43,14 +43,23 @@
     },
     {
         "api": "datavalid",
-        "nome": "Datavalid Biometria",
-        "logo": "images/datavalid_biometria.png",
+        "nome": "Datavalid - Plano Novo",
+        "logo": "images/ddatavalid_plano-novo.png",
         "style": "width: 114px;",
 	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
-	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
+	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
 	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
-}
-
+	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo.json"
+},
+    {
+        "api": "datavalid",
+        "nome": "Datavalid - Plano Novo (Entidades)",
+        "logo": "images/datavalid_entidades-de-classe.png",
+        "style": "width: 114px;",
+	"endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
+	"urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
+	"endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
+	"urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
+      }
 ]
 }
