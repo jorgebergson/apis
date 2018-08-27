@@ -39,10 +39,21 @@ function getURLParameter(sParam)
 
 function makeHTTPRequest(panelResult, param1){
 
+  var paramValues = [];
+  
+  $('div#modalOp :input').each(function(){
+    paramValues.push($(this).value);
+  });
+
+  var params = '';
+  paramValues.forEach(param => {
+    params += "/" + param;
+  });
+
   $.ajax({
-    url: "https://apigateway.serpro.gov.br/consulta-cpf-trial/1/"+param1,
+    url: "https://" + gatewayBSA + "/consulta-cpf-trial/1/"+params,
     type: 'GET',
-    headers: {"Authorization": "Bearer 4e1a1858bdd584fdc077fb7d80f39283"},
+    headers: {"Authorization": "Bearer " + bearerTrial},
     success: function(result, status, xhr){
       panelResult.getElementsByClassName("resultCode")[0].textContent = xhr.status;
       panelResult.getElementsByClassName("resultPanelCode")[0].textContent = JSON.stringify(result, null, "\t");

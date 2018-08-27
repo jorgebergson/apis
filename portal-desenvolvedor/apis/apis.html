@@ -25,6 +25,7 @@
 		<script src="../assets/js/main.js"></script>
 		<script>
 				$(document).ready( function(){
+
 					var api = getQueryStringParams('api');
 					if(api){
 						api = "modelos/" + api + ".json";
@@ -51,7 +52,56 @@
 					else{
 						$('#content').html("<b>Nenhuma API especificada</b>");
 					}
+				// Get the modal
+				var modal = document.getElementById('modalop1');
 
+				// Get the button that opens the modal
+				var btn = document.getElementById('btnTestop1');
+
+				// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+
+				// When the user clicks on the button, open the modal
+				btn.onclick = function() {
+				    modal.style.display = "block";
+				}
+
+				// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+				    modal.style.display = "none";
+				}
+
+				// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+				    if (event.target == modal) {
+				        modal.style.display = "none";
+				    }
+				}
+
+
+					bearer = getURLParameter('bearer');
+					if(bearer == undefined) {
+						bearer = bearerTrial;
+						environment = environment + "-trial";
+						amb = "Degustação";
+					}
+
+					gateway = getURLParameter('environment');
+					if(gateway == undefined) {
+						gateway = gatewayBSA;
+					}
+					else{
+						if(gateway == "spo"){
+							gateway = gatewaySPO;
+						}
+						else{
+							gateway = gatewayBSA;
+						}
+					}
+
+					document.getElementById('bearer').textContent = bearer;
+					document.getElementById('url').textContent = "https://" + gateway + "/" + environment;
+					document.getElementById('amb').textContent = amb;
 
 				});
 		</script>

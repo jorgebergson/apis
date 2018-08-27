@@ -4,7 +4,25 @@ function makeOperationBlock(operacao){
     ent += "<h2 id=\"" + operacao.id + "\">"+operacao.descricao+"</h2>";
     ent += "</header>";
     ent += "<div class=\"content\">";
-    ent += "<p class=\"" + operacao.metodo + "Operation\"><span class=\"" + operacao.metodo + "Label\">" + operacao.metodo + "</span><strong> " + operacao.path + " </strong></p>";
+    ent += "<p class=\"" + operacao.metodo + "Operation\"><span class=\"" + operacao.metodo + "Label\">" + operacao.metodo + "</span><strong> " + operacao.path + " </strong><button id=\"btnTest" + operacao.id + "\" class=\"testeAPI\">Faça o Teste</button></p>";
+    ent += "<div id=\"modal" + operacao.id + "\" class=\"modal\">";
+    ent += "<div class=\"modal-content\">";
+    ent += "<span class=\"close\" onmouseup=\"clearFieldsResult(document.getElementById('resultPanel" + operacao.id + "'))\">&times;</span>";
+    ent += "<h3>"+ operacao.descricao + "</h3>";
+    ent += "<p><strong>Bearer:</strong> <span class=\"bearer\"></span><br/>";
+    ent += "<strong>URL:</strong> <span id=\"url" + operacao.id + "\"></span><br/>";
+    ent += "<strong>Ambiente:</strong><span class=\"amb\"></span></p>";
+    ent += "<h3>Parâmetros</h3>";
+    ent += "<div id=\"modalOp\" class=\"box\">";
+    var parametros = [];
+    operacao.entrada.forEach(entrada => {
+        parametros.push(entrada.campo);
+        ent += entrada.campo + ": <input id=\"param" + entrada.campo + operacao.id + "\"></input><br/>";
+    });        
+    ent += "<center><button id=\"req" + operacao.id + "\" onclick=\"makeHTTPRequest(document.getElementById('resultPanel" + operacao.id + "'), document.getElementById('param" + operacao.id + "').value)\">Executar</button></center>";
+    ent += "</div>";
+    ent += "</div>";
+    ent += "</div>";
     ent += "<h3>Informações de entrada e saída</h3>";
     ent += "<div class=\"tab\">";
     ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'entrada"+ operacao.id +"','Data" + operacao.id + "')\">Entrada</button>";
