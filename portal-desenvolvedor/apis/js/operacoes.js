@@ -4,7 +4,7 @@ function makeOperationBlock(operacao){
     ent += "<h2 id=\"" + operacao.id + "\">"+operacao.descricao+"</h2>";
     ent += "</header>";
     ent += "<div class=\"content\">";
-    ent += "<p class=\"" + operacao.metodo + "Operation\"><span class=\"" + operacao.metodo + "Label\">" + operacao.metodo + "</span><strong> " + operacao.path + " </strong><button id=\"btnTest" + operacao.id + "\" class=\"testeAPI\">Faça o Teste</button></p>";
+    ent += "<p class=\"" + operacao.metodo + "Operation\"><span class=\"" + operacao.metodo + "Label\">" + operacao.metodo + "</span><strong> " + operacao.path + " </strong></p>";
     ent += "<div id=\"modal" + operacao.id + "\" class=\"modal\">";
     ent += "<div class=\"modal-content\">";
     ent += "<span class=\"close\" onmouseup=\"clearFieldsResult(document.getElementById('resultPanel" + operacao.id + "'))\">&times;</span>";
