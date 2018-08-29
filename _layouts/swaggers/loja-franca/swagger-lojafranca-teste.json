@@ -130,19 +130,7 @@
   ],
   "definitions": {
     "EntradaCota": {
-      "type": "object",
-      "properties": {
-        "cpf": {
-          "type": "string",
-          "description": "CPF do Viajante",
-          "example": "00000000191"
-        },
-        "dataNascimento": {
-          "type": "string",
-          "description": "Data de Nascimento do Viajante",
-          "example": "1980-01-01"
-        }
-      }
+      "example": "ewogICJzZXJ2aWNvIjogInZpYWphbnRlL2NvdGEiLAogICJkYWRvcyI6IHsKICAgICJjcGYiOiAiMDAwMDAwMDAxOTEiLAogICAgImRhdGFOYXNjaW1lbnRvIjogIjE5ODAtMDEtMDEiCiAgfQp9"
     },
     "SaidaCota": {
       "type": "object",
