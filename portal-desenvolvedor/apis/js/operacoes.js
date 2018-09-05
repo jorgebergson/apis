@@ -27,7 +27,7 @@ function makeOperationBlock(operacao){
     ent += "<div class=\"tab\">";
     ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'entrada"+ operacao.id +"','Data" + operacao.id + "')\">Entrada</button>";
     ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'saida"+ operacao.id +"','Data" + operacao.id + "')\">Saída</button>";
-
+    ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'dadosTeste"+ operacao.id +"','Data" + operacao.id + "')\">dadosTeste</button>";
     ent += "</div>";
     ent += "<div id=\"entrada"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Entrada</h4>";
