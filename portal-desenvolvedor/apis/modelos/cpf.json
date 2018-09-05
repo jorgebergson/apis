@@ -3,10 +3,10 @@
   "subtitulo": "Acesse dados de pessoas físicas diretamente das bases da receita federal",
   "descricao": "A API CPF fornece consulta aos dados do CPF de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro.",
   "informacoes": {
-    "idProducao": "consulta-cpf",
-    "idDegustacao": "consulta-cpf-trial",
+    "idProducao": " consulta-cpf",
+    "idDegustacao": " consulta-cpf-trial",
     "formatos": [
-      "JSON"
+      " JSON"
     ]
   },
   "operacoes": [
@@ -31,6 +31,17 @@
         {
           "campo": "nome",
           "descricao": "Nome da Pessoa Física",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacao",
+          "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
+          "tipo": "object"
+        },
+      "CPF's para teste": [
+        {
+          "campo": "ni",
+          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
           "tipo": "string"
         },
         {
