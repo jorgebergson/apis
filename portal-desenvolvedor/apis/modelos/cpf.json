@@ -37,7 +37,8 @@
           "campo": "situacao",
           "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
           "tipo": "object"
-        },
+        }
+      ],
       "CPF's para teste": [
         {
           "campo": "ni",
