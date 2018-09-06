@@ -39,9 +39,9 @@ function makeOperationBlock(operacao){
     ent += "</div>";
     ent += "<div id=\"saida"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Saída</h4>";
-    opCampos = '';
+    var opCampos = '';
     operacao.saida.forEach(saida => {
-        opCampos += "<tr><td>" + saida.campo + "</td><td>" + saida.descricao + "</td><td>" + saida.tipo + "</td></tr>";
+    opCampos += "<tr><td>" + saida.campo + "</td><td>" + saida.descricao + "</td><td>" + saida.tipo + "</td></tr>";
     });
     ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
 
@@ -53,8 +53,10 @@ function makeOperationBlock(operacao){
     operacao.teste.forEach(teste => {
         opCampos += "<tr><td>" + teste.cpf + "</td><td>" + teste.situacao + "</td><td>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>cpf</th><th>situacao</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>CPF</th><th>Situacao</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    
 
+    
     ent += "</div>";
     ent += "<br/><h3>Exemplos de requisições</h3>";
     var opLinguagens = '';
