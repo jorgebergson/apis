@@ -9,6 +9,7 @@
       " JSON"
     ]
   },
+  "SituacaoCadastralCPF": "https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf",
   "operacoes": [
     {
       "path": "/v1/cpf/{ni}",
