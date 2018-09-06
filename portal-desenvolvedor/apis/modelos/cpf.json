@@ -42,7 +42,7 @@
       "teste":  [
         {
           "cpf": "51593432100",
-          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
+          "situacao": "Regular",
           "tipo": "object"
         },
         {
