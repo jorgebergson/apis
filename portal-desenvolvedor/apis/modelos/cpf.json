@@ -41,12 +41,12 @@
       ],
       "teste":  [
         {
-          "campo": "cpf",
+          "cpf": "51593432100",
           "descricao": "Número de inscrição no Cadastro de Pessoa Física",
           "tipo": "object"
         },
         {
-          "campo": "situacao",
+          "Situação": "Regular",
           "descricao": "Nome da Pessoa Física",
           "tipo": "object"
         },
