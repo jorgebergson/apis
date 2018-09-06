@@ -41,12 +41,60 @@
       ],
       "teste":  [
         {
-          "cpf": "51593432100",
-          "situacao": "Regular"
+          "cpf": "40442820135",
+          "situacao": "CPF Regular"
         },
         {
-          "cpf": "65547494568",
-          "situacao": "Irregular"
+          "cpf": "63017285995",
+          "situacao": "CPF Regular"
+        },
+        {
+          "cpf": "40532176871",
+          "situacao": "Suspensa"
+        },
+        {
+          "cpf": "47123586964",
+          "situacao": "Suspensa"
+        },
+        {
+          "cpf": "07691852312",
+          "situacao": "Pendente de Regularização"
+        },
+        {
+          "cpf": "10975384600",
+          "situacao": "Pendente de Regularização"
+        },
+        {
+          "cpf": "01648527949",
+          "situacao": "Cancelada por Multiplicidade"
+        },
+        {
+          "cpf": "47893062592",
+          "situacao": "Cancelada por Multiplicidade"
+        },
+        {
+          "cpf": "98302514705",
+          "situacao": "Nula"
+        },
+        {
+          "cpf": "18025346790",
+          "situacao": "Nula"
+        },
+        {
+          "cpf": "64913872591",
+          "situacao": "Cancelada de Ofício"
+        },
+        {
+          "cpf": "52389071686",
+          "situacao": "Cancelada de Ofício"
+        },
+        {
+          "cpf": "05137518743",
+          "situacao": "Titular Falecido"
+        },
+        {
+          "cpf": "08849979878",
+          "situacao": "Titular Falecido"
         }
       ],
       "exemplos": [
