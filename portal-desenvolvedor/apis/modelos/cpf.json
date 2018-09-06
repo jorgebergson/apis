@@ -129,7 +129,7 @@
         {
           "codigo": "206",
           "mensagem": "OK",
-          "exemplo": "O retorno é muito parecido com os dados do código 200, porém algum dos campos não é apresentado."
+          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio."
         },
         {
           "codigo": "400",
