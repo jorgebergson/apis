@@ -48,12 +48,12 @@ function makeOperationBlock(operacao){
 
     ent += "</div>";
     ent += "<div id=\"teste"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
-    ent += "<h4>CPF's para teste</h4>";
+    ent += "<h4>CPF's para Teste</h4>";
     var opCampos = '';
     operacao.teste.forEach(teste => {
-        opCampos += "<tr><td>" + teste.campo + "</td><td>" + teste.descricao + "</td><td>" + teste.tipo + "</td></tr>";
+        opCampos += "<tr><td>" + teste.cpf + "</td><td>" + teste.situacao + "</td><td>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descrição</th><th>Tipo</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>CPF</th><th>Situação</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
 
     ent += "</div>";
     ent += "<br/><h3>Exemplos de requisições</h3>";
