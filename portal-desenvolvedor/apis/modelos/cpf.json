@@ -41,14 +41,10 @@
       ],
       "teste": [
         {
-          "campo": "ni",
-          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
-          "tipo": "string"
+          "CPF": "51593432100",
         },
         {
-          "campo": "situacao",
-          "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
-          "tipo": "object"
+          "Situacao": "Regularizada",
         }
       ],
       "exemplos": [
