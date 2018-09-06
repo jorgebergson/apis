@@ -47,13 +47,11 @@
         },
         {
           "cpf": "65547494568",
-          "situacao": "Irregular",
-          "tipo": "object"
+          "situacao": "Irregular"
         },
         {
           "campo": "situacao",
-          "descricao": "Nome da Pessoa Física",
-          "tipo": "object"
+          "descricao": "Nome da Pessoa Física"
         }
       ],
       "exemplos": [
