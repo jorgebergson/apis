@@ -49,6 +49,11 @@
           "campo": "situacao",
           "descricao": "Nome da Pessoa Física",
           "tipo": "object"
+        },
+        {
+          "campo": "situacao",
+          "descricao": "Nome da Pessoa Física",
+          "tipo": "object"
         }
       ],
       "exemplos": [
