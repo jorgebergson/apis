@@ -39,7 +39,7 @@ function makeOperationBlock(operacao){
     ent += "</div>";
     ent += "<div id=\"saida"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Saída</h4>";
-    var opCampos = '';
+    opCampos = '';
     operacao.saida.forEach(saida => {
     opCampos += "<tr><td>" + saida.campo + "</td><td>" + saida.descricao + "</td><td>" + saida.tipo + "</td></tr>";
     });
@@ -49,7 +49,7 @@ function makeOperationBlock(operacao){
     ent += "</div>";
     ent += "<div id=\"teste"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>CPF's para Teste</h4>";
-    var opCampos = '';
+    opCampos = '';
     operacao.teste.forEach(teste => {
         opCampos += "<tr><td>" + teste.cpf + "</td><td>" + teste.situacao + "</td><td>";
     });
