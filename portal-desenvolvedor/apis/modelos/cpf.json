@@ -46,8 +46,8 @@
           "tipo": "object"
         },
         {
-          "Situação": "Regular",
-          "descricao": "Nome da Pessoa Física",
+          "cpf": "65547494568",
+          "situacao": "Irregular",
           "tipo": "object"
         },
         {
