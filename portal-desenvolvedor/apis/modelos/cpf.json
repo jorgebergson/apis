@@ -42,16 +42,11 @@
       "teste":  [
         {
           "cpf": "51593432100",
-          "situacao": "Regular",
-          "tipo": "object"
+          "situacao": "Regular"
         },
         {
           "cpf": "65547494568",
           "situacao": "Irregular"
-        },
-        {
-          "campo": "situacao",
-          "descricao": "Nome da Pessoa Física"
         }
       ],
       "exemplos": [
