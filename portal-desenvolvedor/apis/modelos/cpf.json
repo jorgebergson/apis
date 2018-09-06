@@ -49,11 +49,6 @@
           "campo": "situacao",
           "descricao": "Nome da Pessoa Física",
           "tipo": "string"
-        },
-        {
-          "campo": "situacao",
-          "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
-          "tipo": "object"
         }
       ],
       "exemplos": [
