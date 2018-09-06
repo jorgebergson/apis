@@ -39,7 +39,7 @@
           "tipo": "object"
         }
       ],
-      "CPF's para teste": [
+      "dados teste": [
         {
           "campo": "ni",
           "descricao": "Número de inscrição no Cadastro de Pessoa Física",
