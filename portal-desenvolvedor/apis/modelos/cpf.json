@@ -10,7 +10,7 @@
     ]
   },
   "SituacaoCadastralCPF": {
-    "https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf"
+    "path": "https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf"
   },
   "operacoes": [
     {
