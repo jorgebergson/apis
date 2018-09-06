@@ -129,7 +129,7 @@
         {
           "codigo": "206",
           "mensagem": "OK",
-          "exemplo": "Partial content, as informações foram retornadas, mas não completamente."
+          "exemplo": "O retorno é muito parecido com os dados do código 200, porém algum dos campos não é apresentado."
         },
         {
           "codigo": "400",
