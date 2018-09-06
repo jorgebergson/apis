@@ -9,7 +9,7 @@
       " JSON"
     ]
   },
-  "status cpf": "href="<<https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf>>">download</a>",
+  "status cpf": "<a href=https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf>download</a>",
     "operacoes": [
     {
       "path": "/v1/cpf/{ni}",
