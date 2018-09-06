@@ -27,7 +27,7 @@ function makeOperationBlock(operacao){
     ent += "<div class=\"tab\">";
     ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'entrada"+ operacao.id +"','Data" + operacao.id + "')\">Entrada</button>";
     ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'saida"+ operacao.id +"','Data" + operacao.id + "')\">Saída</button>";
-    ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'teste"+ operacao.id +"','Data" + operacao.id + "')\">teste</button>";
+    ent += "<button class=\"tablinksData"+ operacao.id +" tab\" onclick=\"openTab(event, 'teste"+ operacao.id +"','Data" + operacao.id + "')\">Teste</button>";
     ent += "</div>";
     ent += "<div id=\"entrada"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Entrada</h4>";
@@ -53,7 +53,7 @@ function makeOperationBlock(operacao){
     operacao.teste.forEach(teste => {
         opCampos += "<tr><td>" + teste.cpf + "</td><td>" + teste.situacao + "</td><td>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>CPF</th><th>Situação</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>cpf</th><th>situacao</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
 
     ent += "</div>";
     ent += "<br/><h3>Exemplos de requisições</h3>";
