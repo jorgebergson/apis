@@ -41,10 +41,10 @@
       ],
       "teste": [
         {
-          "CPF": "51593432100",
+          "cpf": "51593432100",
         },
         {
-          "Situacao": "Regularizada",
+          "situacao": "Regularizada",
         }
       ],
       "exemplos": [
