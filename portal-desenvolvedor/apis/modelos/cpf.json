@@ -43,10 +43,12 @@
         {
           "campo": "cpf",
           "descricao": "Número de inscrição no Cadastro de Pessoa Física",
+          "tipo": "object"
         },
         {
           "campo": "situacao",
           "descricao": "Nome da Pessoa Física",
+          "tipo": "object"
         }
       ],
       "exemplos": [
