@@ -1,0 +1,194 @@
+{
+  "nome": "API Consulta CNPJ",
+  "subtitulo": "Acesse dados de pessoas físicas diretamente das bases da receita federal",
+  "descricao": "A API CNPJ fornece consulta aos dados do CNPJ de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro.",
+  "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Detalhamento-CNPJ.pdf",
+  "informacoes": {
+    "idProducao": " consulta-cnpj",
+    "idDegustacao": " consulta-cnpj-trial",
+    "formatos": [
+      " JSON"
+    ]
+  },
+    "operacoes": [
+    {
+      "path": "/v1/cnpj/{ni}",
+      "id": "op1",
+      "descricao": "Consulta dados de Pessoa Jurídica pelo Número de Inscrição(NI)",
+      "metodo": "GET",
+      "entrada": [
+        {
+          "campo": "ni",
+          "descricao": "Número de inscrição no Cadastro Nacional de Pessoa Jurídica",
+          "tipo": "string"
+        }
+      ],
+      "saida": [
+        {
+          "campo": "ni",
+          "descricao": "Número de inscrição no Cadastro Nacional de Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "data_abertura",
+          "descricao": "Data de abertura da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "nome_empresarial",
+          "descricao": "Nome empresarial da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "nome_fantasia",
+          "descricao": "Nome fantasia da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "cnae_principal",
+          "descricao": "Informação da Classificação Nacional de Atividades Econômicas (CNAE) Principal da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "natureza_juridica",
+          "descricao": "Informação da Natureza Jurídica da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "endereco",
+          "descricao": "Endereço da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacao_especial",
+          "descricao": "Situação Especial da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacao_cadastral",
+          "descricao": "Situação Cadastral da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "orgao",
+          "descricao": "Órgão da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "tipo_estabelecimento",
+          "descricao": "Tipo de Estabelecimento da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "correio_eletronico",
+          "descricao": "Correio eletrônico (e-mail) da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "capital_social",
+          "descricao": "Capital Social da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "porte",
+          "descricao": "Porte da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "telefones",
+          "descricao": "Números de Telefone da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "nome_orgao",
+          "descricao": "Nome do Órgão da Pessoa Jurídica",
+          "tipo": "string"
+        },
+        {
+          "campo": "ente_federativo",
+          "descricao": "Ente Federativo da Pessoa Jurídica",
+          "tipo": "string"
+        }
+      ],
+      "teste":  [
+        {
+          "cnpj": "34238864000168",
+          "situacao": "CPF Regular"
+        },
+        {
+          "cnpj": "54447820000155",
+          "situacao": ""
+        },
+        {
+          "cnpj": "46768703000165",
+          "situacao": ""
+        },
+        {
+          "cnpj": "31151791000184",
+          "situacao": ""
+        },
+        {
+          "cnpj": "34428654000132",
+          "situacao": ""
+        },
+        {
+          "cnpj": "06115832000130",
+          "situacao": ""
+        },
+        {
+          "cnpj": "78078291000128",
+          "situacao": ""
+        },
+        {
+          "cnpj": "52293473000128",
+          "situacao": ""
+        },
+        {
+          "cnpj": "07781066000105",
+          "situacao": ""
+        },
+        {
+          "cnpj": "60367129000164",
+          "situacao": ""
+        }
+      ],
+      "exemplos": [
+        {
+          "linguagem": "CURL",
+          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/consulta-cpf/api/v1/11111111111\""
+        },
+        {
+          "linguagem": "VBA",
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/consulta-cpf/v1/cpf/11111111111\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+        },
+        {
+          "linguagem": "Node.js",
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/consulta-cpf/v1/cpf/11111111111',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
+        }
+      ],
+      "respostas": [
+        {
+          "codigo": "200",
+          "mensagem": "OK",
+          "exemplo": "{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"
+       
+        },
+        {
+          "codigo": "206",
+          "mensagem": "OK",
+          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio."
+        },
+        {
+          "codigo": "400",
+          "mensagem": "BAD REQUEST",
+          "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CPF 11111111111 inválido\"\n\t}\n]"
+        },
+        {
+          "codigo": "404",
+          "mensagem": "NOT FOUND",
+          "exemplo": "{}"
+        }
+      ]
+    }
+  ]
+}
