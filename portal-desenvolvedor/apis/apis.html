@@ -37,6 +37,7 @@
 							$('#apiSubtitulo').append(json.subtitulo);
 							var converter = new showdown.Converter();
 							$('#apiDescricao').append(converter.makeHtml(json.descricao));
+							$('#apiNegocio').prop('href', json.linkInfoNegocio)
 							$('#apiIdProducao').append(json.informacoes.idProducao);
 							$('#apiIdDegustacao').append(json.informacoes.idDegustacao);
 							$('#apiFormatos').append(json.informacoes.formatos);
@@ -195,9 +196,9 @@
 											<li><strong>Id (Degustação):</strong><span id="apiIdDegustacao"></span></li>
 											<li><strong>Formatos de saída disponíveis:</strong><span id="apiFormatos"></span></li>
 										</ul>
-										<h3>CPF</h3>
+										<h3>Negócio</h3>
 										<ul>
-											<li><strong>Veja as situações possíveis do CPF:</strong><span id><a href="https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf">Download</a></span></li>
+											<li><strong>Informaçes de negócio da API:</strong><a id= "apiNegocio" href="">Download</a></li>
 										</ul>
 										
 										<h3>A <span id="apiNome2"></span> oferece as seguintes requisições:</h3>
