@@ -2,6 +2,7 @@
   "nome": "API Consulta CPF",
   "subtitulo": "Acesse dados de pessoas físicas diretamente das bases da receita federal",
   "descricao": "A API CPF fornece consulta aos dados do CPF de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro.",
+  "linkInfoNegocio": "https://github.com/devserpro/apis/blob/master/portal-desenvolvedor/apis/documentos/SituacaoCadastralCPF.pdf",
   "informacoes": {
     "idProducao": " consulta-cpf",
     "idDegustacao": " consulta-cpf-trial",
