@@ -53,7 +53,7 @@ function makeOperationBlock(operacao){
     operacao.teste.forEach(teste => {
         opCampos += "<tr><td>" + teste.cpf + "</td><td>" + teste.situacao + "</td></tr>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>CPF (NI)</th><th>Situação Cadastral</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>NI</th><th>Situação Cadastral</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     
 
     
