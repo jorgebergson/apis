@@ -42,67 +42,67 @@
       ],
       "teste":  [
         {
-          "cpf": "40442820135",
+          "ni": "40442820135",
           "situacao": "CPF Regular"
         },
         {
-          "cpf": "63017285995",
+          "ni": "63017285995",
           "situacao": "CPF Regular"
         },
         {
-          "cpf": "91708635203",
+          "ni": "91708635203",
           "situacao": "CPF Regular"
         },
         {
-          "cpf": "58136053391",
+          "ni": "58136053391",
           "situacao": "CPF Regular"
         },
         {
-          "cpf": "40532176871",
+          "ni": "40532176871",
           "situacao": "Suspensa"
         },
         {
-          "cpf": "47123586964",
+          "ni": "47123586964",
           "situacao": "Suspensa"
         },
         {
-          "cpf": "07691852312",
+          "ni": "07691852312",
           "situacao": "Pendente de Regularização"
         },
         {
-          "cpf": "10975384600",
+          "ni": "10975384600",
           "situacao": "Pendente de Regularização"
         },
         {
-          "cpf": "01648527949",
+          "ni": "01648527949",
           "situacao": "Cancelada por Multiplicidade"
         },
         {
-          "cpf": "47893062592",
+          "ni": "47893062592",
           "situacao": "Cancelada por Multiplicidade"
         },
         {
-          "cpf": "98302514705",
+          "ni": "98302514705",
           "situacao": "Nula"
         },
         {
-          "cpf": "18025346790",
+          "ni": "18025346790",
           "situacao": "Nula"
         },
         {
-          "cpf": "64913872591",
+          "ni": "64913872591",
           "situacao": "Cancelada de Ofício"
         },
         {
-          "cpf": "52389071686",
+          "ni": "52389071686",
           "situacao": "Cancelada de Ofício"
         },
         {
-          "cpf": "05137518743",
+          "ni": "05137518743",
           "situacao": "Titular Falecido"
         },
         {
-          "cpf": "08849979878",
+          "ni": "08849979878",
           "situacao": "Titular Falecido"
         }
       ],
