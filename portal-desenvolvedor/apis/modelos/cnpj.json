@@ -170,7 +170,6 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"
           "exemplo": {
    "ni":"34238864000168",
    "data_abertura":"1967-06-30",
