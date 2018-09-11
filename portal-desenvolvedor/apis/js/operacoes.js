@@ -33,7 +33,7 @@ function makeOperationBlock(operacao){
     ent += "<h4>Dados de Entrada</h4>";
     var opCampos = '';
     operacao.entrada.forEach(entrada => {
-        opCampos += "<tr><td>" + entrada.campo + "</td><td>" + entrada.simeiteste + "</td><td>" + entrada.tipo + "</td></tr>";
+        opCampos += "<tr><td>" + entrada.campo + "</td><td>" + entrada.descricao + "</td><td>" + entrada.tipo + "</td></tr>";
     });
     ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>SimeiTeste</th><th>Tipo</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     ent += "</div>";
