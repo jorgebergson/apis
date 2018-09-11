@@ -51,9 +51,9 @@ function makeOperationBlock(operacao){
     ent += "<h4>Dados de Teste</h4>";
     opCampos = '';
     operacao.teste.forEach(teste => {
-        opCampos += "<tr><td>" + teste.nis + "</td><td>" + teste.situacao + "</td></tr>";
+        opCampos += "<tr><td>" + teste.numero + "</td><td>" + teste.situacao + "</td></tr>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>NIs</th><th>Situação Cadastral</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>Numero</th><th>Situação Cadastral</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     
 
     
