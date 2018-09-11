@@ -113,7 +113,7 @@
       "teste":  [
         {
           "cnpj": "34238864000",
-          "situacao": "Ativa"
+          "situacao": "Desativada"
         },
         {
           "cnpj": "54447820000",
