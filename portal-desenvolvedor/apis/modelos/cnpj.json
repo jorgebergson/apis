@@ -170,7 +170,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": {
+          "exemplo": "{
    "ni":"34238864000168",
    "data_abertura":"1967-06-30",
    "nome_empresarial":"SERVICO DE E-COMERCE LTDA",
@@ -226,4 +226,4 @@
       ]
     }
   ]
-}
+}"
