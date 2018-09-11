@@ -113,7 +113,7 @@
       "teste":  [
         {
           "ni": "34238864000168",
-          "situacao": "Desativada"
+          "situacao": "Ativa"
         },
         {
           "ni": "54447820000155",
@@ -133,7 +133,7 @@
         },
         {
           "ni": "06115832000130",
-          "situacao": "Ativa"
+          "situacao": "Baixada"
         },
         {
           "ni": "78078291000128",
