@@ -35,7 +35,7 @@ function makeOperationBlock(operacao){
     operacao.entrada.forEach(entrada => {
         opCampos += "<tr><td>" + entrada.campo + "</td><td>" + entrada.descricao + "</td><td>" + entrada.tipo + "</td></tr>";
     });
-    ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>SimeiTeste</th><th>Tipo</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
+    ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     ent += "</div>";
     ent += "<div id=\"saida"+ operacao.id +"\" class=\"tabcontentData"+ operacao.id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Saída</h4>";
@@ -51,7 +51,7 @@ function makeOperationBlock(operacao){
     ent += "<h4>Dados de Teste</h4>";
     opCampos = '';
     operacao.teste.forEach(teste => {
-        opCampos += "<tr><td>" + teste.ni + "</td><td>" + teste.situacao + "</td></tr>";
+        opCampos += "<tr><td>" + teste.campo + "</td><td>" + teste.descricao + "</td></tr>";
     });
     ent += "<table class=\"alt\"><thead><tr><th>NI</th><th>Situação Cadastral</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     
