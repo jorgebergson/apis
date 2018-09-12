@@ -172,6 +172,7 @@
           "mensagem": "OK", 
           "exemplo": "{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"  
         }, 
+        {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
           "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CNPJ 11111111111111 inválido\"\n\t}\n]"
