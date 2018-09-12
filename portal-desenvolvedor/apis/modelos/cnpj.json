@@ -169,13 +169,19 @@
       "respostas": [
         {
           "codigo": "200",
-          "mensagem": "OK", 
-          "exemplo": "{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"  
-        }, 
+          "mensagem": "OK",
+          "exemplo": "{\n\t\"ni\":\"11111111111\",\n\t\"nome\":\"Fulano da Silva\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"REGULAR\"\n\t}\n}"
+      
+        },
+        {
+          "codigo": "206",
+          "mensagem": "OK",
+          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio."
+        },
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
-          "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CNPJ 11111111111111 inválido\"\n\t}\n]"
+          "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CPF 11111111111 inválido\"\n\t}\n]"
         },
         {
           "codigo": "404",
@@ -185,4 +191,5 @@
       ]
     }
   ]
-}"
+}
+     
