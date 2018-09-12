@@ -169,51 +169,10 @@
       "respostas": [
         {
           "codigo": "200",
-          "mensagem": "OK",
-          "exemplo": "{
-   "ni":"34238864000168",
-   "data_abertura":"1967-06-30",
-   "nome_empresarial":"SERVICO DE E-COMERCE LTDA",
-   "nome_fantasia":"E-COMERCE",
-   "cnae_principal":{
-      "codigo":"6204000",
-      "descricao":"Consultoria em e-comerce"
-   },
-   "natureza_juridica":{
-      "codigo":"2011",
-      "descricao":"Empresa Privada"
-   },
-   "endereco":{
-      "logradouro":"ST DE GRANDE AREA NORTE",
-      "numero":"Q.601",
-      "complemento":"LOTE V",
-      "cep":"70836900",
-      "bairro":"ASA NORTE",
-      "municipio":"BRASILIA",
-      "uf":"DF"
-   },
-   "situacao_especial":"",
-   "situacao_cadastral":{
-      "codigo":"2",
-      "data":"2004-05-22",
-      "motivo":""
-   },
-   "orgao":"0110100",
-   "tipo_estabelecimento":"1",
-   "correio_eletronico":"",
-   "capital_social":0,
-   "porte":"05",
-   "telefones":[
-      {
-         "ddd":"061",
-         "numero":"4338456"
-      }
-   ],
-   "nome_orgao":"BRASILIA",
-   "ente_federativo":"BR"
-} 
-        },       
-        {
+          "mensagem": "OK", 
+          "exemplo": "{\n\t\"ni\":\"string\",\n\t\"data_abertura\":\"string\",\n\t\"nome_empresarial\":\"string\",\n\t\"nome_fantasia\":\"string\",\n\t\"cnae_principal\":\n\t\{\n\t\t\"codigo\":\"string\",\n\t\t\"descricao\":\"string\",\n\t\t\}\n\t},\n\t\"natureza_juridica\":\n\t\{\n\t\t\"codigo\":\"string\",\n\t\t\"\descricao":\"string\"\n\t\t\}\n\t},\n\t\"endereco\":\n\t\{\n\t\t\"bairro\":\"string\",\n\t\t\"complemento\":\"string\",\n\t\t\"cep\":\"string\",\n\t\t\"municipio\":\"string\",\n\t\t\"uf\":\"string\",\n\t\t\"logradouro\":\"string\",\n\t\t\"numero\":\"string\"\n\t\t\}\n\t},\n\t\"situacao_especial\":\"string\",\n\t\"situacao_cadastral\":\n\t\{\n\t\t\"codigo\":\"string\",\n\t\t\"motivo\":\"string\",\n\t\t\"data\":\"string\"\n\t\t\}\n\t\},\n\t\"orgao\":\"string\",\n\t\"tipo_estabelecimento\":\"string\",\n\t\"correio_eletronico\":\"string\",\n\t\"capital_social\":\"string\",\n\t\"porte\":\"string\",\n\t\"telefones\":\n\t\[\n\t\t\{\n\t\t\"ddd\":\"string\",\n\t\t\"numero\":\"string\"\n\t\t\}\n\t\],\n\t\"nome_orgao\":\"string\",\n\t\"ente_federativo\":\"string\",\n\t\"data_situacao_especial\":\"string\"\n\t\\t\}n}"
+
+      
           "codigo": "400",
           "mensagem": "BAD REQUEST",
           "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CNPJ 11111111111111 inválido\"\n\t}\n]"
