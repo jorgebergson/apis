@@ -170,7 +170,7 @@
         {
           "codigo": "200",
           "mensagem": "OK", 
-          "exemplo": "{\n\t\"ni\":\"string\",\n\t\"data_abertura\":\"string\",\n\t\"nome_empresarial\":\"string\",\n\t\"nome_fantasia\":\"string\",\n\t\
+          "exemplo": "{\n\t\"ni\":\"string\",\n\t\"data_abertura\":\"string\",\n\t\"nome_empresarial\":\"string\",\n\t\"nome_fantasia\":\"string\",\n\t\}n"
         }, 
           "codigo": "400",
           "mensagem": "BAD REQUEST",
