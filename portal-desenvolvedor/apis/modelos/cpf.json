@@ -43,67 +43,67 @@
       "teste":  [
         {
           "ni": "40442820135",
-          "situacao": "CPF Regular"
+          "situacao": "CPF em situação: Regular"
         },
         {
           "ni": "63017285995",
-          "situacao": "CPF Regular"
+          "situacao": "CPF em situação: Regular"
         },
         {
           "ni": "91708635203",
-          "situacao": "CPF Regular"
+          "situacao": "CPF em situação: Regular"
         },
         {
           "ni": "58136053391",
-          "situacao": "CPF Regular"
+          "situacao": "CPF em situação: Regular"
         },
         {
           "ni": "40532176871",
-          "situacao": "Suspensa"
+          "situacao": "CPF em situação: Suspensa"
         },
         {
           "ni": "47123586964",
-          "situacao": "Suspensa"
+          "situacao": "CPF em situação: Suspensa"
         },
         {
           "ni": "07691852312",
-          "situacao": "Pendente de Regularização"
+          "situacao": "CPF em situação: Pendente de Regularização"
         },
         {
           "ni": "10975384600",
-          "situacao": "Pendente de Regularização"
+          "situacao": "CPF em situação: Pendente de Regularização"
         },
         {
           "ni": "01648527949",
-          "situacao": "Cancelada por Multiplicidade"
+          "situacao": "CPF em situação: Cancelado por Multiplicidade"
         },
         {
           "ni": "47893062592",
-          "situacao": "Cancelada por Multiplicidade"
+          "situacao": "CPF em situação: Cancelado por Multiplicidade"
         },
         {
           "ni": "98302514705",
-          "situacao": "Nula"
+          "situacao": "CPF em situação: Nula"
         },
         {
           "ni": "18025346790",
-          "situacao": "Nula"
+          "situacao": "CPF em situação: Nula"
         },
         {
           "ni": "64913872591",
-          "situacao": "Cancelada de Ofício"
+          "situacao": "CPF em situação: Cancelada de Ofício"
         },
         {
           "ni": "52389071686",
-          "situacao": "Cancelada de Ofício"
+          "situacao": "CPF em situação: Cancelada de Ofício"
         },
         {
           "ni": "05137518743",
-          "situacao": "Titular Falecido"
+          "situacao": "CPF em situação: Titular Falecido"
         },
         {
           "ni": "08849979878",
-          "situacao": "Titular Falecido"
+          "situacao": "CPF em situação: Titular Falecido"
         }
       ],
       "exemplos": [
