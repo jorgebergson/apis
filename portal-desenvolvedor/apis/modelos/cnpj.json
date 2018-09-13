@@ -113,43 +113,43 @@
       "teste":  [
         {
           "ni": "34238864000168",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "54447820000155",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "46768703000165",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "31151791000184",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "34428654000132",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "06115832000130",
-          "situacao": "Baixada"
+          "situacao": "CNPJ em situação: Baixada"
         },
         {
           "ni": "78078291000128",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "52293473000128",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "07781066000105",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         },
         {
           "ni": "60367129000164",
-          "situacao": "Ativa"
+          "situacao": "CNPJ em situação: Ativa"
         }
       ],
       "exemplos": [
