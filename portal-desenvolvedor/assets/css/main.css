@@ -4146,6 +4146,11 @@ button.testeAPI{
 
 }
 
+.tab button.tab:hover {
+	background-color:#333;
+	color: #000;
+}
+
 .tab button.tab.active {
     background-color: #fff;
     float: left;
