@@ -12,98 +12,28 @@
   },
     "operacoes": [
     {
-      "path": "/v1/cpf/{ni}",
+      "path": "/1/{chNFe}",
       "id": "op1",
-      "descricao": "Consulta dados de Pessoa Física pelo Número de Inscrição(NI)",
+      "descricao": "Consulta dados da Nota Fisca Eletrônica pelo Número da Chave (chNFe)",
       "metodo": "GET",
       "entrada": [
         {
-          "campo": "ni",
-          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
+          "campo": "chNFe",
+          "descricao": "Chave da Nota Fiscal Eletrônica",
           "tipo": "string"
         }
       ],
       "saida": [
         {
-          "campo": "ni",
-          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
+          "campo": "NFe",
+          "descricao": "Todos os dados da Nota Fiscal Eletrônica",
           "tipo": "string"
-        },
-        {
-          "campo": "nome",
-          "descricao": "Nome da Pessoa Física",
-          "tipo": "string"
-        },
-        {
-          "campo": "situacao",
-          "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
-          "tipo": "object"
         }
       ],
       "teste":  [
         {
           "ni": "CPF: &nbsp 40442820135",
           "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 63017285995",
-          "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 91708635203",
-          "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 58136053391",
-          "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 40532176871",
-          "situacao": "CPF em situação: &nbsp Suspensa"
-        },
-        {
-          "ni": "CPF: &nbsp 47123586964",
-          "situacao": "CPF em situação: &nbsp Suspensa"
-        },
-        {
-          "ni": "CPF: &nbsp 07691852312",
-          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
-        },
-        {
-          "ni": "CPF: &nbsp 10975384600",
-          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
-        },
-        {
-          "ni": "CPF: &nbsp 01648527949",
-          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
-        },
-        {
-          "ni": "CPF: &nbsp 47893062592",
-          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
-        },
-        {
-          "ni": "CPF: &nbsp 98302514705",
-          "situacao": "CPF em situação: &nbsp Nula"
-        },
-        {
-          "ni": "CPF: &nbsp 18025346790",
-          "situacao": "CPF em situação: &nbsp Nula"
-        },
-        {
-          "ni": "CPF: &nbsp 64913872591",
-          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
-        },
-        {
-          "ni": "CPF: &nbsp 52389071686",
-          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
-        },
-        {
-          "ni": "CPF: &nbsp 05137518743",
-          "situacao": "CPF em situação: &nbsp Titular Falecido"
-        },
-        {
-          "ni": "CPF: &nbsp 08849979878",
-          "situacao": "CPF em situação: &nbsp Titular Falecido"
         }
       ],
       "exemplos": [
