@@ -42,68 +42,68 @@
       ],
       "teste":  [
         {
-          "ni": "CPF:  40442820135",
-          "situacao": "CPF em situação:  Regular"
+          "ni": "CPF: &nbsp 40442820135",
+          "situacao": "CPF em situação: &nbsp Regular"
         },
         {
-          "ni": "CPF:  63017285995",
-          "situacao": "CPF em situação:  Regular"
+          "ni": "CPF: &nbsp 63017285995",
+          "situacao": "CPF em situação: &nbsp Regular"
         },
         {
-          "ni": "CPF:  91708635203",
-          "situacao": "CPF em situação:  Regular"
+          "ni": "CPF: &nbsp 91708635203",
+          "situacao": "CPF em situação: &nbsp Regular"
         },
         {
-          "ni": "CPF:  58136053391",
-          "situacao": "CPF em situação:  Regular"
+          "ni": "CPF: &nbsp 58136053391",
+          "situacao": "CPF em situação: &nbsp Regular"
         },
         {
-          "ni": "CPF:  40532176871",
-          "situacao": "CPF em situação:  Suspensa"
+          "ni": "CPF: &nbsp 40532176871",
+          "situacao": "CPF em situação: &nbsp Suspensa"
         },
         {
-          "ni": "CPF:  47123586964",
-          "situacao": "CPF em situação:  Suspensa"
+          "ni": "CPF: &nbsp 47123586964",
+          "situacao": "CPF em situação: &nbsp Suspensa"
         },
         {
-          "ni": "CPF:  07691852312",
-          "situacao": "CPF em situação:  Pendente de Regularização"
+          "ni": "CPF: &nbsp 07691852312",
+          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
         },
         {
-          "ni": "CPF:  10975384600",
-          "situacao": "CPF em situação:  Pendente de Regularização"
+          "ni": "CPF: &nbsp 10975384600",
+          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
         },
         {
-          "ni": "CPF:  01648527949",
-          "situacao": "CPF em situação:  Cancelado por Multiplicidade"
+          "ni": "CPF: &nbsp 01648527949",
+          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
         },
         {
-          "ni": "CPF:  47893062592",
-          "situacao": "CPF em situação:  Cancelado por Multiplicidade"
+          "ni": "CPF: &nbsp 47893062592",
+          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
         },
         {
-          "ni": "CPF:  98302514705",
-          "situacao": "CPF em situação:  Nula"
+          "ni": "CPF: &nbsp 98302514705",
+          "situacao": "CPF em situação: &nbsp Nula"
         },
         {
-          "ni": "CPF:  18025346790",
-          "situacao": "CPF em situação:  Nula"
+          "ni": "CPF: &nbsp 18025346790",
+          "situacao": "CPF em situação: &nbsp Nula"
         },
         {
-          "ni": "CPF:  64913872591",
-          "situacao": "CPF em situação:  Cancelada de Ofício"
+          "ni": "CPF: &nbsp 64913872591",
+          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
         },
         {
-          "ni": "CPF:  52389071686",
-          "situacao": "CPF em situação:  Cancelada de Ofício"
+          "ni": "CPF: &nbsp 52389071686",
+          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
         },
         {
-          "ni": "CPF:  05137518743",
-          "situacao": "CPF em situação:  Titular Falecido"
+          "ni": "CPF: &nbsp 05137518743",
+          "situacao": "CPF em situação: &nbsp Titular Falecido"
         },
         {
-          "ni": "CPF:  08849979878",
-          "situacao": "CPF em situação:  Titular Falecido"
+          "ni": "CPF: &nbsp 08849979878",
+          "situacao": "CPF em situação: &nbsp Titular Falecido"
         }
       ],
       "exemplos": [
