@@ -109,15 +109,15 @@
       "exemplos": [
         {
           "linguagem": "CURL",
-          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/consulta-cpf/v1/40442820135\""
+          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168\""
         },
         {
           "linguagem": "VBA",
-          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/consulta-cpf/v1/40442820135\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
         },
         {
           "linguagem": "Node.js",
-          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/consulta-cpf/v1/40442820135',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
