@@ -130,7 +130,7 @@
         {
           "codigo": "206",
           "mensagem": "OK",
-          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio. \n\n {\n\t\"ni\":\"40442820135\",\n\t\"nome\":\"Nome do CPF 40442820135\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"\",\n\t\t\"descricao\":\"\"\n\t}\n}"
+          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio. \n\n {\n\t\"ni\":\"40442820135\",\n\t\"nome\":\"\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
         },
         {
           "codigo": "400",
