@@ -12,13 +12,13 @@
   },
     "operacoes": [
     {
-      "path": "/1/{chNFe}",
+      "path": "/1/{chave}",
       "id": "op1",
-      "descricao": "Consulta dados da Nota Fisca Eletrônica pelo Número da Chave (chNFe)",
+      "descricao": "Consulta dados da Nota Fisca Eletrônica pelo Número da Chave da NFe",
       "metodo": "GET",
       "entrada": [
         {
-          "campo": "chNFe",
+          "campo": "chave",
           "descricao": "Chave da Nota Fiscal Eletrônica",
           "tipo": "string"
         }
@@ -32,7 +32,7 @@
       ],
       "teste":  [
         {
-          "ni": "chNFe: &nbsp 35170608530528000184550000000154301000771561",
+          "ni": "chave: &nbsp 35170608530528000184550000000154301000771561",
           "situacao": "Nome do Emitente: &nbsp CENTRAL DE ASSOCIAÇÕES DE PEQUENOS PRODUTORES RURAIS"
         }
       ],
@@ -54,18 +54,12 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n\t\"ni\":\"40442820135\",\n\t\"nome\":\"Nome do CPF 40442820135\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
-       
-        },
-        {
-          "codigo": "206",
-          "mensagem": "OK",
-          "exemplo": "O layout de retorno é idêntico ao do código 200, porém algum dos campos é apresentado vazio. \n\n {\n\t\"ni\":\"40442820135\",\n\t\"nome\":\"\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
+          "exemplo": "{\n\t\"chave\":\"35170608530528000184550000000154301000771561\",\n\t\"XXXXX\":\"YYYYYYYYYY\",\n\t\"XXXXX\":\n\t{\n\t\t\"XXXXX\":\"0\",\n\t\t\"YYYYYYYY\":\"YYYYYYYYY\"\n\t}\n}"
         },
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
-          "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"CPF 11111111111 inválido\"\n\t}\n]"
+          "exemplo": "[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"Chave NFe 35170608530528000184550000000154301000771561 inválida\"\n\t}\n]"
         },
         {
           "codigo": "404",
