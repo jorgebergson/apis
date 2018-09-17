@@ -1,7 +1,7 @@
 {
   "nome": "API Consulta NF-e",
-  "subtitulo": "Acesse dados de notas fiscais eletrônicas diretamente das bases da receita federal",
-  "descricao": "A API NF-e fornece consulta aos dados da NF-e de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro.",
+  "subtitulo": "Ao integrar sua aplicação a API Consulta NF-e, você dispõe de informações estratégicas obtidas diretamente das bases do SPED - Sistema Público de Escrituração Digital, instituído através do Decreto 6.022/2007.",
+  "descricao": "A API NF-e fornece consulta aos dados da NF-e de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro./n Você poderá Calcular o score de transação, Basear a tomada de decisão em informações seguras e atualizadas, Monitorar os eventos da NF-e, Prospectar clientes e fechar novos negócios, Minimizar riscos de negócios e fraudes.",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Detalhamento-NFe.pdf",
   "informacoes": {
     "idProducao": " nfe",
