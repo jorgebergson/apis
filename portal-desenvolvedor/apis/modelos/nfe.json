@@ -126,7 +126,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n\t\"ni\":\"40442820135\",\n\t\"Nome\":\"Simei\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
+          "exemplo": "{\n\t\"ni\":\"40442820135\",\n\t\"Nome\":\"Nome do CPF\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
           },
         {
           "codigo": "400",
