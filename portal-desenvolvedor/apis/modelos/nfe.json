@@ -126,7 +126,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n&nbsp;&nbsp;\"nfeProc\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"protNFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infProt\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"chNFe\":&nbsp\"35170608530528000184550000000154301000771561\"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;\"NFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infNFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infAdic\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infCpl\":&nbsp\"N/PED.: 051542;VL. APRX. TRIB.(FONTE IBPT): ****254.19  **34.12 %\"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;}\n}"  
+          "exemplo": "{\n&nbsp;&nbsp;\"nfeProc\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;\"protNFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infProt\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"chNFe\":&nbsp\"35170608530528000184550000000154301000771561\"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;\"NFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infNFe\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infAdic\":&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"infCpl\":&nbsp\"N/PED.: 051542;VL. APRX. TRIB.(FONTE IBPT): ****254.19  **34.12 %\"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;}\n}"  
         },
         {
           "codigo": "400",
