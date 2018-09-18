@@ -126,8 +126,8 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n\t\"ni\":\"40442820135\",\n\t\"Nome\":\"Nome do CPF\",\n\t\"situacao\":\n\t{\n\t\t\"codigo\":\"0\",\n\t\t\"descricao\":\"Regular\"\n\t}\n}"
-          },
+        "exemplo":"{\n\t\nfeProc\":\n\t{n\t\t\"protNFe\":\n\t{\n\t\t\t\":\infProt\":\n\t{\n\t\t\t\t"chNFe\":\"35170608530528000184550000000154301000771561\"\n\t}}}\n}"  
+        },
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
