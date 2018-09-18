@@ -126,7 +126,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo":"{\"nfeProc\":{\n\t\"protNFe\":{\n\t\t\"nfProt\":{\n\t\t\t&nbsp;&nbsp;&nbsp;\"chNFe\":\"35170608530528000184550000000154301000771561\"\n\t\t\t&nbsp;}\n\t\t}\n\t}\n}"  
+          "exemplo":"{\n\&nbsp;"nfeProc\":{\n\t\"protNFe\":{\n\t\t\"nfProt\":{\n\t\t\t&nbsp;&nbsp;&nbsp;\"chNFe\":\"35170608530528000184550000000154301000771561\"\n\t\t\t&nbsp;}\n\t\t}\n\t}\n}"  
         },
         {
           "codigo": "400",
