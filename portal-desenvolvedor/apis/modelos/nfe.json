@@ -126,12 +126,12 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo":"{\n\"nfeProc\":{\n\t\t\"protNFe\":{\n\t\t\t\"nfProt\":{\n\t\t\t\t\"chNFe\":"35170608530528000184550000000154301000771561"\n\t}}}\n}"  
+          "exemplo":"{\n\"nfeProc\":{\n\t\t\"protNFe\":{\n\t\t\t\"nfProt\":{\n\t\t\t\t\"chNFe\":"35170608530528000184550000000154301000771561\"\n\t}}}\n}"  
         },
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
-          "exemplo":"{\n\nfeProc\":\n\t{n\t\t\"protNFe\":\n\t{\n\t\t\t\":\infProt\":\n\t{\n\t\t\t\t\"chNFe\":\"35170608530528000184550000000154301000771561\"\n\t}}}\n}" 
+          "exemplo":"[\n\t{\n\t\t\"property\":\"ni\",\n\t\t\"message\":\"Chave NFe 35170608530528000184550000000154301000771561 inválida\"\n\t}\n}" 
         },
         {
           "codigo": "404",
