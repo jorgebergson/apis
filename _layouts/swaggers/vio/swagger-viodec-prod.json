@@ -3,7 +3,7 @@
     "info": {
         "description": "O Vio Decodificar permite agilizar e automatizar o processo de autenticação de documentos compatíveis.",
         "version": "1.0",
-        "title": "Vio Decodificador"
+        "title": "Vio Decodificar"
     },
     "security": [{
         "Bearer": []
@@ -28,7 +28,7 @@
     ],
     "basePath": "/v1",
     "paths": {
-        "O que é o V": {
+        "O que é o Vio": {
             "head": {
                 "tags": [
                     "1 Introdução"
@@ -44,7 +44,7 @@
                     "1 Introdução"
                 ],
                 "summary": "O que é o serviço de decodificação",
-                "description": "O serviço de decodificação Vio Decodificador é uma API REST robusta e altamente disponível, que pode ser integrada a qualquer sistema com acesso à Internet para decodificar QR Codes Vio.\n\nPara mera conferência da autenticidade do documento pode-se utilizar o aplicativo Vio, disponível gratuitamente nas lojas Android e iOS. Se a sua necessidade é integrar a leitura do QR Code Vio com os seus sistemas automatizados em balcões de atendimento, quiosques ou recepções utilizando pistolas convencionais para leitura de códigos de barras bidimensionais, esta API REST foi feita para você.",
+                "description": "O serviço de decodificação Vio Decodificador é uma API REST robusta e altamente disponível, que pode ser integrada a qualquer sistema com acesso à Internet para decodificar QR Codes Vio.\n\nPara mera verificação da autenticidade do documento e apresentação dos dados do documento na tela para conferência pode-se utilizar o aplicativo Vio, que funciona de forma offline e está disponível gratuitamente nas lojas Android e iOS. Porém, se além de conferir autenticidade do documento sua necessidade é integrar a leitura do QR Code Vio com os seus sistemas automatizados em balcões de atendimento, quiosques ou recepções utilizando pistolas convencionais para leitura de códigos de barras bidimensionais, esta API REST foi feita para você. Além disso, através do Vio Decodificador é possível verificar online o status do documento e obter a foto contida no QR Code Vio com maior qualidade direto da entidade emissora do documento, caso esta entidade tenha autorizado e disponibilizado tais serviços.",
                 "responses": {}
             }
         },
@@ -63,8 +63,8 @@
                 "tags": [
                     "3 Referência da API"
                 ],
-                "summary": "Decoficar dados do QR Code Vio",
-                "description": "Decofica uma sequência de bytes que foi extraída de um QR Code Vio.",
+                "summary": "Decodificar dados do QR Code Vio",
+                "description": "Decodifica uma sequência de bytes que foi extraída de um QR Code Vio e, caso a entidade emissora do documento tenha autorizado e disponibilizado esse serviço, verifica online o status do documento. Se não for possível realizar essa consulta online, o resultado da decodificação é retornado normalmente.",
                 "operationId": "decode",
                 "consumes": [
                     "application/octet-stream"
@@ -72,19 +72,42 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [{
-                    "in": "body",
-                    "name": "qrCodeContent",
-                    "description": "Dados lidos do QR Code Vio, expressos como uma sequência crua de bytes",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "byte"
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "qrCodeContent",
+                        "description": "Dados lidos do QR Code Vio, expressos como uma sequência crua de bytes",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "byte"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "online_image",
+                        "description": "Indica que além da decodificação dos bytes e verificação do status do documento, o serviço deve retornar também a foto contida no QR Code Vio com maior qualidade, obtida diretamente da entidade emissora do documento. A disponibilização dessa funcionalidade depende da autorização e disponibilização do serviço pela entidade emissora do documento. Se não for possível obter essa foto, a decodificação não será realizada e um código de erro será retornado. Caso queira utilizar esse recurso é importante atentar esse é o único queryparam aceito pelo serviço, e seu valor deverá ser true.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
-                        "description": "Sucesso, retorna informações do documento",
+                        "description": "Sucesso. Retorna informações do documento com status, se disponível, e foto de maior qualidade, se solicitado na requisição",
+                        "schema": {
+                            "$ref": "#/definitions/Documento"
+                        }
+                    },
+                    "400": {
+                        "description": "Requisição com erro, com queryparam diferente de "online_image=true", por exemplo",
+                        "schema": {
+                            "$ref": "#/definitions/Documento"
+                        }
+                    },
+                    "403": {
+                        "description": "Tentativa de obter foto de maior qualidade (passou queryparam "online_image=true" na requisição) de um documento cuja entidade emisora não autorizou tal consulta",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
@@ -94,6 +117,12 @@
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
+                    },
+                    "502":{
+                        "description": "Erro na conexão com a entidade emissora do documento ou na pesquisa pela foto de maior qualidade. Note que esse erro só poderá ocorrer caso seja solicitada a imagem de maior qualidade na requisição (queryparam "online_image=true")",
+                        "schema": {
+                            "$ref": "#/definitions/Documento"
+                      }
                     }
                 }
             }
@@ -118,6 +147,9 @@
                 "created_at": {
                     "type": "string",
                     "format": "date-time"
+                },
+                "status": {
+                    "type": "string"
                 }
             }
         },
