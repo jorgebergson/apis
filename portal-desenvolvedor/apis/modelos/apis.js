@@ -18,7 +18,7 @@
         "modelo":"nfe"
     },
     {
-        "nome":"Intgra SIAFI",
+        "nome":"Integra SIAFI",
         "descricao":"Registre e consulte documentos contábeis diretamente no SIAFI",
         "imagem":"badge-siafi",
         "modelo":"siafi"
