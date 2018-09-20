@@ -34,7 +34,7 @@
                     "1 Introdução"
                 ],
                 "summary": "O que é o Vio",
-                "description": "O Vio é um sistema de certificação de autenticidade de documentos de identificação. Documentos compatíveis portam o QR Code Vio, um QR Code que replica os dados contidos no documento utilizando encriptação forte para garantir a autenticidade dos dados. Além disso QR Codes Vio são encriptados na fonte a partir de informações fornecidas pela própria entidade emissora do documento, garantindo o não-repúdio.\n\nO sistema Vio é composto por 3 partes:\n\n* API REST para criação de QR Codes Vio: API utilizada por entidades emissoras para solicitar a encriptação dos dados fornecidos e geração do QR Code Vio\n* API REST para decodificação de QR Codes Vio: Integrada a qualquer entidade que deseje decodificar e validar QR Codes Vio de forma automatizada\n* Aplicativos Vio para Android e iOS: Disponíveis gratuitamente nas respectivas lojas online, esses aplicativos são capazes de decodificar e validar QR Codes Vio offline em situações onde a automação não seja necessária",
+                "description": "O Vio é um sistema de certificação de autenticidade de documentos de identificação. Documentos compatíveis portam o QR Code Vio, um QR Code que replica os dados contidos no documento utilizando encriptação forte para garantir a autenticidade dos dados. Além disso QR Codes Vio são encriptados na fonte a partir de informações fornecidas pela própria entidade emissora do documento, garantindo o não-repúdio.\n\nO sistema Vio é composto por 3 partes:\n\n* API REST para criação de QR Codes Vio: API utilizada por entidades emissoras para solicitar a encriptação dos dados fornecidos e geração do QR Code Vio\n* API REST para decodificação de QR Codes Vio: Integrada a qualquer entidade que deseje decodificar e validar QR Codes Vio de forma automatizada.\n* Aplicativos Vio para Android e iOS: Disponíveis gratuitamente nas respectivas lojas online, esses aplicativos são capazes de decodificar e validar QR Codes Vio offline em situações onde a automação não seja necessária.",
                 "responses": {}
             }
         },
@@ -44,7 +44,7 @@
                     "1 Introdução"
                 ],
                 "summary": "O que é o serviço de decodificação",
-                "description": "O serviço de decodificação Vio Decodificador é uma API REST robusta e altamente disponível, que pode ser integrada a qualquer sistema com acesso à Internet para decodificar QR Codes Vio.\n\nPara mera verificação da autenticidade do documento e apresentação dos dados do documento na tela para conferência pode-se utilizar o aplicativo Vio, que funciona de forma offline e está disponível gratuitamente nas lojas Android e iOS. Porém, se além de conferir autenticidade do documento sua necessidade é integrar a leitura do QR Code Vio com os seus sistemas automatizados em balcões de atendimento, quiosques ou recepções utilizando pistolas convencionais para leitura de códigos de barras bidimensionais, esta API REST foi feita para você. Além disso, através do Vio Decodificador é possível verificar online o status do documento e obter a foto contida no QR Code Vio com maior qualidade direto da entidade emissora do documento, caso esta entidade tenha autorizado e disponibilizado tais serviços.",
+                "description": "O serviço de decodificação Vio Decodificador é uma API REST robusta e altamente disponível, capaz de decodificar QR Codes especiais encontrados em documentos de identificação (QR Codes Vio), atestar sua autenticidade e entregar as informações obtidas de forma estruturada. A API pode então ser integrada a qualquer sistema que deseje automatizar a verificação de autenticidade e preenchimento de formulários baseado nos dados obtidos do documento. Usos indicados dessa API incluem: Integração com sistemas de quiosque, balcões de atendimento, automação comercial e outras aplicações que se utilizem de pistolas de leitura ou captura de imagem para verificação de documentos. Além da verificação de autenticidade baseada em QR Codes, o Vio suporta, para documentos selecionados, a consulta online da situação do documento (para documentos que podem ser revogados ou renovados) e foto de alta qualidade. No momento essa funcionalidade está disponível para a Carteira Nacional de Habilitação (CNH).",
                 "responses": {}
             }
         },
@@ -122,7 +122,7 @@
                         "description": "Erro na conexão com a entidade emissora do documento ou na pesquisa pela foto de maior qualidade. Note que esse erro só poderá ocorrer caso seja solicitada a imagem de maior qualidade na requisição (queryparam 'online_image=true')",
                         "schema": {
                             "$ref": "#/definitions/Documento"
-                      }
+                        }
                     }
                 }
             }
