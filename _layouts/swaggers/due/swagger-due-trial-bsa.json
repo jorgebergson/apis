@@ -59,7 +59,7 @@
         "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 403   | Requisição não autorizada\n| 404   | Registro não encontrado\n| 408   | Request time-out\n| 500   | Erro interno do servidor\n| 503   | Serviço indisponível\n| 504   | Gateway time-out "
       }
     },
-    "null": null,
+    "null": null,a
     "/v2/due/{numero}/{chave}": {
       "get": {
         "tags": [
