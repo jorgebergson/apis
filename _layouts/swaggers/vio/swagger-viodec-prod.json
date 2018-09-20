@@ -101,13 +101,13 @@
                         }
                     },
                     "400": {
-                        "description": "Requisição com erro, com queryparam diferente de "online_image=true", por exemplo",
+                        "description": "Requisição com erro, com queryparam diferente de 'online_image=true', por exemplo",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
                     },
                     "403": {
-                        "description": "Tentativa de obter foto de maior qualidade (passou queryparam "online_image=true" na requisição) de um documento cuja entidade emisora não autorizou tal consulta",
+                        "description": "Tentativa de obter foto de maior qualidade (passou queryparam 'online_image=true' na requisição) de um documento cuja entidade emisora não autorizou tal consulta",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
@@ -119,7 +119,7 @@
                         }
                     },
                     "502":{
-                        "description": "Erro na conexão com a entidade emissora do documento ou na pesquisa pela foto de maior qualidade. Note que esse erro só poderá ocorrer caso seja solicitada a imagem de maior qualidade na requisição (queryparam "online_image=true")",
+                        "description": "Erro na conexão com a entidade emissora do documento ou na pesquisa pela foto de maior qualidade. Note que esse erro só poderá ocorrer caso seja solicitada a imagem de maior qualidade na requisição (queryparam 'online_image=true')",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                       }
