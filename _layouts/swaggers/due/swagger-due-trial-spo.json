@@ -60,42 +60,6 @@
       }
     },
     "null": null,
-    "/v1/due/{numero}/{chave}": {
-      "get": {
-        "tags": [
-          "4 Métodos e Testes Consulta"
-        ],
-        "summary": "Consulta a DUE - V1",
-        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|operadorEconomicoAutorizado|Indicador de autorização de operador econômico|boolean\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|boolean\n|moeda|Moeda da Operação|object\n|localDeDespacho|Localização do local do despacho|object\n|localDeEmbarque|Localização do local de embarque|object\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|boolean\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "numero",
-            "type": "string",
-            "description": "Número da DUE",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "chave",
-            "type": "string",
-            "description": "Chave de Acesso",
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/ConsultaDUE-V1"
-            }
-          },
-          "422": {
-            "description": "Erros\nCódigos de erros possíveis: Veja item 3 Tabelas"
-          }
-        }
-      }
-    },
     "/v2/due/{numero}/{chave}": {
       "get": {
         "tags": [
