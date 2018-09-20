@@ -1,6 +1,7 @@
 {
+  ///
   "nome": "API Consulta DUE",
-  "subtitulo": "Acesse dados detalhados sobre as dívidas ativas da União direto das bases da PGFN",
+  "subtitulo": "Acesse dados detalhados sobre a Declaraçao Única de Exportação, diretamente dos ",
   "descricao": "A partir do CPF, CNPJ ou Número de Inscrição, a API DUE fornece diversas informaçes das dívidas, diretamentamente das bases da Procuradoria Geral da Fazenda Nacional, garantindo aos usuários a integridade dessas informações em um ambiente confiável e seguro. Você poderá consultar diversas informações, tais como: Situação das Dívidas, Valor Originário, Valor Consolidado, Data de Inscrição, Órgão de Origem da Dívida eNúmero do Processo Judicial  ",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
   "informacoes": {
