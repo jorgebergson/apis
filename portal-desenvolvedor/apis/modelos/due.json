@@ -1,8 +1,7 @@
 {
-  ///
-  "nome": "API Consulta DUE",
-  "subtitulo": "Acesse dados detalhados sobre a Declaraçao Única de Exportação, diretamente dos ",
-  "descricao": "A partir do CPF, CNPJ ou Número de Inscrição, a API DUE fornece diversas informaçes das dívidas, diretamentamente das bases da Procuradoria Geral da Fazenda Nacional, garantindo aos usuários a integridade dessas informações em um ambiente confiável e seguro. Você poderá consultar diversas informações, tais como: Situação das Dívidas, Valor Originário, Valor Consolidado, Data de Inscrição, Órgão de Origem da Dívida eNúmero do Processo Judicial  ",
+  "nome": "API Consulta DUe",
+  "subtitulo": "Acesse dados detalhados sobre a Declaraçao Única de Exportação, diretamente das bases do MDIC e da RFB. ",
+  "descricao": "Com a API Consulta DUE fornece consulta aos dados da DUE de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com a DUE permitirá a você obter Informações básicas de identificação da exportação, Situação atual da DUE, Locais de Despacho e Embarque e outros Itens da DUE",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
   "informacoes": {
     "idProducao": "api-consulta-due",
@@ -15,30 +14,20 @@
     {
       "path": "/v2/due/{numero}/{chave}",
       "id": "op1",
-      "descricao": "Consulta dados da DUE pelo Número do CPF, Número do CNPJ ou Número de Inscrição(NI)",
+      "descricao": "Consulta dados da DUE através do Número da DUE e de sua Chave de Acesso",
       "metodo": "GET",
       "entrada": [
         {
-          "campo": "CPF, CNPJ ou NI",
-          "descricao": "Identificação do usuário",
+          "campo": "Número da DUE e Chave de Acesso",
+          "descricao": "Identificação da DUE",
           "tipo": "string"
         }
       ],
       "saida": [
         {
-          "campo": "ni",
-          "descricao": "Número de inscrição no Cadastro de Pessoa Física",
+          "campo": "DUE",
+          "descricao": "Todos os daos da Declaração Única de Exportação",
           "tipo": "string"
-        },
-        {
-          "campo": "nome",
-          "descricao": "Nome da Pessoa Física",
-          "tipo": "string"
-        },
-        {
-          "campo": "situacao",
-          "descricao": "Situação cadastral da Pessoa Física. Composto por código e descrição.",
-          "tipo": "object"
         }
       ],
       "teste":  [
