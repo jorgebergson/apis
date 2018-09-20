@@ -12,7 +12,7 @@
   },
     "operacoes": [
     {
-      "path": "/v2/due/{numero}"/{chave},
+      "path": "/v2/due/{numero}/{chave}",
       "id": "op1",
       "descricao": "Consulta dados da DUE pelo Número do CPF, Número do CNPJ ou Número de Inscrição(NI)",
       "metodo": "GET",
