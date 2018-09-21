@@ -192,68 +192,16 @@
       ],
       "teste":  [
         {
-          "ni": "CPF: &nbsp 40442820135",
-          "situacao": "CPF em situação: &nbsp Regular"
+          "ni": "numero: 18BR0000151067 &nbsp chave: 18NYJ151060", 
+          "situacao": "Credencias com retorno HTTP 200"
         },
         {
-          "ni": "CPF: &nbsp 63017285995",
-          "situacao": "CPF em situação: &nbsp Regular"
+          "ni": "numero: 18BR000015106 &nbsp chave: 18NYJ15106", 
+          "situacao": "Credencias com retorno HTTP 400"
         },
         {
-          "ni": "CPF: &nbsp 91708635203",
-          "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 58136053391",
-          "situacao": "CPF em situação: &nbsp Regular"
-        },
-        {
-          "ni": "CPF: &nbsp 40532176871",
-          "situacao": "CPF em situação: &nbsp Suspensa"
-        },
-        {
-          "ni": "CPF: &nbsp 47123586964",
-          "situacao": "CPF em situação: &nbsp Suspensa"
-        },
-        {
-          "ni": "CPF: &nbsp 07691852312",
-          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
-        },
-        {
-          "ni": "CPF: &nbsp 10975384600",
-          "situacao": "CPF em situação: &nbsp Pendente de Regularização"
-        },
-        {
-          "ni": "CPF: &nbsp 01648527949",
-          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
-        },
-        {
-          "ni": "CPF: &nbsp 47893062592",
-          "situacao": "CPF em situação: &nbsp Cancelado por Multiplicidade"
-        },
-        {
-          "ni": "CPF: &nbsp 98302514705",
-          "situacao": "CPF em situação: &nbsp Nula"
-        },
-        {
-          "ni": "CPF: &nbsp 18025346790",
-          "situacao": "CPF em situação: &nbsp Nula"
-        },
-        {
-          "ni": "CPF: &nbsp 64913872591",
-          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
-        },
-        {
-          "ni": "CPF: &nbsp 52389071686",
-          "situacao": "CPF em situação: &nbsp Cancelada de Ofício"
-        },
-        {
-          "ni": "CPF: &nbsp 05137518743",
-          "situacao": "CPF em situação: &nbsp Titular Falecido"
-        },
-        {
-          "ni": "CPF: &nbsp 08849979878",
-          "situacao": "CPF em situação: &nbsp Titular Falecido"
+          "ni": "numero: 17BR0000015111 &nbsp chave: 17NYJ125811",
+          "situacao": "Credencias com retorno HTTP 404"
         }
       ],
       "exemplos": [
