@@ -222,7 +222,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "{\n\t\"numero\":\"18BR0000151067\",\n\t\"ruc\":\"8BR00000000100000000000000000013602\",\n\t\"chaveDeAcesso\":\"18NYJ151060\",\n\t\"tratamentoAdministrativoComImpedimentoDeEmbarque\":\"false\",\n\t\"situacaoDaCarga\":\"null\",\n\t\"bloqueadaParaEmbarque\":\"false\",\n\t\"operadorEconomicoAutorizado\":\"false\",\n\t\"tratamentoPrioritario\":\"true\",\n\t\"moeda\":&nbsp{\n\t\t\"codigo\":\"220\",\n\t\t\"descricao\":\"DOLAR DOS EUA\"\n\t},\n\t\"localDeDespacho\":&nbsp{\n\t\t\"unidadeRFB\":&nbsp{\n\t\t\t\"codigo\":\"716600\",\n\t\t\t\"descricao\":\"PORTO DO RIO\"\N\T\T\},                 ***\n}"
+          "exemplo": "{\n\t\"numero\":\"18BR0000151067\",\n\t\"ruc\":\"8BR00000000100000000000000000013602\",\n\t\"chaveDeAcesso\":\"18NYJ151060\",\n\t\"tratamentoAdministrativoComImpedimentoDeEmbarque\":\"false\",\n\t\"situacaoDaCarga\":\"null\",\n\t\"bloqueadaParaEmbarque\":\"false\",\n\t\"operadorEconomicoAutorizado\":\"false\",\n\t\"tratamentoPrioritario\":\"true\",\n\t\"moeda\":&nbsp{\n\t\t\"codigo\":\"220\",\n\t\t\"descricao\":\"DOLAR DOS EUA\"\n\t},\n\t\"localDeDespacho\":&nbsp{\n\t\t\"unidadeRFB\":&nbsp{\n\t\t\t\"codigo\":\"716600\",\n\t\t\t\"descricao\":\"PORTO DO RIO\"\N\T\T},                 ***\n}"
         },
         {
           "codigo": "400",
