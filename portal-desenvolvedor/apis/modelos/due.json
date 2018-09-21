@@ -19,7 +19,7 @@
       "entrada": [
         {
           "campo": "Número da DUE e Chave de Acesso",
-          "descricao": "Identificação da DUE",
+          "descricao": "Identificação da credencial da DUE",
           "tipo": "string"
         }
       ],
