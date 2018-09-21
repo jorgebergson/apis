@@ -25,9 +25,169 @@
       ],
       "saida": [
         {
-          "campo": "DUE",
-          "descricao": "Todos os daos da Declaração Única de Exportação",
+          "campo": "numero",
+          "descricao": "Número da DUE",
           "tipo": "string"
+        },
+        {
+          "campo": "ruc",
+          "descricao": "Registro Único de Carga",
+          "tipo": "string"
+        },
+        {
+          "campo": "chaveDeAcesso",
+          "descricao": "Identificação da chave de acesso",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacao",
+          "descricao": "situação",
+          "tipo": "string"
+        },
+        {
+          "campo": "canal",
+          "descricao": "meio",
+          "tipo": "string"
+        },
+        {
+          "campo": "exigencia",
+          "descricao": "Obrigatoriedade",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "retificada",
+          "descricao": "Quando houve alterações",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "tratamentoAdministrativo",
+          "descricao": "Se a declaração possui algum tratamento",
+          "tipo": "string"
+        },
+        {
+          "campo": "tratamentoAdministrativoComImpedimentoDeEmbarque",
+          "descricao": "Se a declaração possui algum impedimento administrativo",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "tratamentoAdministrativoComRequerimentoDeInspecao",
+          "descricao": "Se a declaração possui algum requerimento de inspeção",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "situacaoDaCarga",
+          "descricao": "Situação da carga",
+          "tipo": "string"
+        },
+        {
+          "campo": "bloqueadaParaEmbarque",
+          "descricao": "Condição de bloqueio para embarque",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "tipoDeDocumentoFiscal",
+          "descricao": "Qual o tipo do documento informado",
+          "tipo": "string"
+        },
+        {
+          "campo": "motivoDeDispensaDeNotaFiscal",
+          "descricao": "O motivo da dispensa da NF",
+          "tipo": "string"
+        },
+        {
+          "campo": "declarante",
+          "descricao": "Dados como nome, nacionalidade e documento",
+          "tipo": "object"
+        },
+        {
+          "campo": "operadorEconomicoAutorizado",
+          "descricao": "Indicador de autorização de operador econômico",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "formaDeExportacao",
+          "descricao": "A maneiro como o produto será exportado",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacaoEspecial",
+          "descricao": "Se existe alguma condição especial",
+          "tipo": "string"
+        },
+        {
+          "campo": "exportacaoConsorciada",
+          "descricao": "Se a exportação é consorciada",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "paisDoImportador",
+          "descricao": "Dados como nome, código e nome resumido do pais importador",
+          "tipo": "object"
+        },
+        {
+          "campo": "pesoLiquidoTotal",
+          "descricao": "Peso líquido total",
+          "tipo": "number"
+        },
+        {
+          "campo": "tratamentoPrioritario",
+          "descricao": "Se há tratamento prioritário",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "valorTotalDasMercadorias",
+          "descricao": "Valor total das mercadorias",
+          "tipo": "number"
+        },
+        {
+          "campo": "moeda",
+          "descricao": "Dados como código e descrição da moeda",
+          "tipo": "object"
+        },
+        {
+          "campo": "valorDaMercadoriaNoLocalDeEmbarque",
+          "descricao": "Valor da mercadoria no local de embarque",
+          "tipo": "number"
+        },
+        {
+          "campo": "contato",
+          "descricao": "Dados como nome, fone, email...",
+          "tipo": "object"
+        },
+        {
+          "campo": "localDeDespacho",
+          "descricao": "Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento",
+          "tipo": "object"
+        },
+        {
+          "campo": "localDeEmbarque",
+          "descricao": "Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento",
+          "tipo": "object"
+        },
+        {
+          "campo": "viaEspecialDeTransporte",
+          "descricao": "Se há alguma via especial de transporte",
+          "tipo": "string"
+        },
+        {
+          "campo": "usoObrigatorioDeTransito",
+          "descricao": "Se há obrigatoriedade no trânsito",
+          "tipo": "boolean"
+        },
+        {
+          "campo": "informacoesComplementares",
+          "descricao": "Quaisquer informações adicionais",
+          "tipo": "string"
+        },
+        {
+          "campo": "itens",
+          "descricao": "Itens constante da DUE",
+          "tipo": "object"
+        },
+        {
+          "campo": "eventosDoHistorico",
+          "descricao": "Dados históricos",
+          "tipo": "object"
         }
       ],
       "teste":  [
