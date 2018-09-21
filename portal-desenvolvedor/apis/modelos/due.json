@@ -1,7 +1,7 @@
 {
   "nome": "API Consulta DUe",
   "subtitulo": "Acesse dados detalhados sobre a Declaraçao Única de Exportação, diretamente das bases do MDIC e da RFB. ",
-  "descricao": "Com a API Consulta DUE fornece consulta aos dados da DUE de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com a DUE permitirá a você obter Informações básicas de identificação da exportação, Situação atual da DUE, Locais de Despacho e Embarque e outros Itens da DUE",
+  "descricao": "A API Consulta DUE permite a consulta dos dados da DUE de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com a DUE permitirá a você obter Informações básicas de identificação da exportação, Situação atual da DUE, Locais de Despacho e Embarque e outros Itens da DUE",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
   "informacoes": {
     "idProducao": "api-consulta-due",
