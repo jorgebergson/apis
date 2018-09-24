@@ -4,8 +4,8 @@
   "descricao": "A API Consulta DUE permite a consulta dos dados da DUE de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com a DUE permitirá a você obter Informações básicas de identificação da exportação, Situação atual da DUE, Locais de Despacho e Embarque e outros Itens da DUE",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
   "informacoes": {
-    "idProducao": "api-consulta-due",
-    "idDegustacao": "api-consulta-due-trial",
+    "idProducao": " api-consulta-due",
+    "idDegustacao": " api-consulta-due-trial",
     "formatos": [
       " JSON"
     ]
