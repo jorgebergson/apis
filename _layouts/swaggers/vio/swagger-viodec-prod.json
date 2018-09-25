@@ -82,15 +82,6 @@
                             "type": "string",
                             "format": "byte"
                         }
-                    },
-                    {
-                        "in": "query",
-                        "name": "online_image",
-                        "description": "Indica que além da decodificação dos bytes e verificação do status do documento, o serviço deve retornar também a foto contida no QR Code Vio com maior qualidade, obtida diretamente da entidade emissora do documento. A disponibilização dessa funcionalidade depende da autorização e disponibilização do serviço pela entidade emissora do documento. Se não for possível obter essa foto, a decodificação não será realizada e um código de erro será retornado. Caso queira utilizar esse recurso é importante atentar esse é o único queryparam aceito pelo serviço, e seu valor deverá ser true.",
-                        "required": false,
-                        "schema": {
-                            "type": "boolean"
-                        }
                     }
                 ],
                 "responses": {
