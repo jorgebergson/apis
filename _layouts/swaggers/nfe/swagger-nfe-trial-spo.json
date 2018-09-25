@@ -64,7 +64,7 @@
             "description": "Não existe NF-e com chave de acesso informada."
           },
           "500": {
-            "description": "Ocorreu algum erro interno na API."
+            "description": "Erro interno do servidor"
           }
         }
       }
