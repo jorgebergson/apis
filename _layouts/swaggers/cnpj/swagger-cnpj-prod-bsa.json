@@ -57,6 +57,9 @@
           },
           "404": {
             "description": "Não existe Pessoa Jurídica com o Número de Inscrição informado"
+           },
+          "500": {
+            "description": "Erro interno do servidor"
           }
         }
       }
