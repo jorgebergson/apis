@@ -71,9 +71,6 @@
           },
           "500": {
             "description": "Erro interno do Serviço"
-          },
-          "503": {
-            "description": "Erro em algum serviço de integração utilizado pelo Consulta CPF"
           }
         }
       }
