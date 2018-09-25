@@ -20,7 +20,7 @@
             "name": "1 Introdução"
         },
         {
-            "name": "2 Integrando o Vio Decodificar"
+            "name": "2 Integrando o Vio Decodificador"
         },
         {
             "name": "3 Referência da API"
@@ -107,7 +107,7 @@
                         }
                     },
                     "403": {
-                        "description": "Tentativa de obter foto de maior qualidade (passou queryparam 'online_image=true' na requisição) de um documento cuja entidade emisora não autorizou tal consulta",
+                        "description": "Tentativa de obter foto de maior qualidade (passou queryparam 'online_image=true' na requisição) de um documento cuja entidade emissora não autorizou tal consulta",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
