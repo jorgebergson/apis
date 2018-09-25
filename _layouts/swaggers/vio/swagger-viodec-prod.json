@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "O Vio Decodificar permite agilizar e automatizar o processo de autenticação de documentos compatíveis.",
+        "description": "O Vio Decodificador permite agilizar e automatizar o processo de autenticação de documentos compatíveis.",
         "version": "1.0",
-        "title": "Vio Decodificar"
+        "title": "Vio Decodificador"
     },
     "security": [{
         "Bearer": []
