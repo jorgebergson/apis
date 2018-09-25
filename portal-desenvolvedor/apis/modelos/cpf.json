@@ -141,6 +141,11 @@
           "codigo": "404",
           "mensagem": "NOT FOUND",
           "exemplo": "{}"
+        },
+        {
+          "codigo": "500",
+          "mensagem": "SERVER INTERNAL ERROR",
+          "exemplo": "{\n\t\"error\":&nbsp\"no reponse from server\"\n}"
         }
       ]
     }
