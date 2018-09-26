@@ -1,7 +1,7 @@
 {
   "nome": "API Consulta Dívida Ativa",
-  "subtitulo": "Acesse dados detalhados sobre a Declaraçao Única de Exportação, diretamente das bases do MDIC e da RFB. ",
-  "descricao": "A API Consulta DUE permite a consulta dos dados da DUE de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com a DUE permitirá a você obter Informações básicas de identificação da exportação, Situação atual da DUE, Locais de Despacho e Embarque e outros Itens da DUE",
+  "subtitulo": "Acesse informações sobre Dívida Ativa da União diretamente das bases do PGFN ",
+  "descricao": "A API Consulta Dívida Ativa permite a partir de um CPF ou CNPJ a relização de Consultas da Dívida Ativa da União de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com essa API permitirá a você obter informações detalhadas de dívidas de natureza tributária não previdenciária",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
   "informacoes": {
     "idProducao": " api-consulta-",
