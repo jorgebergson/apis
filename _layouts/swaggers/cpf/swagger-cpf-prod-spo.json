@@ -70,7 +70,7 @@
             "description": "Não existe CPF com o número de inscrição informado."
           },
           "500": {
-            "description": "Erro interno do Serviço"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -83,10 +83,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço indisponível"
           }
         }
       }
