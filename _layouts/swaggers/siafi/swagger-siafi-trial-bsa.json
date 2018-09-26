@@ -16,7 +16,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Integração SIAFI (api-siafi)",
-    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de Retorno comuns\n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| 200           | OK                  | Tudo funcionou como esperado e a operação foi realizada com sucesso                                               |\n| 400           | Requisição inválida | Alguma(s) informação(ões) enviadas não são válidas para a operação especificada. |\n| 403           | Não encontrado      | O usuário especificado não tem permissão para executar a operação especificada |\n| 500           | Erro no servidor    | Ocorreu algum erro interno.      |\n\n## Endereço de Produção\n    https://apigateway.serpro.gov.br/api-siafi/1.0.0\n    \n## Endereço de Degustação\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0\n    "
+    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de Retorno comuns\n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| 200           | OK                  | Tudo funcionou como esperado e a operação foi realizada com sucesso                                               |\n| 400           | Requisição inválida | Alguma(s) informação(ões) enviadas não são válidas para a operação especificada. |\n| 403           | Permissão negada      | O usuário especificado não tem permissão para executar a operação especificada |\n| 500           | Erro interno do servidor    | Ocorreu algum erro interno.      |\n\n## Endereço de Produção\n    https://apigateway.serpro.gov.br/api-siafi/1.0.0\n    \n## Endereço de Degustação\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0\n    "
   },
   "basePath": "/api-siafi-trial/1.0.0",
   "paths": {
@@ -28,10 +28,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço indisponível"
           }
         }
       }
@@ -76,7 +76,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -121,7 +121,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -166,7 +166,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -211,7 +211,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -256,7 +256,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -301,7 +301,7 @@
             "description": "Usuário não tem permissão para realizar esta operação"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -370,7 +370,7 @@
             "description": "Nota de Crédito inexistente"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -420,7 +420,7 @@
             "description": "Credencial informada não possui permissão para gerar a Nota de Cŕedito"
           },
           "500": {
-            "description": "Erro interno da API"
+            "description": "Erro interno do servidor"
           }
         }
       }
