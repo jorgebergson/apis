@@ -54,7 +54,7 @@
                     "2 Integrando com o Vio Decodificador"
                 ],
                 "summary": "Integrando com pistolas de leitura",
-                "description": "A API de Decodificador precisa dos dados extraídos de QR Codes Vio sem nenhuma modificação, isso significa que pistolas que lêem códigos de barra diretamente em campos de texto ou que interpretam os dados do QR Code como texto não são compatíveis. Isso acontece porque o QR Code Vio armazena as informações em formato binário e tentar ler esses dados como texto pode resultar na leitura de diversos caracteres inválidos.\n\nEntão para integrar a API de decodificação com pistolas de leitura é necessário utilizar o driver fornecido pelo fabricante para se comunicar com a pistola e obter os dados binários, sem modificação, lidos do QR Code Vio. Também é necessário remover qualquer metadado presente no QR Code (a especificação do QR Code usa esses metadados para conter informações de tamanho do QR Code e nível de recuperação de dados corrompidos) obtendo assim apenas os dados binários relativos ao documento protegido pelo QR Code.\n\nDe posse desses dados basta então chamar a API de decodificação informando esses dados como corpo da mensagem.",
+                "description": "A API de decodificação precisa dos dados extraídos de QR Codes Vio sem nenhuma modificação. Pistolas que lêem códigos de barra diretamente em campos de texto ou que interpretam os dados do QR Code como texto não são compatíveis. Isso acontece porque o QR Code Vio armazena as informações em formato binário e tentar ler esses dados como texto pode resultar na leitura de diversos caracteres inválidos.\n\nEntão, para integrar a API de decodificação com pistolas de leitura é necessário utilizar o driver fornecido pelo fabricante para se comunicar com a pistola e obter os dados binários, sem modificação, lidos do QR Code Vio. Também é necessário remover qualquer metadado presente no QR Code (a especificação do QR Code usa esses metadados para conter informações de tamanho do QR Code e nível de recuperação de dados corrompidos) obtendo assim apenas os dados binários relativos ao documento contido no QR Code.\n\nDe posse desses dados basta então chamar a API de decodificação passando-os no corpo da mensagem.",
                 "responses": {}
             }
         },
@@ -64,7 +64,7 @@
                     "3 Referência da API"
                 ],
                 "summary": "Decodificar dados do QR Code Vio",
-                "description": "Decodifica uma sequência de bytes que foi extraída de um QR Code Vio e, caso o documento lido suporte, verifica online seu status. Se não for possível realizar essa consulta online, o resultado da decodificação é retornado normalmente, sem esse dado.",
+                "description": "Decodifica uma sequência de bytes que foi extraída de um QR Code Vio e, caso o documento lido suporte, verifica online sua situação. Se não for possível realizar essa consulta online, o resultado da decodificação é retornado normalmente, sem esse dado.",
                 "operationId": "decode",
                 "consumes": [
                     "application/octet-stream"
@@ -86,7 +86,7 @@
                     {
                         "in": "query",
                         "name": "online_image",
-                        "description": "Indica que além da decodificação dos bytes e verificação do status do documento, o serviço deve retornar também a foto contida no QR Code Vio com maior qualidade, obtida diretamente da entidade emissora do documento, caso o documento suporte tal consulta. Se não for possível obter essa foto, a decodificação não será realizada e um código de erro será retornado. Caso queira utilizar esse recurso é importante atentar que esse é o único queryparam aceito pelo serviço, e seu valor deverá ser true.",
+                        "description": "Indica que além da decodificação dos bytes e verificação da situação do documento, o serviço deve retornar também a foto contida no QR Code Vio com maior qualidade, obtida diretamente da entidade emissora do documento, caso o documento suporte tal consulta. Se não for possível obter essa foto, a decodificação não será realizada e um código de erro será retornado. Caso queira utilizar esse recurso é importante atentar que esse é o único queryparam aceito pelo serviço, e seu valor deverá ser true.",
                         "required": false,
                         "type": "boolean"
                     }
@@ -117,7 +117,7 @@
                         }
                     },
                     "502":{
-                        "description": "Erro em consulta por status ou por foto de maior qualidade, na conexão com a entidade emissora do documento. Note que esse erro só poderá ocorrer caso o documento disponibilize tais consultas",
+                        "description": "Erro em consulta por situação do documento ou por sua foto de maior qualidade, na conexão com a entidade emissora do documento. Note que esse erro só poderá ocorrer caso o documento disponibilize tais consultas",
                         "schema": {
                             "$ref": "#/definitions/Documento"
                         }
