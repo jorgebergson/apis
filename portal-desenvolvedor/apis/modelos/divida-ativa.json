@@ -286,7 +286,7 @@
         },
         {
           "campo": "dcomp",
-          "descricao": " ",
+          "descricao": "Declaração de compensação",
           "tipo": "string"
         },
         {
@@ -321,7 +321,7 @@
         },
         {
           "ni": "inscricao: &nbsp 404672584327", 
-          "situacao": "Número de inscrição com retorno HTTP 404"
+          "situacao": "Número de inscrição com retorno HTTP 400"
         },
         {
           "ni": "inscricao: &nbsp 4948725893281", 
@@ -374,7 +374,62 @@
           "campo": "numeroInscricao",
           "descricao": "Número de inscrição do devedor",
           "tipo": "string"
-        }
+        },
+        {
+          "campo": "numeroProcesso",
+          "descricao": "Número do processo",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacaoInscricao",
+          "descricao": "Situação da inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacaoDescricao",
+          "descricao": "Situação da descrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeDevedor",
+          "descricao": "Nome do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "tipoDevedor",
+          "descricao": "Tipo do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalConsolidadoMoeda",
+          "descricao": "Valor total consolidado da moeda",
+          "tipo": "string"
+        },
+        {
+          "campo": "cpfCnpj",
+          "descricao": "Número do CPF ou CNPJ",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoSida",
+          "descricao": "Código da SIDA",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeUnidade",
+          "descricao": "Nome da unidade",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoComprot",
+          "descricao": "Código do Comprot",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoUorg",
+          "descricao": "Código da UORG",
+          "tipo": "string"
+        } 
       ],
       "teste":  [
         {
