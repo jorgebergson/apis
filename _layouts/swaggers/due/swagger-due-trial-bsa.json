@@ -56,68 +56,16 @@
           "3 Tabelas"
         ],
         "summary": "Tabela com as mensagens de sucesso e erros",
-        "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 403   | Requisição não autorizada\n| 404   | Registro não encontrado\n| 408   | Request time-out\n| 500   | Erro interno do servidor\n| 503   | Serviço indisponível\n| 504   | Gateway time-out "
+        "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 404   | Registro não encontrado\n| 500   | Erro interno do servidor\n"
       }
     },
     "null": null,
-    "/status": {
-      "get": {
-        "tags": [
-          "4 Status"
-        ],
-        "summary": "Verifica status da API",
-        "responses": {
-          "200": {
-            "description": "API funcionando"
-          },
-          "500": {
-            "description": "API fora do ar"
-          }
-        }
-      }
-    },
-    "/v1/due/{numero}/{chave}": {
-      "get": {
-        "tags": [
-          "5 Métodos e Testes Consulta"
-        ],
-        "summary": "Consulta a DUE - V1",
-        "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|operadorEconomicoAutorizado|Indicador de autorização de operador econômico|boolean\n|tratamentoPrioritario|Indicador de Tratamento Prioritário|boolean\n|moeda|Moeda da Operação|object\n|localDeDespacho|Localização do local do despacho|object\n|localDeEmbarque|Localização do local de embarque|object\n|usoObrigatorioDeDocumentoDeTransito|Indicador de obrigatoriedade de documento em trânsito|boolean\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "numero",
-            "type": "string",
-            "description": "Número da DUE",
-            "required": true
-          },
-          {
-            "in": "path",
-            "name": "chave",
-            "type": "string",
-            "description": "Chave de Acesso",
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/ConsultaDUE-V1"
-            }
-          },
-          "422": {
-            "description": "Erros\nCódigos de erros possíveis: Veja item 3 Tabelas"
-          }
-        }
-      }
-    },
     "/v2/due/{numero}/{chave}": {
       "get": {
         "tags": [
-          "5 Métodos e Testes Consulta"
+          "4 Métodos e Testes Consulta"
         ],
-        "summary": "Consulta a DUE - V2",
+        "summary": "Consulta a DUE",
         "description": "Retorna todas as informações vinculadas à DUE - Declaração Única de Exportação de acordo com o perfil da instituição financeira.\n## Parâmetros de Entrada\n|Nome|Descrição|Tipo|Detalhes\n|----|---------|----|--------\n|numero|Número da DUE|string|Obrigatório\n|chave|Chave de acesso|string|Obrigatório\n\n\n## Atributos de Resposta\n|Nome|Descrição|Tipo\n|----|---------|----\n|numero|Número da DUE|string\n|ruc|Registro Único de Carga|string\n|chaveDeAcesso|Identificação da Chave de acesso|string\n|situacao|Situação|string\n|canal|Meio|string\n|exigencia|Obrigatoriedade|boolean\n|retificada|Quando houve alterações|boolean\n|tratamentoAdministrativo|Se a declaração possui algum tratamento|string\n|tratamentoAdministrativoComImpedimentoDeEmbarque|Se a declaração possui algum impedimento administrativo|boolean\n|tratamentoAdministrativoComRequerimentoDeInspecao|Se a declaração possui algum requerimento de inspeção|boolean\n|situacaoDaCarga|Situação da Carga|string\n|bloqueadaParaEmbarque|Condição de bloqueio para o embarque|boolean\n|tipoDeDocumentoFiscal|Qual o documento informado|string\n|motivoDeDispensaDeNotaFiscal|O motivo da dispensa da NF|string\n|Declarante|Dados como nome, nacionalidade e documentação|object\n|operadorEconomicoAutorizado|Indicador de autorização de operdor econômico|boolean\n|formaDeExportacao|A maneira como o produto será exportado|string\n|situacaoEspecial|Se existe alguma condição especial|string\n|exportacaoConsorciada|Se a exportação é consorciada|boolean\n|paisDoImportador|Dados como nome, código e nome resumido do pais importador|object\n|pesoLiquidoTotal|Peso liquido total|number\n|tratamentoPrioritario|Se há tramento prioritario|boolean\n|valorTotalDasMercadorias|Valor total|number\n|moeda|Dados como código e descrição da moeda|object\n|valorDaMercadoriaNoLocalDeEmbarque|Valor da mercadoria no local de embarque|number\n|contato|Dados como nome, fone e email|object\n|localDeDespacho|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|localDeEmbarque|Dados como unidade RFB, recinto aduaneiro e cnpj do estabelecimento|object\n|viasEspecialDeTransporte|Se há alguma via especial de transporte|string\n|usoObrigatorioDeTransito|Se há obrigatoriedade no trânsito|boolean\n|informacoesComplementares|Quaisquer informações adicionais|string\n|itens|Itens constante na DUE|object\n|eventosDoHistorico|Dados históricos|object\n### Dados para testes no trial\n    (HTTP 200) numero: 18BR0000151067 - chave: 18NYJ151060\n    (HTTP 400) numero: 18BR000015106  - chave: 18NYJ15106\n    (HTTP 404) numero: 17BR0000015111 - chave: 17NYJ125811\n        ",
         "parameters": [
           {
@@ -143,7 +91,23 @@
             }
           },
           "422": {
-            "description": "Erros\nCódigos de erros possíveis: Veja item 3 Tabelas"
+            "description": "Veja os códigos de erros no item 3 - Tabelas"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "5 Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "Serviço disponível"
+          },
+          "500": {
+            "description": "Serviço indisponível"
           }
         }
       }
@@ -156,344 +120,6 @@
     "https"
   ],
   "definitions": {
-    "ConsultaDUE-V1": {
-      "type": "object",
-      "properties": {
-        "numero": {
-          "type": "string",
-          "example": "18BR0000133506"
-        },
-        "ruc": {
-          "type": "string",
-          "example": "8BR00000000100000000000000000013602"
-        },
-        "chaveDeAcesso": {
-          "type": "string",
-          "example": "18ERM135006"
-        },
-        "tratamentoAdministrativoComImpedimentoDeEmbarque": {
-          "type": "boolean",
-          "example": "false"
-        },
-        "situacaoDaCarga": {
-          "type": "string",
-          "example": "null"
-        },
-        "bloqueadaParaEmbarque": {
-          "type": "boolean",
-          "example": "false"
-        },
-        "operadorEconomicoAutorizado": {
-          "type": "boolean",
-          "example": "false"
-        },
-        "tratamentoPrioritario": {
-          "type": "boolean",
-          "example": "true"
-        },
-        "moeda": {
-          "type": "object",
-          "properties": {
-            "codigo": {
-              "type": "integer",
-              "example": "220"
-            },
-            "descricao": {
-              "type": "string",
-              "example": "DOLAR DOS EUA"
-            }
-          }
-        },
-        "localDeDespacho": {
-          "type": "object",
-          "properties": {
-            "unidadeRFB": {
-              "type": "object",
-              "properties": {
-                "codigo": {
-                  "type": "string",
-                  "example": "717600"
-                },
-                "descricao": {
-                  "type": "string",
-                  "example": "PORTO DO RIO"
-                }
-              }
-            },
-            "recintoAduaneiro": {
-              "type": "object",
-              "properties": {
-                "codigo": {
-                  "type": "string",
-                  "example": "7929301"
-                },
-                "descricao": {
-                  "type": "string",
-                  "example": "PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR"
-                },
-                "latitude": {
-                  "type": "string",
-                  "example": "-20.812222"
-                },
-                "longitude": {
-                  "type": "string",
-                  "example": "-40.248333"
-                }
-              }
-            }
-          }
-        },
-        "localDeEmbarque": {
-          "type": "object",
-          "properties": {
-            "unidadeRFB": {
-              "type": "object",
-              "properties": {
-                "codigo": {
-                  "type": "string",
-                  "example": "717600"
-                },
-                "descricao": {
-                  "type": "string",
-                  "example": "PORTO DO RIO"
-                }
-              }
-            },
-            "recintoAduaneiro": {
-              "type": "object",
-              "properties": {
-                "codigo": {
-                  "type": "string",
-                  "example": "7929301"
-                },
-                "descricao": {
-                  "type": "string",
-                  "example": "PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR"
-                },
-                "latitude": {
-                  "type": "string",
-                  "example": "-20.812222"
-                },
-                "longitude": {
-                  "type": "string",
-                  "example": "-40.248333"
-                }
-              }
-            }
-          }
-        },
-        "usoObrigatorioDeDocumentoDeTransito": {
-          "type": "boolean",
-          "example": "false"
-        },
-        "itens": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "numero": {
-                "type": "integer",
-                "example": "1"
-              },
-              "exportador": {
-                "type": "object",
-                "properties": {
-                  "nome": {
-                    "type": "string",
-                    "example": "OWMKX NX OIWUQD UW"
-                  },
-                  "nacionalidade": {
-                    "type": "object",
-                    "properties": {
-                      "codigo": {
-                        "type": "integer",
-                        "example": "105"
-                      },
-                      "nome": {
-                        "type": "string",
-                        "example": "BRASIL"
-                      },
-                      "nomeResumido": {
-                        "type": "string",
-                        "example": "BRA"
-                      }
-                    }
-                  },
-                  "numeroDoDocumento": {
-                    "type": "string",
-                    "example": "00000000002720"
-                  },
-                  "tipoDoDocumento": {
-                    "type": "string",
-                    "example": "CNPJ"
-                  },
-                  "estrangeiro": {
-                    "type": "boolean",
-                    "example": "false"
-                  }
-                }
-              },
-              "itemDaNotaFiscalDeExportacao": {
-                "type": "object",
-                "properties": {
-                  "notaficalEletronica": {
-                    "type": "boolean",
-                    "example": "true"
-                  },
-                  "finalidade": {
-                    "type": "string",
-                    "example": "normal"
-                  },
-                  "serie": {
-                    "type": "integer",
-                    "example": "90"
-                  },
-                  "cfop": {
-                    "type": "integer",
-                    "example": "7101"
-                  },
-                  "numeroDoItem": {
-                    "type": "integer",
-                    "example": "1"
-                  },
-                  "numeroDoDocumento": {
-                    "type": "integer",
-                    "example": "684320"
-                  },
-                  "chaveDeAcesso": {
-                    "type": "string",
-                    "example": "35180500000000002720550900006843201000000009"
-                  },
-                  "codigoDoProduto": {
-                    "type": "string",
-                    "example": "000000000000021600001"
-                  }
-                }
-              },
-              "ncm": {
-                "type": "object",
-                "properties": {
-                  "codigo": {
-                    "type": "string",
-                    "example": "12011000"
-                  },
-                  "descricao": {
-                    "type": "string",
-                    "example": "SOJA, MESMO TRITURADA."
-                  },
-                  "unidadeEstatistica": {
-                    "type": "string",
-                    "example": "UNIDADE"
-                  },
-                  "atributos": {
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "codigo": {
-                          "type": "string",
-                          "example": "001"
-                        },
-                        "conteudo": {
-                          "type": "string",
-                          "example": "Estampado"
-                        },
-                        "descricao": {
-                          "type": "string",
-                          "example": "Tipo de tecido"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "descricaoDaMercadoria\"": {
-                "type": "string",
-                "example": "PRODUTO GENERICO TESTE - GRADE COMPOSTA 34."
-              },
-              "quantidadeNaUnidadeEstatistica": {
-                "type": "number",
-                "example": "1"
-              },
-              "pesoLiquidoTotal": {
-                "type": "number",
-                "example": "49"
-              },
-              "unidadeComercializada": {
-                "type": "string",
-                "example": "UN"
-              },
-              "valorDaMercadoriaNaCondicaoDeVenda": {
-                "type": "number",
-                "example": "3000"
-              },
-              "valorDaMercadoriaNoLocalDeEmbarque": {
-                "type": "number",
-                "example": "200,1"
-              },
-              "valorDaMercadoriaNoLocalDeEmbarqueEmReais\"": {
-                "type": "number",
-                "example": "7143.55716"
-              },
-              "dataDeConversao": {
-                "type": "string",
-                "example": "2018-05-01T05:57:00.000+0000"
-              },
-              "importador": {
-                "type": "object",
-                "properties": {
-                  "nome": {
-                    "type": "string",
-                    "example": "NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL"
-                  },
-                  "endereco": {
-                    "type": "string",
-                    "example": "RUA ELISA SILVERIO - 45 - CENTRO - EXTERIOR - 86800270 - RUSSIA"
-                  },
-                  "pais": {
-                    "type": "object",
-                    "properties": {
-                      "codigo": {
-                        "type": "integer",
-                        "example": "676"
-                      },
-                      "nome": {
-                        "type": "string",
-                        "example": "RUSSIA, FEDERACAO DA"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "eventosDoHistorico": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "dataEHoraDoEvento": {
-                "type": "string",
-                "example": "2018-04-27T11:17:58.689+0000"
-              },
-              "evento": {
-                "type": "string",
-                "example": "Registro"
-              },
-              "responsavel": {
-                "type": "string",
-                "example": "69211221749"
-              },
-              "informacoesAdicionais": {
-                "type": "string",
-                "example": "null"
-              }
-            }
-          }
-        }
-      }
-    },
     "ConsultaDUE-V2": {
       "type": "object",
       "properties": {

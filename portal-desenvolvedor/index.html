@@ -50,7 +50,7 @@
 									</header>
 									<div class="content">
 										<p>Uma API é um conjunto de funções e procedimentos utilizados na construção de programas e sistemas de software. As API fornecem funcionalidades básicas, com o propósito de integrar as funcionalidades fornecidas à sua aplicação. Portanto, não possui uma interface gráfica para consumo pelo usuário final.</p>
-										<p>Para conhecer todas as API fornecidas pelo SERPRO, acesse o endereço xxxxxx.serpro.gov.br/apiserpro/docs. Lá você encontrará as API disponibilizadas, e os métodos para acessá-las.</p>
+										<p>Para conhecer todas as API fornecidas pelo SERPRO, acesse o <a href="apis.html">Catálogo de APIS</a>. Lá você encontrará as API disponibilizadas, e os métodos para acessá-las.</p>
 										<p>Todas as chamadas são realizadas através de um Gateway, que fará o controle de autenticação, permissão e registro de requisições.</p>
 									</div>
 								</section>
@@ -226,6 +226,54 @@
 
 								</section>
 
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2 id="codigosGateway">Códigos de Retorno HTTP do Gateway</h2>
+									</header>
+									<div class="content">
+										<p>Além dos códigos de resposta das próprias API, o Gateway de autenticação/validação pode retornar códigos de resposta especfícos, informando o motivo pelo qual não conseguiu se comunicar com a API requisitada. Os principais retornos do Gateway são:</p>
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Código HTTP</th>
+													<th>Código de Resposta</th>
+													<th>Descrição</th>
+													<th>Explicação</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><strong>401</strong></td>
+													<td>900901</td>
+													<td>Credenciais Inválidas</td>
+													<td>Uso de um token de acesso expirado</td>
+												</tr>
+												<tr>
+													<td><strong>401</strong></td>
+													<td>900902</td>
+													<td>Credenciais Ausentes</td>
+													<td>Tentativa de consumo de uma API sem o cabeçalho <strong>Authorization: Bearer ...</strong></td>
+												</tr>
+												<tr>
+													<td><strong>403</strong></td>
+													<td>900906</td>
+													<td>Recurso não encontrado</td>
+													<td>Foi solicitado um recurso (path) inexistente de uma API</td>
+												</tr>
+												<tr>
+													<td><strong>403</strong></td>
+													<td>900908</td>
+													<td>Recurso não permitido</td>
+													<td>Tentativa de requisitar uma API não contratada</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+
+								</section>
+
 
 
 						</div>
@@ -254,6 +302,7 @@
 												<li><a href="#nomenclatura">Nomenclatura das URL</a></li>
 												<li><a href="#respostas">Respostas</a></li>
 												<li><a href="#codigos">Códigos de Retorno HTTP mais comuns</a></li>
+												<li><a href="#codigosGateway">Códigos de Retorno HTTP do Gateway</a></li>
 											</ul>
 										</li>
 										<li><a href="autenticacao.html">Autenticação</a></li>

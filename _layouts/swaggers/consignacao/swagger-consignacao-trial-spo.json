@@ -97,7 +97,7 @@
             "description": "Erro de validação. Algum campo possui informações inválidas"
           },
           "500": {
-            "description": "Erro interno"
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -110,10 +110,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço indisponível"
           }
         }
       }

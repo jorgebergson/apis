@@ -13,6 +13,18 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="apis/js/operacoes.js"></script>
+		<script src="apis/js/jquery-3.3.1.min.js"></script>
+		<script>
+			var api = "apis/modelos/apis.json";
+			$.getJSON(api, function(){})
+				.done(function(apis){
+					$('#apiLista').append(makeAPIList(apis));
+				})
+				.fail(function(){
+					$('#apiLista').append(makeAPIList("Erro ao obter APIS"));
+				});
+		</script>
 	</head>
 	<body>
 
@@ -48,50 +60,7 @@
 											<header class="major">
 												<h2>Catálogo de APIs</h2>
 											</header>
-											<div class="features">
-												<article>
-													<div class="badge"><a href="apis/consulta-cpf.html" style="border:none;"><img src="./images/badges/badge-cpf.png"></a></img></div>
-													<div class="content">
-														<h3><a href="apis/consulta-cpf.html" style="border:none;">Consulta CPF</a></h3>
-														<p>Acesse dados de pessoas físicas diretamente das bases da Receita Federal</p>
-													</div>
-												</article>
-												<article>
-													<div class="badge"><img src="./images/badges/badge-cnpj.png"></img></div>
-													<div class="content">
-														<h3>Consulta CNPJ</h3>
-														<p>Acesse dados de pessoas físicas diretamente das bases da Receita Federal</p>
-													</div>
-												</article>
-												<article>
-													<div class="badge"><img src="./images/badges/badge-nfe.png"></img></div>
-													<div class="content">
-														<h3>Consulta NF-e</h3>
-														<p>Acesse dados de nota fiscal eletrônica diretamente do Sped </p>
-													</div>
-												</article>
-												<article>
-													<div class="badge"><img src="./images/badges/badge-siafi.png"></img></div>
-													<div class="content">
-														<h3>Integra SIAFI</h3>
-														<p>Registre e consulte documentos contábeis diretamente no Siafi</p>
-													</div>
-												</article>
-												<article>
-													<div class="badge"><img src="./images/badges/badge-divida-ativa.png"></img></div>
-													<div class="content">
-														<h3>Consulta Dívida Ativa</h3>
-														<p>Acesse dados detalhados sobre as dívidas ativas da União direto das bases da PGFN</p>
-													</div>
-												</article>
-												<article>
-													<div class="badge"><img src="./images/badges/badge-due.png"></img></div>
-													<div class="content">
-														<h3>Consulta DU-E</h3>
-														<p>Acesse dados detalhados sobre a Declaração Única de Exportação diretamente das bases do MDIC.</p>
-													</div>
-												</article>
-
+											<div id="apiLista" class="features">
 											</div>
 										</section>
 

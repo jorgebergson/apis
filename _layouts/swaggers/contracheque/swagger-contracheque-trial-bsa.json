@@ -81,7 +81,7 @@
             "description": "Incapaz de processar todas as instruções contidas na camada de negócio da aplicação."
           },
           "500": {
-            "description": "Erro genérico não tratado pela aplicação. Retorna uma mensagem genérica e gera log no servidor da aplicação interno do servidor."
+            "description": "Erro interno do servidor"
           }
         }
       }
@@ -94,10 +94,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço indisponível"
           }
         }
       }
