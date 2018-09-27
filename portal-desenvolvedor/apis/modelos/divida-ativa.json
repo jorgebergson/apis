@@ -100,6 +100,16 @@
           "tipo": "string"
         },
         {
+          "campo": "codigoSerie",
+          "descricao": "Código da série",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeSerie",
+          "descricao": "Nome da série",
+          "tipo": "string"
+        },
+        {
           "campo": "codigoOrgaoJustica",
           "descricao": "Código do órgão da justiça",
           "tipo": "string"
