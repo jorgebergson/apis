@@ -12,7 +12,7 @@
   },
     "operacoes": [
     {
-      "path": "/api/v1/inscricao/{numeroInscricao}", "/api/v1/devedor/{numeroInscricaoDevedor}" 
+      "path": "/api/v1/inscricao/{numeroInscricao}",
       "id": "op1",
       "descricao": "Consulta dados da DUE através do Número da DUE e de sua Chave de Acesso",
       "metodo": "GET",
