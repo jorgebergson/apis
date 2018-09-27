@@ -133,6 +133,12 @@
                 "template": {
                     "$ref": "#/definitions/Modelo"
                 },
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Campo"
+                    }
+                },
                 "image": {
                     "$ref": "#/definitions/Imagem"
                 },
@@ -153,12 +159,6 @@
                         "name": {
                             "type": "string"
                         }   
-                     }
-                },
-                "data": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/Campo"
                     }
                 }
             }
