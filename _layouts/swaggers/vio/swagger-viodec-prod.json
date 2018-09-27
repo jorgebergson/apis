@@ -131,16 +131,19 @@
             "type": "object",
             "properties": {
                 "template": {
-                    "$ref": "#/definitions/Modelo"
+                    "$ref": "#/definitions/Modelo",
+                    "required": "true"
                 },
                 "data": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Campo"
-                    }
+                    },
+                    "required": "true"
                 },
                 "image": {
-                    "$ref": "#/definitions/Imagem"
+                    "$ref": "#/definitions/Imagem",
+                    "required": "true"
                 },
                 "status": {
                     "type": "string"
