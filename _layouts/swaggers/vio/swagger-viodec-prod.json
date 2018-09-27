@@ -148,7 +148,7 @@
                     "type": "string"
                 },
                 "owner": {
-                     "type": "string",
+                     "type": "object",
                      "name": {
                          "type": "string"
                      }   
