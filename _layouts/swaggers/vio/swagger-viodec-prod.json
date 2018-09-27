@@ -133,18 +133,8 @@
                 "template": {
                     "$ref": "#/definitions/Modelo"
                 },
-                "data": {
-                    "type": "object",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                },
                 "image": {
                     "$ref": "#/definitions/Imagem"
-                },
-                "created_at": {
-                    "type": "string",
-                    "format": "date-time"
                 },
                 "status": {
                     "type": "string"
@@ -154,13 +144,16 @@
         "Modelo": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "integer"
-                },
                 "name": {
                     "type": "string"
                 },
-                "fields": {
+                "owner": {
+                     "type": "string",
+                     "name": {
+                         "type": "string"
+                     }   
+                },
+                "data": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/Campo"
@@ -171,10 +164,10 @@
         "Imagem": {
             "type": "object",
             "properties": {
-                "type": {
+                "base64": {
                     "type": "string"
                 },
-                "base64": {
+                "type": {
                     "type": "string"
                 }
             }
@@ -182,14 +175,8 @@
         "Campo": {
             "type": "object",
             "properties": {
-                "id": {
-                    "type": "string"
-                },
                 "label": {
                     "type": "string"
-                },
-                "hidden": {
-                    "type": "boolean"
                 }
             }
         }
