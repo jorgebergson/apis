@@ -56,7 +56,7 @@
           "3 Tabelas"
         ],
         "summary": "Tabela com as mensagens de sucesso e erros",
-        "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 403   | Requisição não autorizada\n| 404   | Registro não encontrado\n| 408   | Request time-out\n| 500   | Erro interno do servidor\n| 503   | Serviço indisponível\n| 504   | Gateway time-out "
+        "description": "\n| Código | Mensagem\n| ------ | --------\n| 200   | Operação realizada com sucesso\n| 400   | Requisição mal formatada\n| 404   | Registro não encontrado\n| 500   | Erro interno do servidor\n"
       }
     },
     "null": null,
@@ -91,7 +91,7 @@
             }
           },
           "422": {
-            "description": "Erros\nCódigos de erros possíveis: Veja item 3 Tabelas"
+            "description": "Veja os códigos de erros no item 3 - Tabelas"
           }
         }
       }
@@ -104,10 +104,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço indisponível"
           }
         }
       }

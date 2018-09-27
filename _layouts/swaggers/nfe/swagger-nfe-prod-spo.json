@@ -77,10 +77,10 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "API funcionando"
+            "description": "Serviço disponível"
           },
           "500": {
-            "description": "API fora do ar"
+            "description": "Serviço disponível"
           }
         }
       }
