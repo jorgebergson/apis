@@ -67,7 +67,7 @@
     },
     {
       "path": "/api/v1/devedor/{numeroInscricaoDevedor}",
-      "id": "op2",
+      "id": "op1",
       "descricao": "Consulta dados da DUE através do Número da DUE e de sua Chave de Acesso",
       "metodo": "GET",
       "entrada": [
