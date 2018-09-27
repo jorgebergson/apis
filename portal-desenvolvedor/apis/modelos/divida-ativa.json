@@ -32,7 +32,7 @@
       ],
       "teste":  [
         {
-          "inscricao": "9061700096419", 
+          "ni": "inscricao: &nbsp 9061700096419", 
           "situacao": "Número de inscrição com retorno HTTP 200"
         }
       ],
@@ -80,14 +80,14 @@
       "saida": [
         {
           "campo": "numeroInscricao",
-          "descricao": "Número de",
+          "descricao": "Número de inscrição do devedor",
           "tipo": "string"
         }
       ],
       "teste":  [
         {
-          "numeroInscricao": "09781911768", 
-          "situacao": "Credencias com retorno HTTP 200"
+          "ni": "numeroInscricao: &nbsp 09781911768", 
+          "situacao": "Número de inscrição do devedor com retorno HTTP 200"
         }
       ],
       "exemplos": [
