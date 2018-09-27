@@ -1,8 +1,8 @@
 {
   "nome": "API Consulta Dívida Ativa",
   "subtitulo": "Acesse informações sobre Dívida Ativa da União diretamente das bases do PGFN ",
-  "descricao": "A API Consulta Dívida Ativa permite a partir de um CPF ou CNPJ a relização de Consultas da Dívida Ativa da União de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com essa API permitirá a você obter informações detalhadas de dívidas de natureza tributária não previdenciária",
-  "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf",
+  "descricao": "A API Consulta Dívida Ativa permite a relização de Consultas da Dívida Ativa da União de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com essa API permitirá a você obter informações detalhadas de uma inscrição na dívida ativa e também dados do devedor, seja pessoa física ou jurídica.",
+  "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DividaAtiva.pdf",
   "informacoes": {
     "idProducao": " consulta-divida-ativa",
     "idDegustacao": " consulta-divida-ativa-trial",
@@ -12,28 +12,28 @@
   },
     "operacoes": [
     {
-      "path": "/api/v1/inscricao/{numeroInscricao}",
+      "path": "/api/v1/inscricao/{Número de Inscrição}",
       "id": "op1",
-      "descricao": "Consulta dados da DUE através do Número da DUE e de sua Chave de Acesso",
+      "descricao": "Consulta dados de inscrição na Dívida Ativa da União",
       "metodo": "GET",
       "entrada": [
         {
-          "campo": "Número da DUE e Chave de Acesso",
-          "descricao": "Identificação da credencial da DUE",
+          "campo": "inscricao",
+          "descricao": "Identificação do número de inscrição na Dívida Ativa da União",
           "tipo": "string"
         }
       ],
       "saida": [
         {
-          "campo": "numero",
-          "descricao": "Número da DUE",
+          "campo": "inscricao",
+          "descricao": "Número da inscrição na Dívida Ativa da União",
           "tipo": "string"
         }
       ],
       "teste":  [
         {
-          "ni": "numero: 18BR0000151067 &nbsp chave: 18NYJ151060", 
-          "situacao": "Credencias com retorno HTTP 200"
+          "inscricao": "9061700096419", 
+          "situacao": "Número de inscrição com retorno HTTP 200"
         }
       ],
       "exemplos": [
@@ -66,27 +66,27 @@
       ]
     },
     {
-      "path": "/api/v1/devedor/{numeroInscricaoDevedor}",
+      "path": "/api/v1/devedor/{Número de Inscrição do Devedor}",
       "id": "op2",
-      "descricao": "Consulta dados da DUE através do Número da DUE e de sua Chave de Acesso",
+      "descricao": "Consulta dados do devedor (CPF ou CNPJ) na Dívida Ativa da União",
       "metodo": "GET",
       "entrada": [
         {
-          "campo": "Número da DUE e Chave de Acesso",
-          "descricao": "Identificação da credencial da DUE",
+          "campo": "numeroInscricao",
+          "descricao": "Identificação do número de inscrição do devedor",
           "tipo": "string"
         }
       ],
       "saida": [
         {
-          "campo": "numero",
-          "descricao": "Número da DUE",
+          "campo": "numeroInscricao",
+          "descricao": "Número de",
           "tipo": "string"
         }
       ],
       "teste":  [
         {
-          "ni": "numero: 18BR0000151067 &nbsp chave: 18NYJ151060", 
+          "numeroInscricao": "09781911768", 
           "situacao": "Credencias com retorno HTTP 200"
         }
       ],
