@@ -13,7 +13,7 @@
     "operacoes": [
     {
       "path": "/api/v1/inscricao/{Número de Inscrição}",
-      "id": "op1",
+      "id": "op2",
       "descricao": "Consulta dados de inscrição na Dívida Ativa da União",
       "metodo": "GET",
       "entrada": [
@@ -367,7 +367,7 @@
     },
     {
       "path": "/api/v1/devedor/{Número de Inscrição do Devedor}",
-      "id": "op2",
+      "id": "op1",
       "descricao": "Consulta dados do devedor (CPF ou CNPJ) na Dívida Ativa da União",
       "metodo": "GET",
       "entrada": [
