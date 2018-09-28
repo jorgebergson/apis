@@ -28,18 +28,318 @@
           "campo": "inscricao",
           "descricao": "Número da inscrição na Dívida Ativa da União",
           "tipo": "string"
-        }
+        },
+        {
+          "campo": "processoAdministrativo",
+          "descricao": "Número do processo administrativo",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacao",
+          "descricao": "Situação da Dívida Ativa",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataInscricao",
+          "descricao": "Data de inscrição da Dívida Ativa",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroPFNResponsavel",
+          "descricao": "Número da Procuradoria da Fazenda Nacional responsável",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomePFNResponsavel",
+          "descricao": "Nome da Procuradoria da Fazenda Nacional responsável",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroPFNInscricao",
+          "descricao": "Número da Procuradoria da Fazenda Nacional onde foi feita a inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomePFNInscricao",
+          "descricao": "Nome da Procuradoria da Fazenda Nacional onde foi feita a inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroProcessoJudicial",
+          "descricao": "Número do processo judicial",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroProcessoJudicialNovo",
+          "descricao": "Número do novo processo judicial",
+          "tipo": "string"
+        },
+        {
+          "campo": "orgaoOrigem",
+          "descricao": "Órgão de origem",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoNaturezaReceita",
+          "descricao": "Código da natureza da receita",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeNaturezaReceita",
+          "descricao": "Nome da natureza da receita",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoReceitaPrincipal",
+          "descricao": "Código da receita principal",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeReceita",
+          "descricao": "Nome da receita",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoSerie",
+          "descricao": "Código da série",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeSerie",
+          "descricao": "Nome da série",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoOrgaoJustica",
+          "descricao": "Código do órgão da justiça",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeOrgaoJustica",
+          "descricao": "Nome do órgão da justica",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroJuizo",
+          "descricao": "Número do juízo",
+          "tipo": "string"
+        },
+        {
+          "campo": "descricaoJuizo",
+          "descricao": "Descrição do juízo",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataProtocoloJudExecucao",
+          "descricao": "Data do protocolo judicial de execução",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataDistribuicaoJudicial",
+          "descricao": "Data da distribuição judicial",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorMoedaTotalInscrito",
+          "descricao": "Indicador da moeda total inscrita",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalInscritoMoeda",
+          "descricao": "Valor total da moeda inscrito",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalInscritoIndex",
+          "descricao": "Valor total inscrito indexado",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorMoedaTotalConsolidado",
+          "descricao": "Indicador moeda total consolidado",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalConsolidadoMoeda",
+          "descricao": "Valor total consolidado da moeda",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorMoedaTotalRemanescente",
+          "descricao": "Indicador de moeda total remanescente",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorRemanescenteMoeda",
+          "descricao": "Valor remanescente da moeda",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorRemanescenteIndex",
+          "descricao": "Valor remanescente indexado",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataDevolucaoProcesso",
+          "descricao": "Data de devolução do processo",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroAutoInfracao",
+          "descricao": "Número do auto de infração",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorPrescricaoSV8",
+          "descricao": "Indicador de prescrição SV8",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataDecretacaoFalencia",
+          "descricao": "Data da drecretação da falência",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataFimProcurador",
+          "descricao": "Data fim procurador",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroImovelITR",
+          "descricao": "Número do imóvel ITR",
+          "tipo": "string"
+        },
+        {
+          "campo": "dataExtincaoInscricao",
+          "descricao": "Data de extinção da inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "motivoSuspensaoExigilidade",
+          "descricao": "Motivo da suspensão da exigilidade",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroRipSpu",
+          "descricao": "Número da RipSpu",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorAnaliseOrgaoOrigem",
+          "descricao": "Indicador da análise do órgão de origem",
+          "tipo": "string"
+        },
+        {
+          "campo": "motivoExtincaoInscricao",
+          "descricao": "Motivo da extinção da inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "indicadorProtImpedAjuiz",
+          "descricao": "Indicador ProtImpedAjuiz ",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroAgrupamento",
+          "descricao": "Número do agrupamento",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoOriginal",
+          "descricao": "Número da inscrição original ",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada1",
+          "descricao": "Número de inscrição derivada 1",
+          "tipo": "string"
+        },      
+        {
+          "campo": "numeroInscricaoDerivada2",
+          "descricao": "Número de inscrição derivada 2",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada3",
+          "descricao": "Número de inscrição derivada 3",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada4",
+          "descricao": "Número de inscrição derivada 4",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada5",
+          "descricao": "Número de inscrição derivada 5",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada6",
+          "descricao": "Número de inscrição derivada 6",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricaoDerivada7",
+          "descricao": "Número de inscrição derivada 7",
+          "tipo": "string"
+        },
+        {
+          "campo": "dcomp",
+          "descricao": "Declaração de compensação",
+          "tipo": "string"
+        },
+        {
+          "campo": "descricaoNaoCalculado",
+          "descricao": "Descrição não calculado",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoMunicipioSPU",
+          "descricao": "Código do município SPU",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoSistemaOrigem",
+          "descricao": "Código do sistema de origem",
+          "tipo": "string"
+        },
+        {
+          "campo": "descricaoSistemaOrigem",
+          "descricao": "Descrição do sistema de origem",
+          "tipo": "string"
+        }      
       ],
       "teste":  [
         {
           "ni": "inscricao: &nbsp 9061700096419", 
           "situacao": "Número de inscrição com retorno HTTP 200"
+        },
+        {
+          "ni": "inscricao: &nbsp 4483300091135", 
+          "situacao": "Número de inscrição com retorno HTTP 200"
+        },
+        {
+          "ni": "inscricao: &nbsp 404672584327", 
+          "situacao": "Número de inscrição com retorno HTTP 400"
+        },
+        {
+          "ni": "inscricao: &nbsp 4948725893281", 
+          "situacao": "Número de inscrição com retorno HTTP 404"
         }
       ],
       "exemplos": [
         {
           "linguagem": "CURL",
           "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-consulta-due-trial/v2/due/{numero}/{chave}\""
+        },
+        {
+          "linguagem": "VBA",
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+        },
+        {
+          "linguagem": "Node.js",
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
@@ -82,18 +382,93 @@
           "campo": "numeroInscricao",
           "descricao": "Número de inscrição do devedor",
           "tipo": "string"
-        }
+        },
+        {
+          "campo": "numeroProcesso",
+          "descricao": "Número do processo",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacaoInscricao",
+          "descricao": "Situação da inscrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "situacaoDescricao",
+          "descricao": "Situação da descrição",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeDevedor",
+          "descricao": "Nome do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "tipoDevedor",
+          "descricao": "Tipo do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalConsolidadoMoeda",
+          "descricao": "Valor total consolidado da moeda",
+          "tipo": "string"
+        },
+        {
+          "campo": "cpfCnpj",
+          "descricao": "Número do CPF ou CNPJ",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoSida",
+          "descricao": "Código da SIDA",
+          "tipo": "string"
+        },
+        {
+          "campo": "nomeUnidade",
+          "descricao": "Nome da unidade",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoComprot",
+          "descricao": "Código do Comprot",
+          "tipo": "string"
+        },
+        {
+          "campo": "codigoUorg",
+          "descricao": "Código da UORG",
+          "tipo": "string"
+        } 
       ],
       "teste":  [
         {
-          "ni": "numeroInscricao: &nbsp 09781911768", 
+          "ni": "numeroInscricao: &nbsp 09781911768 (cpf)", 
           "situacao": "Número de inscrição do devedor com retorno HTTP 200"
+        },
+        {
+          "ni": "numeroInscricao: &nbsp 01415666000181 (cnpj)", 
+          "situacao": "Número de inscrição do devedor com retorno HTTP 200"
+        },
+        {
+          "ni": "numeroInscricao: &nbsp 0375198170", 
+          "situacao": "Número de inscrição do devedor com retorno HTTP 400"
+        },
+        {
+          "ni": "numeroInscricao: &nbsp 03741881001", 
+          "situacao": "Número de inscrição do devedor com retorno HTTP 404"
         }
       ],
       "exemplos": [
         {
           "linguagem": "CURL",
           "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-consulta-due-trial/v2/due/{numero}/{chave}\""
+        },
+                {
+          "linguagem": "VBA",
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+        },
+        {
+          "linguagem": "Node.js",
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
