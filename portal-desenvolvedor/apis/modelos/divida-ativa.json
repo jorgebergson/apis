@@ -123,7 +123,7 @@
         {
           "codigo": "200",
           "mensagem": "OK",
-          "exemplo": "[\n\t{\n\t\t\"numeroInscricao\":&nbsp\"10 5 03 003880-14\",\n\t\t\"numeroProcesso\":&nbsp\"10166 677771/2014-12\"\n\t}\n]"
+          "exemplo": "[\n\t{\n\t\t\"numeroInscricao\":&nbsp\"10 5 03 003880-14\",\n\t\t\"numeroProcesso\":&nbsp\"10166 677771/2014-12\",\n\t\t\"situacaoInscricao\":&nbsp\"121105\",\n\t\t\"situacaoDescricao\":&nbsp\"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n\t\t\"nomeDevedor\":&nbsp\"DEVEDOR DA SILVA\",\n\t\t\"tipoDevedor\":&nbsp\"PRINCIPAL\",\n\t\t\"valorTotalConsolidadoMoeda\":&nbsp\"4.457,56\",\n\t\t\"cpfCnpj\":&nbsp\"097.819.117-68\",\n\t\t\"codigoSida\":&nbsp\"1000\",\n\t\t\"nomeUnidade\":&nbsp\"PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO\",\n\t\t\"codigoComprot\":&nbsp\"1101951\",\n\t\t\"codigoUorg\":&nbsp\"0005786\"\n\t}\n]"
         },
         {
           "codigo": "400",
