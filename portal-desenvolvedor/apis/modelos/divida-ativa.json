@@ -128,7 +128,7 @@
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
-          "exemplo": "[\n\t{\n\t\t\"property\":\"numero\",\n\t\t\"message\":\"Número da DUE inválido\"\n\t},\n\t{\n\t\t\"property\":\"chaveAcesso\",\n\t\t\"message\":\"Chave de Acesso inválida\"\n\t}\n\n]"
+          "exemplo": "[\n\t{\n\t\t\"property\":\"numeroInscricaoDevedor\",\n\t\t\"message\":\"CPF ou CNPJ inválido\"\n\t}\n\t}\n\n]"
         },
         {
           "codigo": "404",
