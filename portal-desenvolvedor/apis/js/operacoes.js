@@ -8,6 +8,7 @@ function makeOperationBlock(operacao){
     ent += "<div id=\"modal" + operacao.id + "\" class=\"modal\">";
     ent += "<div class=\"modal-content\">";
     ent += "<span class=\"close\" onmouseup=\"clearFieldsResult(document.getElementById('resultPanel" + operacao.id + "'))\">&times;</span>";
+    ent += "<span class=\"close\" onmouseup=\"clearFieldsResult(document.postElementById('resultPanel" + operacao.id + "'))\">&times;</span>";
     ent += "<h3>"+ operacao.descricao + "</h3>";
     ent += "<p><strong>Bearer:</strong> <span class=\"bearer\"></span><br/>";
     ent += "<strong>URL:</strong> <span id=\"url" + operacao.id + "\"></span><br/>";
