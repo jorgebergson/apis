@@ -15,7 +15,7 @@
       "path": "/api-siafi-trial/1.0.0/ne/alterar",
       "id": "op1",
       "descricao": "Altera Nota de Empenho",
-      "metodo": "GET",
+      "metodo": "POST",
       "entrada": [
         {
           "campo": "inscricao",
