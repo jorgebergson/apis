@@ -21,6 +21,7 @@ function makeOperationBlock(operacao){
         ent += entrada.campo + ": <input id=\"param" + entrada.campo + operacao.id + "\"></input><br/>";
     });        
     ent += "<center><button id=\"req" + operacao.id + "\" onclick=\"makeHTTPRequest(document.getElementById('resultPanel" + operacao.id + "'), document.getElementById('param" + operacao.id + "').value)\">Executar</button></center>";
+    ent += "<center><button id=\"req" + operacao.id + "\" onclick=\"makeHTTPRequest(document.postElementById('resultPanel" + operacao.id + "'), document.postElementById('param" + operacao.id + "').value)\">Executar</button></center>";
     ent += "</div>";
     ent += "</div>";
     ent += "</div>";
