@@ -1,6 +1,6 @@
 {
   "nome": "API Integra SIAFI",
-  "subtitulo": "Com a API Integra Siafi você pode diminuir o esforço manual e o tempo de contabilização do Siafi, a partir da interação dos sistemas de gestão. ",
+  "subtitulo": "Com a API Integra Siafi você pode diminuir o esforço manual e o tempo de contabilização do Siafi, a partir da integração dos sistemas de gestão. ",
   "descricao": "A API Integra SIAFI permite a realização de consultas e registros de documentos contábeis diretamente nas bases da STN - Secretaria do Tesouro Nacional. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro.",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf",
   "informacoes": {
@@ -15,7 +15,7 @@
       "path": "/api-siafi-trial/1.0.0/ne/alterar",
       "id": "op1",
       "descricao": "Altera Nota de Empenho",
-      "metodo": "post",
+      "metodo": "get",
       "entrada": [
         {
           "campo": "inscricao",
