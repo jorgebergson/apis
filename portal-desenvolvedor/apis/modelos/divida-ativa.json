@@ -351,7 +351,7 @@
         {
           "codigo": "400",
           "mensagem": "BAD REQUEST",
-          "exemplo": "[\n\t{\n\t\t\"property\":\"numeroInscricao\",\n\t\t\"message\":\"Número de Inscrição Inválido\"\n\t}\n\n]"
+          "exemplo": "[\n\t{\n\t\t\"property\":&nbsp\"numeroInscricao\",\n\t\t\"message\":&nbsp\"Número de Inscrição Inválido\"\n\t}\n\n]"
         },
         {
           "codigo": "404",
