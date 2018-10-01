@@ -1,6 +1,6 @@
 {
   "nome": "API Consulta Dívida Ativa",
-  "subtitulo": "Acesse informações sobre Dívida Ativa da União diretamente das bases do PGFN ",
+  "subtitulo": "Acesse informações sobre Dívida Ativa da União diretamente das bases da PGFN ",
   "descricao": "A API Consulta Dívida Ativa permite a relização de Consultas da Dívida Ativa da União de forma direta e atualizada. Garantido aos usuários a integridade dessas informações em um ambiente confiável e seguro. A integração de seus sistemas com essa API permitirá a você obter informações detalhadas de uma inscrição na dívida ativa e também dados do devedor, seja pessoa física ou jurídica.",
   "linkInfoNegocio": "https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DividaAtiva.pdf",
   "informacoes": {
