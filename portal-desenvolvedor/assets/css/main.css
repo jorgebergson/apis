@@ -4115,18 +4115,18 @@
 
 .POSTOperation {
     padding: 5px;
-    background-color: #90EE90; /* Red */
+    background-color: #ECFAF4; /* Red */
     color: black;
 		font-family: monospace;
     border-style: solid;
-    border-color: #66A367;
+    border-color: #49CC90;
     border-width: 1px;
 		border-radius: 5px;
 		font-size: 25px;
 }
 
 .POSTLabel{
-		background-color: #66A367;
+		background-color: #49CC90;
 		color:white;
 		font-weight:bold;
 		padding:3px;
