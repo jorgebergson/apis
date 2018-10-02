@@ -14,8 +14,8 @@
     { 
       "path": "/api-siafi-trial/1.0.0/ne/alterar",
       "id": "op1",
-      "descricao": "   Altera Nota de Empenho",
-      "metodo": "POST ", 
+      "descricao": "Altera Nota de Empenho",
+      "metodo": "POST", 
       "entrada": [
         {
           "campo": "inscricao",
@@ -368,8 +368,8 @@
     {
       "path": "/api/v1/devedor/{Número de Inscrição do Devedor}",
       "id": "op2",
-      "descricao": "  Consulta dados do devedor (CPF ou CNPJ) na Dívida Ativa da União",
-      "metodo": "GET ",
+      "descricao": "Consulta dados do devedor (CPF ou CNPJ) na Dívida Ativa da União",
+      "metodo": "GET",
       "entrada": [
         {
           "campo": "numeroInscricao",
