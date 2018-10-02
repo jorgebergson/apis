@@ -18,297 +18,122 @@
       "metodo": "POST", 
       "entrada": [
         {
-          "campo": "inscricao",
-          "descricao": "Identificação do número de inscrição na Dívida Ativa da União",
+          "campo": "dataEmissao",
+          "descricao": "Data da emissão da Nota de Empenho",
           "tipo": "string"
-        }
+        },
+        {
+          "campo": "numeroDocumento",
+          "descricao": "Número da Nota de Empenho",
+          "tipo": "string"
+        },
+        {
+          "campo": "ugEmitente",
+          "descricao": "Unidade Gestora Emitente",
+          "tipo": "string"
+        },
+        {
+          "campo": "gestaoEmitente",
+          "descricao": "Gestão Emitente",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroLista",
+          "descricao": "Número da lista",
+          "tipo": "string"
+        },
+        {
+          "campo": "taxaCambio",
+          "descricao": "Taxa de câmbio",
+          "tipo": "string"
+        },
+        {
+          "campo": "observacao",
+          "descricao": "Observações da Nota de Empenho",
+          "tipo": "string"
+        },
+        {
+          "campo": "valorTotalEmpenho",
+          "descricao": "Valor total da Nota de Empenho",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroProcesso",
+          "descricao": "Número do processo",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroOriginalConvenio",
+          "descricao": "Número original do Convênio",
+          "tipo": "string"
+        },
+        {
+          "campo": "passivoAnterior",
+          "descricao": "Passivo anterior",
+          "tipo": "string"
+        },
+        {
+          "campo": "contaPassivo",
+          "descricao": "Conta do Passivo",
+          "tipo": "string"
+        },
+        {
+          "campo": "contaValor",
+          "descricao": "Conta e Valor",
+          "tipo": "string"
+        },
+        {
+          "campo": "contaPassivoFinanceiro",
+          "descricao": "Conta do Passivo Financeiro",
+          "tipo": "string"
+        },
+        {
+          "campo": "especie",
+          "descricao": "Tipo da espécie",
+          "tipo": "string"
+        },
+        {
+          "campo": "ugReferencia",
+          "descricao": "UG de referência",
+          "tipo": "string"
+        },
+        {
+          "campo": "gestaoReferencia",
+          "descricao": "Gestão de referência",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroEmpenhoReferencia",
+          "descricao": "Número do Empenho de Referência",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroListaReferencia",
+          "descricao": "Número da Lista de Referência",
+          "tipo": "string"
+        },
+        {
+          "campo": "listaItens",
+          "descricao": "Quantidade, valor unitário, valor total e descrição dos itens",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroTransacaoCliente",
+          "descricao": "Número da transação do cliente",
+          "tipo": "string"
+        },
+        {
+          "campo": "credencial",
+          "descricao": "CPF, UG e Sistema",
+          "tipo": "string"
+        }      
       ],
       "saida": [
         {
           "campo": "inscricao",
-          "descricao": "Número da inscrição na Dívida Ativa da União",
+          "descricao": "Identificação do número de inscrição na Dívida Ativa da União",
           "tipo": "string"
-        },
-        {
-          "campo": "processoAdministrativo",
-          "descricao": "Número do processo administrativo",
-          "tipo": "string"
-        },
-        {
-          "campo": "situacao",
-          "descricao": "Situação da Dívida Ativa",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataInscricao",
-          "descricao": "Data de inscrição da Dívida Ativa",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroPFNResponsavel",
-          "descricao": "Número da Procuradoria da Fazenda Nacional responsável",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomePFNResponsavel",
-          "descricao": "Nome da Procuradoria da Fazenda Nacional responsável",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroPFNInscricao",
-          "descricao": "Número da Procuradoria da Fazenda Nacional onde foi feita a inscrição",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomePFNInscricao",
-          "descricao": "Nome da Procuradoria da Fazenda Nacional onde foi feita a inscrição",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroProcessoJudicial",
-          "descricao": "Número do processo judicial",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroProcessoJudicialNovo",
-          "descricao": "Número do novo processo judicial",
-          "tipo": "string"
-        },
-        {
-          "campo": "orgaoOrigem",
-          "descricao": "Órgão de origem",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoNaturezaReceita",
-          "descricao": "Código da natureza da receita",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomeNaturezaReceita",
-          "descricao": "Nome da natureza da receita",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoReceitaPrincipal",
-          "descricao": "Código da receita principal",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomeReceita",
-          "descricao": "Nome da receita",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoSerie",
-          "descricao": "Código da série",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomeSerie",
-          "descricao": "Nome da série",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoOrgaoJustica",
-          "descricao": "Código do órgão da justiça",
-          "tipo": "string"
-        },
-        {
-          "campo": "nomeOrgaoJustica",
-          "descricao": "Nome do órgão da justica",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroJuizo",
-          "descricao": "Número do juízo",
-          "tipo": "string"
-        },
-        {
-          "campo": "descricaoJuizo",
-          "descricao": "Descrição do juízo",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataProtocoloJudExecucao",
-          "descricao": "Data do protocolo judicial de execução",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataDistribuicaoJudicial",
-          "descricao": "Data da distribuição judicial",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorMoedaTotalInscrito",
-          "descricao": "Indicador da moeda total inscrita",
-          "tipo": "string"
-        },
-        {
-          "campo": "valorTotalInscritoMoeda",
-          "descricao": "Valor total da moeda inscrito",
-          "tipo": "string"
-        },
-        {
-          "campo": "valorTotalInscritoIndex",
-          "descricao": "Valor total inscrito indexado",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorMoedaTotalConsolidado",
-          "descricao": "Indicador moeda total consolidado",
-          "tipo": "string"
-        },
-        {
-          "campo": "valorTotalConsolidadoMoeda",
-          "descricao": "Valor total consolidado da moeda",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorMoedaTotalRemanescente",
-          "descricao": "Indicador de moeda total remanescente",
-          "tipo": "string"
-        },
-        {
-          "campo": "valorRemanescenteMoeda",
-          "descricao": "Valor remanescente da moeda",
-          "tipo": "string"
-        },
-        {
-          "campo": "valorRemanescenteIndex",
-          "descricao": "Valor remanescente indexado",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataDevolucaoProcesso",
-          "descricao": "Data de devolução do processo",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroAutoInfracao",
-          "descricao": "Número do auto de infração",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorPrescricaoSV8",
-          "descricao": "Indicador de prescrição SV8",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataDecretacaoFalencia",
-          "descricao": "Data da drecretação da falência",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataFimProcurador",
-          "descricao": "Data fim procurador",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroImovelITR",
-          "descricao": "Número do imóvel ITR",
-          "tipo": "string"
-        },
-        {
-          "campo": "dataExtincaoInscricao",
-          "descricao": "Data de extinção da inscrição",
-          "tipo": "string"
-        },
-        {
-          "campo": "motivoSuspensaoExigilidade",
-          "descricao": "Motivo da suspensão da exigilidade",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroRipSpu",
-          "descricao": "Número da RipSpu",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorAnaliseOrgaoOrigem",
-          "descricao": "Indicador da análise do órgão de origem",
-          "tipo": "string"
-        },
-        {
-          "campo": "motivoExtincaoInscricao",
-          "descricao": "Motivo da extinção da inscrição",
-          "tipo": "string"
-        },
-        {
-          "campo": "indicadorProtImpedAjuiz",
-          "descricao": "Indicador ProtImpedAjuiz ",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroAgrupamento",
-          "descricao": "Número do agrupamento",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoOriginal",
-          "descricao": "Número da inscrição original ",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada1",
-          "descricao": "Número de inscrição derivada 1",
-          "tipo": "string"
-        },      
-        {
-          "campo": "numeroInscricaoDerivada2",
-          "descricao": "Número de inscrição derivada 2",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada3",
-          "descricao": "Número de inscrição derivada 3",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada4",
-          "descricao": "Número de inscrição derivada 4",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada5",
-          "descricao": "Número de inscrição derivada 5",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada6",
-          "descricao": "Número de inscrição derivada 6",
-          "tipo": "string"
-        },
-        {
-          "campo": "numeroInscricaoDerivada7",
-          "descricao": "Número de inscrição derivada 7",
-          "tipo": "string"
-        },
-        {
-          "campo": "dcomp",
-          "descricao": "Declaração de compensação",
-          "tipo": "string"
-        },
-        {
-          "campo": "descricaoNaoCalculado",
-          "descricao": "Descrição não calculado",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoMunicipioSPU",
-          "descricao": "Código do município SPU",
-          "tipo": "string"
-        },
-        {
-          "campo": "codigoSistemaOrigem",
-          "descricao": "Código do sistema de origem",
-          "tipo": "string"
-        },
-        {
-          "campo": "descricaoSistemaOrigem",
-          "descricao": "Descrição do sistema de origem",
-          "tipo": "string"
-        }      
+        }
       ],
       "exemplos": [
         {
