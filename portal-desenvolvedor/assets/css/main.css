@@ -4115,7 +4115,7 @@
 
 .POSTOperation {
     padding: 5px;
-    background-color: #cceeff; /* Red */
+    background-color: #66A367; /* Red */
     color: black;
 		font-family: monospace;
     border-style: solid;
@@ -4126,7 +4126,7 @@
 }
 
 .POSTLabel{
-		background-color: #0000FF;
+		background-color: #66A367;
 		color:white;
 		font-weight:bold;
 		padding:3px;
