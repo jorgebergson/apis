@@ -160,10 +160,6 @@
         {
           "linguagem": "CURL",
           "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \"Conteudo do Json\" \""
-        },
-        {
-          "linguagem": "VBA",
-          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \"Conteudo do Json\" \"" \"n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
         }
       ],
       "respostas": [
