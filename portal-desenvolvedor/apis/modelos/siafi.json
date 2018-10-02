@@ -130,26 +130,27 @@
       ],
       "saida": [
         {
-          "campo": "inscricao",
-          "descricao": "Identificação do número de inscrição na Dívida Ativa da União",
+          "campo": "codigo",
+          "descricao": "Código da Nota de Empenho",
+          "tipo": "string"
+        },
+        {
+          "campo": "mensagem",
+          "descricao": "Algumas informações da Nota de Empenho",
+          "tipo": "string"
+        },
+        {
+          "campo": "erros",
+          "descricao": "Informações do erro",
+          "tipo": "string"
+        },
+        {
+          "campo": "status",
+          "descricao": "Código de retorno",
           "tipo": "string"
         }
       ],
-      "exemplos": [
-        {
-          "linguagem": "CURL",
-          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-consulta-due-trial/v2/due/{numero}/{chave}\""
-        },
-        {
-          "linguagem": "VBA",
-          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
-        },
-        {
-          "linguagem": "Node.js",
-          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
-        }
-      ],
-          "teste": [
+      "teste": [
         {
           "ni": "numeroInscricao: &nbsp 09781911768 (cpf)", 
           "situacao": "Número de inscrição do devedor com retorno HTTP 200"
@@ -165,6 +166,20 @@
         {
           "ni": "numeroInscricao: &nbsp 03741881001", 
           "situacao": "Número de inscrição do devedor com retorno HTTP 404"
+        }
+      ],
+      "exemplos": [
+        {
+          "linguagem": "CURL",
+          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-consulta-due-trial/v2/due/{numero}/{chave}\""
+        },
+        {
+          "linguagem": "VBA",
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+        },
+        {
+          "linguagem": "Node.js",
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
