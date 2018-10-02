@@ -153,21 +153,21 @@
       "teste": [
         {
           "ni": "Json de entrada", 
-          "situacao": "Para verificar o Json de testes faça o download no item Informações de negócio da API"
+          "situacao": "Para verificar o Json de entrada faça o download no item Informações de negócio da API"
         }
       ],
       "exemplos": [
         {
           "linguagem": "CURL",
-          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-consulta-due-trial/v2/due/{numero}/{chave}\""
+          "exemplo": "curl -X GET -H \"Accept: application/json\" -H \"Authorization: Bearer [token de acesso]\"\n\"https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \"Conteudo do Json\" \""
         },
         {
           "linguagem": "VBA",
-          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561\"\n\nobjHTTP.Open \"GET\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
+          "exemplo": "Dim objHTTP As New WinHttpRequest\nDim strURL As String\nDim response As String\n\n\nstrURL = \"https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \"Conteudo do Json\" \"" \"n\nobjHTTP.Open \"POST\", strURL, False\nobjHTTP.SetRequestHeader \"Authorization\", \"Bearer [token de acesso]\"\nobjHTTP.SetRequestHeader \"Accept\", \"application/json\"\nobjHTTP.Send\n\nresponse = objHTTP.ResponseText\n\nMsgBox response"
         },
         {
           "linguagem": "Node.js",
-          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/nfe-trial/1/35170608530528000184550000000154301000771561',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \"Conteudo do Json\" \"',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
