@@ -152,20 +152,8 @@
       ],
       "teste": [
         {
-          "ni": "numeroInscricao: &nbsp 09781911768 (cpf)", 
-          "situacao": "Número de inscrição do devedor com retorno HTTP 200"
-        },
-        {
-          "ni": "numeroInscricao: &nbsp 01415666000181 (cnpj)", 
-          "situacao": "Número de inscrição do devedor com retorno HTTP 200"
-        },
-        {
-          "ni": "numeroInscricao: &nbsp 0375198170", 
-          "situacao": "Número de inscrição do devedor com retorno HTTP 400"
-        },
-        {
-          "ni": "numeroInscricao: &nbsp 03741881001", 
-          "situacao": "Número de inscrição do devedor com retorno HTTP 404"
+          "ni": "Json de entrada", 
+          "situacao": "Para verificar o exemplo de testes do Json faço o download no item Informações de negócio da API"
         }
       ],
       "exemplos": [
