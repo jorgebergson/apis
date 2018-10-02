@@ -4095,18 +4095,18 @@
 
 .GETOperation {
     padding: 5px;
-    background-color: #cceeff; /* Red */
+    background-color: #EFF7FF; /* Red */
     color: black;
 		font-family: monospace;
     border-style: solid;
-    border-color: #0000FF;
+    border-color: #61AFFE;
     border-width: 1px;
 		border-radius: 5px;
 		font-size: 25px;
 }
 
 .GETLabel{
-		background-color: #0000FF;
+		background-color: #61AFFE;
 		color:white;
 		font-weight:bold;
 		padding:3px;
