@@ -203,6 +203,21 @@
           "campo": "numeroInscricao",
           "descricao": "Identificação do número de inscrição do devedor",
           "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricao",
+          "descricao": "Identificação do número de inscrição do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricao",
+          "descricao": "Identificação do número de inscrição do devedor",
+          "tipo": "string"
+        },
+        {
+          "campo": "numeroInscricao",
+          "descricao": "Identificação do número de inscrição do devedor",
+          "tipo": "string"
         }
       ],
       "saida": [
