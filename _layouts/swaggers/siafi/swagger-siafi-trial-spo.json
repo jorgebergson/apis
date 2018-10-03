@@ -20,7 +20,6 @@
   },
   "basePath": "/api-siafi-trial/1.0.0",
   "paths": {
-    
     "/ne/alterar": {
       "post": {
         "tags": [
@@ -409,7 +408,7 @@
           }
         }
       }
-    }
+    },
     "/status": {
       "get": {
         "tags": [
