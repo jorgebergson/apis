@@ -167,7 +167,7 @@
         },
         {
           "linguagem": "Node.js",
-          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \'Conteudo do Json'',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
+          "exemplo": "var request = require(\"request\");\n\nvar options = {\n  method: 'GET',\n  url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar/ -d \ Conteudo do Json',\n  headers: { authorization: 'Bearer [token de acesso]' },\n  body: {},\n  json: true };\n\nrequest(options, function (error, response, body) {\n  if (error) throw new Error(error);\n\n  console.log(body);\n});"
         }
       ],
       "respostas": [
