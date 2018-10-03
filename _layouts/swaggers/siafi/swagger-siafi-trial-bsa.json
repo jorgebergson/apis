@@ -20,22 +20,6 @@
   },
   "basePath": "/api-siafi-trial/1.0.0",
   "paths": {
-    "/status": {
-      "get": {
-        "tags": [
-          "Status"
-        ],
-        "summary": "Verifica status da API",
-        "responses": {
-          "200": {
-            "description": "Serviço disponível"
-          },
-          "500": {
-            "description": "Serviço indisponível"
-          }
-        }
-      }
-    },
     "/ne/alterar": {
       "post": {
         "tags": [
@@ -421,6 +405,22 @@
           },
           "500": {
             "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "Serviço disponível"
+          },
+          "500": {
+            "description": "Serviço indisponível"
           }
         }
       }
