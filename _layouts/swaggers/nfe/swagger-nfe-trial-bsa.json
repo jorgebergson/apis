@@ -77,11 +77,27 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "Serviço disponível"
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
           },
           "500": {
-            "description": "Serviço indisponível"
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
           }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Status": {
+      "properties": {
+        "statusDateTime": {
+          "type": "string",
+          "description": "Data/hora da última verificação de status, no formato ISO-8601 (yyyy-MM-dd'T'HH:mm:ssZ)"
         }
       }
     }
