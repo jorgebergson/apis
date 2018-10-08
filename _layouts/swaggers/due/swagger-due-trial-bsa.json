@@ -29,7 +29,7 @@
   "info": {
     "version": "1",
     "title": "API DUE",
-    "description": "\n## Códigos de Retorno não Bilhetados \n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |\n| 500           | Erro interno do servidor    | Ocorreu algum erro interno.      |\n --------------------------\n\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n  "
+    "description": "\n## Códigos de Retorno não Bilhetados \n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| &nbsp           | &nbsp    | &nbsp  | \n 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |\n| &nbsp           | &nbsp    | &nbsp  | \n | 500           | Erro interno do servidor    | Ocorreu algum erro interno.      |\n --------------------------\n\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n  "
   },
   "basePath": "/api-consulta-due-trial/api",
   "paths": {
