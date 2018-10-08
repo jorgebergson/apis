@@ -13,6 +13,8 @@
     }
   },
   "swagger": "2.0",
+
+
   "tags": [
     {
       "name": "1 Introdução"
@@ -27,7 +29,7 @@
   "info": {
     "version": "1",
     "title": "API DUE",
-    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n  "
+    "description": "\n## Códigos de Retorno não Bilhetados \n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |\n| 500           | Erro interno do servidor    | Ocorreu algum erro interno.      |\n\n## Tipos de Campos Retornados\n\n| Tipos de campos | Valor de retorno |\n| ---------------------- | :------------------------------------------------------------- |\n| NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999 |\n| Nome     | Nome da Pessoa Física  |\n| Situação | Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.|\n| Situação/Código | Código da Situação Cadastral da Pessoa Física |\n| Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |\n\n --------------------------\n\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n  "
   },
   "basePath": "/api-consulta-due-trial/api",
   "paths": {
