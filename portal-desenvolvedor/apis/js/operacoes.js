@@ -1,5 +1,6 @@
 function makeOperationBlock(operacao){
     var ent = '';
+    ent += "<div id=\"" + operacao.id + "\" style=\"display:none;\">" ;
     ent += "<header class=\"major\">";
     ent += "<h2 id=\"" + operacao.id + "\">"+operacao.descricao+"</h2>";
     ent += "</header>";
@@ -57,8 +58,8 @@ function makeOperationBlock(operacao){
     var opLinguagens = '';
     var opDivsLinguagens = '';
     operacao.exemplos.forEach(exemplo => {
-        opLinguagens += "<button class=\"tablinksCode tab\" onclick=\"openTab(event, '" + exemplo.linguagem + "','Code')\"> " + exemplo.linguagem + "</button>";
-        opDivsLinguagens += "<div id=\"" + exemplo.linguagem + "\" class=\"tabcontentCode\"><h3>" + exemplo.linguagem + "</h3><pre><code>" + exemplo.exemplo + "</code></pre></div>";
+        opLinguagens += "<button class=\"tablinksCode"+ operacao.id +" tab\" onclick=\"openTab(event, 'exemplo" + exemplo.linguagem + operacao.id + "','Code" + operacao.id + "')\"> " + exemplo.linguagem + "</button>";
+        opDivsLinguagens += "<div id=\"exemplo" + exemplo.linguagem + operacao.id + "\" class=\"tabcontentCode" + operacao.id + " box\" style=\"display:none\"><h3>" + exemplo.linguagem + "</h3><pre><code>" + exemplo.exemplo + "</code></pre></div>";
     });
     ent += "<div class=\"tab\">";
     ent += opLinguagens;
@@ -68,8 +69,8 @@ function makeOperationBlock(operacao){
     var opRetornos = '';
     var opDivs = '';
     operacao.respostas.forEach(resposta => {
-        opRetornos += "<button class=\"tablinksResponse tab\" onclick=\"openTab(event, '" + resposta.codigo + "','Response')\"> " + resposta.codigo + " - " + resposta.mensagem  + "</button>";
-        opDivs += "<div id=\"" + resposta.codigo + "\" class=\"tabcontentResponse\"><h3>" + resposta.codigo + " - " + resposta.mensagem + "</h3><pre><code>" + resposta.exemplo + "</code></pre></div>";
+        opRetornos += "<button class=\"tablinksResponse"+ operacao.id +" tab\" onclick=\"openTab(event, 'resposta" + resposta.codigo + operacao.id + "','Response" + operacao.id + "')\"> " + resposta.codigo + " - " + resposta.mensagem  + "</button>";
+        opDivs += "<div id=\"resposta" + resposta.codigo + operacao.id + "\" class=\"tabcontentResponse" + operacao.id + " box\" style=\"display:none\"><h3>" + resposta.codigo + " - " + resposta.mensagem + "</h3><pre><code>" + resposta.exemplo + "</code></pre></div>";
     });
     ent += "<div class=\"tab\">";
     ent += opRetornos;
@@ -97,3 +98,18 @@ function makeAPIList(apis){
     return ent;
 
 }
+
+function toggle_visibility(id,rp) {
+    var ii=0;
+     for (ii = 1; ii < rp ; ii++) {
+      var op = 'op' + ii
+        document.getElementById(op).style.display="none";
+
+      } 
+      
+       var e = document.getElementById(id);
+       if(e.style.display == 'none')
+          e.style.display = 'block';
+       else
+          e.style.display = 'none';
+    }
