@@ -9,163 +9,22 @@
 		<title>API SERPRO - Portal do Desenvolvedor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="../assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
-		<script src="js/scripts.js"></script>
-		<script src="js/util.js"></script>
-		<script src="js/showdown.js"></script>
-		<script src="js/operacoes.js"></script>
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="../assets/js/jquery.min.js"></script>
-		<script src="../assets/js/skel.min.js"></script>
-		<script src="../assets/js/util.js"></script>
-		<!--[if lte IE 8]><script src="../assets/js/ie/respond.min.js"></script><![endif]-->
-		<script src="../assets/js/main.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="apis/js/operacoes.js"></script>
+		<script src="apis/js/jquery-3.3.1.min.js"></script>
 		<script>
-				$(document).ready( function(){
-
-					var api = getQueryStringParams('api');
-					if(api){
-						api = "modelos/" + api + ".json";
-						$.getJSON(api, function(){})
-						.done(function(json){
-							console.log(json);
-							$('#apiNome').append(json.nome);
-							$('#apiNome2').append(json.nome);
-							$('#apiSubtitulo').append(json.subtitulo);
-							var converter = new showdown.Converter();
-							$('#apiDescricao').append(converter.makeHtml(json.descricao));
-							$('#apiNegocio').prop('href', json.linkInfoNegocio)
-							$('#apiIdProducao').append(json.informacoes.idProducao);
-							$('#apiIdDegustacao').append(json.informacoes.idDegustacao);
-							$('#apiFormatos').append(json.informacoes.formatos);
-							json.operacoes.forEach(operacao => {
-								$('#apiListaOperacoes').append("<li><a href=\"#"+operacao.id+"\"><span class=\""+operacao.metodo+"Label\">"+operacao.metodo+"</span> "+operacao.descricao+"</a></li>");
-								$('#apiOperacoes').append(makeOperationBlock(operacao));
-							});
-						})
-						.fail(function(){
-							$('#content').html("<b>API não consta na base API SERPRO</b>");
-						});
-					}
-					else{
-						$('#content').html("<b>Nenhuma API especificada</b>");
-					}
-				// Get the modal
-				var modal = document.getElementById('modalop1');
-
-				// Get the button that opens the modal
-				var btn = document.getElementById('btnTestop1');
-
-				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close")[0];
-
-				// When the user clicks on the button, open the modal
-				btn.onclick = function() {
-				    modal.style.display = "block";
-				}
-
-				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
-				    modal.style.display = "none";
-				}
-
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-				    if (event.target == modal) {
-				        modal.style.display = "none";
-				    }
-				}
-
-
-					bearer = getURLParameter('bearer');
-					if(bearer == undefined) {
-						bearer = bearerTrial;
-						environment = environment + "-trial";
-						amb = "Degustação";
-					}
-
-					gateway = getURLParameter('environment');
-					if(gateway == undefined) {
-						gateway = gatewayBSA;
-					}
-					else{
-						if(gateway == "spo"){
-							gateway = gatewaySPO;
-						}
-						else{
-							gateway = gatewayBSA;
-						}
-					}
-
-					document.getElementById('bearer').textContent = bearer;
-					document.getElementById('url').textContent = "https://" + gateway + "/" + environment;
-					document.getElementById('amb').textContent = amb;
-
+			var api = "apis/modelos/apis.json";
+			$.getJSON(api, function(){})
+				.done(function(apis){
+					$('#apiLista').append(makeAPIList(apis));
+				})
+				.fail(function(){
+					$('#apiLista').append(makeAPIList("Erro ao obter APIS"));
 				});
 		</script>
-
-		<!-- <script>
-			var bearer, gateway;
-			var environment = "consulta-cpf";
-			var amb = "Produção";
-
-			$(document).ready(function(){
-
-				// Get the modal
-				var modal = document.getElementById('modalOp1');
-
-				// Get the button that opens the modal
-				var btn = document.getElementById('btnTesteOp1');
-
-				// Get the <span> element that closes the modal
-				var span = document.getElementsByClassName("close")[0];
-
-				// When the user clicks on the button, open the modal
-				btn.onclick = function() {
-				    modal.style.display = "block";
-				}
-
-				// When the user clicks on <span> (x), close the modal
-				span.onclick = function() {
-				    modal.style.display = "none";
-				}
-
-				// When the user clicks anywhere outside of the modal, close it
-				window.onclick = function(event) {
-				    if (event.target == modal) {
-				        modal.style.display = "none";
-				    }
-				}
-
-
-					bearer = getURLParameter('bearer');
-					if(bearer == undefined) {
-						bearer = bearerTrial;
-						environment = environment + "-trial";
-						amb = "Degustação";
-					}
-
-					gateway = getURLParameter('environment');
-					if(gateway == undefined) {
-						gateway = gatewayBSA;
-					}
-					else{
-						if(gateway == "spo"){
-							gateway = gatewaySPO;
-						}
-						else{
-							gateway = gatewayBSA;
-						}
-					}
-
-					document.getElementById('bearer').textContent = bearer;
-					document.getElementById('url').textContent = "https://" + gateway + "/" + environment;
-					document.getElementById('amb').textContent = amb;
-			});
-		</script> -->
 	</head>
 	<body>
 
@@ -185,32 +44,27 @@
 								<section id="banner">
 									<div class="content">
 										<header>
-											<h1 id="apiNome"></h1>
-											<p id="apiSubtitulo"></p>
+											<h1>API SERPRO - Documentação</h1>
+											<p>Portal do Desenvolvedor</p>
 										</header>
-										<h3>Descrição</h3>
-										<p id="apiDescricao"></p>
-										<h3>Informações da API:</h3>
-										<ul>
-											<li><strong>Id (Produção):</strong><span id="apiIdProducao"></span></li>
-											<li><strong>Id (Degustação):</strong><span id="apiIdDegustacao"></span></li>
-											<li><strong>Formatos de saída disponíveis:</strong><span id="apiFormatos"></span></li>
-										</ul>
-										<h3>Negócio</h3>
-										<ul>
-											<li><strong>Informaçes de negócio da API: &nbsp; </strong><a id= "apiNegocio" href="">Download</a></li>
-										</ul>
-										
-										<h3>A <span id="apiNome2"></span> oferece as seguintes requisições:</h3>
-										<ul id="apiListaOperacoes">
-										</ul>
+										<p>A seguir, você poderá aprender sobre o funcionamento básico para consumo das API SERPRO. Continue a leitura, ou selecione um dos itens no menu à esquerda.</p>
+<!--										<ul class="actions">
+											<li><a href="#" class="button big">Learn More</a></li>
+										</ul>-->
 									</div>
-								</section>
-
-							<!-- Section -->
-								<section id="apiOperacoes">
 
 								</section>
+
+								<!-- Section -->
+										<section>
+											<header class="major">
+												<h2>Catálogo de APIs</h2>
+											</header>
+											<div id="apiLista" class="features">
+											</div>
+										</section>
+
+
 						</div>
 					</div>
 
@@ -220,7 +74,7 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<a href="index.html"><img src="../images/marca-api-serpro-cinza-degrade.png"/></a>
+									<a href="index.html"><img src="./images/marca-api-serpro-cinza-degrade.png"/></a>
 								</section>
 
 							<!-- Menu -->
@@ -229,8 +83,8 @@
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="../autenticacao.html">Informações Gerais</a></li>
-										<li><a href="../autenticacao.html">Autenticação</a></li>
+										<li><a href="index.html">Informações Gerais</a></li>
+										<li><a href="autenticacao.html">Autenticação</a></li>
 										<li>
 											<span class="opener active">Catálogo de APIs</a></span>
 											<ul>
@@ -242,7 +96,6 @@
 												<li><a href="#">Consulta DU-E</a></li>
 											</ul>
 										</li>
-
 									</ul>
 								</nav>
 
@@ -252,8 +105,11 @@
 			</div>
 
 		<!-- Scripts -->
-
-
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
