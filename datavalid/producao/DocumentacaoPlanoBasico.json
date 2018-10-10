@@ -408,7 +408,7 @@
           "format": "double"
         },
         "situacao_cadastral": {
-          "$ref": "#/definitions/ValidacaoFiliacao"
+          "$ref": "#/definitions/ValidacaoPJSituacaoCadastral"
         },
         "nome_orgao": {
           "type": "boolean"
@@ -533,17 +533,6 @@
           "description": "Percentual de similaridade",
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "ValidacaoPJTelefone": {
-      "type": "object",
-      "properties": {
-        "ddd": {
-          "type": "boolean"
-        },
-        "numero": {
-          "type": "boolean"
         }
       }
     },
@@ -768,6 +757,42 @@
           "type": "boolean"
         },
         "categoria": {
+          "type": "boolean"
+        },
+        "data_primeira_habilitacao": {
+          "type": "boolean"
+        },
+        "data_validade": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ValidacaoPJSituacaoCadastral": {
+      "type": "object",
+      "properties": {
+        "codigo": {
+          "type": "boolean"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "motivo": {
+          "type": "boolean"
+        },
+        "motivo_similaridade": {
+          "description": "Percentual de similaridade",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ValidacaoPJTelefone": {
+      "type": "object",
+      "properties": {
+        "ddd": {
+          "type": "boolean"
+        },
+        "numero": {
           "type": "boolean"
         },
         "data_primeira_habilitacao": {

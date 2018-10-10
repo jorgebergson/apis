@@ -34,7 +34,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Datavalid - Plano Biométrico",
+        "summary": "Datavalid",
         "description": "O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. Para pessoas fisícas, o Datavalid ainda disponibiliza um recurso biometrico, que funciona comparando a foto da face da pessoa com uma foto de face oficial cadastrada nas bases do governo.\n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
         "responses": {}
       }
@@ -72,7 +72,7 @@
           "1 Introdução"
         ],
         "summary": "Requisitos para o envio de Digitais",
-        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de  imagens com resolução mínima de 500 DPI (pontos por polegada).  Recomendamos ainda que a dimensão da imagem seja de no mínimo  500 pixels de altura e largura. São suportados os formatos  WSQ e PNG. Quando esta condição não é atendida, é retornado  o erro a seguir (exceção).  \n\n\n\n --------------------------",
+        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 500 DPI (pontos por polegada).  Recomendamos ainda que a dimensão da imagem seja de no mínimo 640 x 600 de altura X largura (considerando ao imagem antes de ser recortada). São suportados os formatos WSQ e PNG. Para imagens PNG, é importante atentar ao limite máximo total da requisição, que não poderá ultrapassar 3MB, incluíndo todo o corpo da requisição. Quando este limite máximo não seja atendido, a aplicação retorna erro 413. Já quando a condição de tamanho mínimo não é atendida, é retornado o erro a seguir (exceção).  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
             "description": "Resolução da imagem inválida. A largura e a altura não podem ser menor que 500 pixels. "
@@ -99,6 +99,9 @@
           },
           "401": {
             "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
+          },
+          "413": {
+            "description": "<b>Request Entity Too Large - </b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido."
           },
           "422": {
             "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta.",
@@ -478,7 +481,7 @@
           "format": "double"
         },
         "situacao_cadastral": {
-          "$ref": "#/definitions/ValidacaoFiliacao"
+          "$ref": "#/definitions/ValidacaoPJSituacaoCadastral"
         },
         "nome_orgao": {
           "type": "boolean"
@@ -605,17 +608,6 @@
           "description": "Percentual de similaridade",
           "type": "number",
           "format": "double"
-        }
-      }
-    },
-    "ValidacaoPJTelefone": {
-      "type": "object",
-      "properties": {
-        "ddd": {
-          "type": "boolean"
-        },
-        "numero": {
-          "type": "boolean"
         }
       }
     },
@@ -1173,6 +1165,42 @@
           "type": "boolean"
         },
         "categoria": {
+          "type": "boolean"
+        },
+        "data_primeira_habilitacao": {
+          "type": "boolean"
+        },
+        "data_validade": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ValidacaoPJSituacaoCadastral": {
+      "type": "object",
+      "properties": {
+        "codigo": {
+          "type": "boolean"
+        },
+        "data": {
+          "type": "boolean"
+        },
+        "motivo": {
+          "type": "boolean"
+        },
+        "motivo_similaridade": {
+          "description": "Percentual de similaridade",
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "ValidacaoPJTelefone": {
+      "type": "object",
+      "properties": {
+        "ddd": {
+          "type": "boolean"
+        },
+        "numero": {
           "type": "boolean"
         },
         "data_primeira_habilitacao": {
