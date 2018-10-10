@@ -41,8 +41,12 @@
 							$('#apiIdProducao').append(json.informacoes.idProducao);
 							$('#apiIdDegustacao').append(json.informacoes.idDegustacao);
 							$('#apiFormatos').append(json.informacoes.formatos);
+							var qt = 1;
 							json.operacoes.forEach(operacao => {
-								$('#apiListaOperacoes').append("<li><a href=\"#"+operacao.id+"\"><span class=\""+operacao.metodo+"Label\">"+operacao.metodo+"</span> "+operacao.descricao+"</a></li>");
+								qt = qt + 1;
+							});
+							json.operacoes.forEach(operacao => {
+								$('#apiListaOperacoes').append("<li><a href=\"#"+operacao.id+"\" onclick=\"toggle_visibility('"+operacao.id+"',"+qt+");\"><span class=\""+operacao.metodo+"Label\">"+operacao.metodo+"</span> "+operacao.descricao+"</a></li>");
 								$('#apiOperacoes').append(makeOperationBlock(operacao));
 							});
 						})
