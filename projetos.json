@@ -68,7 +68,7 @@
             "endpointMock": "",
             "urlJsonSwaggerMock": "",
             "endpointProducao": "/viodec/v1",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-viodec-prod-"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
         }
     ]
 }
