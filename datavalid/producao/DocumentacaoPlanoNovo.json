@@ -75,7 +75,7 @@
           "1 Introdução"
         ],
         "summary": "Requisitos para o envio de Digitais",
-        "description": "O módulo de Validação de Digitais do Datavalid necessita de imagens com resolução mínima de 500 DPI (pontos por polegada). Recomendamos ainda que a dimensão da imagem seja de no mínimo 640 x 600 de altura X largura (considerando ao imagem antes de ser recortada). São suportados os formatos WSQ e PNG. Para imagens PNG, é importante atentar ao limite máximo total da requisição, que não poderá ultrapassar 3MB, incluíndo todo o corpo da requisição. Quando este limite máximo não seja atendido, a aplicação retorna erro 413. Já quando a condição de tamanho mínimo não é atendida, é retornado o erro a seguir (exceção).  \n\n\n\n --------------------------",
+        "description": "O módulo de Validação de Digitais do Datavalid necessita de imagens com resolução mínima de 500 DPI (pontos por polegada). Recomendamos ainda que a dimensão da imagem seja de no mínimo 640 x 600 pixels de altura X largura (considerando ao imagem antes de ser recortada). São suportados os formatos WSQ e PNG. Para imagens PNG, é importante atentar ao limite máximo total da requisição, que não poderá ultrapassar 3MB, incluíndo todo o corpo da requisição. Quando este limite máximo não seja atendido, a aplicação retorna erro 413. Já quando a condição de tamanho mínimo não é atendida, é retornado o erro a seguir (exceção).  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
             "description": "Resolução da imagem inválida. A largura e a altura não podem ser menor que 500 pixels. "
