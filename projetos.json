@@ -32,7 +32,7 @@
         },
         {
             "api": "datavalid",
-            "nome": "Datavalid - Plano Antigo",
+            "nome": "Datavalid - Plano Antigo - Básico",
             "logo": "images/datavalid-plan-antigo.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
@@ -41,6 +41,15 @@
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBasico.json"
         },
         {
+            "api": "datavalid",
+            "nome": "Datavalid - Plano Antigo - Biometria",
+            "logo": "images/datavalid-plan-antigo.png",
+            "style": "width: 161px;",
+            "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
+            "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json"
+        },
             "api": "datavalid",
             "nome": "Datavalid - Plano Novo",
             "logo": "images/datavalid-plan-novo.png",
