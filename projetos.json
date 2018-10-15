@@ -48,8 +48,9 @@
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
             "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoBiometria.json"
         },
+        {
             "api": "datavalid",
             "nome": "Datavalid - Plano Novo",
             "logo": "images/datavalid-plan-novo.png",
