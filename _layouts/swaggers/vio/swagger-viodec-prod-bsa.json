@@ -15,7 +15,7 @@
             "in": "header"
         }
     },
-    "host": "apigateway.serpro.gov.br/viodec-trial",
+    "host": "apigateway.serpro.gov.br/viodec",
     "tags": [{
             "name": "1 Introdução"
         },
