@@ -34,13 +34,12 @@
         }
         
         #menu-carrossel {
-            margin-top: 57px;
+            float: left;
+            clear: both;
+            width: 100%;
+            text-align: center;
         }
         
-	div#content * {
-            float: left;
-        }
-	    
         div#carrossel {
             margin: auto;
         }
@@ -50,19 +49,13 @@
         var mapaSwagger = new Map();
         mapaSwagger.set("https://apigateway.serpro.gov.br", "bsa.json");
         mapaSwagger.set("https://gateway.apiserpro.serpro.gov.br", "spo.json");
-
         var defaultBearer = '4e1a1858bdd584fdc077fb7d80f39283';
         var defaultAmb = 'https://apigateway.serpro.gov.br';
-
         var visible = 'show';
-
         var mock = !(getParameterByName('amb') != null && getParameterByName('bearer') != null);
-
         var api = getParameterByName('api');
         var bearer = (getParameterByName('bearer') == null) ? defaultBearer : getParameterByName('bearer');
         var amb = (getParameterByName('amb') == null) ? defaultAmb : getParameterByName('amb');
-
-
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
             name = name.replace(/[\[\]]/g, "\\$&");
@@ -158,18 +151,14 @@
                 <span class="navegue">Navegue nas setas para visualizar mais APIs (<i class="fa fa-chevron-left"></i> e <i class="fa fa-chevron-right"></i>)</span>
             </p>
             <div id="content">
-		    <nav id="menu-carrossel">
-                    <a href="https://devserpro.github.io/apis/#" class="prev" title="Anterior"><i style="" class="fa fa-chevron-left"></i></a>
-            	    </nav>
-	    <div id="carrossel">
-		    <nav id="menu-carrossel">
-                    <a href="https://devserpro.github.io/apis/#" class="prev" title="Próximo"><i style="" class="fa fa-chevron-right"></i></a>
-            	    </nav>
-            <ul></ul>
-	    </div>
-		    
+                <div id="carrossel">
+                    <ul></ul>
+		</div>
             </div>
-	    
+	    <nav id="menu-carrossel">
+                    <a href="#" class="prev" title="Anterior"><i style="font-size: 200%; margin: 20px;" class="fa fa-chevron-left"></i></a>
+                    <a href="#" class="next" title="Próximo"><i style="font-size: 200%; margin: 20px;" class="fa fa-chevron-right"></i></a>
+                </nav>		
             <div style="clear: both; margin: 10px;"></div>
         </footer>
 
@@ -351,10 +340,7 @@
         //   			 if (!results[2]) return '';
         //   		    return decodeURIComponent(results[2].replace(/\+/g, " "));
         // 		 }
-
-
         $(function() {
-
             var endereco = 'https://raw.githubusercontent.com/devserpro/apis/master/projetos.json';
             $.ajax({
                 url: endereco,
@@ -362,7 +348,6 @@
                     var meuJSON = JSON.parse(res.responseText);
                     var conteudo = "";
                     var visibleItens = (api == null) ? 3 : 1;
-
                     //Gera conteudo para Mocks da API SERPRO
                     for (var i = 0; i < meuJSON.projetos.length; i++) {
                         var projeto = meuJSON.projetos[i];
@@ -400,21 +385,17 @@
                 }
             });
         });
-
         function carregarSwagger(urlSwagger) {
             //urlSwagger = "https://rawgit.com/devserpro/datavalid-basico/master/_layouts/swagger-datavalid-final.json";
             //window.open("https://cdn.rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=" + urlSwagger, '_blank');
             window.open("https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=" + bearer + "&url=" + urlSwagger, '_blank');
         }
-
         function carregarSwaggerSemBearer(urlSwagger) {
             window.open("https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?url=" + urlSwagger, '_blank');
         }
-
         function fecharModal(id) {
             $(id).modal('hide');
         }
-
         function abrirModal(id) {
             $(id).modal('show');
         }
