@@ -34,12 +34,13 @@
         }
         
         #menu-carrossel {
-            float: left;
-            clear: both;
-            width: 100%;
-            text-align: center;
+            margin-top: 57px;
         }
         
+	div#content * {
+            float: left;
+        }
+	    
         div#carrossel {
             margin: auto;
         }
@@ -157,14 +158,15 @@
                 <span class="navegue">Navegue nas setas para visualizar mais APIs (<i class="fa fa-chevron-left"></i> e <i class="fa fa-chevron-right"></i>)</span>
             </p>
             <div id="content">
+		    <nav id="menu-carrossel">
+                    <a href="#" class="prev" title="Anterior"><i style="font-size: 200%;" class="fa fa-chevron-left"></i></a>
+                    <a href="#" class="next" title="Próximo"><i style="font-size: 200%;" class="fa fa-chevron-right"></i></a>
+                </nav>		
                 <div id="carrossel">
                     <ul></ul>
 		</div>
             </div>
-	    <nav id="menu-carrossel">
-                    <a href="#" class="prev" title="Anterior"><i style="font-size: 200%; margin: 20px;" class="fa fa-chevron-left"></i></a>
-                    <a href="#" class="next" title="Próximo"><i style="font-size: 200%; margin: 20px;" class="fa fa-chevron-right"></i></a>
-                </nav>		
+	    
             <div style="clear: both; margin: 10px;"></div>
         </footer>
 
