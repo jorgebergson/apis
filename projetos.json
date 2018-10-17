@@ -33,7 +33,7 @@
         {
             "api": "datavalid",
             "nome": "Datavalid - Plano Antigo - Básico",
-            "logo": "images/datavalid-plan-antigo.png",
+            "logo": "images/datavalid-antigo-basico.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
             "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBasico.json",
@@ -43,7 +43,7 @@
         {
             "api": "datavalid",
             "nome": "Datavalid - Plano Antigo - Biometria",
-            "logo": "images/datavalid-plan-antigo.png",
+            "logo": "images/datavalid-antigo-biometria.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
             "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoBiometria.json",
@@ -66,7 +66,7 @@
             "logo": "images/datavalid-plan-novo-entid.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
-            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/datavalid/degustacao/DocumentacaoPlanoNovo.json",
+            "urlJsonSwaggerMock": "",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
         },
