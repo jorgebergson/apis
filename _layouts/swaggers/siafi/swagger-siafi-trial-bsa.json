@@ -290,7 +290,7 @@
         }
       }
     },
-    "/nota-credito/{ug}/{gestao}/{ano}/{numero}": {
+    "/nc/{ug}/{gestao}/{ano}/{numero}": {
       "get": {
         "tags": [
           "Nota de Crédito"
@@ -370,7 +370,7 @@
         }
       }
     },
-    "/nota-credito": {
+    "/nc": {
       "post": {
         "tags": [
           "Nota de Crédito"
