@@ -350,7 +350,7 @@
           "200": {
             "description": "Nota de Crédito encontrada e retornada",
             "schema": {
-              "$ref": "#/definitions/GeraNC"
+              "$ref": "#/definitions/ConsultaNC"
             }
           },
           "400": {
@@ -476,6 +476,22 @@
           "items": {
             "$ref": "#/definitions/EventoNC"
           }
+        }
+      }
+    },
+    "ConsultaNC": {
+      "properties": {
+        "ano": {
+          "type": "string"
+        },
+        "ug": {
+          "type": "string"
+        },
+        "gestao": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
         }
       }
     },
