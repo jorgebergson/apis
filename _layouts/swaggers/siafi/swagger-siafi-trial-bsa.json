@@ -331,13 +331,6 @@
             "description": "Número da Nota de Crédito",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "application/json",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
