@@ -297,9 +297,7 @@
         ],
         "summary": "Consulta Nota de Cŕedito",
         "description": "Consulta uma Nota de Cŕedito existente\n\n## Exemplo\n#### URL de consulta a uma Nota de Crédito\n\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Exemplo de retorno da operação\n    {\n      \"dataEmissao\": \"23Fev18\",\n      \"numeroLancamento\": \"010001000012\",\n      \"ugEmitente\": \"\",\n      \"gestaoEmitente\": \"\",\n      \"ugFavorecida\": \"10001\",\n      \"gestaoFavorecida\": \"1\",\n      \"opCambial\": \"0\",\n      \"numeroTransferencia\": \"0\",\n      \"espacoBranco\": \"\",\n      \"observacao\": \"TESTE\",\n      \"mesLancamento\": null,\n      \"qtdLancamento\": null,\n      \"numOriginal\": null,\n      \"sistemaOrigem\": null,\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": null,\n          \"programaTrabalho\": \"1\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"10001\",\n          \"planoInterno\": \"\",\n          \"valorTransacao\": \"10000\"\n        }\n      ]\n    }",
-        "consumes": [
-          "application/json"
-        ],
+      
         "produces": [
           "application/json"
         ],
