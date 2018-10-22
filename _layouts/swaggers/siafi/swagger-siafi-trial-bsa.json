@@ -331,6 +331,13 @@
             "description": "Número da Nota de Crédito",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "x-credencial",
+            "in": "path",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -375,11 +382,11 @@
             "description": "Dados da Nota de Crédito a ser gerada",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/NotaCredito"
+              "$ref": "#/definitions/GeraNC"
             }
           },
           {
-            "in": "header",
+            "in": "path",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
