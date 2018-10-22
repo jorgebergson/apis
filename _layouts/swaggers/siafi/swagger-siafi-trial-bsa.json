@@ -333,9 +333,9 @@
             "type": "string"
           },
           {
-            "name": "x-credencial",
+            "name": "Content-Type",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "description": "application/json",
             "required": true,
             "type": "string"
           }
