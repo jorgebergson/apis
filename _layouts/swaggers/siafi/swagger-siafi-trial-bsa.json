@@ -437,6 +437,9 @@
       }
     }
   },
+  "consumes": [
+    "application/json"
+  ],
   "schemes": [
     "https"
   ],
