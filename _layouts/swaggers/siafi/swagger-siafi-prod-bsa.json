@@ -185,7 +185,7 @@
           "200": {
             "description": "Retorna os dados da Nota de Empenho",
             "schema": {
-              "$ref": "#/definitions/NE"
+              "$ref": "#/definitions/DadosNE"
             }
           },
           "400": {
@@ -295,8 +295,11 @@
         "tags": [
           "Nota de Crédito"
         ],
-        "summary": "Consulta Nota de Cŕedito",
+        "summary": "Consulta Nota de Crédito",
         "description": "Consulta uma Nota de Cŕedito existente\n\n## Exemplo\n#### URL de consulta a uma Nota de Crédito\n\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Exemplo de retorno da operação\n    {\n      \"dataEmissao\": \"23Fev18\",\n      \"numeroLancamento\": \"010001000012\",\n      \"ugEmitente\": \"\",\n      \"gestaoEmitente\": \"\",\n      \"ugFavorecida\": \"10001\",\n      \"gestaoFavorecida\": \"1\",\n      \"opCambial\": \"0\",\n      \"numeroTransferencia\": \"0\",\n      \"espacoBranco\": \"\",\n      \"observacao\": \"TESTE\",\n      \"mesLancamento\": null,\n      \"qtdLancamento\": null,\n      \"numOriginal\": null,\n      \"sistemaOrigem\": null,\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": null,\n          \"programaTrabalho\": \"1\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"10001\",\n          \"planoInterno\": \"\",\n          \"valorTransacao\": \"10000\"\n        }\n      ]\n    }",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
@@ -331,7 +334,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "header",
+            "in": "path",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -341,7 +344,7 @@
           "200": {
             "description": "Nota de Crédito encontrada e retornada",
             "schema": {
-              "$ref": "#/definitions/GeraNC"
+              "$ref": "#/definitions/NotaCredito"
             }
           },
           "400": {
@@ -365,7 +368,7 @@
           "Nota de Crédito"
         ],
         "summary": "Gera Nota de Crédito",
-        "description": "Gera uma Nota de Crédito com as informações passadas no JSON de entrada\n\n## Exemplo\n#### URL de chamada\n\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n<br/>\n\n#### JSON de Entrada (para receber um erro 400, mude o campo tipoRegistro para 1)\n\n    {\n      \"tipoRegistro\": \"2\",\n      \"dataEmissao\": \"23FEV18\",\n      \"numeroLancamento\": \"2018NC      \",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"opCambial\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"espacoBranco\": \"\",\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"programaTrabalho\": \"1\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"0100001\",\n          \"planoInterno\": \"\",   \n          \"valorTransacao\": \"00000000000100000\"\n        }\n      ],\n      \"numeroTransacaoCliente\": \"2018TR000005\",\n    }\n    \n#### Exemplo de retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"800017\"\n    }",
+        "description": "Gera uma Nota de Crédito com as informações passadas no JSON de entrada\n\n## Exemplo\n#### URL de chamada\n\n    https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n<br/>\n\n#### JSON de Entrada (para receber um erro 400, mude o campo tipoRegistro para 1)\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numero\": \"2018NC800017\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE INCLUSAO NC\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"0100001\",\n          \"planoInterno\": \"\",   \n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }\n    \n#### Exemplo de retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"800017\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -379,11 +382,11 @@
             "description": "Dados da Nota de Crédito a ser gerada",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/NotaCredito"
+              "$ref": "#/definitions/GeraNC"
             }
           },
           {
-            "in": "header",
+            "in": "path",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -1010,7 +1013,7 @@
           "type": "integer"
         },
         "mensagem": {
-          "$ref": "#/definitions/MensagemNE"
+          "type": "string"
         },
         "erros": {
           "type": "array",
@@ -1023,7 +1026,7 @@
         }
       }
     },
-    "MensagemNE": {
+    "DadosNE": {
       "properties": {
         "dataEmissao": {
           "type": "string"
