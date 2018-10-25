@@ -72,13 +72,13 @@
         },
         {
             "api": "vio",
-            "nome": "Lince Decodificador",
-            "logo": "images/lince.png",
+            "nome": "VIO - API Decodificação",
+            "logo": "images/vio_logo.png",
             "style": "width: 142px;",
             "endpointMock": "",
             "urlJsonSwaggerMock": "",
             "endpointProducao": "/viodec/v1",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
+            "urlJsonSwaggerProducao": "url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
         }
     ]
 }
