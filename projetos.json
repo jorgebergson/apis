@@ -75,8 +75,8 @@
             "nome": "VIO - API Decodificação",
             "logo": "images/vio_logo.png",
             "style": "width: 142px;",
-            "endpointMock": "",
-            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json",
+            "endpointMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html",
+            "urlJsonSwaggerMock:"", 
             "endpointProducao": "/viodec/v1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
         }
