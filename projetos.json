@@ -76,7 +76,7 @@
             "logo": "images/vio_logo.png",
             "style": "width: 142px;",
             "endpointMock": "",
-            "urlJsonSwaggerMock": "",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json",
             "endpointProducao": "/viodec/v1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
         }
