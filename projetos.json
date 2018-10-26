@@ -69,16 +69,7 @@
             "urlJsonSwaggerMock": "",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
-        },
-        {
-            "api": "vio",
-            "nome": "VIO - API Decodificação",
-            "logo": "images/vio_logo.png",
-            "style": "width: 142px;",
-            "endpointMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html",
-            "urlJsonSwaggerMock:"", 
-            "endpointProducao": "/viodec/v1",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
         }
+       
     ]
 }
