@@ -20,7 +20,7 @@
   },
   "basePath": "/consulta-carimbo-tempo/api",
   "paths": {
-    "/v1/check": {
+    "/v1/timestamp/check": {
       "post": {
         "summary": "Verifica o carimbo de tempo para o documento informado",
         "x-auth-type": "Application & Application User",
