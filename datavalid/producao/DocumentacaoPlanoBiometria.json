@@ -118,6 +118,15 @@
         }
       }
     },
+    "Outros Recursos - Campos Opcionais ": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "1.6 Campos opcionais no header",
+        "description": "As requisições ao Datavalid podem utilizar opcionalmente os campos no cabeçalho (header) da requisição, a fim de obter funcionaildades adicionais: \n\n | <b>Campo: valor</b> | <b>Descrição</b>|\n| ---------------------- | :------------------------------------------------------------- \n| x-request-trace-id: uuid        | O atributo X-Request-Trace-Id pode ser usado de forma <b>opcional</b> no cabeçalho (header) para que o cliente possa rastrear suas requisições, incluindo neste um número de identificação (UUID) para a operação. Ao utilizar este parâmetro, o cabeçalho da resposta vem com o campo X-Request-Trace-Id com o mesmo número enviado na requisição.                   |\n\n\n --------------------------"
+      }
+    },
     "/biometria/vbeta1/validate/pf-face": {
       "post": {
         "tags": [

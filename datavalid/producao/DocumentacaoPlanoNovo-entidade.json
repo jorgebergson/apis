@@ -37,7 +37,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Datavalid",
+        "summary": "1.1 O Datavalid",
         "description": "O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. Para pessoas fisícas, o Datavalid ainda disponibiliza um recurso biometrico, que funciona comparando a foto da face da pessoa com uma foto de face oficial cadastrada nas bases do governo.\n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
         "responses": {}
       }
@@ -47,7 +47,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Tipos de Atributos da Resposta",
+        "summary": "1.2 Tipos de Atributos da Resposta",
         "description": "Quando o Datavalid processa a requisção e valida os dados com sucesso, são retornados os seguintes tipos de atributos: \n\n | <b>Tipos</b> | <b>Valor de retorno</b>|\n| ---------------------- | :------------------------------------------------------------- \n| Validação        | <code>false</code> se o dado for invalido e <code>true</code> se for válido                   |\n| Similaridade     | Valor de 0 a 1 que indica o percentual de similaridade entre dado a ser validado e o dado verdadeiro referente a chave enviada.|\n\n --------------------------",
         "responses": {}
       }
@@ -57,7 +57,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Requisitos para o envio das imagens",
+        "summary": "1.3 Requisitos para o envio das imagens",
         "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 250 x 250 pixels. Quando esta condição não é atendida, é retornado o seguinte erro (exceção):  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
@@ -74,7 +74,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Requisitos para o envio de Digitais",
+        "summary": "1.4 Requisitos para o envio de Digitais",
         "description": "O módulo de Validação de Digitais do Datavalid necessita de imagens com resolução mínima de 500 DPI (pontos por polegada). Recomendamos ainda que a dimensão da imagem seja de no mínimo 640 x 600 pixels de altura X largura (considerando ao imagem antes de ser recortada). São suportados os formatos WSQ e PNG. Para imagens PNG, é importante atentar ao limite máximo total da requisição, que não poderá ultrapassar 3MB, incluíndo todo o corpo da requisição. Quando este limite máximo não seja atendido, a aplicação retorna erro 413. Já quando a condição de tamanho mínimo não é atendida, é retornado o erro a seguir (exceção).  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
@@ -91,7 +91,7 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Códigos de Retorno do Serviço",
+        "summary": "1.5 Códigos de Retorno do Serviço",
         "description": "As requisições ao Datavalid podem retornar os seguintes código HTTP:",
         "responses": {
           "200": {
@@ -119,6 +119,15 @@
             "description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
           }
         }
+      }
+    },
+    "Outros Recursos - Campos Opcionais ": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "1.6 Campos opcionais no header",
+        "description": "As requisições ao Datavalid podem utilizar opcionalmente os campos no cabeçalho (header) da requisição, a fim de obter funcionaildades adicionais: \n\n | <b>Campo: valor</b> | <b>Descrição</b>|\n| ---------------------- | :------------------------------------------------------------- \n| x-request-trace-id: uuid        | O atributo X-Request-Trace-Id pode ser usado de forma <b>opcional</b> no cabeçalho (header) para que o cliente possa rastrear suas requisições, incluindo neste um número de identificação (UUID) para a operação. Ao utilizar este parâmetro, o cabeçalho da resposta vem com o campo X-Request-Trace-Id com o mesmo número enviado na requisição.                   |\n\n\n --------------------------"
       }
     },
     "/vbeta1/validate/pf": {
