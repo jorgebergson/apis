@@ -29,16 +29,13 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Datavalid",
-		"description": "O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. \n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
-         "responses": {
-
-        }
+        "summary": "O Datavalid",
+        "description": "O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. Para pessoas fisícas, o Datavalid ainda disponibiliza um recurso biometrico, que funciona comparando a foto da face da pessoa com uma foto de face oficial cadastrada nas bases do governo.\n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
+        "responses": {}
       }
-    }
-    ,
-         "Tipos de Atributos da Resposta": {
-       "head": {
+    },
+    "Tipos de Atributos da Resposta": {
+      "head": {
         "tags": [
           "1 Introdução"
         ],
@@ -80,6 +77,15 @@
 				"description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
 				}
         }
+      }
+    },
+    "Outros Recursos - Campos Opcionais ": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "Campos opcionais no header",
+        "description": "As requisições ao Datavalid podem utilizar opcionalmente os campos no cabeçalho (header) da requisição, a fim de obter funcionaildades adicionais: \n\n | <b>Campo: valor</b> | <b>Descrição</b>|\n| ---------------------- | :------------------------------------------------------------- \n| x-request-trace-id: uuid        | O atributo X-Request-Trace-Id pode ser usado de forma <b>opcional</b> no cabeçalho (header) para que o cliente possa rastrear suas requisições, incluindo neste um número de identificação (UUID) para a operação. Ao utilizar este parâmetro, o cabeçalho da resposta vem com o campo X-Request-Trace-Id com o mesmo número enviado na requisição.                   |\n\n\n --------------------------"
       }
     },
     "/validate/pf": {
@@ -511,25 +517,6 @@
           "type": "boolean"
         },
         "uf__similaridade": {
-          "description": "Percentual de similaridade",
-          "type": "number",
-          "format": "double"
-        }
-      }
-    },
-    "ValidacaoFiliacao": {
-      "type": "object",
-      "properties": {
-        "codigo": {
-          "type": "boolean"
-        },
-        "data": {
-          "type": "boolean"
-        },
-        "motivo": {
-          "type": "boolean"
-        },
-        "motivo_similaridade": {
           "description": "Percentual de similaridade",
           "type": "number",
           "format": "double"
