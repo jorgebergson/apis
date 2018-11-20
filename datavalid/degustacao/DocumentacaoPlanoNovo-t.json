@@ -107,7 +107,7 @@
             "description": "<b>Request Entity Too Large - </b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido."
           },
           "422": {
-            "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta.",
+            "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listados na resposta.\n| property  | code  | message |\n| key.cpf  | DV10  | CPF {key.cpf} inválido |\n| key.cpf  | DV15  | CPF {key.cpf} não foi encontrado |\n| answer.nacionalidade  | DV11  | Valor inválido |\n| answer.documento.tipo  | DV12  | Valor inválido |\n| answer.sexo  | DV13  | Valor inválido |\n| answer.situacao_cpf  | DV14  | Valor inválido |\n| key.cnpj  | DV20  | CPF {key.cnpj} inválido |\n| key.cnpj  | DV23  | CNPJ {key.cnpj} não foi encontrado |\n| answer.situacao_cadastral.codigo  | DV21  | Valor inválido |\n| answer.porte  | DV22  | Valor inválido |\n| biometria_face  | DV41  | Não foi possível reconhecer a face na imagem |\n| biometria_face  | DV42  | Resolução da imagem inválida |\n| biometria_face  | DV43  | Imagem corrompida ou fora do formato JPG, JPEG ou PNG |\n| biometria_face  | DV44  | Erro ao recuperar imagem codificada em Base64 | \n ----------------------",
             "schema": {
               "$ref": "#/definitions/UnprocessableEntity"
             }
@@ -168,7 +168,7 @@
         "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
         },
       "422":{
-        "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores invalidos são listadas na resposta.",
+        "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listados na resposta.",
         "schema": {
               "$ref": "#/definitions/UnprocessableEntity"
             }
