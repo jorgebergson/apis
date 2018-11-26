@@ -92,33 +92,7 @@
           "1 Introdução"
         ],
         "summary": "Códigos de Retorno do Serviço",
-        "description": "As requisições ao Datavalid podem retornar os seguintes código HTTP:",
-        "responses": {
-          "200": {
-            "description": "<b> OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso."
-          },
-          "400": {
-            "description": "<b>Requisição inválida - </b> \n A requisição não foi aceita poís existe alguma iconsistência em algum campo da requisição.Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8."
-          },
-          "401": {
-            "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
-          },
-          "413": {
-            "description": "<b>Request Entity Too Large - </b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido."
-          },
-          "422": {
-            "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta.",
-            "schema": {
-              "$ref": "#/definitions/UnprocessableEntity"
-            }
-          },
-          "500": {
-            "description": "<b>Erro no servidor - </b> Ocorreu algum erro interno. "
-          },
-          "503": {
-            "description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
-          }
-        }
+        "description": "As requisições ao Datavalid podem retornar os seguintes código HTTP: \n\n | Code | Responses |\n|-----|-----|\n | 200 | <b>OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso. |\n | 400 | <b>Requisição inválida - </b> A requisição não foi aceita pois existe alguma iconsistência em algum campo da requisição. Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8. | \n | 401 | <b>Não autorizado - </b>Problemas durante a autenticação. | \n | 413 | <b>Request Entity Too Large - </b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido.| \n | 422 | <b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta. |\n|  |Code / property / message |\n |  |DV10 \tkey.cpf: \tCPF {key.cpf} inválido | \n |  |DV15 \tkey.cpf: \tCPF {key.cpf} não foi encontrado | \n |  |DV11 \tanswer.nacionalidade: \tValor inválido | \n |  |DV12 \tanswer.documento.tipo: \tValor inválido | \n |  |DV13 \tanswer.sexo: \tValor inválido | \n |  |DV14 \tanswer.situacao_cpf: \tValor inválido | \n |  |DV20 \tkey.cnpj: \tCPF {key.cnpj} inválido | \n |  |DV23 \tkey.cnpj: \tCNPJ {key.cnpj} não foi encontrado | \n |  |DV21 \tanswer.situacao_cadastral.codigo: \tValor inválido | \n |  |DV22 \tanswer.porte: \tValor inválido | \n |  |DV41 \tbiometria_face: \tNão foi possível reconhecer a face na imagem | \n |  |DV42 \tbiometria_face: \tResolução da imagem inválida | \n |  |DV43 \tbiometria_face: \tImagem corrompida ou fora do formato JPG, JPEG ou PNG | \n |  |DV44 \tbiometria_face: \tErro ao recuperar imagem codificada em Base64 |\n | 500 | <b>Erro no servidor - </b> Ocorreu algum erro interno.|\n |503 | <b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento. |\n"
       }
     },
     "Outros Recursos - Campos Opcionais ": {
