@@ -28,7 +28,7 @@
         "summary": "Listar os CNPJs de um CPF",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/cnpjs/71066868409\n#### Parâmetros de Entrada\n    {\n      \"CPF\": \"71066868409\" \n    }\n#### Retorno\n    [\n      { \n        \"cnpj\": \"22025711000153\",\n        \"situacao\": \"SUSPENSO\"\n      },\n      {\n      \"cnpj\": \"22025711000154\",\n      \"situacao\": \"ATIVO\"\n      }\n    ]",
+        "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/cnpjs/71066868409\n#### Parâmetros de Entrada\n    {\n      \"CPF\": \"71066868409\" \n    }\n#### Retorno\n    [\n      { \n        \"cnpj\": \"22025711000153\",\n        \"situacao\": \"SUSPENSO\"\n      },\n      {\n        \"cnpj\": \"22025711000154\",\n        \"situacao\": \"ATIVO\"\n      }\n    ]",
         "consumes": [
           "application/json"
         ],
