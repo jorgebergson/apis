@@ -636,6 +636,10 @@
           "type": "string",
           "example": "0000001"
         },
+        "registro_nacional_estrangeiro": {
+          "type": "string",
+          "example": "123456"
+        },
         "categoria": {
           "type": "string",
           "example": "AB"
@@ -730,6 +734,18 @@
     "ValidacaoCNH": {
       "type": "object",
       "properties": {
+        "nome": {
+          "type": "boolean",
+          "description":"validação do nome na CNH"
+        },
+        "nome_similaridade": {
+          "type": "number",
+          "format": "double",
+          "description":"similaridade da validação do nome na CNH"
+        },
+        "registro_nacional_estrangeiro": {
+          "type": "boolean"
+        },
         "numero_registro": {
           "type": "boolean"
         },
