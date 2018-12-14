@@ -19,53 +19,7 @@
     "description": "\n Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- | \n \n |500 | Erro no Servidor | Ocorreu algum erro no servidor.| \n<br> \n ## Endereço de Produção \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi/api \n <br> \n  ## Endereço de Degustação \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api \n    "
   },
   "basePath": "/api-integra-siafi-deg/api",
-  "paths": {
-    
-    "/v1/ne/realizar": {
-      "post": {
-        "tags": [
-          "Nota de Empenho v1"
-        ],
-        "summary": "Realiza Nota de Empenho",
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/realizar\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Inclusao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\": \"\",\n        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n        \"codigoProgramaTrabalho\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"\",\n        \"planoInterno\": \"\",\n        \"indicadorResultado\": \"\",\n        \"indicadorTipoCredito\": \"\",\n        \"planoOrcamentario\": \"\",\n        \"codigoAutorEmenda\": \"\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n          \"31DEZ17\"\n        ],\n        \"dataRecebimento\": [\n          \"31DEZ17\"\n        ],\n        \"valorCompromisso\": [\n          \"555555\"\n        ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"Testando inclusao de NE\"\n          }\n        ],\n        \"numeroTransacaoCliente\": \"2017TR000033\",\n        \"credencial\": {\n            \"cpf\": \"60165570644\",\n            \"ug\": \"010001\",\n            \"sistema\": \"SIAFI2017HM\"\n        }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "description": "Dados da Nota de Empenho a ser adicionada",
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/RealizaNE"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Retorna os dados da Nota de Empenho Adicionada",
-            "schema": {
-              "$ref": "#/definitions/NE"
-            }
-          },
-          "400": {
-            "description": "Algum campo enviado é inválido"
-          },
-          "403": {
-            "description": "Usuário não tem permissão para realizar esta operação"
-          },
-          "500": {
-            "description": "Erro interno do servidor"
-          }
-        }
-      }
-    },   
+  "paths": {       
     "/v1/ne/consultar": {
       "post": {
         "tags": [
@@ -97,6 +51,51 @@
             "description": "Retorna os dados da Nota de Empenho",
             "schema": {
               "$ref": "#/definitions/DadosNE"
+            }
+          },
+          "400": {
+            "description": "Algum campo enviado é inválido"
+          },
+          "403": {
+            "description": "Usuário não tem permissão para realizar esta operação"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/v1/ne/realizar": {
+      "post": {
+        "tags": [
+          "Nota de Empenho v1"
+        ],
+        "summary": "Realiza Nota de Empenho",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/realizar\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Inclusao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\": \"\",\n        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n        \"codigoProgramaTrabalho\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"\",\n        \"planoInterno\": \"\",\n        \"indicadorResultado\": \"\",\n        \"indicadorTipoCredito\": \"\",\n        \"planoOrcamentario\": \"\",\n        \"codigoAutorEmenda\": \"\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n          \"31DEZ17\"\n        ],\n        \"dataRecebimento\": [\n          \"31DEZ17\"\n        ],\n        \"valorCompromisso\": [\n          \"555555\"\n        ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"Testando inclusao de NE\"\n          }\n        ],\n        \"numeroTransacaoCliente\": \"2017TR000033\",\n        \"credencial\": {\n            \"cpf\": \"60165570644\",\n            \"ug\": \"010001\",\n            \"sistema\": \"SIAFI2017HM\"\n        }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "description": "Dados da Nota de Empenho a ser adicionada",
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RealizaNE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da Nota de Empenho Adicionada",
+            "schema": {
+              "$ref": "#/definitions/NE"
             }
           },
           "400": {
