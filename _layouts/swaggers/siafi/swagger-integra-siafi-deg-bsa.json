@@ -65,6 +65,51 @@
           }
         }
       }
+    },   
+    "/v1/ne/consultar": {
+      "post": {
+        "tags": [
+          "Nota de Empenho v1"
+        ],
+        "summary": "Consulta Nota de Empenho",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": "\n## Exemplo\n#### Chamada\n    [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/consultar\n#### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"800017\"\n    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao: 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente: '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente: '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido: CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido: '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n      observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho: '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem: APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade: NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso: 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n      codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n      referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n          valor: '01'\n          seq: '000'\n          qtd: ''\n          valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n        - numero: '1'\n          valor: ''\n          seq: '000'\n          qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo: ''\n    erros: []\n    status: 200\n    }      ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "description": "Dados da Nota de Empenho a ser consultada",
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConsultaNE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da Nota de Empenho",
+            "schema": {
+              "$ref": "#/definitions/DadosNE"
+            }
+          },
+          "400": {
+            "description": "Algum campo enviado é inválido"
+          },
+          "403": {
+            "description": "Usuário não tem permissão para realizar esta operação"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
     },
     "/v1/ne/alterar": {
       "post": {
@@ -142,51 +187,6 @@
             "description": "Retorna os dados da Nota de Empenho Anulada",
             "schema": {
               "$ref": "#/definitions/NE"
-            }
-          },
-          "400": {
-            "description": "Algum campo enviado é inválido"
-          },
-          "403": {
-            "description": "Usuário não tem permissão para realizar esta operação"
-          },
-          "500": {
-            "description": "Erro interno do servidor"
-          }
-        }
-      }
-    },
-    "/v1/ne/consultar": {
-      "post": {
-        "tags": [
-          "Nota de Empenho v1"
-        ],
-        "summary": "Consulta Nota de Empenho",
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n    [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/consultar\n#### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"800017\"\n    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao: 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente: '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente: '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido: CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido: '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n      observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho: '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem: APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade: NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso: 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n      codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n      referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n          valor: '01'\n          seq: '000'\n          qtd: ''\n          valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n        - numero: '1'\n          valor: ''\n          seq: '000'\n          qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo: ''\n    erros: []\n    status: 200\n    }      ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "description": "Dados da Nota de Empenho a ser consultada",
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/ConsultaNE"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Retorna os dados da Nota de Empenho",
-            "schema": {
-              "$ref": "#/definitions/DadosNE"
             }
           },
           "400": {
