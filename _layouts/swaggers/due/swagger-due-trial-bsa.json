@@ -92,7 +92,7 @@
               "$ref": "#/definitions/ConsultaDUE-V2"
             }
           },
-          "XXX": {
+          "Erros": {
             "description": "Veja os códigos de erros no item 3 - Tabelas"
           }
         }
