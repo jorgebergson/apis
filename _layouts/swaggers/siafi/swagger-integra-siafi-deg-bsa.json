@@ -19,7 +19,7 @@
     "description": "\n Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- | \n \n |500 | Erro no Servidor | Ocorreu algum erro no servidor.| \n<br> \n ## Endereço de Produção \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi/api \n <br> \n  ## Endereço de Degustação \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api \n    "
   },
   "basePath": "/api-integra-siafi-deg/api",
-  "paths": {       
+  "paths": {
     "/v1/ne/consultar": {
       "post": {
         "tags": [
@@ -244,7 +244,7 @@
           }
         }
       }
-    },   
+    },
     "/v1/ne/consultaTransacao": {
       "post": {
         "tags": [
@@ -331,7 +331,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -383,7 +383,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -431,7 +431,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -501,7 +501,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -553,7 +553,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -623,7 +623,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -675,7 +675,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -745,7 +745,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -797,7 +797,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -867,7 +867,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -916,7 +916,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
@@ -986,7 +986,7 @@
           },
           {
             "name": "x-credencial",
-            "in": "path",
+            "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
@@ -1035,7 +1035,7 @@
             }
           },
           {
-            "in": "path",
+            "in": "header",
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
