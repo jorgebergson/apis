@@ -1061,6 +1061,68 @@
         }
       }
     },
+    "/v2/documentos/{ug}/{gestao}/{data}": {
+      "get": {
+        "tags": [
+          "Consulta Documentos"
+        ],
+        "summary": "Consulta Documentos",
+        "description": "Consulta documentos a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10Fev18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"listaDocumentos\": [\n        {\n          \"2018ND000001\",\n          \"2017NL000083\",\n          \"2018NE000017\",\n          \"2017ND000025\",\n          \"2017NL000081\",\n          \"2018NC000167\"  \n        }\n             \n      ]\n             \n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ug",
+            "in": "path",
+            "description": "Código da UG emitente",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gestao",
+            "in": "path",
+            "description": "Código da Gestão emitente",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "data",
+            "in": "path",
+            "description": "Data referente ao pedido da consulta",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-credencial",
+            "in": "path",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Documentos encontrados e retornados com sucesso",
+            "schema": {
+              "$ref": "#/definitions/Documentos"
+            }
+          },
+          "400": {
+            "description": "Algum campo possui informações inválidas"
+          },
+          "403": {
+            "description": "Credencial informada não possui permissão para consultar a Documentos"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
     "/status": {
       "get": {
         "tags": [
