@@ -21,12 +21,12 @@ info:
     oferencendo operação de consulta às informações cadastrais de Pessoas
     Físicas no Brasil.
 
-    ## Códigos de Retorno não Bilhetados 
+    - ## Códigos de Retorno não Bilhetados 
 
-| Código de retorno | Resumido | Explicação |
-|:----------------- |:-------- |:-----------|
-| 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
-| 500           | Erro no servidor    | Ocorreu algum erro interno.      |
+    | Código de retorno | Resumido | Explicação |
+    |:----------------- |:-------- |:-----------|
+    | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
+    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
 
 
     ## Tipos de Campos Retornados
