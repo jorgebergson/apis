@@ -28,6 +28,11 @@ info:
         | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
         | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
 
+    - ## bar
+
+        | foo | bar | baz |
+        |-----|-----|-----|
+        | bla | bli | blu |
 
     ## Tipos de Campos Retornados
 
