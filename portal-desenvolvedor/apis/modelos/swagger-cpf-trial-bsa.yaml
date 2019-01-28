@@ -20,9 +20,7 @@ info:
     | -------------
     |:--------------------|:-----------------------------------------------------------------------------|
 
-    | &nbsp | &nbsp    | &nbsp  | 
-     | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
-    | &nbsp           | &nbsp    | &nbsp  | 
+    | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
 
     | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
 
@@ -74,7 +72,6 @@ info:
 
      --------------------------     
      
-    <br><br>
 
     ## Solicitando assinatura com Carimbo de Tempo
 
@@ -82,7 +79,6 @@ info:
       
       A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.
 
-    <br>
 
     ## Verificando assinatura com Carimbo de Tempo
 
