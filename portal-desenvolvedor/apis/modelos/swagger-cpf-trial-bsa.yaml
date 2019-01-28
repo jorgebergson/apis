@@ -1,7 +1,97 @@
 openapi: 3.0.2
-info: 
-  title: 'Consulta Massiva CPF'
-  version: 'api'
+info:
+  title: Consulta Massiva CPF
+  version: api
+  description: >-
+
+    Para informações de como se autenticar antes de consumir as API, por favor,
+    consulte a documentação em:
+    https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
+
+
+    O serviço `Consulta Massiva CPF` é disponibilizado através do `HTTP REST`
+    oferencendo operação de consulta às informações cadastrais de Pessoas
+    Físicas no Brasil.
+
+    ## Códigos de Retorno não Bilhetados 
+
+    | Código de retorno | Resumido | Explicação |
+
+    | -------------
+    |:--------------------|:-----------------------------------------------------------------------------|
+
+    | &nbsp | &nbsp    | &nbsp  | 
+     | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
+    | &nbsp           | &nbsp    | &nbsp  | 
+
+    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
+
+
+    ## Tipos de Campos Retornados
+
+
+    | Tipos de campos | Valor de retorno |
+
+    | ---------------------- |
+    :------------------------------------------------------------- |
+
+    | NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato
+    99999999999 |
+
+    | Nome     | Nome da Pessoa Física  |
+
+    | Situação | Situação Cadastral da Pessoa Física, formada por dois campos:
+    Código e Descrição.|
+
+    | Situação/Código | Código da Situação Cadastral da Pessoa Física |
+
+    | Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |
+
+     --------------------------
+     
+     
+     ## Tipos de Situação Cadastral Retornados
+
+
+    | Código | Descrição |
+
+    | ---------------------- |
+    :------------------------------------------------------------- |
+
+    | 0 | Regular |
+
+    | 2 | Suspensa  |
+
+    | 3 | Titular Falecido  |
+
+    | 4 | Pendente de Regularização |
+
+    | 5 | Cancelada por Multiplicidade |
+
+    | 8 | Nula |
+
+    | 9 | Cancelada de Ofício |
+
+     --------------------------     
+     
+    <br><br>
+
+    ## Solicitando assinatura com Carimbo de Tempo
+
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
+      
+      A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.
+
+    <br>
+
+    ## Verificando assinatura com Carimbo de Tempo
+
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
+      
+    [Documentação - Verificação Carimbo de
+    Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+
+
 servers:
   - url: 'http://apigateway.serpro.gov.br/consulta-cpf-trial/api'
     description: Trial
@@ -12,29 +102,33 @@ security:
     OAuth2: []
     Authorization: []
 paths:
-  /v1/cpf/{ni}:
+  '/v1/cpf/{ni}':
     get:
-      summary: 'Consulta o CPF pelo Número de Inscrição'
-      description: 'Retorna os dados do Cadastro de Pessoa Física (CPF)'
+      summary: Consulta o CPF pelo Número de Inscrição
+      description: Retorna os dados do Cadastro de Pessoa Física (CPF)
       parameters:
         - name: ni
           in: path
-          description: 'Número de Inscrição do CPF'
+          description: Número de Inscrição do CPF
           required: true
           schema:
-            type: number      
+            type: number
         - name: x-signature
           in: header
           required: false
-          description: 'Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.'
+          description: >-
+            Solicitação de assinatura de carimbo de tempo. Informe 1 para
+            assinar, ou deixe em branco para não assinar.
           schema:
             type: integer
       responses:
         '200':
-          description: 'Retorna os dados da Pessoa Física'  
+          description: Retorna os dados da Pessoa Física
           headers:
             stamp:
-              description: 'Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1'
+              description: >-
+                Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for
+                igual a 1
               schema:
                 type: string
           content:
@@ -42,22 +136,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/CPF'
         '206':
-          description: 'Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado'
+          description: >-
+            Partial content, as informações foram retornadas, mas não
+            completamente. Algum campo não pôde ser retornado
           headers:
             stamp:
-              description: 'Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1'
+              description: >-
+                Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for
+                igual a 1
               schema:
                 type: string
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CPF'          
+                $ref: '#/components/schemas/CPF'
         '400':
           description: O número de CPF informado não é válido.
         '404':
           description: Não existe CPF com o número de inscrição informado.
         '500':
-          description: Erro interno do servidor                
+          description: Erro interno do servidor
 components:
   schemas:
     CPF:
@@ -68,7 +166,7 @@ components:
           example: '40442820135'
         nome:
           type: string
-          example: 'Nome do CPF 404.428.201-35'
+          example: Nome do CPF 404.428.201-35
         situacao:
           type: object
           properties:
@@ -85,13 +183,13 @@ components:
             descricao:
               type: string
               enum:
-                - 'Regular'
-                - 'Suspensa'
-                - 'Titular Falecido'
-                - 'Pendente de Regularização'
-                - 'Cancelada por Multiplicidade'
-                - 'Nula'
-                - 'Cancelada de Ofício'
+                - Regular
+                - Suspensa
+                - Titular Falecido
+                - Pendente de Regularização
+                - Cancelada por Multiplicidade
+                - Nula
+                - Cancelada de Ofício
   securitySchemes:
     APIKEY:
       type: apiKey
