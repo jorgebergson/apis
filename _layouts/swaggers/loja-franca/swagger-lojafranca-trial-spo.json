@@ -91,7 +91,7 @@
         "tags": [
           "4  Payload (C#)"
         ],
-        "summary": "Payload C#",
+        "summary": "Payload (C#)",
         "description": "### Abaixo link para download do arquivo assinador \n  https://gitcorporativo.serpro/centro-api-11002/demandas/uploads/a3588a9f2cc8c70385d68ac8077f2dff/assinador-exemplo-serpro-csharp.zip <br><br> \n   O exemplo deste arquivo em C# para assinatura segui o padrão ADRB 2.2. <br><br> \n ### Observações: <br> \n  1- Este exemplo é uma aplicação standalone que utiliza a biblioteca BouncyCastle 1.8.3 (http://www.bouncycastle.org/csharp/). <br><br> \n  2- A variável entradaArray contém os dados de entrada simulado através de um arquivo neste exemplo. <br> <br>\n 3- O dado de saída que deverá ser utilizado na API Loja Franca é obtido da seguinte instrução no código de exemplo: Convert.ToBase64String(dadosAssinado.GetEncoded()"
       },
       "responses": {}
