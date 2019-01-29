@@ -89,7 +89,7 @@
     "Orientações para assinatura do payload na linguagem C Sharp": {
       "head": {
         "tags": [
-          "6 Payload"
+          "4 Paygame"
         ],
         "summary": "Payload C Sharp",
         "description": "Ver [tabela de países da Receita Federal do Brasil](http://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=22672 \"Tabela de países da Receita Federal do Brasil\")"
@@ -99,7 +99,7 @@
     "Tabela de países": {
       "head": {
         "tags": [
-          "6 Payload"
+          "4 Paygame"
         ],
         "summary": "Tabela de Países",
         "description": "Ver [tabela de países da Receita Federal do Brasil](http://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=22672 \"Tabela de países da Receita Federal do Brasil\")"
