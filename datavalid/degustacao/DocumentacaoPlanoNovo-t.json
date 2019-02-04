@@ -109,8 +109,8 @@
         "tags": [
           "2 Métodos do Serviço Básico"
         ],
-                "summary": "2.1 Validar Dados de Pessoas Físicas",
-    "description":"Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
+        "summary": "2.1 Validar Dados de Pessoas Físicas",
+        "description": "Este método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
         ],
@@ -169,7 +169,7 @@
           "2 Métodos do Serviço Básico"
         ],
         "summary": "2.2 Validar Dados de Pessoas Juridicas",
-        "description": "Esse método recebe no corpo da requisição uma chave com o CNPJ da pessoa jurídica (objeto <code>key</code>) e os dados da pessoa jurídica que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
+        "description": "Este método recebe no corpo da requisição uma chave com o CNPJ da pessoa jurídica (objeto <code>key</code>) e os dados da pessoa jurídica que serão validados (objeto <code>answer</code>) e retorna se cada um dos dados é ou não válido. Para os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n\n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
         ],
@@ -256,7 +256,7 @@
           "3 Métodos com Biometria"
         ],
         "summary": "3.2 Validar Dados com Biometria Digital",
-        "description": "Esse método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>), incluindo no atributo <code>digitais</code> uma ou mais fotos da impressão digital da pessoa e retorna se cada um dos dados é ou não válido. As fotos devem ser passadas como String codificadas em <a href='https://pt.wikipedia.org/wiki/Base64' target='_blank'>Base64</a>. \n\n As imagens das digitais enviadas devem corresponder aos dedos das de acordo com o seguinte índice:\n\n| <b>Posição</b> | <b>Dedo correspondente</b>|\n| ---------------------- | :------------------------------------------------------------- \n| 0        | polegar da mão direita                   |\n| 1     | indicador da mão direita |\n| 2     | dedo médio da mão direita |\n| 3     |dedo anelar da mão direita |\n| 4     | dedo mínimo da mão direita |\n| 5     | polegar da mão esquerda |\n| 6     | indicador da mão esquerda |\n| 7     | dedo médio da mão esquerda |\n| 8     | dedo anelar da mão esquerda |\n| 9     | dedo mínimo da mão esquerda |\n --------------------------\n\nPara os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
+        "description": "Este método recebe no corpo da requisição uma chave com o CPF da pessoa  (objeto <code>key</code>) e os dados da pessoa que serão validados (objeto <code>answer</code>), incluindo no atributo <code>digitais</code> uma ou mais fotos da impressão digital da pessoa e retorna se cada um dos dados é ou não válido. As fotos devem ser passadas como String codificadas em <a href='https://pt.wikipedia.org/wiki/Base64' target='_blank'>Base64</a>. \n\n As imagens das digitais enviadas devem corresponder aos dedos das de acordo com o seguinte índice:\n\n| <b>Posição</b> | <b>Dedo correspondente</b>|\n| ---------------------- | :------------------------------------------------------------- \n| 0        | polegar da mão direita                   |\n| 1     | indicador da mão direita |\n| 2     | dedo médio da mão direita |\n| 3     |dedo anelar da mão direita |\n| 4     | dedo mínimo da mão direita |\n| 5     | polegar da mão esquerda |\n| 6     | indicador da mão esquerda |\n| 7     | dedo médio da mão esquerda |\n| 8     | dedo anelar da mão esquerda |\n| 9     | dedo mínimo da mão esquerda |\n --------------------------\n\nPara os dados do tipo texto, também são retornados o percentual de similaridade entre o dado enviado e o dado oficial disponível nas bases do governo. \n<b>Clique no conteúdo do BODY SAMPLE para carregar o exemplo no Body e depois clique em Try para testar esse método. Os valores dos atributos do Body também podem ser alterados para avaliar outros cenários de validação.</b>",
         "consumes": [
           "application/json"
         ],
@@ -640,6 +640,13 @@
         },
         "data_validade": {
           "type": "boolean"
+        },
+        "codigo_situacao": {
+          "type": "string"
+        },
+        "descricao_situacao": {
+          "type": "string",
+          "description": "0 - INEXISTENTE\n1 - EMISSÃO AUTORIZADA\n2 - EM EMISSÃO\n3 - EMITIDA\n4 - CONFIRMADA\n5 - MODELO ANTIGO\n6 - ALTERADA\nA - Cancelada Erro Detran\nB - Cancelada Erro Gráfica\nZ - Cancelada Outros motivos"
         }
       }
     },
@@ -1077,6 +1084,14 @@
           "type": "string",
           "format": "yyyy-mm-dd",
           "example": "2000-10-10"
+        },
+        "codigo_situacao": {
+          "type": "string",
+          "example": "3"
+        },
+        "descricao_situacao": {
+          "type": "string",
+          "example": "EMITIDA"
         }
       }
     },
