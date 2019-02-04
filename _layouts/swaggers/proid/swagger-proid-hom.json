@@ -20,8 +20,8 @@
         "tags": [
           "Documentos"
         ],
-        "summary": "Cria ou altera de um documento ProID",
-        "description": "Serviço para inserção/alteração dos dados de uma carteria funcional e\n        possíveis dados utilizados para fazer a vinculação desse documento",
+        "summary": "Criação/alteração de um documento ProID",
+        "description": "Serviço para inserção/alteração dos dados de uma carteria funcional e        possíveis dados utilizados para fazer a vinculação desse documento.\nApós a criação do documento, ele fica disponível para os usuários do aplicativo ProID.",
         "operationId": "register",
         "consumes": [
           "application/json"
@@ -33,7 +33,7 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Conteúdo para inserção/alteração dos dados. Os campos devem ser os definidos no tipo de documento. Caso algum campo não contenha valor, deve ser passado uma string vazia. O atributo \"imagens\" só deve ser enviado caso \"foto\" e/ou \"assinatura\" estiverem na definição do tipo de documento",
+            "description": "Conteúdo para inserção/alteração dos dados. \nNo atributo **\"tipo\"** deve ser informado o UUID identificador do documento.\nO atributo **\"dados\"** é dinâmico, de acordo com o modelo de cada documento. Todo modelo de documento espera receber os campos \"numero_registro\" e \"nome\". Os campos devem ser os definidos no tipo de documento. Caso algum campo não contenha valor, deve ser passado uma string vazia.\nO atributo  **\"imagens\"** só deve ser enviado caso \"foto\" e/ou \"assinatura\" estiverem na definição do tipo de documento",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Documento"
@@ -65,50 +65,6 @@
         }
       }
     },
-    "/v1/documentos/ativacao": {
-      "post": {
-        "tags": [
-          "Documentos"
-        ],
-        "summary": "Ativação de um documento bloqueado ou restrito",
-        "description": "Serviço para ativar um documento que está bloqueado ou restrito",
-        "operationId": "activate",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Identificação do documento a ser ativado",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/Status"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Documento ativado"
-          },
-          "401": {
-            "description": "Organização não autenticado ou token inválido"
-          },
-          "403": {
-            "description": "Organização não tem permissão para acessar o documento"
-          },
-          "422": {
-            "description": "Erro de validação ou de negócio",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Violacao"
-              }
-            }
-          }
-        }
-      }
-    },
     "/v1/documentos/bloqueio": {
       "post": {
         "tags": [
@@ -134,50 +90,6 @@
         "responses": {
           "204": {
             "description": "Documento bloqueado"
-          },
-          "401": {
-            "description": "Organização não autenticado ou token inválido"
-          },
-          "403": {
-            "description": "Organização não tem permissão para acessar o documento"
-          },
-          "422": {
-            "description": "Erro de validação ou de negócio",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Violacao"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/v1/documentos/exclusao": {
-      "post": {
-        "tags": [
-          "Documentos"
-        ],
-        "summary": "Exclui um documento ProID",
-        "description": "Ao deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento.Ele passa a ser um documento não gerenciado pelo ProID",
-        "operationId": "delete",
-        "consumes": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Identificação do documento a ser excluído",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/Deletar_documento"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Documento excluído"
           },
           "401": {
             "description": "Organização não autenticado ou token inválido"
@@ -240,6 +152,94 @@
           }
         }
       }
+    },
+    "/v1/documentos/ativacao": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Ativação de um documento bloqueado ou restrito",
+        "description": "Serviço para ativar um documento que está bloqueado ou restrito",
+        "operationId": "activate",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser ativado",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento ativado"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/documentos/exclusao": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Exclusão de um documento ProID",
+        "description": "Ao deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento.Ele passa a ser um documento não gerenciado pelo ProID",
+        "operationId": "delete",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser excluído",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Deletar_documento"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento excluído"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -262,8 +262,31 @@
         },
         "dados": {
           "type": "object",
-          "additionalProperties": {
-            "type": "object"
+          "properties": {
+            "numero_registro": {
+              "type": "string",
+              "description": "[obrigatorio] Valor do número identificador do documento"
+            },
+            "nome": {
+              "type": "string",
+              "description": "[obrigatorio] Nome da pessoa física ou jurídica"
+            },
+            "cpf": {
+              "type": "string",
+              "description": "CPF, caso seja um documento de pessoa física"
+            },
+            "titulacao": {
+              "type": "string",
+              "description": "Campo reservado para cargo/função/profissão. Esse campo aparece no documento virtual logo abaixo do nome."
+            },
+            "data_vencimento": {
+              "type": "string",
+              "description": "Caso o documento tenha um data de validade, deve ser informada nesse campo"
+            },
+            "chave_campo_dinamico": {
+              "type": "string",
+              "description": "Os demais campos definidos para o tipo de documento e seguem o formato \"chave\":\"valor\". Caso um campo não tenha valor, deve ser enviado como uma string vazia"
+            }
           }
         },
         "imagens": {
