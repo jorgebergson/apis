@@ -36,7 +36,7 @@
           "1 Autenticação"
         ],
         "summary": "Primeiro Passo",
-        "description": "Para consumir as APIs, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret).\nExemplos de códigos: \n * Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb \n* Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote",
+        "description": "Para consumir as APIs, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret).\nExemplos de códigos: \n* Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb \n* Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote",
         "responses": {}
       }
     },
@@ -46,7 +46,7 @@
           "1 Autenticação"
         ],
         "summary": "Segundo Passo",
-        "description": "Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.\nPara solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint de autenticação, informando as credenciais de acesso no HTTP Header Authorization, no formato base64.\n* SANDBOX: https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n* PRODUÇÃO: https://autentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n\n **Exemplo usando cURL**\n curl -i -X POST \\   -H \"Content-Type:application/x-www-form-urlencoded\" \\   -H \"Authorization:Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpkamFSMjFQR29ZcDFpeUsybjJBQ09IOVJFZFVi\" \\   -d \\'grant_type=client_credentials&scope=escopo_proid' \\ 'https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token'",
+        "description": "Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.\nPara solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint de autenticação, informando as credenciais de acesso no HTTP Header Authorization, no formato base64.\n\n* SANDBOX: https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n* PRODUÇÃO: https://autentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n\n **Exemplo usando cURL**\n\n curl -i -X POST \\   -H \"Content-Type:application/x-www-form-urlencoded\" \\   -H \"Authorization:Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpkamFSMjFQR29ZcDFpeUsybjJBQ09IOVJFZFVi\" \\   -d \\'grant_type=client_credentials&scope=escopo_proid' \\ 'https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token'",
         "responses": {}
       }
     },
