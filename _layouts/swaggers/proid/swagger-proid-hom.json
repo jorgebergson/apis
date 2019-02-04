@@ -273,12 +273,10 @@
       "properties": {
         "numero_registro": {
           "type": "string",
-          "required": true,
-          "description": "alor do número identificador do documento"
+          "description": "[obrigatorio] Valor do número identificador do documento"
         },
         "nome": {
           "type": "string",
-          "required": true,
           "description": "[obrigatorio] Nome da pessoa física ou jurídica"
         },
         "cpf": {
