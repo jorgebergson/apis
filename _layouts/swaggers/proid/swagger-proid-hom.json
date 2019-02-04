@@ -22,7 +22,6 @@
         ],
         "summary": "Criação/alteração de um documento ProID",
         "description": "Serviço para inserção/alteração dos dados de uma carteria funcional e        possíveis dados utilizados para fazer a vinculação desse documento.\nApós a criação do documento, ele fica disponível para os usuários do aplicativo ProID.",
-        "operationId": "register",
         "consumes": [
           "application/json"
         ],
@@ -71,8 +70,7 @@
           "Documentos"
         ],
         "summary": "Bloqueio de um documento ProID",
-        "description": "Serviço para bloquear o uso do documento. Após o bloqueio, aquele documento não poderá mais ser acessado no aplicativo mobile",
-        "operationId": "block",
+        "description": "Serviço para bloquear o uso do documento. \nApós o bloqueio, o documento não poderá mais ser acessado no aplicativo ProID",
         "consumes": [
           "application/json"
         ],
@@ -80,10 +78,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "Identificação do documento a ser bloqueado e do motivo para bloqueio",
+            "description": "Identificação do documento a ser bloqueado e o motivo para bloqueio",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/Status"
+              "$ref": "#/definitions/SituacaoDocumento"
             }
           }
         ],
@@ -115,8 +113,7 @@
           "Documentos"
         ],
         "summary": "Restrição aplicada a um documento ProID",
-        "description": "Serviço para restringir o uso do documento. Após aplicar restrição, aquele documento poderá acessado no aplicativo mobile, mas haverá uma sinalização de restrição",
-        "operationId": "restrict",
+        "description": "Serviço para restringir o uso do documento. \nApós aplicar restrição, aquele documento continuará sendo acessado no aplicativo ProID, mas haverá uma sinalização de restrição",
         "consumes": [
           "application/json"
         ],
@@ -127,7 +124,7 @@
             "description": "Identificação do documento a ser restringido e do motivo para restrição",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/Status"
+              "$ref": "#/definitions/SituacaoDocumento"
             }
           }
         ],
@@ -160,7 +157,6 @@
         ],
         "summary": "Ativação de um documento bloqueado ou restrito",
         "description": "Serviço para ativar um documento que está bloqueado ou restrito",
-        "operationId": "activate",
         "consumes": [
           "application/json"
         ],
@@ -171,7 +167,7 @@
             "description": "Identificação do documento a ser ativado",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/Status"
+              "$ref": "#/definitions/SituacaoDocumento"
             }
           }
         ],
@@ -203,8 +199,7 @@
           "Documentos"
         ],
         "summary": "Exclusão de um documento ProID",
-        "description": "Ao deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento.Ele passa a ser um documento não gerenciado pelo ProID",
-        "operationId": "delete",
+        "description": "Serviço para exclusão de um documento.\nAo deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento. Ele passa a ser um documento não gerenciado pelo ProID",
         "consumes": [
           "application/json"
         ],
@@ -215,7 +210,7 @@
             "description": "Identificação do documento a ser excluído",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/Deletar_documento"
+              "$ref": "#/definitions/DeletarDocumento"
             }
           }
         ],
@@ -243,17 +238,6 @@
     }
   },
   "definitions": {
-    "Deletar_documento": {
-      "type": "object",
-      "properties": {
-        "tipo": {
-          "$ref": "#/definitions/Modelo"
-        },
-        "documento": {
-          "$ref": "#/definitions/Identificacao_Documento"
-        }
-      }
-    },
     "Documento": {
       "type": "object",
       "properties": {
@@ -265,6 +249,18 @@
         },
         "imagens": {
           "$ref": "#/definitions/Imagens"
+        }
+      }
+    },
+    "Modelo": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
         }
       }
     },
@@ -297,18 +293,18 @@
         }
       }
     },
-    "Identificacao_Documento": {
+    "Imagens": {
       "type": "object",
-      "required": [
-        "numero_registro"
-      ],
       "properties": {
-        "numero_registro": {
-          "type": "string"
+        "foto": {
+          "$ref": "#/definitions/DadosImagem"
+        },
+        "assinatura": {
+          "$ref": "#/definitions/DadosImagem"
         }
       }
     },
-    "Imagem": {
+    "DadosImagem": {
       "type": "object",
       "required": [
         "base64",
@@ -323,39 +319,38 @@
         }
       }
     },
-    "Imagens": {
-      "type": "object",
-      "properties": {
-        "foto": {
-          "$ref": "#/definitions/Imagem"
-        },
-        "assinatura": {
-          "$ref": "#/definitions/Imagem"
-        }
-      }
-    },
-    "Modelo": {
-      "type": "object",
-      "required": [
-        "id"
-      ],
-      "properties": {
-        "id": {
-          "type": "string",
-          "format": "uuid"
-        }
-      }
-    },
-    "Status": {
+    "SituacaoDocumento": {
       "type": "object",
       "properties": {
         "tipo": {
           "$ref": "#/definitions/Modelo"
         },
         "documento": {
-          "$ref": "#/definitions/Identificacao_Documento"
+          "$ref": "#/definitions/IdentificacaoDocumento"
         },
         "motivo": {
+          "type": "string"
+        }
+      }
+    },
+    "DeletarDocumento": {
+      "type": "object",
+      "properties": {
+        "tipo": {
+          "$ref": "#/definitions/Modelo"
+        },
+        "documento": {
+          "$ref": "#/definitions/IdentificacaoDocumento"
+        }
+      }
+    },
+    "IdentificacaoDocumento": {
+      "type": "object",
+      "required": [
+        "numero_registro"
+      ],
+      "properties": {
+        "numero_registro": {
           "type": "string"
         }
       }
