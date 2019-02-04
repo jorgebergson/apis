@@ -261,36 +261,41 @@
           "$ref": "#/definitions/Modelo"
         },
         "dados": {
-          "type": "object",
-          "properties": {
-            "numero_registro": {
-              "type": "string",
-              "description": "[obrigatorio] Valor do número identificador do documento"
-            },
-            "nome": {
-              "type": "string",
-              "description": "[obrigatorio] Nome da pessoa física ou jurídica"
-            },
-            "cpf": {
-              "type": "string",
-              "description": "CPF, caso seja um documento de pessoa física"
-            },
-            "titulacao": {
-              "type": "string",
-              "description": "Campo reservado para cargo/função/profissão. Esse campo aparece no documento virtual logo abaixo do nome."
-            },
-            "data_vencimento": {
-              "type": "string",
-              "description": "Caso o documento tenha um data de validade, deve ser informada nesse campo"
-            },
-            "chave_campo_dinamico": {
-              "type": "string",
-              "description": "Os demais campos definidos para o tipo de documento e seguem o formato \"chave\":\"valor\". Caso um campo não tenha valor, deve ser enviado como uma string vazia"
-            }
-          }
+          "$ref": "#/definitions/DadosDocumento"
         },
         "imagens": {
           "$ref": "#/definitions/Imagens"
+        }
+      }
+    },
+    "DadosDocumento": {
+      "type": "object",
+      "properties": {
+        "numero_registro": {
+          "type": "string",
+          "required": true,
+          "description": "alor do número identificador do documento"
+        },
+        "nome": {
+          "type": "string",
+          "required": true,
+          "description": "[obrigatorio] Nome da pessoa física ou jurídica"
+        },
+        "cpf": {
+          "type": "string",
+          "description": "CPF, caso seja um documento de pessoa física"
+        },
+        "titulacao": {
+          "type": "string",
+          "description": "Campo reservado para cargo/função/profissão. Esse campo parece no documento virtual logo abaixo do nome."
+        },
+        "data_vencimento": {
+          "type": "string",
+          "description": "Caso o documento tenha um data de validade, deve ser informada nesse campo"
+        },
+        "chave_campo_dinamico": {
+          "type": "string",
+          "description": "Os demais campos definidos para o tipo de documento e seguem o formato \"chave\":\"valor\". Caso um campo não tenha valor, deve ser enviado como uma string vazia"
         }
       }
     },
