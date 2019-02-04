@@ -56,7 +56,7 @@
           "1 Autenticação"
         ],
         "summary": "Terceiro Passo",
-        "description": "Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. Este token deve ser informado nos próximos passos.      \n {       \n   \"access_token\": \"TokenJWT\", \n\n    \"token_type\": \"Bearer\",  \n\n    \"expires_in\": 2825 \n \n }",
+        "description": "Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. Este token deve ser informado nos próximos passos.      \n\n {       \n\n   \"access_token\": \"TokenJWT\", \n\n    \"token_type\": \"Bearer\",  \n\n    \"expires_in\": 2825 \n\n }",
         "responses": {}
       }
     },
