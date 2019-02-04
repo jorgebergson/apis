@@ -1,0 +1,352 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "ProID"
+  },
+  "host": "proid.estaleiro.serpro.gov.br",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Documentos"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v1/documentos": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Cria ou altera de um documento ProID",
+        "description": "Serviço para inserção/alteração dos dados de uma carteria funcional e\n        possíveis dados utilizados para fazer a vinculação desse documento",
+        "operationId": "register",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Conteúdo para inserção/alteração dos dados. Os campos devem ser os definidos no tipo de documento. Caso algum campo não contenha valor, deve ser passado uma string vazia. O atributo \"imagens\" só deve ser enviado caso \"foto\" e/ou \"assinatura\" estiverem na definição do tipo de documento",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Documento"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento criado ou alterado"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro(s) de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          },
+          "502": {
+            "description": "Erro durante alguma integração do servidor, a solicitação deve ser reenviada"
+          }
+        }
+      }
+    },
+    "/v1/documentos/ativacao": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Ativação de um documento bloqueado ou restrito",
+        "description": "Serviço para ativar um documento que está bloqueado ou restrito",
+        "operationId": "activate",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser ativado",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento ativado"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/documentos/bloqueio": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Bloqueio de um documento ProID",
+        "description": "Serviço para bloquear o uso do documento. Após o bloqueio, aquele documento não poderá mais ser acessado no aplicativo mobile",
+        "operationId": "block",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser bloqueado e do motivo para bloqueio",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento bloqueado"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/documentos/exclusao": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Exclui um documento ProID",
+        "description": "Ao deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento.Ele passa a ser um documento não gerenciado pelo ProID",
+        "operationId": "delete",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser excluído",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Deletar_documento"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento excluído"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/documentos/restricao": {
+      "post": {
+        "tags": [
+          "Documentos"
+        ],
+        "summary": "Restrição aplicada a um documento ProID",
+        "description": "Serviço para restringir o uso do documento. Após aplicar restrição, aquele documento poderá acessado no aplicativo mobile, mas haverá uma sinalização de restrição",
+        "operationId": "restrict",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Identificação do documento a ser restringido e do motivo para restrição",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Documento restrigido"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para acessar o documento"
+          },
+          "422": {
+            "description": "Erro de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Deletar_documento": {
+      "type": "object",
+      "properties": {
+        "tipo": {
+          "$ref": "#/definitions/Modelo"
+        },
+        "documento": {
+          "$ref": "#/definitions/Identificacao_Documento"
+        }
+      }
+    },
+    "Documento": {
+      "type": "object",
+      "properties": {
+        "tipo": {
+          "$ref": "#/definitions/Modelo"
+        },
+        "dados": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          }
+        },
+        "imagens": {
+          "$ref": "#/definitions/Imagens"
+        }
+      }
+    },
+    "Identificacao_Documento": {
+      "type": "object",
+      "required": [
+        "numero_registro"
+      ],
+      "properties": {
+        "numero_registro": {
+          "type": "string"
+        }
+      }
+    },
+    "Imagem": {
+      "type": "object",
+      "required": [
+        "base64",
+        "tipo"
+      ],
+      "properties": {
+        "base64": {
+          "type": "string"
+        },
+        "tipo": {
+          "type": "string"
+        }
+      }
+    },
+    "Imagens": {
+      "type": "object",
+      "properties": {
+        "foto": {
+          "$ref": "#/definitions/Imagem"
+        },
+        "assinatura": {
+          "$ref": "#/definitions/Imagem"
+        }
+      }
+    },
+    "Modelo": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "properties": {
+        "tipo": {
+          "$ref": "#/definitions/Modelo"
+        },
+        "documento": {
+          "$ref": "#/definitions/Identificacao_Documento"
+        },
+        "motivo": {
+          "type": "string"
+        }
+      }
+    },
+    "Violacao": {
+      "type": "object",
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "property": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
