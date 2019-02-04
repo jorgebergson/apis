@@ -4,7 +4,7 @@
     "version": "v1",
     "title": "ProID"
   },
-  "host": "proid.serpro.gov.br",
+  "host": "sandbox.proid.serpro.gov.br",
   "basePath": "/api",
   "tags": [
     {
