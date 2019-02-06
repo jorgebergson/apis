@@ -46,7 +46,7 @@
           "1 Autenticação"
         ],
         "summary": "Segundo Passo",
-        "description": "Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.\nPara solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint de autenticação, informando as credenciais de acesso no HTTP Header Authorization, no formato base64.\n\n* SANDBOX: https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token \n* PRODUÇÃO: https://autentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n\n **Exemplo usando cURL**\n\n curl -i -X POST \\   -H \"Content-Type:application/x-www-form-urlencoded\" \\   -H \"Authorization:Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpkamFSMjFQR29ZcDFpeUsybjJBQ09IOVJFZFVi\" \\   -d \\'grant_type=client_credentials&scope=escopo_proid' \\ 'https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token'",
+        "description": "Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.\nPara solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint de autenticação, informando as credenciais de acesso no HTTP Header Authorization, no formato: base64(consumerkey:consumerSecret). \n  \n  \n\n* SANDBOX: https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token \n* PRODUÇÃO: https://autentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n\n **Exemplo usando cURL**\n\n curl -i -X POST \\   -H \"Content-Type:application/x-www-form-urlencoded\" \\   -H \"Authorization:Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpkamFSMjFQR29ZcDFpeUsybjJBQ09IOVJFZFVi\" \\   -d \\'grant_type=client_credentials&scope=escopo_proid' \\ 'https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token'",
         "responses": {}
       }
     },
@@ -56,17 +56,7 @@
           "1 Autenticação"
         ],
         "summary": "Terceiro Passo",
-        "description": "Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. Este token deve ser informado nos próximos passos.  \n\n { \"access_token\": \"TokenJWT\", \"token_type\": \"Bearer\",  \"expires_in\": 2825 }",
-        "responses": {}
-      }
-    },
-    "Quarto Passo": {
-      "head": {
-        "tags": [
-          "1 Autenticação"
-        ],
-        "summary": "Quarto Passo",
-        "description": "De posse do Token de Acesso, faça a requisição a um dos serviços da API Pro ID, passando o Bearer no cabeçalho \"Authorization\".",
+        "description": "Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. De posse do token de acesso, faça a requisição a um dos serviços da API Pro ID, passando o Bearer no cabeçalho \"Authorization\".\n\n\n{ \"access_token\": \"TokenJWT\", \"token_type\":\"Bearer\",  \"expires_in\": 2825 }",
         "responses": {}
       }
     },
