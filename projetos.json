@@ -70,15 +70,5 @@
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
         },                 
-       {
-            "api": "VIO",
-            "nome": "API Vio Decodificação",
-            "logo": "images/vio-letras.png",
-            "style": "width: 161px;",
-            "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/biometria/vbeta1",
-            "urlJsonSwaggerMock": "",
-            "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
-        }
-    ]
+      ]
 }
