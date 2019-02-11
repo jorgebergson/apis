@@ -20,20 +20,43 @@
   "basePath": "/api",
   "tags": [
     {
-      "name": "1 Autenticação"
+      "name": "1 Introdução"
     },
     {
-      "name": "2 Referência da API"
+      "name": "2 Autenticação"
+    },
+    {
+      "name": "3 Referência da API"
     }
   ],
   "schemes": [
     "https"
   ],
   "paths": {
+    "O que é ProID?": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "O que é ProID?",
+        "description": "ProID é uma solução em nuvem que possibilita a transformação digital de qualquer documento de identificação físico, emitidos por conselhos de classe, órgãos públicos ou qualquer outra entidade que emita identificação física para seus profissionais, em um documento digital acessado via aplicativo de celular por esses profissionais.",
+        "responses": {}
+      }
+    },
+    "Descrição da API": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "Descrição da API",
+        "description": "Esta API tem o intuito de fornecer um canal de envio de informações de/para o Serpro referente aos usuários associados aos conselhos, órgãos ou entidades contratantes, para efeitos de criação, alteração, bloqueio, restrição, reativação ou exclusão de um documento digital.",
+        "responses": {}
+      }
+    },
     "Primeiro Passo": {
       "head": {
         "tags": [
-          "1 Autenticação"
+          "2 Autenticação"
         ],
         "summary": "Primeiro Passo",
         "description": "Para consumir as APIs, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret).\nExemplos de códigos: \n* Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb \n* Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote",
@@ -43,7 +66,7 @@
     "Segundo Passo": {
       "head": {
         "tags": [
-          "1 Autenticação"
+          "2 Autenticação"
         ],
         "summary": "Segundo Passo",
         "description": "Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.\nPara solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint de autenticação, informando as credenciais de acesso no HTTP Header Authorization, no formato: base64(consumerkey:consumerSecret). \n  \n  \n\n* SANDBOX: https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token \n* PRODUÇÃO: https://autentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token\n\n **Exemplo usando cURL**\n\n curl -i -X POST \\   -H \"Content-Type:application/x-www-form-urlencoded\" \\   -H \"Authorization:Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpkamFSMjFQR29ZcDFpeUsybjJBQ09IOVJFZFVi\" \\   -d \\'grant_type=client_credentials&scope=escopo_proid' \\ 'https://valautentikus.estaleiro.serpro.gov.br/autentikus-authn/api/v1/token'",
@@ -53,7 +76,7 @@
     "Terceiro Passo": {
       "head": {
         "tags": [
-          "1 Autenticação"
+          "2 Autenticação"
         ],
         "summary": "Terceiro Passo",
         "description": "Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. De posse do token de acesso, faça a requisição a um dos serviços da API Pro ID, passando o Bearer no cabeçalho \"Authorization\".\n\n\n{ \"access_token\": \"TokenJWT\", \"token_type\":\"Bearer\",  \"expires_in\": 2825 }",
@@ -63,7 +86,7 @@
     "/v1/documentos": {
       "post": {
         "tags": [
-          "2 Referência da API"
+          "3 Referência da API"
         ],
         "summary": "Criação/alteração de um documento ProID",
         "description": "Serviço para inserção/alteração dos dados de uma carteria funcional e        possíveis dados utilizados para fazer a vinculação desse documento.\nApós a criação do documento, ele fica disponível para os usuários do aplicativo ProID.",
@@ -112,7 +135,7 @@
     "/v1/documentos/bloqueio": {
       "post": {
         "tags": [
-          "2 Referência da API"
+          "3 Referência da API"
         ],
         "summary": "Bloqueio de um documento ProID",
         "description": "Serviço para bloquear o uso do documento. \nApós o bloqueio, o documento não poderá mais ser acessado no aplicativo ProID",
@@ -155,7 +178,7 @@
     "/v1/documentos/restricao": {
       "post": {
         "tags": [
-          "2 Referência da API"
+          "3 Referência da API"
         ],
         "summary": "Restrição aplicada a um documento ProID",
         "description": "Serviço para restringir o uso do documento. \nApós aplicar restrição, aquele documento continuará sendo acessado no aplicativo ProID, mas haverá uma sinalização de restrição",
@@ -198,7 +221,7 @@
     "/v1/documentos/ativacao": {
       "post": {
         "tags": [
-          "2 Referência da API"
+          "3 Referência da API"
         ],
         "summary": "Ativação de um documento bloqueado ou restrito",
         "description": "Serviço para ativar um documento que está bloqueado ou restrito",
@@ -241,7 +264,7 @@
     "/v1/documentos/exclusao": {
       "post": {
         "tags": [
-          "2 Referência da API"
+          "3 Referência da API"
         ],
         "summary": "Exclusão de um documento ProID",
         "description": "Serviço para exclusão de um documento.\nAo deletar um documento, todas as vinculações com dispositivo móveis serão finalizada e não será mais cobrado nenhum valor sobre o documento. Ele passa a ser um documento não gerenciado pelo ProID",
