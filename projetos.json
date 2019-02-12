@@ -78,7 +78,7 @@
             "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
             "urlJsonSwaggerMock": "",
             "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod"
         }
    ]
 }
