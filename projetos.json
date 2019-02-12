@@ -32,7 +32,7 @@
         },
         {
             "api": "datavalid",
-            "nome": "Datavalid - Plano Antigo - B�sico",
+            "nome": "Datavalid - Plano Antigo - B?sico",
             "logo": "images/datavalid-antigo-basico.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
@@ -76,9 +76,9 @@
             "logo": "images/vio-letras.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
-            "urlJsonSwaggerMock": "",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json",
             "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
-            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/vio/swagger-viodec-prod-bsa.json"
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-bsa.json"
         }
    ]
 }
