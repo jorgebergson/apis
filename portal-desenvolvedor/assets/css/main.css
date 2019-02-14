@@ -4232,3 +4232,16 @@ button.testeAPI{
 #resultPanel{
 	margin-top: 15px;
 }
+
+.code {
+	background-color: #000;
+	color:#fff;
+}
+
+.code .key{
+	color: #fff;
+}
+
+.code .string{
+	color: darkturquoise;
+}

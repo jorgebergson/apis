@@ -32,7 +32,7 @@
         },
         {
             "api": "datavalid",
-            "nome": "Datavalid - Plano Antigo - Básico",
+            "nome": "Datavalid - Plano Antigo - B?sico",
             "logo": "images/datavalid-antigo-basico.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/datavalid-trial/basico/vbeta1",
@@ -69,7 +69,16 @@
             "urlJsonSwaggerMock": "",
             "endpointProducao": "https://apigateway.serpro.gov.br/datavalid/biometria/vbeta1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/datavalid/producao/DocumentacaoPlanoNovo-entidade.json"
+        },
+         {
+            "api": "viodec",
+            "nome": "API VIO Decodificação",
+            "logo": "images/vio-letras.png",
+            "style": "width: 161px;",
+            "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-",
+            "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
+            "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/vio/swagger-viodec-prod-"
         }
-       
-    ]
+   ]
 }
