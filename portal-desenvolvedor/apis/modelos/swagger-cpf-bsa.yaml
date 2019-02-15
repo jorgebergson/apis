@@ -169,6 +169,7 @@ components:
       properties:
         ni:
           type: string
+          pattern: '^\d{11}$'
           example: '40442820135'
         nome:
           type: string
