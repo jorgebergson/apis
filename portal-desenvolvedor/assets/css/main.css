@@ -4245,3 +4245,11 @@ button.testeAPI{
 .code .string{
 	color: darkturquoise;
 }
+
+.code .boolean{
+	color: darkturquoise;
+}
+
+.code .number{
+	color: darkturquoise;
+}

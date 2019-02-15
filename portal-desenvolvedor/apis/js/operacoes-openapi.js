@@ -42,9 +42,15 @@ function makeOperationBlock(id, operacao, metodo, api){
         ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th><th>Local</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
     }
     if(metodo === "post" || metodo === "put"){
-        ent += "<h4> Definições do Corpo da Requisição</h4>";
+        ent += "<h4> Dados do Corpo da Requisição</h4>";
+        var schema = api.paths[operacao][metodo].requestBody.content['application/json'].schema;
+        var fields = Object.getOwnPropertyNames(schema.properties);
+        ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
+        ent += addFields(fields, schema, "");
+        ent += "</tbody></table>";        
+        ent += "<h4> Exemplo de Corpo da Requisição</h4>";
         ent += "<pre class=\"code\">";
-        ent += syntaxHighlight(api.paths[operacao][metodo].requestBody.content['application/json'].schema);
+        ent += syntaxHighlight(api.paths[operacao][metodo].requestBody.content['application/json'].example);
         ent += "</pre>"; 
     }
     ent += "</div>";
@@ -58,9 +64,20 @@ function makeOperationBlock(id, operacao, metodo, api){
     // opProperties.forEach(saida => {
     //     saidaCampos += "<tr><td>" + saida + "</td><td>" +  apiobj[saida].description + "</td><td>" + apiobj[saida].type + "</td></tr>";
     // });
-    // ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>" + saidaCampos + "</tbody></table>";    
+    var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
+    var fields = Object.getOwnPropertyNames(schema.properties);
+    ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
+    ent += addFields(fields, schema, "");
+    ent += "</tbody></table>";    
     ent += "<pre class=\"code\">";
-    ent += syntaxHighlight(api.paths[operacao][metodo].responses['200'].content['application/json'].schema);
+    var jsf = JSONSchemaFaker;
+    jsf.resolveJsonPath = true;
+    jsf.format('double', () => jsf.random.randexp('0\.\d*'));
+    jsf.option({
+        fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
+        alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
+    });							
+    ent += syntaxHighlight(jsf.generate(schema.properties));
     ent += "</pre>";
     ent += "</div>";
     // ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
@@ -153,4 +170,25 @@ function syntaxHighlight(json) {
         }
         return '<span class="' + cls + '">' + match + '</span>';
     });
+}
+
+function addFields(fields, schema, father){
+    saida = "";
+    fields.forEach(field => {
+        description = "";
+        if(schema.properties[field].description !== undefined){
+            description = schema.properties[field].description;
+        }
+        var arrow = "";
+        if(father !== ""){
+            arrow = "&#8618 ";
+        }
+        saida += "<tr><td>" + "<b>" + father + arrow + "</b>"  + field + "</td><td>" + description + "</td><td>" + schema.properties[field].type + "</td></tr>";
+        if(schema.properties[field].type === "object"){
+            var subFields = Object.getOwnPropertyNames(schema.properties[field].properties);
+            saida += addFields(subFields,schema.properties[field],father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
+    });
+
+    return saida;
 }

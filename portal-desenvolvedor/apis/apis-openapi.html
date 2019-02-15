@@ -14,6 +14,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="../assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
 		<script src="js/swagger-parser.js"></script>
+		<script src="js/json-schema-faker.js"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/util.js"></script>
 		<script src="js/remarkable.js"></script>
@@ -29,11 +30,12 @@
 
 					var parser = new SwaggerParser();
 					parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-datavalid.yaml", function(err, api) {
-					//parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-cpf-trial-bsa.yaml", function(err, api) {
+					//parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-cpf-bsa.yaml", function(err, api) {
 						if (err) {
 							console.error(err);
 						}
 						else {
+
 							$('#apiNome').append(api.info.title);
 							$('#apiNome2').append(api.info.title);
 							var md = new Remarkable();
