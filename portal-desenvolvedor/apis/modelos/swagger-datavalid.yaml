@@ -606,6 +606,8 @@ components:
         nome_similaridade:
           type: number
           format: double
+          minimum: 0
+          maximum: 1
         sexo:
           type: boolean
         data_nascimento:
