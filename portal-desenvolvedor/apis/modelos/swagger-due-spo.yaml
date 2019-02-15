@@ -146,13 +146,20 @@ paths:
   /status:
     get:
       tags:
-        - 2 Status
+        - Status
       summary: Verifica status da API
       responses:
         '200':
           description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lastUpdateAt:
+                    type: string
         '500':
-          description: Serviço indisponível
+          description: Serviço indisponível 
 components:
   schemas:
     ConsultaDUE-V2:
