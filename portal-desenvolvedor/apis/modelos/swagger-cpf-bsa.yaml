@@ -153,6 +153,13 @@ paths:
       responses:
         '200':
           description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lastUpdateAt:
+                    type: string
         '500':
           description: Serviço indisponível
 components:
