@@ -144,7 +144,7 @@ paths:
         '404':
           description: Não existe CPF com o número de inscrição informado.
         '500':
-          description: Erro interno do servidor
+          description: Erro interno do servidor    
   /status:
     get:
       tags:
@@ -153,8 +153,15 @@ paths:
       responses:
         '200':
           description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lastUpdateAt:
+                    type: string
         '500':
-          description: Serviço indisponível
+          description: Serviço indisponível          
 components:
   schemas:
     CPF:
