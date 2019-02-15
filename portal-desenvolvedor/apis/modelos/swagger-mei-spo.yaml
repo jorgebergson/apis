@@ -236,7 +236,6 @@ paths:
           description: Nenhum registro encontrado.
         '500':
           description: Erro interno do servidor         
-          
   /status:
     get:
       tags:
@@ -245,8 +244,15 @@ paths:
       responses:
         '200':
           description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  lastUpdateAt:
+                    type: string
         '500':
-          description: Serviço indisponível
+          description: Serviço indisponível          
 components:
   schemas:
     CNPJs:
