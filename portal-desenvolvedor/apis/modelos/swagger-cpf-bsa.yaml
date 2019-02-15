@@ -160,6 +160,7 @@ paths:
                 properties:
                   lastUpdateAt:
                     type: string
+                    format: date-time
         '500':
           description: Serviço indisponível
 components:
