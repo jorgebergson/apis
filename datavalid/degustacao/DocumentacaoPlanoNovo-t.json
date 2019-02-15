@@ -49,8 +49,33 @@
         ],
         "summary": "1.2 Tipos de Atributos da Resposta",
         "description": "Quando o Datavalid processa a requisição e valida os dados com sucesso, são retornados os seguintes tipos de atributos: \n\n | <b>Tipos</b> | <b>Valor de retorno</b>|\n| ---------------------- | :------------------------------------------------------------- \n| Validação        | <code>false</code> se o dado for invalido e <code>true</code> se for válido                   |\n| Similaridade     | Valor de 0 a 1 que indica o percentual de similaridade entre dado a ser validado e o dado verdadeiro referente a chave enviada.|\n\n -------------------------- \n\n \n\n Quando os dados enviados para validação não estão disponíveis nas nossas bases, a resposta ocorre de acordo com a tabela abaixo: \n\n | <b>Tipos</b> | <b>Comportamento esperado</b>|\n| ---------------------- | :------------------------------------------------------------- \n| Atributos de \"answer\"        | Não vem no JSON de resposta                   |\n| Objetos     | Objeto retornado vazio: <code>\"Objeto\": {}</code>  |\n\n -------------------------- \n\n",
+        "example":{
+          "teste": "teste"
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Body"
+            }
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "x-signature",
+            "in": "header",
+            "type": "string"
+          }
+        ], 
         "responses": {
-          "Validação": {
+          "200": {
             "description": "Exemplo de JSON de retorno da validação, dependendo do tipo e disponibilidade do objeto/atributo",
             "example": {
               "$ref": "#/definitions/ValidacaoCNHVazia"
