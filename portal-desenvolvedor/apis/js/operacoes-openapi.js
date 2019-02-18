@@ -65,19 +65,14 @@ function makeOperationBlock(id, operacao, metodo, api){
     //     saidaCampos += "<tr><td>" + saida + "</td><td>" +  apiobj[saida].description + "</td><td>" + apiobj[saida].type + "</td></tr>";
     // });
     var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
+    var example = api.paths[operacao][metodo].responses['200'].content['application/json'].example;
     var fields = Object.getOwnPropertyNames(schema.properties);
     ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
     ent += addFields(fields, schema, "");
     ent += "</tbody></table>";    
+    ent += "<h4> Exemplo de Corpo da Resposta</h4>";
     ent += "<pre class=\"code\">";
-    var jsf = JSONSchemaFaker;
-    jsf.resolveJsonPath = true;
-    jsf.format('double', () => jsf.random.randexp('0\.\d*'));
-    jsf.option({
-        fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
-        alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
-    });							
-    ent += syntaxHighlight(jsf.generate(schema.properties));
+    ent += syntaxHighlight(example);
     ent += "</pre>";
     ent += "</div>";
     // ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";

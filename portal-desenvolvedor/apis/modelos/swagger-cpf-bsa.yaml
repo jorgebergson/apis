@@ -179,10 +179,8 @@ components:
         ni:
           type: string
           pattern: '^\d{11}$'
-          example: '40442820135'
         nome:
           type: string
-          example: Nome do CPF 404.428.201-35
         situacao:
           type: object
           properties:
