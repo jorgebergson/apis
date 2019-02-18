@@ -72,7 +72,9 @@ function makeOperationBlock(id, operacao, metodo, api){
     ent += "</tbody></table>";    
     ent += "<h4> Exemplo de Corpo da Resposta</h4>";
     ent += "<pre class=\"code\">";
-    ent += syntaxHighlight(example);
+    if (example !== undefined){
+        ent += syntaxHighlight(example);
+    }
     ent += "</pre>";
     ent += "</div>";
     // ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
