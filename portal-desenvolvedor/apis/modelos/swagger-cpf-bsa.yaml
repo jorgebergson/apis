@@ -162,15 +162,17 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  lastUpdateAt:
-                    type: string
-                    format: date-time
+                $ref: '#/components/schemas/Status'
               example:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00"
         '500':
           description: Serviço indisponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"          
 components:
   schemas:
     CPF:
@@ -204,6 +206,12 @@ components:
                 - Cancelada por Multiplicidade
                 - Nula
                 - Cancelada de Ofício
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time
   securitySchemes:
     APIKEY:
       type: apiKey
