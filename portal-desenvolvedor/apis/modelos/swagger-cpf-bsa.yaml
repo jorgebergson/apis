@@ -128,6 +128,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CPF'
+              example:
+                ni: "40442820135"
+                nome: "Nome do CPF 404.428.201-35"
+                situacao:
+                  codigo: "0"
+                  descricao: "Regular"
         '206':
           description: 'Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado'
           headers:
@@ -161,6 +167,8 @@ paths:
                   lastUpdateAt:
                     type: string
                     format: date-time
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
         '500':
           description: Serviço indisponível
 components:
