@@ -99,7 +99,7 @@
     "/status": {
       "get": {
         "tags": [
-          "Status"
+          "5 Status"
         ],
         "summary": "Verifica status da API",
         "responses": {
