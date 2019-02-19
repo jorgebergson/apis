@@ -78,7 +78,7 @@
     "/status": {
       "get": {
         "tags": [
-          "5 Status"
+          "Status"
         ],
         "summary": "Verifica status da API",
         "responses": {
