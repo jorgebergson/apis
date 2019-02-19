@@ -1,7 +1,7 @@
 openapi: 3.0.2
 info:
   title: Loja Franca
-  version: '1.0'
+  version: v1
   description: |- 
     # 1- Introdução #
     ## API ##
