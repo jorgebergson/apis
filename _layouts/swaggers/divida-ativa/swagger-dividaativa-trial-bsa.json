@@ -1,13 +1,5 @@
 {
-  "swagger": "2.0",
-  "info": {
-    "version": "api",
-    "title": "API Consulta Divida Ativa",
-    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nA api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida ativa da união via serviço `HTTP REST`. \n <br>\n\n## Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |:--------------------|:----------------------------------------------------------------------------- |\n| &nbsp           | &nbsp    | &nbsp  | \n |400           | Requisição inválida    | O número de inscrição informado não é válido.       |\n| &nbsp           | &nbsp    | &nbsp  |\n| 404           | Not found    | O número de inscrição informado não foi encontrado.  |\n| &nbsp           | &nbsp    | &nbsp  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa/api\n\n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api"
-  },
-  "schemes": [
-    "https"
-  ],
+  "host": "apigateway.serpro.gov.br",
   "security": [
     {
       "Bearer": []
@@ -20,40 +12,62 @@
       "in": "header"
     }
   },
-  "host": "apigateway.serpro.gov.br",
-  "basePath": "/consulta-divida-ativa-trial/api",
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Consulta Massiva CPF (consulta-cpf)",
+    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\nO serviço `Consulta Massiva CPF` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.\n## Códigos de Retorno não Bilhetados \n| Código de retorno | Resumido | Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------|\n| &nbsp | &nbsp    | &nbsp  | \n | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |\n| &nbsp           | &nbsp    | &nbsp  | \n| 500           | Erro no servidor    | Ocorreu algum erro interno.      |\n\n## Tipos de Campos Retornados\n\n| Tipos de campos | Valor de retorno |\n| ---------------------- | :------------------------------------------------------------- |\n| NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999 |\n| Nome     | Nome da Pessoa Física  |\n| Situação | Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.|\n| Situação/Código | Código da Situação Cadastral da Pessoa Física |\n| Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |\n\n --------------------------\n \n \n ## Tipos de Situação Cadastral Retornados\n\n\n| Código | Descrição |\n| ---------------------- | :------------------------------------------------------------- |\n| 0 | Regular |\n| 2 | Suspensa  |\n| 3 | Titular Falecido  |\n| 4 | Pendente de Regularização |\n| 5 | Cancelada por Multiplicidade |\n| 8 | Nula |\n| 9 | Cancelada de Ofício |\n\n --------------------------     \n \n<br><br>\n## Solicitando assinatura com Carimbo de Tempo\n\n  Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.\n  \n  A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.\n\n<br>\n## Verificando assinatura com Carimbo de Tempo\n\n  Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:\n  \n[Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)\n\n \n## Produção\n### Endereço Base de Produção\n \n    https://apigateway.serpro.gov.br/consulta-cpf/v1/\n    \n## Degustação\n\n    \n\n### Endereço Base de Degustação\n\n    https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/\n    "
+  },
+  "basePath": "/consulta-cpf-trial/v1",
   "paths": {
-    "/v1/inscricao/{numeroInscricao}": {
+    "/cpf/{ni}": {
       "get": {
         "tags": [
-          "Dívida Ativa"
+          "Consulta CPF"
         ],
-        "summary": "Consulta dados de inscrição",
-        "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/inscricao/9061700096419\n\n#### Retorno\n      [\n        {\n          \"inscricao\": \"90 6 17 000964-19\",\n          \"processoAdministrativo\": \"46206 099222/99-01\",\n          \"situacao\": \"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n          \"dataInscricao\": \"16/12/2003\",\n          \"numeroPFNResponsavel\": \"1000\",\n          \"nomePFNResponsavel\": \"PRIMEIRA REGIAO\",\n          \"numeroPFNInscricao\": \"1000\",\n          \"nomePFNInscricao\": \"PRIMEIRA REGIAO\",\n          \"numeroProcessoJudicial\": \"\",\n          \"numeroProcessoJudicialNovo\": \"\",\n          \"orgaoOrigem\": \"DRT/DF\",\n          \"codigoNaturezaReceita\": \"0002\",\n          \"nomeNaturezaReceita\": \"NAO TRIBUTARIA\",\n          \"codigoReceitaPrincipal\": \"3623\",\n          \"nomeReceita\": \"DIV.ATIVA-CLT\",\n          \"codigoSerie\": \"5\",\n          \"nomeSerie\": \"CONSOLIDACAO DAS LEIS TRABALHISTAS\",\n          \"codigoOrgaoJustica\": \"100030\",\n          \"nomeOrgaoJustica\": \"VARA DO TRABALHO - BRASILIA\",\n          \"numeroJuizo\": \"000000\",\n          \"descricaoJuizo\": \"Número da Vara Desconhecido\",\n          \"dataProtocoloJudExecucao\": \"\",\n          \"dataDistribuicaoJudicial\": \"\",\n          \"indicadorMoedaTotalInscrito\": \"R$\",\n          \"valorTotalInscritoMoeda\": \"805,06\",\n          \"valorTotalInscritoIndex\": \"756,56\",\n          \"indicadorMoedaTotalConsolidado\": \"R$\",\n          \"valorTotalConsolidadoMoeda\": \"2.403,59\",\n          \"indicadorMoedaTotalRemanescente\": \"R$\",\n          \"valorRemanescenteMoeda\": \"805,06\",\n          \"valorRemanescenteIndex\": \"756,56\",\n          \"dataDevolucaoProcesso\": \"\",\n          \"numeroAutoInfracao\": \"\",\n          \"indicadorPrescricaoSV8\": \"NAO\",\n          \"dataDecretacaoFalencia\": \"\",\n          \"dataFimProcurador\": \"\",\n          \"numeroImovelITR\": \"\",\n          \"dataExtincaoInscricao\": \"\",\n          \"motivoSuspensaoExigilidade\": \"\",\n          \"numeroRipSpu\": \"\",\n          \"indicadorAnaliseOrgaoOrigem\": \"NAO\",\n          \"motivoExtincaoInscricao\": \"\",\n          \"indicadorProtImpedAjuiz\": \"\",\n          \"numeroAgrupamento\": \"\",\n          \"numeroInscricaoOriginal\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada1\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada2\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada3\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada4\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada5\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada6\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada7\": \"00 0 00 000000-00\",\n          \"dcomp\": \"\",\n          \"descricaoNaoCalculado\": \"\",\n          \"codigoMunicipioSPU\": 0,\n          \"codigoSistemaOrigem\": \"M\",\n          \"descricaoSistemaOrigem\": \"Manual\"\n        }\n      ]\n<br/>      \n#### Chaves para retornos diferentes\n\n    (200) numeroInscricao: 9061700096419\n    (200) numeroInscricao: 4483300091135\n    (404) numeroInscricao: qualquer outro número            \n    ",
-        "operationId": "consultaInscricao",
+        "summary": "Consulta o CPF",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": "Retorna os dados do Cadastro de Pessoa Física (CPF)\n### CPF's Disponíveis para Degustação\n| CPF | Situação Cadastral |\n| ---------------------- | :------------------------------------------------------------- |\n| 40442820135 | CPF Regular |\n| 63017285995 | CPF Regular |\n| 91708635203 | CPF Regular  |\n| 58136053391 | CPF Regular |    \n| 40532176871 | Suspensa |\n| 47123586964 | Suspensa |\n| 07691852312 | Pendente de Regularização |\n| 10975384600 | Pendente de Regularização |\n| 01648527949 | Cancelada por Multiplicidade |\n| 47893062592 | Cancelada por Multiplicidade |\n| 98302514705 | Nula |    \n| 18025346790 | Nula |\n| 64913872591 | Cancelada de Ofício |\n| 52389071686 | Cancelada de Ofício |\n| 05137518743 | Titular Falecido |\n| 08849979878 | Titular Falecido |\n\n --------------------------     \n\n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135\n    \n  #### Retorno\n  \n    {\n      \"ni\":\"40442820135\",\n      \"nome\":\"Nome do CPF 404.428.201-35\",\n      \"situacao\":\n      {\n        \"codigo\":\"0\",\n        \"descricao\":\"Regular\"\n      }\n    }        ",
         "produces": [
-          "application/json",
-          "text/plain"
+          "application/json"
         ],
         "parameters": [
           {
-            "name": "numeroInscricao",
-            "in": "path",
-            "description": "Número de inscrição",
-            "required": true,
+            "description": "Número de inscrição no CPF",
+            "name": "ni",
             "type": "string",
-            "pattern": "^\\d{1,13}$"
+            "required": true,
+            "in": "path"
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "x-signature",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "Retorna objeto json com o resultado da consulta"
+            "description": "Retorna os dados da Pessoa Física",
+            "headers": {
+              "stamp": {
+                "type": "string",
+                "description": "Carimbo de Tempo"
+              }
+            },
+            "schema": {
+              "$ref": "#/definitions/CPF"
+            }
+          },
+          "206": {
+            "description": "Partial content, as informações foram retornadas, mas não completamente."
           },
           "400": {
-            "description": "Número de Inscrição inválido."
+            "description": "O número de CPF informado não é válido."
           },
           "404": {
-            "description": "Inscrição não encontrada."
+            "description": "Não existe CPF com o número de inscrição informado."
           },
           "500": {
             "description": "Erro interno do servidor"
@@ -61,41 +75,73 @@
         }
       }
     },
-    "/v1/devedor/{numeroInscricaoDevedor}": {
+    "/status": {
       "get": {
         "tags": [
-          "Dívida Ativa"
+          "Status"
         ],
-        "summary": "Consulta dados do devedor, seja pessoa física ou jurídica",
-        "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/devedor/09781911768\n\n#### Retorno\n        [\n          {\n            \"numeroInscricao\": \"10 5 03 003880-14\",\n            \"numeroProcesso\": \"10166 677771/2014-12\",\n            \"situacaoInscricao\": \"121105\",\n            \"situacaoDescricao\": \"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n            \"nomeDevedor\": \"DEVEDOR DA SILVA\",\n            \"tipoDevedor\": \"PRINCIPAL\",\n            \"valorTotalConsolidadoMoeda\": \"4.457,56\",\n            \"cpfCnpj\": \"097.819.117-68\",\n            \"codigoSida\": \"1000\",\n            \"nomeUnidade\": \"PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO\",\n            \"codigoComprot\": \"1101951\",\n            \"codigoUorg\": \"0005786\"\n          }\n        ]\n<br/>      \n#### Chaves para retornos diferentes\n\n    (200) numeroInscricaoDevedor: 09781911768 (CPF)\n    (200) numeroInscricaoDevedor: 01415666000181 (CNPJ)\n    (404) numeroInscricaoDevedor: qualquer outro número",
-        "operationId": "consultaDevedorCPF",
-        "produces": [
-          "application/json",
-          "text/plain"
-        ],
-        "parameters": [
-          {
-            "name": "numeroInscricaoDevedor",
-            "in": "path",
-            "description": "Número de inscrição (CPF ou CNPJ) do devedor",
-            "required": true,
-            "type": "string",
-            "pattern": "^\\d{11,14}$"
-          }
-        ],
+        "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "Retorna objeto json com o resultado da consulta"
-          },
-          "400": {
-            "description": "O valor do parâmetro 'numeroInscricaoDevedor' inválido: {numeroInscricaoDevedor}"
-          },
-          "404": {
-            "description": "Inscrição não encontrada."
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           },
           "500": {
-            "description": "Erro interno do servidor"
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "schemes": [
+    "https"
+  ],
+  "definitions": {
+    "CPF": {
+      "type": "object",
+      "properties": {
+        "ni": {
+          "type": "string",
+          "description": "Ex: 99999999999"
+        },
+        "nome": {
+          "type": "string",
+          "description": "Ex: PESSOA FISICA DA SILVA"
+        },
+        "situacao": {
+          "properties": {
+            "codigo": {
+              "type": "string",
+              "description": "Ex: 0"
+            },
+            "descricao": {
+              "type": "string",
+              "description": "Ex: REGULAR"
+            }
+          }
+        }
+      }
+    },
+    "Status": {
+      "type": "object",
+      "properties": {
+        "lastUpdateAt": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     }
