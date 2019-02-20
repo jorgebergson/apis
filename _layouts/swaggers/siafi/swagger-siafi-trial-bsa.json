@@ -419,7 +419,7 @@
         ],
         "summary": "Verifica status da API",
         "responses": {         
-          "201": {
+          "501": {
             "description": "Serviço indisponível",
             "schema": {
               "$ref": "#/definitions/Status"
