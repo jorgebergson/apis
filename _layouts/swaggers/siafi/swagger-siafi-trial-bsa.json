@@ -412,7 +412,7 @@
         }
       }
     },
-    "/status": {
+    "/status2": {
       "get": {
         "tags": [
           "Status"
