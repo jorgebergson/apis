@@ -427,6 +427,7 @@
             "examples": {
               "lastUpdateAt": "2019-02-18T11:27:06-03:00"
             }
+          },
           "500": {
             "description": "Serviço indisponível",
             "schema": {
