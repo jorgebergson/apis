@@ -412,7 +412,7 @@
         }
       }
     },
-    "/status3": {
+    "/status4": {
       "get": {
         "tags": [
           "Status"
@@ -420,7 +420,10 @@
         "summary": "Verifica status da API",
         "responses": {         
           "200": {
-            "description": "Serviço disponível"
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
           },
           "500": {
             "description": "Serviço indisponível",
