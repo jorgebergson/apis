@@ -289,16 +289,24 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
         '500':
           description: Serviço indisponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
 components:
   schemas:
     Status:
       type: object
       properties:
-        statusDateTime:
+        lastUpdateAt:
           type: string
-          example: "lastUpdateAt: 2019-02-05T11:22:25-02:00"
+          format: date-time   
   securitySchemes:
     APIKEY:
       type: apiKey
