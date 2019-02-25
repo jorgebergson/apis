@@ -163,7 +163,7 @@ paths:
 
         ## Exemplo
         #### Chamada
-              [GET] GET] https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409/22025711000153
+              [GET] https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409/22025711000153
         #### Parâmetros de Entrada
             {
               "CPF": "71066868409",
