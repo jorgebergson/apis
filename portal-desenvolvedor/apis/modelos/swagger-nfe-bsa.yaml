@@ -271,6 +271,10 @@ paths:
       responses:
         '200':
           description: Retorna os dados da NF-e correspondente à chave de acesso informada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NFE'
         '400':
           description: A chave de acesso informada não é válida.
         '404':
@@ -293,6 +297,410 @@ paths:
           description: Serviço indisponível
 components:
   schemas:
+    NFE:
+      type: object
+      properties:
+        nfeProc:
+          type: object
+          properties:
+            protNFe:
+              type: object
+              properties:
+                infProt:
+                  type: object
+                  properties:
+                    nProt:
+                      type: string
+                      description: 
+                    digVal:
+                      type: string
+                      description:
+                    dhRecbto:
+                      type: string
+                      format: date-time
+                    Id:
+                      type: string
+                      description:
+                    chNFe:
+                      type: string
+                      description:
+                    xMotivo:
+                      type: string
+                      description:
+                    cStat:
+                      type: number
+                      description:
+            NFe:
+              type: object
+              properties:
+                infNFe:
+                  type: object
+                  properties:
+                    infAdic:
+                      type: object
+                      properties:
+                        infCpl:
+                          type: string
+                        infAdFisco:
+                          type: string
+                    compra:
+                      type: object
+                      properties:
+                          xPed:
+                            type: string
+                    det:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          nItem:
+                            type: mumber
+                          prod:
+                            type: object
+                            properties:
+                              xPed:
+                                type: number
+                              cEAN:
+                                type: number
+                              cProd:
+                                type: string
+                              qCom:
+                                type: number
+                              cEANTrib:
+                                type: number
+                              vUnTrib:
+                                type: number
+                              qTrib: 
+                                type: number
+                              vProd:
+                                type: number
+                              nFCI:
+                                type: string
+                              xProd:
+                                type: string
+                              vUnCom:
+                                type: number
+                              nItemPed:
+                                type: string
+                              indTot:
+                                type: number
+                              uTrib:
+                                type: string
+                              NCM:
+                                type: number
+                              uCom:
+                                type: string
+                              CFOP:
+                                type: number
+                          imposto:
+                            type: object
+                            properties:
+                              ICMS:
+                                type: object
+                                properties:
+                                  ICMS500:
+                                    type: object
+                                    properties:
+                                      ICMS00:
+                                        type: object
+                                        properties:
+                                          modBC:
+                                            type: number
+                                          orig:
+                                            type: number
+                                          CST:
+                                            type: string
+                                          vBC:
+                                            type: number
+                                          vICMS:
+                                            type: number
+                                          pICMS:
+                                            type: number
+                              IPI:
+                                type: object
+                                properties:
+                                  IPINT:
+                                    type: object
+                                    properties:
+                                      CST:
+                                        type: number
+                                  cEnq:
+                                    type: number
+                              COFINS:
+                                type: object
+                                properties:
+                                  COFINSAliq:
+                                    type: object
+                                    properties:
+                                      vCOFINS:
+                                        type: number
+                                      CST:
+                                        type: string
+                                      vBC:
+                                        type: number
+                                      pCOFINS:
+                                        type: number
+                              PIS:
+                                type: object
+                                properties:
+                                  PISAliq:
+                                    type: object
+                                    properties:
+                                      vPIS:
+                                        type: number
+                                      CST:
+                                        type: string
+                                      vBC:
+                                        type: number
+                                      pPIS:
+                                        type: number
+                          infAdProd:
+                            type: string
+                    total:
+                      type: object
+                      properties:
+                        retTrib:
+                          type: string
+                        ICMSTot:
+                          type: object
+                          properties:
+                            vCOFINS:
+                              type: number
+                            vBCST:
+                              type: number                              
+                            vICMSDeson:
+                              type: number
+                            vProd:
+                              type: number
+                            vSeg:
+                              type: number
+                            vNF:
+                              type: number
+                            vPIS:
+                              type: number
+                            vBC:
+                              type: number
+                            vST:
+                              type: number
+                            vICMS:
+                              type: number
+                            vII:
+                              type: number
+                            vDesc:
+                              type: number
+                            vOutro:
+                              type: number
+                            vIPI:
+                              type: number
+                            vFrete:
+                              type: number
+                    cobr:
+                      type: object
+                      properties:
+                        dup:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              dVenc:
+                                type: string
+                                format: date
+                              nDup:
+                                type: string
+                              vDup:
+                                type: string
+                    Id:
+                      type: string
+                    ide:
+                      type: object
+                      properties:
+                        tpNF:
+                          type: number
+                        mod:
+                          type: number
+                        indPres:
+                          type: number
+                        tpImp:
+                          type: number
+                        nNF:
+                          type: number
+                        cMunFG:
+                          type: number
+                        procEmi:
+                          type: number
+                        finNFe:
+                          type: number
+                        dhEmi:
+                          type: string
+                          format: date-time
+                        tpAmb:
+                          type: number
+                        indFinal:
+                          type: number
+                        dhSaiEnt:
+                          type: string
+                          format: date-time
+                        idDest:
+                          type: number
+                        tpEmis:
+                          type: number
+                        cDV:
+                          type: number
+                        cUF:
+                          type: number
+                        serie:
+                          type: number
+                        natOp:
+                          type: string
+                        cNF:
+                          type: number
+                        verProc:
+                          type: string
+                        indPag:
+                          type: number
+                    emit:
+                      type: object
+                      properties:
+                        xNome:
+                          type: string
+                        CRT:
+                          type: number
+                        xFant:
+                          type: string
+                        CNPJ:
+                          type: string
+                        enderEmit:
+                          type: object
+                          properties:
+                            fone:
+                              type: number
+                            UF:
+                              type: string
+                            xPais:
+                              type: string
+                            cPais:
+                              type: number
+                            xLgr:
+                              type: string
+                            xMun:
+                              type: string
+                            nro:
+                              type: number
+                            cMun:
+                              type: number
+                            xBairro:
+                              type: string
+                            CEP:
+                              type: number
+                        IE:
+                          type: number
+                      dest:
+                      type: object
+                      properties:
+                        xNome:
+                          type: string
+                        CNPJ:
+                          type: string
+                        enderDest:
+                          type: object
+                          properties:
+                            UF:
+                              type: string
+                            xPais:
+                              type: string
+                            cPais:
+                              type: number
+                            xLgr:
+                              type: string
+                            xMun:
+                              type: string
+                            nro:
+                              type: number
+                            cMun:
+                              type: number
+                            xBairro:
+                              type: string
+                            CEP:
+                              type: number
+                        IE:
+                          type: number                        
+                        indIEDest:
+                          type: number
+                      transp:
+                        type: object
+                        properties:
+                          modFrete:
+                            type: number
+                          vol:
+                            type: object
+                            properties:
+                              marca:
+                                type: string
+                              pesoL:
+                                type: number
+                              esp:
+                                type: string
+                              qVol:
+                                type: number
+                              nVol:
+                                type: string
+                              pesoB:
+                                type: number
+                          transporta:
+                            type: object
+                            properties:
+                              xNome:
+                                type: string
+                              UF:
+                                type: string
+                              xEnder:
+                                type: string
+                              xMun:
+                                type: string
+                              CNPJ:
+                                type: string
+                              IE:
+                                type: number
+            versao:
+              type: number
+        procEventoNFe:
+          type: array:
+            items:
+              type: object
+              properties:
+                evento:
+                  type: object
+                  properties:
+                    infEvento:
+                      type: object
+                      properties:
+                        cOrgao:
+                          type: number
+                        dhEvento:
+                          type: string
+                          format: date-time
+                        detEvento:
+                          type: object
+                          properties:
+                            descEvento:
+                              type: string
+                        tpEvento:
+                          type: number
+                retEvento:
+                  type: object
+                  properties:
+                    infEvento:
+                      type: object
+                      properties:
+                        cOrgao:
+                          type: number
+                        nProt:
+                          type: number
+                        dhRegEvento:
+                          type: string
+                          format: date-time
+                        tpEvento:
+                          type: number
     Status:
       type: object
       properties:
