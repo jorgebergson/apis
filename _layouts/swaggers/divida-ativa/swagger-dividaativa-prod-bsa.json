@@ -5,9 +5,6 @@
     "title": "API Consulta Divida Ativa",
     "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf\n\n    \nA api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida ativa da união via serviço `HTTP REST`. \n <br>\n\n## Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |:--------------------|:----------------------------------------------------------------------------- |\n| &nbsp           | &nbsp    | &nbsp  | \n |400           | Requisição inválida    | O número de inscrição informado não é válido.       |\n| &nbsp           | &nbsp    | &nbsp  |\n| 404           | Not found    | O número de inscrição informado não foi encontrado.  |\n| &nbsp           | &nbsp    | &nbsp  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa/api\n\n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api"
   },
-  "schemes": [
-    "https"
-  ],
   "security": [
     {
       "Bearer": []
@@ -96,6 +93,51 @@
           "500": {
             "description": "Erro interno do servidor"
           }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
+          },
+          "500": {
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "schemes": [
+    "https"
+  ],
+  "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "lastUpdateAt": {
+          "type": "string",
+          "format": "date-time"
         }
       }
     }

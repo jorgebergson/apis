@@ -13,8 +13,6 @@
     }
   },
   "swagger": "2.0",
-
-
   "tags": [
     {
       "name": "1 Introdução"
@@ -106,10 +104,22 @@
         "summary": "Verifica status da API",
         "responses": {
           "200": {
-            "description": "Serviço disponível"
+            "description": "Serviço disponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           },
           "500": {
-            "description": "Serviço indisponível"
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           }
         }
       }
@@ -122,6 +132,15 @@
     "https"
   ],
   "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "lastUpdateAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
     "ConsultaDUE-V2": {
       "type": "object",
       "properties": {

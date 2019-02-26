@@ -1,0 +1,1260 @@
+openapi: 3.0.2
+info:
+  title: Integração SIAFI (api-siafi)
+  version: '1.0.0'
+  description: |-   
+
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
+
+        
+    O serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.
+    ## Códigos de  Retorno não Tarifados 
+    | Código de retorno | Resumido | Explicação |
+    | ------|------|------|
+    | &nbsp | &nbsp | &nbsp | 
+     |500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
+servers:
+  - url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0'
+    description: Trial
+  - url: 'https://apigateway.serpro.gov.br/api-siafi/1.0.0'
+    description: Produção
+security:
+  - APIKEY: []
+    OAuth2: []
+    Authorization: []
+paths:
+  /ne/alterar:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Altera Nota de Empenho
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
+        ####
+        #### Conteudo do corpo
+            {
+              "dataEmissao": "31DEZ17",
+              "numeroDocumento": "",               
+              "ugEmitente": "010001",
+              "gestaoEmitente": "00001",
+              "numeroLista": "",
+              "taxaCambio": "",
+              "observacao": "Cancelamento de NE",
+              "valorTotalEmpenho": "555555",
+              "numeroProcesso": "0100",
+              "numeroOriginalConvenio": "0010",
+              "passivoAnterior": "N",
+              "contaPassivo": "",
+              "contaValor": [
+              {
+                "conta": "",
+                "valor": ""
+              }
+            ],
+              "contaPassivoFinanceiro": "string",
+              "especie": "02",
+              "ugReferencia": "010001",
+              "gestaoReferencia": "00001",
+              "numeroEmpenhoReferencia": "2017NE800051",
+              "numeroListaReferencia": "2017LI800097",
+              "listaItens": [
+              {
+                "subItemNd": "01",
+                "quantidade": "000000000000001",
+                "valorUnitario": "00000000000555555",
+                "valorTotal": "00000000000555555",
+                "descricao": "Teste alteração"
+              }
+            ],
+              "numeroTransacaoCliente": "2017TR000049",
+              "credencial": {
+              "cpf": "60165570644",
+              "ug": "010001",
+              "sistema": "SIAFI2017HM"
+                }
+              }
+        ####
+        #### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800060 010001000012017LI800106",
+              "erros": [],
+              "status": 200
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlteraNE'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  /ne/anular:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Anula Nota de Empenho
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/anular
+        ####
+        #### Conteudo do corpo
+            {
+                "dataEmissao": "31DEZ17",
+                "numeroDocumento": "",               
+                "ugEmitente": "010001",
+                "gestaoEmitente": "00001",
+                "numeroLista": "",
+                "taxaCambio": "",
+                "observacao": "Anulação de NE",
+                "valorTotalEmpenho": "555555",
+                "numeroProcesso": "0100",
+                "numeroOriginalConvenio": "0010",
+                "passivoAnterior": "N",
+                "contaPassivo": "",
+                "contaValor": [
+                {
+                  "conta": "",
+                  "valor": ""
+                }
+              ],
+                "contaPassivoFinanceiro": "string",
+                "especie": "03",
+                "ugReferencia": "010001",
+                "gestaoReferencia": "00001",
+                "numeroEmpenhoReferencia": "2017NE800049",
+                "numeroListaReferencia": "2017LI800095",
+                "listaItens": [
+               {
+                  "subItemNd": "01",
+                  "quantidade": "000000000000001",
+                  "valorUnitario": "00000000000555555",
+                  "valorTotal": "00000000000555555",
+                  "descricao": "Teste Anulação"
+                }
+              ],
+                "numeroTransacaoCliente": "2017TR000043",
+                "credencial": {
+                  "cpf": "60165570644",
+                  "ug": "010001",
+                  "sistema": "SIAFI2017HM"
+              }
+            }
+        ####
+        #### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800058 010001000012017LI800104",
+              "erros": [],
+              "status": 200
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnulaNE'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Anulada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  /ne/consultaTransacao:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Consulta Número da Transação
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/consultaTransacao
+        ####
+        #### Conteudo do corpo
+            {
+              "numeroTransacaoCliente": "2017TR000045",
+              "credencial": {
+                "cpf": "60165570644",
+                "ug": "010001",
+                "sistema": "SIAFI2017HM"
+              }
+            }
+        ####
+        #### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800058 010001000012017LI800104",
+              "erros": [],
+              "status": 200
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsultaTransacao'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  /ne/consultar:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Consulta Nota de Empenho
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+            [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/consultar
+        ####
+        #### Conteudo do corpo - O Json de entrada abaixo realiza a consulta de uma NFe
+
+            {
+              "ano": "2018",
+              "ug": "010001",
+              "gestao": "00001",
+              "numero": "800017"
+            }
+          ####
+          #### Retorno - O Json de saida abaixo mostra o resultada da consulta da NFe
+            {
+            codigo: 0
+            mensagem:
+              dataEmissao: 14Jun18
+              saldoPagar: ''
+              numeroNota: 2018NE800017
+              ugEmitente: '010001'
+              nomeUgEmitente: CAMARA DOS DEPUTADOS
+              gestaoEmitente: '00001'
+              nomeGestaoEmitente: TESOURO NACIONAL
+              nomeFavorecido: CAMARA DOS DEPUTADOS
+              tipoFavorecido: '4'
+              codigoFavorecido: '01000100001'
+              sicaf: ''
+              operacaoCambial: '0000000000'
+              observacao: TESTE NE-01
+              evento: '401091'
+              esfera: '1'
+              ptres: '000001'
+              fonte: '0100000000'
+              codigoND: '339030'
+              ugResponsavel: 010019
+              planoInterno: AAA
+              valorEmpenho: '00000000000000001'
+              tipoEmpenho: ORDINARIO
+              sistemaOrigem: APISIAFI
+              docReferenciaOriginal: ''
+              numDocReferencia: ''
+              passivoAnterior: NAO
+              contaPassivo: ''
+              nomeModalidade: NAO SE APLICA
+              nomeAmparo: ''
+              inciso: ''
+              numeroProcesso: 103.504/1999
+              indicadorPagPrecatorio: ''
+              siglaUF: DF
+              codigoMunicipioBeneficiado: '9701'
+              origemMaterial: NACIONAL
+              referenciaDispensa: ''
+              numeroOriginal: ''
+              informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'
+              contaCorrenteFinanceiro: F0100000000
+              contasPermanentes: []
+              numeroLista: 2018LI800043
+              subItens:
+                - numero: '00'
+                  valor: '01'
+                  seq: '000'
+                  qtd: ''
+                  valorTotal: '00000000000000001'
+                  descricao: LISTA NE-01
+                - numero: '1'
+                  valor: ''
+                  seq: '000'
+                  qtd: ''
+                  valorTotal: ''
+                  descricao: ''
+              subItensSaldo:
+                - numero: '01'
+                  valor: '00000000000000001'
+              nsaldo: ''
+            erros: []
+            status: 200
+            }      
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsultaNE'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosNE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  /ne/realizar:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Adiciona Nota de Empenho
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/realizar
+        ####
+        #### Conteudo do corpo
+            {
+                "dataEmissao": "31DEZ17",
+                "numeroDocumento": "",               
+                "ugEmitente": "010001",
+                "gestaoEmitente": "00001",
+                "numeroLista": "",
+                "taxaCambio": "",
+                "observacao": "Inclusao de NE",
+                "valorTotalEmpenho": "555555",
+                "numeroProcesso": "0100",
+                "numeroOriginalConvenio": "0010",
+                "passivoAnterior": "N",
+                "contaPassivo": "",
+                "contaValor": [
+                 {
+                  "conta": "",
+                  "valor": ""
+                  }
+                ],
+                "contaPassivoFinanceiro": "string",
+                "favorecido": "75793032720",
+                "gestaoFavorecido": "",
+                "esferaOrcamentaria": "3",
+                "codigoUO": "",
+                "codigoProgramaTrabalho": "000001",
+                "fonteRecursos": "0100000000",
+                "naturezaDespesa": "339030",
+                "unidadeGestoraResponsavel": "",
+                "planoInterno": "",
+                "indicadorResultado": "",
+                "indicadorTipoCredito": "",
+                "planoOrcamentario": "",
+                "codigoAutorEmenda": "",
+                "tipoEmpenho": "1",                        
+                "modalidadeLicitacao": "08",
+                "amparoLegal": "",
+                "inciso": "",
+                "origemMaterial": "1",
+                "municipioBeneficiado": "9701",
+                "ufBeneficiada": "DF",
+                "dataVencimento": [
+                  "31DEZ17"
+                ],
+                "dataRecebimento": [
+                  "31DEZ17"
+                ],
+                "valorCompromisso": [
+                  "555555"
+                ],
+                "listaItens": [
+                  {
+                    "subItemNd": "01",
+                    "quantidade": "1",
+                    "valorUnitario": "555555",
+                    "valorTotal": "555555",
+                    "descricao": "Testando inclusao de NE"
+                  }
+                ],
+                "numeroTransacaoCliente": "2017TR000033",
+                "credencial": {
+                    "cpf": "60165570644",
+                    "ug": "010001",
+                    "sistema": "SIAFI2017HM"
+                }
+            }
+        ####
+        #### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800054 010001000012017LI800101",
+              "erros": [],
+              "status": 200
+              }
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RealizaNE'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  /ne/reforcar:
+    post:
+      tags:
+        - Nota de Empenho
+      summary: Reforça Nota de Empenho
+      description: |-
+
+        ## Exemplo
+        #### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/reforcar
+        ####
+        #### Conteudo do corpo
+            {
+              "dataEmissao": "31DEZ17",
+              "numeroDocumento": "",               
+              "ugEmitente": "010001",
+              "gestaoEmitente": "00001",
+              "numeroLista": "",
+              "taxaCambio": "",
+              "observacao": "Reforço de NE",
+              "valorTotalEmpenho": "555555",
+              "numeroProcesso": "0100",
+              "numeroOriginalConvenio": "0010",
+              "passivoAnterior": "N",
+              "contaPassivo": "",
+              "contaValor": [
+              {
+                "conta": "",
+                "valor": ""
+              }
+            ],
+              "contaPassivoFinanceiro": "string",
+              "especie": "02",
+              "ugReferencia": "010001",
+              "gestaoReferencia": "00001",
+              "numeroEmpenhoReferencia": "2017NE800050",
+              "numeroListaReferencia": "2017LI800096",
+              "listaItens": [
+              {
+                "subItemNd": "01",
+                "quantidade": "000000000000001",
+                "valorUnitario": "00000000000555555",
+                "valorTotal": "00000000000555555",
+                "descricao": "Teste Anulação"
+              }
+            ],
+              "numeroTransacaoCliente": "2017TR000046",
+              "credencial": {
+                "cpf": "60165570644",
+                "ug": "010001",
+                "sistema": "SIAFI2017HM"
+              }
+            }
+        ####
+        #### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800059 010001000012017LI800105",
+              "erros": [],
+              "status": 200
+              }
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReforcaNE'
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor
+  '/nota-credito/{ug}/{gestao}/{ano}/{numero}':
+    get:
+      tags:
+        - Nota de Crédito
+      summary: Consulta Nota de Crédito
+      description: |-
+        Consulta uma Nota de Cŕedito existente
+
+        ## Exemplo
+        #### URL de consulta a uma Nota de Crédito
+
+            https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito/010001/00001/2018/800001
+            
+            No header:
+              x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==
+              (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)
+              
+        #### Exemplo de retorno da operação
+            {
+              "dataEmissao": "23Fev18",
+              "numeroLancamento": "010001000012",
+              "ugEmitente": "",
+              "gestaoEmitente": "",
+              "ugFavorecida": "10001",
+              "gestaoFavorecida": "1",
+              "opCambial": "0",
+              "numeroTransferencia": "0",
+              "espacoBranco": "",
+              "observacao": "TESTE",
+              "mesLancamento": null,
+              "qtdLancamento": null,
+              "numOriginal": null,
+              "sistemaOrigem": null,
+              "listaEventos": [
+                {
+                  "evento": "300062",
+                  "esferaOrcamentaria": "1",
+                  "unidadeOrcamentaria": null,
+                  "programaTrabalho": "1",
+                  "resultado": "",
+                  "tipoCredito": "",
+                  "planoOrcamentario": "",
+                  "autorEmenda": "",
+                  "fonteRecurso": "0100000000",
+                  "naturezaDespesa": "339039",
+                  "subitem": "",
+                  "ugResponsavel": "10001",
+                  "planoInterno": "",
+                  "valorTransacao": "10000"
+                }
+              ]
+            }
+      parameters:
+        - name: ug
+          in: path
+          description: Cógigo da UG emitente
+          required: true
+          schema:
+            type: string      
+        - name: gestao
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: path
+          description: 'Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Retorna os dados da Pessoa Física
+          headers:
+            stamp:
+              description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaCredito'
+        '400':
+          description: Algum campo possui informações inválidas
+        '403':
+          description: Credencial informada não possui permissão para consultar a Nota de Crédito
+        '404':
+          description: Nota de Crédito inexistente
+        '500':
+          description: Erro interno do servidor
+  /nota-credito:
+    post:
+      tags:
+        - Nota de Crédito
+      summary: Gera Nota de Crédito
+      description: |-
+        Gera uma Nota de Crédito com as informações passadas no JSON de entrada
+
+        ## Exemplo
+        #### URL de chamada
+
+            https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/nota-credito
+            
+            No header:
+              x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==
+              (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) 
+        <br/>
+        #### JSON de Entrada (para receber um erro 400, mude o campo tipoRegistro para 1)
+            {
+              "dataEmissao": "14MAI18",
+              "numero": "2018NC",
+              "ugEmitente": "010001",
+              "gestaoEmitente": "00001",
+              "ugFavorecida": "010001",
+              "gestaoFavorecida": "00001",
+              "taxaCambio": "",
+              "numeroTransferencia": "",
+              "observacao": "TESTE INCLUSAO NC",
+              "listaEventos": [
+                {
+                  "evento": "300062",
+                  "esferaOrcamentaria": "1",
+                  "ptres": "1",
+                  "fonteRecurso": "0100000000",
+                  "naturezaDespesa": "339039",
+                  "subitem": "",
+                  "ugResponsavel": "010001",
+                  "planoInterno": "",   
+                  "valor": "00000000000100000"
+                }
+              ]
+            }        
+        #### Exemplo de retorno
+            {
+              "ug": "010001",
+              "gestao": "00001",
+              "ano": "2018",
+              "tipoDoc": "NC",
+              "sequencialDoc": "800017"
+            }
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeraNC'
+      parameters:
+        - name: x-credencial
+          in: path
+          description: 'Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.'              
+          required: true
+          schema:
+            type: string             
+      responses:
+        '200':
+          description: Retorna os dados da Nota de Empenho Alterada
+          headers:
+            stamp:
+              description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NCGerada'
+        '400':
+          description: Algum campo enviado é inválido
+        '403':
+          description: Usuário não tem permissão para realizar esta operação
+        '500':
+          description: Erro interno do servidor            
+  '/status':
+    get:
+      tags:
+        - Status
+      summary: Verifica status da API
+      responses:
+        '200':
+          description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
+        '500':
+          description: Serviço indisponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+components:
+  schemas:
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time
+    NotaCredito:
+      properties:
+        dataEmissao:
+          type: string
+        numero:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        ugFavorecida:
+          type: string
+        gestaoFavorecida:
+          type: string
+        taxaCambio:
+          type: string
+        numeroTransferencia:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref:  '#/components/schemas/EventoNC'
+    GeraNC:
+      properties:
+        dataEmissao:
+          type: string
+        numero:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        ugFavorecida:
+          type: string
+        gestaoFavorecida:
+          type: string
+        taxaCambio:
+          type: string
+        numeroTransferencia:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNC'
+    NCGerada:
+      properties:
+        ug:
+          type: string
+        gestao:
+          type: string
+        ano:
+          type: string
+        tipoDoc:
+          type: string
+        sequencialDoc:
+          type: string
+    EventoNC:
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        ptres:
+          type: string
+        fonteRecurso:
+          type: string
+        naturezaDespesa:
+          type: string
+        subitem:
+          type: string
+        ugResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        valor:
+          type: string
+    Credencial:
+      properties:
+        cpf:
+          type: string
+        ug:
+          type: string
+        sistema:
+          type: string
+    AlteraNE:
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        numeroLista:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        valorTotalEmpenho:
+          type: string
+        numeroProcesso:
+          type: string
+        numeroOriginalConvenio:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        contaValor:
+          $ref: '#/components/schemas/Conta'
+        contaPassivoFinanceiro:
+          type: string
+        especie:
+          type: string
+        ugReferencia:
+          type: string
+        gestaoReferencia:
+          type: string
+        numeroEmpenhoReferencia:
+          type: string
+        listaItens:
+          $ref: '#/components/schemas/listaItens'
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          $ref: '#/components/schemas/Credencial'
+    AnulaNE:
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        numeroLista:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        valorTotalEmpenho:
+          type: string
+        numeroProcesso:
+          type: string
+        numeroOriginalConvenio:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        contaValor:
+          $ref: '#/components/schemas/Conta'
+        contaPassivoFinanceiro:
+          type: string
+        especie:
+          type: string
+        ugReferencia:
+          type: string
+        gestaoReferencia:
+          type: string
+        numeroEmpenhoReferencia:
+          type: string
+        listaItens:
+          $ref: '#/components/schemas/listaItens'
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          $ref: '#/components/schemas/Credencial'
+    ConsultaTransacao:
+      properties:
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          type: object
+          properties:
+            cpf:
+              type: string
+            ug:
+              type: string
+            sistema:
+              type: string
+    ConsultaNE:
+      properties:
+        ano:
+          type: string
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+    RealizaNE:
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        numeroLista:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        valorTotalEmpenho:
+          type: string
+        numeroProcesso:
+          type: string
+        numeroOriginalConvenio:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        contaValor:
+          type: object
+          properties:
+            conta:
+              type: string
+            valor:
+              type: string
+        contaPassivoFinanceiro:
+          type: string
+        favorecido:
+          type: string
+        gestaoFavorecido:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        codigoUO:
+          type: string
+        codigoProgramaTrabalho:
+          type: string
+        fonteRecursos:
+          type: string
+        naturezaDespesa:
+          type: string
+        unidadeGestoraResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        indicadorResultado:
+          type: string
+        indicadorTipoCredito:
+          type: string
+        planoOrcamentario:
+          type: string
+        codigoAutorEmenda:
+          type: string
+        tipoEmpenho:
+          type: string
+        modalidadeLicitacao:
+          type: string
+        amparoLegal:
+          type: string
+        inciso:
+          type: string
+        origemMaterial:
+          type: string
+        municipioBeneficiado:
+          type: string
+        ufBeneficiada:
+          type: string
+        dataVencimento:
+          type: string
+        dataRecebimento:
+          type: string
+        valorCompromisso:
+          type: string
+        listaItens:
+          type: object
+          properties:
+            subItemNd:
+              type: string
+            quantidade:
+              type: string
+            valorUnitario:
+              type: string
+            valorTotal:
+              type: string
+            descricao:
+              type: string
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          type: object
+          properties:
+            cpf:
+              type: string
+            ug:
+              type: string
+            sistema:
+              type: string
+    ReforcaNE:
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        numeroLista:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        valorTotalEmpenho:
+          type: string
+        numeroProcesso:
+          type: string
+        numeroOriginalConvenio:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        contaValor:
+          type: object
+          properties:
+            conta:
+              type: string
+            valor:
+              type: string
+        contaPassivoFinanceiro:
+          type: string
+        especie:
+          type: string
+        ugReferencia:
+          type: string
+        gestaoReferencia:
+          type: string
+        numeroEmpenhoReferencia:
+          type: string
+        numeroListaReferencia:
+          type: string
+        listaItens:
+          type: object
+          properties:
+            subItemNd:
+              type: string
+            quantidade:
+              type: string
+            valorUnitario:
+              type: string
+            valorTotal:
+              type: string
+            descricao:
+              type: string
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          type: object
+          properties:
+            cpf:
+              type: string
+            ug:
+              type: string
+            sistema:
+              type: string
+    NE:
+      properties:
+        codigo:
+          type: integer
+        mensagem:
+          type: string
+        erros:
+          type: array
+          items:
+            type: string
+        status:
+          type: integer
+    DadosNE:
+      properties:
+        dataEmissao:
+          type: string
+        saldoPagar:
+          type: string
+        numeroNota:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUgEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        nomeGestaoEmitente:
+          type: string
+        nomeFavorecido:
+          type: string
+        tipoFavorecido:
+          type: string
+        codigoFavorecido:
+          type: string
+        sicaf:
+          type: string
+        operacaoCambial:
+          type: string
+        observacao:
+          type: string
+        evento:
+          type: string
+        esfera:
+          type: string
+        ptres:
+          type: string
+        fonte:
+          type: string
+        codigoND:
+          type: string
+        ugResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        valorEmpenho:
+          type: string
+        tipoEmpenho:
+          type: string
+        sistemaOrigem:
+          type: string
+        docReferenciaOriginal:
+          type: string
+        numDocReferencia:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        nomeModalidade:
+          type: string
+        nomeAmparo:
+          type: string
+        inciso:
+          type: string
+        numeroProcesso:
+          type: string
+        indicadorPagPrecatorio:
+          type: string
+        siglaUF:
+          type: string
+        codigoMunicipioBeneficiado:
+          type: string
+        origemMaterial:
+          type: string
+        referenciaDispensa:
+          type: string
+        numeroOriginal:
+          type: string
+        informacoesLancamentos:
+          type: string
+        contaCorrenteFinanceiro:
+          type: string
+        contasPermanentes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conta'
+        numeroLista:
+          type: string
+        subItens:
+          type: array
+          items:
+            $ref: '#/components/schemas/subItem'
+        subItensSaldo:
+          type: array
+          items:
+            $ref: '#/components/schemas/subItemSaldo'
+        nsaldo:
+          type: string
+    listaItens:
+      properties:
+        subItemNd:
+          type: string
+        quantidade:
+          type: string
+        valorUnitario:
+          type: string
+        descricao:
+          type: string
+    subItemSaldo:
+      properties:
+        numero:
+          type: string
+        valor:
+          type: string
+    subItem:
+      properties:
+        numero:
+          type: string
+        valor:
+          type: string
+        seq:
+          type: string
+        qtd:
+          type: string
+        valorTotal:
+          type: string
+        descricao:
+          type: string
+    Conta:
+      properties:
+        conta:
+          type: string
+        valor:
+          type: string
+  securitySchemes:
+    APIKEY:
+      type: apiKey
+      name: x-jwt-assertion
+      in: header
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apigateway.serpro.gov.br/token'
+    Authorization:
+      type: http
+      description: Autenticação para ambiente trial
+      scheme: bearer
