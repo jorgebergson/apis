@@ -333,9 +333,11 @@ components:
               properties:
                 infNFe:
                   type: object
+                  description: Informações da Nota Fiscal Eletrônica
                   properties:
                     infAdic:
                       type: object
+                      description: Informações Adicionais da NF-e
                       properties:
                         infCpl:
                           type: string
@@ -511,17 +513,21 @@ components:
                       type: string
                     ide:
                       type: object
+                      description: "Identificação da NF-e"
                       properties:
                         tpNF:
                           type: number
+                          description: "Tipo do Documento Fiscal (0 - entrada; 1 - saída)"
                         mod:
                           type: number
+                          description: "Código do modelo do Documento Fiscal. 55 = NF-e"
                         indPres:
                           type: number
                         tpImp:
                           type: number
                         nNF:
                           type: number
+                          description: "Número do Documento Fiscal"
                         cMunFG:
                           type: number
                         procEmi:
@@ -531,6 +537,7 @@ components:
                         dhEmi:
                           type: string
                           format: date-time
+                          description: "Data e Hora de emissão do Documento Fiscal (AAAA-MM-DDThh:mm:ssTZD) ex.: 2012-09-01T13:00:00-03:00"
                         tpAmb:
                           type: number
                         indFinal:
@@ -538,6 +545,7 @@ components:
                         dhSaiEnt:
                           type: string
                           format: date-time
+                          description: "Data e Hora da saída ou de entrada da mercadoria / produto (AAAA-MM-DDTHH:mm:ssTZD)"
                         idDest:
                           type: number
                         tpEmis:
@@ -546,16 +554,21 @@ components:
                           type: number
                         cUF:
                           type: number
+                          description: "Código da UF do emitente do Documento Fiscal. Utilizar a Tabela do IBGE."
                         serie:
                           type: number
+                          description: "Série do Documento Fiscal série normal 0-889 Avulsa Fisco 890-899 SCAN 900-999"
                         natOp:
                           type: string
+                          description: "Descrição da Natureza da Operação"
                         cNF:
                           type: number
+                          description: "Código numérico que compõe a Chave de Acesso. Número aleatório gerado pelo emitente para cada NF-e."
                         verProc:
                           type: string
                         indPag:
                           type: number
+                          description: "Indicador da forma de pagamento: 0 -pagamento à  vista; 1 -pagamento à  prazo; 2 -outros."
                     emit:
                       type: object
                       properties:
