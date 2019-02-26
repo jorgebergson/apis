@@ -14,12 +14,9 @@ info:
      ## Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |--------------------|-----------------------------------------------------------------------------|
-    | &nbsp           | &nbsp    | &nbsp  | 
-     | 400 | Requisição inválida | O número da chave informado não é válido. |
-    | &nbsp           | &nbsp    | &nbsp  | 
-     | 404 | Not Found | O número da chave informado não foi encontrado. |
-    | &nbsp           | &nbsp    | &nbsp  | 
-      | 500  | Erro no servidor    | Ocorreu algum erro interno.      |
+    | 400 | Requisição inválida | O número da chave informado não é válido. |
+    | 404 | Not Found | O número da chave informado não foi encontrado. |
+    | 500  | Erro no servidor    | Ocorreu algum erro interno.      |
      -------------------------- <br><br>  
     ## Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
