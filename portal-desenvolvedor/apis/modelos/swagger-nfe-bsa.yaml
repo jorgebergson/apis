@@ -316,25 +316,18 @@ components:
                   properties:
                     nProt:
                       type: string
-                      description: 
                     digVal:
                       type: string
-                      description:
                     dhRecbto:
                       type: string
-                      format: date-time
                     Id:
                       type: string
-                      description:
                     chNFe:
                       type: string
-                      description:
                     xMotivo:
                       type: string
-                      description:
                     cStat:
                       type: number
-                      description:
             NFe:
               type: object
               properties:
@@ -359,7 +352,7 @@ components:
                         type: object
                         properties:
                           nItem:
-                            type: mumber
+                            type: number
                           prod:
                             type: object
                             properties:
@@ -599,7 +592,7 @@ components:
                               type: number
                         IE:
                           type: number
-                      dest:
+                    dest:
                       type: object
                       properties:
                         xNome:
@@ -631,81 +624,81 @@ components:
                           type: number                        
                         indIEDest:
                           type: number
-                      transp:
-                        type: object
-                        properties:
-                          modFrete:
-                            type: number
-                          vol:
-                            type: object
-                            properties:
-                              marca:
-                                type: string
-                              pesoL:
-                                type: number
-                              esp:
-                                type: string
-                              qVol:
-                                type: number
-                              nVol:
-                                type: string
-                              pesoB:
-                                type: number
-                          transporta:
-                            type: object
-                            properties:
-                              xNome:
-                                type: string
-                              UF:
-                                type: string
-                              xEnder:
-                                type: string
-                              xMun:
-                                type: string
-                              CNPJ:
-                                type: string
-                              IE:
-                                type: number
+                    transp:
+                      type: object
+                      properties:
+                        modFrete:
+                          type: number
+                        vol:
+                          type: object
+                          properties:
+                            marca:
+                              type: string
+                            pesoL:
+                              type: number
+                            esp:
+                              type: string
+                            qVol:
+                              type: number
+                            nVol:
+                              type: string
+                            pesoB:
+                              type: number
+                        transporta:
+                          type: object
+                          properties:
+                            xNome:
+                              type: string
+                            UF:
+                              type: string
+                            xEnder:
+                              type: string
+                            xMun:
+                              type: string
+                            CNPJ:
+                              type: string
+                            IE:
+                              type: number                          
             versao:
               type: number
         procEventoNFe:
-          type: array:
-            items:
-              type: object
-              properties:
-                evento:
-                  type: object
-                  properties:
-                    infEvento:
-                      type: object
-                      properties:
-                        cOrgao:
-                          type: number
-                        dhEvento:
-                          type: string
-                          format: date-time
-                        detEvento:
-                          type: object
-                          properties:
-                            descEvento:
-                              type: string
-                        tpEvento:
-                          type: number
-                retEvento:
-                  type: object
-                  properties:
-                    infEvento:
-                      type: object
-                      properties:
-                        cOrgao:
-                          type: number
-                        nProt:
-                          type: number
-                        dhRegEvento:
-                          type: string
-                          format: date-time
-                        tpEvento:
-                          type: number
+          type: array
+          items:
+            type: object
+            properties:
+              evento:
+                type: object
+                properties:
+                  infEvento:
+                    type: object
+                    properties:
+                      cOrgao:
+                        type: number
+                      dhEvento:
+                        type: string
+                        format: date-time
+                      detEvento:
+                        type: object
+                        properties:
+                          descEvento:
+                            type: string
+                      tpEvento:
+                        type: number
+              retEvento:
+                type: object
+                properties:
+                  infEvento:
+                    type: object
+                    properties:
+                      cOrgao:
+                        type: number
+                      nProt:
+                        type: number
+                      dhRegEvento:
+                        type: string
+                        format: date-time
+                      tpEvento:
+                        type: number                        
     Status:
       type: object
       properties:
