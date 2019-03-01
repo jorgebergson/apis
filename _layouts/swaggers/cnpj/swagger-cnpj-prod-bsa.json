@@ -62,6 +62,22 @@
           }
         }
       }
+    },
+    "/status": {
+      "get": {
+        "tags": [
+          "Status"
+        ],
+        "summary": "Verifica status da API",
+        "responses": {
+          "200": {
+            "description": "Serviço disponível"
+          },
+          "500": {
+            "description": "Serviço indisponível"
+          }
+        }
+      }
     }
   },
   "schemes": [

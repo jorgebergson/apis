@@ -418,12 +418,24 @@
           "Status"
         ],
         "summary": "Verifica status da API",
-        "responses": {
+        "responses": {         
           "200": {
-            "description": "Serviço disponível"
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           },
           "500": {
-            "description": "Serviço indisponível"
+            "description": "Serviço indisponível",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            },
+            "examples": {
+              "lastUpdateAt": "2019-02-18T11:27:06-03:00"
+            }
           }
         }
       }
@@ -433,6 +445,15 @@
     "https"
   ],
   "definitions": {
+    "Status": {
+      "type": "object",
+      "properties": {
+        "lastUpdateAt": {
+          "type": "string",
+          "format": "date-time"
+       }
+      }
+    },
     "NotaCredito": {
       "properties": {
         "dataEmissao": {
