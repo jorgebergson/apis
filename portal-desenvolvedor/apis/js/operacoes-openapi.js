@@ -29,6 +29,7 @@ function makeOperationBlock(id, operacao, metodo, api){
      ent += "<div class=\"tab\">";
      ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'entrada"+ id +"','Data" + id + "')\">Entrada</button>";
      ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'saida"+ id +"','Data" + id + "')\">Saída</button>";
+     ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'teste"+ id +"','Data" + id + "')\">Dados de Teste</button>";
     // ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'teste"+ id +"','Data" + id + "')\">Dados de Teste</button>";
      ent += "</div>";
      ent += "<div id=\"entrada"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
@@ -65,17 +66,91 @@ function makeOperationBlock(id, operacao, metodo, api){
     //     saidaCampos += "<tr><td>" + saida + "</td><td>" +  apiobj[saida].description + "</td><td>" + apiobj[saida].type + "</td></tr>";
     // });
     var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
-    var example = api.paths[operacao][metodo].responses['200'].content['application/json'].example;
     var fields = Object.getOwnPropertyNames(schema.properties);
     ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
     ent += addFields(fields, schema, "");
     ent += "</tbody></table>";    
-    ent += "<h4> Exemplo de Corpo da Resposta</h4>";
     ent += "<pre class=\"code\">";
-    if (example !== undefined){
-        ent += syntaxHighlight(example);
-    }
+    var jsf = JSONSchemaFaker;
+    jsf.resolveJsonPath = true;
+    jsf.format('double', () => jsf.random.randexp('0\.\d*'));
+    jsf.option({
+        fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
+        alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
+    });							
+    ent += syntaxHighlight(jsf.generate(schema.properties));
     ent += "</pre>";
+    ent += "</div>";
+    ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
+    ent += "<h4>Dados de Teste</h4>";
+    var opCampos = "";
+    var teste = new Remarkable();
+	if(api.paths[operacao][metodo].description){
+		opCampos = teste.render(api.paths[operacao][metodo].description);
+        ent += "<table class=\"alt\"><tbody>" + opCampos + "</tbody></table>";
+    }
+    ent += "</div>";
+    var opCampos = "";
+    var optexto = "";
+    if(api.paths[operacao][metodo].description){
+		opCampos = api.paths[operacao][metodo].description;
+		var CurlInicial = opCampos.indexOf('#### Chamada');
+		var CurlFinalExtra = opCampos.indexOf('## P',CurlInicial + 5);
+		var CurlFinal = opCampos.indexOf('####',CurlInicial + 5);
+		if (CurlFinal > 0) {
+		    opCampos = opCampos.substr(CurlInicial + 17, CurlFinal - CurlInicial - 25);
+		}else {
+			CurlFinal = CurlFinalExtra;
+			opCampos = opCampos.substr(CurlInicial + 18, CurlFinal - CurlInicial - 24);
+		}
+		var CurlModelo = opCampos.indexOf('] ');
+		if (CurlModelo > 0) {
+			opCampos = api.paths[operacao][metodo].description;
+			opCampos = opCampos.substr(CurlInicial + 25, CurlFinal - CurlInicial - 26);
+		}
+		opCampos = opCampos.trim();
+    }
+    ent += "<br>";
+    ent += "<h3>Exemplos de requisições</h3>";
+    ent += "<div class=\"tab\">";
+    ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'curl"+ id +"','Data" + id + "')\">CURL</button>";
+    ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'vba"+ id +"','Data" + id + "')\">VBA</button>";
+    ent += "<button class=\"tablinksData"+ id +" tab\" onclick=\"openTab(event, 'node"+ id +"','Data" + id + "')\">NODE.JS</button>";
+    ent += "</div>";
+    ent += "<div id=\"curl"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
+    ent += "<h4>C U R L</h4>";
+		optexto = 'curl -X ' + metodo.toUpperCase() + ' -H "Accept: application/json" -H "Authorization: Bearer [token de acesso]' + '"';
+ 		opcampo =  '"' + opCampos + '"' ;
+    ent += "<table class=\"alt\"><tbody><pre><code>" + optexto + "<br>" +  opcampo + "<br></code></pre></tbody></table>";
+
+    ent += "</div>";
+    ent += "<div id=\"vba"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
+    ent += "<h4>V B A</h4>";
+		optexto = 'Dim objHTTP As New WinHttpRequest<br>';
+		optexto = optexto + 'Dim strURL As String<br>';
+		optexto = optexto + 'Dim response As String<br><br>';
+		optexto = optexto + '<br>strURL =  "' +	opCampos + '"<br><br>';
+		optexto = optexto + 'objHTTP.Open  "' + metodo.toUpperCase() + '", strURL, False<br>';
+		optexto = optexto + 'objHTTP.SetRequestHeader "Authorization", "Bearer [token de acesso]"<br>';
+		optexto = optexto + 'objHTTP.SetRequestHeader "Accept", "application/json"<br>';
+		optexto = optexto + 'objHTTP.Send<br><br>';
+		optexto = optexto + 'response = objHTTP.ResponseText<br><br>';
+		optexto = optexto + "MsgBox response<br>});";
+    ent += "<table class=\"alt\"><tbody><pre><code>" + optexto + "<br></code></pre></tbody></table>";
+    ent += "</div>";
+    ent += "<div id=\"node"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
+    ent += "<h4>N O D E ' J S</h4>";
+		optexto = 'var request = require("request");<br><br>';
+		optexto = optexto + "var options = {<br>  method: '" + metodo.toUpperCase() + "',";
+		optexto = optexto + "<br>  url: '" +	opCampos + "',";
+		optexto = optexto + "<br>  headers: { authorization: 'Bearer [token de acesso]' },";
+		optexto = optexto + "<br>  body: {},";
+		optexto = optexto + "<br>  json: true };";
+		optexto = optexto + "<br><br>request(options, function (error, response, body) {";
+		optexto = optexto + "<br>  if (error) throw new Error(error);";
+		optexto = optexto + "<br><br>  console.log(body);";
+		optexto = optexto + "<br>});";
+    ent += "<table class=\"alt\"><tbody><pre><code>" + optexto + "<br></code></pre></tbody></table>";
     ent += "</div>";
     // ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
     // ent += "<h4>Dados de Teste</h4>";
@@ -175,10 +250,13 @@ function addFields(fields, schema, father){
         description = "";
         if(schema.properties[field].description !== undefined){
             description = schema.properties[field].description;
+        }else {
+        	description = " ------------ ";
         }
+        	
         var arrow = "";
         if(father !== ""){
-            arrow = "&#8618 ";
+            arrow = "&#8627 ";
         }
         saida += "<tr><td>" + "<b>" + father + arrow + "</b>"  + field + "</td><td>" + description + "</td><td>" + schema.properties[field].type + "</td></tr>";
         if(schema.properties[field].type === "object"){
