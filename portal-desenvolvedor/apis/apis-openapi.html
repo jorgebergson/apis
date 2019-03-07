@@ -6,6 +6,7 @@
 -->
 <html>
 	<head>
+		
 		<title>API SERPRO - Portal do Desenvolvedor</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -26,10 +27,10 @@
 		<!--[if lte IE 8]><script src="../assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="../assets/js/main.js"></script>
 		<script>
-				$(document).ready( function(){
-
+			$(document).ready( function(){
+     				var api = getQueryStringParams('api');
 					var parser = new SwaggerParser();
-					parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-datavalid.yaml", function(err, api) {
+					parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-" + api + ".yaml", function(err, api) {
 					//parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-cpf-bsa.yaml", function(err, api) {
 						if (err) {
 							console.error(err);
@@ -236,7 +237,7 @@
 										<p id="apiDescricao"></p>
 										<h3>Negócio</h3>
 										<ul>
-											<li><strong>Informaçes de negócio da API: &nbsp; </strong><a id= "apiNegocio" href="">Download</a></li>
+											<li><strong>Informações de negócio da API: &nbsp; </strong><a id= "apiNegocio" href="">Download</a></li>
 										</ul>
 										
 										<h3>A <span id="apiNome2"></span> oferece as seguintes requisições:</h3>
@@ -270,14 +271,18 @@
 										<li><a href="../autenticacao.html">Informações Gerais</a></li>
 										<li><a href="../autenticacao.html">Autenticação</a></li>
 										<li>
-											<span class="opener active">Catálogo de APIs</a></span>
+											<span class="opener active">Catálogo de APIs</span>
 											<ul>
-												<li><a href="apis.html?api=cpf">Consulta CPF</a></li>
-												<li><a href="apis.html?api=cnpj">Consulta CNPJ</a></li>
-												<li><a href="apis.html?api=nfe">Consulta NF-e</a></li>
-												<li><a href="apis.html?api=siafi">Integra SIAFI</a></li>
-												<li><a href="apis.html?api=divida-ativa">Consulta Dívida Ativa</a></li>
-												<li><a href="apis.html?api=due">Consulta DU-E</a></li>
+												<li><a href="apis-openapi.html?api=cpf-bsa">Consulta CPF</a></li>
+												<li><a href="apis-openapi.html?api=cnpj-bsa">Consulta CNPJ</a></li>
+												<li><a href="apis-openapi.html?api=nfe-bsa">Consulta NF-e</a></li>
+												<li><a href="apis-openapi.html?api=lojafranca-bsa">Loja Franca</a></li>
+												<li><a href="apis-openapi.html?api=siafi-bsa">Integra SIAFI</a></li>
+												<li><a href="apis-openapi.html?api=dividaativa-bsa">Consulta Dívida Ativa</a></li>
+												<li><a href="apis-openapi.html?api=due-bsa">Consulta DU-E</a></li>
+												<li><a href="apis-openapi.html?api=mei-bsa">Consulta MEI</a></li>
+												<li><a href="apis-openapi.html?api=timeStampCheck-bsa">TimeStamp</a></li>
+												<li><a href="apis-openapi.html?api=datavalid">Datavalid</a></li>
 											</ul>
 										</li>
 
