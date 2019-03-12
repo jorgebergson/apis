@@ -779,7 +779,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Dotação",
-        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"PTRES\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\": \"2018TRND000001\"\n    }",
+        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\": \"2018TRND000001\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1372,7 +1372,7 @@
         "unidadeOrcamentaria": {
           "type": "string"
         },
-        "PTRES": {
+        "ptres": {
           "type": "string"
         },
         "fonteRecurso": {
