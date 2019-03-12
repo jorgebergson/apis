@@ -1384,7 +1384,7 @@
         "subitemND": {
           "type": "string"
         },
-        "UGR": {
+        "ugr": {
           "type": "string"
         },
         "planoInterno": {
