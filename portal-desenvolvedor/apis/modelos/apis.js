@@ -34,5 +34,17 @@
         "descricao":"Acesse dados detalhados sobre a Declaração Única de Exportação diretamente das bases do MDIC",
         "imagem":"badge-due",
         "modelo":"due"
-    }                    
+    },
+    {
+        "nome":"Datavalid",
+        "descricao":"Consulte as bases originais de governo para validar as informações e fazer a verificação dos dados",
+        "imagem":"badge-datavalid",
+        "modelo":"datavalid"
+    },
+    {
+        "nome":"Proxima Api",
+        "descricao":"Ainda em desenvolvimento",
+        "imagem":"badge-proxima",
+        "modelo":""
+    }                           
 ]
