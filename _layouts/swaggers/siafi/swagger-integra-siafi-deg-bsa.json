@@ -779,7 +779,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Dotação",
-        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"UGR\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\": \"2018TRND000001\"\n    }",
+        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\": \"2018TRND000001\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1017,7 +1017,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Bloqueio de Crédito",
-        "description": "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-bloqueio\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"06NOV18\",\n      \"numeroDocumento\": \"2018ND000005\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE API SIAFI\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200020\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"001000\",\n          \"idoc\": \"9999\",\n          \"naturezaDespesa\": \"339000\",\n          \"fonte\": \"0100\",\n          \"valor\": \"20000\"\n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\": \"2018TRND000005\"\n    }",
+        "description": "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-bloqueio\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"170999\",\n      \"gestaoEmitente\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"\",\n          \"esferaOrcamentaria\": \"\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"\",\n          \"idoc\": \"\",\n          \"naturezaDespesa\": \"\",\n          \"grupoFonte\": \"\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"valor\": \"20000\"\n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\": \"2018TRND000005\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1248,13 +1248,7 @@
         "ugEmitente": {
           "type": "string"
         },
-        "nomeUGEmitente": {
-          "type": "string"
-        },
         "gestaoEmitente": {
-          "type": "string"
-        },
-        "nomeGestaEmitente": {
           "type": "string"
         },
         "taxaCambio": {
@@ -1301,6 +1295,9 @@
         "esferaOrcamentaria": {
           "type": "string"
         },
+        "unidadeOrcamentaria": {
+          "type": "string"
+        },
         "ptres": {
           "type": "string"
         },
@@ -1310,7 +1307,19 @@
         "naturezaDespesa": {
           "type": "string"
         },
-        "fonte": {
+        "grupoFonte": {
+          "type": "string"
+        },
+        "resultado": {
+          "type": "string"
+        },
+        "tipoCredito": {
+          "type": "string"
+        },
+        "planoOrcamentario": {
+          "type": "string"
+        },
+        "autorEmenda": {
           "type": "string"
         },
         "valor": {
