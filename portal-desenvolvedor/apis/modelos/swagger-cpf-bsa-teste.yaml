@@ -5,7 +5,6 @@ info:
   description: |-
 
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
-
     O serviço `Consulta Massiva CPF` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
     ## Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
@@ -72,7 +71,43 @@ paths:
       summary: Consulta o CPF pelo Número de Inscrição
       externalDocs:
   	description: "https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135"
-  	url: ""	
+  	url: ""
+      description: |-
+        Retorna os dados do Cadastro de Pessoa Física (CPF)
+        ### CPF's Disponíveis para Degustação
+        | CPF | Situação Cadastral |
+        | ---------------------- | :------------------------------------------------------------- |
+        | 40442820135 | CPF Regular |
+        | 63017285995 | CPF Regular |
+        | 91708635203 | CPF Regular  |
+        | 58136053391 | CPF Regular |    
+        | 40532176871 | Suspensa |
+        | 47123586964 | Suspensa |
+        | 07691852312 | Pendente de Regularização |
+        | 10975384600 | Pendente de Regularização |
+        | 01648527949 | Cancelada por Multiplicidade |
+        | 47893062592 | Cancelada por Multiplicidade |
+        | 98302514705 | Nula |    
+        | 18025346790 | Nula |
+        | 64913872591 | Cancelada de Ofício |
+        | 52389071686 | Cancelada de Ofício |
+        | 05137518743 | Titular Falecido |
+        | 08849979878 | Titular Falecido |
+         --------------------------         
+        ## Exemplo
+          #### Chamada
+            https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
+            
+          #### <br> Retorno
+            {
+              "ni":"40442820135",
+              "nome":"Nome do CPF 404.428.201-35",
+              "situacao":
+              {
+                "codigo":"0",
+                "descricao":"Regular"
+              }
+            }        	
       parameters:
         - name: ni
           in: path
@@ -139,21 +174,14 @@ paths:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00" 
 components:
   schemas:
-    Status:
-      type: object
-      properties:
-        lastUpdateAt:
-          type: string
-          format: date-time   
     CPF:
       type: object
       properties:
         ni:
           type: string
-          example: '40442820135'
+          pattern: '^\d{11}$'
         nome:
           type: string
-          example: Nome do CPF 404.428.201-35
         situacao:
           type: object
           properties:
@@ -177,6 +205,12 @@ components:
                 - Cancelada por Multiplicidade
                 - Nula
                 - Cancelada de Ofício
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time
   securitySchemes:
     APIKEY:
       type: apiKey
@@ -190,5 +224,4 @@ components:
     Authorization:
       type: http
       description: Autenticação para ambiente trial
-      scheme: bearer
-
+scheme: bearer
