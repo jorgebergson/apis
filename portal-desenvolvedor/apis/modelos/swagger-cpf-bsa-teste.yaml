@@ -3,7 +3,6 @@ info:
   title: Consulta Massiva CPF
   version: v1
   description: |-
-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
     O serviço `Consulta Massiva CPF` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
     ## Códigos de Retorno não Bilhetados 
@@ -11,9 +10,7 @@ info:
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
     | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
     | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
-
     ## Tipos de Campos Retornados
-
     | Tipos de campos | Valor de retorno |
     | ---------------------- | :------------------------------------------------------------- |
     | NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999 |
@@ -21,13 +18,10 @@ info:
     | Situação | Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.|
     | Situação/Código | Código da Situação Cadastral da Pessoa Física |
     | Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |
-
      --------------------------
      
      
      ## Tipos de Situação Cadastral Retornados
-
-
     | Código | Descrição |
     | ---------------------- | :------------------------------------------------------------- |
     | 0 | Regular |
@@ -37,41 +31,29 @@ info:
     | 5 | Cancelada por Multiplicidade |
     | 8 | Nula |
     | 9 | Cancelada de Ofício |
-
      --------------------------     
      
-
     ## Solicitando assinatura com Carimbo de Tempo
-
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
       
       A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.
-
-
     ## Verificando assinatura com Carimbo de Tempo
-
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
       
     [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
-  - url: 'https://gateway.apiserpro.serpro.gov.br/consulta-cpf-trial/api'
+  - url: 'https://apigateway.serpro.gov.br/consulta-cpf-trial/v1'
     description: Trial
-  - url: 'https://gateway.apiserpro.serpro.gov.br/consulta-cpf/api/api'
+  - url: 'https://apigateway.serpro.gov.br/consulta-cpf/api/v1'
     description: Produção
 security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
-externalDocs:
-  description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-cpf.pdf
 paths:
-  '/v1/cpf/{ni}':
+  '/cpf/{ni}':
     get:
       summary: Consulta o CPF pelo Número de Inscrição
-      externalDocs:
-  	description: "https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135"
-  	url: ""
       description: |-
         Retorna os dados do Cadastro de Pessoa Física (CPF)
         ### CPF's Disponíveis para Degustação
@@ -107,7 +89,7 @@ paths:
                 "codigo":"0",
                 "descricao":"Regular"
               }
-            }        	
+            }        
       parameters:
         - name: ni
           in: path
@@ -133,6 +115,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CPF'
+              example:
+                ni: "40442820135"
+                nome: "Nome do CPF 404.428.201-35"
+                situacao:
+                  codigo: "0"
+                  descricao: "Regular"
         '206':
           description: 'Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado'
           headers:
@@ -149,8 +137,8 @@ paths:
         '404':
           description: Não existe CPF com o número de inscrição informado.
         '500':
-          description: Erro interno do servidor       
-  '/status':
+          description: Erro interno do servidor
+  /status:
     get:
       tags:
         - Status
@@ -171,7 +159,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Status'
               example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"          
 components:
   schemas:
     CPF:
@@ -224,4 +212,4 @@ components:
     Authorization:
       type: http
       description: Autenticação para ambiente trial
-scheme: bearer
+      scheme: bearer
