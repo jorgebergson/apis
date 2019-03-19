@@ -50,9 +50,6 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
-externalDocs:
-  description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-cpf.pdf
 paths:
   '/cpf/{ni}':
     get:
