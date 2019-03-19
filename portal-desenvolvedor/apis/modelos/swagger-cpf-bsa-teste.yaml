@@ -59,7 +59,7 @@ paths:
       summary: Consulta o CPF pelo Número de Inscrição
       externalDocs:
   	description: "https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135"
-  	url: ''
+  	url: -
       description: |-
         Retorna os dados do Cadastro de Pessoa Física (CPF)
         ### CPF's Disponíveis para Degustação
