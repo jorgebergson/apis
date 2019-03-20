@@ -55,10 +55,10 @@ externalDocs:
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
 paths:
   '/cpf/{ni}':
-    externalDocs:
-  	  description: "https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135"
-  	  url: ""	
     get:
+      externalDocs:
+  	    description: "https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135"
+  	    url: ""	
       summary: Consulta o CPF pelo Número de Inscrição
       description: |-
         Retorna os dados do Cadastro de Pessoa Física (CPF)
