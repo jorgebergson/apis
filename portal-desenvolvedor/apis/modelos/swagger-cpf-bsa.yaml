@@ -63,7 +63,6 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
-linkInfoNegocio: 'https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf'
 paths:
   '/cpf/{ni}':
     get:
