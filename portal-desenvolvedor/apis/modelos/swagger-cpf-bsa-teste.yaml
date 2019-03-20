@@ -1,4 +1,13 @@
 openapi: 3.0.2
+examples:
+  Jessica:
+    value:
+      id: 10
+      name: Jessica Smith
+  Ron:
+    value:
+      id: 20
+      name: Ron Stewart
 info:
   title: Consulta Massiva CPF
   version: v1
