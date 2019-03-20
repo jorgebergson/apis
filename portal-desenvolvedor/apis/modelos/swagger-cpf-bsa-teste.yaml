@@ -142,8 +142,8 @@ paths:
         '500':
           description: Erro interno do servidor
       externalDocs:
-        description: "Detalhamento da Situação Cadastral do CPF"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
+        description: "Link do CPF"
+        url: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
   /status:
     get:
       tags:
