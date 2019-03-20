@@ -49,13 +49,7 @@ servers:
 security:
   - APIKEY: []
     OAuth2: []
-    Authorization: []
-content:
-  application/json:
-    schema:
-      $ref: '#/components/schemas/Status'
-    example:
-      lastUpdateAt: "2019-02-18T11:27:06-03:00"     
+    Authorization: []   
 externalDocs:
   description: "Detalhamento da Situação Cadastral do CPF"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
