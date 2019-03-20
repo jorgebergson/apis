@@ -92,22 +92,24 @@ function makeOperationBlock(id, operacao, metodo, api){
     ent += "</div>";
     var opCampos = "";
     var optexto = "";
-    if(api.paths[operacao][metodo].description){
-		opCampos = api.paths[operacao][metodo].description;
-		var CurlInicial = opCampos.indexOf('#### Chamada');
-		var CurlFinalExtra = opCampos.indexOf('## P',CurlInicial + 5);
-		var CurlFinal = opCampos.indexOf('####',CurlInicial + 5);
-		if (CurlFinal > 0) {
-		    opCampos = opCampos.substr(CurlInicial + 17, CurlFinal - CurlInicial - 25);
-		}else {
-			CurlFinal = CurlFinalExtra;
-			opCampos = opCampos.substr(CurlInicial + 18, CurlFinal - CurlInicial - 24);
-		}
-		var CurlModelo = opCampos.indexOf('] ');
-		if (CurlModelo > 0) {
-			opCampos = api.paths[operacao][metodo].description;
-			opCampos = opCampos.substr(CurlInicial + 25, CurlFinal - CurlInicial - 26);
-		}
+    if(api.paths[operacao][metodo].externalDocs){
+//    if(api.paths[operacao][metodo].description){
+		opCampos = api.paths[operacao][metodo].externalDocs.url;
+//    	opCampos = api.paths[operacao][metodo].description;
+//		var CurlInicial = opCampos.indexOf('#### Chamada');
+//		var CurlFinalExtra = opCampos.indexOf('## P',CurlInicial + 5);
+//		var CurlFinal = opCampos.indexOf('####',CurlInicial + 5);
+//		if (CurlFinal > 0) {
+//		    opCampos = opCampos.substr(CurlInicial + 17, CurlFinal - CurlInicial - 25);
+//		}else {
+//			CurlFinal = CurlFinalExtra;
+//			opCampos = opCampos.substr(CurlInicial + 18, CurlFinal - CurlInicial - 24);
+//		}
+//		var CurlModelo = opCampos.indexOf('] ');
+//		if (CurlModelo > 0) {
+//			opCampos = api.paths[operacao][metodo].description;
+//			opCampos = opCampos.substr(CurlInicial + 25, CurlFinal - CurlInicial - 26);
+//		}
 		opCampos = opCampos.trim();
     }
     ent += "<br>";
