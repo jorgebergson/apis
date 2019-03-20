@@ -30,8 +30,9 @@
 			$(document).ready( function(){
      				var api = getQueryStringParams('api');
 					var parser = new SwaggerParser();
-					parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-" + api + ".yaml", function(err, api) {
-					//parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-cpf-bsa.yaml", function(err, api) {
+					//parser.validate("https://p.datavalidp.estaleiro.serpro.gov.br/api-doc.yaml", function(err, api) {
+					//parser.validate("/home/24521604153/api-apis/apis-master/portal-desenvolvedor/apis/modelos/swagger-" + api + ".yaml", function(err, api) {
+						parser.validate("https://raw.githubusercontent.com/devserpro/apis/master/portal-desenvolvedor/apis/modelos/swagger-" + api + ".yaml", function(err, api) {
 						if (err) {
 							console.error(err);
 						}
@@ -60,6 +61,7 @@
 								});
 				 			 	
 				 			});
+							$('#apiInfoHref').append("<a href="+api.externalDocs.url+">Download</a>");
 
 						}
 					});
@@ -237,7 +239,7 @@
 										<p id="apiDescricao"></p>
 										<h3>Negócio</h3>
 										<ul>
-											<li><strong>Informações de negócio da API: &nbsp; </strong><a id= "apiNegocio" href="">Download</a></li>
+											<li><strong>Informações de negócio da API: &nbsp; </strong><a href="" id= "apiInfoHref"></a> </li>
 										</ul>
 										
 										<h3>A <span id="apiNome2"></span> oferece as seguintes requisições:</h3>
@@ -273,7 +275,7 @@
 										<li>
 											<span class="opener active">Catálogo de APIs</span>
 											<ul>
-												<li><a href="apis-openapi.html?api=cpf-bsa">Consulta CPF</a></li>
+												<li><a href="apis-openapi.html?api=cpf-bsa-teste">Consulta CPF</a></li>
 												<li><a href="apis-openapi.html?api=cnpj-bsa">Consulta CNPJ</a></li>
 												<li><a href="apis-openapi.html?api=nfe-bsa">Consulta NF-e</a></li>
 												<li><a href="apis-openapi.html?api=lojafranca-bsa">Loja Franca</a></li>
