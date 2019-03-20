@@ -51,14 +51,13 @@ security:
     OAuth2: []
     Authorization: []
 externalDocs:
-  description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
+  - description: "Detalhamento da Situação Cadastral do CPF"
+    url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
+  - description: "Link do CPF"
+    url: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135	
 paths:
   '/cpf/{ni}':
     get:
-      externalDocs:
-  	    description: "Link do CPF"
-  	    url: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135	
       summary: Consulta o CPF pelo Número de Inscrição
       description: |-
         Retorna os dados do Cadastro de Pessoa Física (CPF)
