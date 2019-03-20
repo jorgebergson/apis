@@ -1,4 +1,6 @@
 openapi: 3.0.2
+example: 
+  Dados de Testes
 info:
   title: Consulta Massiva CPF
   version: v1
