@@ -151,6 +151,10 @@ paths:
         '500':
           description: Erro interno do servidor
       operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
+      externalDocs:
+        description: "CPFs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/CPF-Degustacao.pdf
+
   /status:
     get:
       tags:
