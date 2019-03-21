@@ -83,18 +83,26 @@ function makeOperationBlock(id, operacao, metodo, api){
     ent += "</div>";
     ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
     ent += "<h4>Dados de Teste</h4>";
-    var opCampos = "";
-    var teste = new Remarkable();
-	if(api.paths[operacao][metodo].description){
-		opCampos = teste.render(api.paths[operacao][metodo].description);
-        ent += "<table class=\"alt\"><tbody>" + opCampos + "</tbody></table>";
+    // var opCampos = "";
+    // var teste = new Remarkable();
+	//if(api.paths[operacao][metodo].description){
+	//	opCampos = teste.render(api.paths[operacao][metodo].description);
+    //   ent += "<table class=\"alt\"><tbody>" + opCampos + "</tbody></table>";
+    if(api.paths[operacao][metodo].externalDocs){
+    	opCampos = api.paths[operacao][metodo].externalDocs.url;
+    	descricaoTeste = api.paths[operacao][metodo].externalDocs.description;
+    	ent +="<ul>";
+    	ent +="<li><strong>" + descricaoTeste + ": &nbsp; </strong><a href='" + opCampos + "'>Download</a> </li>";
+    	ent +="</ul>";
     }
     ent += "</div>";
     var opCampos = "";
     var optexto = "";
-    if(api.paths[operacao][metodo].externalDocs){
+//1    if(api.paths[operacao][metodo].externalDocs){
+    if(api.paths[operacao][metodo].operationId){
 //    if(api.paths[operacao][metodo].description){
-		opCampos = api.paths[operacao][metodo].externalDocs.url;
+//1		opCampos = api.paths[operacao][metodo].externalDocs.url;
+		opCampos = api.paths[operacao][metodo].operationId;
 //    	opCampos = api.paths[operacao][metodo].description;
 //		var CurlInicial = opCampos.indexOf('#### Chamada');
 //		var CurlFinalExtra = opCampos.indexOf('## P',CurlInicial + 5);
