@@ -150,9 +150,7 @@ paths:
           description: Não existe CPF com o número de inscrição informado.
         '500':
           description: Erro interno do servidor
-      externalDocs:
-        description: "Link do CPF"
-        url: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
+      operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
   /status:
     get:
       tags:
