@@ -92,7 +92,12 @@ function makeOperationBlock(id, operacao, metodo, api){
     	opCampos = api.paths[operacao][metodo].externalDocs.url;
     	descricaoTeste = api.paths[operacao][metodo].externalDocs.description;
     	ent +="<ul>";
-    	ent +="<li><strong>" + descricaoTeste + ": &nbsp; </strong><a href='" + opCampos + "'>Download</a> </li>";
+    	ent +='<li><strong>' + descricaoTeste + ': &nbsp; </strong><a href="' + opCampos + '">Download</a> </li>';
+    	ent +="</ul>";
+    } else {
+    	descricaoTeste = "Esta API ainda não possui dados de teste.";
+    	ent +="<ul>";
+    	ent +='<li><strong>' + descricaoTeste + ': &nbsp; </strong> </li>';
     	ent +="</ul>";
     }
     ent += "</div>";
