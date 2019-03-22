@@ -97,7 +97,7 @@ function makeOperationBlock(id, operacao, metodo, api){
     } else {
     	descricaoTeste = "Esta API ainda não possui dados de teste.";
     	ent +="<ul>";
-    	ent +='<li><strong>' + descricaoTeste + ': &nbsp; </strong> </li>';
+    	ent +='<li><strong>' + descricaoTeste + ' &nbsp; </strong> </li>';
     	ent +="</ul>";
     }
     ent += "</div>";
