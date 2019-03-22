@@ -26,7 +26,7 @@ security:
     Authorization: []   
 externalDocs:
   description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CPF.pdf
 paths:
   '/cpf/{ni}':
     get:
