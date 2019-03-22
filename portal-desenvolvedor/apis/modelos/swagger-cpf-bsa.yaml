@@ -3,57 +3,19 @@ info:
   title: Consulta Massiva CPF
   version: v1
   description: |-
-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
-
     O serviço `Consulta Massiva CPF` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
-    ## Códigos de Retorno não Bilhetados 
+    ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
     | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
-    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
-
-    ## Tipos de Campos Retornados
-
-    | Tipos de campos | Valor de retorno |
-    | ---------------------- | :------------------------------------------------------------- |
-    | NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999 |
-    | Nome     | Nome da Pessoa Física  |
-    | Situação | Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.|
-    | Situação/Código | Código da Situação Cadastral da Pessoa Física |
-    | Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |
-
-     --------------------------
-     
-     
-     ## Tipos de Situação Cadastral Retornados
-
-
-    | Código | Descrição |
-    | ---------------------- | :------------------------------------------------------------- |
-    | 0 | Regular |
-    | 2 | Suspensa  |
-    | 3 | Titular Falecido  |
-    | 4 | Pendente de Regularização |
-    | 5 | Cancelada por Multiplicidade |
-    | 8 | Nula |
-    | 9 | Cancelada de Ofício |
-
-     --------------------------     
-     
-
-    ## Solicitando assinatura com Carimbo de Tempo
-
+    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |     
+    ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
-      
       A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.
-
-
-    ## Verificando assinatura com Carimbo de Tempo
-
-      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
-      
-    [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+    ### Verificando assinatura com Carimbo de Tempo
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+    [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/consulta-cpf-trial/v1'
     description: Trial
@@ -62,47 +24,16 @@ servers:
 security:
   - APIKEY: []
     OAuth2: []
-    Authorization: []
+    Authorization: []   
+externalDocs:
+  description: "Detalhamento da Situação Cadastral do CPF"
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SituacaoCadastral-CPF.pdf
 paths:
   '/cpf/{ni}':
     get:
       summary: Consulta o CPF pelo Número de Inscrição
       description: |-
-        Retorna os dados do Cadastro de Pessoa Física (CPF)
-        ### CPF's Disponíveis para Degustação
-        | CPF | Situação Cadastral |
-        | ---------------------- | :------------------------------------------------------------- |
-        | 40442820135 | CPF Regular |
-        | 63017285995 | CPF Regular |
-        | 91708635203 | CPF Regular  |
-        | 58136053391 | CPF Regular |    
-        | 40532176871 | Suspensa |
-        | 47123586964 | Suspensa |
-        | 07691852312 | Pendente de Regularização |
-        | 10975384600 | Pendente de Regularização |
-        | 01648527949 | Cancelada por Multiplicidade |
-        | 47893062592 | Cancelada por Multiplicidade |
-        | 98302514705 | Nula |    
-        | 18025346790 | Nula |
-        | 64913872591 | Cancelada de Ofício |
-        | 52389071686 | Cancelada de Ofício |
-        | 05137518743 | Titular Falecido |
-        | 08849979878 | Titular Falecido |
-         --------------------------         
-        ## Exemplo
-          #### Chamada
-            https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
-            
-          #### <br> Retorno
-            {
-              "ni":"40442820135",
-              "nome":"Nome do CPF 404.428.201-35",
-              "situacao":
-              {
-                "codigo":"0",
-                "descricao":"Regular"
-              }
-            }        
+        Retorna os dados do Cadastro de Pessoa Física (CPF)       
       parameters:
         - name: ni
           in: path
@@ -151,6 +82,10 @@ paths:
           description: Não existe CPF com o número de inscrição informado.
         '500':
           description: Erro interno do servidor
+      operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
+      externalDocs:
+        description: "CPFs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/CPF-Degustacao.pdf
   /status:
     get:
       tags:
