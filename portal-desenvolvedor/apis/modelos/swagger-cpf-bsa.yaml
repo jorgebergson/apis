@@ -4,15 +4,15 @@ info:
   version: v1
   description: |-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf). 
-    O serviço <b> Consulta Massiva CPF </b> é disponibilizado através do <b> HTTP REST </b> oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
+    O serviço <strong> Consulta Massiva CPF </strong> é disponibilizado através do <strong> HTTP REST </strong> oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
     | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
     | 500           | Erro no servidor    | Ocorreu algum erro interno.      |     
     ### Solicitando assinatura com Carimbo de Tempo
-      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação <b> x-signature: 1</b>.
-      A assinatura será retornada no cabeçalho da resposta, com o nome <b>stamp</b>.
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação <strong> x-signature: 1</strong>.
+      A assinatura será retornada no cabeçalho da resposta, com o nome <strong>stamp</strong>.
     ### Verificando assinatura com Carimbo de Tempo
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
