@@ -19,6 +19,9 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
+externalDocs:
+  description: "Detalhamento da Situação Cadastral do CNPJ"
+url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
   '/cnpj/{ni}':
     get:
