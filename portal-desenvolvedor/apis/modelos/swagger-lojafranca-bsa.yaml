@@ -3,8 +3,7 @@ info:
   title: Loja Franca
   version: v1
   description: |- 
-    # 1- Introdução #
-    ## API ##
+    ### API
     A `API INTEGRA LOJA FRANCA` é disponibilizada através de serviço `HTTP REST`, oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
     <br> Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das lojas francas com os serviços da Receita Federal do Brasil para as Lojas Francas de Fronteira.
     <br> Todos os serviços seguem o mesmo protocolo de acesso, baseado nas instruções de uso e contratação do serviço API Serpro. A API do Loja Franca de Fronteira foi desenvolvida baseada na arquitetura `HTTP REST`. Ela trabalha exclusivamente com o formato JSON.
@@ -12,7 +11,7 @@ info:
     <br> Destacamos que o sistema foi implementado recentemente para as lojas francas prepararem as adaptações necessárias aos seus sistemas próprios, podendo ainda ocorrer instabilidades pontuais. Caso haja dúvidas relacionadas à API do Loja Franca de Fronteira ou para problemas relacionados à TI, entre em contato com a Central Serpro de Atendimento.
     <br>  Esperamos que a API do Loja Franca de Fronteira melhore o ambiente de negócios das lojas francas, viabilizando a operação das lojas, aumentando a competitividade e diminuindo os custos acessórios envolvidos.
     <br>   
-    ## Autenticação ##
+    ### Autenticação
     Para testar o ambiente de degustação da API, não é necessário realizar contratação prévia. O arquivo com as credenciais de acesso, informações de fluxo e exemplos podem ser solicitadas através do formulário de atendimento no link abaixo:
     <br>https://atendimento.serpro.gov.br/integralojafranca/credenciais
     <br> No ambiente produtivo, para garantir a identificação e a segurança da origem da informação, toda requisição à API deve seguir três processos:
@@ -22,18 +21,18 @@ info:
     <br> Assim, a cada requisição realizada, haverá Validação de Origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição.
     <br> https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf 
     <br>  
-    ## Contratação ##
+    ### Contratação 
     Para consumir a API é necessário utilizar as credenciais de acesso `CONSUMER KEY` e `CONSUMER SECRET` disponibilizados no portal do cliente https://cliente.serpro.gov.br
     <br> Exemplo de código:
     <br> `Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb`
     <br>`Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote`
     <br>
-    ## Token de Acesso (Bearer) ##
+    ### Token de Acesso (Bearer) 
     Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.
     <br> Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato consumerKey:consumerSecret no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede.
     <br> Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: <br>
     `Authorization: Bearer <hash>`
-    ## <br> Payload ##
+    ### Payload
     Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.
     <br>Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão. <br>
     <strong> <br> Formato de mensagem JSON padrão </strong>
@@ -73,7 +72,7 @@ info:
         Authorization: Bearer 953bae789a1726734005d238e939c978
         BODY/PAYLOAD
         MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgMFADCABgkqhkiG9w0BBwEAAKCAMIIG6jCCBNKgAwIBAgIDApVmMA0GCSqGSIb3DQEBCwUAMIGVMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDE7MDkGA1UECwwyU2VydmljbyBGZWRlcmFsIGRlIFByb2Nlc3NhbWVudG8gZGUgRGFkb3MgLSBTRVJQUk8xNDAyBgNVBAMMK0F1dG9yaWRhZGUgQ2VydGlmaWNhZG9yYSBkbyBTRVJQUk8gRmluYWwgdjUwHhcNMTcwODAyMTI0OTA2WhcNMjAwODAxMTI0OTA2WjCBoTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxGTAXBgNVBAsMEFBlc3NvYSBGaXNpY2EgQTMxETAPBgNVBAsMCEFSU0VSUFJPMSswKQYDVQQLDCJBdXRvcmlkYWRlIENlcnRpZmljYWRvcmEgU0VSUFJPQUNGMSIwIAYDVQQDDBlMVUlaIENBUkxPUyBTSUxWRUlSQSBIT1BGMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi8YM8VcBZq7DImG6dov33SR
-    ## <br>Códigos de Retorno não Tarifados 
+    ### <br>Códigos de Retorno não Tarifados 
     |  Código de retorno |  Resumido |  Explicação |
     | ------------- |--------------------|----------------------------------------------------------------------------- |
     | &nbsp           | &nbsp    | &nbsp  | 
@@ -82,8 +81,8 @@ info:
     | 404           | Not found    | O parâmetro de entrada informado não foi encontrado.  |
     | &nbsp           | &nbsp    | &nbsp  |
     | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |
-    # 2- Padrões #
-    ## Formatos e Tipos de Dados ##   
+    
+    ### Padrões de Formatos e Tipos de Dados
     Os seguintes tipos de dados são utilizados pela API Integra Loja Franca:
     | Tipos | Descrição | Formato
     | ---------------------- | :------------------------------------------------------------- | ------------------ |
@@ -93,8 +92,7 @@ info:
     | integer | Número inteiro que representa códigos e identificadores |
     | number | Número inteiro em situações que pode passar do valor 2^31-1 |
     | decimal | Número fracionado, sempre com duas casas após o decimal, separado por "." | Ex: 123456789012.22 (Exceto cotação do dólar, que pode ter até 3 casas após o decimal).
-    ## <br> Formato e Tipos de Erros ##      
-    ### Erros de negócio
+    ### Padrões de Formatos e Tipos de Erros - Negócio      
     São erros disparados pela API Integra Loja Franca de Fronteira quando há uma discordância entre os parâmetros enviados e as regras de negócio estabelecidas para as lojas francas. A resposta HTTP será:
     | Status Code | Descrição
     | --------------------------- | ---------------------------------------------- 
@@ -108,7 +106,7 @@ info:
     | mensagem | Mensagem de Erro             | string
     ----------------
     <br>
-    ### Erros de formatação
+    ### Padrões de Formatos e Tipos de Erros - Formatação
     São erros disparados pela API Integra Loja Franca de Fronteira quando há uma discordância na formatação/tipo de dados sugeridos pelos parâmetros enviados. A resposta será:
     | Status Code | Descrição
     | --------------------------- | ---------------------------------------------- 
@@ -121,15 +119,14 @@ info:
     | codigo   | Código que identifica o erro | integer
     | mensagem | Mensagem de Erro             | string
     ----------------
-    <br> Independentemente do tipo de erro, as mensagens de erro podem conter uma TAG que visa facilitar o tratamento do erro caso a aplicação que esteja utilizando a API queira fazer algum tratamento específico, como por exemplo, uma extração de parâmetros a partir de uma mensagem de erro.
-    # <br> 3- Tabelas ##      
-    ## Tabelas de Formato/Tipo Produtos
+    <br> Independentemente do tipo de erro, as mensagens de erro podem conter uma TAG que visa facilitar o tratamento do erro caso a aplicação que esteja utilizando a API queira fazer algum tratamento específico, como por exemplo, uma extração de parâmetros a partir de uma mensagem de erro.   
+    ### Tabelas de Formato/Tipo Produtos
       | Código | Descrição 
       | ----------- | ---------
       | 1         | Bebida alcoólica
       | 2         | Cigarro
       | 3         | Fumo
-    ## Tabelas de Formato/Tipo Documentos
+    ### Tabelas de Formato/Tipo Documentos
  
       | Código | Descrição | Código do País | País 
       | ------ | --------- | -------------- | ----
@@ -177,9 +174,9 @@ info:
       | 42        | Cédula de Identidad para extranjeros | 239 | Equador
       | 43        | Documento Nacional de Identidad | 589 | Peru
       | 44        | Carné de Extranjería | 589 | Peru   
-    ## Tabelas de Países
+    ### Tabelas de Países
     'Ver [tabela de países da Receita Federal do Brasil](http://normas.receita.fazenda.gov.br/sijut2consulta/anexoOutros.action?idArquivoBinario=22672 "Tabela de países da Receita Federal do Brasil")' <br><br>
-    ## Tabelas de Erros
+    ### Tabelas de Erros
       | Código | Mensagem
       | ------ | --------
       | 1   | Estrutura do JSON de entrada diferente da definição do serviço.
@@ -244,9 +241,8 @@ info:
       Todas  as mensagens retornam `HTTP Status 422`, com exceção das mensagens `1` e `3`, que retornam `HTTP Status 400`. 
       <br> Todas as mensagens são encapsuladas conforme demonstrado no item `2 Padrões - Tratamento de erros`.
       <br> As mensagens aqui propostas são sugestões e não necessariamente precisam ser exibidas exatamente da forma como estão no sistema da loja franca que está consumindo a API do Loja Franca de Fronteira, ou seja, elas podem ser customizadas conforme a necessidade. 
-      <br> As mensagens de erro `1, 2, 3, 4, 9, 10, 11, 12, 70` poderão ser disparadas independentemente da operação, pois são mensagens de validação de CNPJ e certificado digital da Loja e mensagens de erros gerais.
-    # <br> 4- Payload C Sharp       
-    ## Orientações para assinatura do payload na linguagem C#
+      <br> As mensagens de erro `1, 2, 3, 4, 9, 10, 11, 12, 70` poderão ser disparadas independentemente da operação, pois são mensagens de validação de CNPJ e certificado digital da Loja e mensagens de erros gerais.   
+    ### Payload C Sharp - Orientações para assinatura do payload na linguagem C#
       Faça download do arquivo [assinador-exemplo-serpro-csharp.zip](https://gitcorporativo.serpro/centro-api-11002/demandas/uploads/a3588a9f2cc8c70385d68ac8077f2dff/assinador-exemplo-serpro-csharp.zip) 
      <br>  O exemplo deste arquivo em C# para assinatura segui o padrão ADRB 2.2. <br> 
       ### Observações: 
