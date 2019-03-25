@@ -10,7 +10,7 @@ info:
     | ------------- |:----------------------|:-----------------------------------------------------------------------------|
     | 400           | Requisição inválida   | O Número de Inscrição do CNPJ informado não é válido. |
     | 500           | Erro no servidor      | Ocorreu algum erro interno.      |  
-    | 503           | Serviço Indisponível  | Algum serviço integrado ao Consulta Massiva CNPJ está indisponível no momento  |
+    | 503           | Serviço indisponível  | Algum serviço integrado ao Consulta Massiva CNPJ está indisponível no momento  |
     ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
     ### Verificando assinatura com Carimbo de Tempo
