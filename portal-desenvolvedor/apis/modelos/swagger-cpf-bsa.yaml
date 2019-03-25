@@ -48,7 +48,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Retorna os dados da Pessoa Física
+          description: Retorna os dados da Pessoa Física.
           headers:
             stamp:
               description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
@@ -65,7 +65,7 @@ paths:
                   codigo: "0"
                   descricao: "Regular"
         '206':
-          description: 'Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado'
+          description: Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado.
           headers:
             stamp:
               description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
@@ -76,11 +76,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/CPF'
         '400':
-          description: O número de CPF informado não é válido
+          description: O número de CPF informado não é válido.
         '404':
-          description: Não existe CPF com o número de inscrição informado
+          description: Não existe CPF com o número de inscrição informado.
         '500':
-          description: Erro interno do servidor
+          description: Erro interno do servidor.
       operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
       externalDocs:
         description: "CPFs para degustação"
