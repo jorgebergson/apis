@@ -258,9 +258,37 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
-
+paths:
+  /status:
+    get:
+      tags:
+        - Status
+      summary: Verifica status da API
+      responses:
+        '200':
+          description: Serviço disponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
+        '500':
+          description: Serviço indisponível
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Status'
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
 components:
   schemas:
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time  
     EntradaCota: 
       type: string
       properties:
