@@ -41,7 +41,12 @@ function makeOperationBlock(id, operacao, metodo, api){
             opCampos += "<tr><td>" + entrada.name + "</td><td>" + entrada.description + "</td><td>" + type + "</td><td>" + entrada.in + "</td></tr>";
         });
         ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th><th>Local</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
-    }
+     } else {
+     	descricaoEntrada = "Esta API não possui dados de entrada.";
+     	ent +="<ul>";
+     	ent +='<li><strong>' + descricaoEntrada + ' &nbsp; </strong> </li>';
+     	ent +="</ul>";
+     }
     if(metodo === "post" || metodo === "put"){
         ent += "<h4> Dados do Corpo da Requisição</h4>";
         var schema = api.paths[operacao][metodo].requestBody.content['application/json'].schema;
