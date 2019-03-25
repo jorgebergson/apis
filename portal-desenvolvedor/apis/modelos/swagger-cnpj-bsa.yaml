@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: |-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).
-    O serviço &nbsp *Consulta Massiva CNPJ* &nbsp é disponibilizado através do &nbsp *HTTP REST* &nbsp oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
+    O serviço &nbsp; *Consulta Massiva CNPJ* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
     ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
     ### Verificando assinatura com Carimbo de Tempo
@@ -29,71 +29,7 @@ paths:
       x-throttling-tier: Unlimited
       description: |-
         Retorna os dados do Cadastro Nacional de Pessoa Jurídica (CNPJ)
-        ### NI para Degustação
-        | NI |
-        | ---------------------- |
-        | 34238864000168 |
-        | 54447820000155 |
-        | 46768703000165 |
-        | 31151791000184 |
-        | 34428654000132 |
-        | 06115832000130 |
-        | 78078291000128 |
-        | 52293473000128 |
-        | 07781066000105 |
-        | 60367129000164 |
-         --------------------------     
-
-        ## Exemplo
-
-          #### Chamada
-          
-            [GET] https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
-            
-          #### Retorno
-          
-            {
-               "ni":"34238864000168",
-               "data_abertura":"1967-06-30",
-               "nome_empresarial":"SERVICO DE E-COMERCE LTDA",
-               "nome_fantasia":"E-COMERCE",
-               "cnae_principal":{
-                  "codigo":"6204000",
-                  "descricao":"Consultoria em e-comerce"
-               },
-               "natureza_juridica":{
-                  "codigo":"2011",
-                  "descricao":"Empresa Privada"
-               },
-               "endereco":{
-                  "logradouro":"ST DE GRANDE AREA NORTE",
-                  "numero":"Q.601",
-                  "complemento":"LOTE V",
-                  "cep":"70836900",
-                  "bairro":"ASA NORTE",
-                  "municipio":"BRASILIA",
-                  "uf":"DF"
-               },
-               "situacao_especial":"",
-               "situacao_cadastral":{
-                  "codigo":"2",
-                  "data":"2004-05-22",
-                  "motivo":""
-               },
-               "orgao":"0110100",
-               "tipo_estabelecimento":"1",
-               "correio_eletronico":"",
-               "capital_social":0,
-               "porte":"05",
-               "telefones":[
-                  {
-                     "ddd":"061",
-                     "numero":"4338456"
-                  }
-               ],
-               "nome_orgao":"BRASILIA",
-               "ente_federativo":"BR"
-            }        
+     
       parameters:
         - name: ni
           in: path
@@ -125,6 +61,10 @@ paths:
           description: Não existe Pessoa Jurídica com o Número de Inscrição informado
         '500':
           description: Erro interno do servidor' 
+      operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
+      externalDocs:
+        description: "CNPJs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
   '/status':
     get:
       tags:
