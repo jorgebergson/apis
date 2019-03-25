@@ -5,6 +5,12 @@ info:
   description: |-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).
     O serviço &nbsp; *Consulta Massiva CNPJ* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
+    ### Códigos de Retorno não Bilhetados 
+    | Código de retorno | Resumido | Explicação |
+    | ------------- |:----------------------|:-----------------------------------------------------------------------------|
+    | 400           | Requisição inválida   | O Número de Inscrição do CNPJ informado não é válido. |
+    | 500           | Erro no servidor      | Ocorreu algum erro interno.      |  
+    | 503           | Serviço Indisponível  | Algum serviço integrado ao Consulta Massiva CNPJ está indisponível no momento  |
     ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
     ### Verificando assinatura com Carimbo de Tempo
