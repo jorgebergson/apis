@@ -3,37 +3,13 @@ info:
   title: Consulta Massiva CNPJ
   version: 1.0.0
   description: |-
-
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
-      
-    O serviço `Consulta Massiva CNPJ` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
-    <br>
-      ## Detalhamento do CNPJ
-
-      Para um detalhamento do CNPJ acesse o link:
-      https://github.com/devserpro/apis/raw/master/_layouts/swaggers/cnpj/detalhamento-CNPJ.pdf
-     <br>
-    ## Códigos de Retorno não Bilhetados
-    | Código de retorno | Resumido | Explicação |
-    | ------------- |:--------------------|:----------------------------------------------------------------------------- |
-    | &nbsp           | &nbsp    | &nbsp  | 
-     | 400  | Requisição inválida    | O número de inscrição do CNPJ informado não é válido.       |
-    | &nbsp           | &nbsp    | &nbsp  |
-    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |
-    | &nbsp           | &nbsp    | &nbsp  |
-    | 503           | Serviço Indisponível     |  Algum serviço integrado ao Consulta Massiva CNPJ está indisponível no momento.                         |<br>
-    ## Solicitando assinatura com Carimbo de Tempo
-
-      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
-      
-      A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`.
-    <br>
-    ## Verificando assinatura com Carimbo de Tempo
-
-      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
-      
-    [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
-    <br>     
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).
+    O serviço &nbsp *Consulta Massiva CNPJ* &nbsp é disponibilizado através do &nbsp *HTTP REST* &nbsp oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
+    ### Solicitando assinatura com Carimbo de Tempo
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
+    ### Verificando assinatura com Carimbo de Tempo
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+    [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1'
     description: Trial
