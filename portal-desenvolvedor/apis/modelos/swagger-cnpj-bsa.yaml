@@ -69,7 +69,7 @@ paths:
         '404':
           description: Não existe Pessoa Jurídica com o Número de Inscrição informado
         '500':
-          description: Erro interno do servidor' 
+          description: Erro interno do servidor
       operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
       externalDocs:
         description: "CNPJs para degustação"
