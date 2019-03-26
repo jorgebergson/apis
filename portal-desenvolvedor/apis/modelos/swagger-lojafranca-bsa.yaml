@@ -32,42 +32,8 @@ info:
     description: Trial <br><br>
   - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br><br>
     description: Produção <br><br>   
-    Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão. <br>
-    <strong> <br> Formato de mensagem JSON padrão </strong> <br><br>
-    A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço.
-    Exemplo: 
-        {
-         "servico": "// endpoint do serviço a ser chamado",
-          "dados": {
-            "// JSON de entrada de cada serviço"
-          }
-        }
-    <strong> Exemplo de entrada a assinar para a operação Processa venda viajante </strong> <br><br>
-    O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados". <br><br>
-    Exemplo:
-        {
-          "servico": "/venda",
-          "dados" : {
-            "valorTotalItensImportados": 10,
-            "valorTotalItensNacionais": 0,
-            "valorCotacaoLoja": 3.24,
-            "viajanteParametro": {
-              "cpf": "00000000191",
-              "documento": {
-                "codigoPaisOrigem": 105,
-                "codigoTipo": 1,
-                "numero": "12345"
-              }
-            }
-          }
-        }
-    <strong> Exemplo de entrada assinada para a operação Processa venda viajante </strong> <br><br>
-    O JSON foi assinado e criptografado em base64. <br><br>
-    Exemplo:
-        POST /api/
-        HEADER
-        Authorization: Bearer 953bae789a1726734005d238e939c978
-        BODY/PAYLOAD
+    Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão.
+
 security:
   - APIKEY: []
     OAuth2: []
