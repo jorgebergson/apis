@@ -4,11 +4,12 @@ info:
   version: v1
   description: |-
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf). 
-    O serviço &nbsp; *Consulta Massiva CPF* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
+    O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
-    | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
+    | 400           | Requisição inválida | O parâmetro de entrada informado não é válido. |
+    | 404           | Not found           | O parâmetro de entrada informado não foi encontrado.
     | 500           | Erro no servidor    | Ocorreu algum erro interno.      |     
     ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
