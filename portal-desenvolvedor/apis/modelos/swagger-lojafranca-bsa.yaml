@@ -4,40 +4,34 @@ info:
   version: v1
   description: |- 
     ### API
-    A `API INTEGRA LOJA FRANCA` é disponibilizada através de serviço `HTTP REST`, oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
-    <br> Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das lojas francas com os serviços da Receita Federal do Brasil para as Lojas Francas de Fronteira.
-    <br> Todos os serviços seguem o mesmo protocolo de acesso, baseado nas instruções de uso e contratação do serviço API Serpro. A API do Loja Franca de Fronteira foi desenvolvida baseada na arquitetura `HTTP REST`. Ela trabalha exclusivamente com o formato JSON.
-    <br> A API usa o formato `UTF-8`. 
-    <br> Destacamos que o sistema foi implementado recentemente para as lojas francas prepararem as adaptações necessárias aos seus sistemas próprios, podendo ainda ocorrer instabilidades pontuais. Caso haja dúvidas relacionadas à API do Loja Franca de Fronteira ou para problemas relacionados à TI, entre em contato com a Central Serpro de Atendimento.
-    <br>  Esperamos que a API do Loja Franca de Fronteira melhore o ambiente de negócios das lojas francas, viabilizando a operação das lojas, aumentando a competitividade e diminuindo os custos acessórios envolvidos.
-    ## Autenticação ##
-    Para testar o ambiente de degustação da API, não é necessário realizar contratação prévia. O arquivo com as credenciais de acesso, informações de fluxo e exemplos podem ser solicitadas através do formulário de atendimento no link abaixo:
-    <br>https://atendimento.serpro.gov.br/integralojafranca/credenciais
-    <br> No ambiente produtivo, para garantir a identificação e a segurança da origem da informação, toda requisição à API deve seguir três processos:
-    <br> 1) Assinar a requisição com o seu conteúdo anexado mediante a utilização do certificado digital e-CNPJ (cadeia ICP Brasil) da contratante;
-    <br> 2) Submeter a mensagem assinada mediante a apresentação da chave de acesso da API gateway válida (gerada a partir das credencias disponibilizadas no portal do cliente para cada CNPJ) e
-    <br> 3) Verificar a assinatura da requisição, checando se o certificado é válido e não revogado.
-    <br> Assim, a cada requisição realizada, haverá Validação de Origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição.
-    <br> https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf 
-    <br>  
-    ## Contratação ##
-    Para consumir a API é necessário utilizar as credenciais de acesso `CONSUMER KEY` e `CONSUMER SECRET` disponibilizados no portal do cliente https://cliente.serpro.gov.br
-    <br> Exemplo de código:
-    <br> `Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb`
-    <br>`Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote`
-    <br>
-    ## Token de Acesso (Bearer) ##
+    A &nbsp; *API INTEGRA LOJA FRANCA* é disponibilizada através de serviço &nbsp; *HTTP REST*, oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
+    Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das lojas francas com os serviços da Receita Federal do Brasil para as Lojas Francas de Fronteira.
+    Todos os serviços seguem o mesmo protocolo de acesso, baseado nas instruções de uso e contratação do serviço API Serpro. A API do Loja Franca de Fronteira foi desenvolvida baseada na arquitetura `HTTP REST`. Ela trabalha exclusivamente com o formato JSON.
+    A API usa o formato &nbsp; *UTF-8*. 
+    Destacamos que o sistema foi implementado recentemente para as lojas francas prepararem as adaptações necessárias aos seus sistemas próprios, podendo ainda ocorrer instabilidades pontuais. Caso haja dúvidas relacionadas à API do Loja Franca de Fronteira ou para problemas relacionados à TI, entre em contato com a Central Serpro de Atendimento.
+    Esperamos que a API do Loja Franca de Fronteira melhore o ambiente de negócios das lojas francas, viabilizando a operação das lojas, aumentando a competitividade e diminuindo os custos acessórios envolvidos.
+    ### Autenticação
+    Para testar o ambiente de degustação da API, não é necessário realizar contratação prévia. O arquivo com as credenciais de acesso, informações de fluxo e exemplos podem ser solicitadas através do formulário de atendimento no link [Documentação](https://atendimento.serpro.gov.br/integralojafranca/credenciais)
+    No ambiente produtivo, para garantir a identificação e a segurança da origem da informação, toda requisição à API deve seguir três processos:
+    1) Assinar a requisição com o seu conteúdo anexado mediante a utilização do certificado digital e-CNPJ (cadeia ICP Brasil) da contratante;
+    2) Submeter a mensagem assinada mediante a apresentação da chave de acesso da API gateway válida (gerada a partir das credencias disponibilizadas no portal do cliente para cada CNPJ) e
+    3) Verificar a assinatura da requisição, checando se o certificado é válido e não revogado.
+    Assim, a cada requisição realizada, haverá Validação de Origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição. Veja a [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf)  
+    ### Contratação 
+    Para consumir a API é necessário utilizar as credenciais de acesso &nbsp; *CONSUMER KEY* &nbsp; e &nbsp; *CONSUMER SECRET* &nbsp; disponibilizados no [Portal do cliente](https://cliente.serpro.gov.br)
+    Exemplo de código:
+    *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
+    *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
+    ### Token de Acesso (Bearer)
     Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.
-    <br> Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato consumerKey:consumerSecret no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede.
-    <br> Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: <br>
-    `Authorization: Bearer <hash>`
-    ## <br> Payload ##
+    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato consumerKey:consumerSecret no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede.
+    Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato &nbsp; *Authorization: Bearer <hash>*
+    ### Payload 
     Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.
-    <br>Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão. <br>
+    Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão. <br>
     <strong> <br> Formato de mensagem JSON padrão </strong>
-    <br> A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço. 
-    <br>
-    #### Exemplo 
+    A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço.
+    Exemplo: 
         {
          "servico": "// endpoint do serviço a ser chamado",
           "dados": {
@@ -46,7 +40,7 @@ info:
         }
     <strong> <br> Exemplo de entrada a assinar para a operação Processa venda viajante </strong>
     <br> O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados".
-    #### Exemplo
+    Exemplo:
         {
           "servico": "/venda",
           "dados" : {
@@ -65,13 +59,13 @@ info:
         }
     <strong> Exemplo de entrada assinada para a operação Processa venda viajante </strong> <br>
     O JSON foi assinado e criptografado em base64.
-    #### Exemplo
+    Exemplo:
         POST /api/
         HEADER
         Authorization: Bearer 953bae789a1726734005d238e939c978
         BODY/PAYLOAD
         MIAGCSqGSIb3DQEHAqCAMIACAQExDzANBglghkgBZQMEAgMFADCABgkqhkiG9w0BBwEAAKCAMIIG6jCCBNKgAwIBAgIDApVmMA0GCSqGSIb3DQEBCwUAMIGVMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDE7MDkGA1UECwwyU2VydmljbyBGZWRlcmFsIGRlIFByb2Nlc3NhbWVudG8gZGUgRGFkb3MgLSBTRVJQUk8xNDAyBgNVBAMMK0F1dG9yaWRhZGUgQ2VydGlmaWNhZG9yYSBkbyBTRVJQUk8gRmluYWwgdjUwHhcNMTcwODAyMTI0OTA2WhcNMjAwODAxMTI0OTA2WjCBoTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxGTAXBgNVBAsMEFBlc3NvYSBGaXNpY2EgQTMxETAPBgNVBAsMCEFSU0VSUFJPMSswKQYDVQQLDCJBdXRvcmlkYWRlIENlcnRpZmljYWRvcmEgU0VSUFJPQUNGMSIwIAYDVQQDDBlMVUlaIENBUkxPUyBTSUxWRUlSQSBIT1BGMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi8YM8VcBZq7DImG6dov33SR
-    ## <br>Códigos de Retorno não Tarifados 
+    ### Códigos de Retorno não Tarifados 
     |  Código de retorno |  Resumido |  Explicação |
     | ------------- |--------------------|----------------------------------------------------------------------------- |
     | &nbsp           | &nbsp    | &nbsp  | 
@@ -80,8 +74,8 @@ info:
     | 404           | Not found    | O parâmetro de entrada informado não foi encontrado.  |
     | &nbsp           | &nbsp    | &nbsp  |
     | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |
-    # 2- Padrões #
-    ## Formatos e Tipos de Dados ##   
+    
+    ### Padrões deFormatos e Tipos de Dados   
     Os seguintes tipos de dados são utilizados pela API Integra Loja Franca:
     | Tipos | Descrição | Formato
     | ---------------------- | :------------------------------------------------------------- | ------------------ |
