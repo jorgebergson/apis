@@ -20,18 +20,18 @@ info:
     ### Contratação 
     Para consumir a API é necessário utilizar as credenciais de acesso &nbsp; *CONSUMER KEY* &nbsp; e &nbsp; *CONSUMER SECRET* &nbsp; disponibilizados no [Portal do Cliente](https://cliente.serpro.gov.br). &nbsp;
     Exemplo de código:
-    <br/><br/> *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
-    <br/><br/> *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
+    /n/n *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
+    /n/n *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
     ### Token de Acesso (Bearer)
     Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. <br/><br/>
-    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede. <br/><br/>
-    Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: &nbsp; *Authorization: Bearer <hash>*.
+    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede.
+    /n/n Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: &nbsp; *Authorization: Bearer <hash>*.
     ### Payload 
-    Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: <br/><br/>
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' <br/><br/>
-    description: Trial <br/><br/>
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br/><br/>
-    description: Produção <br><br>   
+    Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: /n/n
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' /n/n
+    description: Trial /n/n
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' /n/n
+    description: Produção /n/n   
     Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão.
     ### Formato de mensagem JSON padrão <br><br>
     A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço.
@@ -43,7 +43,7 @@ info:
           }
         }
     ### Exemplo de entrada a assinar para a operação Processa venda viajante <br><br>
-    O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados". <br/><br/>
+    O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados". /n/n
     Exemplo:
         {
           "servico": "/venda",
@@ -61,8 +61,8 @@ info:
             }
           }
         }
-    ###vExemplo de entrada assinada para a operação Processa venda viajante <br/><br/>
-    O JSON foi assinado e criptografado em base64. <br><br>
+    ###vExemplo de entrada assinada para a operação Processa venda viajante /n/n
+    O JSON foi assinado e criptografado em base64. /n/n
     Exemplo:
         POST /api/
         HEADER
