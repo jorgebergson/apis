@@ -14,26 +14,60 @@ info:
     Para testar o ambiente de degustação da API, não é necessário realizar contratação prévia. O arquivo com as credenciais de acesso, informações de fluxo e exemplos podem ser solicitadas através do formulário de atendimento no link [Documentação](https://atendimento.serpro.gov.br/integralojafranca/credenciais).&nbsp;
     No ambiente produtivo, para garantir a identificação e a segurança da origem da informação, toda requisição à API deve seguir três processos abaixo:
     1) Assinar a requisição com o seu conteúdo anexado mediante a utilização do certificado digital e-CNPJ (cadeia ICP Brasil) da contratante;
-    2) Submeter a mensagem assinada mediante a apresentação da chave de acesso da API gateway válida (gerada a partir das credencias disponibilizadas no portal do cliente para cada CNPJ) e
+    2) Submeter a mensagem assinada mediante a apresentação da chave de acesso da API gateway válida (gerada a partir das credencias disponibilizadas no portal do cliente para cada CNPJ);
     3) Verificar a assinatura da requisição, checando se o certificado é válido e não revogado.
-    Assim, a cada requisição realizada, haverá Validação de Origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição. Mais detalhes veja o documento: &nbsp; [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).  
+    Assim, a cada requisição realizada, haverá validação de origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição. Mais detalhes veja o documento: &nbsp; [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).  
     ### Contratação 
     Para consumir a API é necessário utilizar as credenciais de acesso &nbsp; *CONSUMER KEY* &nbsp; e &nbsp; *CONSUMER SECRET* &nbsp; disponibilizados no [Portal do Cliente](https://cliente.serpro.gov.br). &nbsp;
     Exemplo de código:
-    <br><br> *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
-    <br><br> *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
+    <br/><br/> *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
+    <br/><br/> *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
     ### Token de Acesso (Bearer)
-    Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. <br><br>
-    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede. <br><br>
+    Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. <br/><br/>
+    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede. <br/><br/>
     Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: &nbsp; *Authorization: Bearer <hash>*.
     ### Payload 
-    Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: <br><br>
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' <br><br>
-    description: Trial <br><br>
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br><br>
+    Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: <br/><br/>
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' <br/><br/>
+    description: Trial <br/><br/>
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br/><br/>
     description: Produção <br><br>   
     Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão.
-
+    ### Formato de mensagem JSON padrão <br><br>
+    A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço.
+    Exemplo: 
+        {
+         "servico": "// endpoint do serviço a ser chamado",
+          "dados": {
+            "// JSON de entrada de cada serviço"
+          }
+        }
+    ### Exemplo de entrada a assinar para a operação Processa venda viajante <br><br>
+    O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados". <br/><br/>
+    Exemplo:
+        {
+          "servico": "/venda",
+          "dados" : {
+            "valorTotalItensImportados": 10,
+            "valorTotalItensNacionais": 0,
+            "valorCotacaoLoja": 3.24,
+            "viajanteParametro": {
+              "cpf": "00000000191",
+              "documento": {
+                "codigoPaisOrigem": 105,
+                "codigoTipo": 1,
+                "numero": "12345"
+              }
+            }
+          }
+        }
+    ###vExemplo de entrada assinada para a operação Processa venda viajante <br/><br/>
+    O JSON foi assinado e criptografado em base64. <br><br>
+    Exemplo:
+        POST /api/
+        HEADER
+        Authorization: Bearer 953bae789a1726734005d238e939c978
+        BODY/PAYLOAD
 security:
   - APIKEY: []
     OAuth2: []
