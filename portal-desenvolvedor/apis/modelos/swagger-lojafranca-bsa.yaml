@@ -26,7 +26,7 @@ security:
     OAuth2: []
     Authorization: []   
 externalDocs:
-  description: "Detalhamento da Situação Cadastral do CPF"
+  description: "Detalhamento da API Loja Franca de Fronteiras"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
   '/':
