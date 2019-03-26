@@ -51,6 +51,9 @@ paths:
                 $ref: '#/components/schemas/Status'
               example:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+      externalDocs:
+        description: "Detalhamento da API Loja Franca de Fronteiras"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CPF.pdf                
 components:
   schemas:
     Status:
