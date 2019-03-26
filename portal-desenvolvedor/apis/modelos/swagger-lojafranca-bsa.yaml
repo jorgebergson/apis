@@ -28,9 +28,9 @@ info:
     Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: &nbsp; *Authorization: Bearer <hash>*.
     ### Payload 
     Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: <br><br>
-  - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' <br><br>
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' <br><br>
     description: Trial <br><br>
-  - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br><br>
+    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' <br><br>
     description: Produção <br><br>   
     Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão.
 
