@@ -20,8 +20,12 @@ info:
     ### Contratação 
     Para consumir a API é necessário utilizar as credenciais de acesso &nbsp; *CONSUMER KEY* &nbsp; e &nbsp; *CONSUMER SECRET* &nbsp; disponibilizados no [Portal do cliente](https://cliente.serpro.gov.br). &nbsp;
     Exemplo de código:
-    *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
-    *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
+    <br> /n *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
+    <br> /n *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
+    ### Token de Acesso (Bearer)
+    Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. <br> /n
+    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede. <br> /n
+    Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato &nbsp; *Authorization: Bearer <hash>*
 
 security:
   - APIKEY: []
