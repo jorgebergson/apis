@@ -2,76 +2,31 @@ openapi: 3.0.2
 info:
   title: Loja Franca
   version: v1
-  description: |- 
-    ### API
-    A &nbsp; *API INTEGRA LOJA FRANCA* é disponibilizada através de serviço &nbsp; *HTTP REST*, oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
-    Consolidamos aqui as informações técnicas para a integração dos sistemas próprios das lojas francas com os serviços da Receita Federal do Brasil para as Lojas Francas de Fronteira.
-    Todos os serviços seguem o mesmo protocolo de acesso, baseado nas instruções de uso e contratação do serviço API Serpro. A API do Loja Franca de Fronteira foi desenvolvida baseada na arquitetura &nbsp; *HTTP REST* &nbsp;. Ela trabalha exclusivamente com o formato JSON.
-    A API usa o formato &nbsp; *UTF-8*. &nbsp; 
-    Destacamos que o sistema foi implementado recentemente para as lojas francas prepararem as adaptações necessárias aos seus sistemas próprios, podendo ainda ocorrer instabilidades pontuais. Caso haja dúvidas relacionadas à API do Loja Franca de Fronteira ou para problemas relacionados à TI, entre em contato com a Central Serpro de Atendimento.
-    Esperamos que a API do Loja Franca de Fronteira melhore o ambiente de negócios das lojas francas, viabilizando a operação das lojas, aumentando a competitividade e diminuindo os custos acessórios envolvidos.
-    ### Autenticação
-    Para testar o ambiente de degustação da API, não é necessário realizar contratação prévia. O arquivo com as credenciais de acesso, informações de fluxo e exemplos podem ser solicitadas através do formulário de atendimento no link [Documentação](https://atendimento.serpro.gov.br/integralojafranca/credenciais).&nbsp;
-    No ambiente produtivo, para garantir a identificação e a segurança da origem da informação, toda requisição à API deve seguir três processos abaixo:
-    1) Assinar a requisição com o seu conteúdo anexado mediante a utilização do certificado digital e-CNPJ (cadeia ICP Brasil) da contratante;
-    2) Submeter a mensagem assinada mediante a apresentação da chave de acesso da API gateway válida (gerada a partir das credencias disponibilizadas no portal do cliente para cada CNPJ);
-    3) Verificar a assinatura da requisição, checando se o certificado é válido e não revogado.
-    Assim, a cada requisição realizada, haverá validação de origem que realizará o batimento entre o CNPJ Comercial (CNPJ vinculado as credencias do portal do cliente), CNPJ de Autenticidade (CNPJ assinante da requisição) garantido a irretratabilidade (não repúdio) no nível em cada requisição. Mais detalhes veja o documento: &nbsp; [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).  
-    ### Contratação 
-    Para consumir a API é necessário utilizar as credenciais de acesso &nbsp; *CONSUMER KEY* &nbsp; e &nbsp; *CONSUMER SECRET* &nbsp; disponibilizados no [Portal do Cliente](https://cliente.serpro.gov.br). &nbsp;
-    Exemplo de código:
-    \n\n *Consumer Key*: *djaR21PGoYp1iyK2n2ACOH9REdUb*
-    \n\n *Consumer Secret*: *ObRsAJWOL4fv2Tp27D1vd8fB3Ote*
-    ### Token de Acesso (Bearer)
-    Para consultar a API, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido. \n\n
-    Para solicitar o token temporário, é necessário realizar uma requisição HTTP POST para o endpoint Token (https://apigateway.serpro.gov.br/token), informando as credenciais de acesso no formato &nbsp; *consumerKey : consumerSecret* &nbsp; no HTTP Header Authorization, no formato base64, formato este que é utilizado para criptografar as credenciais de acesso e com isso garantir sigilo no tráfego de rede.
-    \n\n Após isso feito, será gerada uma chave hash (Bearer token) que deverá ser passada no header das requisições que serão efetuadas. Este header segue o seguinte formato: &nbsp; *Authorization: Bearer <hash>*.
-    ### Payload 
-    Todo o conteúdo a ser enviado para a API do Loja Franca deverá ser assinado.servers: \n\n
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api' \n\n
-    description: Trial \n\n
-    - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api' \n\n
-    description: Produção \n\n
-    Porém, antes de enviar o conteúdo assinado, o mesmo deve seguir o Formato de mensagem JSON padrão.
-    ### Formato de mensagem JSON padrão \n\n
-    A indicação de qual serviço será disparado se dará através do repasse do endpoint que representa cada serviço.
-    Exemplo: 
-        {
-         "servico": "// endpoint do serviço a ser chamado",
-          "dados": {
-            "// JSON de entrada de cada serviço"
-          }
-        }
-    ### Exemplo de entrada a assinar para a operação Processa venda viajante \n\n
-    O JSON segue o formato documentado por operação e o mesmo fica encapsulado dentro da propriedade "dados". \n\n
-    Exemplo:
-        {
-          "servico": "/venda",
-          "dados" : {
-            "valorTotalItensImportados": 10,
-            "valorTotalItensNacionais": 0,
-            "valorCotacaoLoja": 3.24,
-            "viajanteParametro": {
-              "cpf": "00000000191",
-              "documento": {
-                "codigoPaisOrigem": 105,
-                "codigoTipo": 1,
-                "numero": "12345"
-              }
-            }
-          }
-        }
-    ###vExemplo de entrada assinada para a operação Processa venda viajante \n\n
-    O JSON foi assinado e criptografado em base64. \n\n
-    Exemplo:
-        POST /api/
-        HEADER
-        Authorization: Bearer 953bae789a1726734005d238e939c978
-        BODY/PAYLOAD
+  description: |-
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf). 
+    O serviço &nbsp; * Integra Loja Franca * &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
+    ### Códigos de Retorno não Bilhetados 
+    | Código de retorno | Resumido | Explicação |
+    | ------------- |:--------------------|:-----------------------------------------------------------------------------|
+    | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
+    | 500           | Erro no servidor    | Ocorreu algum erro interno.      |     
+    ### Solicitando assinatura com Carimbo de Tempo
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
+    ### Verificando assinatura com Carimbo de Tempo
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+    [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+servers:
+  - url: 'https://apigateway.serpro.gov.br/api-loja-franca-trial/api'
+    description: Trial
+  - url: 'https://apigateway.serpro.gov.br/api-loja-franca/api'
+    description: Produção
 security:
   - APIKEY: []
     OAuth2: []
-    Authorization: []
+    Authorization: []   
+externalDocs:
+  description: "Detalhamento da API Integra Loja Franca"
+url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf   
 paths:
   /status:
     get:
@@ -94,7 +49,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Status'
               example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"                
 components:
   schemas:
     Status:
