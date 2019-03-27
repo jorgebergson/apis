@@ -1,0 +1,50 @@
+{
+  "host": "apigateway.serpro.gov.br",
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "1 Introdução"
+    },
+    {
+      "name": "2 Métodos e Testes do Serviço"
+    }
+  ],
+  "info": {
+    "version": "1",
+    "title": "API Consulta CPF"
+  },
+  "basePath": "/consulta-cpf-trial/1",
+  "paths": {
+    "Descrição": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "Consulta CPF por Número de Inscrição",
+        "description": "A `API Consulta CPF` é disponibilizada através de serviço `HTTP REST`, oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.\n### Autenticação\nPara testar a degustação da API, não é necessário realizar autenticação prévia. Porém, para consumo no ambiente produtivo, a autenticação prévia é necessária.\n<br/> Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf        "
+      },
+      "responses": {}
+    },
+    "Campos Retornados": {
+      "head": {
+        "tags": [
+          "1 Introdução"
+        ],
+        "summary": "Campos Retornados",
+        "description": "\n## Tipos de Campos Retornados\n\n| Tipos de campos | Valor de retorno |\n| ---------------------- | :------------------------------------------------------------- |\n| NI        | Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999 |\n| Nome     | Nome da Pessoa Física  |\n| Situação | Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.|\n| Situação/Código | Código da Situação Cadastral da Pessoa Física |\n| Situação/Descrição | Descrição da Situação Cadastral da Pessoa Física |\n\n --------------------------"
+      },
+      "responses": {}
+    },
+    "Informações complementares dos Campos": {
