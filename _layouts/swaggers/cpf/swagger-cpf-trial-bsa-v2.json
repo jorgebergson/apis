@@ -33,7 +33,7 @@
           "1 Introdução"
         ],
         "summary": "Consulta CPF por Número de Inscrição",
-        "description": "A `API Consulta CPF` é disponibilizada através de serviço `HTTP REST`, oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.\n### Autenticação\nPara testar a degustação da API, não é necessário realizar autenticação prévia. Porém, para consumo no ambiente produtivo, a autenticação prévia é necessária.\n<br/> Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf        "
+        "description": "A `API Consulta CPF` é disponibilizada através de serviço `HTTP REST`, oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.\n### Autenticação\nPara testar a degustação da API, não é necessário realizar autenticação prévia. Porém, para consumo no ambiente produtivo, a autenticação prévia é necessária.\n<br/> Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/"
       },
       "responses": {}
     },
