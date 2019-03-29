@@ -97,12 +97,14 @@ info:
     \ CANCELADO PELA AUDITORIA |"
   version: "1"
 servers:
-- url: http://homapibpc.conectagov.estaleiro.serpro.gov.br/api/consulta
-- url: https://homapibpc.conectagov.estaleiro.serpro.gov.br/api/consulta
+- url: http://homapibpc.conectagov.estaleiro.serpro.gov.br/api
+  description: Hom
+- url: https://homapibpc.conectagov.estaleiro.serpro.gov.br/api
+  description: Hom
 security:
 - Bearer: []
 paths:
-  /bpc/{nit}:
+  /consulta/bpc/{nit}:
     get:
       tags:
       - Consultar BPC
