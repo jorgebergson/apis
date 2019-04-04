@@ -20,7 +20,7 @@
   },
   "basePath": "/consulta-siape-trial",
   "paths": {
-    "/consulta/siape/{cpf}": {
+    "/consulta/dados-funcionais/{cpf}": {
       "get": {
         "tags": [
           "Consultar SIAPE"
