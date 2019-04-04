@@ -39,13 +39,6 @@
             "description": "Número do CPF",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "x-jwt-assertion",
-            "in": "header",
-            "description": "Payload do assertion",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
