@@ -1,0 +1,357 @@
+{
+  "host": "apigateway.serpro.gov.br",
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "info": {
+    "version": "1",
+    "title": "API Consulta SIAPE",
+    "description": "A API `Consulta SIAPE` é disponibilizada através de serviço `HTTP REST`. O objetivo da API Consulta SIAPE é disponibilizar os dados atuais dos servidores e pensionistas, que recebem seus pagamentos pelo SIAPE. \n<br>\n\n## CPFs para Degustação\n\n cpf : &nbsp; 72033893243 \n\n ## X-JWT-ASSERTION \u0085\u0085 Value: \n\n  ### eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5tWXpNekV5T1dVNE1URmpNR016TkdRMFkyWXpOV0V4TnpoaE1UYzBOMlU1TURVMU9EUmhNZz09In0=.eyJpc3MiOiJ3c28yLm9yZy9wcm9kdWN0cy9hbSIsImV4cCI6MTUyMjI2Nzg1Mzg5NiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9zdWJzY3JpYmVyIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2FwcGxpY2F0aW9uaWQiOiIyOCIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvYXBwbGljYXRpb25uYW1lIjoiRGVmYXVsdEFwcGxpY2F0aW9uIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9hcHBsaWNhdGlvbnRpZXIiOiJVbmxpbWl0ZWQiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2FwaWNvbnRleHQiOiIvcmV0cnkvdjEiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL3ZlcnNpb24iOiJ2MSIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvdGllciI6IlVubGltaXRlZCIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMva2V5dHlwZSI6IlBST0RVQ1RJT04iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL3VzZXJ0eXBlIjoiQVBQTElDQVRJT04iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhcGlnb3ZAc2VycHJvLmdvdi5iciIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvZ2l2ZW5uYW1lIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2xhc3RuYW1lIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL29yZ2FuaXphdGlvbiI6InN1cHNzIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9yb2xlIjoiQXBwbGljYXRpb24vYWRtaW5fYXBwbGljYXRpb250ZXN0ZV9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX0RFTkFUUkFOX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fMzM2ODMxMTEwMDAxMDdfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl8zMzk0NTYzMjE1My1DUEZfU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9hcHBsaWNhdGlvbnRlc3RlX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fQ09OVFJBVE8tU0lBUE5FVF9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX1NJQVNHX0lOVEVHUkFDQU9fU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19NUF9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX1NURVJOQV9RTElLU0VOU0VfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9TSUFTR19JTlRFR1JBQ0FPX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fQ09OVFJBVE8tVEVTVEUtQ09OU1VMVEFJUlBGX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fU1RFUk5BX01JQ1JPU1RSQVRFR1lfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl8wNDQ5MzU5NjQ2NS1DUEZfU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUTy1MSU5DRV9TQU5EQk9YLEludGVybmFsL2V2ZXJ5b25lLEFwcGxpY2F0aW9uL2FkbWluXzMzOTQ1NjMyMTUzLUNQRl9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NvbnRyYXRvLVNFQUJSQV9DUEZfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19MSUNJVEFDQU9fU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl8wNDQ5MzU5NjQ2NS1DUEZfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUTy1MSU5DRV9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPLVNJQVBORVRfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9yZXN0X2FwaV9zdG9yZSxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19ERU5BVFJBTl9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPLVRFU1RFLUNPTlNVTFRBSVJQRl9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX0xJQ0lUQUNBT19QUk9EVUNUSU9OLGFkbWluLEFwcGxpY2F0aW9uL2FkbWluX0ludHJlZ3Jhw6fDo28gU0lBU0dfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9TVEVSTkFfTUlDUk9TVFJBVEVHWV9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX01QX1NBTkRCT1gsSW50ZXJuYWwvc3Vic2NyaWJlcixBcHBsaWNhdGlvbi9hZG1pbl9TVEVSTkFfUUxJS1NFTlNFX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fRGVmYXVsdEFwcGxpY2F0aW9uX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fQ29udHJhdG8tU0VBQlJBX0NQRl9TQU5EQk9YIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiYWRtaW4ifQ==.sohMiAvLRE8wpA56+BN+K/E6f5hlkZwp7fvX3E+1pRqVVwI7gmVDczkmcMDb+mUH/fAWwfuVfyaehtLq1KPgdRN0smea1BPB1P62/4TZfBHHkTjxCZqwrRx5z1613jRcMfvYl1ItN1x2+8Pby6fxdcfyBQVwVqyd4jdrO2eHxsGpEuSO+jLaoESnf3n5/wVv4dHov1LROmXGWctrrstNuoh3yjadTclNiuTpWGbyMpPrQWKZZRnSlGHa6tczjZq54MuI0kLFkUiNA8DRY8pJ/cizNlfUBPYdhSYXGV2tIoZ0PQr2YlhRldd99cTuVW8PTWlVxrAYuuLx7g7oS9Kbag=="
+  },
+  "basePath": "/consulta-siape-trial",
+  "paths": {
+    "/consulta/siape/{cpf}": {
+      "get": {
+        "tags": [
+          "Consultar SIAPE"
+        ],
+        "summary": "Consulta SIAPE",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": "Apresenta os dados dos servidores ou pensionista que recebem através do SIAPE\n## CPFs para Degustação\n\n| Nit - ( cpf ) | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| cpf    | true |  |\n| cpf | true | |\n| cpf | true | |\n| cpf | true | |\n| cpf | true | |\n\n --------------------------        \n  \n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-siape-trial/api/consulta/siape/72033893243\n    \n  #### Retorno\n  \n    {\n      \"codAtivFun:\":\"{ }\",\n      \"codCargo:\":\"313014\",\n      \"codClasse:\":\"1\",\n      \"codFuncao:\":\"{ }\",\n      \"codJornada:\":\"40\",\n      \"codNovaFuncao:\":\"{ }\",\n      \"codOcorrAposentadoria:\":\"{ }\",\n      \"codOcorrExclusao:\":\"{ }\",\n      \"codOcorrIngressoOrgao:\":\"01001\",\n      \"codOcorrIngressoServPublico:\":\"{ }\",\n      \"codOcorrIsencaoIR:\":\"{ }\",\n      \"codOcorrPSS:\":\"{ }\",\n      \"codOrgao:\":\"25207\",\n      \"codPadrao:\":\"22\",\n      \"codSitFuncional:\":\"23\",\n      \"codUorgExercicio:\":\"{ }\",\n      \"codUorgLotacao:\":\"096025004\",\n      \"codUpag:\":\"23207073005009\",\n      \"codValeTransporte:\":\"{ }\",\n      \"codigoOrgaoOrigem:\":\"00000\",\n      \"cpfChefiaImediata:\":\"68715935412\",\n      \"dataExercicioNoOrgao:\":\"03082008\",\n      \"dataFimOcorrIsencaoIR:\":\"{ }\",\n      \"dataFimOcorrPSS:\":\"{ }\",\n      \"dataFimValeAR:\":\"{ }\",\n      \"dataIngressoFuncao:\":\"{ }\",\n      \"dataIngressoNovaFuncao:\":\"{ }\",\n      \"dataInicioOcorrIsencaoIR:\":\"{ }\",\n      \"dataInicioOcorrPSS:\":\"{ }\",\n      \"dataIniValeAR:\":\"{ }\",\n      \"dataOcorrAposentadoria:\":\"{ }\",\n      \"dataOcorrExclusao:\":\"{ }\",\n      \"dataOcorrIngressoOrgao:\":\"01072009\",\n      \"dataOcorrIngressoServPublico:\":\"{ }\",\n      \"emailChefiaImediata:\":\"chefe25@gmail.com\",\n      \"emailServidor:\":\"servidor@gmail.com\",\n      \"identUnica:\":\"015599321\",\n      \"matriculaSiape:\":\"01559932\",\n      \"nomeAtivFun:\":\"{ }\",\n      \"nomeCargo:\":\"Tecnico\",\n      \"nomeChefeUorg:\":\"{ }\",\n      \"nomeClasse:\":\"1.Classe/1.Cate\",\n      \"nomeFuncao:\":\"{ }\",\n      \"nomeJornada:\":\"20 horas semanais\",\n      \"nomeNovaFuncao:\":\"{ }\",\n      \"nomeOcorrAposentadoria:\":\"{ }\",\n      \"nomeOcorrExclusao:\":\"{ }\",\n      \"nomeOcorrIngressoOrgao:\":\"Admissao por Concurso Publico\",\n      \"nomeOcorrIngressoServPublico:\":\"{ }\",\n      \"nomeOcorrIsencaoIR:\":\"{ }\",\n      \"nomeOcorrPSS:\":\"{ }\",\n      \"nomeOrgao:\":\"Servico Federal de Mineracao\",\n      \"nomeRegimeJuridico:\":\"Consolidacao das Leis do Trabalho\",\n      \"nomeSitFuncional:\":\"celetista/Empregado\",\n      \"nomeUorgExercicio:\":\"{ }\",\n      \"nomeUorgLotacao:\":\"SUPXP/SSGXṔ/SSXX\",\n      \"nomeUpag:\":\"SUPXP/GPAXP/GPBXP\",\n      \"percentualTX:\":\"29,00\",\n      \"pontuacaoDesempenho:\":\"{ }\",\n      \"siglaNivelCargo:\":\"NS\",\n      \"siglaOrgao\":\"DNIXP\",\n      \"siglaOrgaoOrigem:\":\"{ }\",\n      \"siglaRegimeJuridico:\":\"CLT\",\n      \"siglaUorgExercicio:\":\"{ }\",\n      \"siglaUorgLotacao:\":\"SUPXP\",\n      \"siglaUpag:\":\"SUPXP\",\n      \"tipoValeAR:\":\"{ }\",\n      \"valorValeTransporte:\":\"{ }\"    \n    } \n\n #### J-WXT-ASSERTION\u0085 \u0085    eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5tWXpNekV5T1dVNE1URmpNR016TkdRMFkyWXpOV0V4TnpoaE1UYzBOMlU1TURVMU9EUmhNZz09In0=.eyJpc3MiOiJ3c28yLm9yZy9wcm9kdWN0cy9hbSIsImV4cCI6MTUyMjI2Nzg1Mzg5NiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9zdWJzY3JpYmVyIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2FwcGxpY2F0aW9uaWQiOiIyOCIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvYXBwbGljYXRpb25uYW1lIjoiRGVmYXVsdEFwcGxpY2F0aW9uIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9hcHBsaWNhdGlvbnRpZXIiOiJVbmxpbWl0ZWQiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2FwaWNvbnRleHQiOiIvcmV0cnkvdjEiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL3ZlcnNpb24iOiJ2MSIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvdGllciI6IlVubGltaXRlZCIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMva2V5dHlwZSI6IlBST0RVQ1RJT04iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL3VzZXJ0eXBlIjoiQVBQTElDQVRJT04iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXIiOiJhZG1pbkBjYXJib24uc3VwZXIiLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2VuZHVzZXJUZW5hbnRJZCI6Ii0xMjM0IiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhcGlnb3ZAc2VycHJvLmdvdi5iciIsImh0dHA6Ly93c28yLm9yZy9jbGFpbXMvZ2l2ZW5uYW1lIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL2xhc3RuYW1lIjoiYWRtaW4iLCJodHRwOi8vd3NvMi5vcmcvY2xhaW1zL29yZ2FuaXphdGlvbiI6InN1cHNzIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9yb2xlIjoiQXBwbGljYXRpb24vYWRtaW5fYXBwbGljYXRpb250ZXN0ZV9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX0RFTkFUUkFOX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fMzM2ODMxMTEwMDAxMDdfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl8zMzk0NTYzMjE1My1DUEZfU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9hcHBsaWNhdGlvbnRlc3RlX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fQ09OVFJBVE8tU0lBUE5FVF9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX1NJQVNHX0lOVEVHUkFDQU9fU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19NUF9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX1NURVJOQV9RTElLU0VOU0VfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9TSUFTR19JTlRFR1JBQ0FPX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fQ09OVFJBVE8tVEVTVEUtQ09OU1VMVEFJUlBGX1BST0RVQ1RJT04sQXBwbGljYXRpb24vYWRtaW5fU1RFUk5BX01JQ1JPU1RSQVRFR1lfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl8wNDQ5MzU5NjQ2NS1DUEZfU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUTy1MSU5DRV9TQU5EQk9YLEludGVybmFsL2V2ZXJ5b25lLEFwcGxpY2F0aW9uL2FkbWluXzMzOTQ1NjMyMTUzLUNQRl9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NvbnRyYXRvLVNFQUJSQV9DUEZfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19MSUNJVEFDQU9fU0FOREJPWCxBcHBsaWNhdGlvbi9hZG1pbl8wNDQ5MzU5NjQ2NS1DUEZfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUTy1MSU5DRV9QUk9EVUNUSU9OLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPLVNJQVBORVRfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9yZXN0X2FwaV9zdG9yZSxBcHBsaWNhdGlvbi9hZG1pbl9DT05UUkFUT19ERU5BVFJBTl9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPLVRFU1RFLUNPTlNVTFRBSVJQRl9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX0xJQ0lUQUNBT19QUk9EVUNUSU9OLGFkbWluLEFwcGxpY2F0aW9uL2FkbWluX0ludHJlZ3Jhw6fDo28gU0lBU0dfUFJPRFVDVElPTixBcHBsaWNhdGlvbi9hZG1pbl9TVEVSTkFfTUlDUk9TVFJBVEVHWV9TQU5EQk9YLEFwcGxpY2F0aW9uL2FkbWluX0NPTlRSQVRPX01QX1NBTkRCT1gsSW50ZXJuYWwvc3Vic2NyaWJlcixBcHBsaWNhdGlvbi9hZG1pbl9TVEVSTkFfUUxJS1NFTlNFX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fRGVmYXVsdEFwcGxpY2F0aW9uX1NBTkRCT1gsQXBwbGljYXRpb24vYWRtaW5fQ29udHJhdG8tU0VBQlJBX0NQRl9TQU5EQk9YIiwiaHR0cDovL3dzbzIub3JnL2NsYWltcy9zdHJlZXRhZGRyZXNzIjoiYWRtaW4ifQ==.sohMiAvLRE8wpA56+BN+K/E6f5hlkZwp7fvX3E+1pRqVVwI7gmVDczkmcMDb+mUH/fAWwfuVfyaehtLq1KPgdRN0smea1BPB1P62/4TZfBHHkTjxCZqwrRx5z1613jRcMfvYl1ItN1x2+8Pby6fxdcfyBQVwVqyd4jdrO2eHxsGpEuSO+jLaoESnf3n5/wVv4dHov1LROmXGWctrrstNuoh3yjadTclNiuTpWGbyMpPrQWKZZRnSlGHa6tczjZq54MuI0kLFkUiNA8DRY8pJ/cizNlfUBPYdhSYXGV2tIoZ0PQr2YlhRldd99cTuVW8PTWlVxrAYuuLx7g7oS9Kbag==",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "cpf",
+            "in": "path",
+            "description": "Número do CPF",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-jwt-assertion",
+            "in": "header",
+            "description": "Payload do assertion",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados do servidor",
+            "schema": {
+              "$ref": "#/definitions/ConsultaSiape"
+            }
+          },
+          "400": {
+            "description": "Para quaisquer erros do cliente."
+          },
+          "404": {
+            "description": "Não existe BPC com o número do NIT informado."
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "definitions": {
+    "ConsultaSiape": {
+      "type": "object",
+      "properties": {
+        "codAtivFun": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codCargo": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codClasse": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codJornada": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codNovaFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrAposentadoria": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrExclusao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrIngressoOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrIngressoServPublico": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrIsencaoIR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOcorrPSS": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codPadrao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codSitFuncional": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codUorgExercicio": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codUorgLotacao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codUpag": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codValeTransporte": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "codigoOrgaoOrigem": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "cpfChefiaImediata": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataExercicioNoOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataFimOcorrIsencaoIR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataFimOcorrPSS": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataFimValeAR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataIngressoFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataIngressoNovaFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataIniOcorrIsencaoIR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataIniOcorrPSS": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataIniValeAR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataOcorrAposentadoria": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataOcorrExclusao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataOcorrIngressoOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "dataOcorrIngressoServPublico": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "emailChefiaImediata": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "emailServidor": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "identUnica": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "matriculaSiape": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeAtivFun": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeCargo": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeChefeUorg": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeClasse": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeJornada": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeNovaFuncao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrAposentadoria": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrExclusao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrIngressoOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrIngressoServPublico": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrIsencaoIR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOcorrPSS": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeRegimeJuridico": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeSitFuncional": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeUorgExercicio": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeUorgLotacao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "nomeUpag": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "percentualTS": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "pontuacaoDesempenho": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaNivelCargo": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaOrgao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaOrgaoOrigem": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaRegimeJuridico": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaUorgExercicio": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaUorgLotacao": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "siglaUpag": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "tipoValeAR": {
+          "type": "string",
+          "description": "Número do CPF"
+        },
+        "valorValeTransporte": {
+          "type": "string",
+          "description": "Número do CPF"
+        }
+      }
+    }
+  }
+}
