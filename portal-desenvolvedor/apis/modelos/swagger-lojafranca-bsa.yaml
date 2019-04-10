@@ -48,12 +48,6 @@ paths:
       description: "<br>\n## Consulta de Cota ##\nRetorna a cota disponível para um\
         \ determinado viajante.
 
-      requestBody:
-        content:
-          text/plain:
-            schema:
-              $ref: '#/components/schemas/EntradaCota'
-        required: false
       parameters:
         - name: ni
           in: path
