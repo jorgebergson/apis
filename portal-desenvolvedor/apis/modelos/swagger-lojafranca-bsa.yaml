@@ -14,8 +14,21 @@ info:
     * "Post - Devolução Parcial de Venda" - Efetua uma operação de devolução parcial de venda. 
     * "Post - Devolução Total de Venda" - Efetua uma operação de devolução total de venda. 
     * "Post - Troca Item Idêntico de Venda" - Efetua uma operação de troca de item idêntico de venda. 
+    
+    
+    | Tipo | Nome | Descrição |
+    | -----|:-----|:----------|
+    | Post | Consulta de Cota | Retorna a cota disponível para um determinado viajante. |
+    | Post | Consulta de Viajante | Retorna o nome, data de nascimento e a data da última venda de um determinado viajante. |
+    | Post | Consulta Cotação do Dólar | Retorna a cotação do dólar de uma determinada data. |
+    | Post | Processa Venda de Viajante | Efetua uma operação de processamento de venda. |
+    | Post | Entrega Venda para Viajante | Efetua uma operação de entrega de venda. |
+    | Post | Cancela Venda de Viajante | Efetua uma operação de cancelamento de venda. | 
+    | Post | Devolução Parcial de Venda | Efetua uma operação de devolução parcial de venda. |
+    | Post | Devolução Total de Venda | Efetua uma operação de devolução total de venda. |
+    | Post | Troca Item Idêntico de Venda | Efetua uma operação de troca de item idêntico de venda. |
     ### Códigos de Retorno não Bilhetados 
-    | Código de retorno | Resumido | Explicação |
+    | Código de retorno | Resumido | Descrição |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
     | 400           | Requisição inválida | O parâmetro de entrada informado não é válido. |
     | 404           | Not found           | O parâmetro de entrada informado não foi encontrado.
