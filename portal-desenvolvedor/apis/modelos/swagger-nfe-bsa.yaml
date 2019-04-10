@@ -280,6 +280,7 @@ paths:
           description: Não existe NF-e com chave de acesso informada.
         '500':
           description: Erro interno do servidor
+      operationId: https://apigateway.serpro.gov.br/nfe-trial/1/35161147508411011603551000077959551093041003
       externalDocs:
         description: "NFes disponíveis para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/NFe-Degustacao.pdf
