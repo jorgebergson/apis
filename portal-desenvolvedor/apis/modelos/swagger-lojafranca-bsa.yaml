@@ -46,7 +46,7 @@ paths:
       - 5 Métodos da API
       summary: Realiza as operações da API
       description: "<br>\n## Consulta de Cota ##\nRetorna a cota disponível para um\
-        \ determinado viajante.
+        \ determinado viajante."
 
       parameters:
         - name: ni
