@@ -2,8 +2,7 @@ openapi: 3.0.2
 info:
   title: Consulta Massiva CPF
   version: v1
-  description: |-
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf). 
+  description: |- 
     O serviço &nbsp; *Consulta Massiva CPF* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
