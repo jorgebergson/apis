@@ -48,7 +48,7 @@ paths:
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       description: |-
-      Consulta de Cota - Retorna a cota disponível para um determinado viajante.
+        Consulta de Cota - Retorna a cota disponível para um determinado viajante.
 
       parameters:
         - name: ni
