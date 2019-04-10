@@ -5,13 +5,8 @@ info:
   description: |- 
     O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
     ### Métodos da API Loja Franca
-    * "Post - Consulta de Cota" * - Retorna a cota disponível para um determinado viajante. Para viajante brasileiro é obrigatória a identificação pelo número de documento CPF.
-    
-    
-    Serviço: viajante/cota
-    
-    
-    * "Post - Consulta de Cota" * - Retorna a cota disponível para um determinado viajante. Para viajante brasileiro é obrigatória a identificação pelo número de documento CPF.
+    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante. Para viajante brasileiro é obrigatória a identificação pelo número de documento CPF. Serviço: *viajante/cota*    
+    * "Post - Consulta de Viajante" - Retorna o nome, data de nascimento e a data da última venda de um determinado viajante. Serviço: *viajante/consujlta*
     
     
     Serviço: viajante/cota
