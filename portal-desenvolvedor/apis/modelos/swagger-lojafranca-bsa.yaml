@@ -5,12 +5,8 @@ info:
   description: |- 
     O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
     ### Métodos da API Loja Franca
-    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante. &nbsp; Serviço: &nbsp; &nbsp; *viajante/cota*    
-    
-    
-    * "Post - Consulta de Viajante" - Retorna o nome, data de nascimento e a data da última venda de um determinado viajante. &nbsp; Serviço: &nbsp; &nbsp; *viajante/consulta*
-    
-    
+    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante. &nbsp; Serviço: &nbsp; &nbsp; *viajante/cota*     
+    * "Post - Consulta de Viajante" - Retorna o nome, data de nascimento e a data da última venda de um determinado viajante. &nbsp; Serviço: &nbsp; &nbsp; *viajante/consulta* 
     * "Post - Consulta Cotação do Dólar" - Retorna a cotação do dólar de uma determinada data. &nbsp; Serviço: &nbsp; &nbsp; *cotacaoDolar?dataCotacao=2017-12-01 *
 
 
