@@ -3,7 +3,6 @@ info:
   title: Consulta Massiva CNPJ
   version: 1.0.0
   description: |-
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf).
     O serviço &nbsp; *Consulta Massiva CNPJ* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
