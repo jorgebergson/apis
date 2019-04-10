@@ -45,6 +45,8 @@ paths:
       tags:
       - 5 Métodos da API
       summary: Realiza as operações da API
+      x-auth-type: Application & Application User
+      x-throttling-tier: Unlimited
       description: "<br>\n## Consulta de Cota ##\nRetorna a cota disponível para um\
         \ determinado viajante."
 
