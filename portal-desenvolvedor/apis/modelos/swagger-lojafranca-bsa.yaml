@@ -5,27 +5,15 @@ info:
   description: |- 
     O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
     ### Métodos da API Loja Franca
-    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante.
-    
-    &nbsp; &nbsp; Serviço: &nbsp; *viajante/cota*     
+    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante.     
     * "Post - Consulta de Viajante" - Retorna o nome, data de nascimento e a data da última venda de um determinado viajante.
-    
-    
-    &nbsp; &nbsp; Serviço: &nbsp; *viajante/consulta* 
     * "Post - Consulta Cotação do Dólar" - Retorna a cotação do dólar de uma determinada data. 
-    &nbsp; &nbsp; Serviço: &nbsp; *cotacaoDolar?dataCotacao=2017-12-01*
     * "Post - Processa Venda de Viajante" - Efetua uma operação de processamento de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda*
     * "Post - Entrega Venda para Viajante" - Efetua uma operação de entrega de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda/entrega?idVenda=2017000000020992652¬aFiscalSaida=35160400073132000143550012017000006572827920*
     * "Post - Cancela Venda de Viajante" - Efetua uma operação de cancelamento de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda/cancelamento?idVenda=2017000000020992652*
     * "Post - Devolução Parcial de Venda" - Efetua uma operação de devolução parcial de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda/devolucaoParcial*
     * "Post - Devolução Total de Venda" - Efetua uma operação de devolução total de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda/devolucao?idVenda=2017000000020992652¬aFiscalEntrada=42100484684182000157550010000000020108042108*
     * "Post - Troca Item Idêntico de Venda" - Efetua uma operação de troca de item idêntico de venda. 
-    &nbsp; &nbsp; Serviço: &nbsp; *venda/trocaItemIdentico*
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
