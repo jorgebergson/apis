@@ -4,22 +4,11 @@ info:
   version: v1
   description: |- 
     O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
-    ### Métodos da API Loja Franca
-    * "Post - Consulta de Cota" - Retorna a cota disponível para um determinado viajante.     
-    * "Post - Consulta de Viajante" - Retorna o nome, data de nascimento e a data da última venda de um determinado viajante.
-    * "Post - Consulta Cotação do Dólar" - Retorna a cotação do dólar de uma determinada data. 
-    * "Post - Processa Venda de Viajante" - Efetua uma operação de processamento de venda. 
-    * "Post - Entrega Venda para Viajante" - Efetua uma operação de entrega de venda. 
-    * "Post - Cancela Venda de Viajante" - Efetua uma operação de cancelamento de venda. 
-    * "Post - Devolução Parcial de Venda" - Efetua uma operação de devolução parcial de venda. 
-    * "Post - Devolução Total de Venda" - Efetua uma operação de devolução total de venda. 
-    * "Post - Troca Item Idêntico de Venda" - Efetua uma operação de troca de item idêntico de venda. 
-    
-    
+    ### Métodos da API Loja Franca    
     | Tipo | Nome | Descrição |
     | -----|:-----|:----------|
     | Post | Consulta de Cota | Retorna a cota disponível para um determinado viajante. |
-    | Post | Consulta de Viajante | Retorna o nome, data de nascimento e a data da última venda de um determinado viajante. |
+    | Post | Consulta de Viajante | Retorna o nome, data de nascimento e a data da última venda de um viajante. |
     | Post | Consulta Cotação do Dólar | Retorna a cotação do dólar de uma determinada data. |
     | Post | Processa Venda de Viajante | Efetua uma operação de processamento de venda. |
     | Post | Entrega Venda para Viajante | Efetua uma operação de entrega de venda. |
