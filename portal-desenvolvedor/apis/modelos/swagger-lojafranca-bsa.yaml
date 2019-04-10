@@ -330,6 +330,19 @@ paths:
             schema:
               $ref: '#/components/schemas/EntradaCota'
         required: false
+      parameters:
+        - name: ni
+          in: path
+          description: Número de Inscrição do CPF
+          required: true
+          schema:
+            type: number
+        - name: x-signature
+          in: header
+          required: false
+          description: 'Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.'
+          schema:
+            type: integer  
       responses:
         200:
           description: OK
