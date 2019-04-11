@@ -12,9 +12,17 @@ info:
     \    \n## Endereço de Degustação\nhttps://apigateway.serpro.gov.br/loja-franca-hom/api/"
   version: "1"
 servers:
-- url: https://apigateway.serpro.gov.br/api-loja-franca-trial/api
+  - url: https://apigateway.serpro.gov.br/api-loja-franca-trial/api
+    description: Trial
+  - url: https://apigateway.serpro.gov.br/api-loja-franca/api
+    description: Produção
 security:
-- Bearer: []
+  - APIKEY: []
+  - OAuth2: []
+  - Authorization: []
+externalDocs:
+  description: "Detalhamento da API Loja Franca de Fronteiras"
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
   Descrição:
     head:
@@ -557,7 +565,7 @@ paths:
           text/plain:
             schema:
               $ref: '#/components/schemas/EntradaCota'
-        required: false
+            example: Informe o Payload em base 64 de acordo com o método desejado.
       responses:
         200:
           description: OK
@@ -602,7 +610,16 @@ components:
                 type: integer
                 example: 15
   securitySchemes:
-    Bearer:
+   APIKEY:
       type: apiKey
-      name: Authorization
+      name: x-jwt-assertion
       in: header
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apigateway.serpro.gov.br/token'
+    Authorization:
+      type: http
+      description: Autenticação para ambiente trial
+      scheme: bearer  
