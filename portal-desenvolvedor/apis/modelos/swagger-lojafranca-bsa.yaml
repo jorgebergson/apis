@@ -18,8 +18,8 @@ servers:
     description: Produção
 security:
   - APIKEY: []
-  - OAuth2: []
-  - Authorization: []
+    OAuth2: []
+    Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
@@ -610,16 +610,16 @@ components:
                 type: integer
                 example: 15
   securitySchemes:
-   APIKEY:
-      type: apiKey
-      name: x-jwt-assertion
-      in: header
-    OAuth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: 'https://apigateway.serpro.gov.br/token'
-    Authorization:
-      type: http
-      description: Autenticação para ambiente trial
-      scheme: bearer  
+      APIKEY:
+        type: apiKey
+        name: x-jwt-assertion
+        in: header
+      OAuth2:
+        type: oauth2
+        flows:
+          clientCredentials:
+            tokenUrl: 'https://apigateway.serpro.gov.br/token'
+      Authorization:
+        type: http
+        description: Autenticação para ambiente trial
+        scheme: bearer
