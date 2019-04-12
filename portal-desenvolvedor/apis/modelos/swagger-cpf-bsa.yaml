@@ -1,161 +1,126 @@
 openapi: 3.0.2
 info:
-  title: Consulta Massiva CPF
-  version: v1
+  title: Integra Loja Franca
+  version: "1"
   description: |- 
-    O serviço &nbsp; *Consulta Massiva CPF* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
+    O serviço &nbsp; *Integra Loja Franca* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações para o processo de vendas das Lojas Francas de Fronteira.
+    ### Métodos da API Loja Franca    
+    | Tipo | Nome | Descrição |
+    | -----|:-----|:----------|
+    | Post | Consulta de Cota | Retorna a cota disponível para um determinado viajante. |
+    | Post | Consulta de Viajante | Retorna o nome, data de nascimento e a data da última venda de um viajante. |
+    | Post | Consulta Cotação do Dólar | Retorna a cotação do dólar de uma determinada data. |
+    | Post | Processa Venda de Viajante | Efetua uma operação de processamento de venda. |
+    | Post | Entrega Venda para Viajante | Efetua uma operação de entrega de venda. |
+    | Post | Cancela Venda de Viajante | Efetua uma operação de cancelamento de venda. | 
+    | Post | Devolução Parcial de Venda | Efetua uma operação de devolução parcial de venda. |
+    | Post | Devolução Total de Venda | Efetua uma operação de devolução total de venda. |
+    | Post | Troca Item Idêntico de Venda | Efetua uma operação de troca de item idêntico de venda. |
     ### Códigos de Retorno não Bilhetados 
-    | Código de retorno | Resumido | Explicação |
+    | Código de retorno | Resumido | Descrição |
     | ------------- |:--------------------|:-----------------------------------------------------------------------------|
-    | 400           | Requisição inválida | O Número de Inscrição do CPF informado não é válido. |
+    | 400           | Requisição inválida | O parâmetro de entrada informado não é válido. |
+    | 404           | Not found           | O parâmetro de entrada informado não foi encontrado.
     | 500           | Erro no servidor    | Ocorreu algum erro interno.      |     
     ### Solicitando assinatura com Carimbo de Tempo
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
-    ### Verificando assinatura com Carimbo de Tempo
+    ### Verificando assinatura com Carimbo de Tempo - Teste
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
-  - url: 'https://apigateway.serpro.gov.br/consulta-cpf-trial/v1'
+  - url: https://apigateway.serpro.gov.br/api-loja-franca-trial/api
     description: Trial
-  - url: 'https://apigateway.serpro.gov.br/consulta-cpf/api/v1'
+  - url: https://apigateway.serpro.gov.br/api-loja-franca/api
     description: Produção
 security:
   - APIKEY: []
     OAuth2: []
-    Authorization: []   
+    Authorization: []
 externalDocs:
-  description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CPF.pdf
+  description: "Detalhamento da API Loja Franca de Fronteiras"
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
-  '/cpf/{ni}':
-    get:
-      summary: Consulta o CPF pelo Número de Inscrição
-      description: |-
-        Retorna os dados do Cadastro de Pessoa Física (CPF)       
-      parameters:
-        - name: ni
-          in: path
-          description: Número de Inscrição do CPF
-          required: true
-          schema:
-            type: number
-        - name: x-signature
-          in: header
-          required: false
-          description: 'Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.'
-          schema:
-            type: integer
+  '/':
+    post:
+      summary: Realiza as operações da API
+      description: "Métodos da API" 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EntradaCota'
+            example: Informe o Payload em base 64 de acordo com o método desejado.
       responses:
-        '200':
-          description: Retorna os dados da Pessoa Física.
-          headers:
-            stamp:
-              description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
-              schema:
-                type: string
+        200:
+          description: OK.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CPF'
-              example:
-                ni: "40442820135"
-                nome: "Nome do CPF 404.428.201-35"
-                situacao:
-                  codigo: "0"
-                  descricao: "Regular"
-        '206':
-          description: Partial content, as informações foram retornadas, mas não completamente. Algum campo não pôde ser retornado.
-          headers:
-            stamp:
-              description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1
-              schema:
-                type: string
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CPF'
-        '400':
-          description: O número de CPF informado não é válido.
-        '404':
-          description: Não existe CPF com o número de inscrição informado.
-        '500':
+                $ref: '#/components/schemas/SaidaCota'
+        400: 
+          description: Payload inválido.
+        404:
+          description: O payload informado não foi encontrado.  
+        422:
+          description: |-
+            Códigos dos erros de negócio:
+            13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 52, 54, 55, 56, 57, 58, 99, -99
+          content: {}
+        500:
           description: Erro interno do servidor.
-      operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
+      operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
       externalDocs:
-        description: "CPFs para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/CPF-Degustacao.pdf
-  /status:
-    get:
-      tags:
-        - Status
-      summary: Verifica status da API
-      responses:
-        '200':
-          description: Serviço disponível
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-              example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00"
-        '500':
-          description: Serviço indisponível
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-              example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00"          
+        description: "Payloads para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Payloads-Degustacao.pdf          
 components:
   schemas:
-    CPF:
+    EntradaCota:
+      type: string
+      properties:
+        payload:
+          description: Informe aqui o payload da transação
+          type: Base 64
+    SaidaCota:
       type: object
       properties:
-        ni:
+        nomeViajante:
           type: string
-          pattern: '^\d{11}$'
-        nome:
+          description: Nome do viajante
+          example: Joao da Silva
+        nomeViajante2:
           type: string
-        situacao:
-          type: object
-          properties:
-            codigo:
-              type: string
-              enum:
-                - '0'
-                - '2'
-                - '3'
-                - '4'
-                - '5'
-                - '8'
-                - '9'
-            descricao:
-              type: string
-              enum:
-                - Regular
-                - Suspensa
-                - Titular Falecido
-                - Pendente de Regularização
-                - Cancelada por Multiplicidade
-                - Nula
-                - Cancelada de Ofício
-    Status:
-      type: object
-      properties:
-        lastUpdateAt:
+          description: Nome do viajante
+          example: Joao da Silva          
+        dataUltimaVenda: 
           type: string
-          format: date-time
-  securitySchemes:
-    APIKEY:
-      type: apiKey
-      name: x-jwt-assertion
-      in: header
-    OAuth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: 'https://apigateway.serpro.gov.br/token'
-    Authorization:
-      type: http
-      description: Autenticação para ambiente trial
-      scheme: bearer
+          description: Data da ultima venda
+          example: 2017-12-08T17:13:55
+        valorSaldoCota:
+          type: string
+          description: Valor do saldo da cota
+          example: 300
+        saldoCotaProduto:
+          type: array
+          items:
+            type: object
+            properties:
+              codigoProduto:
+                type: integer
+                example: 1
+              quantidade:
+                type: integer
+                example: 15
+securitySchemes:
+      APIKEY:
+        type: apiKey
+        name: x-jwt-assertion
+        in: header
+      OAuth2:
+        type: oauth2
+        flows:
+          clientCredentials:
+            tokenUrl: 'https://apigateway.serpro.gov.br/token'
+      Authorization:
+        type: http
+        description: Autenticação para ambiente trial
+        scheme: bearer
