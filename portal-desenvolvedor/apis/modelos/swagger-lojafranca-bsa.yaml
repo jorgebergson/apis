@@ -80,13 +80,36 @@ components:
         payload:
           description: Informe aqui o payload da transação
           type: Base 64
-    SaidaCota:
+   SaidaCota:
       type: object
       properties:
-        saida:
-          description: Json com os dados de retorno da consulta
+        nomeViajante:
           type: string
-          example: *
+          description: Nome do viajante
+          example: Joao da Silva
+        nomeViajante2:
+          type: string
+          description: Nome do viajante
+          example: Joao da Silva          
+        dataUltimaVenda: 
+          type: string
+          description: Data da ultima venda
+          example: 2017-12-08T17:13:55
+        valorSaldoCota:
+          type: string
+          description: Valor do saldo da cota
+          example: 300
+        saldoCotaProduto:
+          type: array
+          items:
+            type: object
+            properties:
+              codigoProduto:
+                type: integer
+                example: 1
+              quantidade:
+                type: integer
+                example: 15
 securitySchemes:
       APIKEY:
         type: apiKey
