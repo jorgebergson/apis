@@ -83,14 +83,10 @@ components:
     SaidaCota:
       type: object
       properties:
-        json:
+        saida:
           description: Json com os dados de retorno da consulta
           type: string
-          example: " "
-        json2:
-          description: Json com os dados de retorno da consulta
-          type: string
-          example: " "
+          example: *
 securitySchemes:
       APIKEY:
         type: apiKey
