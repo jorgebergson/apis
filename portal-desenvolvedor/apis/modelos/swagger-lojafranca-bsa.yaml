@@ -52,13 +52,13 @@ paths:
             example: Informe o Payload em base 64 de acordo com o método desejado.
       responses:
         200:
-          description: OK
+          description: OK.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SaidaCota'
         400: 
-          description: Payload inválido
+          description: Payload inválido.
         404:
           description: O payload informado não foi encontrado.  
         422:
@@ -79,21 +79,26 @@ components:
       properties:
         payload:
           description: Informe aqui o payload da transação
+          type: Base 64
     SaidaCota:
       type: object
       properties:
+        Metodo Consulta Cota:
+          type:
+          description: 
+          example: 
         nomeViajante:
           type: string
-          description: Nome do Viajante
-          example: FULANO DE TAL
-        dataUltimaVenda:
+          description: Nome do viajante
+          example: Joao da Silva
+        dataUltimaVenda: 
           type: string
-          description: Data da última venda para o viajante
+          description: Data da ultima venda
           example: 2017-12-08T17:13:55
         valorSaldoCota:
-          type: number
-          description: Saldo da cota do viajante
-          example: 300.0
+          type: string
+          description: Valor do saldo da cota
+          example: 300
         saldoCotaProduto:
           type: array
           items:
