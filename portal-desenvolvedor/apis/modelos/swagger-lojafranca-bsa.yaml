@@ -80,7 +80,7 @@ components:
         payload:
           description: Informe aqui o payload da transação
           type: Base 64
-   SaidaCota:
+    SaidaCota:
       type: object
       properties:
         nomeViajante:
