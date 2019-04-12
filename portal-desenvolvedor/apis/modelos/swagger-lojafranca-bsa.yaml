@@ -87,6 +87,10 @@ components:
           type: string
           description: Nome do viajante
           example: Joao da Silva
+        nomeViajante2:
+          type: string
+          description: Nome do viajante
+          example: Joao da Silva          
         dataUltimaVenda: 
           type: string
           description: Data da ultima venda
