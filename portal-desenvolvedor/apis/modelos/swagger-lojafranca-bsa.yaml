@@ -84,7 +84,7 @@ components:
       type: object
       properties:
         Metodo Consulta Cota:
-          type: -
+          type: string
           description: -  
           example: -
         nomeViajante:
