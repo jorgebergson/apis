@@ -81,11 +81,11 @@ components:
           description: Informe aqui o payload da transação
           type: Base 64
     SaidaCota:
-      type: string
+      type: object
       properties:
         json:
-          type: string
           description: Json com os dados de retorno da consulta
+          type: string
 securitySchemes:
       APIKEY:
         type: apiKey
