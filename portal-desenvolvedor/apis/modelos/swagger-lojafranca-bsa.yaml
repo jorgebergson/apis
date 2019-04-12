@@ -83,10 +83,6 @@ components:
     SaidaCota:
       type: object
       properties:
-        Metodo Consulta Cota:
-          type: string
-          description: -  
-          example: -
         nomeViajante:
           type: string
           description: Nome do viajante
