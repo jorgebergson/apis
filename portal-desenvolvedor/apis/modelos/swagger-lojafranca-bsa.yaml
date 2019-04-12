@@ -84,7 +84,7 @@ components:
       type: string
       properties:
         json:
-          type: Json
+          type: string
           description: Json com os dados de retorno da consulta
 securitySchemes:
       APIKEY:
