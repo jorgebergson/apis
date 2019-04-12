@@ -38,7 +38,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/NFe-Degustacao.pdf
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
   '/':
     post:
@@ -57,8 +57,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SaidaCota'
-        400:
-          description: O payload informado não é válido.
+        400: 
+          description: Payload inválido
+        404:
+          description: O payload informado não foi encontrado.  
         422:
           description: |-
             Códigos dos erros de negócio:
