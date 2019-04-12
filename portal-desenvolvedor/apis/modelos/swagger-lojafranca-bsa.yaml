@@ -65,8 +65,11 @@ paths:
 components:
   schemas:
     EntradaCota:
-      type: string
-      example: Informe aqui o payload da transação
+      type: object
+      properties:
+        document:
+          type: string
+          description: Informe aqui o payload da transação
     SaidaCota:
       type: object
       properties:
