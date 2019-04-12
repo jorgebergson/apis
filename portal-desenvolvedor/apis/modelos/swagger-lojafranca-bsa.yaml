@@ -38,7 +38,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
+url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
   /:
     post:
