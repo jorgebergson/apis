@@ -40,13 +40,13 @@ externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
-  /:
+  '/':
     post:
       summary: Realiza as operações da API
       description: "Métodos da API" 
       requestBody:
         content:
-          text/plain:
+          application/json:
             schema:
               $ref: '#/components/schemas/EntradaCota'
             example: Informe o Payload em base 64 de acordo com o método desejado.
