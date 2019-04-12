@@ -86,6 +86,11 @@ components:
         json:
           description: Json com os dados de retorno da consulta
           type: string
+          example: " "
+        json2:
+          description: Json com os dados de retorno da consulta
+          type: string
+          example: " "
 securitySchemes:
       APIKEY:
         type: apiKey
