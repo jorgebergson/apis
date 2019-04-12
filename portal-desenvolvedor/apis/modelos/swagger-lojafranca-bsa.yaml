@@ -71,7 +71,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
       externalDocs:
         description: "Payloads para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Payloads-Degustacao.pdf          
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Payloads-Degustacao.pdf
 components:
   schemas:
     EntradaCota:
@@ -110,17 +110,17 @@ components:
               quantidade:
                 type: integer
                 example: 15
-securitySchemes:
-      APIKEY:
-        type: apiKey
-        name: x-jwt-assertion
-        in: header
-      OAuth2:
-        type: oauth2
-        flows:
-          clientCredentials:
-            tokenUrl: 'https://apigateway.serpro.gov.br/token'
-      Authorization:
+  securitySchemes:
+    APIKEY:
+      type: apiKey
+      name: x-jwt-assertion
+      in: header
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apigateway.serpro.gov.br/token'
+    Authorization:
         type: http
         description: Autenticação para ambiente trial
         scheme: bearer
