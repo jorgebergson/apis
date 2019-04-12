@@ -16,16 +16,8 @@ externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
-  Descrição:
-    head:
-      tags:
-      - 1 Introdução
-      summary: API Integra Loja Franca de Fronteira
-      description: "A API INTEGRA LOJA FRANCA"   
   /:
     post:
-      tags:
-      - 5 Métodos da API
       summary: Realiza as operações da API
       description: "Métodos da API" 
       requestBody:
