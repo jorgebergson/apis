@@ -49,7 +49,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EntradaCota'
-            example: Payload em base 64 do método.
+            example: Payload em base 64.
       responses:
         200:
           description: OK.
@@ -78,7 +78,7 @@ components:
       type: string
       properties:
         payload:
-          description: Informe aqui o payload da transação
+          description: Json de entrada codificado em base 64.
           type: Base 64  
     SaidaCota:
       type: string
