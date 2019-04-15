@@ -52,7 +52,7 @@ paths:
             example: Informe o Payload em base 64 de acordo com o método desejado.
       responses:
         200:
-          description: OK.
+          description: OK
           content:
             application/json:
               schema:
