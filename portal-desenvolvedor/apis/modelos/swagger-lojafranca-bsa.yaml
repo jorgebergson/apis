@@ -50,7 +50,7 @@ paths:
           description: Payload em base 64
           required: false
           schema:
-            type: number
+            type: Base 64
       requestBody:
         content:
           application/json:
@@ -81,12 +81,6 @@ paths:
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Degustacao.pdf
 components:
   schemas:
-    EntradaCota:
-      type: string
-      properties:
-        payload:
-          description: Informe aqui o payload da transação
-          type: Base 64
     SaidaCota:
       type: string
       properties:
