@@ -47,9 +47,9 @@ paths:
       requestBody:
         content:
           application/json:
-            schema: 
-	      $ref: '#/components/schemas/EntradaCota'
-	    example: Informe o Payload em base 64 de acordo com o método desejado.
+	    schema:
+              $ref: '#/components/schemas/EntradaCota'
+            example: Informe o Payload em base 64 de acordo com o método desejado.
       responses:
         200:
           description: OK.
