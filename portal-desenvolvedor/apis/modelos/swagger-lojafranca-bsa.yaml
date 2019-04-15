@@ -45,8 +45,8 @@ paths:
       summary: Realiza as operações da API
       description: "Métodos da API" 
       parameters:
-        - name: payload
-          in: base64
+        - name: payload64
+          in: path
           description: Payload em base 64
           required: true
           schema:
