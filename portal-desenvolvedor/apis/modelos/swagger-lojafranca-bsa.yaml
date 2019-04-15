@@ -71,7 +71,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
       externalDocs:
         description: "Payloads para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Payloads-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Degustacao.pdf
 components:
   schemas:
     EntradaCota:
