@@ -35,17 +35,25 @@ function makeOperationBlock(id, operacao, metodo, api){
      ent += "<div id=\"entrada"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
      ent += "<h4>Dados de Entrada</h4>";
      var opCampos = "";
-     if(api.paths[operacao][metodo].parameters){
+     if(api.paths[operacao][metodo].parameters ){
         api.paths[operacao][metodo].parameters.forEach(entrada => {
             var type = entrada.schema? entrada.schema.type : entrada.type;
             opCampos += "<tr><td>" + entrada.name + "</td><td>" + entrada.description + "</td><td>" + type + "</td><td>" + entrada.in + "</td></tr>";
         });
         ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th><th>Local</th></tr></thead><tbody>" + opCampos + "</tbody></table>";
      } else {
-     	descricaoEntrada = "Esta API não possui dados de entrada.";
-     	ent +="<ul>";
-     	ent +='<li><strong>' + descricaoEntrada + ' &nbsp; </strong> </li>';
-     	ent +="</ul>";
+    	 if(api.paths[operacao][metodo].requestBody ){
+             ent +="<br>";
+           } else {
+       		descricaoEntrada = "Esta API não possui dados de entrada.";
+       		ent +="<ul>";
+       		ent +='<li><strong>' + descricaoEntrada + ' &nbsp; </strong> </li>';
+       		ent +="</ul>";
+  	       }
+     //	descricaoEntrada = "Esta API não possui dados de entrada.";
+     //	ent +="<ul>";
+     //	ent +='<li><strong>' + descricaoEntrada + ' &nbsp; </strong> </li>';
+     //	ent +="</ul>";
      }
     if(metodo === "post" || metodo === "put"){
         ent += "<h4> Dados do Corpo da Requisição</h4>";
