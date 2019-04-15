@@ -46,11 +46,11 @@ paths:
       description: "Métodos da API" 
       parameters:
         - name: payload
-          in: path
+          in: base64
           description: Payload em base 64
-          required: false
+          required: true
           schema:
-            type: Base 64
+            type: string
       requestBody:
         content:
           application/json:
