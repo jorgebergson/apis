@@ -35,7 +35,7 @@ function makeOperationBlock(id, operacao, metodo, api){
      ent += "<div id=\"entrada"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
      ent += "<h4>Dados de Entrada</h4>";
      var opCampos = "";
-     if(api.paths[operacao][metodo].parameters){
+     if(api.paths[operacao][metodo].parameters || api.paths[operacao][metodo].requestBody ){
         api.paths[operacao][metodo].parameters.forEach(entrada => {
             var type = entrada.schema? entrada.schema.type : entrada.type;
             opCampos += "<tr><td>" + entrada.name + "</td><td>" + entrada.description + "</td><td>" + type + "</td><td>" + entrada.in + "</td></tr>";
@@ -70,20 +70,50 @@ function makeOperationBlock(id, operacao, metodo, api){
     // opProperties.forEach(saida => {
     //     saidaCampos += "<tr><td>" + saida + "</td><td>" +  apiobj[saida].description + "</td><td>" + apiobj[saida].type + "</td></tr>";
     // });
-    var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
-    var fields = Object.getOwnPropertyNames(schema.properties);
-    ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
-    ent += addFields(fields, schema, "");
-    ent += "</tbody></table>";    
-    ent += "<pre class=\"code\">";
-    var jsf = JSONSchemaFaker;
-    jsf.resolveJsonPath = true;
-    jsf.format('double', () => jsf.random.randexp('0\.\d*'));
-    jsf.option({
+  //  var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
+  //  var fields = Object.getOwnPropertyNames(schema.properties);
+  //  ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
+  //  ent += addFields(fields, schema, "");
+  //  ent += "</tbody></table>";    
+  //  ent += "<pre class=\"code\">";
+  //  var jsf = JSONSchemaFaker;
+  //  jsf.resolveJsonPath = true;
+  //  jsf.format('double', () => jsf.random.randexp('0\.\d*'));
+  //  jsf.option({
+  //     fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
+  //     alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
+  // });
+  //  ent += syntaxHighlight(jsf.generate(schema.properties));
+    if(operacao === "/" ){
+    	if(api.paths[operacao][metodo].externalDocs){
+    	opCampos = api.paths[operacao][metodo].externalDocs.url;
+    	descricaoTeste = api.paths[operacao][metodo].externalDocs.description;
+    	ent +="<ul>";
+    	ent +='<li><strong>' + ' Json de Saída ' + ': &nbsp; </strong><a href="' + opCampos + '">Download</a> </li>';
+    	ent +="</ul>";
+    	} else {
+    	descricaoTeste = "Esta API ainda não possui dados de Saida";
+    	ent +="<ul>";
+    	ent +='<li><strong>' + ' Esta API ainda não possui dados de Saída ' + ' &nbsp; </strong> </li>';
+    	ent +="</ul>";
+    	}
+    } else {
+    	var schema = api.paths[operacao][metodo].responses['200'].content['application/json'].schema;
+    	var fields = Object.getOwnPropertyNames(schema.properties);
+    	ent += "<table class=\"alt\"><thead><tr><th>Campo</th><th>Descricao</th><th>Tipo</th></tr></thead><tbody>";
+    	ent += addFields(fields, schema, "");
+    	ent += "</tbody></table>";    
+    	ent += "<pre class=\"code\">";
+    	var jsf = JSONSchemaFaker;
+    	jsf.resolveJsonPath = true;
+    	jsf.format('double', () => jsf.random.randexp('0\.\d*'));
+    	jsf.option({
         fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
         alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
-    });							
-    ent += syntaxHighlight(jsf.generate(schema.properties));
+    	});							
+    	ent += syntaxHighlight(jsf.generate(schema.properties));
+    }
+
     ent += "</pre>";
     ent += "</div>";
     ent += "<div id=\"teste"+ id +"\" class=\"tabcontentData"+ id +" box\" style=\"display:none\">";
