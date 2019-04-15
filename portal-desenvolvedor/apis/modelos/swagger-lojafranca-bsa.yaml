@@ -44,13 +44,6 @@ paths:
     post:
       summary: Realiza as operações da API
       description: "Métodos da API" 
-      parameters:
-        - name: payload64
-          in: path
-          description: Payload em base 64
-          required: true
-          schema:
-            type: string
       requestBody:
         content:
           application/json:
