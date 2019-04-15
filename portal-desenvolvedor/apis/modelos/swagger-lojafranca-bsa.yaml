@@ -49,6 +49,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EntradaCota'
+            example: Payload em base 64 do método.
       responses:
         200:
           description: OK.
