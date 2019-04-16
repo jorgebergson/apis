@@ -1,191 +1,161 @@
-openapi: 3.0.2
+openapi: 3.0.1
 info:
-  title: Consulta Dívida Ativa
+  title: API Consulta Divida Ativa
+  description: "\nPara informações de como se autenticar antes de consumir as API,\
+    \ por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n\
+    \    \nA api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida\
+    \ ativa da união via serviço `HTTP REST`. \n <br>\n\n## Códigos de Retorno nã\
+    o Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| -------------\
+    \ |:--------------------|:-----------------------------------------------------------------------------\
+    \ |\n| &nbsp           | &nbsp    | &nbsp  | \n |400           | Requisição invá\
+    lida    | O número de inscrição informado não é válido.       |\n| &nbsp     \
+    \      | &nbsp    | &nbsp  |\n| 404           | Not found    | O número de inscriç\
+    ão informado não foi encontrado.  |\n| &nbsp           | &nbsp    | &nbsp  |\n\
+    | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n\
+    ## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa/api\n\
+    \n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api"
   version: api
-  description: |-
-    A api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida ativa da união via serviço `HTTP REST`. <br><br>
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação no link: [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf) <br><br>
-    ## Códigos de Retorno não Tarifados 
-    |  Código de retorno |  Resumido |  Explicação |
-    | ------------- |:--------------------|:----------------------------------------------------------------------------- |
-    | &nbsp           | &nbsp    | &nbsp  | 
-     |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-    | &nbsp           | &nbsp    | &nbsp  |
-    | 404           | Not found    | O número de inscrição informado não foi encontrado.  |
-    | &nbsp           | &nbsp    | &nbsp  |
-    | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      | 
 servers:
-  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
-    description: Trial
-  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa/api
-    description: Produção
+- url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
 security:
-  - APIKEY: []
-    OAuth2: []
-    Authorization: []
+- Bearer: []
 paths:
-  '/v1/inscricao/{numeroInscricao}':
+  /v1/inscricao/{numeroInscricao}:
     get:
       tags:
-        - Dívida Ativa
+      - Dívida Ativa
       summary: Consulta dados de inscrição
-      description: |-
-        ## Exemplo
-        #### Chamada
-              [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/inscricao/9061700096419 
-        #### <br> Retorno
-              [
-                {
-                  "inscricao": "90 6 17 000964-19",
-                  "processoAdministrativo": "46206 099222/99-01",
-                  "situacao": "ATIVA NAO PRIORIZADA PARA AJUIZAMENTO",
-                  "dataInscricao": "16/12/2003",
-                  "numeroPFNResponsavel": "1000",
-                  "nomePFNResponsavel": "PRIMEIRA REGIAO",
-                  "numeroPFNInscricao": "1000",
-                  "nomePFNInscricao": "PRIMEIRA REGIAO",
-                  "numeroProcessoJudicial": "",
-                  "numeroProcessoJudicialNovo": "",
-                  "orgaoOrigem": "DRT/DF",
-                  "codigoNaturezaReceita": "0002",
-                  "nomeNaturezaReceita": "NAO TRIBUTARIA",
-                  "codigoReceitaPrincipal": "3623",
-                  "nomeReceita": "DIV.ATIVA-CLT",
-                  "codigoSerie": "5",
-                  "nomeSerie": "CONSOLIDACAO DAS LEIS TRABALHISTAS",
-                  "codigoOrgaoJustica": "100030",
-                  "nomeOrgaoJustica": "VARA DO TRABALHO - BRASILIA",
-                  "numeroJuizo": "000000",
-                  "descricaoJuizo": "Número da Vara Desconhecido",
-                  "dataProtocoloJudExecucao": "",
-                  "dataDistribuicaoJudicial": "",
-                  "indicadorMoedaTotalInscrito": "R$",
-                  "valorTotalInscritoMoeda": "805,06",
-                  "valorTotalInscritoIndex": "756,56",
-                  "indicadorMoedaTotalConsolidado": "R$",
-                  "valorTotalConsolidadoMoeda": "2.403,59",
-                  "indicadorMoedaTotalRemanescente": "R$",
-                  "valorRemanescenteMoeda": "805,06",
-                  "valorRemanescenteIndex": "756,56",
-                  "dataDevolucaoProcesso": "",
-                  "numeroAutoInfracao": "",
-                  "indicadorPrescricaoSV8": "NAO",
-                  "dataDecretacaoFalencia": "",
-                  "dataFimProcurador": "",
-                  "numeroImovelITR": "",
-                  "dataExtincaoInscricao": "",
-                  "motivoSuspensaoExigilidade": "",
-                  "numeroRipSpu": "",
-                  "indicadorAnaliseOrgaoOrigem": "NAO",
-                  "motivoExtincaoInscricao": "",
-                  "indicadorProtImpedAjuiz": "",
-                  "numeroAgrupamento": "",
-                  "numeroInscricaoOriginal": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada1": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada2": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada3": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada4": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada5": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada6": "00 0 00 000000-00",
-                  "numeroInscricaoDerivada7": "00 0 00 000000-00",
-                  "dcomp": "",
-                  "descricaoNaoCalculado": "",
-                  "codigoMunicipioSPU": 0,
-                  "codigoSistemaOrigem": "M",
-                  "descricaoSistemaOrigem": "Manual"
-                }
-              ]
-        #### <br>Chaves para retornos diferentes
-            (200) numeroInscricao: 9061700096419
-            (200) numeroInscricao: 4483300091135
-            (404) numeroInscricao: qualquer outro número            
+      description: "<h1><font color='black'>  Importante: </font> &nbsp; <font color='gray'>Estamos\
+        \ trabalhando para solucionar um problema de conexão ao nosso serviço, atravé\
+        s do navegador Chrome. Enquanto isso, pedimos a gentileza de utilizar, para\
+        \ testes, o navegador Firefox. </font></h1> \n\n \n## Exemplo\n#### Chamada\n\
+        \      [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa/api/v1/inscricao/9061700096419\n\
+        \n#### Retorno\n      [\n        {\n          \"inscricao\": \"90 6 17 000964-19\"\
+        ,\n          \"processoAdministrativo\": \"46206 099222/99-01\",\n       \
+        \   \"situacao\": \"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n          \"\
+        dataInscricao\": \"16/12/2003\",\n          \"numeroPFNResponsavel\": \"1000\"\
+        ,\n          \"nomePFNResponsavel\": \"PRIMEIRA REGIAO\",\n          \"numeroPFNInscricao\"\
+        : \"1000\",\n          \"nomePFNInscricao\": \"PRIMEIRA REGIAO\",\n      \
+        \    \"numeroProcessoJudicial\": \"\",\n          \"numeroProcessoJudicialNovo\"\
+        : \"\",\n          \"orgaoOrigem\": \"DRT/DF\",\n          \"codigoNaturezaReceita\"\
+        : \"0002\",\n          \"nomeNaturezaReceita\": \"NAO TRIBUTARIA\",\n    \
+        \      \"codigoReceitaPrincipal\": \"3623\",\n          \"nomeReceita\": \"\
+        DIV.ATIVA-CLT\",\n          \"codigoSerie\": \"5\",\n          \"nomeSerie\"\
+        : \"CONSOLIDACAO DAS LEIS TRABALHISTAS\",\n          \"codigoOrgaoJustica\"\
+        : \"100030\",\n          \"nomeOrgaoJustica\": \"VARA DO TRABALHO - BRASILIA\"\
+        ,\n          \"numeroJuizo\": \"000000\",\n          \"descricaoJuizo\": \"\
+        Número da Vara Desconhecido\",\n          \"dataProtocoloJudExecucao\": \"\
+        \",\n          \"dataDistribuicaoJudicial\": \"\",\n          \"indicadorMoedaTotalInscrito\"\
+        : \"R$\",\n          \"valorTotalInscritoMoeda\": \"805,06\",\n          \"\
+        valorTotalInscritoIndex\": \"756,56\",\n          \"indicadorMoedaTotalConsolidado\"\
+        : \"R$\",\n          \"valorTotalConsolidadoMoeda\": \"2.403,59\",\n     \
+        \     \"indicadorMoedaTotalRemanescente\": \"R$\",\n          \"valorRemanescenteMoeda\"\
+        : \"805,06\",\n          \"valorRemanescenteIndex\": \"756,56\",\n       \
+        \   \"dataDevolucaoProcesso\": \"\",\n          \"numeroAutoInfracao\": \"\
+        \",\n          \"indicadorPrescricaoSV8\": \"NAO\",\n          \"dataDecretacaoFalencia\"\
+        : \"\",\n          \"dataFimProcurador\": \"\",\n          \"numeroImovelITR\"\
+        : \"\",\n          \"dataExtincaoInscricao\": \"\",\n          \"motivoSuspensaoExigilidade\"\
+        : \"\",\n          \"numeroRipSpu\": \"\",\n          \"indicadorAnaliseOrgaoOrigem\"\
+        : \"NAO\",\n          \"motivoExtincaoInscricao\": \"\",\n          \"indicadorProtImpedAjuiz\"\
+        : \"\",\n          \"numeroAgrupamento\": \"\",\n          \"numeroInscricaoOriginal\"\
+        : \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada1\": \"00 0 00\
+        \ 000000-00\",\n          \"numeroInscricaoDerivada2\": \"00 0 00 000000-00\"\
+        ,\n          \"numeroInscricaoDerivada3\": \"00 0 00 000000-00\",\n      \
+        \    \"numeroInscricaoDerivada4\": \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada5\"\
+        : \"00 0 00 000000-00\",\n          \"numeroInscricaoDerivada6\": \"00 0 00\
+        \ 000000-00\",\n          \"numeroInscricaoDerivada7\": \"00 0 00 000000-00\"\
+        ,\n          \"dcomp\": \"\",\n          \"descricaoNaoCalculado\": \"\",\n\
+        \          \"codigoMunicipioSPU\": 0,\n          \"codigoSistemaOrigem\":\
+        \ \"M\",\n          \"descricaoSistemaOrigem\": \"Manual\"\n        }\n  \
+        \    ]\n<br/>      \n#### Chaves para retornos diferentes\n\n    (200) numeroInscricao:\
+        \ 9061700096419\n    (200) numeroInscricao: 4483300091135\n    (404) numeroInscricao:\
+        \ qualquer outro número            \n    "
       operationId: consultaInscricao
       parameters:
-        - name: numeroInscricao
-          in: path
-          description: Número de inscrição
-          required: true
-          schema:
-            type: string
+      - name: numeroInscricao
+        in: path
+        description: Número de inscrição
+        required: true
+        schema:
+          pattern: ^\d{1,13}$
+          type: string
       responses:
-        '200':
+        200:
           description: Retorna objeto json com o resultado da consulta
-        '400':
+          content: {}
+        400:
           description: Número de Inscrição inválido.
-        '404':
+          content: {}
+        404:
           description: Inscrição não encontrada.
-        '500':
+          content: {}
+        500:
           description: Erro interno do servidor
-  '/v1/devedor/{numeroInscricaoDevedor}':
+          content: {}
+  /v1/devedor/{numeroInscricaoDevedor}:
     get:
       tags:
-        - Dívida Ativa
-      summary: 'Consulta dados do devedor, seja pessoa física ou jurídica'
-      description: |-
-        ## Exemplo
-        #### Chamada
-              [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/devedor/09781911768
-        #### <br> Retorno
-                [
-                  {
-                    "numeroInscricao": "10 5 03 003880-14",
-                    "numeroProcesso": "10166 677771/2014-12",
-                    "situacaoInscricao": "121105",
-                    "situacaoDescricao": "ATIVA NAO PRIORIZADA PARA AJUIZAMENTO",
-                    "nomeDevedor": "DEVEDOR DA SILVA",
-                    "tipoDevedor": "PRINCIPAL",
-                    "valorTotalConsolidadoMoeda": "4.457,56",
-                    "cpfCnpj": "097.819.117-68",
-                    "codigoSida": "1000",
-                    "nomeUnidade": "PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO",
-                    "codigoComprot": "1101951",
-                    "codigoUorg": "0005786"
-                  }
-                ]
-        <br/>      
-        #### Chaves para retornos diferentes
-            (200) numeroInscricaoDevedor: 09781911768 (CPF)
-            (200) numeroInscricaoDevedor: 01415666000181 (CNPJ)
-            (404) numeroInscricaoDevedor: qualquer outro número
+      - Dívida Ativa
+      summary: Consulta dados do devedor, seja pessoa física ou jurídica
+      description: "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa/api/v1/devedor/09781911768\n\
+        \n#### Retorno\n        [\n          {\n            \"numeroInscricao\": \"\
+        10 5 03 003880-14\",\n            \"numeroProcesso\": \"10166 677771/2014-12\"\
+        ,\n            \"situacaoInscricao\": \"121105\",\n            \"situacaoDescricao\"\
+        : \"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n            \"nomeDevedor\"\
+        : \"DEVEDOR DA SILVA\",\n            \"tipoDevedor\": \"PRINCIPAL\",\n   \
+        \         \"valorTotalConsolidadoMoeda\": \"4.457,56\",\n            \"cpfCnpj\"\
+        : \"097.819.117-68\",\n            \"codigoSida\": \"1000\",\n           \
+        \ \"nomeUnidade\": \"PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO\"\
+        ,\n            \"codigoComprot\": \"1101951\",\n            \"codigoUorg\"\
+        : \"0005786\"\n          }\n        ]\n<br/>      \n#### Chaves para retornos\
+        \ diferentes\n\n    (200) numeroInscricaoDevedor: 09781911768 (CPF)\n    (200)\
+        \ numeroInscricaoDevedor: 01415666000181 (CNPJ)\n    (404) numeroInscricaoDevedor:\
+        \ qualquer outro número"
       operationId: consultaDevedorCPF
       parameters:
-        - name: numeroInscricaoDevedor
-          in: path
-          description: Número de inscrição (cpf ou cnpj) do devedor
-          required: true
-          schema:
-            type: string
+      - name: numeroInscricaoDevedor
+        in: path
+        description: Número de inscrição (CPF ou CNPJ) do devedor
+        required: true
+        schema:
+          pattern: ^\d{11,14}$
+          type: string
       responses:
-        '200':
+        200:
           description: Retorna objeto json com o resultado da consulta
-        '400':
-          description: 'O valor do parâmetro ''numeroInscricaoDevedor'' inválido: {numeroInscricaoDevedor}'
-        '404':
+          content: {}
+        400:
+          description: 'O valor do parâmetro ''numeroInscricaoDevedor'' inválido:
+            {numeroInscricaoDevedor}'
+          content: {}
+        404:
           description: Inscrição não encontrada.
-        '500':
+          content: {}
+        500:
           description: Erro interno do servidor
-  '/status':
+          content: {}
+  /status:
     get:
       tags:
-        - Status
+      - Status
       summary: Verifica status da API
       responses:
-        '200':
+        200:
           description: Serviço disponível
           content:
-            application/json:
+            '*/*':
               schema:
                 $ref: '#/components/schemas/Status'
-              example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00"
-        '500':
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
+        500:
           description: Serviço indisponível
           content:
-            application/json:
+            '*/*':
               schema:
                 $ref: '#/components/schemas/Status'
-              example:
-                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
 components:
   schemas:
     Status:
@@ -193,18 +163,9 @@ components:
       properties:
         lastUpdateAt:
           type: string
-          format: date-time   
+          format: date-time
   securitySchemes:
-    APIKEY:
+    Bearer:
       type: apiKey
-      name: x-jwt-assertion
+      name: Authorization
       in: header
-    OAuth2:
-      type: oauth2
-      flows:
-        clientCredentials:
-          tokenUrl: 'https://apigateway.serpro.gov.br/token'
-    Authorization:
-      type: http
-      description: Autenticação para ambiente trial
-      scheme: bearer
