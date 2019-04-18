@@ -36,6 +36,9 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
+externalDocs:
+  description: "Detalhamento da API Loja Franca de Fronteiras"
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DUE.pdf    
 paths:
   '/v2/due/{numero}/{chave}':
     get:
@@ -123,6 +126,10 @@ paths:
           description: Registro não encontado.
         '500':
           description: Erro interno do servidor
+      operationId: https://apigateway.serpro.gov.br/v2/due/{numero}/{chave}
+      externalDocs:
+        description: "DUEs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/DUE-Degustacao.pdf          
   '/status':
     get:
       tags:
