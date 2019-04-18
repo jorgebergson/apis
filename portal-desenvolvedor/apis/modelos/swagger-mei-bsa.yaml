@@ -27,6 +27,9 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
+externalDocs:
+  description: "Detalhamento da "API MEI
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-MEI.pdf    
 paths:
   '/v1/mei/cnpjs/{cpf}':
     get:
@@ -80,6 +83,11 @@ paths:
           description: Nenhum registro encontrado.
         '500':
           description: Erro interno do servidor  
+
+      operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/cnpjs/71066868409
+      externalDocs:
+        description: " CNPJs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/mei-Degustacao.pdf          
   '/v1/mei/certificado/{cpf}':
     get:
       tags:
@@ -155,6 +163,10 @@ paths:
           description: Nenhum registro encontrado.
         '500':
           description: Erro interno do servidor 
+      operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409?ativo=true/
+      externalDocs:
+        description: " CPFs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/MEI-Degustacao.pdf          
   '/v1/mei/certificado/{cpf}/{cnpj}':
     get:
       tags:
@@ -238,7 +250,11 @@ paths:
         '404':
           description: Nenhum registro encontrado.
         '500':
-          description: Erro interno do servidor         
+          description: Erro interno do servidor  
+      operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409/22025711000153
+      externalDocs:
+        description: " CPFs para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/MEI-Degustacao.pdf           
   '/status':
     get:
       tags:
