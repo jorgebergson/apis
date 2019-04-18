@@ -13,8 +13,6 @@ info:
     ### API Serpro - Plataforma de Habilitação  
     O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
     
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação no link: [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf)
-    ### Autenticação
     Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)    
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
