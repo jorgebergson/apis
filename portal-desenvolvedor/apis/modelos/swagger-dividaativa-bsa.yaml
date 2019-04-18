@@ -166,7 +166,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/numeroInscricao'  
+                $ref: '#/components/schemas/numeroInscricaoDevedor'  
         "400":
           description: 'O valor do parâmetro ''numeroInscricaoDevedor'' inválido: {numeroInscricaoDevedor}'
         "404":
