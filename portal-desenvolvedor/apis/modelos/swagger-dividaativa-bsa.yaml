@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   title: Consulta Dívida Ativa
   version: api
-  description: |- Teste Divida Ativa
+  description: Teste Divida Ativa
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
     description: Trial
@@ -193,7 +193,6 @@ components:
         lastUpdateAt:
           type: string
           format: date-time   
-
   securitySchemes:
     APIKEY:
       type: apiKey
