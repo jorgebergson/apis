@@ -9,7 +9,7 @@ info:
     |  Código de retorno |  Resumido |  Explicação |
     | ------------- |:--------------------|:----------------------------------------------------------------------------- |
      |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-    | 404           | Not found    | O número de inscrição informado não foi encontrado.  |
+    | 404 X         | Not found    | O número de inscrição informado não foi encontrado.  |
     | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      | 
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
