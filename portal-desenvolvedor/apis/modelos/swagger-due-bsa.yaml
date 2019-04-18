@@ -3,33 +3,30 @@ info:
   title: Consulta DUE
   version: v1
   description: |-
-    ## Descrição da API - DUE 
-    O serviço `Consulta DUE` é disponibilizado através do `HTTP REST` oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil. <br><br>
-    Consolidamos aqui as informações técnicas para a integração dos sistemas das empresas com os serviços do Portal Único do Comércio Exterior, baseado nas instruções de uso e contratação conforme a plataforma de habilitação API Serpro. A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8. <br><br> 
-    ## API Serpro - Plataforma de Habilitação  
+    O serviço &nbsp; *Consulta DUE* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Físicas no Brasil.
+
+    Consolidamos aqui as informações técnicas para a integração dos sistemas das empresas com os serviços do Portal Único do Comércio Exterior, baseado nas instruções de uso e contratação conforme a plataforma de habilitação API Serpro. 
+    
+    A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8. <br><br> 
+    ### API Serpro - Plataforma de Habilitação  
     Todas as empresas que possuem perfil de acesso para realizar a consulta DUE em tela no Portal Único do Comércio Exterior já estão aptas a celebrar o contrato comercial com o Serpro para consumo da API DUE. <br><br>
     O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente. <br><br>
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf <br><br>
-     ## Códigos de Retorno não Bilhetados 
+    ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
-    | ------------- |--------------------|-----------------------------------------------------------------------------|
-    | &nbsp           | &nbsp    | &nbsp  | 
-     | 400 | Requisição inválida | Requisição mal formatada (Nº da DUE / Chave) |
-    | &nbsp           | &nbsp    | &nbsp  | 
-     | 404 | Not Found | Nenhum registro encontrado com os parâmetros informados (Nº da DUE / Chave) |
-    | &nbsp           | &nbsp    | &nbsp  | 
-      | 500  | Erro no servidor    | Ocorreu algum erro interno.      |
-     -------------------------- <br><br>    
-    ## Solicitando assinatura com Carimbo de Tempo
-
-      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação `x-signature: 1`.
+    | ------------- |--------------------|-----------------------------------------------------------------------------
+    | 400 | Requisição inválida | Requisição mal formatada (Nº da DUE / Chave) |
+    | 404 | Not Found | Nenhum registro encontrado com os parâmetros informados (Nº da DUE / Chave) |
+    | 500  | Erro no servidor    | Ocorreu algum erro interno.      
+    ### Solicitando assinatura com Carimbo de Tempo
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação &nbsp; *-signature: 1* &nbsp; .
       
-      A assinatura será retornada no cabeçalho da resposta, com o nome `stamp`. <br><br>
-    ## Verificando assinatura com Carimbo de Tempo
+      A assinatura será retornada no cabeçalho da resposta, com o nome &nbsp; *stamp* &nbsp;. 
+    ### Verificando assinatura com Carimbo de Tempo
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
     [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check) <br><br>
-    ## Formatos e Tipos
-    Os seguintes tipos de dados são utilizados pela API Loja Franca. <br><br>
+    ### Formatos e Tipos
+    Os seguintes tipos de dados são utilizados pela API Loja Franca.
         | Tipos | Descrição | Formato
         | ---------------------- | :------------------------------------------------------------- | ------------------ |
         | string        | Cadeia de caracteres |
@@ -39,7 +36,7 @@ info:
         | number | Número inteiro em situações que pode passar do valor 2^31-1 |
         | decimal | Número fracionado, sempre com duas casas após o decimal, separado por "." | Ex: 123456789012.22 (Exceto cotação do dólar, que pode ter até 3 casas após o decimal). <br><br>
         
-    ## Tabela de mensagens
+    ### Tabela de mensagens
     As seguintes mensagens de sucesso e erros são retornadas pela API - DUE. <br><br>
         | Código | Mensagem
         | ------ | --------
