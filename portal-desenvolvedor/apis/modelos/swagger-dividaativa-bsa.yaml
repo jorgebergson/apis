@@ -317,7 +317,34 @@ components:
         codigoSistemaOrigem:
           type: string
         descricaoSistemaOrigem:
-          type: string      
+          type: string 
+    numeroInscricaoDevedor:
+      type: object
+      properties:
+        numeroInscricao:
+          type: string
+        numeroProcesso:
+          type: string
+        situacaoInscricao:
+          type: string
+        situacaoDescricao:
+          type: string
+        nomeDevedor:
+          type: string
+        tipoDevedor:
+          type: string
+        valorTotalConsolidadoMoeda:
+          type: string
+        cpfCnpj:
+          type: string
+        codigoSida:
+          type: string
+        nomeUnidade:
+          type: string
+        codigoComprot:
+          type: string
+        codigoUorg:
+          type: string          
     Status:
       type: object
       properties:
