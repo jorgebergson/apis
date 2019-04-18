@@ -72,15 +72,14 @@ info:
             (200) numeroInscricao: 9061700096419
             (200) numeroInscricao: 4483300091135
             (404) numeroInscricao: qualquer outro número   
-    A api &nbsp; *consulta-divida-ativa* viabiliza a consulta de débitos na dívida ativa da união via serviço *HTTP REST* &nbsp;.
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação no link: [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf)
-    ## Códigos de Retorno não Tarifados 
-    |  Código de retorno |  Resumido |  Explicação |
-    | ------------- |:--------------------|:----------------------------------------------------------------------------- |
-     |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-    | 404 X         | Not found    | O número de inscrição informado não foi encontrado.  |
-    | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |    
-        
+        A api &nbsp; *consulta-divida-ativa* viabiliza a consulta de débitos na dívida ativa da união via serviço *HTTP REST* &nbsp;.
+        Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação no link: [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf)
+        ## Códigos de Retorno não Tarifados 
+        |  Código de retorno |  Resumido |  Explicação |
+        | ------------- |:--------------------|:----------------------------------------------------------------------------- |
+        |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
+        | 404 X         | Not found    | O número de inscrição informado não foi encontrado.  |
+        | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |         
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
     description: Trial
