@@ -9,7 +9,7 @@ info:
     |  Código de retorno |  Resumido |  Explicação |
     | ------------- |:--------------------|:----------------------------------------------------------------------------- |
      |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-    | 404 X         | Not found    | O número de inscrição informado não foi encontrado.  |
+    | 404 y         | Not found    | O número de inscrição informado não foi encontrado.  |
     | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      | 
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
@@ -37,14 +37,14 @@ paths:
           required: true
           schema:
             type: string
-      responses:
-        '200':
+      responses:      
+        "200":
           description: Retorna objeto json com o resultado da consulta
-        '400':
+        "400":
           description: Número de Inscrição inválido.
-        '404':
+        "404":
           description: Inscrição não encontrada.
-        '500':
+        "500":
           description: Erro interno do servidor
       operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
       externalDocs:
@@ -56,7 +56,7 @@ paths:
         - Status
       summary: Verifica status da API
       responses:
-        '200':
+        "200":
           description: Serviço disponível
           content:
             application/json:
@@ -64,7 +64,7 @@ paths:
                 $ref: '#/components/schemas/Status'
               example:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00"
-        '500':
+        "500":
           description: Serviço indisponível
           content:
             application/json:
