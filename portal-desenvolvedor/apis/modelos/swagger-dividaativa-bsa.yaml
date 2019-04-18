@@ -9,7 +9,7 @@ info:
     |  Código de retorno |  Resumido |  Explicação |
     | ------------- |:--------------------|:----------------------------------------------------------------------------- |
      |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-    | 404 y         | Not found    | O número de inscrição informado não foi encontrado.  |
+    | 404 Z         | Not found    | O número de inscrição informado não foi encontrado.  |
     | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      | 
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
@@ -22,7 +22,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DividaAtiva.pdf
 paths:
   '/v1/inscricao/{numeroInscricao}':
     get:
@@ -37,16 +37,20 @@ paths:
           required: true
           schema:
             type: string
-      responses:      
+      responses:
         "200":
-          description: Retorna objeto json com o resultado da consulta
+          description: Retorna o objeto json com o resultado da consulta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/numeroInscricao'      
         "400":
           description: Número de Inscrição inválido.
         "404":
           description: Inscrição não encontrada.
         "500":
           description: Erro interno do servidor
-      operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
+      operationId: https://apigateway.serpro.gov.br/api-divida-ativa-trial/api/{numeroInscricao}
       externalDocs:
         description: "Payloads para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Degustacao.pdf
@@ -74,6 +78,17 @@ paths:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00" 
 components:
   schemas:
+    numeroInscricao:
+      type: object
+      properties:
+        inscricao:
+          type: string
+        processoAdministrativo:
+          type: string
+        situacao:
+          type: string
+        dataInscricao:
+          type: string
     Status:
       type: object
       properties:
