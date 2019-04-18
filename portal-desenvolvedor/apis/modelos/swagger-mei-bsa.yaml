@@ -28,7 +28,7 @@ security:
     OAuth2: []
     Authorization: []
 externalDocs:
-  description: "Detalhamento da "API MEI
+  description: "Detalhamento da API MEI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-MEI.pdf    
 paths:
   '/v1/mei/cnpjs/{cpf}':
@@ -86,7 +86,7 @@ paths:
 
       operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/cnpjs/71066868409
       externalDocs:
-        description: " CNPJs para degustação"
+        description: "MEI para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/mei-Degustacao.pdf          
   '/v1/mei/certificado/{cpf}':
     get:
@@ -165,7 +165,7 @@ paths:
           description: Erro interno do servidor 
       operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409?ativo=true/
       externalDocs:
-        description: " CPFs para degustação"
+        description: "Mei para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/MEI-Degustacao.pdf          
   '/v1/mei/certificado/{cpf}/{cnpj}':
     get:
@@ -253,7 +253,7 @@ paths:
           description: Erro interno do servidor  
       operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/v1/mei/certificado/71066868409/22025711000153
       externalDocs:
-        description: " CPFs para degustação"
+        description: "MEI para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/MEI-Degustacao.pdf           
   '/status':
     get:
