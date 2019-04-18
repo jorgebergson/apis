@@ -4,14 +4,19 @@ info:
   version: api
   description: |-  
         A api &nbsp; *consulta-divida-ativa* viabiliza a consulta de débitos na dívida ativa da união via serviço *HTTP REST* &nbsp;.
-        ## Autenticação
-        Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf)
-        ## Códigos de Retorno não Tarifados 
+        ### Autenticação
+        Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)
+        ### Códigos de Retorno não Tarifados 
         |  Código de retorno |  Resumido |  Explicação |
         | ------------- |:--------------------|:----------------------------------------------------------------------------- |
-        |400           | Requisição inválida    | O número de inscrição informado não é válido.       |
-        | 404 X         | Not found    | O número de inscrição informado não foi encontrado.  |
-        | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |  
+        | 400           | Requisição inválida    | O número de inscrição informado não é válido.       |
+        | 404           | Not found    | O número de inscrição informado não foi encontrado.  |
+        | 500           | Erro no Servidor | Ocorreu algum erro no servidor.      | 
+        ### Solicitando assinatura com Carimbo de Tempo
+        Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
+        ### Verificando assinatura com Carimbo de Tempo
+        Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+        [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
     description: Trial
