@@ -7,11 +7,13 @@ info:
 
     Consolidamos aqui as informações técnicas para a integração dos sistemas das empresas com os serviços do Portal Único do Comércio Exterior, baseado nas instruções de uso e contratação conforme a plataforma de habilitação API Serpro. 
     
-    A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8. <br><br> 
+    A API DUE foi desenvolvida baseada na arquitetura REST/JSON no formato UTF-8.
     ### API Serpro - Plataforma de Habilitação  
-    Todas as empresas que possuem perfil de acesso para realizar a consulta DUE em tela no Portal Único do Comércio Exterior já estão aptas a celebrar o contrato comercial com o Serpro para consumo da API DUE. <br><br>
-    O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente. <br><br>
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf <br><br>
+    Todas as empresas que possuem perfil de acesso para realizar a consulta DUE em tela no Portal Único do Comércio Exterior já estão aptas a celebrar o contrato comercial com o Serpro para consumo da API DUE. 
+    
+    O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
+    
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |--------------------|-----------------------------------------------------------------------------
