@@ -3,7 +3,6 @@ info:
   title: Consulta NF-e
   version: '1.0'
   description: |-
-    ### Descrição da API - Consulta NF-e 
     O serviço &nbsp; *Consulta Nota Fiscal Eletrônica (NF-e)* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação para consulta de informações referentes a uma determinada NF-e, através de sua chave de acesso.
     As informações da NF-e disponibilizadas estão de acordo com o leiaute da NF-e, disponibilizado pelo Encontro Nacional de Coordenadores e Administradores Tributários Estaduais (ENCAT). 
     Para verificação das Notas Técnicas com as informações de leiaute da NF-e acesse o link: [Notas Técnicas](http://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=tW+YMyk/50s=)  
