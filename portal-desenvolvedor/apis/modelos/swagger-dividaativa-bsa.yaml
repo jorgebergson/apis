@@ -6,7 +6,7 @@ info:
         ## Exemplo
         #### Chamada
               [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/inscricao/9061700096419 
-        #### <br> Retorno
+        #### Retorno
               [
                 {
                   "inscricao": "90 6 17 000964-19",
@@ -120,6 +120,60 @@ paths:
         "500":
           description: Erro interno do servidor
       operationId: https://apigateway.serpro.gov.br/api-divida-ativa-trial/api/{numeroInscricao}
+      externalDocs:
+        description: "Payloads para degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
+  '/v1/devedor/{numeroInscricaoDevedor}':
+    get:
+      tags:
+        - Dívida Ativa
+      summary: 'Consulta dados do devedor, seja pessoa física ou jurídica'
+      description: |-
+        ## Exemplo
+        #### Chamada
+              [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api/v1/devedor/09781911768
+        #### <br> Retorno
+                [
+                  {
+                    "numeroInscricao": "10 5 03 003880-14",
+                    "numeroProcesso": "10166 677771/2014-12",
+                    "situacaoInscricao": "121105",
+                    "situacaoDescricao": "ATIVA NAO PRIORIZADA PARA AJUIZAMENTO",
+                    "nomeDevedor": "DEVEDOR DA SILVA",
+                    "tipoDevedor": "PRINCIPAL",
+                    "valorTotalConsolidadoMoeda": "4.457,56",
+                    "cpfCnpj": "097.819.117-68",
+                    "codigoSida": "1000",
+                    "nomeUnidade": "PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO",
+                    "codigoComprot": "1101951",
+                    "codigoUorg": "0005786"
+                  }
+                ]     
+        #### Chaves para retornos diferentes
+            (200) numeroInscricaoDevedor: 09781911768 (CPF)
+            (200) numeroInscricaoDevedor: 01415666000181 (CNPJ)
+            (404) numeroInscricaoDevedor: qualquer outro número
+      parameters:
+        - name: numeroInscricaoDevedor
+          in: path
+          description: Número de inscrição (cpf ou cnpj) do devedor
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Retorna o objeto json com o resultado da consulta
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/numeroInscricao'  
+        "400":
+          description: 'O valor do parâmetro ''numeroInscricaoDevedor'' inválido: {numeroInscricaoDevedor}'
+        "404":
+          description: Inscrição não encontrada.
+        "500":
+          description: Erro interno do servidor
+      operationId: https://apigateway.serpro.gov.br/api-divida-ativa-trial/api/{numeroInscricaoDevedor}
       externalDocs:
         description: "Payloads para degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
