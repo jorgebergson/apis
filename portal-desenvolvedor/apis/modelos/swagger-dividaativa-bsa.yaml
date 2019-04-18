@@ -4,8 +4,10 @@ info:
   version: api
   description: |-  
         A api &nbsp; *consulta-divida-ativa* &nbsp; viabiliza a consulta de débitos na dívida ativa da união via serviço &nbsp; *HTTP REST* &nbsp;.
-        ### Autenticação
-        Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)
+        ### API Serpro - Plataforma de Habilitação  
+        O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
+    
+        Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/) 
         ### Códigos de Retorno não Tarifados 
         |  Código de retorno |  Resumido |  Explicação |
         | ------------- |:--------------------|:----------------------------------------------------------------------------- |
