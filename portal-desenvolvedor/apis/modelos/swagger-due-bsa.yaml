@@ -13,7 +13,7 @@ info:
     
     O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
     
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
+    Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)   
     ### Códigos de Retorno não Bilhetados 
     | Código de retorno | Resumido | Explicação |
     | ------------- |--------------------|-----------------------------------------------------------------------------
@@ -26,26 +26,7 @@ info:
       A assinatura será retornada no cabeçalho da resposta, com o nome &nbsp; *stamp* &nbsp;. 
     ### Verificando assinatura com Carimbo de Tempo
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
-    [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check) <br><br>
-    ### Formatos e Tipos
-    Os seguintes tipos de dados são utilizados pela API Loja Franca.
-        | Tipos | Descrição | Formato
-        | ---------------------- | :------------------------------------------------------------- | ------------------ |
-        | string        | Cadeia de caracteres |
-        | string - data     | String com formato de data  | yyyy-MM-dd
-        | string - data/hora | String com formato de data e hora | yyyy-MM-ddTHH:mm:ss
-        | integer | Número inteiro que representa códigos e identificadores |
-        | number | Número inteiro em situações que pode passar do valor 2^31-1 |
-        | decimal | Número fracionado, sempre com duas casas após o decimal, separado por "." | Ex: 123456789012.22 (Exceto cotação do dólar, que pode ter até 3 casas após o decimal). <br><br>
-        
-    ### Tabela de mensagens
-    As seguintes mensagens de sucesso e erros são retornadas pela API - DUE. <br><br>
-        | Código | Mensagem
-        | ------ | --------
-        | 200   | Operação realizada com sucesso
-        | 400   | Requisição mal formatada
-        | 404   | Registro não encontrado
-        | 500   | Erro interno do servidor
+    [Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/api-consulta-due-trial/api'
     description: Trial
