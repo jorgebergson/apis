@@ -8,10 +8,10 @@ info:
 
         
     O serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.
-    ## Códigos de  Retorno não Tarifados 
+    ### Códigos de  Retorno não Tarifados 
     | Código de retorno | Resumido | Explicação |
     | ------|------|------|
-     |500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
+    |  500  | Erro no Servidor | Ocorreu algum erro no servidor.| 
 servers:
   - url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0'
     description: Trial
@@ -21,6 +21,9 @@ security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
+externalDocs:
+  description: "Detalhamento da API Loja Franca de Fronteiras"
+url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
   /ne/alterar:
     post:
@@ -100,7 +103,11 @@ paths:
         '403':
           description: Usuário não tem permissão para realizar esta operação
         '500':
-          description: Erro interno do servidor          
+          description: Erro interno do servidor 
+      operationId: https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
+      externalDocs:
+        description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
   '/status':
     get:
       tags:
@@ -131,94 +138,6 @@ components:
         lastUpdateAt:
           type: string
           format: date-time
-    NotaCredito:
-      properties:
-        dataEmissao:
-          type: string
-        numero:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        ugFavorecida:
-          type: string
-        gestaoFavorecida:
-          type: string
-        taxaCambio:
-          type: string
-        numeroTransferencia:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref:  '#/components/schemas/EventoNC'
-    GeraNC:
-      properties:
-        dataEmissao:
-          type: string
-        numero:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        ugFavorecida:
-          type: string
-        gestaoFavorecida:
-          type: string
-        taxaCambio:
-          type: string
-        numeroTransferencia:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNC'
-    NCGerada:
-      properties:
-        ug:
-          type: string
-        gestao:
-          type: string
-        ano:
-          type: string
-        tipoDoc:
-          type: string
-        sequencialDoc:
-          type: string
-    EventoNC:
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        ptres:
-          type: string
-        fonteRecurso:
-          type: string
-        naturezaDespesa:
-          type: string
-        subitem:
-          type: string
-        ugResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        valor:
-          type: string
-    Credencial:
-      properties:
-        cpf:
-          type: string
-        ug:
-          type: string
-        sistema:
-          type: string
     AlteraNE:
       properties:
         dataEmissao:
@@ -262,356 +181,7 @@ components:
         numeroTransacaoCliente:
           type: string
         credencial:
-          $ref: '#/components/schemas/Credencial'
-    AnulaNE:
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        numeroLista:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        valorTotalEmpenho:
-          type: string
-        numeroProcesso:
-          type: string
-        numeroOriginalConvenio:
-          type: string
-        passivoAnterior:
-          type: string
-        contaPassivo:
-          type: string
-        contaValor:
-          $ref: '#/components/schemas/Conta'
-        contaPassivoFinanceiro:
-          type: string
-        especie:
-          type: string
-        ugReferencia:
-          type: string
-        gestaoReferencia:
-          type: string
-        numeroEmpenhoReferencia:
-          type: string
-        listaItens:
-          $ref: '#/components/schemas/listaItens'
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          $ref: '#/components/schemas/Credencial'
-    ConsultaTransacao:
-      properties:
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          type: object
-          properties:
-            cpf:
-              type: string
-            ug:
-              type: string
-            sistema:
-              type: string
-    ConsultaNE:
-      properties:
-        ano:
-          type: string
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    RealizaNE:
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        numeroLista:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        valorTotalEmpenho:
-          type: string
-        numeroProcesso:
-          type: string
-        numeroOriginalConvenio:
-          type: string
-        passivoAnterior:
-          type: string
-        contaPassivo:
-          type: string
-        contaValor:
-          type: object
-          properties:
-            conta:
-              type: string
-            valor:
-              type: string
-        contaPassivoFinanceiro:
-          type: string
-        favorecido:
-          type: string
-        gestaoFavorecido:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        codigoUO:
-          type: string
-        codigoProgramaTrabalho:
-          type: string
-        fonteRecursos:
-          type: string
-        naturezaDespesa:
-          type: string
-        unidadeGestoraResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        indicadorResultado:
-          type: string
-        indicadorTipoCredito:
-          type: string
-        planoOrcamentario:
-          type: string
-        codigoAutorEmenda:
-          type: string
-        tipoEmpenho:
-          type: string
-        modalidadeLicitacao:
-          type: string
-        amparoLegal:
-          type: string
-        inciso:
-          type: string
-        origemMaterial:
-          type: string
-        municipioBeneficiado:
-          type: string
-        ufBeneficiada:
-          type: string
-        dataVencimento:
-          type: string
-        dataRecebimento:
-          type: string
-        valorCompromisso:
-          type: string
-        listaItens:
-          type: object
-          properties:
-            subItemNd:
-              type: string
-            quantidade:
-              type: string
-            valorUnitario:
-              type: string
-            valorTotal:
-              type: string
-            descricao:
-              type: string
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          type: object
-          properties:
-            cpf:
-              type: string
-            ug:
-              type: string
-            sistema:
-              type: string
-    ReforcaNE:
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        numeroLista:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        valorTotalEmpenho:
-          type: string
-        numeroProcesso:
-          type: string
-        numeroOriginalConvenio:
-          type: string
-        passivoAnterior:
-          type: string
-        contaPassivo:
-          type: string
-        contaValor:
-          type: object
-          properties:
-            conta:
-              type: string
-            valor:
-              type: string
-        contaPassivoFinanceiro:
-          type: string
-        especie:
-          type: string
-        ugReferencia:
-          type: string
-        gestaoReferencia:
-          type: string
-        numeroEmpenhoReferencia:
-          type: string
-        numeroListaReferencia:
-          type: string
-        listaItens:
-          type: object
-          properties:
-            subItemNd:
-              type: string
-            quantidade:
-              type: string
-            valorUnitario:
-              type: string
-            valorTotal:
-              type: string
-            descricao:
-              type: string
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          type: object
-          properties:
-            cpf:
-              type: string
-            ug:
-              type: string
-            sistema:
-              type: string
-    NE:
-      properties:
-        codigo:
-          type: integer
-        mensagem:
-          type: string
-        erros:
-          type: array
-          items:
-            type: string
-        status:
-          type: integer
-    DadosNE:
-      properties:
-        dataEmissao:
-          type: string
-        saldoPagar:
-          type: string
-        numeroNota:
-          type: string
-        ugEmitente:
-          type: string
-        nomeUgEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        nomeGestaoEmitente:
-          type: string
-        nomeFavorecido:
-          type: string
-        tipoFavorecido:
-          type: string
-        codigoFavorecido:
-          type: string
-        sicaf:
-          type: string
-        operacaoCambial:
-          type: string
-        observacao:
-          type: string
-        evento:
-          type: string
-        esfera:
-          type: string
-        ptres:
-          type: string
-        fonte:
-          type: string
-        codigoND:
-          type: string
-        ugResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        valorEmpenho:
-          type: string
-        tipoEmpenho:
-          type: string
-        sistemaOrigem:
-          type: string
-        docReferenciaOriginal:
-          type: string
-        numDocReferencia:
-          type: string
-        passivoAnterior:
-          type: string
-        contaPassivo:
-          type: string
-        nomeModalidade:
-          type: string
-        nomeAmparo:
-          type: string
-        inciso:
-          type: string
-        numeroProcesso:
-          type: string
-        indicadorPagPrecatorio:
-          type: string
-        siglaUF:
-          type: string
-        codigoMunicipioBeneficiado:
-          type: string
-        origemMaterial:
-          type: string
-        referenciaDispensa:
-          type: string
-        numeroOriginal:
-          type: string
-        informacoesLancamentos:
-          type: string
-        contaCorrenteFinanceiro:
-          type: string
-        contasPermanentes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Conta'
-        numeroLista:
-          type: string
-        subItens:
-          type: array
-          items:
-            $ref: '#/components/schemas/subItem'
-        subItensSaldo:
-          type: array
-          items:
-            $ref: '#/components/schemas/subItemSaldo'
-        nsaldo:
-          type: string
+          $ref: '#/components/schemas/Credencial'        
     listaItens:
       properties:
         subItemNd:
@@ -622,32 +192,20 @@ components:
           type: string
         descricao:
           type: string
-    subItemSaldo:
-      properties:
-        numero:
-          type: string
-        valor:
-          type: string
-    subItem:
-      properties:
-        numero:
-          type: string
-        valor:
-          type: string
-        seq:
-          type: string
-        qtd:
-          type: string
-        valorTotal:
-          type: string
-        descricao:
-          type: string
     Conta:
       properties:
         conta:
           type: string
         valor:
           type: string
+    Credencial:
+      properties:
+        cpf:
+          type: string
+        ug:
+          type: string
+        sistema:
+          type: string          
   securitySchemes:
     APIKEY:
       type: apiKey
