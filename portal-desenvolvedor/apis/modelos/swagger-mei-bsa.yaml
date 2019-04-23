@@ -87,7 +87,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/consulta-mei-trial/api/v1/mei/cnpjs/71066868409
       externalDocs:
         description: "MEI para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/mei-Degustacao.pdf          
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/MEI-Degustacao.pdf          
   '/v1/mei/certificado/{cpf}':
     get:
       tags:
