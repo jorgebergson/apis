@@ -2,16 +2,7 @@ openapi: 3.0.1
 info:
   title: Integração SIAFI (api-siafi)
   version: '1.0.0'
-  description: |-   
-
-    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
-
-        
-    O serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.
-    ### Códigos de  Retorno não Tarifados 
-    | Código de retorno | Resumido | Explicação |
-    | ------|------|------|
-    |  500  | Erro no Servidor | Ocorreu algum erro no servidor.| 
+  description: Teste 
 servers:
   - url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0'
     description: Trial
@@ -22,87 +13,30 @@ security:
     OAuth2: []
     Authorization: []
 externalDocs:
-  description: "Detalhamento da API Loja Franca de Fronteiras"
+  description: "Detalhamento da API SIAFI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
   /ne/alterar:
     post:
-      tags:
-        - Nota de Empenho
       summary: Altera Nota de Empenho
-      description: |-
-
-        ## Exemplo
-        #### Chamada
-              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
-        ####
-        #### Conteudo do corpo
-            {
-              "dataEmissao": "31DEZ17",
-              "numeroDocumento": "",               
-              "ugEmitente": "010001",
-              "gestaoEmitente": "00001",
-              "numeroLista": "",
-              "taxaCambio": "",
-              "observacao": "Cancelamento de NE",
-              "valorTotalEmpenho": "555555",
-              "numeroProcesso": "0100",
-              "numeroOriginalConvenio": "0010",
-              "passivoAnterior": "N",
-              "contaPassivo": "",
-              "contaValor": [
-              {
-                "conta": "",
-                "valor": ""
-              }
-            ],
-              "contaPassivoFinanceiro": "string",
-              "especie": "02",
-              "ugReferencia": "010001",
-              "gestaoReferencia": "00001",
-              "numeroEmpenhoReferencia": "2017NE800051",
-              "numeroListaReferencia": "2017LI800097",
-              "listaItens": [
-              {
-                "subItemNd": "01",
-                "quantidade": "000000000000001",
-                "valorUnitario": "00000000000555555",
-                "valorTotal": "00000000000555555",
-                "descricao": "Teste alteração"
-              }
-            ],
-              "numeroTransacaoCliente": "2017TR000049",
-              "credencial": {
-              "cpf": "60165570644",
-              "ug": "010001",
-              "sistema": "SIAFI2017HM"
-                }
-              }
-        ####
-        #### Retorno
-            { 
-              "codigo": 0,
-              "mensagem": "010001000012017NE800060 010001000012017LI800106",
-              "erros": [],
-              "status": 200
-            }
+      description: Teste
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/AlteraNE'
       responses:
-        '200':
+        200:
           description: Retorna os dados da Nota de Empenho Alterada
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
-        '400':
+        400:
           description: Algum campo enviado é inválido
-        '403':
+        403:
           description: Usuário não tem permissão para realizar esta operação
-        '500':
+        500:
           description: Erro interno do servidor 
       operationId: https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
       externalDocs:
@@ -114,7 +48,7 @@ paths:
         - Status
       summary: Verifica status da API
       responses:
-        '200':
+        200:
           description: Serviço disponível
           content:
             application/json:
@@ -122,7 +56,7 @@ paths:
                 $ref: '#/components/schemas/Status'
               example:
                 lastUpdateAt: "2019-02-18T11:27:06-03:00"
-        '500':
+        500:
           description: Serviço indisponível
           content:
             application/json:
