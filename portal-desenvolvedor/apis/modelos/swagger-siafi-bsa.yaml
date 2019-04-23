@@ -2,7 +2,20 @@ openapi: 3.0.1
 info:
   title: Integração SIAFI (api-siafi)
   version: '1.0.0'
-  description: Teste 
+  description: |-   
+
+    Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
+
+    O serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.
+    ### Códigos de  Retorno não Tarifados 
+    | Código de retorno | Resumido | Explicação |
+    | ------|------|------|
+    | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
+    ### Solicitando assinatura com Carimbo de Tempo
+    Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
+    ### Verificando assinatura com Carimbo de Tempo
+    Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+    [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0'
     description: Trial
@@ -18,8 +31,63 @@ externalDocs:
 paths:
   '/ne/alterar':
     post:
+      tags:
+        - Nota de Empenho
       summary: Altera Nota de Empenho
-      description: "Teste"
+      description: |-
+
+        ## Exemplo
+        ### Chamada
+              [POST] https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
+        ### Conteudo do corpo
+            {
+              "dataEmissao": "31DEZ17",
+              "numeroDocumento": "",               
+              "ugEmitente": "010001",
+              "gestaoEmitente": "00001",
+              "numeroLista": "",
+              "taxaCambio": "",
+              "observacao": "Cancelamento de NE",
+              "valorTotalEmpenho": "555555",
+              "numeroProcesso": "0100",
+              "numeroOriginalConvenio": "0010",
+              "passivoAnterior": "N",
+              "contaPassivo": "",
+              "contaValor": [
+              {
+                "conta": "",
+                "valor": ""
+              }
+            ],
+              "contaPassivoFinanceiro": "string",
+              "especie": "02",
+              "ugReferencia": "010001",
+              "gestaoReferencia": "00001",
+              "numeroEmpenhoReferencia": "2017NE800051",
+              "numeroListaReferencia": "2017LI800097",
+              "listaItens": [
+              {
+                "subItemNd": "01",
+                "quantidade": "000000000000001",
+                "valorUnitario": "00000000000555555",
+                "valorTotal": "00000000000555555",
+                "descricao": "Teste alteração"
+              }
+            ],
+              "numeroTransacaoCliente": "2017TR000049",
+              "credencial": {
+              "cpf": "60165570644",
+              "ug": "010001",
+              "sistema": "SIAFI2017HM"
+                }
+              }
+        ### Retorno
+            { 
+              "codigo": 0,
+              "mensagem": "010001000012017NE800060 010001000012017LI800106",
+              "erros": [],
+              "status": 200
+            }
       requestBody:
         content:
           application/json:
