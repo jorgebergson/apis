@@ -175,6 +175,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AnulaNE'
+            example: Json de entrada.
       responses:
         '200':
           description: Retorna os dados da Nota de Empenho Anulada
@@ -223,6 +224,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConsultaTransacao'
+            example: Json de entrada.
       responses:
         '200':
           description: Retorna os dados da Nota de Empenho Alterada
@@ -328,6 +330,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConsultaNE'
+            example: Json de entrada.
       responses:
         '200':
           description: Retorna os dados da Nota de Empenho Alterada
@@ -434,6 +437,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RealizaNE'
+            example: Json de entrada.
       responses:
         '200':
           description: Retorna os dados da Nota de Empenho Alterada
@@ -516,6 +520,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ReforcaNE'
+            example: Json de entrada.
       responses:
         '200':
           description: Retorna os dados da Nota de Empenho Alterada
@@ -693,6 +698,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraNC'
+            example: Json de entrada.
       parameters:
         - name: x-credencial
           in: path
