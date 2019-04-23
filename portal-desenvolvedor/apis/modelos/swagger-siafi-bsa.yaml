@@ -16,15 +16,16 @@ externalDocs:
   description: "Detalhamento da API SIAFI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
-  /ne/alterar:
+  '/ne/alterar':
     post:
       summary: Altera Nota de Empenho
-      description: Teste
+      description: "Teste"
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/AlteraNE'
+            example: Json de entrada.
       responses:
         200:
           description: Retorna os dados da Nota de Empenho Alterada
@@ -73,6 +74,7 @@ components:
           type: string
           format: date-time
     AlteraNE:
+      type: object
       properties:
         dataEmissao:
           type: string
@@ -117,6 +119,7 @@ components:
         credencial:
           $ref: '#/components/schemas/Credencial'  
     NE:
+      type: object
       properties:
         codigo:
           type: integer
@@ -129,6 +132,7 @@ components:
         status:
           type: integer          
     listaItens:
+      type: object
       properties:
         subItemNd:
           type: string
@@ -139,12 +143,14 @@ components:
         descricao:
           type: string
     Conta:
+      type: object
       properties:
         conta:
           type: string
         valor:
           type: string
     Credencial:
+      type: object
       properties:
         cpf:
           type: string
