@@ -23,7 +23,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
   /ne/alterar:
     post:
@@ -181,7 +181,19 @@ components:
         numeroTransacaoCliente:
           type: string
         credencial:
-          $ref: '#/components/schemas/Credencial'        
+          $ref: '#/components/schemas/Credencial'  
+    NE:
+      properties:
+        codigo:
+          type: integer
+        mensagem:
+          type: string
+        erros:
+          type: array
+          items:
+            type: string
+        status:
+          type: integer          
     listaItens:
       properties:
         subItemNd:
