@@ -6,7 +6,7 @@ info:
 
     Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: https://servicos.serpro.gov.br/api-serpro/biblioteca/arquivos/como-autenticar-documentacao-api.pdf
 
-    O serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.
+    O serviço &nbsp; *Integração SIAFI* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operações de lançamento ao SIAFI.
     ### Códigos de  Retorno não Tarifados 
     | Código de retorno | Resumido | Explicação |
     | ------|------|------|
