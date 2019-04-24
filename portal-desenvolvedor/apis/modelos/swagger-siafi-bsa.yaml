@@ -1336,7 +1336,7 @@ paths:
       externalDocs:
         description: "Documentos para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf   
-/status:
+  /status:
     get:
       tags:
         - Status
