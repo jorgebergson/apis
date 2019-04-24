@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Integração SIAFI (api-siafi)
-  version: '1.0.0'
+  version: 'v1 - v2'
   description: |-   
 
     Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)    
@@ -13,13 +13,13 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - X
+    ### Verificando assinatura com Carimbo de Tempo - Y
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
-  - url: 'https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0'
+  - url: 'https://apigateway.serpro.gov.br/integra-siafi-trial/api'
     description: Trial
-  - url: 'https://apigateway.serpro.gov.br/api-siafi/1.0.0'
+  - url: 'https://apigateway.serpro.gov.br/integra-siafi/api'
     description: Produção
 security:
   - APIKEY: []
@@ -29,7 +29,7 @@ externalDocs:
   description: "Detalhamento da API SIAFI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
-  /v1/ne/alterar:
+  '/v1/ne/alterar':
     post:
       tags:
       - Nota de Empenho v1
@@ -62,6 +62,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AlteraNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
