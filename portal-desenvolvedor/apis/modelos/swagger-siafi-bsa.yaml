@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - Y
+    ### Verificando assinatura com Carimbo de Tempo - X
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -117,6 +117,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AnulaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
