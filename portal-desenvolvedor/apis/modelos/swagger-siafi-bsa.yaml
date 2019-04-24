@@ -459,7 +459,8 @@ paths:
       tags:
       - Nota de Empenho v2
       summary: Atualiza uma Nota de Empenho.
-      description: "O tipo de atualização depende do campo ' especie '\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alteraç\
+      description:  |- 
+        "O tipo de atualização depende do campo ' especie '\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alteraç\
         ão: &nbsp;&nbsp;&nbsp;&nbsp;especie = 01\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reforç\
         o:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; especie = 02\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anulaç\
         ão: &nbsp;&nbsp;&nbsp;&nbsp;especie = 03\n\n## Exemplo\n#### Chamada\n\n \
@@ -527,7 +528,8 @@ paths:
       tags:
       - Nota de Empenho v2
       summary: Realiza uma Nota de Empenho
-      description: "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho\n\
+      description:  |- 
+        "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
         \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
@@ -598,7 +600,8 @@ paths:
       tags:
       - Nota de Crédito
       summary: Consulta Nota de Crédito
-      description: "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\
+      description:  |- 
+        "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\
         \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001\n\
         \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
         \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
@@ -679,7 +682,8 @@ paths:
       tags:
       - Nota de Crédito
       summary: Gera Nota de Crédito
-      description: "Gera uma Nota de Crédito com as informações passadas no JSON de\
+      description:  |- 
+        "Gera uma Nota de Crédito com as informações passadas no JSON de\
         \ entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito\n\
         \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
         \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
@@ -741,7 +745,8 @@ paths:
       tags:
       - Nota de Lançamento
       summary: Consulta Nota de Lançamento
-      description: "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestã\
+      description:  |- 
+        "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestã\
         o, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -822,7 +827,8 @@ paths:
       tags:
       - Nota de Lançamento
       summary: Gera Nota de Lançamento
-      description: "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n\
+      description:  |- 
+        "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n\
         ## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -884,7 +890,8 @@ paths:
       tags:
       - Nota de Dotação
       summary: Consulta Nota de Dotação
-      description: "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestã\
+      description:  |- 
+        "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestã\
         o, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/010001/00001/2018/800002\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -971,7 +978,8 @@ paths:
       tags:
       - Nota de Dotação
       summary: Gera uma Nota de Dotação
-      description: "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n##\
+      description:  |- 
+        "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n##\
         \ Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -1033,7 +1041,8 @@ paths:
       tags:
       - Nota de Dotação
       summary: Consulta uma Nota de Detalhamento Orçamentário
-      description: "Consulta uma Nota de Detalhamento Orçamentário a partir dos parâ\
+      description:  |-  
+        "Consulta uma Nota de Detalhamento Orçamentário a partir dos parâ\
         metros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc/010001/00001/2018/000002\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -1116,8 +1125,9 @@ paths:
     post:
       tags:
       - Nota de Dotação
-      summary: Gera uma Nota de Detalhamento Orçamentário
-      description: "Gera uma Nota de Detalhamento Orçamentário a partir de um Json\
+      summary:  Gera uma Nota de Detalhamento Orçamentário
+      description:  |- 
+        "Gera uma Nota de Detalhamento Orçamentário a partir de um Json\
         \ de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -1186,7 +1196,8 @@ paths:
       tags:
       - Nota de Dotação
       summary: Consulta uma Nota de Bloqueio de Crédito
-      description: "Consulta uma Nota de Bloqueio de Crédito a partir dos parâmetros\
+      description:  |- 
+        "Consulta uma Nota de Bloqueio de Crédito a partir dos parâmetros\
         \ UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/bloqueio/010001/00001/2018/000005\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -1260,7 +1271,8 @@ paths:
       tags:
       - Nota de Dotação
       summary: Gera uma Nota de Bloqueio de Crédito
-      description: "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\
+      description:  |- 
+        "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\
         \n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/bloqueio\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -1321,7 +1333,8 @@ paths:
       tags:
       - Consulta Documentos
       summary: Consulta Documentos
-      description: "Consulta documentos a partir de uma data específica\n\n## Exemplo\n\
+      description:  |- 
+        "Consulta documentos a partir de uma data específica\n\n## Exemplo\n\
         #### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
