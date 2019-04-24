@@ -28,7 +28,62 @@ security:
 externalDocs:
   description: "Detalhamento da API SIAFI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
-paths:      
+paths: 
+  /v1/ne/alterar:
+    post:
+      tags:
+      - Nota de Empenho v1
+      summary: Altera Nota de Empenho
+      description: |- 
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar\n\
+        #### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n     \
+        \ \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\"\
+        ,\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n  \
+        \    \"taxaCambio\": \"\",\n      \"observacao\": \"Cancelamento de NE\",\n\
+        \      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\": \"0100\"\
+        ,\n      \"numeroOriginalConvenio\": \"0010\",\n      \"passivoAnterior\"\
+        : \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n      {\n\
+        \        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n    \
+        \  \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n \
+        \     \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\": \"00001\"\
+        ,\n      \"numeroEmpenhoReferencia\": \"2017NE800051\",\n      \"numeroListaReferencia\"\
+        : \"2017LI800097\",\n      \"listaItens\": [\n      {\n        \"subItemNd\"\
+        : \"01\",\n        \"quantidade\": \"000000000000001\",\n        \"valorUnitario\"\
+        : \"00000000000555555\",\n        \"valorTotal\": \"00000000000555555\",\n\
+        \        \"descricao\": \"Teste alteração\"\n      }\n    ],\n      \"numeroTransacaoCliente\"\
+        : \"2017TR000049\",\n      \"credencial\": {\n      \"cpf\": \"60165570644\"\
+        ,\n      \"ug\": \"010001\",\n      \"sistema\": \"SIAFI2017HM\"\n       \
+        \ }\n      }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\"\
+        : \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\": [],\n\
+        \      \"status\": 200\n    }"
+      requestBody:
+        description: Dados da Nota de Empenho a ser alterada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlteraNE'
+            example: Json de entrada  
+        required: true
+      responses:
+        200:
+          description: Retorna os dados da Nota de Empenho Alterada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+        400:
+          description: Algum campo enviado é inválido
+          content: {}
+        403:
+          description: Usuário não tem permissão para realizar esta operação
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar      
+      externalDocs:
+        description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
   /v1/ne/anular:
     post:
       tags:
