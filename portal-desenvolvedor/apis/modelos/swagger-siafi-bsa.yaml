@@ -500,6 +500,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AtualizaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -508,6 +509,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
+              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -564,6 +566,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RealizaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -572,6 +575,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
+              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
