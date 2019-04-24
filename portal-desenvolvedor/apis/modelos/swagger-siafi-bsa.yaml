@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - C
+    ### Verificando assinatura com Carimbo de Tempo - A
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -739,75 +739,6 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito      
       externalDocs:
         description: "NC para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf           
-  /v2/nota-lancamento/{ug}/{gestao}/{ano}/{numero}:
-    get:
-      tags:
-      - Nota de Lançamento
-      summary: Consulta Nota de Lançamento
-      description:  |-
-        "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestã\
-        o, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001\n\
-        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
-        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"20Fev18\",\n      \"ugEmitente\"\
-        : \"170999\",\n      \"nomeUGEmitente\": \"\",\n      \"gestaoEmitente\":\
-        \ \"00001\",\n      \"nomeGestaoEmitente\": \"\",\n      \"favorecido\": \"\
-        \",\n      \"nomeFavorecido\": \"\",\n      \"gestaoFavorecido\": \"\",\n\
-        \      \"nomeGestaoFavorecido\": \"\",\n      \"numero\": \"\",\n      \"\
-        dataValorizacao\": \"20Fev18\",\n      \"taxaCambio\": \"2\",\n      \"tituloCredito\"\
-        : \"\",\n      \"dataVencimento\": \"\",\n      \"sistemaOrigem\": \" \",\
-        \ \n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n       \
-        \ {\n          \"evento\": \"510669\",\n          \"inscricao1\": \"0114000000\"\
-        ,\n          \"inscricao2\": \"\",\n          \"classificacao1\": \"\",\n\
-        \          \"classificacao2\": \"\",\n          \"classOrcamentaria1\": \"\
-        \",\n          \"classOrcamentaria2\": \"\", \n          \"valor\": \"\",\
-        \  \n          \"numeroReferencia\": \"10001\"  \n        } \n      ] \n \
-        \   }"
-      parameters:
-        - name: ug
-          in: path
-          description: Código da UG emitente
-          required: true
-          schema:
-            type: string
-        - name: gestao
-          in: path
-          description: Código da Gestão
-          required: true
-          schema:
-            type: string
-        - name: ano
-          in: path
-          description: Ano da Nota de Crédito
-          required: true
-          schema:
-            type: string
-        - name: numero
-          in: path
-          description: Número da Nota de Crédito
-          required: true
-          schema:
-            type: string
-        - name: x-credencial
-          in: header
-          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-            convertido em Base64.
-          required: true
-          schema:
-            type: string
-      responses:
-        201:
-          description: Nota de Lançamento encontrada e retornada
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotaLancamento'
-              example: Json de saída
-      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/"ug"/"gestao"/"ano"/"numero"      
-      externalDocs:
-        description: "NL para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
   /v2/nota-lancamento:
     post:
