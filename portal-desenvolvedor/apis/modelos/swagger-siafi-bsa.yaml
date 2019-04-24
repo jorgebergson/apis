@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - Z
+    ### Verificando assinatura com Carimbo de Tempo - X
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -29,7 +29,7 @@ externalDocs:
   description: "Detalhamento da API SIAFI"
   url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
 paths:
-  '/v1/ne/alterar':
+  /v1/ne/alterar:
     post:
       tags:
       - Nota de Empenho v1
@@ -89,7 +89,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Anula Nota de Empenho
-      description: "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/anular\n\
+      description: |-
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/anular\n\
         #### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n   \
         \     \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"\
         010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\"\
@@ -144,7 +145,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Consulta Número da Transação
-      description: "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultaTransacao\n\
+      description:  |- 
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultaTransacao\n\
         #### Conteúdo do corpo\n    {\n      \"numeroTransacaoCliente\": \"2017TR000045\"\
         ,\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n        \"\
         ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n\
@@ -184,7 +186,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Consulta Nota de Empenho
-      description: "\n## Exemplo\n#### Chamada\n    [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultar\n\
+      description:  |- 
+        "\n## Exemplo\n#### Chamada\n    [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultar\n\
         #### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n      \"ug\":\
         \ \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"800017\"\n\
         \    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao:\
@@ -245,7 +248,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Adiciona Nota de Empenho
-      description: "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/realizar\n\
+      description:  |- 
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/realizar\n\
         #### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n   \
         \     \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"\
         010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\"\
@@ -310,7 +314,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Reforça Nota de Empenho
-      description: "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/reforcar\n\
+      description:  |- 
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/reforcar\n\
         #### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n     \
         \ \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\"\
         ,\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n  \
@@ -364,7 +369,8 @@ paths:
       tags:
       - Nota de Empenho v2
       summary: Consulta Nota de Empenho
-      description: "Consulta uma Nota de Empenho existente\n\n## Exemplo\n#### Chamada\n\
+      description:  |- 
+        "Consulta uma Nota de Empenho existente\n\n## Exemplo\n#### Chamada\n\
         \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017\n\
         \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
         \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
@@ -435,17 +441,13 @@ paths:
                 $ref: '#/components/schemas/DadosNE'
         400:
           description: Algum campo enviado é inválido
-          content: {}
         403:
           description: Credencial informada não possui permissão para consultar a
             Nota de Crédito
-          content: {}
         404:
           description: Nota de Empenho inexistente
-          content: {}
         500:
           description: Erro interno do servidor
-          content: {}
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "NE para Degustação"
