@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - A
+    ### Verificando assinatura com Carimbo de Tempo - B
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -351,7 +351,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
-              example: Json de entrada  
+              example: Json de saída 
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -440,6 +440,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DadosNE'
+              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
         403:
@@ -498,6 +499,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AtualizaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -506,6 +508,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
+              example: Json saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -566,6 +569,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RealizaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -574,6 +578,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
+              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -649,6 +654,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotaCredito'
+              example: Json de saída
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -704,6 +710,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraNC'
+            example: Json de entrada  
         required: true
       responses:
         201:
@@ -712,6 +719,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NCGerada'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -789,6 +797,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotaLancamento'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -844,6 +853,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraNL'
+            example: Json de entrada  
         required: true
       responses:
         201:
@@ -852,6 +862,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NLGerada'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -935,6 +946,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotaDotacao'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -990,6 +1002,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraND'
+            example: Json de entrada  
         required: true
       responses:
         201:
@@ -998,6 +1011,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NDGerada'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -1081,6 +1095,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ConsultaNDDetOrc'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -1140,6 +1155,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraNDDetOrc'
+            example: Json de entrada  
         required: true
       responses:
         201:
@@ -1148,6 +1164,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NDDetaOrcGerada'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -1221,6 +1238,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/notaBloqueio'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -1272,6 +1290,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/notaBloqueio'
+            example: Json de entrada  
         required: true
       responses:
         201:
@@ -1280,6 +1299,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NDBloqueioGerada'
+              example: Json de saída  
         400:
           description: Algum campo possui informações inválidas
           content: {}
@@ -1343,6 +1363,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Documentos'
+              example: Json de saída 
         400:
           description: Algum campo possui informações inválidas
           content: {}
