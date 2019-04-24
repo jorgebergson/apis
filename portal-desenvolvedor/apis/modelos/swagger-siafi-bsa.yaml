@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - B
+    ### Verificando assinatura com Carimbo de Tempo - A
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -451,77 +451,6 @@ paths:
         500:
           description: Erro interno do servidor
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"ug"/"gestao"/"ano"/"numero"      
-      externalDocs:
-        description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /v2/nota-empenho:
-    post:
-      tags:
-      - Nota de Empenho v2
-      summary: Realiza uma Nota de Empenho
-      description: "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho\n\
-        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
-        \      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"14JUN18\"\
-        ,\n        \"numeroDocumento\": \"800017\",\n        \"ugEmitente\": \"010001\"\
-        ,\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n\
-        \        \"taxaCambio\": \"\",\n        \"observacao\": \"Teste NE-01\",\n\
-        \        \"valorTotalEmpenho\": \"001\",\n        \"numeroProcesso\": \"103.504/1999\"\
-        ,\n        \"numeroOriginalConvenio\": \" \",\n        \"passivoAnterior\"\
-        : \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n   \
-        \      {\n          \"conta\": \"\",\n          \"valor\": \"\"\n        \
-        \  }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n        \"favorecido\"\
-        : \"010001\",\n        \"gestaoFavorecido\": \"00001\",\n        \"esferaOrcamentaria\"\
-        : \"1\",\n        \"ptres\": \"000001\",\n        \"fonteRecursos\": \"0100000000\"\
-        ,\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\"\
-        : \"010019\",\n        \"planoInterno\": \"aaa\",\n        \"tipoEmpenho\"\
-        : \"1\",                        \n        \"modalidadeLicitacao\": \"08\"\
-        ,\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\"\
-        : \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\"\
-        : \"DF\",\n        \"dataVencimento\": [\n          \"26JUN2018\"\n      \
-        \  ],\n        \"dataRecebimento\": [\n          \"26JUN2018\"\n        ],\n\
-        \        \"valorCompromisso\": [\n          \"001\"\n        ],\n        \"\
-        listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n       \
-        \     \"quantidade\": \"1\",\n            \"valorUnitario\": \"001\",\n  \
-        \          \"valorTotal\": \"001\",\n            \"descricao\": \"Lista NE-01\"\
-        \n          }\n        ]\n    }\n  \n#### Retorno\n    { \n      \"codigo\"\
-        : 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\"\
-        ,\n      \"erros\": [],\n      \"status\": 200\n      }\n    }"
-      parameters:
-        - name: x-credencial
-          in: header
-          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-            convertido em Base64.
-          required: true
-          schema:
-            type: string
-      requestBody:
-        description: Dados da Nota de Empenho a ser Gerada
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RealizaNE'
-            example: Json de entrada  
-        required: true
-      responses:
-        200:
-          description: Retorna os dados da Nota de Empenho Gerada
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NE'
-              example: Json de saída  
-        400:
-          description: Algum campo enviado é inválido
-          content: {}
-        403:
-          description: Usuário não tem permissão para realizar esta operação
-          content: {}
-        500:
-          description: Erro interno do servidor
-          content: {}
-      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"Json de entrada"      
       externalDocs:
         description: "NE para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf  
