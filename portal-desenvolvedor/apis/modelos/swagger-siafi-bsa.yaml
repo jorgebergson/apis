@@ -1390,29 +1390,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/"ug"/"gestao"/"data"
       externalDocs:
         description: "Documentos para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /status:
-    get:
-      tags:
-      - Status
-      summary: Verifica status da API
-      responses:
-        200:
-          description: Serviço disponível
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00
-        500:
-          description: Serviço indisponível
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00        
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
 components:
   schemas:
     RealizaNE:
