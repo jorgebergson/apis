@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - A
+    ### Verificando assinatura com Carimbo de Tempo - B
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -455,70 +455,6 @@ paths:
       externalDocs:
         description: "NE para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /v2/nota-empenho:
-    put:
-      tags:
-      - Nota de Empenho v2
-      summary: Atualiza uma Nota de Empenho.
-      description: "O tipo de atualização depende do campo ' especie '\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alteraç\
-        ão: &nbsp;&nbsp;&nbsp;&nbsp;especie = 01\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reforç\
-        o:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; especie = 02\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anulaç\
-        ão: &nbsp;&nbsp;&nbsp;&nbsp;especie = 03\n\n## Exemplo\n#### Chamada\n\n \
-        \   https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho\n\
-        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
-        \      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"14JUN18\"\
-        ,\n        \"numeroDocumento\": \"800017\",               \n        \"ugEmitente\"\
-        : \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\"\
-        : \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Teste NE\
-        \ de reforço\",\n        \"valorTotalEmpenho\": \"002\",\n        \"numeroProcesso\"\
-        : \"103.504/1999\",\n        \"numeroOriginalConvenio\": \" \",\n        \"\
-        passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\"\
-        : [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n \
-        \         }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n    \
-        \    \"especie\": \"02\",\n        \"ugReferencia\": \"010001\",\n       \
-        \ \"gestaoReferencia\": \"00001\",\n        \"numeroEmpenhoReferencia\": \"\
-        2018NE800032\",\n        \"numeroListaReferencia\": \"2018LI800091\",\n  \
-        \      \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n\
-        \            \"quantidade\": \"1\",\n            \"valorUnitario\": \"001\"\
-        ,\n            \"valorTotal\": \"001\",\n            \"descricao\": \"Lista\
-        \ NE-01\"\n          }\n        ]\n    }\n \n#### Retorno\n    { \n      \"\
-        codigo\": 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\"\
-        ,\n      \"erros\": [],\n      \"status\": 200\n      }\n    }"
-      parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
-      requestBody:
-        description: Dados da Nota de Empenho a ser atualizada
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AtualizaNE'
-            example: Json de entrada  
-        required: true
-      responses:
-        200:
-          description: Retorna os dados da Nota de Empenho Atualizada
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NE'
-              example: Json de saída  
-        400:
-          description: Algum campo enviado é inválido
-          content: {}
-        403:
-          description: Usuário não tem permissão para realizar esta operação
-          content: {}
-        500:
-          description: Erro interno do servidor
-          content: {}
   /v2/nota-empenho2:
     post:
       tags:
