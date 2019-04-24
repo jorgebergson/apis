@@ -538,6 +538,96 @@ paths:
       externalDocs:
         description: "NE para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
+        
+        
+  /v2/nota-empenho/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Empenho v2
+      summary: Consulta Nota de Empenho
+      description: "Consulta uma Nota de Empenho existente\n\n## Exemplo\n#### Chamada\n\
+        \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
+        \      \n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao:\
+        \ 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente:\
+        \ '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente:\
+        \ '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido:\
+        \ CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido:\
+        \ '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n  \
+        \    observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n\
+        \      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n\
+        \      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho:\
+        \ '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem:\
+        \ APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n\
+        \      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade:\
+        \ NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso:\
+        \ 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n    \
+        \  codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n  \
+        \    referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos:\
+        \ 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n\
+        \      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n\
+        \      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n\
+        \          valor: '01'\n          seq: '000'\n          qtd: ''\n        \
+        \  valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n   \
+        \     - numero: '1'\n          valor: ''\n          seq: '000'\n         \
+        \ qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n\
+        \        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo:\
+        \ ''\n    erros: []\n    status: 200\n    }      "
+      parameters:
+      - name: ug
+        in: path
+        description: Código da UG emitente
+        required: true
+        schema:
+          type: string
+      - name: gestao
+        in: path
+        description: Código da Gestão
+        required: true
+        schema:
+          type: string
+      - name: ano
+        in: path
+        description: Ano da Nota de Crédito
+        required: true
+        schema:
+          type: string
+      - name: numero
+        in: path
+        description: Número da Nota de Crédito
+        required: true
+        schema:
+          type: string
+      - name: x-credencial
+        in: header
+        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+          convertido em Base64.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Retorna os dados da Nota de Empenho
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DadosNE'
+        400:
+          description: Algum campo enviado é inválido
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Crédito
+          content: {}
+        404:
+          description: Nota de Empenho inexistente
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+        
   '/nota-credito/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
