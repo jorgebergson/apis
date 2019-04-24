@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - A
+    ### Verificando assinatura com Carimbo de Tempo - B
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -609,69 +609,6 @@ paths:
       externalDocs:
         description: "NC para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
-  /v2/nota-credito2:
-    post:
-      tags:
-      - Nota de Crédito
-      summary: Gera Nota de Crédito
-      description:  |- 
-        "Gera uma Nota de Crédito com as informações passadas no JSON de\
-        \ entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito\n\
-        \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
-        \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
-        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\"\
-        ,\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n    \
-        \  \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n \
-        \     \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n    \
-        \  \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE INCLUSAO\
-        \ NC\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\"\
-        ,\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n\
-        \          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\"\
-        : \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\":\
-        \ \"010001\",\n          \"planoInterno\": \"\",   \n          \"valor\":\
-        \ \"00000000000100000\"\n        }\n      ]\n    }\n    \n#### Retorno\n\n\
-        \    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"\
-        ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"\
-        800017\"\n    }"
-      parameters:
-        - name: x-credencial
-          in: header
-          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-            convertido em Base64.
-          required: true
-          schema:
-            type: string
-      requestBody:
-        description: Dados da Nota de Crédito a ser gerada
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/GeraNC'
-            example: Json de entrada  
-        required: true
-      responses:
-        201:
-          description: Nota de Crédito gerada com sucesso
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NCGerada'
-              example: Json de saída  
-        400:
-          description: Algum campo possui informações inválidas
-          content: {}
-        403:
-          description: Credencial informada não possui permissão para gerar a Nota
-            de Cŕedito
-          content: {}
-        500:
-          description: Erro interno do servidor
-          content: {}
-      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito      
-      externalDocs:
-        description: "NC para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf  
 components:
   schemas:
     RealizaNE:
