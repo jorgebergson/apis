@@ -523,7 +523,7 @@ paths:
       externalDocs:
         description: "NE para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /v2/nota-empenho:      
+  /v2/nota-empenho2:      
     post:
       tags:
       - Nota de Empenho v2
@@ -677,7 +677,7 @@ paths:
       externalDocs:
         description: "NC para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /v2/nota-credito:
+  /v2/nota-credito2:
     post:
       tags:
       - Nota de Crédito
