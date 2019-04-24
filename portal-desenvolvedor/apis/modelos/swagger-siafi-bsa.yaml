@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - A
+    ### Verificando assinatura com Carimbo de Tempo - B
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -453,7 +453,899 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdff 
+  /v2/nota-empenho2:      
+    post:
+      tags:
+      - Nota de Empenho v2
+      summary: Realiza uma Nota de Empenho
+      description:  |- 
+        "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
+        \      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"14JUN18\"\
+        ,\n        \"numeroDocumento\": \"800017\",\n        \"ugEmitente\": \"010001\"\
+        ,\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n\
+        \        \"taxaCambio\": \"\",\n        \"observacao\": \"Teste NE-01\",\n\
+        \        \"valorTotalEmpenho\": \"001\",\n        \"numeroProcesso\": \"103.504/1999\"\
+        ,\n        \"numeroOriginalConvenio\": \" \",\n        \"passivoAnterior\"\
+        : \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n   \
+        \      {\n          \"conta\": \"\",\n          \"valor\": \"\"\n        \
+        \  }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n        \"favorecido\"\
+        : \"010001\",\n        \"gestaoFavorecido\": \"00001\",\n        \"esferaOrcamentaria\"\
+        : \"1\",\n        \"ptres\": \"000001\",\n        \"fonteRecursos\": \"0100000000\"\
+        ,\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\"\
+        : \"010019\",\n        \"planoInterno\": \"aaa\",\n        \"tipoEmpenho\"\
+        : \"1\",                        \n        \"modalidadeLicitacao\": \"08\"\
+        ,\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\"\
+        : \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\"\
+        : \"DF\",\n        \"dataVencimento\": [\n          \"26JUN2018\"\n      \
+        \  ],\n        \"dataRecebimento\": [\n          \"26JUN2018\"\n        ],\n\
+        \        \"valorCompromisso\": [\n          \"001\"\n        ],\n        \"\
+        listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n       \
+        \     \"quantidade\": \"1\",\n            \"valorUnitario\": \"001\",\n  \
+        \          \"valorTotal\": \"001\",\n            \"descricao\": \"Lista NE-01\"\
+        \n          }\n        ]\n    }\n  \n#### Retorno\n    { \n      \"codigo\"\
+        : 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\"\
+        ,\n      \"erros\": [],\n      \"status\": 200\n      }\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Empenho a ser Gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RealizaNE'
+            example: Json de entrada  
+        required: true
+      responses:
+        200:
+          description: Retorna os dados da Nota de Empenho Gerada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NE'
+              example: Json de saída  
+        400:
+          description: Algum campo enviado é inválido
+          content: {}
+        403:
+          description: Usuário não tem permissão para realizar esta operação
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: (post) https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho      
+      externalDocs:
+        description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-credito:
+    get:
+      tags:
+      - Nota de Crédito
+      summary: Consulta Nota de Crédito
+      description:  |- 
+        "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\
+        \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001\n\
+        \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
+        \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
+        \      \n#### Retorno\n    {\n      \"dataEmissao\": \"23Fev18\",\n      \"\
+        ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n    \
+        \  \"opCambial\": \"2\",\n      \"txObservacao\": \"10001 1    0        0\
+        \                  TESTE\",\n      \"mesLancamento\": \"\",\n      \"qtdLancamento\"\
+        : \"\",\n      \"numOriginal\": \"\",\n      \"sistemaOrigem\": \"\",\n  \
+        \    \"numTransferencia\": \"\",\n      \"listaEventos\": [\n        {\n \
+        \         \"evento\": \"30006\",\n          \"esferaOrcamentaria\": \"2\"\
+        ,\n          \"unidadeOrcamentaria\": null,\n          \"programaTrabalho\"\
+        : \"11\",\n          \"resultado\": null,\n          \"tipoCredito\": null,\n\
+        \          \"planoOrcamentario\": null,\n          \"autorEmenda\": null,\n\
+        \          \"fonteRecurso\": \"\",\n          \"naturezaDespesa\": \"\",\n\
+        \          \"contaPassivo\": \"null\",\n          \"subitem\": \"\",\n   \
+        \       \"ugResponsavel\": \"01000\",\n          \"planoInterno\": \"00000339039\"\
+        ,\n          \"valorTransacao\": \"10001\"\n        }\n      ]\n    }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Nota de Crédito encontrada e retornada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaCredito'
+              example: Json de saída
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Crédito
+          content: {}
+        404:
+          description: Nota de Crédito inexistente
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/"ug"/"gestao"/"ano"/"numero"      
+      externalDocs:
+        description: "NC para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
+  /v2/nota-credito2:
+    post:
+      tags:
+      - Nota de Crédito
+      summary: Gera Nota de Crédito
+      description:  |- 
+        "Gera uma Nota de Crédito com as informações passadas no JSON de\
+        \ entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito\n\
+        \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
+        \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\"\
+        ,\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n    \
+        \  \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n \
+        \     \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n    \
+        \  \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE INCLUSAO\
+        \ NC\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\"\
+        ,\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n\
+        \          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\"\
+        : \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\":\
+        \ \"010001\",\n          \"planoInterno\": \"\",   \n          \"valor\":\
+        \ \"00000000000100000\"\n        }\n      ]\n    }\n    \n#### Retorno\n\n\
+        \    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"\
+        ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"\
+        800017\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Crédito a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeraNC'
+            example: Json de entrada  
+        required: true
+      responses:
+        201:
+          description: Nota de Crédito gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NCGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar a Nota
+            de Cŕedito
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito      
+      externalDocs:
+        description: "NC para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf       
+  /v2/nota-lancamento/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Lançamento
+      summary: Consulta Nota de Lançamento
+      description:  |-
+        "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestã\
+        o, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"20Fev18\",\n      \"ugEmitente\"\
+        : \"170999\",\n      \"nomeUGEmitente\": \"\",\n      \"gestaoEmitente\":\
+        \ \"00001\",\n      \"nomeGestaoEmitente\": \"\",\n      \"favorecido\": \"\
+        \",\n      \"nomeFavorecido\": \"\",\n      \"gestaoFavorecido\": \"\",\n\
+        \      \"nomeGestaoFavorecido\": \"\",\n      \"numero\": \"\",\n      \"\
+        dataValorizacao\": \"20Fev18\",\n      \"taxaCambio\": \"2\",\n      \"tituloCredito\"\
+        : \"\",\n      \"dataVencimento\": \"\",\n      \"sistemaOrigem\": \" \",\
+        \ \n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n       \
+        \ {\n          \"evento\": \"510669\",\n          \"inscricao1\": \"0114000000\"\
+        ,\n          \"inscricao2\": \"\",\n          \"classificacao1\": \"\",\n\
+        \          \"classificacao2\": \"\",\n          \"classOrcamentaria1\": \"\
+        \",\n          \"classOrcamentaria2\": \"\", \n          \"valor\": \"\",\
+        \  \n          \"numeroReferencia\": \"10001\"  \n        } \n      ] \n \
+        \   }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Nota de Lançamento encontrada e retornada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaLancamento'
+              example: Json de saída
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consulta a Nota
+            de Lançamento
+          content: {}
+        404:
+          description: Nota de Lançamento inexistente
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/"ug"/"gestao"/"ano"/"numero"      
+      externalDocs:
+        description: "NL para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
+  /v2/nota-lancamento:
+    post:
+      tags:
+      - Nota de Lançamento
+      summary: Gera Nota de Lançamento
+      description:  |- 
+        "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n\
+        ## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\"\
+        ,\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\"\
+        ,\n      \"favorecido\": \"010001\",\n      \"gestaoFavorecido\": \"00001\"\
+        ,\n      \"numero\": \"2018NL800017\",\n      \"dataValorizacao\": \"14mai18\"\
+        ,\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n      \"dataVencimento\"\
+        : \"14MAI18\",\n      \"observacao\": \"INCLUSAO NL\", \n      \"listaEventos\"\
+        : [\n        {\n          \"evento\": \"300062\",\n          \"inscricao1\"\
+        : \"22025711000153\",\n          \"inscricao2\": \"null\",\n          \"classificacao1\"\
+        : \"111111111\",\n          \"classificacao2\": \"null\",\n          \"classOrcamentaria1\"\
+        : \"111111111\",\n          \"classOrcamentaria2\": \"null\", \n         \
+        \ \"valorEvento\": \"55555555\"  \n        } \n      ],\n      \"listaReferencias\"\
+        : [ \n          \"00001\" \n      ] \n    }\n #### Retorno\n\n    {\n    \
+        \  \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\"\
+        ,\n      \"tipoDoc\": \"NL\",\n      \"sequencialDoc\": \"800017\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Lançamento a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeraNL'
+            example: Json de entrada  
+        required: true
+      responses:
+        201:
+          description: Nota de Lançamento gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NLGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar a Nota
+            de Lançamento
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento      
+      externalDocs:
+        description: "NL para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf           
+  /v2/nota-dotacao/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Dotação
+      summary: Consulta Nota de Dotação
+      description:  |- 
+        "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestã\
+        o, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/010001/00001/2018/800002\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n      \"especieND\"\
+        : \"1\",\n      \"numeroDocumento\": \"2018ND800002\",\n      \"ugEmitente\"\
+        : \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n\
+        \      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\"\
+        ,\n      \"unidadeOrcamentaria\": \"\",\n      \"indicadorResultado\": \"\"\
+        ,\n      \"indicadorCredito\": \"\",\n      \"planoOrcamentario\": \"\",\n\
+        \      \"codigoAutorEmenda\": \"\",\n      \"fonteRecurso\": \"01000\",\n\
+        \      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"\
+        1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\"\
+        : \"01Ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\": \"005714\",\n\
+        \      \"idoc\": \"9999\",\n      \"observacao\": \"teste Nota Dotação DETAORC\"\
+        , \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimo\":\
+        \ \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\"\
+        : \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\"\
+        : \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\"\
+        : \"\", \n          \"valor\": \"100000\",  \n        }, {\n          \"reducaoAcrescimo\"\
+        : \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\"\
+        : \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\"\
+        : \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\"\
+        : \"\", \n          \"valor\": \"100000\",  \n        } \n      ]\n    }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Nota de Dotação encontrada e retornada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaDotacao'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consulta a Nota
+            de Dotação
+          content: {}
+        404:
+          description: Nota de Dotação inexistente
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/"ug"/"gestao"/"ano"/"numero"      
+      externalDocs:
+        description: "ND para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-dotacao:
+    post:
+      tags:
+      - Nota de Dotação
+      summary: Gera uma Nota de Dotação
+      description:  |- 
+        "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n##\
+        \ Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\"\
+        ,\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n \
+        \     \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n    \
+        \  \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\"\
+        : \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n\
+        \          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\"\
+        ,\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\"\
+        ,\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\"\
+        : \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n\
+        \          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n    \
+        \    } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\"\
+        ,\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\"\
+        : \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\":\
+        \ \"2018TRND000001\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Dotação a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeraND'
+            example: Json de entrada  
+        required: true
+      responses:
+        201:
+          description: Nota de Dotação gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NDGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar a Nota
+            de Dotação
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao
+      externalDocs:
+        description: "ND para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-detaorc/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Dotação
+      summary: Consulta uma Nota de Detalhamento Orçamentário
+      description:  |-  
+        "Consulta uma Nota de Detalhamento Orçamentário a partir dos parâ\
+        metros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc/010001/00001/2018/000002\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n      \"especieND\"\
+        : \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\"\
+        : \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n\
+        \      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\"\
+        ,\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n\
+        \      \"codigoInstrumentoLegal\": \"1\",\n      \"numeroInstrumentoLegal\"\
+        : \"0123\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\"\
+        : \"\",\n      \"ptres\": \"005714\", \n      \"idoc\": \"9999\",\n      \"\
+        observacao\": \"teste Nota Docação DETAORC\", \n      \"listaEventos\": [\n\
+        \        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\"\
+        : \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\"\
+        : \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\"\
+        : \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"\
+        ,  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n    \
+        \      \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\"\
+        : \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\"\
+        : \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\"\
+        : \"\", \n          \"valor\": \"100000\", \n        } \n      ]         \
+        \    \n    }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Nota de Detalhamento Orçamentário encontrado e retornado com
+            sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsultaNDDetOrc'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar essa
+            Nota de Detalhamento Orçamentário
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-detaorc/"ug"/"gestao"/"ano"/"numero"      
+      externalDocs:
+        description: "Nota Detaorc para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-detaorc:
+    post:
+      tags:
+      - Nota de Dotação
+      summary:  Gera uma Nota de Detalhamento Orçamentário
+      description:  |- 
+        "Gera uma Nota de Detalhamento Orçamentário a partir de um Json\
+        \ de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\": \"10AGO18\",\n\
+        \      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\"\
+        ,\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\"\
+        ,\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\": \"0100\"\
+        ,\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\":\
+        \ \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\"\
+        : \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\": \"005714\",\n\
+        \      \"idoc\": \"9999\",\n      \"observacao\": \"Teste Nota Dotação DETAORC\"\
+        , \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\"\
+        : \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\"\
+        : \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\"\
+        : \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\"\
+        : \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n     \
+        \     \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\"\
+        ,\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\"\
+        : \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\"\
+        : \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"\
+        \ \n        } \n      ]\n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\"\
+        ,\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\"\
+        : \"ND\",\n      \"sequencialDoc\": \"000002\",\n      \"numRequisicao\":\
+        \ \"2018TRND000002\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados de uma Nota de Detalhamento Orçamentário a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GeraNDDetOrc'
+            example: Json de entrada  
+        required: true
+      responses:
+        201:
+          description: Nota de Detalhamento Orçamentário gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NDDetaOrcGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar uma Nota
+            de Detalhamento Orçamentário
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-detaorc
+      externalDocs:
+        description: "Nota Detaorc para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-bloqueio/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Dotação
+      summary: Consulta uma Nota de Bloqueio de Crédito
+      description:  |- 
+        "Consulta uma Nota de Bloqueio de Crédito a partir dos parâmetros\
+        \ UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/bloqueio/010001/00001/2018/000005\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"06nov18\",\n      \"numeroDocumento\"\
+        : \"2018ND000005\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\"\
+        : \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n \
+        \     \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"taxaCambio\"\
+        : \"\",\n      \"observacao\": \"TESTE API SIAFI\", \n      \"listaEventos\"\
+        : [\n        {\n          \"evento\": \"200020\",\n          \"esferaOrcamentaia\"\
+        : \"1\",\n          \"PTRES\": \"001000\",\n          \"IDOC\": \"9999\",\n\
+        \          \"naturezaDespesa\": \"339000\",\n          \"fonte\": \"0100\"\
+        , \n          \"valor\": \"20000\",  \n        }\n      ]             \n \
+        \   }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Bloqueio de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Bloqueio de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Nota de bloqueio de Crédito encontrada e retornada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notaBloqueio'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Bloqueio de Crédito
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio/"ug"/"gestao"/"ano"/"numero"
+      externalDocs:
+        description: "NB para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-bloqueio:
+    post:
+      tags:
+      - Nota de Dotação
+      summary: Gera uma Nota de Bloqueio de Crédito
+      description:  |- 
+        "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\
+        \n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/bloqueio\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"\",\n    \
+        \  \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"170999\",\n      \"\
+        gestaoEmitente\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"observacao\"\
+        : \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\"\
+        : \"\",\n          \"esferaOrcamentaria\": \"\",\n          \"unidadeOrcamentaria\"\
+        : \"\",\n          \"ptres\": \"\",\n          \"idoc\": \"\",\n         \
+        \ \"naturezaDespesa\": \"\",\n          \"grupoFonte\": \"\",\n          \"\
+        resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\"\
+        : \"\",\n          \"autorEmenda\": \"\",\n          \"valor\": \"2000\"\n\
+        \        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\"\
+        ,\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\"\
+        : \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\":\
+        \ \"2018TRND000005\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Bloqueio de Crédito a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notaBloqueio'
+            example: Json de entrada  
+        required: true
+      responses:
+        201:
+          description: Nota de Bloqueio de Crédito gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NDBloqueioGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar a Nota
+            de Bloqueio de Crédito
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio
+      externalDocs:
+        description: "NB para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/documentos/{ug}/{gestao}/{data}:
+    get:
+      tags:
+      - Consulta Documentos
+      summary: Consulta Documentos
+      description:  |- 
+        "Consulta documentos a partir de uma data específica\n\n## Exemplo\n\
+        #### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"data\": \"10FEV18\",\n      \"ugEmitente\"\
+        : \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"listaDocumentos\"\
+        : [\n        {\n          \"2018ND000001\",\n          \"2017NL000083\",\n\
+        \          \"2018NE000017\",\n          \"2017ND000025\",\n          \"2017NL000081\"\
+        ,\n          \"2018NC000167\"  \n        }\n             \n      ]\n     \
+        \        \n    }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão emitente
+          required: true
+          schema:
+            type: string
+        - name: data
+          in: path
+          description: Data referente ao pedido da consulta
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        201:
+          description: Documentos encontrados e retornados com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Documentos'
+              example: Json de saída 
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Bloqueio de Crédito
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/"ug"/"gestao"/"data"
+      externalDocs:
+        description: "Documentos para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf           
+  /status:
+    get:
+      tags:
+      - Status
+      summary: Verifica status da API
+      responses:
+        200:
+          description: Serviço disponível
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Status'
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
+        500:
+          description: Serviço indisponível
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Status'
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
 components:
   schemas:
     RealizaNE:
