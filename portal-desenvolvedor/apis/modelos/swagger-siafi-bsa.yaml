@@ -159,6 +159,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConsultaTransacao'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -221,6 +222,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ConsultaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -287,6 +289,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RealizaNE'
+            example: Json de entrada  
         required: true
       responses:
         200:
@@ -350,6 +353,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
+              example: Json de entrada  
         400:
           description: Algum campo enviado é inválido
           content: {}
