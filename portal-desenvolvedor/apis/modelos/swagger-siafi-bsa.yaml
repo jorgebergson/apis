@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - X
+    ### Verificando assinatura com Carimbo de Tempo - Y
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -401,37 +401,37 @@ paths:
         \        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo:\
         \ ''\n    erros: []\n    status: 200\n    }      "
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Crédito
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Crédito
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: Retorna os dados da Nota de Empenho
@@ -484,13 +484,13 @@ paths:
         codigo\": 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\"\
         ,\n      \"erros\": [],\n      \"status\": 200\n      }\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Empenho a ser atualizada
         content:
@@ -552,13 +552,13 @@ paths:
         : 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\"\
         ,\n      \"erros\": [],\n      \"status\": 200\n      }\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Empenho a ser Gerada
         content:
@@ -610,37 +610,37 @@ paths:
         \       \"ugResponsavel\": \"01000\",\n          \"planoInterno\": \"00000339039\"\
         ,\n          \"valorTransacao\": \"10001\"\n        }\n      ]\n    }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Crédito
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Crédito
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         200:
           description: Nota de Crédito encontrada e retornada
@@ -690,13 +690,13 @@ paths:
         ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"\
         800017\"\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Crédito a ser gerada
         content:
@@ -750,37 +750,37 @@ paths:
         \  \n          \"numeroReferencia\": \"10001\"  \n        } \n      ] \n \
         \   }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Lançamento
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Lançamento
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Lançamento
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Lançamento
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         201:
           description: Nota de Lançamento encontrada e retornada
@@ -830,13 +830,13 @@ paths:
         \  \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\"\
         ,\n      \"tipoDoc\": \"NL\",\n      \"sequencialDoc\": \"800017\"\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Lançamento a ser gerada
         content:
@@ -896,37 +896,37 @@ paths:
         : \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\"\
         : \"\", \n          \"valor\": \"100000\",  \n        } \n      ]\n    }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Dotação
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Dotação
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         201:
           description: Nota de Dotação encontrada e retornada
@@ -976,13 +976,13 @@ paths:
         : \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\":\
         \ \"2018TRND000001\"\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Dotação a ser gerada
         content:
@@ -1041,37 +1041,37 @@ paths:
         : \"\", \n          \"valor\": \"100000\", \n        } \n      ]         \
         \    \n    }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Dotação
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Dotação
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Dotação
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         201:
           description: Nota de Detalhamento Orçamentário encontrado e retornado com
@@ -1126,13 +1126,13 @@ paths:
         : \"ND\",\n      \"sequencialDoc\": \"000002\",\n      \"numRequisicao\":\
         \ \"2018TRND000002\"\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados de uma Nota de Detalhamento Orçamentário a ser gerada
         content:
@@ -1182,37 +1182,37 @@ paths:
         , \n          \"valor\": \"20000\",  \n        }\n      ]             \n \
         \   }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Bloqueio de Crédito
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Bloqueio de Crédito
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Bloqueio de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Bloqueio de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         201:
           description: Nota de bloqueio de Crédito encontrada e retornada com sucesso
@@ -1258,13 +1258,13 @@ paths:
         : \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\":\
         \ \"2018TRND000005\"\n    }"
       parameters:
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       requestBody:
         description: Dados da Nota de Bloqueio de Crédito a ser gerada
         content:
@@ -1310,31 +1310,31 @@ paths:
         ,\n          \"2018NC000167\"  \n        }\n             \n      ]\n     \
         \        \n    }"
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão emitente
-        required: true
-        schema:
-          type: string
-      - name: data
-        in: path
-        description: Data referente ao pedido da consulta
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão emitente
+          required: true
+          schema:
+            type: string
+        - name: data
+          in: path
+          description: Data referente ao pedido da consulta
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
         201:
           description: Documentos encontrados e retornados com sucesso
