@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - C
+    ### Verificando assinatura com Carimbo de Tempo - A
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -527,7 +527,7 @@ paths:
       externalDocs:
         description: "NE para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
-  /v2/nota-credito/"ug"/"gestao"/"ano"/"numero":
+  /v2/nota-credito/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
       - Nota de Crédito
@@ -609,6 +609,89 @@ paths:
       externalDocs:
         description: "NC para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
+
+  /v2/nota-credito/{ug}/{gestao}/{ano}/{numeros}:
+    get:
+      tags:
+      - Nota de Crédito
+      summary: Consulta Nota de Crédito
+      description:  |- 
+        "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\
+        \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001\n\
+        \    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
+        \      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\
+        \      \n#### Retorno\n    {\n      \"dataEmissao\": \"23Fev18\",\n      \"\
+        ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n    \
+        \  \"opCambial\": \"2\",\n      \"txObservacao\": \"10001 1    0        0\
+        \                  TESTE\",\n      \"mesLancamento\": \"\",\n      \"qtdLancamento\"\
+        : \"\",\n      \"numOriginal\": \"\",\n      \"sistemaOrigem\": \"\",\n  \
+        \    \"numTransferencia\": \"\",\n      \"listaEventos\": [\n        {\n \
+        \         \"evento\": \"30006\",\n          \"esferaOrcamentaria\": \"2\"\
+        ,\n          \"unidadeOrcamentaria\": null,\n          \"programaTrabalho\"\
+        : \"11\",\n          \"resultado\": null,\n          \"tipoCredito\": null,\n\
+        \          \"planoOrcamentario\": null,\n          \"autorEmenda\": null,\n\
+        \          \"fonteRecurso\": \"\",\n          \"naturezaDespesa\": \"\",\n\
+        \          \"contaPassivo\": \"null\",\n          \"subitem\": \"\",\n   \
+        \       \"ugResponsavel\": \"01000\",\n          \"planoInterno\": \"00000339039\"\
+        ,\n          \"valorTransacao\": \"10001\"\n        }\n      ]\n    }"
+      parameters:
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Crédito
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Nota de Crédito encontrada e retornada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotaCredito'
+              example: Json de saída
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Crédito
+          content: {}
+        404:
+          description: Nota de Crédito inexistente
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/"ug"/"gestao"/"ano"/"numero"      
+      externalDocs:
+        description: "NC para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
   /v2/nota-credito:
     post:
       tags:
