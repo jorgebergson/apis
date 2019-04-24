@@ -627,6 +627,11 @@ paths:
         500:
           description: Erro interno do servidor
           content: {}
+      operationId: https://apigateway.serpro.gov.br/api-siafi-trial/1.0.0/ne/alterar
+      https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"ug"/"gestao"/"ano"/"numero"
+      externalDocs:
+        description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf           
         
   '/nota-credito/{ug}/{gestao}/{ano}/{numero}':
     get:
