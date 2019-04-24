@@ -34,7 +34,8 @@ paths:
       tags:
       - Nota de Empenho v1
       summary: Altera Nota de Empenho
-      description: "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar\n\
+      description: |- 
+        "\n## Exemplo\n#### Chamada\n      [POST] https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar\n\
         #### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n     \
         \ \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\"\
         ,\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n  \
@@ -78,8 +79,6 @@ paths:
         500:
           description: Erro interno do servidor
           content: {}
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar      
       externalDocs:
         description: "NE para Degustação"
