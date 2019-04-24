@@ -13,7 +13,7 @@ info:
     | 500 | Erro no Servidor | Ocorreu algum erro no servidor.| 
     ### Solicitando assinatura com Carimbo de Tempo
     Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp*        
-    ### Verificando assinatura com Carimbo de Tempo - B
+    ### Verificando assinatura com Carimbo de Tempo - C
     Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
     [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
@@ -1261,6 +1261,68 @@ paths:
           description: Erro interno do servidor
           content: {}
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio/"ug"/"gestao"/"ano"/"numero"
+      externalDocs:
+        description: "NB para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+  /v2/nota-bloqueio:
+    post:
+      tags:
+      - Nota de Dotação
+      summary: Gera uma Nota de Bloqueio de Crédito
+      description:  |- 
+        "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\
+        \n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/bloqueio\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"\",\n    \
+        \  \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"170999\",\n      \"\
+        gestaoEmitente\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"observacao\"\
+        : \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\"\
+        : \"\",\n          \"esferaOrcamentaria\": \"\",\n          \"unidadeOrcamentaria\"\
+        : \"\",\n          \"ptres\": \"\",\n          \"idoc\": \"\",\n         \
+        \ \"naturezaDespesa\": \"\",\n          \"grupoFonte\": \"\",\n          \"\
+        resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\"\
+        : \"\",\n          \"autorEmenda\": \"\",\n          \"valor\": \"2000\"\n\
+        \        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\"\
+        ,\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\"\
+        : \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\":\
+        \ \"2018TRND000005\"\n    }"
+      parameters:
+        - name: x-credencial
+          in: header
+          description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Dados da Nota de Bloqueio de Crédito a ser gerada
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notaBloqueio'
+            example: Json de entrada  
+        required: true
+      responses:
+        200:
+          description: Nota de Bloqueio de Crédito gerada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NDBloqueioGerada'
+              example: Json de saída  
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para gerar a Nota
+            de Bloqueio de Crédito
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio
       externalDocs:
         description: "NB para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
