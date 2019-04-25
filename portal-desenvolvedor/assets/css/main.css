@@ -4113,6 +4113,26 @@
 		border-radius: 5px;
 }
 
+.PUTOperation {
+    padding: 5px;
+    background-color: #EFF7FF; /* Red */
+    color: black;
+		font-family: monospace;
+    border-style: solid;
+    border-color: #FCA130;
+    border-width: 1px;
+		border-radius: 5px;
+		font-size: 25px;
+}
+
+.PUTLabel{
+		background-color: #FCA130;
+		color:white;
+		font-weight:bold;
+		padding:3px;
+		border-radius: 5px;
+}
+
 .POSTOperation {
     padding: 5px;
     background-color: #ECFAF4; /* Red */
