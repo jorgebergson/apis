@@ -27,7 +27,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API SIAFI"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-SIAFI.pdf
+  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-IntegraSIAFI.pdf
 paths: 
   /v1/ne/alterar:
     post:
@@ -83,7 +83,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v1/ne/anular:
     post:
       tags:
@@ -139,7 +139,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/anular      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf        
   /v1/ne/consultaTransacao:
     post:
       tags:
@@ -180,7 +180,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultaTransacao      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf        
   /v1/ne/consultar:
     post:
       tags:
@@ -242,7 +242,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultar      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf        
   /v1/ne/realizar:
     post:
       tags:
@@ -308,7 +308,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/realizar      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf        
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf        
   /v1/ne/reforcar:
     post:
       tags:
@@ -364,7 +364,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/reforcar      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf       
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf       
   /v2/nota-empenho/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
@@ -453,7 +453,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf  
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf  
   /v2/nota-empenho:
     post:
       tags:
@@ -524,7 +524,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"Json de entrada"      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf         
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf         
     put:
       tags:
       - Nota de Empenho v2
@@ -591,7 +591,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"Json de atualização"      
       externalDocs:
         description: "NE para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-credito/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
@@ -673,7 +673,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "NC para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf  
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf  
   /v2/nota-credito:
     post:
       tags:
@@ -736,7 +736,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/"json de entrada"     
       externalDocs:
         description: "NC para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
      
   /v2/nota-lancamento/{ug}/{gestao}/{ano}/{numero}:
     get:
@@ -819,7 +819,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "NL para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-lancamento:
     post:
       tags:
@@ -882,7 +882,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento      
       externalDocs:
         description: "NL para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf         
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf         
   /v2/nota-dotacao/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
@@ -970,7 +970,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "ND para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-dotacao:
     post:
       tags:
@@ -1033,7 +1033,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao
       externalDocs:
         description: "ND para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-detaorc/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
@@ -1118,7 +1118,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-detaorc/"ug"/"gestao"/"ano"/"numero"      
       externalDocs:
         description: "Nota Detaorc para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-detaorc:
     post:
       tags:
@@ -1188,7 +1188,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-detaorc
       externalDocs:
         description: "Nota Detaorc para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-bloqueio/{ug}/{gestao}/{ano}/{numero}:
     get:
       tags:
@@ -1263,7 +1263,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio/"ug"/"gestao"/"ano"/"numero"
       externalDocs:
         description: "NB para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/nota-bloqueio:
     post:
       tags:
@@ -1325,7 +1325,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-bloqueio
       externalDocs:
         description: "NB para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf 
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/documentos/{ug}/{gestao}/{data}:
     get:
       tags:
@@ -1390,7 +1390,7 @@ paths:
       operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/"ug"/"gestao"/"data"
       externalDocs:
         description: "Documentos para Degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/SIAFI-Degustacao.pdf   
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf   
   /status:
     get:
       tags:
