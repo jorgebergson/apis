@@ -1186,22 +1186,20 @@
       }
     },
     "ListaDocumentos": {
-      "type": "array" [
-        "properties": { 
-          "ugEmitente": {
-            "type": "string"
-          },
-          "gestaoEmitente": {
-            "type": "string"
-          },
-          "numeroDocumento": {
-            "type": "string"
-          },
-          "tipoNd": {
-            "type": "string"
-          }
+      "properties": { 
+        "ugEmitente": {
+          "type": "string"
+        },
+        "gestaoEmitente": {
+          "type": "string"
+        },
+        "numeroDocumento": {
+          "type": "string"
+        },
+        "tipoNd": {
+          "type": "string"
         }
-      ]
+      }
     },
     "NotaDotacao": {
       "properties": {
