@@ -1061,7 +1061,7 @@
         }
       }
     },
-    "/v2/documentos/{ug}/{gestao}/{data}?tipo={tipo}": {
+    "/v2/documentos/{ug}/{gestao}/{data}": {
       "get": {
         "tags": [
           "Consulta Documentos"
@@ -1098,7 +1098,7 @@
           },
           {
             "name": "tipo",
-            "in": "path",
+            "in": "query",
             "description": "Tipo da UG = ugemitente ou ugfavorecida",
             "required": true,
             "type": "string"
