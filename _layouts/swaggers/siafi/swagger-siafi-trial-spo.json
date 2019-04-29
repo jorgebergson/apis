@@ -1067,7 +1067,7 @@
           "Consulta Documentos"
         ],
         "summary": "Consulta Documentos",
-        "description": "Consulta documentos a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10FEV18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"listaDocumentos\": [\n        {\n          \"2018ND000001\",\n          \"2017NL000083\",\n          \"2018NE000017\",\n          \"2017ND000025\",\n          \"2017NL000081\",\n          \"2018NC000167\"  \n        }\n             \n      ]\n             \n    }",
+        "description": "Consulta documentos de uma UG Emitente/Favorecida a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18?tipo={ugfavorecida/ugemitente}\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10Fev18\",\n      \"listaDocumentos\": [\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000009\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000010\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000011\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000012\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000013\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000014\",\n          \"tipoNd\": \"\"  \n        } \n      ]\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1097,6 +1097,13 @@
             "type": "string"
           },
           {
+            "name": "tipo",
+            "in": "query",
+            "description": "Tipo da UG = ugemitente ou ugfavorecida",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "x-credencial",
             "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
@@ -1105,7 +1112,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Documentos encontrados e retornados com sucesso",
             "schema": {
               "$ref": "#/definitions/Documentos"
@@ -1115,7 +1122,7 @@
             "description": "Algum campo possui informações inválidas"
           },
           "403": {
-            "description": "Credencial informada não possui permissão para consultar a Nota de Bloqueio de Crédito"
+            "description": "Credencial informada não possui permissão para consultar a Documentos"
           },
           "500": {
             "description": "Erro interno do servidor"
@@ -1170,12 +1177,6 @@
         "data": {
           "type": "string"
         },
-        "ugEmitente": {
-          "type": "string"
-        },
-        "gestaoEmitente": {
-          "type": "string"
-        },
         "listaDocumentos": {
           "type": "array",
           "items": {
@@ -1186,16 +1187,16 @@
     },
     "ListaDocumentos": {
       "properties": {
-        "Nota Empenho": {
+        "ugEmitente": {
           "type": "string"
         },
-        "Nota Crédito": {
+        "gestaoEmitente": {
           "type": "string"
         },
-        "Nota Lançamento": {
+        "numeroDocumento": {
           "type": "string"
         },
-        "Nota Dotação": {
+        "tipoNd": {
           "type": "string"
         }
       }
