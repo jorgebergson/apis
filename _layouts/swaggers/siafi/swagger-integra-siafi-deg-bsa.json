@@ -1061,13 +1061,13 @@
         }
       }
     },
-    "/v2/documentos/{ug}/{gestao}/{data}": {
+    "/v2/documentos/{ug}/{gestao}/{data}?tipo={tipo}": {
       "get": {
         "tags": [
           "Consulta Documentos"
         ],
         "summary": "Consulta Documentos",
-        "description": "Consulta documentos a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10Fev18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"listaDocumentos\": [\n        {\n          \"2018ND000001\",\n          \"2017NL000083\",\n          \"2018NE000017\",\n          \"2017ND000025\",\n          \"2017NL000081\",\n          \"2018NC000167\"  \n        }\n             \n      ]\n             \n    }",
+        "description": "Consulta documentos de uma UG Emitente/Favorecida a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18?tipo={ugfavorecida/ugemitente}\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10Fev18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"listaDocumentos\": [\n        {\n          \"2018ND000001\",\n          \"2017NL000083\",\n          \"2018NE000017\",\n          \"2017ND000025\",\n          \"2017NL000081\",\n          \"2018NC000167\"  \n        }\n             \n      ]\n             \n    }",
         "consumes": [
           "application/json"
         ],
@@ -1097,6 +1097,13 @@
             "type": "string"
           },
           {
+            "name": "tipo",
+            "in": "path",
+            "description": "Tipo da UG = ugemitente ou ugfavorecida",
+            "required": true,
+            "type": "string"
+          },
+          {
             "name": "x-credencial",
             "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
@@ -1105,7 +1112,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Documentos encontrados e retornados com sucesso",
             "schema": {
               "$ref": "#/definitions/Documentos"
@@ -1170,12 +1177,6 @@
         "data": {
           "type": "string"
         },
-        "ugEmitente": {
-          "type": "string"
-        },
-        "gestaoEmitente": {
-          "type": "string"
-        },
         "listaDocumentos": {
           "type": "array",
           "items": {
@@ -1185,20 +1186,22 @@
       }
     },
     "ListaDocumentos": {
-      "properties": {
-        "Nota Empenho": {
-          "type": "string"
-        },
-        "Nota Crédito": {
-          "type": "string"
-        },
-        "Nota Lançamento": {
-          "type": "string"
-        },
-        "Nota Dotação": {
-          "type": "string"
+      "type": "array" [
+        "properties": { 
+          "ugEmitente": {
+            "type": "string"
+          },
+          "gestaoEmitente": {
+            "type": "string"
+          },
+          "numeroDocumento": {
+            "type": "string"
+          },
+          "tipoNd": {
+            "type": "string"
+          }
         }
-      }
+      ]
     },
     "NotaDotacao": {
       "properties": {
