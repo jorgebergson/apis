@@ -1401,6 +1401,10 @@ paths:
         500:
           description: Erro interno do servidor
           content: {} 
+      operationId: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/{ug}/{gestao}/{data}?tipo={ugemitente/ugfavorecida}    
+      externalDocs:
+        description: "NE para Degustação"
+        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /status:
     get:
       tags:
