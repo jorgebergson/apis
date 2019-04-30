@@ -1327,7 +1327,6 @@ paths:
         description: "NB para Degustação"
         url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf 
   /v2/documentos/{ug}/{gestao}/{data}:
-  /v2/documentos/{ug}/{gestao}/{data}:
     get:
       tags:
       - Consulta Documentos
