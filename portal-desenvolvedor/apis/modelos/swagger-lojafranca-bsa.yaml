@@ -61,7 +61,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SaidaCota'
-              examle:
+              example:
                 idVenda: '2017000000020992653'
                 dataHoraVenda: '2017-12-11T17:27:41'
                 darf:
