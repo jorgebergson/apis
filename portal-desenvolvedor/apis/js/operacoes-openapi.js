@@ -119,7 +119,12 @@ function makeOperationBlock(id, operacao, metodo, api){
           fixedProbabilities: true, // 100% chances all the time, otherwise 0-100% chances
           alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
       	});							
+        if(api.paths[operacao][metodo].responses['200'].content['application/json'].example){
+           var optexto = api.paths[operacao][metodo].responses['200'].content['application/json'].example;    
+      	   ent += syntaxHighlight(jsf.generate(optexto));
+      	} else {
       	ent += syntaxHighlight(jsf.generate(schema.properties));
+      	}
       }
     ent += "</pre>";
     ent += "</div>";
