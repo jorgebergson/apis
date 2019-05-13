@@ -351,7 +351,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
-              example: Json de saída 
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -510,7 +509,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
-              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -577,7 +575,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NE'
-              example: Json de saída  
         400:
           description: Algum campo enviado é inválido
           content: {}
@@ -655,7 +652,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NotaCredito'
-              example: Json de saída
         400:
           description: Algum campo possui informações inválidas
           content: {}
