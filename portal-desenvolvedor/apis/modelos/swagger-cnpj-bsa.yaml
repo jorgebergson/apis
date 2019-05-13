@@ -66,7 +66,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CNPJ'  
+                $ref: '#/components/schemas/CNPJ' 
+              example: 
+                ni: "34238864000168"
+                data_abertura: "1967-06-30"  
         '400':
           description: O Número de Inscrição informado não é válido. 
         '404':
