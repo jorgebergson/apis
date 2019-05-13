@@ -61,6 +61,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SaidaCota'
+              examle:
+                idVenda: '2017000000020992653'
+                dataHoraVenda: '2017-12-11T17:27:41'
+                darf:
+                  valor: 31.24
+                  codigoReceita: 1258
+                  numero: 7011734500514907
+                  dataVencimento: '2017-12-12'
+                  pdf: Base64EncodedString
         400: 
           description: Payload inválido.
         404:
@@ -89,7 +98,7 @@ components:
       properties:
         json:
           type: string
-          description: Json de saída referente ao método consultado
+          description: Json de saída referente ao método consultado (Ex: Venda viajante com produtos controlados com DARF)
   securitySchemes:
     APIKEY:
       type: apiKey
