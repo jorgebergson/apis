@@ -92,7 +92,8 @@ components:
       properties:
         payload:
           description: Json de entrada codificado em base 64.
-          type: Base 64  
+          type: string
+          example: Payload Base 64.  
     SaidaCota:
       type: string
       properties:
