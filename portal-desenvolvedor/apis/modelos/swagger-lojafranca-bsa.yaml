@@ -99,7 +99,7 @@ components:
       properties:
         json:
           type: string
-          description: Json de saída referente ao método consultado
+          description: Json de saída referente ao método consultado (Ex: Venda Viajante com Darf)
   securitySchemes:
     APIKEY:
       type: apiKey
