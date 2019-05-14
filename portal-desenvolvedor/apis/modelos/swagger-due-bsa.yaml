@@ -169,7 +169,7 @@ paths:
                     descricao: PORTO DO RIO
                   recintoAduaneiro:
                     codigo: '7929301'
-                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR
+                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.
                     latitude: '-20.812222'
                     longitude: '-40.248333'
                   cnpjDoEstabelecimento: 'null'
@@ -182,7 +182,7 @@ paths:
                     descricao: PORTO DO RIO
                   recintoAduaneiro:
                     codigo: '7929301'
-                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR
+                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.
                     latitude: '-20.812222'
                     longitude: '-40.248333'
                   cnpjDoEstabelecimento: 'null'
