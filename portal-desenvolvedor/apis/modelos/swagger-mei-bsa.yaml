@@ -311,7 +311,7 @@ paths:
                   nome: ''
                   cnae:
                     codigo: 7739099
-                    descricao: 'Aluguel de outras máquinas e equipamentos comerciais e industriais Não especificados anteriormente, sem operador'
+                    descricao: 'Aluguel de outras máquinas e equipamentos comerciais'
                 ocupacoesSecundarias: ' [ ] '
                 NumeroRecibo: ME80700244
                 numeroIdentificador: '71066868409'
