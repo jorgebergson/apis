@@ -77,6 +77,11 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CNPJs'
+              example:
+                - cnpj: '22025711000153'
+                  situacao: SUSPENSO
+                - cnpj: '22025711000154'
+                  situacao: ATIVO
         '400':
           description: Requisição com erro.
         '404':
@@ -157,6 +162,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/dadosCNPJs'
+              example:
+                nomeEmpresarial: DGKQWMX CHMIQAGH WXMVHU 71066868409
+                nomeEmpresario: ''
+                nomeFantasia: DCW PHNQKXHU
+                capitalSocial: 500000
+                identidade:
+                  numero: ''
+                  orgaoEmissor: ''
+                  ufEmissor: ''
+                  cpf: '71066868409'
+                situacaoCadastral: ATIVO
+                dataSituacaoCadastral: '2015-03-11'
+                cnpj: '21025711000154'
+                nire: '32814140480'
+                enderecoComercial:
+                  cep: '71400050'
+                  logradouro: RUA OHMRWPQM KXMUVWMV
+                  numero: '171'
+                  bairro: SETOR O
+                  municipio: CEILANDIA
+                  uf: DF
+                dataInicioAtividades: '2015-03-11'
+                formaAtuacao:
+                  - Em Local Fixo Fora da Loja
+                ocupacaoPrincipal:
+                  nome: ''
+                  cnae:
+                    codigo: 7439098
+                    descricao: Aluguel de carros importados para competição automobilística
+                ocupacoesSecundarias: '[]'
+                numeroRecibo: ME80700244
+                numeroIdentificador: '71066868409'
+                dataEmissao: '2018-05-04'
         '400':
           description: Requisição com erro.
         '404':
@@ -245,6 +283,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/dadosCNPJs'
+              example:
+                nomeEmpresarial: DGKQWMX CHMIQAGH WXMVHU 71066868409
+                nomeEmpresario: ''
+                nomeFantasia: DCW PHNQKXHU
+                capitalSocial: 30000
+                identidade:
+                  numero: ''
+                  orgaoEmissor: ''
+                  ufEmissor: ''
+                  cpf: '71066868409'
+                situacaoCadastral: SUSPENSO
+                dataSituacaoCadastral: '2015-03-11'
+                cnpj: '22025711000153'
+                nire: '35814140440'
+                enderecoComercial:
+                  cep: '13400050'
+                  logradouro: RUA OHMRWPQM KXMUVWMV
+                  numero: '1031'
+                  bairro: CENTRO
+                  municipio: PIRACICABA
+                  uf: SP
+                dataInicioAtividades: '2015-03-11'
+                formaAtuacao:
+                  - Em Local Fixo Fora da Loja
+                ocupacaoPrincipal:
+                  nome: ''
+                  cnae:
+                    codigo: 7739099
+                    descricao: 'Aluguel de outras máquinas e equipamentos comerciais e industriais Não especificados anteriormente, sem operador'
+                ocupacoesSecundarias: ' [ ] '
+                NumeroRecibo: ME80700244
+                numeroIdentificador: '71066868409'
+                dataEmissao: '2018-06-04'
         '400':
           description: Requisição com erro.
         '404':
