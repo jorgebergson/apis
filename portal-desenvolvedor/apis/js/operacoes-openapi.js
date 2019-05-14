@@ -92,7 +92,7 @@ function makeOperationBlock(id, operacao, metodo, api){
     //     alwaysFakeOptionals: true, // set `optionalsProbability: 1.0` which means 100% always
     // });
     //  ent += syntaxHighlight(jsf.generate(schema.properties));
-      if(operacao === "/" ){
+      if(operacao === "////" ){
       	if(api.paths[operacao][metodo].externalDocs){
       	opCampos = api.paths[operacao][metodo].externalDocs.url;
       	descricaoTeste = api.paths[operacao][metodo].externalDocs.description;
