@@ -120,6 +120,153 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ConsultaDUE-V2'
+              example:
+                numero: 18BR0000133506
+                ruc: 8BR00000000100000000000000000013602
+                chaveDeAcesso: 18ERM135006
+                situacao: CARGA_APRESENTADA_PARA_DESPACHO
+                canal: 'null'
+                exigencia: 'false'
+                retificada: 'false'
+                tratamentoAdministrativo: DISPENSADO
+                tratamentoAdministrativoComImpedimentoDeEmbarque: 'false'
+                tratamentoAdministrativoComRequerimentoDeInspecao: 'false'
+                situacaoDaCarga: 'null'
+                bloqueadaParaEmbarque: 'false'
+                tipoDeDocumentoFiscal: NOTA_FISCAL_ELETRONICA
+                motivoDeDispensaDaNotaFiscal: 'null'
+                declarante:
+                  nome: OWMKX NX OIWUQD UW
+                  tipoDoDocumento: CNPJ
+                  estrangeiro: 'false'
+                  nacionalidade:
+                    codigo: '105'
+                    nome: BRASIL
+                    nomeResumido: BRA
+                  numeroDoDocumento: 00000000000191
+                operadorEconomicoAutorizado: 'false'
+                formaDeExportacao: POR_CONTA_PROPRIA
+                situacaoEspecial: 'null'
+                exportacaoConsorciada: 'false'
+                paisDoImportador:
+                  codigo: '676'
+                  nome: 'RUSSIA, FEDERACAO DA'
+                  nomeResumido: 'null'
+                pesoLiquidoTotal: '49'
+                tratamentoPrioritario: 'true'
+                valorTotalDasMercadorias: '3000'
+                moeda:
+                  codigo: '220'
+                  descricao: DOLAR DOS EUA
+                valorDasMercadoriasNoLocalDeEmbarque: '2000.1'
+                contato:
+                  nome: 'null'
+                  telefone: 'null'
+                  email: 'null'
+                localDeDespacho:
+                  unidadeRFB:
+                    codigo: '717600'
+                    descricao: PORTO DO RIO
+                  recintoAduaneiro:
+                    codigo: '7929301'
+                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR
+                    latitude: '-20.812222'
+                    longitude: '-40.248333'
+                  cnpjDoEstabelecimento: 'null'
+                  endereco: 'null'
+                  latitude: 'null'
+                  longitude: 'null'
+                localDeEmbarque:
+                  unidadeRFB:
+                    codigo: '717600'
+                    descricao: PORTO DO RIO
+                  recintoAduaneiro:
+                    codigo: '7929301'
+                    descricao: PORTO DO RIO DE JANEIRO - CODERJ - RIO DE JANEIRO/RJ - PORTO MARIT.ALFAND.-USO PUBLICO-CIA.DOCAS DO EST.DO RIO DE JANEIR
+                    latitude: '-20.812222'
+                    longitude: '-40.248333'
+                  cnpjDoEstabelecimento: 'null'
+                  endereco: 'null'
+                  latitude: 'null'
+                  longitude: 'null'
+                viaEspecialDeTransporte: 'null'
+                usoObrigatorioDeTransito: 'false'
+                informacoesComplementares: Observações Gerais
+                itens:
+                  - numero: '1'
+                    exportador:
+                      nome: OWMKX NX OIWUQD UW
+                      tipoDoDocumento: CNPJ
+                      estrangeiro: 'false'
+                      nacionalidade:
+                        codigo: '105'
+                        nome: BRASIL
+                        nomeResumido: BRA
+                      numeroDoDocumento: '00000000002720'
+                    itemDaNotaFiscalDeExportacao:
+                      numeroDoItem: '1'
+                      chaveDeAcesso: '35180500000000002720550900006843201000000009'
+                      serie: '90'
+                      numeroDoDocumento: '684320'
+                      finalidade: normal
+                      notaFiscalEletronica: 'true'
+                      cfop: '7101'
+                      codigoDoProduto: '000000000000021600001'
+                    ncm:
+                      codigo: '12011000'
+                      descricao: 'SOJA, MESMO TRITURADA.'
+                      UnidadeEstatistica: UNIDADE
+                      atributos:
+                        - codigo: '001'
+                          conteudo: estampado
+                          descricao: Tipo de tecido
+                    descricaoDaMercadoria: PRODUTO GENERICO TESTE - GRADE COMPOSTA 34.
+                    motivoDoTratamentoPrioritario: CARGA VIVA
+                    descricaoComplementar: Descrição Complementar
+                    quantidadeNaUnidadeEstatistica: '1'
+                    pesoLiquidoTotal: '49'
+                    unidadeComercializada: UN
+                    quantidadeNaUnidadeComercializada: '1'
+                    valorTotal: '1000'
+                    percentualDeComissaoDoAgente: 'null'
+                    condicaoDeVenda:
+                      codigo: DDP
+                      descricao: DELIVERED DUTY PAID
+                    valorDaMercadoriaNaCondicaoDeVenda: '3000'
+                    valorDaMercadoriaNoLocalDeEmbarque: '200,1'
+                    valorDaMercadoriaNoLocalDeEmbarqueEmReais: '7143.55716'
+                    dataDeConversao: '2018-05-01T05:57:00.000+0000'
+                    importador:
+                      nome: NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL
+                      endereco: RUA ELISA SILVERIO - 45 - CENTRO - EXTERIOR - 86800270 - RUSSIA
+                      pais:
+                        codigo: '676'
+                        nome: 'RUSSIA, FEDERACAO DA'
+                        nomeResumido: 'null'
+                    depuracaoEstatistica:
+                      justificativaDeValor: 'null'
+                      justificativaDeQuantidade: 'null'
+                      possuiDepuracao: 'false'
+                    enquadramentos:
+                      - codigo: '80000'
+                        descricao: EXPORTACAO NORMAL
+                    paisesDeDestino:
+                      - pais:
+                          codigo: '249'
+                          nome: ESTADOS UNIDOS
+                          nomeResumido: 'null'
+                        quantidadeNaUnidadeEstatistica: '1'
+                    tratamentosAdministrativos:
+                      - codigoLPCO: 'null'
+                        orgao:
+                          - 'null'
+                        situacao: 'null'
+                        mensagem: 'null'
+                eventosDoHistorico:
+                  - dataEHoraDoEvento: '2018-05-02T07:07:47.002+0000'
+                    evento: Registro
+                    responsavel: '07073311703'
+                    informacoesAdicionais: 'null'
         '400':
           description: Requisição mal formatada.
         '404':
