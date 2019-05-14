@@ -1957,7 +1957,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/NDGerada'
-              example: Json de saída
+              example:
+                ug: '010001'
+                gestao: '00001'
+                ano: '2018'
+                tipoDoc: ND
+                sequencialDoc: '800002'
+                numRequisicao: 2018TRND000001
         '400':
           description: Algum campo possui informações inválidas
           content: {}
@@ -2505,18 +2511,12 @@ paths:
       description: >-
         Consulta documentos de uma UG Emitente/Favorecida a partir de uma data
         específica
-
-
         ## Exemplo
-
         #### Chamada
-
             https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18?tipo={ugfavorecida/ugemitente}
-            
             No header:
               x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
               (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) 
-
         #### Retorno
             {
               "data": "10Fev18",
