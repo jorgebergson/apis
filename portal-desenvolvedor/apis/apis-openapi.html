@@ -66,7 +66,9 @@
 								});
 				 			 	
 				 			});
+							$('#MostraNegocio').hide();
 							if(api.externalDocs){
+							    $('#MostraNegocio').show();
 							    $('#apiInfoHref').append("<a href="+api.externalDocs.url+">Download</a>");
 							} 
 						}
@@ -243,10 +245,12 @@
 										</ul>
 										<h3>Descrição</h3>
 										<p id="apiDescricao"></p>
-										<h3>Negócio</h3>
-										<ul>
-											<li><strong>Informações de negócio da API: &nbsp; </strong><a href="" id= "apiInfoHref"></a> </li>
-										</ul>
+										<div id="MostraNegocio" >
+										   <h3>Negócio</h3>
+										   <ul>
+											  <li><strong>Informações de negócio da API: &nbsp; </strong><a href="" id= "apiInfoHref"></a> </li>
+										   </ul>
+										</div>
 										
 										<h3>A <span id="apiNome2"></span> oferece as seguintes requisições:</h3>
 										<ul id="apiListaOperacoes">
