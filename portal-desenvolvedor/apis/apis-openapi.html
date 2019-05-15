@@ -66,8 +66,9 @@
 								});
 				 			 	
 				 			});
-							$('#apiInfoHref').append("<a href="+api.externalDocs.url+">Download</a>");
-
+							if(api.externalDocs){
+							    $('#apiInfoHref').append("<a href="+api.externalDocs.url+">Download</a>");
+							} 
 						}
 					});
 
