@@ -93,7 +93,7 @@
           "1 Introdução"
         ],
         "summary": "1.3 Requisitos para o envio das imagens",
-        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 250 x 250 pixels. O serviço aceita imagens JPG e PNG. A assertividade do algoritmo depende diretamente da qualidade da imagem enviada. A resolução mínima de 250 x 250 se refere à área da imagem da face, não da área total (fundo em branco, se houver).  Quando esta condição não é atendida, é retornado o seguinte erro (exceção):  \n\n\n\n --------------------------",
+        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 250 x 250 pixels. O serviço aceita imagens JPG e PNG. O índice de precisão do algoritmo depende diretamente da qualidade da imagem enviada. A resolução mínima de 250 x 250 se refere à área da imagem da face, não da área total (fundo em branco, se houver).  Quando esta condição não é atendida, é retornado o seguinte erro (exceção):  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
             "description": "Resolução da imagem inválida. A largura e a altura não podem ser menores que 250 pixels. "

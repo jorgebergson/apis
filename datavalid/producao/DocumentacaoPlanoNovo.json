@@ -58,7 +58,7 @@
           "1 Introdução"
         ],
         "summary": "1.3 Requisitos para o envio das imagens",
-        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 250 x 250 pixels. Quando esta condição não é atendida, é retornado o seguinte erro (exceção):  \n\n\n\n --------------------------",
+        "description": "O módulo de Reconhecimento Facial do Datavalid necessita de imagens com resolução mínima de 250 x 250 pixels. O serviço aceita imagens JPG e PNG. O índice de precisão do algoritmo depende diretamente da qualidade da imagem enviada. A resolução mínima de 250 x 250 se refere à área da imagem da face, não da área total (fundo em branco, se houver).  Quando esta condição não é atendida, é retornado o seguinte erro (exceção):  \n\n\n\n --------------------------",
         "responses": {
           "error_description": {
             "description": "Resolução da imagem inválida. A largura e a altura não podem ser menores que 250 pixels. "
@@ -92,7 +92,7 @@
           "1 Introdução"
         ],
         "summary": "1.5 Códigos de Retorno do Serviço",
-        "description": "As requisições ao Datavalid podem retornar os seguintes código HTTP: \n\n | Code | Responses |\n|-----|-----|\n | 200 | <b>OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso. |\n | 400 | <b>Requisição inválida - </b> A requisição não foi aceita pois existe alguma iconsistência em algum campo da requisição. Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8. | \n | 401 | <b>Não autorizado - </b>Problemas durante a autenticação. | \n | 413 | <b>Request Entity Too Large - </b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido.| \n | 422 | <b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta. |\n|  |Code / property / message |\n |  |DV10 \tkey.cpf: \tCPF {key.cpf} inválido | \n |  |DV15 \tkey.cpf: \tCPF {key.cpf} não foi encontrado | \n |  |DV11 \tanswer.nacionalidade: \tValor inválido | \n |  |DV12 \tanswer.documento.tipo: \tValor inválido | \n |  |DV13 \tanswer.sexo: \tValor inválido | \n |  |DV14 \tanswer.situacao_cpf: \tValor inválido | \n |  |DV20 \tkey.cnpj: \tCPF {key.cnpj} inválido | \n |  |DV23 \tkey.cnpj: \tCNPJ {key.cnpj} não foi encontrado | \n |  |DV21 \tanswer.situacao_cadastral.codigo: \tValor inválido | \n |  |DV22 \tanswer.porte: \tValor inválido | \n |  |DV41 \tbiometria_face: \tNão foi possível reconhecer a face na imagem | \n |  |DV42 \tbiometria_face: \tResolução da imagem inválida | \n |  |DV43 \tbiometria_face: \tImagem corrompida ou fora do formato JPG, JPEG ou PNG | \n |  |DV44 \tbiometria_face: \tErro ao recuperar imagem codificada em Base64 |\n | 500 | <b>Erro no servidor - </b> Ocorreu algum erro interno.|\n |503 | <b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento. |\n"
+        "description": "As requisições ao Datavalid podem retornar os seguintes código HTTP: \n\n | Code | Responses |\n|-----|-----|\n | 200 | <b>OK -</b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso. |\n | 400 | <b>Requisição inválida -</b> A requisição não foi aceita pois existe alguma iconsistência em algum campo da requisição. Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8. | \n | 401 | <b>Não autorizado -</b> Problemas durante a autenticação. | \n | 413 | <b>Request Entity Too Large -</b> A requisição tem um tamanho muito grande.  Verifique se o limite de tamanho máximo da requisição está sendo atendido.| \n | 422 | <b>Validação não processada -</b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores inválidos são listadas na resposta. |\n|  |Code / property / message |\n |  |DV10 \tkey.cpf: \tCPF {key.cpf} inválido | \n |  |DV15 \tkey.cpf: \tCPF {key.cpf} não foi encontrado | \n |  |DV11 \tanswer.nacionalidade: \tValor inválido | \n |  |DV12 \tanswer.documento.tipo: \tValor inválido | \n |  |DV13 \tanswer.sexo: \tValor inválido | \n |  |DV14 \tanswer.situacao_cpf: \tValor inválido | \n |  |DV20 \tkey.cnpj: \tCPF {key.cnpj} inválido | \n |  |DV23 \tkey.cnpj: \tCNPJ {key.cnpj} não foi encontrado | \n |  |DV21 \tanswer.situacao_cadastral.codigo: \tValor inválido | \n |  |DV22 \tanswer.porte: \tValor inválido | \n |  |DV41 \tbiometria_face: \tNão foi possível reconhecer a face na imagem | \n |  |DV42 \tbiometria_face: \tResolução da imagem inválida | \n |  |DV43 \tbiometria_face: \tImagem corrompida ou fora do formato JPG, JPEG ou PNG | \n |  |DV44 \tbiometria_face: \tErro ao recuperar imagem codificada em Base64 |\n | 500 | <b>Erro no servidor -</b> Ocorreu algum erro interno.|\n |503 | <b>Serviço Indisponível -</b> Algum serviço integrado ao Datavalid está indisponível no momento. |\n   |  |code \t message | \n |  |DV01 \t Algum serviço integrado ao Datavalid está indisponível no momento. | \n  |  |DV02 \t Algum serviço integrado ao Datavalid está indisponível no momento. | \n  |  |DV03 \t Algum serviço integrado ao Datavalid está indisponível no momento. | \n  |  |DV04 \t Algum serviço integrado ao Datavalid está indisponível no momento. | \n  |  |DV05 \t Algum serviço integrado ao Datavalid está indisponível no momento. | \n"
       }
     },
     "Outros Recursos - Campos Opcionais ": {
@@ -123,7 +123,7 @@
             "name": "Body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Body"
+              "$ref": "#/definitions/BodyV1"
             }
           },
           {
@@ -132,35 +132,33 @@
             "in": "header",
             "type": "string"
           }
-        ],
-        
+        ],  
         "responses": {
-      "200":{
-        "description": "<b> OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso.",
-         "schema": {
-          "$ref": "#/definitions/ValidacaoPF"
-          }
-        },
-      "400":{
-        "description": "<b>Requisição inválida - </b> \n A requisição não foi aceita poís existe alguma iconsistência em algum campo da requisição.Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8."
-        },
-      "401":{
-        "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
-        },
-      "422":{
-        "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores invalidos são listadas na resposta.",
-        "schema": {
+          "200":{
+            "description": "<b> OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso.",
+            "schema": {
+              "$ref": "#/definitions/ValidacaoPF"
+            }
+          },
+          "400":{
+            "description": "<b>Requisição inválida - </b> \n A requisição não foi aceita poís existe alguma iconsistência em algum campo da requisição.Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8."
+          },
+          "401":{
+            "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
+          },
+          "422":{
+            "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores invalidos são listadas na resposta.",
+            "schema": {
               "$ref": "#/definitions/UnprocessableEntity"
             }
-        },
-      "500":{
-        "description": "<b>Erro no servidor - </b> Ocorreu algum erro interno. "
-        },
-      "503":{
-        "description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
+          },
+          "500":{
+            "description": "<b>Erro no servidor - </b> Ocorreu algum erro interno. "
+            },
+          "503":{
+            "description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
+          }
         }
-        }
-        
       }
     },
     "/vbeta1/validate/pj": {
@@ -420,6 +418,100 @@
         }
       }
     },
+    "AnswerPFv1": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "João"
+        },
+        "sexo": {
+          "type": "string",
+          "enum": [
+            "F",
+            "M"
+          ]
+        },
+        "data_nascimento": {
+          "type": "string",
+          "format": "yyyy-mm-dd",
+          "example": "2000-10-10"
+        },
+        "situacao_cpf": {
+          "type": "string",
+          "enum": [
+            "regular",
+            "cancelada por encerramento de espolio",
+            "suspensa",
+            "cancelada por obito sem espolio",
+            "pendente de regularizacao",
+            "cancelada por multiplicidade",
+            "nula",
+            "cancelada de oficio"
+          ]
+        },
+        "filiacao": {
+          "$ref": "#/definitions/Filiacao"
+        },
+        "nacionalidade": {
+          "description": "1 – Brasileiro / 2 – Brasileiro naturalizado / 3 – Estrangeiro / 4 – Brasileiro Nascido no Exterior",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "endereco": {
+          "$ref": "#/definitions/Endereco"
+        },
+        "documento": {
+          "$ref": "#/definitions/Documento"
+        },
+        "cnh": {
+          "type": "object",
+          "properties": {
+            "numero_registro": {
+              "type": "string",
+              "example": "0000001"
+            },
+            "registro_nacional_estrangeiro": {
+              "type": "string",
+              "example": "123456"
+            },
+            "categoria": {
+              "type": "string",
+              "example": "AB"
+            },
+            "data_primeira_habilitacao": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2000-10-10"
+            },
+            "data_validade": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2000-10-10"
+            },
+            "data_ultima_emissao": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2018-05-31"
+            },
+            "codigo_situacao": {
+              "type": "string",
+              "example": "3"
+            },
+            "descricao_situacao": {
+              "type": "string",
+              "example": "EMITIDA",
+              "description": "0 - INEXISTENTE\n1 - EMISSÃO AUTORIZADA\n2 - EM EMISSÃO\n3 - EMITIDA\n4 - CONFIRMADA\n5 - MODELO ANTIGO\n6 - ALTERADA\nA - Cancelada Erro Detran\nB - Cancelada Erro Gráfica\nZ - Cancelada Outros motivos"
+            }
+          }
+        }
+      }
+    },
     "AnswerPFDigitais": {
       "type": "object",
       "properties": {
@@ -553,6 +645,21 @@
         },
         "answer": {
           "$ref": "#/definitions/AnswerPF"
+        }
+      },
+      "required": [
+        "key",
+        "answer"
+      ]
+    },
+    "BodyV1": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/KeyPF"
+        },
+        "answer": {
+          "$ref": "#/definitions/AnswerPFv1"
         }
       },
       "required": [
@@ -1006,6 +1113,92 @@
         }
       }
     },
+    "ValidacaoCNHv1": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "boolean",
+          "description": "validação do nome na CNH"
+        },
+        "nome_similaridade": {
+          "type": "number",
+          "format": "double",
+          "description": "similaridade da validação do nome na CNH"
+        },
+        "registro_nacional_estrangeiro": {
+          "type": "boolean"
+        },
+        "numero_registro": {
+          "type": "boolean"
+        },
+        "categoria": {
+          "type": "boolean"
+        },
+        "data_primeira_habilitacao": {
+          "type": "boolean"
+        },
+        "data_validade": {
+          "type": "boolean"
+        },
+        "data_ultima_emissao": {
+          "type": "boolean"
+        },
+        "codigo_situacao": {
+          "type": "boolean"
+        },
+        "descricao_situacao": {
+          "type": "number",
+          "format": "double",
+          "description": "0 - INEXISTENTE\n1 - EMISSÃO AUTORIZADA\n2 - EM EMISSÃO\n3 - EMITIDA\n4 - CONFIRMADA\n5 - MODELO ANTIGO\n6 - ALTERADA\nA - Cancelada Erro Detran\nB - Cancelada Erro Gráfica\nZ - Cancelada Outros motivos"
+        }
+      }
+    },
+    "ValidacaoCNHVazia": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "boolean",
+          "example": false
+        },
+        "nome_similaridade": {
+          "type": "number",
+          "format": "double",
+          "example": 0.1578947368421053
+        },
+        "data_nascimento": {
+          "type": "boolean",
+          "example": false
+        },
+        "situacao_cpf": {
+          "type": "boolean",
+          "example": true
+        },
+        "filiacao": {
+          "type": "object",
+          "example": {}
+        },
+        "endereco": {
+          "type": "object",
+          "example": {}
+        },
+        "documento": {
+          "type": "object",
+          "example": {}
+        },
+        "cnh": {
+          "type": "object",
+          "example": {}
+        },
+        "biometria_face": {
+          "properties":{
+            "disponivel": {
+              "type": "boolean",
+              "example": false
+            }
+          }
+        }
+      }
+    },
     "ValidacaoCodigoDescricao": {
       "type": "object",
       "properties": {
@@ -1149,7 +1342,7 @@
           "$ref": "#/definitions/ValidacaoDocumento"
         },
         "cnh": {
-          "$ref": "#/definitions/ValidacaoCNH"
+          "$ref": "#/definitions/ValidacaoCNHv1"
         },
         "biometria_face": {
           "type": "object",
