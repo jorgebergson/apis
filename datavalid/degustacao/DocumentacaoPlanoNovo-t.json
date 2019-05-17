@@ -158,7 +158,7 @@
             "name": "Body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Body"
+              "$ref": "#/definitions/BodyV1"
             }
           },
           {
@@ -453,6 +453,100 @@
         }
       }
     },
+    "AnswerPFv1": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "string",
+          "example": "João"
+        },
+        "sexo": {
+          "type": "string",
+          "enum": [
+            "F",
+            "M"
+          ]
+        },
+        "data_nascimento": {
+          "type": "string",
+          "format": "yyyy-mm-dd",
+          "example": "2000-10-10"
+        },
+        "situacao_cpf": {
+          "type": "string",
+          "enum": [
+            "regular",
+            "cancelada por encerramento de espolio",
+            "suspensa",
+            "cancelada por obito sem espolio",
+            "pendente de regularizacao",
+            "cancelada por multiplicidade",
+            "nula",
+            "cancelada de oficio"
+          ]
+        },
+        "filiacao": {
+          "$ref": "#/definitions/Filiacao"
+        },
+        "nacionalidade": {
+          "description": "1 – Brasileiro / 2 – Brasileiro naturalizado / 3 – Estrangeiro / 4 – Brasileiro Nascido no Exterior",
+          "type": "integer",
+          "enum": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "endereco": {
+          "$ref": "#/definitions/Endereco"
+        },
+        "documento": {
+          "$ref": "#/definitions/Documento"
+        },
+        "cnh": {
+          "type": "object",
+          "properties": {
+            "numero_registro": {
+              "type": "string",
+              "example": "0000001"
+            },
+            "registro_nacional_estrangeiro": {
+              "type": "string",
+              "example": "123456"
+            },
+            "categoria": {
+              "type": "string",
+              "example": "AB"
+            },
+            "data_primeira_habilitacao": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2000-10-10"
+            },
+            "data_validade": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2000-10-10"
+            },
+            "data_ultima_emissao": {
+              "type": "string",
+              "format": "yyyy-mm-dd",
+              "example": "2018-05-31"
+            },
+            "codigo_situacao": {
+              "type": "string",
+              "example": "3"
+            },
+            "descricao_situacao": {
+              "type": "string",
+              "example": "EMITIDA",
+              "description": "0 - INEXISTENTE\n1 - EMISSÃO AUTORIZADA\n2 - EM EMISSÃO\n3 - EMITIDA\n4 - CONFIRMADA\n5 - MODELO ANTIGO\n6 - ALTERADA\nA - Cancelada Erro Detran\nB - Cancelada Erro Gráfica\nZ - Cancelada Outros motivos"
+            }
+          }
+        }
+      }
+    },
     "AnswerPFDigitais": {
       "type": "object",
       "properties": {
@@ -586,6 +680,21 @@
         },
         "answer": {
           "$ref": "#/definitions/AnswerPF"
+        }
+      },
+      "required": [
+        "key",
+        "answer"
+      ]
+    },
+    "BodyV1": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "$ref": "#/definitions/KeyPF"
+        },
+        "answer": {
+          "$ref": "#/definitions/AnswerPFv1"
         }
       },
       "required": [
@@ -1039,6 +1148,46 @@
         }
       }
     },
+    "ValidacaoCNHv1": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "boolean",
+          "description": "validação do nome na CNH"
+        },
+        "nome_similaridade": {
+          "type": "number",
+          "format": "double",
+          "description": "similaridade da validação do nome na CNH"
+        },
+        "registro_nacional_estrangeiro": {
+          "type": "boolean"
+        },
+        "numero_registro": {
+          "type": "boolean"
+        },
+        "categoria": {
+          "type": "boolean"
+        },
+        "data_primeira_habilitacao": {
+          "type": "boolean"
+        },
+        "data_validade": {
+          "type": "boolean"
+        },
+        "data_ultima_emissao": {
+          "type": "boolean"
+        },
+        "codigo_situacao": {
+          "type": "boolean"
+        },
+        "descricao_situacao": {
+          "type": "number",
+          "format": "double",
+          "description": "0 - INEXISTENTE\n1 - EMISSÃO AUTORIZADA\n2 - EM EMISSÃO\n3 - EMITIDA\n4 - CONFIRMADA\n5 - MODELO ANTIGO\n6 - ALTERADA\nA - Cancelada Erro Detran\nB - Cancelada Erro Gráfica\nZ - Cancelada Outros motivos"
+        }
+      }
+    },
     "ValidacaoCNHVazia": {
       "type": "object",
       "properties": {
@@ -1228,7 +1377,7 @@
           "$ref": "#/definitions/ValidacaoDocumento"
         },
         "cnh": {
-          "$ref": "#/definitions/ValidacaoCNH"
+          "$ref": "#/definitions/ValidacaoCNHv1"
         },
         "biometria_face": {
           "type": "object",
