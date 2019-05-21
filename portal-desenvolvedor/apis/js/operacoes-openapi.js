@@ -6,7 +6,15 @@ function makeOperationBlock(id, operacao, metodo, api){
     ent += "<h2 id=\"" + id + "\">"+api.paths[operacao][metodo].summary+"</h2>";
     ent += "</header>";
     ent += "<div class=\"content\">";
-    ent += "<p class=\"" + metodo.toUpperCase() + "Operation\"><span class=\"" + metodo.toUpperCase() + "Label\">" + metodo.toUpperCase() + "</span><strong> " + operacao + " </strong></p>";
+    tpDeprecated = "";
+    if(api.paths[operacao][metodo].deprecated === true){
+        tpMetodo = "DEPRECATED";
+        tpDeprecated = " (descontinuado)";
+    }
+    else{
+        tpMetodo = metodo.toUpperCase();
+    }
+    ent += "<p class=\"" + tpMetodo + "Operation\"><span class=\"" + tpMetodo + "Label\">" + metodo.toUpperCase() + "</span><strong> " + operacao + tpDeprecated + " </strong></p>";
     // ent += "<div id=\"modal" + id + "\" class=\"modal\">";
     // ent += "<div class=\"modal-content\">";
     // ent += "<span class=\"close\" onmouseup=\"clearFieldsResult(document.getElementById('resultPanel" + id + "'))\">&times;</span>";    

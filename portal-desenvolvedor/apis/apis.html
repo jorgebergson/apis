@@ -59,7 +59,19 @@
 				 			paths.forEach(operacao => {
 								var metodos = Object.getOwnPropertyNames(api.paths[operacao]);
 								metodos.forEach(metodo => {
-									$('#apiListaOperacoes').append("<li><a href=\"#"+i+"\" onclick=\"toggle_visibility('"+i+"',"+qt+");\"><span class=\""+metodo.toUpperCase()+"Label\">"+metodo.toUpperCase()+"</span> "+operacao+"</a></li>");
+									console.log(metodo);
+									tpMetodo = "";
+									tpStyle = ""
+									tpDeprecated = "";
+									if(api.paths[operacao][metodo].deprecated === true){
+										tpMetodo = "DEPRECATED";
+										tpDeprecated = " (descontinuado)";
+										tpStyle = "style = \"text-decoration:line-through\"";
+									}
+									else{
+										tpMetodo = metodo.toUpperCase();
+									}
+									$('#apiListaOperacoes').append("<li><a href=\"#"+i+"\" onclick=\"toggle_visibility('"+i+"',"+qt+");\"><span class=\""+tpMetodo+"Label\">"+metodo.toUpperCase()+"</span><span " + tpStyle + " >"+operacao+tpDeprecated+"</span></a></li>");
 									$('#apiOperacoes').append(makeOperationBlock(i,operacao,metodo,api));
 									i++;
 								});
