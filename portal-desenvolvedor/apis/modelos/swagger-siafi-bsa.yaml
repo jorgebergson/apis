@@ -50,6 +50,7 @@ externalDocs:
 paths:
   /v1/ne/alterar:
     post:
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Altera Nota de Empenho
