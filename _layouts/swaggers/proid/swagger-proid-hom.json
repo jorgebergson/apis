@@ -303,6 +303,50 @@
           }
         }
       }
+    },
+    "/v1/mensagens": {
+      "post": {
+        "tags": [
+          "Mensagens"
+        ],
+        "summary": "Enviar uma mensagem para um usuário portador de um documento ProID",
+        "description": "Serviço para envio de mensagens para usuário portador de um documento ProID",
+        "operationId": "sendMessage",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Mensagem a ser enviada a um portador de documento ProID",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Mensagem"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "Mensagem enviada ao servidor de mensageria"
+          },
+          "401": {
+            "description": "Organização não autenticado ou token inválido"
+          },
+          "403": {
+            "description": "Organização não tem permissão para enviar mensagem para o usuário"
+          },
+          "422": {
+            "description": "Erro(s) de validação ou de negócio",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Violacao"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -434,6 +478,84 @@
         },
         "message": {
           "type": "string"
+        }
+      }
+    },
+    "Link": {
+      "type": "object",
+      "required": [
+        "titulo",
+        "valor"
+      ]
+    },
+    "DestinatarioMensagem": {
+      "type": "object",
+      "required": [
+        "numero_registro"
+      ],
+      "properties": {
+        "numero_registro": {
+          "type": "string"
+        }
+      }
+    },
+    "Validade": {
+      "type": "object",
+      "properties": {
+        "inicio": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "fim": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "Mensagem": {
+      "type": "object",
+      "required": [
+        "conteudo",
+        "destino",
+        "tipo",
+        "validade"
+      ],
+      "properties": {
+        "titulo": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 255
+        },
+        "conteudo": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 2350
+        },
+        "destino": {
+          "type": "string",
+          "pattern": "BROADCAST|DIRECIONADA",
+          "enum": [
+            "BROADCAST",
+            "DIRECIONADA"
+          ]
+        },
+        "tipo": {
+          "$ref": "#/definitions/Modelo"
+        },
+        "destinatarios": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DestinatarioMensagem"
+          }
+        },
+        "validade": {
+          "$ref": "#/definitions/Validade"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Link"
+          }
         }
       }
     }
