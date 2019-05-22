@@ -2222,13 +2222,16 @@
           "type": "string"
         },
         "contaValor": {
-          "type": "object",
-          "properties": {
-            "conta": {
-              "type": "string"
-            },
-            "valor": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "conta": {
+                "type": "string"
+              },
+              "valor": {
+                "type": "string"
+              }
             }
           }
         },
@@ -2251,39 +2254,25 @@
           "type": "string"
         },
         "listaItens": {
-          "type": "object",
-          "properties": {
-            "subItemNd": {
-              "type": "string"
-            },
-            "quantidade": {
-              "type": "string"
-            },
-            "valorUnitario": {
-              "type": "string"
-            },
-            "valorTotal": {
-              "type": "string"
-            },
-            "descricao": {
-              "type": "string"
-            }
-          }
-        },
-        "numeroTransacaoCliente": {
-          "type": "string"
-        },
-        "credencial": {
-          "type": "object",
-          "properties": {
-            "cpf": {
-              "type": "string"
-            },
-            "ug": {
-              "type": "string"
-            },
-            "sistema": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "subItemNd": {
+                "type": "string"
+              },
+              "quantidade": {
+                "type": "string"
+              },
+              "valorUnitario": {
+                "type": "string"
+              },
+              "valorTotal": {
+                "type": "string"
+              },
+              "descricao": {
+                "type": "string"
+              }
             }
           }
         }
