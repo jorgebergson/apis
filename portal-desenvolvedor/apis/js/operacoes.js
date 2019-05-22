@@ -6,7 +6,7 @@ function makeOperationBlock(operacao){
     ent += "</header>";
     ent += "<div class=\"content\">";
     tpMetodo = "";
-    console.log(operacao.metodo.deprecated);
+//    console.log(operacao.metodo.deprecated);
     if(operacao.metodo.deprecated === true){
         tpMetodo = "DEPRECATED";
     }
