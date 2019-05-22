@@ -203,7 +203,7 @@
     "/v1/ne/realizar": {
       "post": {
         "tags": [
-          "Nota de Empenho"
+          "Nota de Empenho v1"
         ],
         "summary": "Adiciona Nota de Empenho",
         "x-auth-type": "Application & Application User",
