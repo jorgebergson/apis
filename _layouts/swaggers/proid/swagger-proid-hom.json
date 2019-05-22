@@ -307,7 +307,7 @@
     "/v1/mensagens": {
       "post": {
         "tags": [
-          "Mensagens"
+          "3 Referência da API"
         ],
         "summary": "Enviar uma mensagem para um usuário portador de um documento ProID",
         "description": "Serviço para envio de mensagens para usuário portador de um documento ProID",
@@ -486,7 +486,15 @@
       "required": [
         "titulo",
         "valor"
-      ]
+      ],
+      "properties": {
+        "titulo": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        }
+      }
     },
     "DestinatarioMensagem": {
       "type": "object",
