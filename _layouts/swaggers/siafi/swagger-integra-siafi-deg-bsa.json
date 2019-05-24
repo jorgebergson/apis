@@ -707,7 +707,7 @@
           "Nota de Dotação"
         ],
         "summary": "Consulta Nota de Dotação",
-        "description": "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao/010001/00001/2018/800002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n      \"numeroDocumento\": \"2018ND800002\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"\",\n      \"nomeFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"UGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100\",  \n        } \n      ]\n    }",
+        "description": "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao/010001/00001/2018/800002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"09Nov18\",\n      \"numeroDocumento\": \"2018ND800003\",\n      \"ugEmitente\": \"170999\",\n      \"nomeUGEmitente\": \"COORDENACAO GERAL DE CONTABILIDADE\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"\",\n      \"nomeFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"UGR\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100\",  \n        } \n      ]\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1368,9 +1368,6 @@
           "type": "string"
         },
         "esferaOrcamentaria": {
-          "type": "string"
-        },
-        "unidadeOrcamentaria": {
           "type": "string"
         },
         "ptres": {
