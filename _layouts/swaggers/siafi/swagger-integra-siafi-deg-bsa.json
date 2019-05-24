@@ -1370,6 +1370,9 @@
         "esferaOrcamentaria": {
           "type": "string"
         },
+        "unidadeOrcamentaria": {
+          "type": "string"
+        },
         "ptres": {
           "type": "string"
         },
