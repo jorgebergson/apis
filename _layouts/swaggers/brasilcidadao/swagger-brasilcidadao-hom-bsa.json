@@ -1,0 +1,126 @@
+{
+  "host": "apigateway.serpro.gov.br",
+  "security": [
+    {
+      "Bearer": []
+    }
+  ],
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "swagger": "2.0",
+  "info": {
+    "version": "1",
+    "title": "API Consulta BPC",
+    "description": "A API `Consulta Cidadão` é disponibilizada através de serviço `HTTP REST`, e tem o objetivo de apresentar as informações básicas de um cidadão brasileiro.\n<br>\n## Campos Retornados \n| Nome | Tipo | Conteúdo | \n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| nome            | string | Nome do cidadão  |\n| email           | number | Email do cidadão |\n| telefone        | number | Telefone do cidadão |\n\n --------------------------\n\n## CPFs para Degustação\n| CPF | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 00000017167 | true | |\n| 00000023728| true | |\n| 00031731198 | true | |\n| 88323471800 | true | |"
+  },
+  "basePath": "/consulta-cidadao/api",
+  "paths": {
+    "/consulta/brasilcidadao/{nit}": {
+      "get": {
+        "tags": [
+          "Consultar Cidaão"
+        ],
+        "summary": "Consulta Cidadão",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": "Apresenta o contexto funcional do Benefício da Previdência Social - BPC\n## CPFs para Degustação\n| Nit - ( cpf ) | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 50836008383  | true |  |\n| 33391083409 | true | |\n| 10635333090 | true | |\n| 11297843479 | true | |\n| 45391982626 | true | |\n--------------------------        \n  \n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-bpc/api/consulta/brasilcidadao/\n    \n  #### Retorno\n  \n    {\n      \"nit\":\"número do nit do titular do benefício\",\n      \"beneficios\": {\n          \"nome\":\"Nome do titular do benefício\",\n          \"dataNascimento\":\"Data de nascimento do titular do benefício\"\n          \"nomeMaeTitular\":\"Nome da mãe do titular do benefício\",\n          \"descricaoGenero\":\"Gênero do titular do benefício\",\n          \"numeroBeneficio\":\"Número do benefício\"\n          \"dataInicioBeneficio\":\"Data início do benefício\",\n          \"dataCessacaoBeneficio\":\"Data fim do benefício\",\n          \"codigoSituacaoBeneficio\":\"Codigo de situação do benefício\"\n          \"codigoEspecieBeneficio\":\"Código da espécie do benefício\",\n          \"valorRendaMensalReajustada\":\"Valor mensal do benefício\",\n       }\n    }        ",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "nit",
+            "in": "path",
+            "description": "Número do NIT (CPF)",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados do Cidadão",
+            "schema": {
+              "$ref": "#/definitions/BPC"
+            }
+          },
+          "400": {
+            "description": "Para quaisquer erros do cliente."
+          },
+          "404": {
+            "description": "Não existe BPC com o número do NIT informado."
+          },
+          "500": {
+            "description": "Erros do backend e/ou dos servidores de dados"
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "schemes": [
+    "https"
+  ],
+  "definitions": {
+    "BPC": {
+      "type": "object",
+      "properties": {
+        "nit": {
+          "type": "number",
+          "description": "Número do NIT - ( CPF )"
+        },
+        "beneficios": {
+          "type": "object",
+          "properties": {
+            "nomeTitular": {
+              "type": "string",
+              "description": "Nome do titular do benefício"
+            },
+            "dataNascimento": {
+              "type": "string",
+              "description": "Data do nascimento do titular do benefício"
+            },
+            "nomeMaeTitular": {
+              "type": "string",
+              "description": "Nome da maẽ do titular do benefício"
+            },
+            "genero": {
+              "type": "string",
+              "description": "Gênero do titular do benefício"
+            },
+            "numeroBeneficio": {
+              "type": "number",
+              "description": "Número do benefício"
+            },
+            "dataInicioBeneficio": {
+              "type": "string",
+              "description": "Data do início do benefício"
+            },
+            "dataCessacaoBeneficio": {
+              "type": "string",
+              "description": "Data de cessação do benefício"
+            },
+            "codigoSituacaoBeneficio": {
+              "type": "number",
+              "description": "Código da situação do benefício"
+            },
+            "codigoEspecieBeneficio": {
+              "type": "number",
+              "description": "Código da espécie do benefício"
+            },
+            "valorRendaMensalReajustada": {
+              "type": "number",
+              "description": "Valor mensal do benefício"
+            }
+          }
+        }
+      }
+    }
+  }
+}
