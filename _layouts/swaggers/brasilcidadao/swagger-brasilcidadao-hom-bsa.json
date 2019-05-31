@@ -67,7 +67,7 @@
       "properties": {
         "nit": {
           "type": "number",
-          "description": "Número do NIT - ( CPF )"
+          "description": "CPF"
         },
         "beneficios": {
           "type": "object",
