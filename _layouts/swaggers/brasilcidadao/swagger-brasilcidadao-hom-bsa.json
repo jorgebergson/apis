@@ -28,7 +28,7 @@
         "summary": "Consulta Cidadão",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "Apresenta os dados básicos dados de um cidadão brasileiro.\n## CPFs para Degustação\n| Nit - ( cpf ) | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n\n | 00000017167 | true | |\n\n | 00000023728 | true | |\n\n | 00031731198 | true | |\n\n | 88323471800 | true | |\n\n--------------------------        \n  \n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-brasil-cidadao-trial/api/consulta/brasilcidadao/00000017167 \n    \n  #### Retorno\n  \n    {\n      \"nit\":\"número do nit do titular do benefício\",\n      \"beneficios\": {\n          \"nome\":\"Nome do titular do benefício\",\n          \"email\":\"fabio.monteiro@serpro.gov.br\",\n                         }\n    }     \n    ",
+        "description": "Apresenta os dados básicos dados de um cidadão brasileiro.\n## CPFs para Degustação\n| Nit - ( cpf ) | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n\n | 00000017167 | true | |\n\n | 00000023728 | true | |\n\n | 00031731198 | true | |\n\n | 88323471800 | true | |\n\n--------------------------        \n  \n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-brasil-cidadao-trial/api/consulta/brasilcidadao/00000017167 \n    \n  #### Retorno\n  \n    {\n      nome: João da Silva\n      email: joao.silva@serpro.gov.br\n      telefone: (61) 93210-4567\n    }     \n    ",
         "produces": [
           "application/json"
         ],
@@ -43,16 +43,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna os dados do Cidadão",
-            "schema": {
-              "$ref": "#/definitions/BPC"
-            }
-          },
-          "400": {
-            "description": "Para quaisquer erros do cliente."
+            "description": "Retorna os dados do Cidadão"
           },
           "404": {
-            "description": "Não existe BPC com o número do NIT informado."
+            "description": "CPF não encontrado"
           },
           "500": {
             "description": "Erros do backend e/ou dos servidores de dados"
