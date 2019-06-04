@@ -1490,13 +1490,25 @@
         "ugEmitente": {
           "type": "string"
         },
-        "nomeUGEmitente": {
-          "type": "string"
-        },
         "gestaoEmitente": {
           "type": "string"
         },
         "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "unidadeOrcamentaria": {
+          "type": "string"
+        },
+        "indicadorResultado": {
+          "type": "string"
+        },
+        "indicadorCredito": {
+          "type": "string"
+        },
+        "planoOrcamentario": {
+          "type": "string"
+        },
+        "codigoAutorEmenda": {
           "type": "string"
         },
         "fonteRecurso": {
@@ -1517,12 +1529,6 @@
         "taxaCambio": {
           "type": "string"
         },
-        "ptres": {
-          "type": "string"
-        },
-        "idoc": {
-          "type": "string"
-        },
         "observacao": {
           "type": "string"
         },
@@ -1531,7 +1537,13 @@
           "items": {
             "$ref": "#/definitions/EventosNDDesOrc"
           }
-        }
+        },
+        "PTRES": {
+          "type": "string"
+        },
+        "IDOC": {
+          "type": "string"
+        },
       }
     },
     "NDDetaOrcGerada": {
