@@ -1543,7 +1543,7 @@
         },
         "IDOC": {
           "type": "string"
-        },
+        }
       }
     },
     "NDDetaOrcGerada": {
