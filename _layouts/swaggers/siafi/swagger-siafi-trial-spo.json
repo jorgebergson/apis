@@ -898,7 +898,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Detalhamento Orçamentário",
-        "description": "Gera uma Nota de Detalhamento Orçamentário a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\": \"005714\",\n      \"idoc\": \"9999\",\n      \"observacao\": \"Teste Nota Dotação DETAORC\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\" \n        } \n      ]\n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"000002\",\n      \"numRequisicao\": \"2018TRND000002\"\n    }",
+        "description": "Gera uma Nota de Detalhamento Orçamentário a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"unidadeOrcamentaria\": \"\",\n      \"indicadorResultado\": \"\",\n      \"indicadorCredito\": \"\",\n      \"planoOrcamentario\": \"\",\n      \"codigoAutorEmenda\": \"\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\" \n        } \n      ],\n      \"PTRES\": \"005714\",\n      \"IDOC\": \"9999\"\n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018ND000002\",\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1542,16 +1542,7 @@
         "gestao": {
           "type": "string"
         },
-        "ano": {
-          "type": "string"
-        },
-        "tipoDoc": {
-          "type": "string"
-        },
-        "sequencialDoc": {
-          "type": "string"
-        },
-        "numRequisicao": {
+        "numero": {
           "type": "string"
         }
       }
