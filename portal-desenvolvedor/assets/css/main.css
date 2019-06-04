@@ -4153,6 +4153,28 @@
 		border-radius: 5px;
 }
 
+.DEPRECATEDOperation{
+	padding: 5px;
+	background-color: #CCCCCC; /* Red */
+	color: black;
+	font-family: monospace;
+	border-style: solid;
+	border-color: #888888;
+	border-width: 1px;
+	border-radius: 5px;
+	font-size: 25px;
+	text-decoration:line-through
+}
+
+.DEPRECATEDLabel{
+	background-color: #888888;
+	color:white;
+	font-weight:bold;
+	padding:3px;
+	border-radius: 5px;
+
+}
+
 button.testeAPI{
 	float:right;
 	height:50%;

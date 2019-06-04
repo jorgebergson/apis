@@ -50,6 +50,7 @@ externalDocs:
 paths:
   /v1/ne/alterar:
     post:
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Altera Nota de Empenho
@@ -152,6 +153,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/anular:
     post:
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Anula Nota de Empenho
@@ -257,6 +259,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultaTransacao:
     post:
+      deprecated: true      
       tags:
         - Nota de Empenho v1
       summary: Consulta Número da Transação
@@ -317,6 +320,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultar:
     post:
+      deprecated: true      
       tags:
         - Nota de Empenho v1
       summary: Consulta Nota de Empenho
@@ -500,6 +504,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/realizar:
     post:
+      deprecated: true      
       tags:
         - Nota de Empenho v1
       summary: Adiciona Nota de Empenho
@@ -635,6 +640,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/reforcar:
     post:
+      deprecated: true      
       tags:
         - Nota de Empenho v1
       summary: Reforça Nota de Empenho
