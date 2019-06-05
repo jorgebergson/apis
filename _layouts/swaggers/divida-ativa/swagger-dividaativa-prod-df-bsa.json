@@ -18,7 +18,7 @@
     }
   },
   "host": "apigateway.serpro.gov.br",
-  "basePath": "/consulta-divida-ativa-df-trial/api",
+  "basePath": "/consulta-divida-ativa-df/api",
   "paths": {
     "/v1/inscricao/{numeroInscricao}": {
       "get": {
