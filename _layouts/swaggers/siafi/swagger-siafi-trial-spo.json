@@ -1267,7 +1267,7 @@
         "listaEventos": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/EventoNDBloqueio"
+            "$ref": "#/definitions/ConsultaEventoNDBloqueio"
           }
         }
       }
@@ -1346,6 +1346,31 @@
           "type": "string"
         },
         "autorEmenda": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        }
+      }
+    },
+    "ConsultaEventoNDBloqueio": {
+      "properties": {
+        "evento": {
+          "type": "string"
+        },
+        "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "ptres": {
+          "type": "string"
+        },
+        "idoc": {
+          "type": "string"
+        },
+        "naturezaDespesa": {
+          "type": "string"
+        },
+        "fonte": {
           "type": "string"
         },
         "valor": {
