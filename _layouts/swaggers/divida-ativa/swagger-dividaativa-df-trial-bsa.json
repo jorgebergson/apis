@@ -61,7 +61,7 @@
     "/v1/devedor/{numeroInscricaoDevedor}": {
       "get": {
         "tags": [
-          "Dívida Ativa"
+          "Dívida Ativa DF"
         ],
         "summary": "Consulta dados do devedor, seja pessoa física ou jurídica",
         "description": "\n## Exemplo\n#### Chamada\n      [GET] https://apigateway.serpro.gov.br/consulta-divida-ativa-df-trial/api/v1/devedor/09781911768\n\n#### Retorno\n        [\n          {\n            \"numeroInscricao\": \"10 5 03 003880-14\",\n            \"numeroProcesso\": \"10166 677771/2014-12\",\n            \"situacaoInscricao\": \"121105\",\n            \"situacaoDescricao\": \"ATIVA NAO PRIORIZADA PARA AJUIZAMENTO\",\n            \"nomeDevedor\": \"DEVEDOR DA SILVA\",\n            \"tipoDevedor\": \"PRINCIPAL\",\n            \"valorTotalConsolidadoMoeda\": \"4.457,56\",\n            \"cpfCnpj\": \"097.819.117-68\",\n            \"codigoSida\": \"1000\",\n            \"nomeUnidade\": \"PROCURADORIA REGIONAL DA FAZENDA NACIONAL DA 1A REGIAO\",\n            \"codigoComprot\": \"1101951\",\n            \"codigoUorg\": \"0005786\"\n          }\n        ]\n<br/>      \n#### Chaves para retornos diferentes\n\n    (200) numeroInscricaoDevedor: 09781911768 (CPF)\n    (200) numeroInscricaoDevedor: 01415666000181 (CNPJ)\n    (404) numeroInscricaoDevedor: qualquer outro número",
