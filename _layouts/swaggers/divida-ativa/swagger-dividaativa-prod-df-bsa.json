@@ -3,7 +3,7 @@
   "info": {
     "version": "api",
     "title": "API Consulta Divida Ativa",
-    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nA api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida ativa da união via serviço `HTTP REST`. \n <br>\n\n## Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |:--------------------|:----------------------------------------------------------------------------- |\n| &nbsp           | &nbsp    | &nbsp  | \n |400           | Requisição inválida    | O número de inscrição informado não é válido.       |\n| &nbsp           | &nbsp    | &nbsp  |\n| 404           | Not found    | O número de inscrição informado não foi encontrado.  |\n| &nbsp           | &nbsp    | &nbsp  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa/api\n\n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api"
+    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nA api `consulta-divida-ativa` viabiliza a consulta de débitos na dívida ativa da união via serviço `HTTP REST`. \n <br>\n\n## Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |:--------------------|:----------------------------------------------------------------------------- |\n| &nbsp           | &nbsp    | &nbsp  | \n |400           | Requisição inválida    | O número de inscrição informado não é válido.       |\n| &nbsp           | &nbsp    | &nbsp  |\n| 404           | Not found    | O número de inscrição informado não foi encontrado.  |\n| &nbsp           | &nbsp    | &nbsp  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-df/api\n\n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/consulta-divida-ativa-df-trial/api"
   },
   "security": [
     {
@@ -18,7 +18,7 @@
     }
   },
   "host": "apigateway.serpro.gov.br",
-  "basePath": "/consulta-divida-ativa-trial/api",
+  "basePath": "/consulta-divida-ativa-df-trial/api",
   "paths": {
     "/v1/inscricao/{numeroInscricao}": {
       "get": {
