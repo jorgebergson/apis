@@ -335,7 +335,7 @@ function addFields(fields, schema, father){
         }
         if(schema.properties[field].type === "array"){
             var subFields = Object.getOwnPropertyNames(schema.properties[field].items);
-            saida += addFields(subFields,schema.properties[field],father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+            saida += addFields(subFields,schema.items.properties[field],father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
         }
     });
 
