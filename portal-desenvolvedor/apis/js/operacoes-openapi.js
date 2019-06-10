@@ -329,7 +329,7 @@ function addFields(fields, schema, father){
             arrow = "&#8627 ";
         }
         saida += "<tr><td>" + "<b>" + father + arrow + "</b>"  + field + "</td><td>" + description + "</td><td>" + schema.properties[field].type + "</td></tr>";
-        if(schema.properties[field].type === "object" || schema.properties[field].type === "array"){
+        if(schema.properties[field].type === "object"){
             var subFields = Object.getOwnPropertyNames(schema.properties[field].properties);
             saida += addFields(subFields,schema.properties[field],father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
         }
