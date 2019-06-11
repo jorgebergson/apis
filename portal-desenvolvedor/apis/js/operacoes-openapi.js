@@ -318,7 +318,7 @@ function addFields(fields, schema, father){
     saida = "";
     fields.forEach(field => {
         description = "";
-        if(schema.properties[field].description !== undefined){
+        if(schema.properties && schema.properties[field].description !== undefined){
             description = schema.properties[field].description;
         }else {
         	description = " ------------ ";
@@ -328,10 +328,28 @@ function addFields(fields, schema, father){
         if(father !== ""){
             arrow = "&#8627 ";
         }
-        saida += "<tr><td>" + "<b>" + father + arrow + "</b>"  + field + "</td><td>" + description + "</td><td>" + schema.properties[field].type + "</td></tr>";
-        if(schema.properties[field].type === "object"){
+        var tipo = "";
+        if(!schema.properties){
+            tipo = schema.type;
+        }
+        else{
+            tipo = schema.properties[field].type;
+        }
+        saida += "<tr><td>" + "<b>" + father + arrow + "</b>"  + field + "</td><td>" + description + "</td><td>" + tipo + "</td></tr>";
+        if(schema.properties && schema.properties[field].type === "object"){
             var subFields = Object.getOwnPropertyNames(schema.properties[field].properties);
             saida += addFields(subFields,schema.properties[field],father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        }
+        if(schema.properties && schema.properties[field].type === "array"){
+            console.log(schema.properties[field].items);
+            var subFields;
+            if(schema.properties[field].items.properties === undefined){
+                subFields = Object.getOwnPropertyNames(schema.properties[field].items);
+            }
+            else{
+                subFields = Object.getOwnPropertyNames(schema.properties[field].items.properties);
+            }
+            saida += addFields(subFields,schema.properties[field].items,father+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
         }
     });
 
