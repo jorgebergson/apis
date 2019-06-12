@@ -6,7 +6,7 @@
             "logo": "images/consulta-cpf.png",
             "style": "width: 142px;",
             "endpointMock": "/consulta-cpf-trial/1",
-            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-cpf-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-cpf-df-trial-",
             "endpointProducao": "/consulta-cpf/v1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cpf/swagger-cpf-prod-"
         },
@@ -16,7 +16,7 @@
             "logo": "images/consulta-cnpj.png",
             "style": "width: 161px;",
             "endpointMock": "/consulta-cnpj-trial/1",
-            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
             "endpointProducao": "/consulta-cnpj/v1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/cnpj/swagger-cnpj-prod-"
         },
@@ -26,7 +26,7 @@
             "logo": "images/consulta-nfe.png",
             "style": "width: 153px;",
             "endpointMock": "/nfe-trial/1",
-            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/nfe/swagger-nfe-trial-",
+            "urlJsonSwaggerMock": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/nfe/swagger-nfe-df-trial-",
             "endpointProducao": "/nfe/1",
             "urlJsonSwaggerProducao": "https://rawgit.com/devserpro/apis/master/_layouts/swaggers/nfe/swagger-nfe-prod-"
         },
