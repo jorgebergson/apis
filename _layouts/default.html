@@ -345,7 +345,7 @@
             $.ajax({
                 url: endereco,
                 complete: function(res) {
-                    var meuJSON = JSON.parse(res.responseText);
+                    var meuJSON = JSON.parse();
                     var conteudo = "";
                     var visibleItens = (api == null) ? 3 : 1;
                     //Gera conteudo para Mocks da API SERPRO
