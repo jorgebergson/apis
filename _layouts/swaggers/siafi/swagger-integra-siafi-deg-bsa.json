@@ -561,7 +561,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Crédito gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NCGerada"
@@ -630,7 +630,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Lançamento encontrada e retornada",
             "schema": {
               "$ref": "#/definitions/NotaLancamento"
@@ -683,7 +683,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Lançamento gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NLGerada"
@@ -752,7 +752,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Dotação encontrada e retornada",
             "schema": {
               "$ref": "#/definitions/NotaDotacao"
@@ -805,7 +805,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Dotação gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDGerada"
@@ -874,7 +874,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Detalhamento Orçamentário encontrado e retornado com sucesso",
             "schema": {
               "$ref": "#/definitions/ConsultaNDDetOrc"
@@ -924,7 +924,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Detalhamento Orçamentário gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDDetaOrcGerada"
@@ -993,7 +993,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de bloqueio de Crédito encontrada e retornada com sucesso",
             "schema": {
               "$ref": "#/definitions/notaBloqueio"
@@ -1043,7 +1043,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Bloqueio de Crédito gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDBloqueioGerada"
@@ -1123,6 +1123,75 @@
           },
           "403": {
             "description": "Credencial informada não possui permissão para consultar a Documentos"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}": {
+      "get": {
+        "tags": [
+          "Nota de Dotação"
+        ],
+        "summary": "Consulta uma Nota de Dotacao Sof",
+        "description": "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\": \"2019ND000009\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"NomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\": \"\",\n      \"numeroDecreto\": \"\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"201010\",\n          \"esferaOrcamentaria\": \"1\",\n          \"uo\": \"01101\",\n          \"ptres\": \"01301055320045664\",\n          \"idoc\": \"1000\",\n          \"naturezaDespesa\": \"0100\",\n          \"fonteRecurso\": \"0\", \n          \"resultado\": \"0\",\n          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\",\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\",  \n        }\n      ]             \n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ug",
+            "in": "path",
+            "description": "Código da UG emitente",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gestao",
+            "in": "path",
+            "description": "Código da Gestão",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ano",
+            "in": "path",
+            "description": "Ano da Nota de Dotação Sof",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "in": "path",
+            "description": "Número da Nota de Dotação Soft",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-credencial",
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nota de bloqueio de Dotação Sof encontrada e retornada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/notaDotacaoSof"
+            }
+          },
+          "400": {
+            "description": "Algum campo possui informações inválidas"
+          },
+          "403": {
+            "description": "Credencial informada não possui permissão para consultar a Nota de Dotação Sof"
           },
           "500": {
             "description": "Erro interno do servidor"
@@ -1238,6 +1307,86 @@
         }
       }
     },
+    "notaDotacaoSof": {
+      "properties": {
+        "dataEmissao": {
+          "type": "string"
+        },
+        "numeroDocumento": {
+          "type": "string"
+        },
+        "ugEmitente": {
+          "type": "string"
+        },
+        "gestaoEmitente": {
+          "type": "string"
+        },
+        "nomeUGEmitente": {
+          "type": "string"
+        },
+        "NomeGestaoEmitente": {
+          "type": "string"
+        },
+        "instrumentoLegal": {
+          "type": "string"
+        },
+        "numeroDecreto": {
+          "type": "string"
+        },
+        "dataPublicacao": {
+          "type": "string"
+        },
+        "observacao": {
+          "type": "string"
+        },
+        "listaEventos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConsultaEventoNDSof"
+          }
+        }
+      }
+    },
+    "ConsultaEventoNDSof": {
+      "properties": {
+        "evento": {
+          "type": "string"
+        },
+        "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "uo": {
+          "type": "string"
+        },
+        "ptres": {
+          "type": "string"
+        },
+        "idoc": {
+          "type": "string"
+        },
+        "naturezaDespesa": {
+          "type": "string"
+        },
+        "fonteRecurso": {
+          "type": "string"
+        },
+        "resultado": {
+          "type": "string"
+        },
+        "tipoCredito": {
+          "type": "string"
+        },
+        "codigoFuncional": {
+          "type": "string"
+        },
+        "autorEmenda": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        }
+      }
+    },
     "notaBloqueio": {
       "properties": {
         "dataEmissao": {
@@ -1271,7 +1420,7 @@
           }
         }
       }
-    }, 
+    },
     "GeraNotaBloqueio": {
       "properties": {
         "dataEmissao": {
@@ -2203,7 +2352,7 @@
           "type": "array",
           "items": {
             "type": "string"
-          }  
+          }
         },
         "listaItens": {
           "type": "array",
@@ -2440,7 +2589,7 @@
           "type": "string"
         },
         "numeroDocGerado": {
-          "type": "string" 
+          "type": "string"
         }
       }
     },
