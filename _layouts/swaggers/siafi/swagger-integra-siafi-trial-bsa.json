@@ -16,7 +16,7 @@
   "info": {
     "version": "api",
     "title": "Integração SIAFI (api-siafi)",
-    "description": "\n Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- |\n| 500 | Erro no Servidor | Ocorreu algum erro no servidor. | \n\n  ## Endereço de Produção \n    https://apigateway.serpro.gov.br/api-integra-siafi/api \n\n  ## Endereço de Degustação \n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api \n   "
+    "description": "\n Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- |\n| 500 | Erro no Servidor | Ocorreu algum erro no servidor. | \n\n  ## Endereço de Degustação \n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api \n    "
   },
   "basePath": "/api-integra-siafi-trial/api",
   "paths": {
@@ -28,7 +28,7 @@
         "summary": "Consulta Nota de Empenho",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n    [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/consultar\n#### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"800017\"\n    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao: 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente: '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente: '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido: CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido: '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n      observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho: '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem: APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade: NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso: 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n      codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n      referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n          valor: '01'\n          seq: '000'\n          qtd: ''\n          valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n        - numero: '1'\n          valor: ''\n          seq: '000'\n          qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo: ''\n    erros: []\n    status: 200\n    }      ",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a  V2 \n ## Exemplo\n#### Chamada\n    [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/consultar\n#### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"800017\"\n    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao: 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente: '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente: '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido: CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido: '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n      observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho: '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem: APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade: NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso: 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n      codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n      referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n          valor: '01'\n          seq: '000'\n          qtd: ''\n          valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n        - numero: '1'\n          valor: ''\n          seq: '000'\n          qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo: ''\n    erros: []\n    status: 200\n    }      ",
         "consumes": [
           "application/json"
         ],
@@ -73,7 +73,7 @@
         "summary": "Realiza Nota de Empenho",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/realizar\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Inclusao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\": \"\",\n        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n        \"codigoProgramaTrabalho\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"\",\n        \"planoInterno\": \"\",\n        \"indicadorResultado\": \"\",\n        \"indicadorTipoCredito\": \"\",\n        \"planoOrcamentario\": \"\",\n        \"codigoAutorEmenda\": \"\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n          \"31DEZ17\"\n        ],\n        \"dataRecebimento\": [\n          \"31DEZ17\"\n        ],\n        \"valorCompromisso\": [\n          \"555555\"\n        ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"Testando inclusao de NE\"\n          }\n        ],\n        \"numeroTransacaoCliente\": \"2017TR000033\",\n        \"credencial\": {\n            \"cpf\": \"60165570644\",\n            \"ug\": \"010001\",\n            \"sistema\": \"SIAFI2017HM\"\n        }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a V2 \n ## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/realizar\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Inclusao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\": \"\",\n        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n        \"codigoProgramaTrabalho\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"\",\n        \"planoInterno\": \"\",\n        \"indicadorResultado\": \"\",\n        \"indicadorTipoCredito\": \"\",\n        \"planoOrcamentario\": \"\",\n        \"codigoAutorEmenda\": \"\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n          \"31DEZ17\"\n        ],\n        \"dataRecebimento\": [\n          \"31DEZ17\"\n        ],\n        \"valorCompromisso\": [\n          \"555555\"\n        ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"Testando inclusao de NE\"\n          }\n        ],\n        \"numeroTransacaoCliente\": \"2017TR000033\",\n        \"credencial\": {\n            \"cpf\": \"60165570644\",\n            \"ug\": \"010001\",\n            \"sistema\": \"SIAFI2017HM\"\n        }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
         "consumes": [
           "application/json"
         ],
@@ -118,7 +118,7 @@
         "summary": "Altera Nota de Empenho",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/alterar\n#### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n      \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"Cancelamento de NE\",\n      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\": \"0100\",\n      \"numeroOriginalConvenio\": \"0010\",\n      \"passivoAnterior\": \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n      {\n        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n      \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n      \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\": \"00001\",\n      \"numeroEmpenhoReferencia\": \"2017NE800051\",\n      \"numeroListaReferencia\": \"2017LI800097\",\n      \"listaItens\": [\n      {\n        \"subItemNd\": \"01\",\n        \"quantidade\": \"000000000000001\",\n        \"valorUnitario\": \"00000000000555555\",\n        \"valorTotal\": \"00000000000555555\",\n        \"descricao\": \"Teste alteração\"\n      }\n    ],\n      \"numeroTransacaoCliente\": \"2017TR000049\",\n      \"credencial\": {\n      \"cpf\": \"60165570644\",\n      \"ug\": \"010001\",\n      \"sistema\": \"SIAFI2017HM\"\n        }\n      }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800060 010001000012017LI800106\",\n      \"erros\": [],\n      \"status\": 200\n    }",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a V2 \n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/alterar\n#### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n      \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"Cancelamento de NE\",\n      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\": \"0100\",\n      \"numeroOriginalConvenio\": \"0010\",\n      \"passivoAnterior\": \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n      {\n        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n      \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n      \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\": \"00001\",\n      \"numeroEmpenhoReferencia\": \"2017NE800051\",\n      \"numeroListaReferencia\": \"2017LI800097\",\n      \"listaItens\": [\n      {\n        \"subItemNd\": \"01\",\n        \"quantidade\": \"000000000000001\",\n        \"valorUnitario\": \"00000000000555555\",\n        \"valorTotal\": \"00000000000555555\",\n        \"descricao\": \"Teste alteração\"\n      }\n    ],\n      \"numeroTransacaoCliente\": \"2017TR000049\",\n      \"credencial\": {\n      \"cpf\": \"60165570644\",\n      \"ug\": \"010001\",\n      \"sistema\": \"SIAFI2017HM\"\n        }\n     }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800060 010001000012017LI800106\",\n      \"erros\": [],\n      \"status\": 200\n    }",
         "consumes": [
           "application/json"
         ],
@@ -163,7 +163,7 @@
         "summary": "Anula Nota de Empenho",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/anular\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Anulação de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n        {\n          \"conta\": \"\",\n          \"valor\": \"\"\n        }\n      ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"especie\": \"03\",\n        \"ugReferencia\": \"010001\",\n        \"gestaoReferencia\": \"00001\",\n        \"numeroEmpenhoReferencia\": \"2017NE800049\",\n        \"numeroListaReferencia\": \"2017LI800095\",\n        \"listaItens\": [\n       {\n          \"subItemNd\": \"01\",\n          \"quantidade\": \"000000000000001\",\n          \"valorUnitario\": \"00000000000555555\",\n          \"valorTotal\": \"00000000000555555\",\n          \"descricao\": \"Teste Anulação\"\n        }\n      ],\n        \"numeroTransacaoCliente\": \"2017TR000043\",\n        \"credencial\": {\n          \"cpf\": \"60165570644\",\n          \"ug\": \"010001\",\n          \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800058 010001000012017LI800104\",\n      \"erros\": [],\n      \"status\": 200\n    }",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a V2\n ## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/anular\n#### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Anulação de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n        {\n          \"conta\": \"\",\n          \"valor\": \"\"\n        }\n      ],\n        \"contaPassivoFinanceiro\": \"string\",\n        \"especie\": \"03\",\n        \"ugReferencia\": \"010001\",\n        \"gestaoReferencia\": \"00001\",\n        \"numeroEmpenhoReferencia\": \"2017NE800049\",\n        \"numeroListaReferencia\": \"2017LI800095\",\n        \"listaItens\": [\n       {\n          \"subItemNd\": \"01\",\n          \"quantidade\": \"000000000000001\",\n          \"valorUnitario\": \"00000000000555555\",\n          \"valorTotal\": \"00000000000555555\",\n          \"descricao\": \"Teste Anulação\"\n        }\n      ],\n        \"numeroTransacaoCliente\": \"2017TR000043\",\n        \"credencial\": {\n          \"cpf\": \"60165570644\",\n          \"ug\": \"010001\",\n          \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800058 010001000012017LI800104\",\n      \"erros\": [],\n      \"status\": 200\n    }",
         "consumes": [
           "application/json"
         ],
@@ -208,7 +208,7 @@
         "summary": "Reforça Nota de Empenho",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/reforcar\n#### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n      \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"Reforço de NE\",\n      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\": \"0100\",\n      \"numeroOriginalConvenio\": \"0010\",\n      \"passivoAnterior\": \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n      {\n        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n      \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n      \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\": \"00001\",\n      \"numeroEmpenhoReferencia\": \"2017NE800050\",\n      \"numeroListaReferencia\": \"2017LI800096\",\n      \"listaItens\": [\n      {\n        \"subItemNd\": \"01\",\n        \"quantidade\": \"000000000000001\",\n        \"valorUnitario\": \"00000000000555555\",\n        \"valorTotal\": \"00000000000555555\",\n        \"descricao\": \"Teste Anulação\"\n      }\n    ],\n      \"numeroTransacaoCliente\": \"2017TR000046\",\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n        \"ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a V2 \n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/reforcar\n#### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n      \"numeroDocumento\": \"\",               \n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"Reforço de NE\",\n      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\": \"0100\",\n      \"numeroOriginalConvenio\": \"0010\",\n      \"passivoAnterior\": \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n      {\n        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n      \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n      \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\": \"00001\",\n      \"numeroEmpenhoReferencia\": \"2017NE800050\",\n      \"numeroListaReferencia\": \"2017LI800096\",\n      \"listaItens\": [\n      {\n        \"subItemNd\": \"01\",\n        \"quantidade\": \"000000000000001\",\n        \"valorUnitario\": \"00000000000555555\",\n        \"valorTotal\": \"00000000000555555\",\n        \"descricao\": \"Teste Anulação\"\n      }\n    ],\n      \"numeroTransacaoCliente\": \"2017TR000046\",\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n        \"ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
         "consumes": [
           "application/json"
         ],
@@ -253,7 +253,7 @@
         "summary": "Consulta Número da Transação",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v1/ne/consultaTransacao\n#### Conteúdo do corpo\n    {\n      \"numeroTransacaoCliente\": \"2017TR000045\",\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n        \"ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800058 010001000012017LI800104\",\n      \"erros\": [],\n      \"status\": 200\n    }",
+        "description": "\n## Os métodos referentes a Nota de Empenho V1 foram descontinuados, favor utilizar a V2 \n## Exemplo\n#### Chamada\n      [POST] https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v1/ne/consultaTransacao\n#### Conteúdo do corpo\n    {\n      \"numeroTransacaoCliente\": \"2017TR000045\",\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n        \"ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800058 010001000012017LI800104\",\n      \"erros\": [],\n      \"status\": 200\n    }",
         "consumes": [
           "application/json"
         ],
@@ -296,7 +296,7 @@
           "Nota de Empenho v2"
         ],
         "summary": "Consulta Nota de Empenho",
-        "description": "Consulta uma Nota de Empenho existente\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n      dataEmissao: 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n      ugEmitente: '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n      gestaoEmitente: '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n      nomeFavorecido: CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n      codigoFavorecido: '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n      observacao: TESTE NE-01\n      evento: '401091'\n      esfera: '1'\n      ptres: '000001'\n      fonte: '0100000000'\n      codigoND: '339030'\n      ugResponsavel: 010019\n      planoInterno: AAA\n      valorEmpenho: '00000000000000001'\n      tipoEmpenho: ORDINARIO\n      sistemaOrigem: APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia: ''\n      passivoAnterior: NAO\n      contaPassivo: ''\n      nomeModalidade: NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n      numeroProcesso: 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n      codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n      referenciaDispensa: ''\n      numeroOriginal: ''\n      informacoesLancamentos: 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18   14:33'\n      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes: []\n      numeroLista: 2018LI800043\n      subItens:\n        - numero: '00'\n          valor: '01'\n          seq: '000'\n          qtd: ''\n          valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n        - numero: '1'\n          valor: ''\n          seq: '000'\n          qtd: ''\n          valorTotal: ''\n          descricao: ''\n      subItensSaldo:\n        - numero: '01'\n          valor: '00000000000000001'\n      nsaldo: ''\n    erros: []\n    status: 200\n    }      ",
+        "description": "Consulta uma Nota de Empenho existente\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-empenho/170600/00001/2018/000001\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Retorno \n    {\n      \"dataEmissao\": \"20Jun18\",\n      \"saldoPagar\": \"\",\n      \"numeroNota\": \"2018NE800001\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUgEmitente\": \"COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA\",\n      \"gestaoEmitente\": \"170600\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"nomeFavorecido\": \"COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA\",\n      \"tipoFavorecido\": \"4\",\n      \"codigoFavorecido\": \"17060000001\",\n      \"sicaf\": \"\",\n      \"operacaoCambial\": \"0000000000\",\n      \"observacao\": \"TESTE SID - VL\",\n      \"evento\": \"401091\",\n      \"esfera\": \"1\",\n      \"ptres\": \"089139\",\n      \"fonte\": \"0163719020\",\n      \"codigoND\": \"469072\",\n      \"ugResponsavel\": \"170600\",\n      \"planoInterno\": \"2852DPMFIBC\",\n      \"valorEmpenho\": \"00000150000000000\",\n      \"tipoEmpenho\": \"ESTIMATIVO\",\n      \"sistemaOrigem\": \"\",\n      \"docReferenciaOriginal\": \"\",\n      \"numDocReferencia\": \"\",\n      \"passivoAnterior\": \"SIM\",\n      \"contaPassivo\": \"212110201\",\n      \"nomeModalidade\": \"NAO SE APLICA\",\n      \"nomeAmparo\": \"\",\n      \"inciso\": \"\",\n      \"numeroProcesso\": \"\",\n      \"indicadorPagPrecatorio\": \"\",\n      \"siglaUF\": \"DF\",\n      \"codigoMunicipioBeneficiado\": \"\",\n      origemMaterial: \"\",\n      referenciaDispensa: \"\",\n      numeroOriginal: \"\",\n      \"informacoesLancamentos\": \"LANCADO POR : 05550469669 - LEONARDO          UG : 170600   20Jun18   17:26\",\n      \"contaCorrenteFinanceiro\": \"F0163719020\",\n      \"contasPermanentes\": [ \n           { \n              \"conta\": \"P\", \n              \"valor\": \"150000000000\" \n           } \n      ]\n      \"numeroLista\": \"2018LI000001\",\n      \"subItens\": [ \n           { \n              \"numero\": \"00\", \n              \"valor\": \"00000150000000000\",\n              \"seq\": \"001\",\n              \"qtd\": \"000000000100000\",\n              \"valorTotal\": \"00000150000000000\" ,\n              \"descricao\": \"TESTE SID - VL\" \n           } \n      ] \n      \"subItensSaldo\": [ \n           { \n              \"numero\": \"01\",\n              \"valor\": \"00000150000000000\"\n           } \n      ] \n      \"nsaldo\": \"\"\n    }      ",
         "produces": [
           "application/json"
         ],
@@ -365,7 +365,7 @@
           "Nota de Empenho v2"
         ],
         "summary": "Realiza uma Nota de Empenho",
-        "description": "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-empenho\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"14JUN18\",\n        \"numeroDocumento\": \"800017\",\n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Teste NE-01\",\n        \"valorTotalEmpenho\": \"001\",\n        \"numeroProcesso\": \"103.504/1999\",\n        \"numeroOriginalConvenio\": \" \",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n        \"favorecido\": \"010001\",\n        \"gestaoFavorecido\": \"00001\",\n        \"esferaOrcamentaria\": \"1\",\n        \"ptres\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"010019\",\n        \"planoInterno\": \"aaa\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n          \"26JUN2018\"\n        ],\n        \"dataRecebimento\": [\n          \"26JUN2018\"\n        ],\n        \"valorCompromisso\": [\n          \"001\"\n        ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"001\",\n            \"valorTotal\": \"001\",\n            \"descricao\": \"Lista NE-01\"\n          }\n        ]\n    }\n  \n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012018NE800017 010001000012018LI800105\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
+        "description": "Gera uma Nota de Empenho \n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-empenho\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ19\",\n        \"numeroDocumento\": \"\",\n        \"ugEmitente\": \"135006\",\n        \"gestaoEmitente\": \"13203\",\n        \"numeroLista\": \"800070\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Inclusao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n             {\n                \"conta\": \"\",\n                \"valor\": \"\"\n             }\n        ],\n        \"contaPassivoFinanceiro\": \" string\",\n        \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\": \"\",\n        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n        \"ptres\": \"000001\",\n        \"fonteRecursos\": \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n        \"unidadeGestoraResponsavel\": \"\",\n        \"planoInterno\": \"\",\n        \"tipoEmpenho\": \"1\",                        \n        \"modalidadeLicitacao\": \"08\",\n        \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n        \"origemMaterial\": \"1\",\n        \"municipioBeneficiado\": \"9701\",\n        \"ufBeneficiada\": \"DF\",\n        \"dataVencimento\": [\n             \"31DEZ19\"\n         ],\n        \"dataRecebimento\": [\n             \"31DEZ19\"\n         ],\n        \"valorCompromisso\": [\n              \"555555\"\n         ],\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"TESTE SID - VL\"\n          }\n        ]\n    }\n  \n#### Retorno\n    { \n      \"numeroCliente\": 135006132032019TRNE000087,\n      \"numeroListaEmpenho\": \"135006132032019LI800070\",\n      \"numeroDocGerado\": 135006132032019NE800008\n    }",
         "consumes": [
           "application/json"
         ],
@@ -413,7 +413,7 @@
           "Nota de Empenho v2"
         ],
         "summary": "Atualiza uma Nota de Empenho.",
-        "description": "O tipo de atualização depende do campo ' especie '\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alteração: &nbsp;&nbsp;&nbsp;&nbsp;especie = 01\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reforço:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; especie = 02\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anulação: &nbsp;&nbsp;&nbsp;&nbsp;especie = 03\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-empenho\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"14JUN18\",\n        \"numeroDocumento\": \"800017\",               \n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"00001\",\n        \"numeroLista\": \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Teste NE de reforço\",\n        \"valorTotalEmpenho\": \"002\",\n        \"numeroProcesso\": \"103.504/1999\",\n        \"numeroOriginalConvenio\": \" \",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n        \"especie\": \"02\",\n        \"ugReferencia\": \"010001\",\n        \"gestaoReferencia\": \"00001\",\n        \"numeroEmpenhoReferencia\": \"2018NE800032\",\n        \"numeroListaReferencia\": \"2018LI800091\",\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"001\",\n            \"valorTotal\": \"001\",\n            \"descricao\": \"Lista NE-01\"\n          }\n        ]\n    }\n \n#### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\": \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\": [],\n      \"status\": 200\n      }\n    }",
+        "description": "O tipo de atualização depende do campo ' especie '\n<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alteração: &nbsp;&nbsp;&nbsp;&nbsp;especie = 01\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reforço:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; especie = 02\n<br>\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anulação: &nbsp;&nbsp;&nbsp;&nbsp;especie = 03\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-empenho\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n####  Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ19\",\n        \"numeroDocumento\": \"\",               \n        \"ugEmitente\": \"135006\",\n        \"gestaoEmitente\": \"13203\",\n        \"numeroLista\": \"800070\",\n        \"taxaCambio\": \"\",\n        \"observacao\": \"Alteracao de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n        \"numeroProcesso\": \"0100\",\n        \"numeroOriginalConvenio\": \"0010 \",\n        \"passivoAnterior\": \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n         {\n          \"conta\": \"\",\n          \"valor\": \"\"\n          }\n        ],\n        \"contaPassivoFinanceiro\": \" \",\n        \"especie\": \"\",\n        \"ugReferencia\": \"\",\n        \"gestaoReferencia\": \"\",\n        \"numeroEmpenhoReferencia\": \"\",\n        \"numeroListaReferencia\": \"\",\n        \"listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n            \"quantidade\": \"1\",\n            \"valorUnitario\": \"555555\",\n            \"valorTotal\": \"555555\",\n            \"descricao\": \"Detalhamento do item da lista\"\n          }\n        ]\n    }\n \n#### Retorno\n    { \n      \"numeroCliente\": 135006132032019TRNE000087,\n      \"numeroListaEmpenho\": \"135006132032019LI800070\",\n      \"numeroDocGerado\": 135006132032019NE800008\n    }",
         "consumes": [
           "application/json"
         ],
@@ -463,7 +463,7 @@
           "Nota de Crédito"
         ],
         "summary": "Consulta Nota de Crédito",
-        "description": "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Retorno\n    {\n      \"dataEmissao\": \"23Fev18\",\n      \"numeroLancamento\": \"010001000012\",\n      \"ugEmitente\": \"\",\n      \"gestaoEmitente\": \"\",\n      \"ugFavorecida\": \"10001\",\n      \"gestaoFavorecida\": \"1\",\n      \"opCambial\": \"0\",\n      \"numeroTransferencia\": \"0\",\n      \"espacoBranco\": \"\",\n      \"observacao\": \"TESTE\",\n      \"mesLancamento\": null,\n      \"qtdLancamento\": null,\n      \"numOriginal\": null,\n      \"sistemaOrigem\": null,\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": null,\n          \"programaTrabalho\": \"1\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"10001\",\n          \"planoInterno\": \"\",\n          \"valorTransacao\": \"10000\"\n        }\n      ]\n    }",
+        "description": "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-credito/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"10001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"010001\",\n          \"planoInterno\": \"\",\n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }",
         "consumes": [
           "application/json"
         ],
@@ -535,7 +535,7 @@
           "Nota de Crédito"
         ],
         "summary": "Gera Nota de Crédito",
-        "description": "Gera uma Nota de Crédito com as informações passadas no JSON de entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-credito\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE INCLUSAO NC\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"010001\",\n          \"planoInterno\": \"\",   \n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }\n    \n#### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\": \"800017\"\n    }",
+        "description": "Gera uma Nota de Crédito com as informações passadas no JSON de entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-credito\n    \n    No header:\n      x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n      (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"1\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n          \"ugResponsavel\": \"010001\",\n          \"planoInterno\": \"\",   \n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }\n    \n#### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018NC800017\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -561,7 +561,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Crédito gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NCGerada"
@@ -585,7 +585,7 @@
           "Nota de Lançamento"
         ],
         "summary": "Consulta Nota de Lançamento",
-        "description": "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestão, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeGestaoEmitente\": \"00001\",\n      \"favorecido\": \"010001\",\n      \"nomeFavorecido\": \"010001\",\n      \"gestaoFavorecido\": \"00001\",\n      \"nomeGestaoFavorecido\": \"00001\",\n      \"numero\": \"2018NL800001\",\n      \"dataValorizacao\": \"14mai18\",\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n      \"dataVencimento\": \"29mar18\",\n      \"sistemaOrigem\": \" \", \n      \"observacao\": \"INCLUSAO NL\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"inscricao1\": \"22025711000153\",\n          \"inscricao2\": \"null\",\n          \"classificacao1\": \"111111111\",\n          \"classificacao2\": \"null\",\n          \"classOrcamentaria1\": \"111111111\",\n          \"classOrcamentaria2\": \"null\", \n          \"valor\": \"10001\",  \n          \"numeroReferencia\": \"\"  \n        } \n      ] \n    }",
+        "description": "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestão, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-lancamento/010001/00001/2018/800001\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14Mai18\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeGestaoEmitente\": \"\",\n      \"favorecido\": \"\",\n      \"nomeFavorecido\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"nomeGestaoFavorecido\": \"\",\n      \"numero\": \"\",\n      \"dataValidacao\": \"14MAI18\",\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n      \"dataVencimento\": \"\",\n      \"sistemaOrigem\": \" \", \n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"510669\",\n          \"inscricao1\": \"0114000000\",\n          \"inscricao2\": \"\",\n          \"classificacao1\": \"\",\n          \"classificacao2\": \"\",\n          \"classOrcamentaria1\": \"\",\n          \"classOrcamentaria2\": \"\", \n          \"valor\": \"\",  \n          \"numeroReferencia\": \"10001\"  \n        } \n      ] \n    }",
         "consumes": [
           "application/json"
         ],
@@ -630,7 +630,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Lançamento encontrada e retornada",
             "schema": {
               "$ref": "#/definitions/NotaLancamento"
@@ -657,7 +657,7 @@
           "Nota de Lançamento"
         ],
         "summary": "Gera Nota de Lançamento",
-        "description": "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-lancamento\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"010001\",\n      \"gestaoFavorecido\": \"00001\",\n      \"numero\": \"2018NL800017\",\n      \"dataValorizacao\": \"14mai18\",\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n      \"dataVencimento\": \"14MAI18\",\n      \"observacao\": \"INCLUSAO NL\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"inscricao1\": \"22025711000153\",\n          \"inscricao2\": \"null\",\n          \"classificacao1\": \"111111111\",\n          \"classificacao2\": \"null\",\n          \"classOrcamentaria1\": \"111111111\",\n          \"classOrcamentaria2\": \"null\", \n          \"valorEvento\": \"55555555\"  \n        } \n      ],\n      \"listaReferencias\": [ \n          \"00001\" \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"NL\",\n      \"sequencialDoc\": \"800017\"\n    }",
+        "description": "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-lancamento\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"010001\",\n      \"gestaoFavorecido\": \"00001\",\n      \"numero\": \"2018NL800017\",\n      \"dataValorizacao\": \"14mai18\",\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n      \"dataVencimento\": \"14MAI18\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"300062\",\n          \"inscricao1\": \"22025711000153\",\n          \"inscricao2\": \"null\",\n          \"classificacao1\": \"111111111\",\n          \"classificacao2\": \"null\",\n          \"classOrcamentaria1\": \"111111111\",\n          \"classOrcamentaria2\": \"null\", \n          \"valorEvento\": \"55555555\"  \n        } \n      ],\n      \"listaReferencias\": [ \n          \"00001\" \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018NL800017\" \n    }",
         "consumes": [
           "application/json"
         ],
@@ -683,7 +683,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Lançamento gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NLGerada"
@@ -707,7 +707,7 @@
           "Nota de Dotação"
         ],
         "summary": "Consulta Nota de Dotação",
-        "description": "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-dotacao/010001/00001/2018/800002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n      \"numeroDocumento\": \"2018ND800002\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"\",\n      \"nomeFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"UGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100\",  \n        } \n      ]\n    }",
+        "description": "Consulta uma Nota de Dotação a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao/010001/00001/2018/800002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numeroDocumento\": \"2018ND800003\",\n      \"ugEmitente\": \"170999\",\n      \"nomeUGEmitente\": \"COORDENACAO GERAL DE CONTABILIDADE\",\n      \"gestaoEmitente\": \"00001\",\n      \"favorecido\": \"\",\n      \"nomeFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100\",  \n        } \n      ]\n    }",
         "consumes": [
           "application/json"
         ],
@@ -752,7 +752,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Dotação encontrada e retornada",
             "schema": {
               "$ref": "#/definitions/NotaDotacao"
@@ -779,7 +779,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Dotação",
-        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"teste Nota Dotação Gestor\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"800002\",\n      \"numRequisicao\": \"2018TRND000001\"\n    }",
+        "description": "Gera uma Nota de Dotação a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"\",\n      \"gestaoFavorecido\": \"\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n          \"naturezaDespesa\": \"339030\",\n          \"subitemND\": \"\",\n          \"ugr\": \"\", \n          \"planoInterno\": \"\", \n          \"valor\": \"100\"  \n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018ND800002\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -805,7 +805,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Dotação gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDGerada"
@@ -829,7 +829,7 @@
           "Nota de Dotação"
         ],
         "summary": "Consulta uma Nota de Detalhamento Orçamentário",
-        "description": "Consulta uma Nota de Detalhamento Orçamentário a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-detaorc/010001/00001/2018/000002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"\",\n      \"numeroInstrumentoLegal\": \"\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"2\",\n      \"ptres\": \"005714\", \n      \"idoc\": \"9999\",\n      \"observacao\": \"teste Nota Docação DETAORC\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\",  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\", \n        } \n      ]             \n    }",
+        "description": "Consulta uma Nota de Detalhamento Orçamentário a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-detaorc/010001/00001/2018/000002\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"\",\n      \"numeroInstrumentoLegal\": \"\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"2\",\n      \"ptres\": \"005714\", \n      \"idoc\": \"9999\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\",  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\", \n        } \n      ]             \n    }",
         "consumes": [
           "application/json"
         ],
@@ -874,7 +874,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Detalhamento Orçamentário encontrado e retornado com sucesso",
             "schema": {
               "$ref": "#/definitions/ConsultaNDDetOrc"
@@ -898,7 +898,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Detalhamento Orçamentário",
-        "description": "Gera uma Nota de Detalhamento Orçamentário a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-detaorc\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\": \"10AGO18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\": \"005714\",\n      \"idoc\": \"9999\",\n      \"observacao\": \"Teste Nota Dotação DETAORC\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\" \n        } \n      ]\n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"000002\",\n      \"numRequisicao\": \"2018TRND000002\"\n    }",
+        "description": "Gera uma Nota de Detalhamento Orçamentário a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-detaorc\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"especieND\": \"1\",\n      \"numeroDocumento\": \"2018ND000002\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\": \"1\",\n      \"unidadeOrcamentaria\": \"\",\n      \"indicadorResultado\": \"\",\n      \"indicadorCredito\": \"\",\n      \"planoOrcamentario\": \"\",\n      \"codigoAutorEmenda\": \"\",\n      \"fonteRecurso\": \"0100\",\n      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\": \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n      \"dataPublicacao\": \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"reducaoAcrescimos\": \"R\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"00\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n          \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\": \"000000\",\n          \"modalidadeAplicacao\": \"90\",\n          \"elementoDespesa\": \"14\",\n          \"subitemND\": \"\",\n          \"codigoUGResponsavel\": \"\",\n          \"planoInterno\": \"\", \n          \"valor\": \"100000\" \n        } \n      ],\n      \"ptres\": \"005714\",\n      \"idoc\": \"9999\"\n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018ND000002\",\n    }",
         "consumes": [
           "application/json"
         ],
@@ -924,7 +924,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Detalhamento Orçamentário gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDDetaOrcGerada"
@@ -948,7 +948,7 @@
           "Nota de Dotação"
         ],
         "summary": "Consulta uma Nota de Bloqueio de Crédito",
-        "description": "Consulta uma Nota de Bloqueio de Crédito a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-bloqueio/010001/00001/2018/000005\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"06nov18\",\n      \"numeroDocumento\": \"2018ND000005\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE API SIAFI\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200020\",\n          \"esferaOrcamentaia\": \"1\",\n          \"ptres\": \"001000\",\n          \"idoc\": \"9999\",\n          \"naturezaDespesa\": \"339000\",\n          \"fonte\": \"0100\", \n          \"valor\": \"20000\",  \n        }\n      ]             \n    }",
+        "description": "Consulta uma Nota de Bloqueio de Crédito a partir dos parâmetros UG, Gestão, Ano e Número da ND\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-bloqueio/010001/00001/2018/000005\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numeroDocumento\": \"2018ND000005\",\n      \"ugEmitente\": \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2018\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"200020\",\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\": \"001000\",\n          \"idoc\": \"9999\",\n          \"naturezaDespesa\": \"339000\",\n          \"fonte\": \"0100\", \n          \"valor\": \"20000\",  \n        }\n      ]             \n    }",
         "consumes": [
           "application/json"
         ],
@@ -993,7 +993,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de bloqueio de Crédito encontrada e retornada com sucesso",
             "schema": {
               "$ref": "#/definitions/notaBloqueio"
@@ -1017,7 +1017,7 @@
           "Nota de Dotação"
         ],
         "summary": "Gera uma Nota de Bloqueio de Crédito",
-        "description": "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/nota-bloqueio\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"170999\",\n      \"gestaoEmitente\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"\",\n          \"esferaOrcamentaria\": \"\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"\",\n          \"idoc\": \"\",\n          \"naturezaDespesa\": \"\",\n          \"grupoFonte\": \"\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"valor\": \"2000\"\n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n      \"tipoDoc\": \"ND\",\n      \"sequencialDoc\": \"000005\",\n      \"numRequisicao\": \"2018TRND000005\"\n    }",
+        "description": "Gera uma Nota de Bloqueio de Crédito a partir de um Json de Entrada\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-bloqueio\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\": \"14MAI18\",\n      \"numeroDocumento\": \"\",\n      \"ugEmitente\": \"170999\",\n      \"gestaoEmitente\": \"00001\",\n      \"taxaCambio\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"\",\n          \"esferaOrcamentaria\": \"\",\n          \"unidadeOrcamentaria\": \"\",\n          \"ptres\": \"\",\n          \"idoc\": \"\",\n          \"naturezaDespesa\": \"\",\n          \"grupoFonte\": \"\",\n          \"resultado\": \"\",\n          \"tipoCredito\": \"\",\n          \"planoOrcamentario\": \"\",\n          \"autorEmenda\": \"\",\n          \"valor\": \"2000\"\n        } \n      ] \n    }\n #### Retorno\n\n    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\": \"2018ND000005\"\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1043,7 +1043,7 @@
           }
         ],
         "responses": {
-          "201": {
+          "200": {
             "description": "Nota de Bloqueio de Crédito gerada com sucesso",
             "schema": {
               "$ref": "#/definitions/NDBloqueioGerada"
@@ -1067,7 +1067,7 @@
           "Consulta Documentos"
         ],
         "summary": "Consulta Documentos",
-        "description": "Consulta documentos de uma UG Emitente/Favorecida a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18?tipo={ugfavorecida/ugemitente}\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"10Fev18\",\n      \"listaDocumentos\": [\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000009\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000010\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000011\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000012\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000013\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000014\",\n          \"tipoNd\": \"\"  \n        } \n      ]\n    }",
+        "description": "Consulta documentos de uma UG Emitente/Favorecida a partir de uma data específica\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/020001/00001/10JAN19?tipo=ugfavorecida                                             https://apigateway.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/07JAN19?tipo=ugemitente \n\n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"data\": \"14MAI18\",\n      \"listaDocumentos\": [\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000009\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000010\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000011\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000012\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000013\",\n          \"tipoNd\": \"\"  \n        },\n        {\n          \"ugEmitente\": \"010001\",\n          \"gestaoEmitente\": \"00001\",\n          \"numeroDocumento\": \"2019ND000014\",\n          \"tipoNd\": \"\"  \n        } \n      ]\n    }",
         "consumes": [
           "application/json"
         ],
@@ -1123,6 +1123,75 @@
           },
           "403": {
             "description": "Credencial informada não possui permissão para consultar a Documentos"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
+    "/v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}": {
+      "get": {
+        "tags": [
+          "Nota de Dotação"
+        ],
+        "summary": "Consulta uma Nota de Dotacao Sof",
+        "description": "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\": \"2019ND000009\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\": \"\",\n      \"numeroDecreto\": \"\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"201010\",\n          \"esferaOrcamentaria\": \"1\",\n          \"uo\": \"01101\",\n          \"ptres\": \"01301055320045664\",\n          \"idoc\": \"1000\",\n          \"naturezaDespesa\": \"0100\",\n          \"fonteRecurso\": \"0\", \n          \"resultado\": \"0\",\n          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\",\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\",  \n        }\n      ]             \n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ug",
+            "in": "path",
+            "description": "Código da UG emitente",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "gestao",
+            "in": "path",
+            "description": "Código da Gestão",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "ano",
+            "in": "path",
+            "description": "Ano da Nota de Dotação Sof",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "numero",
+            "in": "path",
+            "description": "Número da Nota de Dotação Soft",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-credencial",
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Nota de bloqueio de Dotação Sof encontrada e retornada com sucesso",
+            "schema": {
+              "$ref": "#/definitions/notaDotacaoSof"
+            }
+          },
+          "400": {
+            "description": "Algum campo possui informações inválidas"
+          },
+          "403": {
+            "description": "Credencial informada não possui permissão para consultar a Nota de Dotação Sof"
           },
           "500": {
             "description": "Erro interno do servidor"
@@ -1238,7 +1307,121 @@
         }
       }
     },
+    "notaDotacaoSof": {
+      "properties": {
+        "dataEmissao": {
+          "type": "string"
+        },
+        "numeroDocumento": {
+          "type": "string"
+        },
+        "ugEmitente": {
+          "type": "string"
+        },
+        "gestaoEmitente": {
+          "type": "string"
+        },
+        "nomeUGEmitente": {
+          "type": "string"
+        },
+        "nomeGestaoEmitente": {
+          "type": "string"
+        },
+        "instrumentoLegal": {
+          "type": "string"
+        },
+        "numeroDecreto": {
+          "type": "string"
+        },
+        "dataPublicacao": {
+          "type": "string"
+        },
+        "observacao": {
+          "type": "string"
+        },
+        "listaEventos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConsultaEventoNDSof"
+          }
+        }
+      }
+    },
+    "ConsultaEventoNDSof": {
+      "properties": {
+        "evento": {
+          "type": "string"
+        },
+        "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "uo": {
+          "type": "string"
+        },
+        "ptres": {
+          "type": "string"
+        },
+        "idoc": {
+          "type": "string"
+        },
+        "naturezaDespesa": {
+          "type": "string"
+        },
+        "fonteRecurso": {
+          "type": "string"
+        },
+        "resultado": {
+          "type": "string"
+        },
+        "tipoCredito": {
+          "type": "string"
+        },
+        "codigoFuncional": {
+          "type": "string"
+        },
+        "autorEmenda": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
+        }
+      }
+    },
     "notaBloqueio": {
+      "properties": {
+        "dataEmissao": {
+          "type": "string"
+        },
+        "numeroDocumento": {
+          "type": "string"
+        },
+        "ugEmitente": {
+          "type": "string"
+        },
+        "nomeUGEmitente": {
+          "type": "string"
+        },
+        "gestaoEmitente": {
+          "type": "string"
+        },
+        "NomeGestaoEmitente": {
+          "type": "string"
+        },
+        "taxaCambio": {
+          "type": "string"
+        },
+        "observacao": {
+          "type": "string"
+        },
+        "listaEventos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ConsultaEventoNDBloqueio"
+          }
+        }
+      }
+    },
+    "GeraNotaBloqueio": {
       "properties": {
         "dataEmissao": {
           "type": "string"
@@ -1263,6 +1446,31 @@
           "items": {
             "$ref": "#/definitions/EventoNDBloqueio"
           }
+        }
+      }
+    },
+    "ConsultaEventoNDBloqueio": {
+      "properties": {
+        "evento": {
+          "type": "string"
+        },
+        "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "ptres": {
+          "type": "string"
+        },
+        "idoc": {
+          "type": "string"
+        },
+        "naturezaDespesa": {
+          "type": "string"
+        },
+        "fonte": {
+          "type": "string"
+        },
+        "valor": {
+          "type": "string"
         }
       }
     },
@@ -1404,16 +1612,7 @@
         "gestao": {
           "type": "string"
         },
-        "ano": {
-          "type": "string"
-        },
-        "tipoDoc": {
-          "type": "string"
-        },
-        "sequencialDoc": {
-          "type": "string"
-        },
-        "numRequisicao": {
+        "numero": {
           "type": "string"
         }
       }
@@ -1490,13 +1689,25 @@
         "ugEmitente": {
           "type": "string"
         },
-        "nomeUGEmitente": {
-          "type": "string"
-        },
         "gestaoEmitente": {
           "type": "string"
         },
         "esferaOrcamentaria": {
+          "type": "string"
+        },
+        "unidadeOrcamentaria": {
+          "type": "string"
+        },
+        "indicadorResultado": {
+          "type": "string"
+        },
+        "indicadorCredito": {
+          "type": "string"
+        },
+        "planoOrcamentario": {
+          "type": "string"
+        },
+        "codigoAutorEmenda": {
           "type": "string"
         },
         "fonteRecurso": {
@@ -1517,12 +1728,6 @@
         "taxaCambio": {
           "type": "string"
         },
-        "ptres": {
-          "type": "string"
-        },
-        "idoc": {
-          "type": "string"
-        },
         "observacao": {
           "type": "string"
         },
@@ -1531,6 +1736,12 @@
           "items": {
             "$ref": "#/definitions/EventosNDDesOrc"
           }
+        },
+        "ptres": {
+          "type": "string"
+        },
+        "idoc": {
+          "type": "string"
         }
       }
     },
@@ -1542,16 +1753,7 @@
         "gestao": {
           "type": "string"
         },
-        "ano": {
-          "type": "string"
-        },
-        "tipoDoc": {
-          "type": "string"
-        },
-        "sequencialDoc": {
-          "type": "string"
-        },
-        "numRequisicao": {
+        "numero": {
           "type": "string"
         }
       }
@@ -1616,7 +1818,7 @@
         "numero": {
           "type": "string"
         },
-        "dataValorizacao": {
+        "dataValidacao": {
           "type": "string"
         },
         "taxaCambio": {
@@ -1647,25 +1849,31 @@
         "dataEmissao": {
           "type": "string"
         },
-        "numero": {
-          "type": "string"
-        },
         "ugEmitente": {
           "type": "string"
         },
         "gestaoEmitente": {
           "type": "string"
         },
-        "ugFavorecida": {
+        "favorecido": {
           "type": "string"
         },
-        "gestaoFavorecida": {
+        "gestaoFavorecido": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "dataValidacao": {
           "type": "string"
         },
         "taxaCambio": {
           "type": "string"
         },
-        "numeroTransferencia": {
+        "tituloCredito": {
+          "type": "string"
+        },
+        "dataVencimento": {
           "type": "string"
         },
         "observacao": {
@@ -1718,13 +1926,7 @@
         "gestao": {
           "type": "string"
         },
-        "ano": {
-          "type": "string"
-        },
-        "tipoDoc": {
-          "type": "string"
-        },
-        "sequencialDoc": {
+        "numero": {
           "type": "string"
         }
       }
@@ -1811,13 +2013,7 @@
         "gestao": {
           "type": "string"
         },
-        "ano": {
-          "type": "string"
-        },
-        "tipoDoc": {
-          "type": "string"
-        },
-        "sequencialDoc": {
+        "numero": {
           "type": "string"
         }
       }
@@ -2076,13 +2272,16 @@
           "type": "string"
         },
         "contaValor": {
-          "type": "object",
-          "properties": {
-            "conta": {
-              "type": "string"
-            },
-            "valor": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "conta": {
+                "type": "string"
+              },
+              "valor": {
+                "type": "string"
+              }
             }
           }
         },
@@ -2101,7 +2300,7 @@
         "codigoUO": {
           "type": "string"
         },
-        "codigoProgramaTrabalho": {
+        "ptres": {
           "type": "string"
         },
         "fonteRecursos": {
@@ -2114,18 +2313,6 @@
           "type": "string"
         },
         "planoInterno": {
-          "type": "string"
-        },
-        "indicadorResultado": {
-          "type": "string"
-        },
-        "indicadorTipoCredito": {
-          "type": "string"
-        },
-        "planoOrcamentario": {
-          "type": "string"
-        },
-        "codigoAutorEmenda": {
           "type": "string"
         },
         "tipoEmpenho": {
@@ -2150,48 +2337,43 @@
           "type": "string"
         },
         "dataVencimento": {
-          "type": "string"
-        },
-        "dataRecebimento": {
-          "type": "string"
-        },
-        "valorCompromisso": {
-          "type": "string"
-        },
-        "listaItens": {
-          "type": "object",
-          "properties": {
-            "subItemNd": {
-              "type": "string"
-            },
-            "quantidade": {
-              "type": "string"
-            },
-            "valorUnitario": {
-              "type": "string"
-            },
-            "valorTotal": {
-              "type": "string"
-            },
-            "descricao": {
-              "type": "string"
-            }
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         },
-        "numeroTransacaoCliente": {
-          "type": "string"
+        "dataRecebimento": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
-        "credencial": {
-          "type": "object",
-          "properties": {
-            "cpf": {
-              "type": "string"
-            },
-            "ug": {
-              "type": "string"
-            },
-            "sistema": {
-              "type": "string"
+        "valorCompromisso": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "listaItens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "subItemNd": {
+                "type": "string"
+              },
+              "quantidade": {
+                "type": "string"
+              },
+              "valorUnitario": {
+                "type": "string"
+              },
+              "valorTotal": {
+                "type": "string"
+              },
+              "descricao": {
+                "type": "string"
+              }
             }
           }
         }
@@ -2236,13 +2418,16 @@
           "type": "string"
         },
         "contaValor": {
-          "type": "object",
-          "properties": {
-            "conta": {
-              "type": "string"
-            },
-            "valor": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "conta": {
+                "type": "string"
+              },
+              "valor": {
+                "type": "string"
+              }
             }
           }
         },
@@ -2265,39 +2450,25 @@
           "type": "string"
         },
         "listaItens": {
-          "type": "object",
-          "properties": {
-            "subItemNd": {
-              "type": "string"
-            },
-            "quantidade": {
-              "type": "string"
-            },
-            "valorUnitario": {
-              "type": "string"
-            },
-            "valorTotal": {
-              "type": "string"
-            },
-            "descricao": {
-              "type": "string"
-            }
-          }
-        },
-        "numeroTransacaoCliente": {
-          "type": "string"
-        },
-        "credencial": {
-          "type": "object",
-          "properties": {
-            "cpf": {
-              "type": "string"
-            },
-            "ug": {
-              "type": "string"
-            },
-            "sistema": {
-              "type": "string"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "subItemNd": {
+                "type": "string"
+              },
+              "quantidade": {
+                "type": "string"
+              },
+              "valorUnitario": {
+                "type": "string"
+              },
+              "valorTotal": {
+                "type": "string"
+              },
+              "descricao": {
+                "type": "string"
+              }
             }
           }
         }
@@ -2411,20 +2582,14 @@
     },
     "NE": {
       "properties": {
-        "codigo": {
-          "type": "integer"
-        },
-        "mensagem": {
+        "numeroCliente": {
           "type": "string"
         },
-        "erros": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
+        "numeroListaEmpenho": {
+          "type": "string"
         },
-        "status": {
-          "type": "integer"
+        "numeroDocGerado": {
+          "type": "string"
         }
       }
     },
