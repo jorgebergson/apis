@@ -18,7 +18,7 @@
     "title": "Integração SIAFI (api-siafi)",
     "description": "\n Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- | \n \n |500 | Erro no Servidor | Ocorreu algum erro no servidor.| \n<br> \n ## Endereço de Produção \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi/api \n <br> \n  ## Endereço de Degustação \n    https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api \n    "
   },
-  "basePath": "/api-integra-siafi-trial/api",
+  "basePath": "/integra-siafi-trial/api",
   "paths": {
     "/v1/ne/alterar": {
       "post": {
