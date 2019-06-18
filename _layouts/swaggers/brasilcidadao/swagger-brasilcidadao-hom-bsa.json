@@ -18,7 +18,7 @@
     "title": "API Consulta Cidadão",
     "description": "A API `Consulta Cidadão` é disponibilizada através de serviço `HTTP REST`, e tem o objetivo de apresentar as informações básicas de um cidadão brasileiro.\n<br>\n## Campos Retornados \n| Nome | Tipo | Conteúdo | \n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| nome | string | Nome do cidadão  |\n| email | string | Email do cidadão |\n| telefone | string | Telefone do cidadão |\n\n --------------------------\n\n## CPFs para Degustação\n| CPF | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 00000017167 | true |                 |\n| 00000023728 | true |                 |\n| 00031731198 | true |                 |\n| 88323471800 | true |                 |"
   },
-  "basePath": "/api/consulta/",
+  "basePath": "/api/consulta",
   "paths": {
     "/brasilcidadao/{cpf}": {
       "get": {
