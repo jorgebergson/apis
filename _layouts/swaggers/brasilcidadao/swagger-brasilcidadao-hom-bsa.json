@@ -1,5 +1,5 @@
 {
-  "host": "apigateway.serpro.gov.br",
+  "host": "apimock.estaleiro.serpro.gov.br",
   "security": [
     {
       "Bearer": []
