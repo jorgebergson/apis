@@ -68,22 +68,14 @@
     "ConsultaCidadao": {
       "type": "object",
       "properties": {
-        "nit": {
-          "type": "number",
-          "description": "CPF"
+        "nome": {
+          "type": "string"
         },
-        "beneficios": {
-          "type": "object",
-          "properties": {
-            "nomeTitular": {
-              "type": "string",
-              "description": "Nome do cidadão"
-            },
-            "dataNascimento": {
-              "type": "string",
-              "description": "Email do cidadão"
-            }
-          }
+        "email": {
+          "type": "string"
+        },
+        "telefone": {
+          "type": "string"
         }
       }
     }
