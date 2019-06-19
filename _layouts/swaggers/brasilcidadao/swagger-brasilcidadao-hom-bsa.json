@@ -43,7 +43,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna os dados do Cidadão"
+            "description": "Retorna os dados do Cidadão",
+            "schema": {
+              "$ref": "#/definitions/ConsultaCidadao"
+            }
           },
           "404": {
             "description": "CPF não encontrado"
@@ -62,7 +65,7 @@
     "https"
   ],
   "definitions": {
-    "Cidadao": {
+    "ConsultaCidadao": {
       "type": "object",
       "properties": {
         "nit": {
