@@ -1,5 +1,5 @@
 {
-  "host": "apigateway.serpro.gov.br",
+  "host": "apimock.estaleiro.serpro.gov.br",
   "security": [
     {
       "Bearer": []
@@ -16,11 +16,11 @@
   "info": {
     "version": "1",
     "title": "API Empenho SIASG",
-    "description": "A API `Emepenho SIASG` é disponibilizada através de serviço `HTTP REST`, e tem o objetivo de apresentar as informações básicas de ...\n<br>\n## Campos Retornados \n| Nome | Tipo | Conteúdo | \n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| espécie de empenho | string | Espécie de Empenho  |\n| cpf | string | CPF do cidadão |\n| auags usuário | string | Uasg do Usuário |\n| auags licitação | string | Uasg da Licitação |\n| modalidade licitação | string | Modalidade da Licitação |\n| número licitação | string | Número da Licitação |\n| ano licitação | string | Ano da Licitação |\n| classificação contábel | string | Classificação Contábel |\n| estrutura* | lista de campos | Estrutura* |\n| ug eminente | string | UG do Emitente |\n| ano minuta | string | Ano da Minuta |\n| número minuta | string | Número da Minuta |\n| serviço material | string | Serviço Material |\n| data emissão | string | Data de Emissão |\n| ni favorecido | string | Ni do Favorecido |\n| ug favorecido | string | UG do Favorecido |\n| gestão favorecido | string | Gestão do Favorecido |\n| finaObs | string | Fina Obs |\n| esfera | string | Esfera |\n| modalidade empenho | string | Modalidade Empenho |\n| valor empenho | string | Valor Empenho |\n| amparo legal | string | Amparo Legal |\n| inciso | string | Inciso |\n| taxa de câmbio | string | Taxa de Câmbio |\n| processo | string | Processo |\n| município beneficiado | string | Município Beneficiado |\n| uf beneficiada | string | UF Beneficiada |\n| ug referencia | string | UG Referência |\n| ug referencia | string | UG Referência |\n| gestão referencia | string | Gestão Referência |\n| número empenho original | string | Número Empenho Original |\n| inscrição genérica | string | Inscrição Genérica |\n| itens** | string | Itens** |\n| cronogramas*** | string | Cronogramas*** |\n| quantidade referência do ano | string | Quantidade Referência do Ano |\n| nível acesso | string | Nível de Acesso |\n| plurianual | string | Plurianual |\n| passivo anterior | string | Passivo Anterior |\n| conta passivo | string | Conta Passivo |\n| gr conta correntes | string | GR Conta Correntes |\n| conta corrente f | string | Conta Corrente F |\n\n\n --------------------------\n\n## CPFs para Degustação\n| CPF | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 00000017167 | true |                 |"
+    "description": "A API `Emepenho SIASG` é disponibilizada através de serviço `HTTP REST`, e tem o objetivo de apresentar as informações básicas de ...\n<br>\n## Campos Retornados \n| Nome | Tipo | Conteúdo | \n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| espécie de empenho | string | Espécie de Empenho  |\n| cpf | string | CPF do cidadão |\n| auags usuário | string | Uasg do Usuário |\n| auags licitação | string | Uasg da Licitação |\n| modalidade licitação | string | Modalidade da Licitação |\n| número licitação | string | Número da Licitação |\n| ano licitação | string | Ano da Licitação |\n| classificação contábel | string | Classificação Contábel |\n| estrutura* | lista de campos | Estrutura* |\n| ug eminente | string | UG do Emitente |\n| ano minuta | string | Ano da Minuta |\n| número minuta | string | Número da Minuta |\n| serviço material | string | Serviço Material |\n| data emissão | string | Data de Emissão |\n| ni favorecido | string | Ni do Favorecido |\n| ug favorecido | string | UG do Favorecido |\n| gestão favorecido | string | Gestão do Favorecido |\n| finaObs | string | Fina Obs |\n| esfera | string | Esfera |\n| modalidade empenho | string | Modalidade Empenho |\n| valor empenho | string | Valor Empenho |\n| amparo legal | string | Amparo Legal |\n| inciso | string | Inciso |\n| taxa de câmbio | string | Taxa de Câmbio |\n| processo | string | Processo |\n| município beneficiado | string | Município Beneficiado |\n| uf beneficiada | string | UF Beneficiada |\n| ug referencia | string | UG Referência |\n| ug referencia | string | UG Referência |\n| gestão referencia | string | Gestão Referência |\n| número empenho original | string | Número Empenho Original |\n| inscrição genérica | string | Inscrição Genérica |\n| itens** | string | Itens** |\n| cronogramas*** | string | Cronogramas*** |\n| quantidade referência do ano | string | Quantidade Referência do Ano |\n| nível acesso | string | Nível de Acesso |\n| plurianual | string | Plurianual |\n| passivo anterior | string | Passivo Anterior |\n| conta passivo | string | Conta Passivo |\n| gr conta correntes | string | GR Conta Correntes |\n| conta corrente f | string | Conta Corrente F |\n\n## *Estrutura\n| Nome | Tipo | Conteúdo |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| UG Pagamento | String | UG do Pagamento   |\n| Fonte | string | Fonte do Pagamento   |\n| Gestão | string | Gestão do Pagamento   |\n| Ptrês | string | Ptrês   |\n| Pi | string | Pi   |\n| UG Responsável | string | UG do Responsável  |\n| Valor | Number | Valor  |\n\n\n## **Itens\n| Nome | Tipo | Conteúdo |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| Item | String | Item |\n| Itens Empenhar | string | Itens a empenhar   |\n| Valor Unitário | number | Valor Unitário   |\n\n --------------------------\n\n## ***Cronogramas\n| Nome | Tipo | Conteúdo |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| Data Liquidação | date | Data da Liquidação |\n| Data Vencimento | date | Data do vencimento  |\n| Valor Compromisso | number | Valor do Compromisso |\n\n --------------------------"
   },
-  "basePath": "/api_empenho_siasg_hom/api",
+  "basePath": "/api/siasg",
   "paths": {
-    "/api_empenho_siasg_hom/api": {
+    "/siasg/empenho/{json}": {
       "get": {
         "tags": [
           "Emepenho SIASG"
@@ -28,15 +28,15 @@
         "summary": "Emepnho SIASG",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "Apresenta os dados básicos dados...\n## CPFs para Degustação\n| Cpf  | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n\n | 00000017167 | true |                    |\n\n\n\n--------------------------        \n  \n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/api_empenho_siasg_hom/api\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  \n    ",
+        "description": "\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/siasg/empenho\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  \n    ",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "cpf",
+            "name": "json",
             "in": "path",
-            "description": "(CPF)",
+            "description": "(JSON)",
             "required": true,
             "type": "string"
           }
@@ -62,25 +62,12 @@
     "https"
   ],
   "definitions": {
-    "Siasg": {
+    "Mensagem": {
       "type": "object",
       "properties": {
-        "nit": {
-          "type": "number",
-          "description": "CPF"
-        },
-        "beneficios": {
-          "type": "object",
-          "properties": {
-            "nomeTitular": {
-              "type": "string",
-              "description": "Nome do cidadão"
-            },
-            "dataNascimento": {
-              "type": "string",
-              "description": "Email do cidadão"
-            }
-          }
+        "retorno": {
+          "type": "string",
+          "description": "mensagem de retorno"
         }
       }
     }
