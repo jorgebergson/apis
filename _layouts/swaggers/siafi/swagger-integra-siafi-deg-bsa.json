@@ -22,6 +22,7 @@
   "paths": {
     "/v1/ne/consultar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -67,6 +68,7 @@
     },
     "/v1/ne/realizar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -112,6 +114,7 @@
     },
     "/v1/ne/alterar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -157,6 +160,7 @@
     },
     "/v1/ne/anular": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -202,6 +206,7 @@
     },
     "/v1/ne/reforcar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -247,6 +252,7 @@
     },
     "/v1/ne/consultaTransacao": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
