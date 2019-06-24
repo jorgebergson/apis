@@ -21,6 +21,7 @@
   "basePath": "/api-integra-siafi/api",
   "paths": {
     "/v1/ne/consultar": {
+      "deprecated": true, 
       "post": {
         "tags": [
           "Nota de Empenho v1"
@@ -67,6 +68,7 @@
     },
     "/v1/ne/realizar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -112,6 +114,7 @@
     },
     "/v1/ne/alterar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -157,6 +160,7 @@
     },
     "/v1/ne/anular": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -202,6 +206,7 @@
     },
     "/v1/ne/reforcar": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -247,6 +252,7 @@
     },
     "/v1/ne/consultaTransacao": {
       "post": {
+      "deprecated": true, 
         "tags": [
           "Nota de Empenho v1"
         ],
@@ -1136,7 +1142,7 @@
           "Nota de Dotação"
         ],
         "summary": "Consulta uma Nota de Dotacao Sof",
-        "description": "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\": \"2019ND000007\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\": \"\",\n      \"numeroDecreto\": \"\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"201010\",\n          \"esferaOrcamentaria\": \"1\",\n          \"uo\": \"01101\",\n          \"ptres\": \"01301055320045664\",\n          \"idoc\": \"1000\",\n          \"naturezaDespesa\": \"0100\",\n          \"fonteRecurso\": \"0\", \n          \"resultado\": \"0\",\n          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\",\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\",  \n        }\n      ]             \n    }",
+        "description": "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\": \"2019ND000007\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n      \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\": \"\",\n      \"nomeInstrumentoLegal\": \"TEST\",\n      \"numeroDecreto\": \"E\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"20101010110101301\", \n      \"taxaCambial\": \"0553200456\", \n      \"listaEventos\": [\n        {\n          \"evento\": \"641000\",\n          \"esferaOrcamentaria\": \"3\",\n          \"uo\": \"39000\",\n          \"ptres\": \"01000A00012019012\",\n          \"idoc\": \"3456\",\n          \"naturezaDespesa\": \"710000\",\n          \"fonteRecurso\": \"000\", \n          \"resultado\": \"0\",\n          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\",\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\"  \n        }\n      ]             \n    }",
         "consumes": [
           "application/json"
         ],
@@ -1330,6 +1336,9 @@
         "instrumentoLegal": {
           "type": "string"
         },
+        "nomeInstrumentoLegal": {
+          "type": "string"
+        },
         "numeroDecreto": {
           "type": "string"
         },
@@ -1337,6 +1346,9 @@
           "type": "string"
         },
         "observacao": {
+          "type": "string"
+        },
+        "taxaCambial": {
           "type": "string"
         },
         "listaEventos": {

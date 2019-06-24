@@ -2509,6 +2509,87 @@ paths:
         description: NB para Degustação
         url: >-
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+
+  /v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}:
+    get:
+      tags:
+      - Nota de Dotação
+      summary: Consulta uma Nota de Dotacao Sof
+      description: "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestã\
+        o, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n\
+        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
+        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\"\
+        : \"2019ND000007\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\"\
+        : \"00001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n \
+        \     \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\"\
+        : \"\",\n      \"nomeInstrumentoLegal\": \"TEST\",\n      \"numeroDecreto\"\
+        : \"E\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"20101010110101301\"\
+        , \n      \"taxaCambial\": \"0553200456\", \n      \"listaEventos\": [\n \
+        \       {\n          \"evento\": \"641000\",\n          \"esferaOrcamentaria\"\
+        : \"3\",\n          \"uo\": \"39000\",\n          \"ptres\": \"01000A00012019012\"\
+        ,\n          \"idoc\": \"3456\",\n          \"naturezaDespesa\": \"710000\"\
+        ,\n          \"fonteRecurso\": \"000\", \n          \"resultado\": \"0\",\n\
+        \          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\"\
+        ,\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\"\
+        \  \n        }\n      ]             \n    }"
+      parameters:
+      - name: ug
+        in: path
+        description: Código da UG emitente
+        required: true
+        schema:
+          type: string
+      - name: gestao
+        in: path
+        description: Código da Gestão
+        required: true
+        schema:
+          type: string
+      - name: ano
+        in: path
+        description: Ano da Nota de Dotação Sof
+        required: true
+        schema:
+          type: string
+      - name: numero
+        in: path
+        description: Número da Nota de Dotação Soft
+        required: true
+        schema:
+          type: string
+      - name: x-credencial
+        in: header
+        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+          convertido em Base64.
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: Nota de bloqueio de Dotação Sof encontrada e retornada com
+            sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notaDotacaoSof'
+        400:
+          description: Algum campo possui informações inválidas
+          content: {}
+        403:
+          description: Credencial informada não possui permissão para consultar a
+            Nota de Dotação Sof
+          content: {}
+        500:
+          description: Erro interno do servidor
+          content: {}
+      operationId: >-
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao-sof/"ug"/"gestao"/"ano"/"numero"
+      externalDocs:
+        description: NB para Degustação
+        url: >-
+          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/documentos/{ug}/{gestao}/{data}':
     get:
       tags:
@@ -2930,6 +3011,37 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EventoNC'
+    notaDotacaoSof:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        nomeUGEmitente:
+          type: string
+        nomeGestaoEmitente:
+          type: string
+        instrumentoLegal:
+          type: string
+        nomeInstrumentoLegal:
+          type: string
+        numeroDecreto:
+          type: string
+        dataPublicacao:
+          type: string
+        observacao:
+          type: string
+        taxaCambial:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsultaEventoNDSof'
     GeraND:
       type: object
       properties:
@@ -3164,6 +3276,33 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ListaDocumentos'
+    ConsultaEventoNDSof:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        uo:
+          type: string
+        ptres:
+          type: string
+        idoc:
+          type: string
+        naturezaDespesa:
+          type: string
+        fonteRecurso:
+          type: string
+        resultado:
+          type: string
+        tipoCredito:
+          type: string
+        codigoFuncional:
+          type: string
+        autorEmenda:
+          type: string
+        valor:
+          type: string
     DadosNE:
       type: object
       properties:
