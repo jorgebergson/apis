@@ -1,5 +1,5 @@
 {
-  "host": "apigateway.serpro.gov.br",
+  "host": "apimock.estaleiro.serpro.gov.br",
   "security": [
     {
       "Bearer": []
@@ -18,7 +18,7 @@
     "title": "API Consulta CEP",
     "description": "A API `Consulta CEP` é disponibilizada através de serviço `HTTP REST`. O objetivo da API Consulta CEP é disponibilizar um determinado endereço a partir do CEP"
   },
-  "basePath": "/consulta-cep-hom/api",
+  "basePath": "/api",
   "paths": {
     "/consulta/cep/{cep}": {
       "get": {
@@ -28,7 +28,7 @@
         "summary": "Consulta CEP",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "Apresenta o endereço referente a um CEP\n## Exemplo\n\n  #### Chamada\n  \n    https://apigateway.serpro.gov.br/consulta-cep/api/consulta/cep/{cep}\n    \n  #### Retorno\n  \n    {\n      \"bairro:\":\"Setor Habitacional Vicente Pires\",\n      \"cep:\":\"72006075\",\n      \"cidade:\":\"Brasília\",\n      \"complemento2:\":\"{}\",\n      \"end:\":\"Rua 5 Chácara 101/1\",\n      \"uf:\":\"DF\" ",
+        "description": "Apresenta o endereço referente a um CEP\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/consulta/cep/{cep} \n    \n  #### Retorno\n  \n    {\n      \"bairro:\":\"Setor Habitacional Vicente Pires\",\n      \"cep:\":\"72006075\",\n      \"cidade:\":\"Brasília\",\n      \"complemento2:\":\"{}\",\n      \"end:\":\"Rua 5 Chácara 101/1\",\n      \"uf:\":\"DF\" ",
         "produces": [
           "application/json"
         ],
