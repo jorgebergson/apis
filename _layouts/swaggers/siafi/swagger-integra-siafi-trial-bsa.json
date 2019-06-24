@@ -22,6 +22,7 @@
   "paths": {
     "/v1/ne/consultar": {
       "post": {
+        "deprecated": true,        
         "tags": [
           "Nota de Empenho v1"
         ],
