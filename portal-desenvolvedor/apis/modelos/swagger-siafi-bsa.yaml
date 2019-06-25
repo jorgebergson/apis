@@ -1217,46 +1217,26 @@ paths:
         \ em Base64. Mais informações na descrição do parâmetro x-credencial,
         abaixo)\n\
 
-        \      \n#### Retorno\n    {\n      \"dataEmissao\": \"23Fev18\",\n     
-        \"\
-
-        ugFavorecida\": \"010001\",\n      \"gestaoFavorecida\": \"00001\",\n   
+        \      \n#### Retorno\n    {\n      \"dataEmissao\": \"14Mai18\",\n     
+        \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n   
         \
 
-        \  \"opCambial\": \"2\",\n      \"txObservacao\": \"10001 1    0       
-        0\
-
-        \                  TESTE\",\n      \"mesLancamento\": \"\",\n     
-        \"qtdLancamento\"\
-
-        : \"\",\n      \"numOriginal\": \"\",\n      \"sistemaOrigem\": \"\",\n 
+        \  \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"Observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n
         \
 
-        \    \"numTransferencia\": \"\",\n      \"listaEventos\": [\n        {\n
+        \         \"evento\": \"300062\",\n          \"esferaOrcamentaria\":
+        \"1\"\
+
+        ,\n          \"ptres\": \"1\",\n         
+        \"fonteRecurso\"\
+
+        : \"0100000000",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n  
         \
 
-        \         \"evento\": \"30006\",\n          \"esferaOrcamentaria\":
-        \"2\"\
+        \       \"ugResponsavel\": \"010001\",\n          \"planoInterno\":
+        \"\"\
 
-        ,\n          \"unidadeOrcamentaria\": null,\n         
-        \"programaTrabalho\"\
-
-        : \"11\",\n          \"resultado\": null,\n          \"tipoCredito\":
-        null,\n\
-
-        \          \"planoOrcamentario\": null,\n          \"autorEmenda\":
-        null,\n\
-
-        \          \"fonteRecurso\": \"\",\n          \"naturezaDespesa\":
-        \"\",\n\
-
-        \          \"contaPassivo\": \"null\",\n          \"subitem\": \"\",\n  
-        \
-
-        \       \"ugResponsavel\": \"01000\",\n          \"planoInterno\":
-        \"00000339039\"\
-
-        ,\n          \"valorTransacao\": \"10001\"\n        }\n      ]\n    }"
+        ,\n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }"
       parameters:
         - name: ug
           in: path
@@ -1298,35 +1278,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotaCredito'
               example:
-                dataEmissao: 23Fev18
-                numeroLancamento: '010001000012'
-                ugEmitente: ''
-                gestaoEmitente: ''
+                dataEmissao: '14MAI18'
+                numero: '2018NC'
+                ugEmitente: '010001'
+                gestaoEmitente: '00001'
                 ugFavorecida: '10001'
-                gestaoFavorecida: '1'
-                opCambial: '0'
-                numeroTransferencia: '0'
-                espacoBranco: ''
+                gestaoFavorecida: '00001'
+                taxaCambio: ''
+                numeroTransferencia: ''
                 observacao: TESTE
-                mesLancamento: null
-                qtdLancamento: null
-                numOriginal: null
-                sistemaOrigem: null
                 listaEventos:
                   - evento: '300062'
                     esferaOrcamentaria: '1'
-                    unidadeOrcamentaria: null
-                    programaTrabalho: '1'
-                    resultado: ''
-                    tipoCredito: ''
-                    planoOrcamentario: ''
-                    autorEmenda: ''
+                    ptres: '1'
                     fonteRecurso: '0100000000'
                     naturezaDespesa: '339039'
                     subitem: ''
                     ugResponsavel: '10001'
                     planoInterno: ''
-                    valorTransacao: '10000'
+                    valorTransacao: '00000000000100000'
         '400':
           description: Algum campo possui informações inválidas
           content: {}
@@ -1379,10 +1349,7 @@ paths:
         \     \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n   
         \
 
-        \  \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE
-        INCLUSAO\
-
-        \ NC\",\n      \"listaEventos\": [\n        {\n          \"evento\":
+        \  \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\":
         \"300062\"\
 
         ,\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\":
@@ -1401,12 +1368,7 @@ paths:
         Retorno\n\n\
 
         \    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n     
-        \"\
-
-        ano\": \"2018\",\n      \"tipoDoc\": \"NC\",\n      \"sequencialDoc\":
-        \"\
-
-        800017\"\n    }"
+        \"\numero\": \"2018NC800017\"\n    }"
       parameters:
         - name: x-credencial
           in: header
