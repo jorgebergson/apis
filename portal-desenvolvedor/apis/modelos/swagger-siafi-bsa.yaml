@@ -2844,17 +2844,6 @@ components:
               type: string
             descricao:
               type: string
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          type: object
-          properties:
-            ug:
-              type: string
-            sistema:
-              type: string
-            cpf:
-              type: string
     EventoNC:
       type: object
       properties:
