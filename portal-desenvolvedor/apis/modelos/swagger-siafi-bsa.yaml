@@ -259,7 +259,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultaTransacao:
     post:
-      deprecated: true      
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Consulta Número da Transação
@@ -320,7 +320,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultar:
     post:
-      deprecated: true      
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Consulta Nota de Empenho
@@ -504,7 +504,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/realizar:
     post:
-      deprecated: true      
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Adiciona Nota de Empenho
@@ -640,7 +640,7 @@ paths:
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/reforcar:
     post:
-      deprecated: true      
+      deprecated: true
       tags:
         - Nota de Empenho v1
       summary: Reforça Nota de Empenho
@@ -874,66 +874,66 @@ paths:
               schema:
                 $ref: '#/components/schemas/DadosNE'
               example:
-                  dataEmissao: 14Jun18
-                  saldoPagar: ''
-                  numeroNota: 2018NE800017
-                  ugEmitente: '010001'
-                  nomeUgEmitente: CAMARA DOS DEPUTADOS
-                  gestaoEmitente: '00001'
-                  nomeGestaoEmitente: TESOURO NACIONAL
-                  nomeFavorecido: CAMARA DOS DEPUTADOS
-                  tipoFavorecido: '4'
-                  codigoFavorecido: '01000100001'
-                  sicaf: ''
-                  operacaoCambial: '0000000000'
-                  observacao: TESTE NE-01
-                  evento: '401091'
-                  esfera: '1'
-                  ptres: '000001'
-                  fonte: '0100000000'
-                  codigoND: '339030'
-                  ugResponsavel: 010019
-                  planoInterno: AAA
-                  valorEmpenho: '00000000000000001'
-                  tipoEmpenho: ORDINARIO
-                  sistemaOrigem: APISIAFI
-                  docReferenciaOriginal: ''
-                  numDocReferencia: ''
-                  passivoAnterior: NAO
-                  contaPassivo: ''
-                  nomeModalidade: NAO SE APLICA
-                  nomeAmparo: ''
-                  inciso: ''
-                  numeroProcesso: 103.504/1999
-                  indicadorPagPrecatorio: ''
-                  siglaUF: DF
-                  codigoMunicipioBeneficiado: '9701'
-                  origemMaterial: NACIONAL
-                  referenciaDispensa: ''
-                  numeroOriginal: ''
-                  informacoesLancamentos: >-
-                    LANCADO POR : 60165570644 - ANDERSON          UG : 010001  
-                    14Jun18   14:33
-                  contaCorrenteFinanceiro: F0100000000
-                  contasPermanentes: []
-                  numeroLista: 2018LI800043
-                  subItens:
-                    - numero: '00'
-                      valor: '01'
-                      seq: '000'
-                      qtd: ''
-                      valorTotal: '00000000000000001'
-                      descricao: LISTA NE-01
-                    - numero: '1'
-                      valor: ''
-                      seq: '000'
-                      qtd: ''
-                      valorTotal: ''
-                      descricao: ''
-                  subItensSaldo:
-                    - numero: '01'
-                      valor: '00000000000000001'
-                  nsaldo: ''
+                dataEmissao: 14Jun18
+                saldoPagar: ''
+                numeroNota: 2018NE800017
+                ugEmitente: '010001'
+                nomeUgEmitente: CAMARA DOS DEPUTADOS
+                gestaoEmitente: '00001'
+                nomeGestaoEmitente: TESOURO NACIONAL
+                nomeFavorecido: CAMARA DOS DEPUTADOS
+                tipoFavorecido: '4'
+                codigoFavorecido: '01000100001'
+                sicaf: ''
+                operacaoCambial: '0000000000'
+                observacao: TESTE NE-01
+                evento: '401091'
+                esfera: '1'
+                ptres: '000001'
+                fonte: '0100000000'
+                codigoND: '339030'
+                ugResponsavel: 010019
+                planoInterno: AAA
+                valorEmpenho: '00000000000000001'
+                tipoEmpenho: ORDINARIO
+                sistemaOrigem: APISIAFI
+                docReferenciaOriginal: ''
+                numDocReferencia: ''
+                passivoAnterior: NAO
+                contaPassivo: ''
+                nomeModalidade: NAO SE APLICA
+                nomeAmparo: ''
+                inciso: ''
+                numeroProcesso: 103.504/1999
+                indicadorPagPrecatorio: ''
+                siglaUF: DF
+                codigoMunicipioBeneficiado: '9701'
+                origemMaterial: NACIONAL
+                referenciaDispensa: ''
+                numeroOriginal: ''
+                informacoesLancamentos: >-
+                  LANCADO POR : 60165570644 - ANDERSON          UG : 010001  
+                  14Jun18   14:33
+                contaCorrenteFinanceiro: F0100000000
+                contasPermanentes: []
+                numeroLista: 2018LI800043
+                subItens:
+                  - numero: '00'
+                    valor: '01'
+                    seq: '000'
+                    qtd: ''
+                    valorTotal: '00000000000000001'
+                    descricao: LISTA NE-01
+                  - numero: '1'
+                    valor: ''
+                    seq: '000'
+                    qtd: ''
+                    valorTotal: ''
+                    descricao: ''
+                subItensSaldo:
+                  - numero: '01'
+                    valor: '00000000000000001'
+                nsaldo: ''
         '400':
           description: Algum campo enviado é inválido
         '403':
@@ -1024,13 +1024,13 @@ paths:
             }
           
         #### Retorno
+
             { 
-              "codigo": 0,
-              "mensagem": "010001000012018NE800017 010001000012018LI800105",
-              "erros": [],
-              "status": 200
-              }
+              "numeroCliente": 135006132032019TRNE000087,
+              "numeroListaEmpenho": "135006132032019LI800070",
+              "numeroDocGerado": 135006132032019NE800008
             }
+            
       parameters:
         - name: x-credencial
           in: header
@@ -1145,13 +1145,13 @@ paths:
             }
          
         #### Retorno
+
             { 
-              "codigo": 0,
-              "mensagem": "010001000012018NE800017 010001000012018LI800105",
-              "erros": [],
-              "status": 200
-              }
+              "numeroCliente": 135006132032019TRNE000087,
+              "numeroListaEmpenho": "135006132032019LI800070",
+              "numeroDocGerado": 135006132032019NE800008
             }
+            
       parameters:
         - name: x-credencial
           in: header
@@ -1218,25 +1218,26 @@ paths:
         abaixo)\n\
 
         \      \n#### Retorno\n    {\n      \"dataEmissao\": \"14Mai18\",\n     
-        \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\": \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n   
-        \
+        \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n     
+        \"gestaoEmitente\": \"00001\",\n      \"gestaoFavorecida\":
+        \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n    \
 
-        \  \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n      \"Observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n
-        \
+        \  \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n     
+        \"Observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n \
 
         \         \"evento\": \"300062\",\n          \"esferaOrcamentaria\":
         \"1\"\
 
-        ,\n          \"ptres\": \"1\",\n         
-        \"fonteRecurso\"\
+        ,\n          \"ptres\": \"1\",\n          \"fonteRecurso\"\
 
-        : \"0100000000",\n          \"naturezaDespesa\": \"339039\",\n          \"subitem\": \"\",\n  
-        \
+        : \"0100000000",\n          \"naturezaDespesa\": \"339039\",\n         
+        \"subitem\": \"\",\n   \
 
         \       \"ugResponsavel\": \"010001\",\n          \"planoInterno\":
         \"\"\
 
-        ,\n          \"valor\": \"00000000000100000\"\n        }\n      ]\n    }"
+        ,\n          \"valor\": \"00000000000100000\"\n        }\n      ]\n   
+        }"
       parameters:
         - name: ug
           in: path
@@ -1278,8 +1279,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotaCredito'
               example:
-                dataEmissao: '14MAI18'
-                numero: '2018NC'
+                dataEmissao: 14MAI18
+                numero: 2018NC
                 ugEmitente: '010001'
                 gestaoEmitente: '00001'
                 ugFavorecida: '10001'
@@ -1349,7 +1350,8 @@ paths:
         \     \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n   
         \
 
-        \  \"numeroTransferencia\": \"\",\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\":
+        \  \"numeroTransferencia\": \"\",\n      \"observacao\":
+        \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\":
         \"300062\"\
 
         ,\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\":
@@ -1594,12 +1596,12 @@ paths:
         \"00001\"\
 
         ,\n      \"numero\": \"2018NL800017\",\n      \"dataValorizacao\":
-        \"14mai18\"\
+        \"14MAI18\"\
 
         ,\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n     
         \"dataVencimento\"\
 
-        : \"14MAI18\",\n      \"observacao\": \"INCLUSAO NL\", \n     
+        : \"14MAI18\",\n      \"observacao\": \"TESTE\", \n     
         \"listaEventos\"\
 
         : [\n        {\n          \"evento\": \"300062\",\n         
@@ -1620,11 +1622,8 @@ paths:
         : [ \n          \"00001\" \n      ] \n    }\n #### Retorno\n\n    {\n   
         \
 
-        \  \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"ano\":
-        \"2018\"\
-
-        ,\n      \"tipoDoc\": \"NL\",\n      \"sequencialDoc\": \"800017\"\n   
-        }"
+        \  \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\":
+        \"2018NL800017\"\n        }"
       parameters:
         - name: x-credencial
           in: header
@@ -1652,9 +1651,7 @@ paths:
               example:
                 ug: '010001'
                 gestao: '00001'
-                ano: '2018'
-                tipoDoc: NL
-                sequencialDoc: '800017'
+                numeroo: '2018NL800017'
         '400':
           description: Algum campo possui informações inválidas
           content: {}
@@ -1692,64 +1689,31 @@ paths:
         \ em Base64. Mais informações na descrição do parâmetro x-credencial,
         abaixo)\
 
-        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10ago18\",\n     
-        \"especieND\"\
-
-        : \"1\",\n      \"numeroDocumento\": \"2018ND800002\",\n     
+        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"14MAI18\",\n     
+        \"numeroDocumento\": \"2018ND800003\",\n     
         \"ugEmitente\"\
 
-        : \"010001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS
-        2018\",\n\
+        : \"010001\",\n      \"nomeUGEmitente\": \"COORDENACAO GERAL DE CONTABILIDADE\",\n\
 
-        \      \"gestaoEmitente\": \"00001\",\n      \"esferaOrcamentaria\":
-        \"1\"\
-
-        ,\n      \"unidadeOrcamentaria\": \"\",\n      \"indicadorResultado\":
+        \      \"gestaoEmitente\": \"00001\",\n      \"favorecido\":
         \"\"\
 
-        ,\n      \"indicadorCredito\": \"\",\n      \"planoOrcamentario\":
-        \"\",\n\
+        ,\n      \"nomeFavorecido\": \"\",\n      \"taxaCambio\":
+        \"\"\
 
-        \      \"codigoAutorEmenda\": \"\",\n      \"fonteRecurso\":
-        \"01000\",\n\
+        ,\n      \"observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n         
+        \"evento\":\
 
-        \      \"categoriaDespesa\": \"33\",\n      \"codigoInstrumentoLegal\":
-        \"\
+        \ \"200031\",\n          \"esferaOrcamentaria\": \"1\",\n         
+        \"ptres\"\
 
-        1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n     
-        \"dataPublicacao\"\
+        : \"000019\",\n          \"fonteRecurso\": \"0100000000\",\n         
+        \"naturezaDespesa\"\
 
-        : \"01Ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\":
-        \"005714\",\n\
+        : \"339030\",\n          \"subitemND\": \"\",\n         
+        \"ugr\"\
 
-        \      \"idoc\": \"9999\",\n      \"observacao\": \"teste Nota Dotação
-        DETAORC\"\
-
-        , \n      \"listaEventos\": [\n        {\n         
-        \"reducaoAcrescimo\":\
-
-        \ \"R\",\n          \"sequencialFonte\": \"000000\",\n         
-        \"modalidadeAplicacao\"\
-
-        : \"90\",\n          \"elementoDespesa\": \"00\",\n         
-        \"subitemND\"\
-
-        : \"\",\n          \"codigoUGResponsavel\": \"\",\n         
-        \"planoInterno\"\
-
-        : \"\", \n          \"valor\": \"100000\",  \n        }, {\n         
-        \"reducaoAcrescimo\"\
-
-        : \"A\",\n          \"sequencialFonte\": \"000000\",\n         
-        \"modalidadeAplicacao\"\
-
-        : \"90\",\n          \"elementoDespesa\": \"14\",\n         
-        \"subitemND\"\
-
-        : \"\",\n          \"codigoUGResponsavel\": \"\",\n         
-        \"planoInterno\"\
-
-        : \"\", \n          \"valor\": \"100000\",  \n        } \n      ]\n   
+        : \"\", \n          \"planoInterno\": \"\",  \n        \"valor\": \"100\",  \n        } \n      ]\n   
         }"
       parameters:
         - name: ug
@@ -1792,22 +1756,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotaDotacao'
               example:
-                dataEmissao: 10ago18
-                numeroDocumento: 2018ND800002
-                ugEmitente: '010001'
-                nomeUGEmitente: CAMARA DOS DEPUTADOS 2018
-                gestaoEmitente: '00001'
-                favorecido: ''
-                nomeFavorecido: ''
-                taxaCambio: ''
-                observacao: teste Nota Dotação Gestor
+                dataEmissao: "14MAI18"
+                numeroDocumento: "2018ND800003"
+                ugEmitente: "010001"
+                nomeUGEmitente: "COORDENACAO GERAL DE CONTABILIDADE"
+                gestaoEmitente: "00001"
+                favorecido: ""
+                nomeFavorecido: "" 
+                taxaCambio: "" 
+                observacao: "TESTE"
                 listaEventos:
-                  - evento: '200031'
-                    esferaOrcamentaria: '1'
-                    ptres: 000019
-                    fonteRecurso: '0100000000'
-                    naturezaDespesa: '339030'
-                    UGResponsavel: ''
+                  - evento: "200031"
+                    esferaOrcamentaria: "1"
+                    ptres: "000019"
+                    fonteRecurso: "0100000000"
+                    naturezaDespesa: "339030"
+                    subitemND: ""
+                    ugr: ""
                     planoInterno: ''
                     valor: '100'
         '400':
@@ -2466,79 +2431,106 @@ paths:
         description: NB para Degustação
         url: >-
           https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
-
-  /v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}:
+  '/v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
-      - Nota de Dotação
+        - Nota de Dotação
       summary: Consulta uma Nota de Dotacao Sof
-      description: "Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestã\
-        o, Ano e Número da ND-Sof\n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007\n\
-        \    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido\
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\
-        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"10Jun19\",\n      \"numeroDocumento\"\
-        : \"2019ND000007\",\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\"\
-        : \"00001\",\n      \"nomeUGEmitente\": \"CAMARA DOS DEPUTADOS 2019\",\n \
-        \     \"nomeGestaoEmitente\": \"TESOURO NACIONAL\",\n      \"instrumentoLegal\"\
-        : \"\",\n      \"nomeInstrumentoLegal\": \"TEST\",\n      \"numeroDecreto\"\
-        : \"E\",\n      \"dataPublicacao\": \"\",\n      \"observacao\": \"20101010110101301\"\
-        , \n      \"taxaCambial\": \"0553200456\", \n      \"listaEventos\": [\n \
-        \       {\n          \"evento\": \"641000\",\n          \"esferaOrcamentaria\"\
-        : \"3\",\n          \"uo\": \"39000\",\n          \"ptres\": \"01000A00012019012\"\
-        ,\n          \"idoc\": \"3456\",\n          \"naturezaDespesa\": \"710000\"\
-        ,\n          \"fonteRecurso\": \"000\", \n          \"resultado\": \"0\",\n\
-        \          \"tipoCredito\": \"A\",\n          \"codigoFuncional\": \"0001\"\
-        ,\n          \"autorEmenda\": \"201901234567\",\n          \"valor\": \"10000000\"\
-        \  \n        }\n      ]             \n    }"
+      description: >-
+        Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano
+        e Número da ND-Sof
+
+
+        ## Exemplo
+
+        #### Chamada
+
+            https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007
+            
+            No header:
+              x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
+              (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) 
+
+        #### Retorno
+            {
+              "dataEmissao": "10Jun19",
+              "numeroDocumento": "2019ND000007",
+              "ugEmitente": "010001",
+              "gestaoEmitente": "00001",
+              "nomeUGEmitente": "CAMARA DOS DEPUTADOS 2019",
+              "nomeGestaoEmitente": "TESOURO NACIONAL",
+              "instrumentoLegal": "",
+              "nomeInstrumentoLegal": "TEST",
+              "numeroDecreto": "E",
+              "dataPublicacao": "",
+              "observacao": "20101010110101301", 
+              "taxaCambial": "0553200456", 
+              "listaEventos": [
+                {
+                  "evento": "641000",
+                  "esferaOrcamentaria": "3",
+                  "uo": "39000",
+                  "ptres": "01000A00012019012",
+                  "idoc": "3456",
+                  "naturezaDespesa": "710000",
+                  "fonteRecurso": "000", 
+                  "resultado": "0",
+                  "tipoCredito": "A",
+                  "codigoFuncional": "0001",
+                  "autorEmenda": "201901234567",
+                  "valor": "10000000"  
+                }
+              ]             
+            }
       parameters:
-      - name: ug
-        in: path
-        description: Código da UG emitente
-        required: true
-        schema:
-          type: string
-      - name: gestao
-        in: path
-        description: Código da Gestão
-        required: true
-        schema:
-          type: string
-      - name: ano
-        in: path
-        description: Ano da Nota de Dotação Sof
-        required: true
-        schema:
-          type: string
-      - name: numero
-        in: path
-        description: Número da Nota de Dotação Soft
-        required: true
-        schema:
-          type: string
-      - name: x-credencial
-        in: header
-        description: Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
-          convertido em Base64.
-        required: true
-        schema:
-          type: string
+        - name: ug
+          in: path
+          description: Código da UG emitente
+          required: true
+          schema:
+            type: string
+        - name: gestao
+          in: path
+          description: Código da Gestão
+          required: true
+          schema:
+            type: string
+        - name: ano
+          in: path
+          description: Ano da Nota de Dotação Sof
+          required: true
+          schema:
+            type: string
+        - name: numero
+          in: path
+          description: Número da Nota de Dotação Soft
+          required: true
+          schema:
+            type: string
+        - name: x-credencial
+          in: header
+          description: >-
+            Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA],
+            convertido em Base64.
+          required: true
+          schema:
+            type: string
       responses:
-        200:
-          description: Nota de bloqueio de Dotação Sof encontrada e retornada com
-            sucesso
+        '200':
+          description: Nota de bloqueio de Dotação Sof encontrada e retornada com sucesso
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/notaDotacaoSof'
-        400:
+        '400':
           description: Algum campo possui informações inválidas
           content: {}
-        403:
-          description: Credencial informada não possui permissão para consultar a
-            Nota de Dotação Sof
+        '403':
+          description: >-
+            Credencial informada não possui permissão para consultar a Nota de
+            Dotação Sof
           content: {}
-        500:
+        '500':
           description: Erro interno do servidor
           content: {}
       operationId: >-
@@ -2554,9 +2546,7 @@ paths:
       summary: Consulta Documentos
       description: >-
         Consulta documentos de uma UG Emitente/Favorecida a partir de uma data
-        específica
-        ## Exemplo
-        #### Chamada
+        específica ## Exemplo #### Chamada
             https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/documentos/010001/00001/10FEV18?tipo={ugfavorecida/ugemitente}
             No header:
               x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
@@ -2882,11 +2872,7 @@ components:
           type: string
         gestao:
           type: string
-        ano:
-          type: string
-        tipoDoc:
-          type: string
-        sequencialDoc:
+        numero:
           type: string
     notaBloqueio:
       type: object
