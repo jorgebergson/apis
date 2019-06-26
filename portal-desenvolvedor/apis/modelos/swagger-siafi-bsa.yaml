@@ -746,7 +746,7 @@ paths:
       tags:
         - Nota de Empenho v2
       summary: Consulta Nota de Empenho
-      description: |-
+      description: >-
         Consulta uma Nota de Empenho.
         ### Chamada
         https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017
@@ -868,7 +868,7 @@ paths:
       tags:
         - Nota de Empenho v2
       summary: Realiza uma Nota de Empenho
-      description: |-
+      description: >-
         Gera uma Nota de Empenho 
 
         ### Chamada
@@ -914,8 +914,7 @@ paths:
           description: Erro interno do servidor
           content: {}
       operationId: >-
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"Json
-        de entrada"
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/"Json de entrada"
       externalDocs:
         description: NE para Degustação
         url: >-
@@ -999,41 +998,15 @@ paths:
         - Nota de Crédito
       summary: Consulta Nota de Crédito
       description: >-
-        "Consulta uma Nota de Crédito existente\n\n## Exemplo\n#### Chamada\n\
+        Consulta uma Nota de Crédito. 
+        
+        ### Chamada
 
-        \n   
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001\n\
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito/010001/00001/2018/800001
 
-        \    \n    No header:\n      x-credencial:
-        MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
-
-        \      (valor referente às credenciais 11111111111.010001.SIAFI2018
-        convertido\
-
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial,
-        abaixo)\n\
-
-        \      \n#### Retorno\n    {\n      \"dataEmissao\": \"14Mai18\",\n     
-        \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n     
-        \"gestaoEmitente\": \"00001\",\n      \"gestaoFavorecida\":
-        \"00001\",\n      \"gestaoFavorecida\": \"00001\",\n    \
-
-        \  \"taxaCambio\": \"\",\n      \"numeroTransferencia\": \"\",\n     
-        \"Observacao\": \"TESTE\",\n      \"listaEventos\": [\n        {\n \
-
-        \         \"evento\": \"300062\",\n          \"esferaOrcamentaria\":
-        \"1\"\
-
-        ,\n          \"ptres\": \"1\",\n          \"fonteRecurso\"\
-
-        : \"0100000000",\n          \"naturezaDespesa\": \"339039\",\n         
-        \"subitem\": \"\",\n   \
-
-        \       \"ugResponsavel\": \"010001\",\n          \"planoInterno\":
-        \"\"\
-
-        ,\n          \"valor\": \"00000000000100000\"\n        }\n      ]\n   
-        }"
+        ### No header
+        
+        x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA== (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. 
       parameters:
         - name: ug
           in: path
@@ -1120,53 +1093,15 @@ paths:
         - Nota de Crédito
       summary: Gera Nota de Crédito
       description: >-
-        "Gera uma Nota de Crédito com as informações passadas no JSON de\
+        Gera uma Nota de Crédito com as informações passadas no JSON de entrada.
+        
+        ### Chamada   
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito
 
-        \ entrada\n\n## Exemplo\n#### Chamada\n\n   
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-credito\n\
-
-        \    \n    No header:\n      x-credencial:
-        MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA==\n\
-
-        \      (valor referente às credenciais 11111111111.010001.SIAFI2018
-        convertido\
-
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial,
-        abaixo)\
-
-        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\":
-        \"14MAI18\"\
-
-        ,\n      \"numero\": \"2018NC\",\n      \"ugEmitente\": \"010001\",\n   
-        \
-
-        \  \"gestaoEmitente\": \"00001\",\n      \"ugFavorecida\": \"010001\",\n
-        \
-
-        \     \"gestaoFavorecida\": \"00001\",\n      \"taxaCambio\": \"\",\n   
-        \
-
-        \  \"numeroTransferencia\": \"\",\n      \"observacao\":
-        \"TESTE\",\n      \"listaEventos\": [\n        {\n          \"evento\":
-        \"300062\"\
-
-        ,\n          \"esferaOrcamentaria\": \"1\",\n          \"ptres\":
-        \"1\",\n\
-
-        \          \"fonteRecurso\": \"0100000000\",\n         
-        \"naturezaDespesa\"\
-
-        : \"339039\",\n          \"subitem\": \"\",\n         
-        \"ugResponsavel\":\
-
-        \ \"010001\",\n          \"planoInterno\": \"\",   \n         
-        \"valor\":\
-
-        \ \"00000000000100000\"\n        }\n      ]\n    }\n    \n####
-        Retorno\n\n\
-
-        \    {\n      \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n     
-        \"\numero\": \"2018NC800017\"\n    }"
+        ### No header
+        
+        x-credencial: MTExMTExMTExMTEuMDEwMDAxLlNJQUZJMjAxOA== (valor referente às credenciais 11111111111.010001.SIAFI2018 convertido em Base64. 
       parameters:
         - name: x-credencial
           in: header
@@ -1194,9 +1129,7 @@ paths:
               example:
                 ug: '010001'
                 gestao: '00001'
-                ano: '2018'
-                tipoDoc: NC
-                sequencialDoc: '800017'
+                numero: '2018NC800017'
         '400':
           description: Algum campo possui informações inválida
           content: {}
@@ -2680,13 +2613,9 @@ components:
       properties:
         ug:
           type: string
-        gestao:
-          type: string
-        ano:
-          type: string
-        tipoDoc:
-          type: string
-        sequencialDoc:
+        gestao: 
+          type: string 
+        numero:
           type: string
     NotaDotacao:
       type: object
