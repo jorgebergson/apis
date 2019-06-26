@@ -748,10 +748,10 @@ paths:
       summary: Consulta Nota de Empenho
       description: |-
         Consulta uma Nota de Empenho.
-
-        Chamada:  https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017
-
-        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64.
+        ### Chamada
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho/010001/00001/2018/800017
+        ### No header 
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64.
       parameters:
         - name: ug
           in: path
@@ -793,61 +793,59 @@ paths:
               schema:
                 $ref: '#/components/schemas/DadosNE'
               example:
-                dataEmissao: 20Jun18
+                dataEmissao: '20Jun18'
                 saldoPagar: ''
-                numeroNota: 2018NE800001
-                ugEmitente: 010001
-                nomeUgEmitente: COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA
-                gestaoEmitente: 170600
-                nomeGestaoEmitente: TESOURO NACIONAL
-                nomeFavorecido: COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA
-                tipoFavorecido: 4
-                codigoFavorecido: 17060000001
+                numeroNota: '2018NE800001'
+                ugEmitente: '010001'
+                nomeUgEmitente: 'COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA'
+                gestaoEmitente: '170600'
+                nomeGestaoEmitente: 'TESOURO NACIONAL'
+                nomeFavorecido: 'COORD.GERAL DE CONTROLE DA DIVIDA PUBLICA'
+                tipoFavorecido: '4'
+                codigoFavorecido: '17060000001'
                 sicaf: ''
-                operacaoCambial: 0000000000
-                observacao: TESTE SID - VL
-                evento: 401091
-                esfera: 1
-                ptres: 08139
-                fonte: 0163719020
-                codigoND: 469072
-                ugResponsavel: 170600
-                planoInterno: 2852DPMFIBC
-                valorEmpenho: 00000150000000000
-                tipoEmpenho: ESTIMATIVO
+                operacaoCambial: '0000000000'
+                observacao: 'TESTE SID - VL'
+                evento: '401091'
+                esfera: '1'
+                ptres: '08139'
+                fonte: '0163719020'
+                codigoND: '469072'
+                ugResponsavel: '170600'
+                planoInterno: '2852DPMFIBC'
+                valorEmpenho: '00000150000000000'
+                tipoEmpenho: 'ESTIMATIVO'
                 sistemaOrigem: ''
                 docReferenciaOriginal: ''
                 numDocReferencia: ''
-                passivoAnterior: SIM
-                contaPassivo: 212110201
-                nomeModalidade: NAO SE APLICA
+                passivoAnterior: 'SIM'
+                contaPassivo: '212110201'
+                nomeModalidade: 'NAO SE APLICA'
                 nomeAmparo: ''
                 inciso: ''
                 numeroProcesso: '' 
                 indicadorPagPrecatorio: '' 
-                siglaUF: DF
+                siglaUF: 'DF'
                 codigoMunicipioBeneficiado: '' 
                 origemMaterial: ''
                 referenciaDispensa: '' 
                 numeroOriginal: ''
-                informacoesLancamentos: |-
-                  LANCADO POR : 05550469669 - LEONARDO          UG : 170600  
-                  20Jun18   17:26
-                contaCorrenteFinanceiro: F0163719020
+                informacoesLancamentos: 'LANCADO POR : 05550469669 - LEONARDO UG: 170600 20Jun18 17:26'
+                contaCorrenteFinanceiro: 'F0163719020'
                 contasPermanentes:
-                  - conta: P
-                    valor: 150000000000
-                numeroLista: 2018LI00001
+                  - conta: 'P'
+                    valor: '150000000000'
+                numeroLista: '2018LI00001'
                 subItens:
-                  - numero: 00
-                    valor: 00000150000000000
-                    seq: 001
-                    qtd: 000000000100000 
-                    valorTotal: 00000150000000000
-                    descricao: TESTE SID - VL
+                  - numero: '00'
+                    valor: '00000150000000000'
+                    seq: '001'
+                    qtd: '000000000100000' 
+                    valorTotal: '00000150000000000'
+                    descricao: 'TESTE SID - VL'
                 subItensSaldo:
-                  - numero: 01
-                    valor: 00000150000000000
+                  - numero: '01'
+                    valor: '00000150000000000'
                 nsaldo: ''
         '400':
           description: Algum campo enviado é inválido
@@ -873,78 +871,11 @@ paths:
       description: |-
         Gera uma Nota de Empenho 
 
-        ## Exemplo
-        #### Chamada
-
-            https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho
-            
-            No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
+        ### Chamada
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho
+        ### No header  
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
               (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)
-              
-        ####  Conteúdo do corpo
-            {
-                "dataEmissao": "14JUN18",
-                "numeroDocumento": "800017",
-                "ugEmitente": "010001",
-                "gestaoEmitente": "00001",
-                "numeroLista": "",
-                "taxaCambio": "",
-                "observacao": "Teste NE-01",
-                "valorTotalEmpenho": "001",
-                "numeroProcesso": "103.504/1999",
-                "numeroOriginalConvenio": " ",
-                "passivoAnterior": "N",
-                "contaPassivo": "",
-                "contaValor": [
-                 {
-                  "conta": "",
-                  "valor": ""
-                  }
-                ],
-                "contaPassivoFinanceiro": " ",
-                "favorecido": "010001",
-                "gestaoFavorecido": "00001",
-                "esferaOrcamentaria": "1",
-                "ptres": "000001",
-                "fonteRecursos": "0100000000",
-                "naturezaDespesa": "339030",
-                "unidadeGestoraResponsavel": "010019",
-                "planoInterno": "aaa",
-                "tipoEmpenho": "1",                        
-                "modalidadeLicitacao": "08",
-                "amparoLegal": "",
-                "inciso": "",
-                "origemMaterial": "1",
-                "municipioBeneficiado": "9701",
-                "ufBeneficiada": "DF",
-                "dataVencimento": [
-                  "26JUN2018"
-                ],
-                "dataRecebimento": [
-                  "26JUN2018"
-                ],
-                "valorCompromisso": [
-                  "001"
-                ],
-                "listaItens": [
-                  {
-                    "subItemNd": "01",
-                    "quantidade": "1",
-                    "valorUnitario": "001",
-                    "valorTotal": "001",
-                    "descricao": "Lista NE-01"
-                  }
-                ]
-            }
-          
-        #### Retorno
-
-            { 
-              "numeroCliente": 135006132032019TRNE000087,
-              "numeroListaEmpenho": "135006132032019LI800070",
-              "numeroDocGerado": 135006132032019NE800008
-            }
-            
       parameters:
         - name: x-credencial
           in: header
@@ -970,10 +901,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/NE'
               example:
-                codigo: 0
-                mensagem: 010001000012018NE800017 010001000012018LI800105
-                erros: []
-                status: 200
+                numeroCliente: '135006132032019TRNE000087'
+                numeroListaEmpenho: '135006132032019LI800070'
+                numeroDocGerado: '135006132032019NE800008'
         '400':
           description: Algum campo enviado é inválido
           content: {}
@@ -1011,61 +941,14 @@ paths:
         &nbsp;&nbsp;&nbsp;&nbsp;especie = 03
 
 
-        ## Exemplo
-
-        #### Chamada
-
-            https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-empenho
             
-            No header:
-              x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
+        ### No header
+        
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
               (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)
-              
-        ####  Conteúdo do corpo
-            {
-                "dataEmissao": "14JUN18",
-                "numeroDocumento": "800017",               
-                "ugEmitente": "010001",
-                "gestaoEmitente": "00001",
-                "numeroLista": "",
-                "taxaCambio": "",
-                "observacao": "Teste NE de reforço",
-                "valorTotalEmpenho": "002",
-                "numeroProcesso": "103.504/1999",
-                "numeroOriginalConvenio": " ",
-                "passivoAnterior": "N",
-                "contaPassivo": "",
-                "contaValor": [
-                 {
-                  "conta": "",
-                  "valor": ""
-                  }
-                ],
-                "contaPassivoFinanceiro": " ",
-                "especie": "02",
-                "ugReferencia": "010001",
-                "gestaoReferencia": "00001",
-                "numeroEmpenhoReferencia": "2018NE800032",
-                "numeroListaReferencia": "2018LI800091",
-                "listaItens": [
-                  {
-                    "subItemNd": "01",
-                    "quantidade": "1",
-                    "valorUnitario": "001",
-                    "valorTotal": "001",
-                    "descricao": "Lista NE-01"
-                  }
-                ]
-            }
-         
-        #### Retorno
-
-            { 
-              "numeroCliente": 135006132032019TRNE000087,
-              "numeroListaEmpenho": "135006132032019LI800070",
-              "numeroDocGerado": 135006132032019NE800008
-            }
-            
       parameters:
         - name: x-credencial
           in: header
@@ -1091,10 +974,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/NE'
               example:
-                codigo: 0
-                mensagem: 010001000012017NE800054 010001000012017LI800101
-                erros: []
-                status: 200
+                numeroCliente: '135006132032019TRNE000087'
+                numeroListaEmpenho: '135006132032019LI800070'
+                numeroDocGerado: '135006132032019NE800008'
         '400':
           description: Algum campo enviado é inválido
           content: {}
@@ -3335,16 +3217,12 @@ components:
     NE:
       type: object
       properties:
-        codigo:
+        numeroCliente:
           type: integer
-        mensagem:
+        numeroListaEmpenho:
           type: string
-        erros:
-          type: array
-          items:
-            type: string
-        status:
-          type: integer
+        numeroDocGerado:
+          type: string
     AnulaNE:
       type: object
       properties:
