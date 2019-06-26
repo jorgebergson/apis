@@ -896,20 +896,20 @@ paths:
                 planoInterno: 2852DPMFIBC
                 valorEmpenho: 00000150000000000
                 tipoEmpenho: ESTIMATIVO
-                sistemaOrigem: 
-                docReferenciaOriginal: 
-                numDocReferencia:
+                sistemaOrigem: ''
+                docReferenciaOriginal: ''
+                numDocReferencia: ''
                 passivoAnterior: SIM
                 contaPassivo: 212110201
                 nomeModalidade: NAO SE APLICA
-                nomeAmparo: 
-                inciso: 
-                numeroProcesso: 
-                indicadorPagPrecatorio: 
+                nomeAmparo: ''
+                inciso: ''
+                numeroProcesso: '' 
+                indicadorPagPrecatorio: '' 
                 siglaUF: DF
-                codigoMunicipioBeneficiado: 
-                origemMaterial: 
-                referenciaDispensa: 
+                codigoMunicipioBeneficiado: '' 
+                origemMaterial: ''
+                referenciaDispensa: '' 
                 numeroOriginal: ''
                 informacoesLancamentos: |-
                   LANCADO POR : 05550469669 - LEONARDO          UG : 170600  
@@ -929,7 +929,7 @@ paths:
                 subItensSaldo:
                   - numero: 01
                     valor: 00000150000000000
-                nsaldo: 
+                nsaldo: ''
         '400':
           description: Algum campo enviado é inválido
         '403':
