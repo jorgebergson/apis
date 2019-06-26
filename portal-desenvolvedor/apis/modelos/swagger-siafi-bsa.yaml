@@ -1316,14 +1316,16 @@ paths:
         - Nota de Dotação
       summary: Consulta Nota de Dotação
       description: >-
-        Consulta uma Nota de Dotação a partir dos parâmetros: UG\Gestao\Ano\Numero
+        Consulta uma Nota de Dotação.
         
+        ### Chamada  
         
-        Chamada:  https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/010001/00001/2018/800002
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/010001/00001/2018/800002
 
         
-        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido em Base64. 
+        ### No header
+        
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64) 
       parameters:
         - name: ug
           in: path
@@ -1365,23 +1367,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotaDotacao'
               example:
-                dataEmissao: "14MAI18"
-                numeroDocumento: "2018ND800003"
-                ugEmitente: "170999"
-                nomeUGEmitente: "COORDENACAO GERAL DE CONTABILIDADE"
-                gestaoEmitente: "00001"
-                favorecido: ""
-                nomeFavorecido: "" 
-                taxaCambio: "" 
-                observacao: "TESTE"
+                dataEmissao: '14MAI18'
+                numeroDocumento: '2018ND800003'
+                ugEmitente: '170999'
+                nomeUGEmitente: 'COORDENACAO GERAL DE CONTABILIDADE'
+                gestaoEmitente: '00001'
+                favorecido: ''
+                nomeFavorecido: ''
+                taxaCambio: ''
+                observacao: 'TESTE'
                 listaEventos:
-                  - evento: "200031"
-                    esferaOrcamentaria: "1"
-                    ptres: "000019"
-                    fonteRecurso: "0100000000"
-                    naturezaDespesa: "339030"
-                    subitemND: ""
-                    ugr: ""
+                  - evento: '200031'
+                    esferaOrcamentaria: '1'
+                    unidadeOrcamentaria: ''
+                    ptres: '000019'
+                    fonteRecurso: '0100000000'
+                    naturezaDespesa: '339030'
+                    subitemND: ''
+                    ugr: ''
                     planoInterno: ''
                     valor: '100'
         '400':
@@ -1409,13 +1412,16 @@ paths:
       tags:
         - Nota de Dotação
       summary: Gera uma Nota de Dotação
-      description: |-
+      description: >-
         Gera uma Nota de Dotação a partir de um Json de Entrada.
 
-        Chamada: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao
 
-        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido em Base64.
+        ## No header
+        
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64)
       parameters:
         - name: x-credencial
           in: header
@@ -2316,7 +2322,7 @@ components:
         esferaOrcamentaria:
           type: string
         unidadeOrcamentaria:
-          type: string
+          type: string  
         ptres:
           type: string
         fonteRecurso:
@@ -2663,7 +2669,7 @@ components:
           type: string
         classOrcamentaria2:
           type: string
-        valorEvento:
+        valor:
           type: string
         numeroReferencia:
           type: string
