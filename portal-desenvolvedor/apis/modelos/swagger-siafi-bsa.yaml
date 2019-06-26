@@ -1153,13 +1153,16 @@ paths:
       tags:
         - Nota de Lançamento
       summary: Consulta Nota de Lançamento
-      description: |-
-        Consulta uma Nota de Lançamento a partir dos parâmetros: UG\Gestao\Ano\Numero
+      description: >-
+        Consulta uma Nota de Lançamento.
         
-        Chamada: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001
 
-        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\ (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64
+        ### No header
         
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64)
       parameters:
         - name: ug
           in: path
@@ -1201,32 +1204,32 @@ paths:
               schema:
                 $ref: '#/components/schemas/NotaLancamento'
               example:
-                dataEmissao: 14MAI18
+                dataEmissao: '14MAI18'
                 ugEmitente: '010001'
-                nomeUGEmitente: '010001'
+                nomeUGEmitente: '1'
                 gestaoEmitente: '00001'
-                nomeGestaoEmitente: '00001'
-                favorecido: '010001'
-                nomeFavorecido: '010001'
-                gestaoFavorecido: '00001'
-                nomeGestaoFavorecido: '00001'
-                numero: 2018NL800001
-                dataValidacao: 14mai18
+                nomeGestaoEmitente: ''
+                favorecido: ''
+                nomeFavorecido: ''
+                gestaoFavorecido: ''
+                nomeGestaoFavorecido: ''
+                numero: ''
+                dataValidacao: '14mai18'
                 taxaCambio: ''
                 tituloCredito: ''
-                dataVencimento: 29mar18
-                sistemaOrigem: ' '
-                observacao: INCLUSAO NL
+                dataVencimento: ''
+                sistemaOrigem: ''
+                observacao: 'TESTE'
                 listaEventos:
-                  - evento: '300062'
-                    inscricao1: '22025711000153'
-                    inscricao2: 'null'
-                    classificacao1: '111111111'
-                    classificacao2: 'null'
-                    classOrcamentaria1: '111111111'
-                    classOrcamentaria2: 'null'
-                    valor: '10001'
-                    numeroReferencia: ''
+                  - evento: '510669'
+                    inscricao1: '0114000000'
+                    inscricao2: ''
+                    classificacao1: ''
+                    classificacao2: ''
+                    classOrcamentaria1: ''
+                    classOrcamentaria2: ''
+                    valor: ''
+                    numeroReferencia: '10001'
         '400':
           description: Algum campo possui informações inválidas
           content: {}
@@ -1252,15 +1255,16 @@ paths:
       tags:
         - Nota de Lançamento
       summary: Gera Nota de Lançamento
-      description: |-
+      description: >-
         Gera uma Nota de Lançamento a partir de um Json de Entrada
 
-
-        Chamada:  https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento
-
-
-        No header -  x-credencial:  NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\ (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido em Base64. 
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento
+        
+        ### No header 
+        
+        x-credencial:  NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM  convertido em Base64) 
       parameters:
         - name: x-credencial
           in: header
