@@ -2532,7 +2532,7 @@ components:
         listaEventos:
           type: array
           items:
-            $ref: '#/components/schemas/EventosNDDesOrc'
+            $ref: '#/components/schemas/EventosNDDetOrc'
     listaItens:
       type: object
       properties:
