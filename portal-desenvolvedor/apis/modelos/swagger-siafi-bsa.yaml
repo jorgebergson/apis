@@ -2974,11 +2974,11 @@ components:
           properties:
             subItemNd:
               type: string
-            valorTotal:
-              type: string
             quantidade:
               type: string
             valorUnitario:
+              type: string
+            valorTotal:
               type: string
             descricao:
               type: string
