@@ -1437,10 +1437,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/GeraND'
-            example:
-              ug: '010001'
-              gestao: '00001'
-              numero: '2018ND800002'
+            example: Json de entrada
         required: true
       responses:
         '200':
