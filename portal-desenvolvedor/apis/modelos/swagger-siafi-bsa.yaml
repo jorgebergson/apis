@@ -1472,12 +1472,16 @@ paths:
       tags:
         - Nota de Dotação
       summary: Consulta uma Nota de Detalhamento Orçamentário
-      description: |-
-        Consulta uma Nota de Detalhamento Orçamentário a partir dos parâmetros: UG\Gestao\Ano\Numero
+      description: >-
+        Consulta uma Nota de Detalhamento Orçamentário.
         
-        Chamada: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc/010001/00001/2018/000002
+        ### Chamada 
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc/010001/00001/2018/000002
 
-        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64.
+        ### No header
+        
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64)
       parameters:
         - name: ug
           in: path
@@ -1519,24 +1523,24 @@ paths:
               schema:
                 $ref: '#/components/schemas/ConsultaNDDetOrc'
               example:
-                dataEmissao: 14MAI18
+                dataEmissao: '14MAI18'
                 especieND: '1'
-                numeroDocumento: 2018ND000002
+                numeroDocumento: '2018ND000002'
                 ugEmitente: '010001'
-                nomeUGEmitente: CAMARA DOS DEPUTADOS 2018
+                nomeUGEmitente: 'CAMARA DOS DEPUTADOS 2018'
                 gestaoEmitente: '00001'
                 esferaOrcamentaria: '1'
                 fonteRecurso: '0100'
                 categoriaDespesa: '33'
                 codigoInstrumentoLegal: ''
                 numeroInstrumentoLegal: ''
-                dataPublicacao: 01ago18
+                dataPublicacao: '01AGO18'
                 taxaCambio: '2'
                 ptres: '005714'
                 idoc: '9999'
-                observacao: teste Nota Docação DETAORC
+                observacao: 'TESTE'
                 listaEventos:
-                  - reducaoAcrescimos: R
+                  - reducaoAcrescimos: 'R'
                     sequencialFonte: '000000'
                     modalidadeAplicacao: '90'
                     elementoDespesa: '00'
@@ -1544,7 +1548,7 @@ paths:
                     codigoUGResponsavel: ''
                     planoInterno: ''
                     valor: '100000'
-                  - reducaoAcrescimos: A
+                  - reducaoAcrescimos: 'A'
                     sequencialFonte: '000000'
                     modalidadeAplicacao: '90'
                     elementoDespesa: '14'
@@ -1575,81 +1579,15 @@ paths:
         - Nota de Dotação
       summary: Gera uma Nota de Detalhamento Orçamentário
       description: >-
-        "Gera uma Nota de Detalhamento Orçamentário a partir de um Json\
+        Gera uma Nota de Detalhamento Orçamentário a partir de um Json.
 
-        \ de Entrada\n\n## Exemplo\n#### Chamada\n\n   
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc\n\
+        ### Chamada   
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-dotacao/det-orc
 
-        \    \n    No header:\n      x-credencial:
-        NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido\
-
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial,
-        abaixo)\
-
-        \ \n\n####  Conteúdo do corpo\n    {\n      \"dataEmissao\":
-        \"10AGO18\",\n\
-
-        \      \"especieND\": \"1\",\n      \"numeroDocumento\":
-        \"2018ND000002\"\
-
-        ,\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\":
-        \"00001\"\
-
-        ,\n      \"esferaOrcamentaria\": \"1\",\n      \"fonteRecurso\":
-        \"0100\"\
-
-        ,\n      \"categoriaDespesa\": \"33\",\n     
-        \"codigoInstrumentoLegal\":\
-
-        \ \"1\",\n      \"numeroInstrumentoLegal\": \"0123\",\n     
-        \"dataPublicacao\"\
-
-        : \"01ago18\",\n      \"taxaCambio\": \"\",\n      \"ptres\":
-        \"005714\",\n\
-
-        \      \"idoc\": \"9999\",\n      \"observacao\": \"Teste Nota Dotação
-        DETAORC\"\
-
-        , \n      \"listaEventos\": [\n        {\n         
-        \"reducaoAcrescimos\"\
-
-        : \"R\",\n          \"sequencialFonte\": \"000000\",\n         
-        \"modalidadeAplicacao\"\
-
-        : \"90\",\n          \"elementoDespesa\": \"00\",\n         
-        \"subitemND\"\
-
-        : \"\",\n          \"codigoUGResponsavel\": \"\",\n         
-        \"planoInterno\"\
-
-        : \"\", \n          \"valor\": \"100000\"  \n        },\n        {\n    
-        \
-
-        \     \"reducaoAcrescimos\": \"A\",\n          \"sequencialFonte\":
-        \"000000\"\
-
-        ,\n          \"modalidadeAplicacao\": \"90\",\n         
-        \"elementoDespesa\"\
-
-        : \"14\",\n          \"subitemND\": \"\",\n         
-        \"codigoUGResponsavel\"\
-
-        : \"\",\n          \"planoInterno\": \"\", \n          \"valor\":
-        \"100000\"\
-
-        \ \n        } \n      ]\n    }\n #### Retorno\n\n    {\n      \"ug\":
-        \"010001\"\
-
-        ,\n      \"gestao\": \"00001\",\n      \"ano\": \"2018\",\n     
-        \"tipoDoc\"\
-
-        : \"ND\",\n      \"sequencialDoc\": \"000002\",\n     
-        \"numRequisicao\":\
-
-        \ \"2018TRND000002\"\n    }"
+        ### No header
+        
+        x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64.
       parameters:
         - name: x-credencial
           in: header
@@ -1673,14 +1611,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NDDetaOrcGerada'
+                $ref: '#/components/schemas/NDDetOrcGerada'
               example:
                 ug: '010001'
                 gestao: '00001'
-                ano: '2018'
-                tipoDoc: ND
-                sequencialDoc: '000002'
-                numRequisicao: 2018TRND000002
+                numero: '2018ND000002'
         '400':
           description: Algum campo possui informações inválidas
           content: {}
@@ -2495,7 +2430,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/EventoND'
-    EventosNDDesOrc:
+    EventosNDDetOrc:
       type: object
       properties:
         reducaoAcrescimos:
@@ -2523,20 +2458,14 @@ components:
           type: string
         numero:
           type: string
-    NDDetaOrcGerada:
+    NDDetOrcGerada:
       type: object
       properties:
         ug:
           type: string
         gestao:
           type: string
-        ano:
-          type: string
-        tipoDoc:
-          type: string
-        sequencialDoc:
-          type: string
-        numRequisicao:
+        numero:
           type: string
     EventoNDBloqueio:
       type: object
@@ -2837,6 +2766,16 @@ components:
           type: string
         esferaOrcamentaria:
           type: string
+        unidadeOrcamentaria:
+          type: string
+        indicadorResultado:
+          type: string
+        indicadorCredito:
+          type: string
+        planoOrcamentario:
+          type: string
+        codigoAutorEmenda:
+          type: string
         fonteRecurso:
           type: string
         categoriaDespesa:
@@ -2849,16 +2788,12 @@ components:
           type: string
         taxaCambio:
           type: string
-        ptres:
-          type: string
-        idoc:
-          type: string
         observacao:
           type: string
         listaEventos:
           type: array
           items:
-            $ref: '#/components/schemas/EventosNDDesOrc'
+            $ref: '#/components/schemas/EventosNDDetOrc'
     AtualizaNE:
       type: object
       properties:
