@@ -2646,6 +2646,8 @@ components:
           type: string
         esferaOrcamentaria:
           type: string
+        unidadeOrcamentaria:
+          type: string
         ptres:
           type: string
         fonteRecurso:
@@ -2803,7 +2805,7 @@ components:
       properties:
         dataEmissao:
           type: string
-        numero:
+        numeroDocumento:
           type: string
         ugEmitente:
           type: string
@@ -2811,7 +2813,7 @@ components:
           type: string
         ugFavorecida:
           type: string
-        gestaoFavorecida:
+        gestaoFavorecido:
           type: string
         taxaCambio:
           type: string
