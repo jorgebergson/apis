@@ -1424,61 +1424,13 @@ paths:
       tags:
         - Nota de Lançamento
       summary: Consulta Nota de Lançamento
-      description: >-
-        "Consulta uma Nota de Lançamento a partir dos parâmetros UG, Gestã\
+      description: |-
+        Consulta uma Nota de Lançamento a partir dos parâmetros: UG\Gestao\Ano\Numero
+        
+        Chamada: https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001
 
-        o, Ano e Número da NL\n\n## Exemplo\n#### Chamada\n\n   
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento/010001/00001/2018/800001\n\
-
-        \    \n    No header:\n      x-credencial:
-        NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
-
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido\
-
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial,
-        abaixo)\
-
-        \ \n\n#### Retorno\n    {\n      \"dataEmissao\": \"20Fev18\",\n     
-        \"ugEmitente\"\
-
-        : \"170999\",\n      \"nomeUGEmitente\": \"\",\n     
-        \"gestaoEmitente\":\
-
-        \ \"00001\",\n      \"nomeGestaoEmitente\": \"\",\n      \"favorecido\":
-        \"\
-
-        \",\n      \"nomeFavorecido\": \"\",\n      \"gestaoFavorecido\":
-        \"\",\n\
-
-        \      \"nomeGestaoFavorecido\": \"\",\n      \"numero\": \"\",\n     
-        \"\
-
-        dataValorizacao\": \"20Fev18\",\n      \"taxaCambio\": \"2\",\n     
-        \"tituloCredito\"\
-
-        : \"\",\n      \"dataVencimento\": \"\",\n      \"sistemaOrigem\": \"
-        \",\
-
-        \ \n      \"observacao\": \"TESTE\", \n      \"listaEventos\": [\n      
-        \
-
-        \ {\n          \"evento\": \"510669\",\n          \"inscricao1\":
-        \"0114000000\"\
-
-        ,\n          \"inscricao2\": \"\",\n          \"classificacao1\":
-        \"\",\n\
-
-        \          \"classificacao2\": \"\",\n          \"classOrcamentaria1\":
-        \"\
-
-        \",\n          \"classOrcamentaria2\": \"\", \n          \"valor\":
-        \"\",\
-
-        \  \n          \"numeroReferencia\": \"10001\"  \n        } \n      ] \n
-        \
-
-        \   }"
+        No header - x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\ (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64
+        
       parameters:
         - name: ug
           in: path
@@ -1530,7 +1482,7 @@ paths:
                 gestaoFavorecido: '00001'
                 nomeGestaoFavorecido: '00001'
                 numero: 2018NL800001
-                dataValorizacao: 14mai18
+                dataValidacao: 14mai18
                 taxaCambio: ''
                 tituloCredito: ''
                 dataVencimento: 29mar18
@@ -1572,58 +1524,14 @@ paths:
         - Nota de Lançamento
       summary: Gera Nota de Lançamento
       description: >-
-        "Gera uma Nota de Lançamento a partir de um Json de Entrada\n\n\
+        Gera uma Nota de Lançamento a partir de um Json de Entrada
 
-        ## Exemplo\n#### Chamada\n\n   
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento\n\
 
-        \    \n    No header:\n      x-credencial:
-        NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\
+        Chamada:  https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v2/nota-lancamento
 
-        \      (valor referente às credenciais 60165570644.010001.SIAFI2018HM
-        convertido\
 
-        \ em Base64. Mais informações na descrição do parâmetro x-credencial,
-        abaixo)\
-
-        \ \n\n#### Conteúdo do corpo\n\n    {\n      \"dataEmissao\":
-        \"14MAI18\"\
-
-        ,\n      \"ugEmitente\": \"010001\",\n      \"gestaoEmitente\":
-        \"00001\"\
-
-        ,\n      \"favorecido\": \"010001\",\n      \"gestaoFavorecido\":
-        \"00001\"\
-
-        ,\n      \"numero\": \"2018NL800017\",\n      \"dataValorizacao\":
-        \"14MAI18\"\
-
-        ,\n      \"taxaCambio\": \"\",\n      \"tituloCredito\": \"\",\n     
-        \"dataVencimento\"\
-
-        : \"14MAI18\",\n      \"observacao\": \"TESTE\", \n     
-        \"listaEventos\"\
-
-        : [\n        {\n          \"evento\": \"300062\",\n         
-        \"inscricao1\"\
-
-        : \"22025711000153\",\n          \"inscricao2\": \"null\",\n         
-        \"classificacao1\"\
-
-        : \"111111111\",\n          \"classificacao2\": \"null\",\n         
-        \"classOrcamentaria1\"\
-
-        : \"111111111\",\n          \"classOrcamentaria2\": \"null\", \n        
-        \
-
-        \ \"valorEvento\": \"55555555\"  \n        } \n      ],\n     
-        \"listaReferencias\"\
-
-        : [ \n          \"00001\" \n      ] \n    }\n #### Retorno\n\n    {\n   
-        \
-
-        \  \"ug\": \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\":
-        \"2018NL800017\"\n        }"
+        No header -  x-credencial:  NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n\ (valor referente às credenciais 60165570644.010001.SIAFI2018HM
+        convertido em Base64. 
       parameters:
         - name: x-credencial
           in: header
@@ -2845,19 +2753,23 @@ components:
       properties:
         dataEmissao:
           type: string
-        numero:
-          type: string
         ugEmitente:
           type: string
         gestaoEmitente:
           type: string
-        ugFavorecida:
+        favorecido:
           type: string
-        gestaoFavorecida:
+        gestaoFavorecido:
+          type: string
+        numero:
+          type: string
+        dataValidacao:
           type: string
         taxaCambio:
           type: string
-        numeroTransferencia:
+        tituloCredito:
+          type: string
+        dataVencimento:
           type: string
         observacao:
           type: string
@@ -3178,7 +3090,7 @@ components:
           type: string
         classOrcamentaria2:
           type: string
-        valor:
+        valorEvento:
           type: string
         numeroReferencia:
           type: string
@@ -3536,7 +3448,7 @@ components:
           type: string
         numero:
           type: string
-        dataValorizacao:
+        dataValidacao:
           type: string
         taxaCambio:
           type: string
