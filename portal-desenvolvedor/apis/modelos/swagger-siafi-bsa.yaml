@@ -55,67 +55,12 @@ paths:
         - Nota de Empenho v1
       summary: Altera Nota de Empenho
       description: >-
-        "\n## Exemplo\n#### Chamada\n      [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar\n\
-
-        #### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n    
-        \
-
-        \ \"numeroDocumento\": \"\",               \n      \"ugEmitente\":
-        \"010001\"\
-
-        ,\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n 
-        \
-
-        \    \"taxaCambio\": \"\",\n      \"observacao\": \"Cancelamento de
-        NE\",\n\
-
-        \      \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\":
-        \"0100\"\
-
-        ,\n      \"numeroOriginalConvenio\": \"0010\",\n     
-        \"passivoAnterior\"\
-
-        : \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n     
-        {\n\
-
-        \        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n   
-        \
-
-        \  \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n
-        \
-
-        \     \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\":
-        \"00001\"\
-
-        ,\n      \"numeroEmpenhoReferencia\": \"2017NE800051\",\n     
-        \"numeroListaReferencia\"\
-
-        : \"2017LI800097\",\n      \"listaItens\": [\n      {\n       
-        \"subItemNd\"\
-
-        : \"01\",\n        \"quantidade\": \"000000000000001\",\n       
-        \"valorUnitario\"\
-
-        : \"00000000000555555\",\n        \"valorTotal\":
-        \"00000000000555555\",\n\
-
-        \        \"descricao\": \"Teste alteração\"\n      }\n    ],\n     
-        \"numeroTransacaoCliente\"\
-
-        : \"2017TR000049\",\n      \"credencial\": {\n      \"cpf\":
-        \"60165570644\"\
-
-        ,\n      \"ug\": \"010001\",\n      \"sistema\": \"SIAFI2017HM\"\n      
-        \
-
-        \ }\n      }\n#### Retorno\n    { \n      \"codigo\": 0,\n     
-        \"mensagem\"\
-
-        : \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\":
-        [],\n\
-
-        \      \"status\": 200\n    }"
+        Altera uma Nota de Empenho a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/alterar
+        
       requestBody:
         description: Dados da Nota de Empenho a ser alterada
         content:
@@ -158,70 +103,11 @@ paths:
         - Nota de Empenho v1
       summary: Anula Nota de Empenho
       description: >-
-        "\n## Exemplo\n#### Chamada\n      [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/anular\n\
-
-        #### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n  
-        \
-
-        \     \"numeroDocumento\": \"\",               \n        \"ugEmitente\":
-        \"\
-
-        010001\",\n        \"gestaoEmitente\": \"00001\",\n       
-        \"numeroLista\"\
-
-        : \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\":
-        \"Anulaçã\
-
-        o de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n       
-        \"numeroProcesso\"\
-
-        : \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n       
-        \"passivoAnterior\"\
-
-        : \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n  
-        \
-
-        \     {\n          \"conta\": \"\",\n          \"valor\": \"\"\n       
-        }\n\
-
-        \      ],\n        \"contaPassivoFinanceiro\": \"string\",\n       
-        \"especie\"\
-
-        : \"03\",\n        \"ugReferencia\": \"010001\",\n       
-        \"gestaoReferencia\"\
-
-        : \"00001\",\n        \"numeroEmpenhoReferencia\": \"2017NE800049\",\n  
-        \
-
-        \     \"numeroListaReferencia\": \"2017LI800095\",\n       
-        \"listaItens\"\
-
-        : [\n       {\n          \"subItemNd\": \"01\",\n         
-        \"quantidade\"\
-
-        : \"000000000000001\",\n          \"valorUnitario\":
-        \"00000000000555555\"\
-
-        ,\n          \"valorTotal\": \"00000000000555555\",\n         
-        \"descricao\"\
-
-        : \"Teste Anulação\"\n        }\n      ],\n       
-        \"numeroTransacaoCliente\"\
-
-        : \"2017TR000043\",\n        \"credencial\": {\n          \"cpf\":
-        \"60165570644\"\
-
-        ,\n          \"ug\": \"010001\",\n          \"sistema\":
-        \"SIAFI2017HM\"\n\
-
-        \      }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n     
-        \"mensagem\"\
-
-        : \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\":
-        [],\n\
-
-        \      \"status\": 200\n    }"
+        Anula uma Nota de Empenho a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/anular
       requestBody:
         description: Dados da Nota de Empenho a ser anulada
         content:
@@ -264,25 +150,11 @@ paths:
         - Nota de Empenho v1
       summary: Consulta Número da Transação
       description: >-
-        "\n## Exemplo\n#### Chamada\n      [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultaTransacao\n\
-
-        #### Conteúdo do corpo\n    {\n      \"numeroTransacaoCliente\":
-        \"2017TR000045\"\
-
-        ,\n      \"credencial\": {\n        \"cpf\": \"60165570644\",\n       
-        \"\
-
-        ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n      }\n   
-        }\n\
-
-        #### Retorno\n    { \n      \"codigo\": 0,\n      \"mensagem\":
-        \"010001000012017NE800058\
-
-        \ 010001000012017LI800104\",\n      \"erros\": [],\n      \"status\":
-        200\n\
-
-        \    }"
+        Consulta uma Transação a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultaTransacao
       requestBody:
         description: Dados da Transação a ser Consultada
         content:
@@ -325,88 +197,11 @@ paths:
         - Nota de Empenho v1
       summary: Consulta Nota de Empenho
       description: >-
-        "\n## Exemplo\n#### Chamada\n    [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultar\n\
-
-        #### Conteúdo do corpo \n\n    {\n      \"ano\": \"2018\",\n     
-        \"ug\":\
-
-        \ \"010001\",\n      \"gestao\": \"00001\",\n      \"numero\":
-        \"800017\"\n\
-
-        \    }\n#### Retorno \n    {\n    codigo: 0\n    mensagem:\n     
-        dataEmissao:\
-
-        \ 14Jun18\n      saldoPagar: ''\n      numeroNota: 2018NE800017\n     
-        ugEmitente:\
-
-        \ '010001'\n      nomeUgEmitente: CAMARA DOS DEPUTADOS\n     
-        gestaoEmitente:\
-
-        \ '00001'\n      nomeGestaoEmitente: TESOURO NACIONAL\n     
-        nomeFavorecido:\
-
-        \ CAMARA DOS DEPUTADOS\n      tipoFavorecido: '4'\n     
-        codigoFavorecido:\
-
-        \ '01000100001'\n      sicaf: ''\n      operacaoCambial: '0000000000'\n 
-        \
-
-        \    observacao: TESTE NE-01\n      evento: '401091'\n      esfera:
-        '1'\n\
-
-        \      ptres: '000001'\n      fonte: '0100000000'\n      codigoND:
-        '339030'\n\
-
-        \      ugResponsavel: 010019\n      planoInterno: AAA\n     
-        valorEmpenho:\
-
-        \ '00000000000000001'\n      tipoEmpenho: ORDINARIO\n     
-        sistemaOrigem:\
-
-        \ APISIAFI\n      docReferenciaOriginal: ''\n      numDocReferencia:
-        ''\n\
-
-        \      passivoAnterior: NAO\n      contaPassivo: ''\n     
-        nomeModalidade:\
-
-        \ NAO SE APLICA\n      nomeAmparo: ''\n      inciso: ''\n     
-        numeroProcesso:\
-
-        \ 103.504/1999\n      indicadorPagPrecatorio: ''\n      siglaUF: DF\n   
-        \
-
-        \  codigoMunicipioBeneficiado: '9701'\n      origemMaterial: NACIONAL\n 
-        \
-
-        \    referenciaDispensa: ''\n      numeroOriginal: ''\n     
-        informacoesLancamentos:\
-
-        \ 'LANCADO POR : 60165570644 - ANDERSON          UG : 010001   14Jun18  
-        14:33'\n\
-
-        \      contaCorrenteFinanceiro: F0100000000\n      contasPermanentes:
-        []\n\
-
-        \      numeroLista: 2018LI800043\n      subItens:\n        - numero:
-        '00'\n\
-
-        \          valor: '01'\n          seq: '000'\n          qtd: ''\n       
-        \
-
-        \  valorTotal: '00000000000000001'\n          descricao: LISTA NE-01\n  
-        \
-
-        \     - numero: '1'\n          valor: ''\n          seq: '000'\n        
-        \
-
-        \ qtd: ''\n          valorTotal: ''\n          descricao: ''\n     
-        subItensSaldo:\n\
-
-        \        - numero: '01'\n          valor: '00000000000000001'\n     
-        nsaldo:\
-
-        \ ''\n    erros: []\n    status: 200\n    }      "
+        Consulta uma Nota de Empenho a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/consultar
       requestBody:
         description: Dados da Nota de Empenho a ser consultada
         content:
@@ -509,100 +304,11 @@ paths:
         - Nota de Empenho v1
       summary: Adiciona Nota de Empenho
       description: >-
-        "\n## Exemplo\n#### Chamada\n      [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/realizar\n\
-
-        #### Conteúdo do corpo\n    {\n        \"dataEmissao\": \"31DEZ17\",\n  
-        \
-
-        \     \"numeroDocumento\": \"\",               \n        \"ugEmitente\":
-        \"\
-
-        010001\",\n        \"gestaoEmitente\": \"00001\",\n       
-        \"numeroLista\"\
-
-        : \"\",\n        \"taxaCambio\": \"\",\n        \"observacao\":
-        \"Inclusao\
-
-        \ de NE\",\n        \"valorTotalEmpenho\": \"555555\",\n       
-        \"numeroProcesso\"\
-
-        : \"0100\",\n        \"numeroOriginalConvenio\": \"0010\",\n       
-        \"passivoAnterior\"\
-
-        : \"N\",\n        \"contaPassivo\": \"\",\n        \"contaValor\": [\n  
-        \
-
-        \      {\n          \"conta\": \"\",\n          \"valor\": \"\"\n       
-        \
-
-        \  }\n        ],\n        \"contaPassivoFinanceiro\": \"string\",\n     
-        \
-
-        \  \"favorecido\": \"75793032720\",\n        \"gestaoFavorecido\":
-        \"\",\n\
-
-        \        \"esferaOrcamentaria\": \"3\",\n        \"codigoUO\": \"\",\n  
-        \
-
-        \     \"codigoProgramaTrabalho\": \"000001\",\n       
-        \"fonteRecursos\":\
-
-        \ \"0100000000\",\n        \"naturezaDespesa\": \"339030\",\n       
-        \"unidadeGestoraResponsavel\"\
-
-        : \"\",\n        \"planoInterno\": \"\",\n       
-        \"indicadorResultado\":\
-
-        \ \"\",\n        \"indicadorTipoCredito\": \"\",\n       
-        \"planoOrcamentario\"\
-
-        : \"\",\n        \"codigoAutorEmenda\": \"\",\n        \"tipoEmpenho\":
-        \"\
-
-        1\",                        \n        \"modalidadeLicitacao\": \"08\",\n
-        \
-
-        \       \"amparoLegal\": \"\",\n        \"inciso\": \"\",\n       
-        \"origemMaterial\"\
-
-        : \"1\",\n        \"municipioBeneficiado\": \"9701\",\n       
-        \"ufBeneficiada\"\
-
-        : \"DF\",\n        \"dataVencimento\": [\n          \"31DEZ17\"\n       
-        ],\n\
-
-        \        \"dataRecebimento\": [\n          \"31DEZ17\"\n        ],\n    
-        \
-
-        \   \"valorCompromisso\": [\n          \"555555\"\n        ],\n       
-        \"\
-
-        listaItens\": [\n          {\n            \"subItemNd\": \"01\",\n      
-        \
-
-        \     \"quantidade\": \"1\",\n            \"valorUnitario\":
-        \"555555\",\n\
-
-        \            \"valorTotal\": \"555555\",\n            \"descricao\":
-        \"Testando\
-
-        \ inclusao de NE\"\n          }\n        ],\n       
-        \"numeroTransacaoCliente\"\
-
-        : \"2017TR000033\",\n        \"credencial\": {\n            \"cpf\":
-        \"60165570644\"\
-
-        ,\n            \"ug\": \"010001\",\n            \"sistema\":
-        \"SIAFI2017HM\"\
-
-        \n        }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n     
-        \"mensagem\"\
-
-        : \"010001000012017NE800054 010001000012017LI800101\",\n      \"erros\":
-        [],\n\
-
-        \      \"status\": 200\n      }\n    }"
+        Realiza uma Nota de Empenho a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/realizar
       requestBody:
         description: Dados da Nota de Empenho a ser adicionada
         content:
@@ -645,67 +351,11 @@ paths:
         - Nota de Empenho v1
       summary: Reforça Nota de Empenho
       description: >-
-        "\n## Exemplo\n#### Chamada\n      [POST]
-        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/reforcar\n\
-
-        #### Conteúdo do corpo\n    {\n      \"dataEmissao\": \"31DEZ17\",\n    
-        \
-
-        \ \"numeroDocumento\": \"\",               \n      \"ugEmitente\":
-        \"010001\"\
-
-        ,\n      \"gestaoEmitente\": \"00001\",\n      \"numeroLista\": \"\",\n 
-        \
-
-        \    \"taxaCambio\": \"\",\n      \"observacao\": \"Reforço de NE\",\n  
-        \
-
-        \   \"valorTotalEmpenho\": \"555555\",\n      \"numeroProcesso\":
-        \"0100\"\
-
-        ,\n      \"numeroOriginalConvenio\": \"0010\",\n     
-        \"passivoAnterior\"\
-
-        : \"N\",\n      \"contaPassivo\": \"\",\n      \"contaValor\": [\n     
-        {\n\
-
-        \        \"conta\": \"\",\n        \"valor\": \"\"\n      }\n    ],\n   
-        \
-
-        \  \"contaPassivoFinanceiro\": \"string\",\n      \"especie\": \"02\",\n
-        \
-
-        \     \"ugReferencia\": \"010001\",\n      \"gestaoReferencia\":
-        \"00001\"\
-
-        ,\n      \"numeroEmpenhoReferencia\": \"2017NE800050\",\n     
-        \"numeroListaReferencia\"\
-
-        : \"2017LI800096\",\n      \"listaItens\": [\n      {\n       
-        \"subItemNd\"\
-
-        : \"01\",\n        \"quantidade\": \"000000000000001\",\n       
-        \"valorUnitario\"\
-
-        : \"00000000000555555\",\n        \"valorTotal\":
-        \"00000000000555555\",\n\
-
-        \        \"descricao\": \"Teste Anulação\"\n      }\n    ],\n     
-        \"numeroTransacaoCliente\"\
-
-        : \"2017TR000046\",\n      \"credencial\": {\n        \"cpf\":
-        \"60165570644\"\
-
-        ,\n        \"ug\": \"010001\",\n        \"sistema\": \"SIAFI2017HM\"\n  
-        \
-
-        \   }\n    }\n#### Retorno\n    { \n      \"codigo\": 0,\n     
-        \"mensagem\"\
-
-        : \"010001000012017NE800059 010001000012017LI800105\",\n      \"erros\":
-        [],\n\
-
-        \      \"status\": 200\n      }\n    }"
+        Reforça uma Nota de Empenho a partir de um json de entrada.
+        
+        ### Chamada
+        
+        https://gateway.apiserpro.serpro.gov.br/integra-siafi-trial/api/v1/ne/reforcar
       requestBody:
         description: Dados da Nota de Empenho a ser reforçada
         content:
