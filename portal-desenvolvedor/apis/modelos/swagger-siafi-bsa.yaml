@@ -1791,48 +1791,13 @@ paths:
         Consulta uma Nota de Dotação Sof a partir dos parâmetros UG, Gestão, Ano
         e Número da ND-Sof
 
+        ### Chamada
 
-        ## Exemplo
-
-        #### Chamada
-
-            https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007
+          https://apigateway.serpro.gov.br/api-integra-siafi-deg/api/v2/nota-dotacao-sof/010001/00001/2019/000007
             
-            No header:
-              x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN
-              (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) 
-
-        #### Retorno
-            {
-              "dataEmissao": "10Jun19",
-              "numeroDocumento": "2019ND000007",
-              "ugEmitente": "010001",
-              "gestaoEmitente": "00001",
-              "nomeUGEmitente": "CAMARA DOS DEPUTADOS 2019",
-              "nomeGestaoEmitente": "TESOURO NACIONAL",
-              "instrumentoLegal": "",
-              "nomeInstrumentoLegal": "TEST",
-              "numeroDecreto": "E",
-              "dataPublicacao": "",
-              "observacao": "20101010110101301", 
-              "taxaCambial": "0553200456", 
-              "listaEventos": [
-                {
-                  "evento": "641000",
-                  "esferaOrcamentaria": "3",
-                  "uo": "39000",
-                  "ptres": "01000A00012019012",
-                  "idoc": "3456",
-                  "naturezaDespesa": "710000",
-                  "fonteRecurso": "000", 
-                  "resultado": "0",
-                  "tipoCredito": "A",
-                  "codigoFuncional": "0001",
-                  "autorEmenda": "201901234567",
-                  "valor": "10000000"  
-                }
-              ]             
-            }
+        ### No header
+        
+          x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64)
       parameters:
         - name: ug
           in: path
@@ -1872,7 +1837,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/notaDotacaoSof'
+                $ref: '#/components/schemas/notaDotacaoSof' 
+              example:
+                dataEmissao: '10Jun19'
+                numeroDocumento: '2019ND000007'
+                ugEmitente: '010001'
+                gestaoEmitente: '00001'
+                nomeUGEmitente: 'CAMARA DOS DEPUTADOS 2019'
+                nomeGestaoEmitente: 'TESOURO NACIONAL'
+                instrumentoLegal: ''
+                nomeInstrumentoLegal: 'TEST'
+                numeroDecreto: 'E'
+                dataPublicacao: ''
+                observacao: '20101010110101301' 
+                taxaCambial: '0553200456' 
+                listaEventos: 
+                  - evento: '641000'
+                    esferaOrcamentaria: '3'
+                    uo: '39000'
+                    ptres: '01000A00012019012'
+                    idoc: '3456'
+                    naturezaDespesa: '710000'
+                    fonteRecurso: '000' 
+                    resultado: '0'
+                    tipoCredito: 'A'
+                    codigoFuncional: '0001'
+                    autorEmenda: '201901234567'
+                    valor: '10000000'                 
         '400':
           description: Algum campo possui informações inválidas
           content: {}
