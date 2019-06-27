@@ -1654,568 +1654,6 @@ paths:
                 lastUpdateAt: '2019-02-18T11:27:06-03:00'
 components:
   schemas:
-    RealizaNE:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        numeroLista:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        valorTotalEmpenho:
-          type: string
-        numeroProcesso:
-          type: string
-        numeroOriginalConvenio:
-          type: string
-        passivoAnterior:
-          type: string
-        contaPassivo:
-          type: string
-        contaValor:
-          type: object
-          properties:
-            conta:
-              type: string
-            valor:
-              type: string
-        contaPassivoFinanceiro:
-          type: string
-        favorecido:
-          type: string
-        gestaoFavorecido:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        codigoUO:
-          type: string
-        ptres:
-          type: string
-        fonteRecursos:
-          type: string
-        naturezaDespesa:
-          type: string
-        unidadeGestoraResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        indicadorResultado:
-          type: string
-        indicadorTipoCredito:
-          type: string
-        planoOrcamentario:
-          type: string
-        codigoAutorEmenda:
-          type: string
-        tipoEmpenho:
-          type: string
-        modalidadeLicitacao:
-          type: string
-        amparoLegal:
-          type: string
-        inciso:
-          type: string
-        origemMaterial:
-          type: string
-        municipioBeneficiado:
-          type: string
-        ufBeneficiada:
-          type: string
-        dataVencimento:
-          type: string
-        dataRecebimento:
-          type: string
-        valorCompromisso:
-          type: string
-        listaItens:
-          type: object
-          properties:
-            subItemNd:
-              type: string
-            valorTotal:
-              type: string
-            quantidade:
-              type: string
-            valorUnitario:
-              type: string
-            descricao:
-              type: string
-    EventoNC:
-      type: object
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        ptres:
-          type: string
-        fonteRecurso:
-          type: string
-        naturezaDespesa:
-          type: string
-        subitem:
-          type: string
-        ugResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        valor:
-          type: string
-    EventoND:
-      type: object
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        unidadeOrcamentaria:
-          type: string  
-        ptres:
-          type: string
-        fonteRecurso:
-          type: string
-        naturezaDespesa:
-          type: string
-        subitemND:
-          type: string
-        ugr:
-          type: string
-        planoInterno:
-          type: string
-        valor:
-          type: string
-    GeraNL:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        favorecido:
-          type: string
-        gestaoFavorecido:
-          type: string
-        numero:
-          type: string
-        dataValidacao:
-          type: string
-        taxaCambio:
-          type: string
-        tituloCredito:
-          type: string
-        dataVencimento:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNL'
-    NLGerada:
-      type: object
-      properties:
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    notaBloqueioConsulta:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        nomeUGEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        nomeGestaoEmitente:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNDBloqueioConsulta'
-    notaBloqueioInclusao:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNDBloqueioInclusao'
-    NotaCredito:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numero:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        ugFavorecida:
-          type: string
-        gestaoFavorecida:
-          type: string
-        taxaCambio:
-          type: string
-        numeroTransferencia:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNC'
-    GeraNC:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numero:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        ugFavorecida:
-          type: string
-        gestaoFavorecida:
-          type: string
-        taxaCambio:
-          type: string
-        numeroTransferencia:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNC'
-    notaDotacaoSof:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        nomeUGEmitente:
-          type: string
-        nomeGestaoEmitente:
-          type: string
-        instrumentoLegal:
-          type: string
-        nomeInstrumentoLegal:
-          type: string
-        numeroDecreto:
-          type: string
-        dataPublicacao:
-          type: string
-        observacao:
-          type: string
-        taxaCambial:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConsultaEventoNDSof'
-    GeraND:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        ugFavorecida:
-          type: string
-        gestaoFavorecido:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoND'
-    EventosNDDetOrc:
-      type: object
-      properties:
-        reducaoAcrescimos:
-          type: string
-        sequencialFonte:
-          type: string
-        modalidadeAplicacao:
-          type: string
-        elementoDespesa:
-          type: string
-        subitemND:
-          type: string
-        codigoUGResponsavel:
-          type: string
-        planoInterno:
-          type: string
-        valor:
-          type: string
-    NDGerada:
-      type: object
-      properties:
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    NDDetOrcGerada:
-      type: object
-      properties:
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    EventoNDBloqueioConsulta:
-      type: object
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        ptres:
-          type: string
-        idoc:
-          type: string
-        naturezaDespesa:
-          type: string
-        fonte:
-          type: string
-        valor:
-          type: string
-    EventoNDBloqueioInclusao:
-      type: object
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        unidadeOrcamentaria:
-          type: string
-        ptres:
-          type: string
-        idoc:
-          type: string
-        naturezaDespesa:
-          type: string
-        grupoFonte:
-          type: string
-        resultado:
-          type: string
-        tipoCredito:
-          type: string
-        planoOrcamentario:
-          type: string
-        autorEmenda:
-          type: string
-        valor:
-          type: string
-    ConsultaNDDetOrc:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        especieND:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        nomeUGEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        fonteRecurso:
-          type: string
-        categoriaDespesa:
-          type: string
-        codigoInstrumentoLegal:
-          type: string
-        numeroInstrumentoLegal:
-          type: string
-        dataPublicacao:
-          type: string
-        taxaCambio:
-          type: string
-        ptres:
-          type: string
-        idoc:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventosNDDetOrc'
-    listaItens:
-      type: object
-      properties:
-        subItemNd:
-          type: string
-        quantidade:
-          type: string
-        valorUnitario:
-          type: string
-        descricao:
-          type: string
-    NCGerada:
-      type: object
-      properties:
-        ug:
-          type: string
-        gestao: 
-          type: string 
-        numero:
-          type: string
-    NotaDotacao:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        numeroDocumento:
-          type: string
-        ugEmitente:
-          type: string
-        nomeUgEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        favorecido:
-          type: string
-        nomeFavorecido:
-          type: string
-        taxaCambio:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoND'
-    EventoNL:
-      type: object
-      properties:
-        evento:
-          type: string
-        inscricao1:
-          type: string
-        inscricao2:
-          type: string
-        classificacao1:
-          type: string
-        classificacao2:
-          type: string
-        classOrcamentaria1:
-          type: string
-        classOrcamentaria2:
-          type: string
-        valor:
-          type: string
-        numeroReferencia:
-          type: string
-    ListaDocumentos:
-      type: object
-      properties:
-        ugEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        numeroDocumento:
-          type: string
-        tipoNd:
-          type: string
-    Status:
-      type: object
-      properties:
-        lastUpdateAt:
-          type: string
-          format: date-time
-    Documentos:
-      type: object
-      properties:
-        data:
-          type: string
-        listaDocumentos:
-          type: array
-          items:
-            $ref: '#/components/schemas/ListaDocumentos'
-    ConsultaEventoNDSof:
-      type: object
-      properties:
-        evento:
-          type: string
-        esferaOrcamentaria:
-          type: string
-        uo:
-          type: string
-        ptres:
-          type: string
-        idoc:
-          type: string
-        naturezaDespesa:
-          type: string
-        fonteRecurso:
-          type: string
-        resultado:
-          type: string
-        tipoCredito:
-          type: string
-        codigoFuncional:
-          type: string
-        autorEmenda:
-          type: string
-        valor:
-          type: string
     DadosNE:
       type: object
       properties:
@@ -2313,51 +1751,101 @@ components:
             $ref: '#/components/schemas/subItemSaldo'
         nsaldo:
           type: string
-    GeraNDDetOrc:
+    RealizaNE:
       type: object
       properties:
         dataEmissao:
-          type: string
-        especieND:
           type: string
         numeroDocumento:
           type: string
         ugEmitente:
           type: string
-        nomeUGEmitente:
-          type: string
         gestaoEmitente:
           type: string
-        esferaOrcamentaria:
-          type: string
-        unidadeOrcamentaria:
-          type: string
-        indicadorResultado:
-          type: string
-        indicadorCredito:
-          type: string
-        planoOrcamentario:
-          type: string
-        codigoAutorEmenda:
-          type: string
-        fonteRecurso:
-          type: string
-        categoriaDespesa:
-          type: string
-        codigoInstrumentoLegal:
-          type: string
-        numeroInstrumentoLegal:
-          type: string
-        dataPublicacao:
+        numeroLista:
           type: string
         taxaCambio:
           type: string
         observacao:
           type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventosNDDetOrc'
+        valorTotalEmpenho:
+          type: string
+        numeroProcesso:
+          type: string
+        numeroOriginalConvenio:
+          type: string
+        passivoAnterior:
+          type: string
+        contaPassivo:
+          type: string
+        contaValor:
+          type: object
+          properties:
+            conta:
+              type: string
+            valor:
+              type: string
+        contaPassivoFinanceiro:
+          type: string
+        favorecido:
+          type: string
+        gestaoFavorecido:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        codigoUO:
+          type: string
+        ptres:
+          type: string
+        fonteRecursos:
+          type: string
+        naturezaDespesa:
+          type: string
+        unidadeGestoraResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        indicadorResultado:
+          type: string
+        indicadorTipoCredito:
+          type: string
+        planoOrcamentario:
+          type: string
+        codigoAutorEmenda:
+          type: string
+        tipoEmpenho:
+          type: string
+        modalidadeLicitacao:
+          type: string
+        amparoLegal:
+          type: string
+        inciso:
+          type: string
+        origemMaterial:
+          type: string
+        municipioBeneficiado:
+          type: string
+        ufBeneficiada:
+          type: string
+        dataVencimento:
+          type: string
+        dataRecebimento:
+          type: string
+        valorCompromisso:
+          type: string
+        listaItens:
+          type: object
+          properties:
+            subItemNd:
+              type: string
+            valorTotal:
+              type: string
+            quantidade:
+              type: string
+            valorUnitario:
+              type: string
+            descricao:
+              type: string
     AtualizaNE:
       type: object
       properties:
@@ -2417,15 +1905,6 @@ components:
               type: string
             descricao:
               type: string
-    Credencial:
-      type: object
-      properties:
-        cpf:
-          type: string
-        ug:
-          type: string
-        sistema:
-          type: string
     AlteraNE:
       type: object
       properties:
@@ -2471,108 +1950,6 @@ components:
           type: string
         credencial:
           $ref: '#/components/schemas/Credencial'
-    subItemSaldo:
-      type: object
-      properties:
-        numero:
-          type: string
-        valor:
-          type: string
-    subItem:
-      type: object
-      properties:
-        numero:
-          type: string
-        valor:
-          type: string
-        seq:
-          type: string
-        qtd:
-          type: string
-        valorTotal:
-          type: string
-        descricao:
-          type: string
-    Conta:
-      type: object
-      properties:
-        conta:
-          type: string
-        valor:
-          type: string
-    NotaLancamento:
-      type: object
-      properties:
-        dataEmissao:
-          type: string
-        ugEmitente:
-          type: string
-        nomeUgEmitente:
-          type: string
-        gestaoEmitente:
-          type: string
-        nomeGestaoEmitente:
-          type: string
-        favorecido:
-          type: string
-        nomeFavorecido:
-          type: string
-        gestaoFavorecido:
-          type: string
-        nomeGestaoFavorecido:
-          type: string
-        numero:
-          type: string
-        dataValidacao:
-          type: string
-        taxaCambio:
-          type: string
-        tituloCredito:
-          type: string
-        dataVencimento:
-          type: string
-        sistemaOrigem:
-          type: string
-        observacao:
-          type: string
-        listaEventos:
-          type: array
-          items:
-            $ref: '#/components/schemas/EventoNL'
-    ConsultaNE:
-      type: object
-      properties:
-        ano:
-          type: string
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    NDBloqueioGerada:
-      type: object
-      properties:
-        ug:
-          type: string
-        gestao:
-          type: string
-        numero:
-          type: string
-    ConsultaTransacao:
-      type: object
-      properties:
-        numeroTransacaoCliente:
-          type: string
-        credencial:
-          type: object
-          properties:
-            ug:
-              type: string
-            sistema:
-              type: string
-            cpf:
-              type: string
     ReforcaNE:
       type: object
       properties:
@@ -2643,15 +2020,6 @@ components:
               type: string
             cpf:
               type: string
-    NE:
-      type: object
-      properties:
-        numeroCliente:
-          type: integer
-        numeroListaEmpenho:
-          type: string
-        numeroDocGerado:
-          type: string
     AnulaNE:
       type: object
       properties:
@@ -2697,6 +2065,664 @@ components:
           type: string
         credencial:
           $ref: '#/components/schemas/Credencial'
+    ConsultaTransacao:
+      type: object
+      properties:
+        numeroTransacaoCliente:
+          type: string
+        credencial:
+          type: object
+          properties:
+            ug:
+              type: string
+            sistema:
+              type: string
+            cpf:
+              type: string
+    ConsultaNE:
+      type: object
+      properties:
+        ano:
+          type: string
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+    NE:
+      type: object
+      properties:
+        numeroCliente:
+          type: integer
+        numeroListaEmpenho:
+          type: string
+        numeroDocGerado:
+          type: string
+    subItemSaldo:
+      type: object
+      properties:
+        numero:
+          type: string
+        valor:
+          type: string
+    subItem:
+      type: object
+      properties:
+        numero:
+          type: string
+        valor:
+          type: string
+        seq:
+          type: string
+        qtd:
+          type: string
+        valorTotal:
+          type: string
+        descricao:
+          type: string    
+    listaItens:
+      type: object
+      properties:
+        subItemNd:
+          type: string
+        quantidade:
+          type: string
+        valorUnitario:
+          type: string
+        descricao:
+          type: string
+    Conta:
+      type: object
+      properties:
+        conta:
+          type: string
+        valor:
+          type: string
+    Credencial:
+      type: object
+      properties:
+        cpf:
+          type: string
+        ug:
+          type: string
+        sistema:
+          type: string
+          
+          
+          
+    NotaCredito:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numero:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        ugFavorecida:
+          type: string
+        gestaoFavorecida:
+          type: string
+        taxaCambio:
+          type: string
+        numeroTransferencia:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNC'
+    GeraNC:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numero:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        ugFavorecida:
+          type: string
+        gestaoFavorecida:
+          type: string
+        taxaCambio:
+          type: string
+        numeroTransferencia:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNC'
+    EventoNC:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        ptres:
+          type: string
+        fonteRecurso:
+          type: string
+        naturezaDespesa:
+          type: string
+        subitem:
+          type: string
+        ugResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        valor:
+          type: string   
+    NCGerada:
+      type: object
+      properties:
+        ug:
+          type: string
+        gestao: 
+          type: string 
+        numero:
+          type: string
+          
+          
+          
+    NotaDotacao:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUgEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        favorecido:
+          type: string
+        nomeFavorecido:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoND'
+    GeraND:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        ugFavorecida:
+          type: string
+        gestaoFavorecido:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoND'
+    EventoND:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        unidadeOrcamentaria:
+          type: string  
+        ptres:
+          type: string
+        fonteRecurso:
+          type: string
+        naturezaDespesa:
+          type: string
+        subitemND:
+          type: string
+        ugr:
+          type: string
+        planoInterno:
+          type: string
+        valor:
+          type: string
+    NDGerada:
+      type: object
+      properties:
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+          
+          
+          
+    NotaLancamento:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUgEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        nomeGestaoEmitente:
+          type: string
+        favorecido:
+          type: string
+        nomeFavorecido:
+          type: string
+        gestaoFavorecido:
+          type: string
+        nomeGestaoFavorecido:
+          type: string
+        numero:
+          type: string
+        dataValidacao:
+          type: string
+        taxaCambio:
+          type: string
+        tituloCredito:
+          type: string
+        dataVencimento:
+          type: string
+        sistemaOrigem:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNL'
+    GeraNL:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        favorecido:
+          type: string
+        gestaoFavorecido:
+          type: string
+        numero:
+          type: string
+        dataValidacao:
+          type: string
+        taxaCambio:
+          type: string
+        tituloCredito:
+          type: string
+        dataVencimento:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNL'
+    NLGerada:
+      type: object
+      properties:
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+    EventoNL:
+      type: object
+      properties:
+        evento:
+          type: string
+        inscricao1:
+          type: string
+        inscricao2:
+          type: string
+        classificacao1:
+          type: string
+        classificacao2:
+          type: string
+        classOrcamentaria1:
+          type: string
+        classOrcamentaria2:
+          type: string
+        valor:
+          type: string
+        numeroReferencia:
+          type: string
+          
+          
+          
+    notaBloqueioConsulta:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUGEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        nomeGestaoEmitente:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNDBloqueioConsulta'
+    notaBloqueioInclusao:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventoNDBloqueioInclusao'
+    EventoNDBloqueioConsulta:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        ptres:
+          type: string
+        idoc:
+          type: string
+        naturezaDespesa:
+          type: string
+        fonte:
+          type: string
+        valor:
+          type: string
+    EventoNDBloqueioInclusao:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        unidadeOrcamentaria:
+          type: string
+        ptres:
+          type: string
+        idoc:
+          type: string
+        naturezaDespesa:
+          type: string
+        grupoFonte:
+          type: string
+        resultado:
+          type: string
+        tipoCredito:
+          type: string
+        planoOrcamentario:
+          type: string
+        autorEmenda:
+          type: string
+        valor:
+          type: string    
+    NDBloqueioGerada:
+      type: object
+      properties:
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+            
+            
+            
+    notaDotacaoSof:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        nomeUGEmitente:
+          type: string
+        nomeGestaoEmitente:
+          type: string
+        instrumentoLegal:
+          type: string
+        nomeInstrumentoLegal:
+          type: string
+        numeroDecreto:
+          type: string
+        dataPublicacao:
+          type: string
+        observacao:
+          type: string
+        taxaCambial:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConsultaEventoNDSof'
+    ConsultaEventoNDSof:
+      type: object
+      properties:
+        evento:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        uo:
+          type: string
+        ptres:
+          type: string
+        idoc:
+          type: string
+        naturezaDespesa:
+          type: string
+        fonteRecurso:
+          type: string
+        resultado:
+          type: string
+        tipoCredito:
+          type: string
+        codigoFuncional:
+          type: string
+        autorEmenda:
+          type: string
+        valor:
+          type: string
+          
+          
+          
+    GeraNDDetOrc:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        especieND:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUGEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        unidadeOrcamentaria:
+          type: string
+        indicadorResultado:
+          type: string
+        indicadorCredito:
+          type: string
+        planoOrcamentario:
+          type: string
+        codigoAutorEmenda:
+          type: string
+        fonteRecurso:
+          type: string
+        categoriaDespesa:
+          type: string
+        codigoInstrumentoLegal:
+          type: string
+        numeroInstrumentoLegal:
+          type: string
+        dataPublicacao:
+          type: string
+        taxaCambio:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventosNDDetOrc'
+    EventosNDDetOrc:
+      type: object
+      properties:
+        reducaoAcrescimos:
+          type: string
+        sequencialFonte:
+          type: string
+        modalidadeAplicacao:
+          type: string
+        elementoDespesa:
+          type: string
+        subitemND:
+          type: string
+        codigoUGResponsavel:
+          type: string
+        planoInterno:
+          type: string
+        valor:
+          type: string
+    NDDetOrcGerada:
+      type: object
+      properties:
+        ug:
+          type: string
+        gestao:
+          type: string
+        numero:
+          type: string
+    ConsultaNDDetOrc:
+      type: object
+      properties:
+        dataEmissao:
+          type: string
+        especieND:
+          type: string
+        numeroDocumento:
+          type: string
+        ugEmitente:
+          type: string
+        nomeUGEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        esferaOrcamentaria:
+          type: string
+        fonteRecurso:
+          type: string
+        categoriaDespesa:
+          type: string
+        codigoInstrumentoLegal:
+          type: string
+        numeroInstrumentoLegal:
+          type: string
+        dataPublicacao:
+          type: string
+        taxaCambio:
+          type: string
+        ptres:
+          type: string
+        idoc:
+          type: string
+        observacao:
+          type: string
+        listaEventos:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventosNDDetOrc'
+            
+            
+            
+    Documentos:
+      type: object
+      properties:
+        data:
+          type: string
+        listaDocumentos:
+          type: array
+          items:
+            $ref: '#/components/schemas/ListaDocumentos'          
+    ListaDocumentos:
+      type: object
+      properties:
+        ugEmitente:
+          type: string
+        gestaoEmitente:
+          type: string
+        numeroDocumento:
+          type: string
+        tipoNd:
+          type: string
+          
+          
+          
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time
+          
+
   securitySchemes:
     APIKEY:
       type: apiKey
