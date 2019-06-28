@@ -16,7 +16,7 @@
   "info": {
     "version": "1",
     "title": "API Consulta CEP",
-    "description": "A API `Consulta CEP` é disponibilizada através de serviço `HTTP REST`. O objetivo da API Consulta CEP é disponibilizar um determinado endereço a partir do CEP\n## CEPs para Degustação\n| CEP | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 31035536 | true |                 |\n| 66077830 | true |                 |\n| 80520170 | true |                 |\n| 88032000 | true |                 |\n| 90010390 | true |                 |\n| 52060901 | true |                 |\n| 41130530 | true |                 |"
+    "description": "A API `Consulta CEP` é disponibilizada através de serviço `HTTP REST`. O objetivo da API Consulta CEP é disponibilizar um determinado endereço a partir do CEP"
   },
   "basePath": "/api",
   "paths": {
@@ -28,7 +28,7 @@
         "summary": "Consulta CEP",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\nApresenta o endereço referente a um CEP\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/consulta/cep/60130240\n    \n  #### Retorno\n  \n    {\n      \"bairro:\":\"São João do Tauape\",\n      \"cep:\":\"60130240\",\n      \"cidade:\":\"Fortaleza\",\n      \"complemento2:\":\"- até 1550 - lado par\",\n      \"end:\":\"Avenida Pontes Vieira\",\n      \"uf:\":\"CE\" ",
+        "description": "\nApresenta o endereço referente a um CEP\n## CEPs para Degustação\n| CEP | Retorno | Observações |\n| ---------------------- | ---------------------- | :------------------------------------------------------------- |\n| 31035536 | true |                 |\n| 66077830 | true |                 |\n| 80520170 | true |                 |\n| 88032000 | true |                 |\n| 90010390 | true |                 |\n| 52060901 | true |                 |\n| 41130530 | true |                 |\n--------------------------  \n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/consulta/cep/60130240\n    \n  #### Retorno\n  \n    {\n      \"bairro:\":\"São João do Tauape\",\n      \"cep:\":\"60130240\",\n      \"cidade:\":\"Fortaleza\",\n      \"complemento2:\":\"- até 1550 - lado par\",\n      \"end:\":\"Avenida Pontes Vieira\",\n      \"uf:\":\"CE\" ",
         "produces": [
           "application/json"
         ],
