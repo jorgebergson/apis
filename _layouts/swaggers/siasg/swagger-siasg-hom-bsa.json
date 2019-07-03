@@ -20,25 +20,29 @@
   },
   "basePath": "/api/siasg",
   "paths": {
-    "/siasg/empenho/{json}": {
-      "get": {
+    "/siasg/empenho/{body}": {
+      "post": {
         "tags": [
-          "Emepenho SIASG"
+          "Empenho SIASG"
         ],
-        "summary": "Emepnho SIASG",
+        "summary": "Empenho SIASG",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/siasg/empenho\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  \n    ",
+        "description": "\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/siasg/empenho\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  ",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "json",
-            "in": "path",
-            "description": "(JSON)",
+            "name": "body",
+            "in": "body",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/BodyEmpenho"
+            }
           }
         ],
         "responses": {
@@ -62,12 +66,10 @@
     "https"
   ],
   "definitions": {
-    "Mensagem": {
-      "type": "object",
+    "BodyEmpenho": {
       "properties": {
-        "retorno": {
-          "type": "string",
-          "description": "mensagem de retorno"
+        "json": {
+          "type": "string"
         }
       }
     }
