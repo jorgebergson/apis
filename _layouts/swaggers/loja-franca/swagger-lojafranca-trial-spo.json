@@ -35,7 +35,7 @@
           "2 Padrões"
         ],
         "summary": "Formatos e Tipos de Dados",
-        "description": "\nOs seguintes tipos de dados são utilizados pela API Integra Loja Franca:\n\n| Tipos | Descrição | Formato\n| ---------------------- | :------------------------------------------------------------- | ------------------ |\n| string        | Cadeia de caracteres |\n| string - data     | String com formato de data  | yyyy-MM-dd\n| string - data/hora | String com formato de data e hora | yyyy-MM-ddTHH:mm:ss\n| integer | Número inteiro que representa códigos e identificadores |\n| number | Número inteiro em situações que pode passar do valor 2^31-1 |\n| decimal | Número fracionado, sempre com duas casas após o decimal, separado por \".\" | Ex: 123456789012.22 (Exceto cotação do dólar, que pode ter até 3 casas após o decimal)."
+        "description": "\n Os seguintes tipos de dados são utilizados pela API Integra Loja Franca:\n\n| Tipos | Descrição | Formato\n| ---------------------- | :------------------------------------------------------------- | ------------------ |\n| string        | Cadeia de caracteres |\n| string - data     | String com formato de data  | yyyy-MM-dd\n| string - data/hora | String com formato de data e hora | yyyy-MM-ddTHH:mm:ss\n| integer | Número inteiro que representa códigos e identificadores |\n| number | Número inteiro em situações que pode passar do valor 2^31-1 |\n| decimal | Número fracionado, sempre com duas casas após o decimal, separado por \".\" | Ex: 123456789012.22 (Exceto cotação do dólar, que pode ter até 3 casas após o decimal)."
       },
       "responses": {}
     },
