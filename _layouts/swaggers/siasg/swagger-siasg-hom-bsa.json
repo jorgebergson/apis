@@ -20,7 +20,7 @@
   },
   "basePath": "/api/siasg",
   "paths": {
-    "/siasg/empenho/{body}": {
+    "/siasg/empenho/": {
       "post": {
         "tags": [
           "Empenho SIASG"
@@ -28,7 +28,7 @@
         "summary": "Empenho SIASG",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": "\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/siasg/empenho\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  ",
+        "description": "\n## Exemplo\n\n  #### Chamada\n  \n    https://apimock.estaleiro.serpro.gov.br/api/siasg/empenho\n    \n    {\n    especieEmpenho: '01'\n    cpfUsuario: '26551071104'\n    uasgUsuario: '806030'\n    uasgLicitacao: '803080'\n    modalidadeLicitacao: '01'\n    numeroLicitacao: '00001'\n    anoLicitacao: '2019'\n    classificacaoContabil: '33903001'\n    estrutura:\n      ugPagamento: '806030'\n      fonte: 0109017205\n      gestao: '17205'\n      ptres: '7740'\n      pi: SE6320\n      ugResponsavel: '808119'\n      valor: 100\n    ugEmitente: '806030'\n    gestaoEmitente: '17205'\n    anoMinuta: '2019'\n    numeroMinuta: '000000'\n    servicoMaterial: '?'\n    dataEmissao: '20190424'\n    niFavorecido: 00000000000191\n    ugFavorecido: ''\n    gestaoFavorecido: ''\n    finaObs: TESTE DA API VIA WEB SERVICE\n    esfera: '4'\n    modalidadeEmpenho: '3'\n    valorEmpenho: 1\n    amparoLegal: ''\n    inciso: '01'\n    taxaCambio: 374\n    processo: ''\n    origemMaterial: '1'\n    munBeneficiado: ''\n    ufBeneficiada: ''\n    ugReferencia: ''\n    gestaoReferencia: ''\n    numeroEmpenhoOriginal: ''\n    inscricaoGenerica: ''\n    itens:\n      - item: 1\n        itensEmpenhar: 1\n        valorUnitario: 100\n    cronogramas:\n      - dataLiquidacao: '20191001'\n        dataVencimento: '20191002'\n        valorCompromisso: 100\n    quantidadeRefAnu: ''\n    nivelAcesso: ''\n    plurianual: S\n    passivoAnterior: 'N'\n    contaPassivo: ''\n    grContaCorrentes: ''\n    contaCorrenteF: ''\n    }\n    \n  #### Retorno\n  \n  {\n    \"retorno(200):\",\n    \"mensagem\": \"FOI GERADO O EMPENHO 800186 NO SIAFI\"\n  }\n\n  {\"retorno(400)\",\n  \"codigoErro\":\"5652\",\"mensagem\":\"ESPECIE DE EMPENHO INVALIDA INFORME 01, 02 OU 03.\"}\n  ",
         "consumes": [
           "application/json"
         ],
@@ -67,11 +67,7 @@
   ],
   "definitions": {
     "BodyEmpenho": {
-      "properties": {
-        "json": {
-          "type": "string"
-        }
-      }
+      "properties": null
     }
   }
 }
