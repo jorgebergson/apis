@@ -16,7 +16,7 @@
   "info": {
     "version": "1",
     "title": "Integra Loja Franca",
-    "description": "<br>\n## Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |--------------------|----------------------------------------------------------------------------- |\n| &nbsp;           | &nbsp;    | &nbsp;  | \n |400           | Requisição inválida    | O parâmetro de entrada informado não é válido.       |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 404           | Not found    | O parâmetro de entrada informado não foi encontrado.  |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n## Endereço de Produção \nhttps://apigateway.serpro.gov.br/api-loja-franca/api/\n    \n## Endereço de Degustação\nhttps://apigateway.serpro.gov.br/api-loja-franca-trial/api/"
+    "description": "<br>\n### Códigos de Retorno não Tarifados \n|  Código de retorno |  Resumido |  Explicação |\n| ------------- |--------------------|----------------------------------------------------------------------------- |\n| &nbsp;           | &nbsp;    | &nbsp;  | \n |400           | Requisição inválida    | O parâmetro de entrada informado não é válido.       |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 404           | Not found    | O parâmetro de entrada informado não foi encontrado.  |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 500           | Erro no Servidor | Ocorreu algum erro no servidor.      |\n### Endereço de Produção \nhttps://apigateway.serpro.gov.br/api-loja-franca/api/\n    \n### Endereço de Degustação\nhttps://apigateway.serpro.gov.br/api-loja-franca-trial/api/"
   },
   "basePath": "/api-loja-franca/api",
   "paths": {
