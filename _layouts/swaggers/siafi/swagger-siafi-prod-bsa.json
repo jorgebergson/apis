@@ -1433,7 +1433,7 @@
         }
       }
     },
-    "GeraNotaBloqueio": {
+    "GeraNotaBloqueio":  {
       "properties": {
         "dataEmissao": {
           "type": "string"
