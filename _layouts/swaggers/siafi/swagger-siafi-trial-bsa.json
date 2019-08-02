@@ -334,6 +334,13 @@
             "description": "Número da Nota de Crédito",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "x-credencial",
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
