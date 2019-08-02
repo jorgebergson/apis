@@ -236,14 +236,29 @@
           }
         ],
         "responses": {
-          "disponível": {
-            "description": "Retorna true quando a pessoa possuir uma foto de face cadastrada nas bases do governo, o que possibilita a Biometria facial ou false caso contrário."
+          "200": {
+            "description": "<b> OK - </b> Tudo funcionou como esperado e a validação dos dados foi realizada com sucesso.",
+            "schema": {
+              "$ref": "#/definitions/ValidacaoPFFace"
+            }
           },
-          "probabilidade": {
-            "description": "Retorna a faixa de probabilidade da face da pessoa ser a mesma face cadastrada nas bases do governo. Existem 4 faixas possíveis:\"Altíssima probabilidade\", \"Alta probabilidade\", \"Baixa probabilidade\", \"Baixíssima probabilidade\"."
+          "400": {
+            "description": "<b>Requisição inválida - </b> \n  A requisição não foi aceita poís existe alguma iconsistência em algum campo da requisição.Confira se as propriedades do corpo da requisição estão de acordo com a propriedades esperadas pelo método e se corpo da requisição está codificado em UTF-8."
           },
-          "similaridade": {
-            "description": "Percentual de similaridade entre a face enviada e face cadastrada nas bases do governo: <br/><br/>- Valores acima de 93% indicam Altíssima probabilidade <br/>- Valores entre de 85% e 93% indicam Alta probabilidade <br/>- Valores entre de 32% e 85% indicam Baixa probabilidade <br/>- Valores inferiores a 32% indicam Baixíssima probabilidade"
+          "401": {
+            "description": "<b>Não autorizado - </b>Problemas durante a autenticação."
+          },
+          "422": {
+            "description": "<b>Validação não processada - </b> A validação não pode ser processada por que algum valor inválido foi enviado na requisição.  Os valores invalidos são listadas na resposta.",
+            "schema": {
+              "$ref": "#/definitions/UnprocessableEntity"
+            }
+          },
+          "500": {
+            "description": "<b>Erro no servidor - </b> Ocorreu algum erro interno. "
+          },
+          "503": {
+            "description": "<b>Serviço Indisponível - </b> Algum serviço integrado ao Datavalid está indisponível no momento."
           }
         }
       }
@@ -1310,6 +1325,43 @@
       }
     },
     "ValidacaoPF": {
+      "type": "object",
+      "properties": {
+        "nome": {
+          "type": "boolean"
+        },
+        "nome_similaridade": {
+          "description": "Percentual de similaridade",
+          "type": "number",
+          "format": "double"
+        },
+        "sexo": {
+          "type": "boolean"
+        },
+        "data_nascimento": {
+          "type": "boolean"
+        },
+        "situacao_cpf": {
+          "type": "boolean"
+        },
+        "filiacao": {
+          "$ref": "#/definitions/ValidacaoFiliacao"
+        },
+        "nacionalidade": {
+          "type": "boolean"
+        },
+        "endereco": {
+          "$ref": "#/definitions/ValidacaoEndereco"
+        },
+        "documento": {
+          "$ref": "#/definitions/ValidacaoDocumento"
+        },
+        "cnh": {
+          "$ref": "#/definitions/ValidacaoCNHv1"
+        }
+      }
+    },
+    "ValidacaoPFFace": {
       "type": "object",
       "properties": {
         "nome": {
