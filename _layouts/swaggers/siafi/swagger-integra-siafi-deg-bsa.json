@@ -16,7 +16,7 @@
   "info": {
     "version": "api",
     "title": "Integração SIAFI (api-siafi)",
-    "description": "Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n<br>\n## Horário de Funcionamento \n A API Integra SIAFI funciona das 09:00 às 22:00 hs. Fora deste horário a API retornará o código 403, indicando que a API está fora do horário de funcionamento. \n<br>\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- |\n| 403           | Api Indisponível    | Api fora do horário de funcionamento  |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 500 | Erro no Servidor | Ocorreu algum erro no servidor | \n<br>\n  ## Endereço de Degustação \n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api \n    "
+    "description": "Para informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nO serviço `Integração SIAFI` é disponibilizado através do `HTTP REST` oferencendo operações de lançamento ao SIAFI.\n<br>\n## Horário de Funcionamento \n A API Consulta Dívida Ativa funciona das 09:00 às 22:00 hs. Fora deste horário a API retornará o código 403, indicando que a API está fora do horário de funcionamento. \n<br>\n## Códigos de  Retorno não Tarifados \n| Código de retorno | Resumido | Explicação | \n| ------------- | :-------------------- | :------------------------------------------------------------------------------- |\n| 403           | Api Indisponível    | Api fora do horário de funcionamento  |\n| &nbsp;           | &nbsp;    | &nbsp;  |\n| 500 | Erro no Servidor | Ocorreu algum erro no servidor | \n<br>\n  ## Campo cabeçalho da requisição (X-Request-Tag)\n\n  Este campo é opcional na utilização das chamadas às APIs / Datavalid e serve como identificador de requisições. Caso uma empresa necessite, por exemplo, agrupar a quantidade de requisições realizadas por cada departamento, poderá utilizar este campo de forma a identificar no faturamento a quantidade de requisições de cada item agrupador. \n<br><br>\n O campo é de texto livre (string até 32 caracteres) e não possui validação de seu conteúdo. Cabe, portanto, ao cliente manter o controle das informações que são enviadas para esse campo de forma que o relatório de faturamento faça o agrupamento adequado. \n<br><br>\n Este atributo pode ser usado pela entidade de classe e/ou grupo econômico na modalidade global com ônus entidade para fins de identificação do associado que realiza a requisição. No caso de entidades de classe ou grupos econômicos que realizem a contratação com ônus para o associado não é necessário realizar o agrupamento pois cada associado irá possuir sua própria chave de consumo. \n<br>\n ## Degustação \n ### Endereço base de Degustação \n    https://apigateway.serpro.gov.br/api-integra-siafi-deg/api \n    "
   },
   "basePath": "/api-integra-siafi-trial/api",
   "paths": {
@@ -45,6 +45,12 @@
             "schema": {
               "$ref": "#/definitions/ConsultaNE"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -91,6 +97,12 @@
             "schema": {
               "$ref": "#/definitions/RealizaNE"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -137,6 +149,12 @@
             "schema": {
               "$ref": "#/definitions/AlteraNE"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -183,6 +201,12 @@
             "schema": {
               "$ref": "#/definitions/AnulaNE"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -229,6 +253,12 @@
             "schema": {
               "$ref": "#/definitions/ReforcaNE"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -275,6 +305,12 @@
             "schema": {
               "$ref": "#/definitions/ConsultaTransacao"
             }
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -341,6 +377,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -394,6 +436,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -441,6 +489,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -511,6 +565,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -563,6 +623,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -633,6 +699,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -685,6 +757,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -755,6 +833,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -807,6 +891,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -877,6 +967,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -926,6 +1022,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -996,6 +1098,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -1045,6 +1153,12 @@
             "name": "x-credencial",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
@@ -1115,6 +1229,12 @@
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
             "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -1183,6 +1303,12 @@
             "in": "header",
             "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
             "type": "string"
           }
         ],
