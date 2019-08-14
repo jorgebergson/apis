@@ -365,14 +365,14 @@
                     }
                     //Se for passado api datavalid então o conteudo será definido para Datavalid Produção
                     if (api == 'datavalid') {
-                        visibleItens = 4;
+                        visibleItens = 3;
                         conteudo = "";
                         for (var i = 3; i < 7; i++) {
                             var projeto = meuJSON.projetos[i];
                             conteudo = conteudo + '<li style="overflow: hidden; float: left; width: 200px; height: 150px;"><img onclick="carregarSwaggerSemBearer(\'' + projeto.urlJsonSwaggerProducao + '\')" src="https://raw.githubusercontent.com/devserpro/apis/master/_layouts/' + projeto.logo + '" style="cursor: pointer; ' + projeto.style + '" /></li>';
                         }
                     }
-                    if (visibleItens < 4) {
+                    if (visibleItens < 3) {
                         $("#menu-carrossel").css("visibility", "hidden");
                         $(".navegue").css("visibility", "hidden");
                     }
