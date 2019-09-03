@@ -62,6 +62,7 @@
             "description": "Retorno do tipo application/json ou application/xml",
             "name": "Accept",
             "in": "header",
+	    "required": "true",
             "type": "string"
           }
         ],
