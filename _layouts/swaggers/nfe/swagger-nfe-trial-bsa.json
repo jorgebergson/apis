@@ -59,10 +59,9 @@
             "type": "string"
           },
           {
-            "description": "Este campo é validado. Informe o tipo como: application/json ou application/xml",
             "name": "accept",
+            "description": "Este campo é validado. Informe o tipo como: application/json ou application/xml",
             "in": "header",
-            "required": true,
             "type": "string"
           }
         ],
