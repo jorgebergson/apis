@@ -59,7 +59,7 @@
             "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres"
           },
           {
-            "name": "Accept",
+            "name": "accept",
             "in": "header",
             "type": "string",
             "description": "Este campo é validado. Informe o tipo como: application/json ou application/xml"
