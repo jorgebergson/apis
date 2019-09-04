@@ -70,7 +70,10 @@
         ],
         "responses": {
           "200": {
-            "description": "Retorna os dados da NF-e correspondente à chave de acesso informada"
+            "description": "Retorna os dados da Nota de Empenho",
+            "schema": {
+              "$ref": "#/definitions/DadosNFe"
+            }
           },
           "400": {
             "description": "A chave de acesso informada não é válida."
@@ -123,6 +126,49 @@
         "lastUpdateAt": {
           "type": "string",
           "format": "date-time"
+        }
+      }
+    },
+    "DadosNFe": {
+      "properties": {
+        "dataEmissao": {
+          "type": "string"
+        },
+        "saldoPagar": {
+          "type": "string"
+        },
+        "numeroNota": {
+          "type": "string"
+        },
+        "ugEmitente": {
+          "type": "string"
+        },
+        "nomeUgEmitente": {
+          "type": "string"
+        },
+        "gestaoEmitente": {
+          "type": "string"
+        },
+        "nomeGestaoEmitente": {
+          "type": "string"
+        },
+        "nomeFavorecido": {
+          "type": "string"
+        },
+        "tipoFavorecido": {
+          "type": "string"
+        },
+        "codigoFavorecido": {
+          "type": "string"
+        },
+        "sicaf": {
+          "type": "string"
+        },
+        "operacaoCambial": {
+          "type": "string"
+        },
+        "observacao": {
+          "type": "string"
         }
       }
     }
