@@ -16,14 +16,7 @@
   "schemes": [
     "https"
   ],
-  "consumes": [
-    "application/json",
-    "application/xml"
-  ],
-  "produces": [
-    "application/json",
-    "application/xml"
-  ],
+ 
   "info": {
     "version": "1.0",
     "title": "Consulta NF-e",
