@@ -374,8 +374,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -431,10 +431,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -485,10 +485,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -562,8 +562,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -619,10 +619,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -696,8 +696,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -753,10 +753,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -830,8 +830,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -887,10 +887,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -964,8 +964,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -1018,10 +1018,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -1095,8 +1095,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -1149,10 +1149,10 @@
             }
           },
           {
-            "in": "header",
             "name": "x-credencial",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -1226,8 +1226,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
@@ -1301,8 +1301,8 @@
           {
             "name": "x-credencial",
             "in": "header",
-            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64.",
-            "required": true,
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
             "type": "string"
           },
           {
