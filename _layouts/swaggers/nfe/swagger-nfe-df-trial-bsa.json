@@ -23,7 +23,7 @@
   },
   "basePath": "/consulta-nfe-df-trial/api",
   "paths": {
-    "/{chave}": {
+    "v1/nfe/{chave}": {
       "get": {
         "tags": [
           "Consulta NF-e"
