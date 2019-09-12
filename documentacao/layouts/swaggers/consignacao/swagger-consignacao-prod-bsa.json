@@ -3,7 +3,7 @@
   "info": {
     "version": "api",
     "title": "Registra Autorização de Consignação",
-    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nA api `Registra Autorização de Consignação` permite realizar o registro da autorização do servidor/pensionista para consignação da entidade financeira solicitante, por meio da tecnologia `HTTP Rest`.\n## Endereço Base de Produção\n\n  https://apigateway.serpro.gov.br/registra-autorizacao-consignacao/api\n\n## Endereço Base de Degustação\n\n  https://apigateway.serpro.gov.br/registra-autorizacao-consignacao-trial/api"
+    "description": "\nPara informações de como se autenticar antes de consumir as API, por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n    \nA api `Registra Autorização de Consignação` permite realizar o registro da autorização do servidor/pensionista para consignação da entidade financeira solicitante, por meio da tecnologia `HTTP Rest`.\n## Endereço Base de Produção\n\n    https://apigateway.serpro.gov.br/registra-autorizacao-consignacao/api\n\n## Endereço Base de Degustação\n\n    https://apigateway.serpro.gov.br/registra-autorizacao-consignacao-trial/api"
   },
   "schemes": [
     "https"
