@@ -17,7 +17,7 @@ info:
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
     ### Verificando assinatura com Carimbo de Tempo
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
-    [Documentação - Verificação de Carimbo de Tempo](https://devserpro.github.io/apis/master/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/master/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+    [Documentação - Verificação de Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/consulta-cpf-trial/v1'
     description: Trial
