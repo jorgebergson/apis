@@ -180,6 +180,7 @@
                             "type": "string",
                             "example": "O VALOR APROXIMADO DE TRIBUTOS INCIDENTES SOBRE O PRECO DESTE SERVICO E DE R$ 5.62 (16.06) FONTE: IBPT"
                           }
+                        }  
                       }
                     }
                   }
