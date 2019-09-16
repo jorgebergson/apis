@@ -174,13 +174,12 @@
                         "properties": {
                           "xCampo": {
                             "type": "string",
-                            "example": "Qualquer coisa 1"
+                            "example": "LEI DA TRANSPARENCIA"
                           },
                           "xTexto": {
                             "type": "string",
-                            "example": "Qualquer coisa 2"
+                            "example": "O VALOR APROXIMADO DE TRIBUTOS INCIDENTES SOBRE O PRECO DESTE SERVICO E DE R$ 5.62 (16.06) FONTE: IBPT"
                           }
-                        }
                       }
                     }
                   }
