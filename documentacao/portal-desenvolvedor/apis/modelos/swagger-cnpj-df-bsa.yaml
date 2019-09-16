@@ -7,7 +7,7 @@ info:
     \  \nO serviço `Consulta Massiva CNPJ` é disponibilizado através do `HTTP REST`\
     \ oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas\
     \ no Brasil.\n<br>\n  ## Detalhamento do CNPJ\n\n  Para um detalhamento do CNPJ\
-    \ acesse o link:\n  https://github.com/devserpro/apis/raw/master/_layouts/swaggers/cnpj/detalhamento-CNPJ.pdf\n\
+    \ acesse o link:\n  https://devserpro.github.io/apis/documentacao/raw/master/_layouts/swaggers/cnpj/detalhamento-CNPJ.pdf\n\
     \ <br>\n## Códigos de Retorno não Bilhetados\n| Código de retorno | Resumido |\
     \ Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------\
     \ |\n| &nbsp           | &nbsp    | &nbsp  | \n | 400  | Requisição inválida \
@@ -21,7 +21,7 @@ info:
     ão, a informação `x-signature: 1`.\n  \n  A assinatura será retornada no cabeç\
     alho da resposta, com o nome `stamp`.\n<br>\n## Verificando assinatura com Carimbo\
     \ de Tempo\n\n  Para verificar assinatura de carimbo de tempo, siga as instruç\
-    ões da documentação abaixo:\n  \n[Documentação - Verificação Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)\n\
+    ões da documentação abaixo:\n  \n[Documentação - Verificação Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)\n\
     <br>     \n \n## Endereço de Produção\n \n    https://apigateway.serpro.gov.br/consulta-cnpj-df/v1\n\
     \   \n<br>\n## Endereço de Degustação\n\n    https://apigateway.serpro.gov.br/consulta-cnpj-df-trial/v1\n\
     \    \n<br>"
@@ -36,7 +36,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da Situação Cadastral do CNPJ DF"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
+  url: https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
   /cnpj/{ni}:
     get:
@@ -79,7 +79,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
       externalDocs:
         description: "CNPJs para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
+        url: https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
   /status:
     get:
       tags:
