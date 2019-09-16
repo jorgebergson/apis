@@ -6,13 +6,31 @@
         "modelo":"cpf"
     },
     {
+        "nome":"Consulta CPF - DF",
+        "descricao":"Acesse dados de pessoas físicas diretamente das bases da Receita Federal",
+        "imagem":"badge-cpf",
+        "modelo":"cpf"
+    },
+    {
         "nome":"Consulta CNPJ",
         "descricao":"Acesse dados de pessoas jurídicas diretamente das bases da Receita Federal",
         "imagem":"badge-cnpj",
         "modelo":"cnpj"
     },
     {
+        "nome":"Consulta CNPJ - DF",
+        "descricao":"Acesse dados de pessoas jurídicas diretamente das bases da Receita Federal",
+        "imagem":"badge-cnpj",
+        "modelo":"cnpj"
+    },
+    {
         "nome":"Consulta NF-e",
+        "descricao":"Acesse dados de nota fiscal eletrônica diretamente do SPED",
+        "imagem":"badge-nfe",
+        "modelo":"nfe"
+    },
+    {
+        "nome":"Consulta NF-e - DF",
         "descricao":"Acesse dados de nota fiscal eletrônica diretamente do SPED",
         "imagem":"badge-nfe",
         "modelo":"nfe"
@@ -25,6 +43,12 @@
     },
     {
         "nome":"Consulta Dívida Ativa",
+        "descricao":"Acesse dados detalhados sobre as dívidas ativas da União direto das bases da PGFN",
+        "imagem":"badge-divida-ativa",
+        "modelo":"divida-ativa"
+    },
+    {
+        "nome":"Consulta Dívida Ativa - DF",
         "descricao":"Acesse dados detalhados sobre as dívidas ativas da União direto das bases da PGFN",
         "imagem":"badge-divida-ativa",
         "modelo":"divida-ativa"
