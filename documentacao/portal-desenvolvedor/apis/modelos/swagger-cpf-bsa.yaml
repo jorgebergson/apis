@@ -29,7 +29,7 @@ security:
     Authorization: []   
 externalDocs:
   description: "Detalhamento da Situação Cadastral do CPF"
-  url: https://github.com/devserpro/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CPF.pdf
+  url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-CPF.pdf
 paths:
   '/cpf/{ni}':
     get:
@@ -87,7 +87,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135
       externalDocs:
         description: "CPFs para degustação"
-        url: https://github.com/devserpro/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/CPF-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/CPF-Degustacao.pdf
   /status:
     get:
       tags:
