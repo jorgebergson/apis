@@ -33,7 +33,7 @@ info:
     documentação abaixo:     
 
     [Documentação - Verificação de Carimbo de
-    Tempo](https://devserpro.github.io/apis/master/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/master/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+    Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/master/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/integra-siafi-trial/api'
     description: Trial
