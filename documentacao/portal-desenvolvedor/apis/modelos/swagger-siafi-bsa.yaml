@@ -6,7 +6,7 @@ info:
 
     Para informações de como se autenticar antes de consumir a API, por favor,
     consulte a documentação em
-    [Autenticação](http://devserpro.github.io/apis/)    
+    [Autenticação](http://devserpro.github.io/apis/documentacao)    
 
 
     O serviço &nbsp; *Integração SIAFI* &nbsp; é disponibilizado através do
@@ -33,7 +33,7 @@ info:
     documentação abaixo:     
 
     [Documentação - Verificação de Carimbo de
-    Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+    Tempo](https://devserpro.github.io/apis/master/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/master/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: 'https://apigateway.serpro.gov.br/integra-siafi-trial/api'
     description: Trial
@@ -46,7 +46,7 @@ security:
 externalDocs:
   description: Detalhamento da API SIAFI
   url: >-
-    https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-IntegraSIAFI.pdf
+    https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-IntegraSIAFI.pdf
 paths:
   /v1/ne/alterar:
     post:
@@ -95,7 +95,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/anular:
     post:
       deprecated: true
@@ -142,7 +142,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultaTransacao:
     post:
       deprecated: true
@@ -189,7 +189,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/consultar:
     post:
       deprecated: true
@@ -296,7 +296,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/realizar:
     post:
       deprecated: true
@@ -343,7 +343,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v1/ne/reforcar:
     post:
       deprecated: true
@@ -390,7 +390,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-empenho/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -512,7 +512,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-empenho:
     post:
       tags:
@@ -568,7 +568,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
     put:
       tags:
         - Nota de Empenho v2
@@ -641,7 +641,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-credito/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -736,7 +736,7 @@ paths:
       externalDocs:
         description: NC para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-credito:
     post:
       tags:
@@ -797,7 +797,7 @@ paths:
       externalDocs:
         description: NC para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-lancamento/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -899,7 +899,7 @@ paths:
       externalDocs:
         description: NL para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-lancamento:
     post:
       tags:
@@ -959,7 +959,7 @@ paths:
       externalDocs:
         description: NL para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-dotacao/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -1056,7 +1056,7 @@ paths:
       externalDocs:
         description: ND para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-dotacao:
     post:
       tags:
@@ -1116,7 +1116,7 @@ paths:
       externalDocs:
         description: ND para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-detaorc/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -1222,7 +1222,7 @@ paths:
       externalDocs:
         description: Nota Detaorc para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-detaorc:
     post:
       tags:
@@ -1282,7 +1282,7 @@ paths:
       externalDocs:
         description: Nota Detaorc para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-bloqueio/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -1371,7 +1371,7 @@ paths:
       externalDocs:
         description: NB para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /v2/nota-bloqueio:
     post:
       tags:
@@ -1431,7 +1431,7 @@ paths:
       externalDocs:
         description: NB para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/nota-dotacao-sof/{ug}/{gestao}/{ano}/{numero}':
     get:
       tags:
@@ -1529,7 +1529,7 @@ paths:
       externalDocs:
         description: NB para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   '/v2/documentos/{ug}/{gestao}/{data}':
     get:
       tags:
@@ -1629,7 +1629,7 @@ paths:
       externalDocs:
         description: NE para Degustação
         url: >-
-          https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
+          https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/IntegraSIAFI-Degustacao.pdf
   /status:
     get:
       tags:

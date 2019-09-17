@@ -7,7 +7,7 @@ info:
     ### API Serpro - Plataforma de Habilitação  
     O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
     
-    Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/)    
+    Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/documentacao)    
     ### Métodos da API Loja Franca    
     | Tipo | Nome | Descrição |
     | -----|:-----|:----------|
@@ -30,7 +30,7 @@ info:
       Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
     ### Verificando assinatura com Carimbo de Tempo - Teste
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
-    [Documentação - Verificação de Carimbo de Tempo](https://rawgit.com/devserpro/apis/master/_layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://rawgit.com/devserpro/apis/master/_layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
+    [Documentação - Verificação de Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
   - url: https://apigateway.serpro.gov.br/api-loja-franca-trial/api
     description: Trial
@@ -42,7 +42,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
+  url: https://github.com/devserpro/apis/raw/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-LojaFranca.pdf
 paths:
   '/':
     post:
@@ -84,7 +84,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/api-loja-franca-trial/api/{payload em base 64}
       externalDocs:
         description: "Payloads para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/LojaFranca-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/documentacao/portal-desenvolvedor/apis/documentos/LojaFranca-Degustacao.pdf
 components:
   schemas:
     EntradaCota:
