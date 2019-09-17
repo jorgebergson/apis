@@ -30,7 +30,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da Situação Cadastral do CNPJ"
-  url: https://devserpro.github.io/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
+  url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
   '/cnpj/{ni}':
     get:
@@ -110,7 +110,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
       externalDocs:
         description: "CNPJs para degustação"
-        url: https://devserpro.github.io/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
   '/status':
     get:
       tags:
