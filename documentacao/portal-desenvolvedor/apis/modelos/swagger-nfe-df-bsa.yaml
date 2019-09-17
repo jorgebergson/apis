@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Consulta NF-e
+  title: Consulta NF-e - DF
   version: '1.0'
   description: |-
     O serviço &nbsp; *Consulta Nota Fiscal Eletrônica (NF-e)* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação para consulta de informações referentes a uma determinada NF-e, através de sua chave de acesso.
@@ -27,9 +27,9 @@ info:
       Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:
     [Documentação - Verificação Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)    
 servers:
-  - url: 'https://apigateway.serpro.gov.br/nfe-trial/1'
+  - url: 'https://apigateway.serpro.gov.br/nfe-df-trial/1'
     description: Trial
-  - url: 'https://apigateway.serpro.gov.br/nfe/1'
+  - url: 'https://apigateway.serpro.gov.br/nfe-df/1'
     description: Produção
 security:
   - APIKEY: []

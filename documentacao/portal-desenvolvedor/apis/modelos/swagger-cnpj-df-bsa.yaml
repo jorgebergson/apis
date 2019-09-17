@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Consulta Massiva CNPJ
+  title: Consulta Massiva CNPJ - DF
   version: 1.0.0
   description: |-
     O serviço &nbsp; *Consulta Massiva CNPJ* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.

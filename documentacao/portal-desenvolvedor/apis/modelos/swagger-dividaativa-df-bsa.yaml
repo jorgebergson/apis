@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Consulta Dívida Ativa
+  title: Consulta Dívida Ativa - DF
   version: api
   description: |-  
         A api &nbsp; *consulta-divida-ativa* &nbsp; viabiliza a consulta de débitos na dívida ativa da união via serviço &nbsp; *HTTP REST* &nbsp;.
@@ -20,9 +20,9 @@ info:
         Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
         [Documentação - Verificação de Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
-  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-trial/api
+  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-df-trial/api
     description: Trial
-  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa/api
+  - url: https://apigateway.serpro.gov.br/consulta-divida-ativa-df/api
     description: Produção
 security:
   - APIKEY: []
