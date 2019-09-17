@@ -3,11 +3,11 @@ info:
   title: Consulta Massiva CNPJ DF (consulta-cnpj)
   version: 1.0.0
   description: "\nPara informações de como se autenticar antes de consumir as API,\
-    \ por favor, consulte a documentação em: http://devserpro.github.io/apis/ \n\n\
+    \ por favor, consulte a documentação em: http://devserpro.github.io/apis/documentacao
     \  \nO serviço `Consulta Massiva CNPJ` é disponibilizado através do `HTTP REST`\
     \ oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas\
     \ no Brasil.\n<br>\n  ## Detalhamento do CNPJ\n\n  Para um detalhamento do CNPJ\
-    \ acesse o link:\n  https://devserpro.github.io/apis/documentacao/raw/master/_layouts/swaggers/cnpj/detalhamento-CNPJ.pdf\n\
+    \ acesse o link:\n  https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf\n
     \ <br>\n## Códigos de Retorno não Bilhetados\n| Código de retorno | Resumido |\
     \ Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------\
     \ |\n| &nbsp           | &nbsp    | &nbsp  | \n | 400  | Requisição inválida \
