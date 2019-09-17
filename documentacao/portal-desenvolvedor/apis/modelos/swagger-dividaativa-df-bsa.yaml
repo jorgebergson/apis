@@ -30,7 +30,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento da API Loja Franca de Fronteiras"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-DividaAtiva.pdf
+  url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-DividaAtiva.pdf
 paths:
   '/v1/inscricao/{numeroInscricao}':
     get:
@@ -186,7 +186,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/api-divida-ativa-trial/api/{numeroInscricao}
       externalDocs:
         description: "Payloads para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
   '/v1/devedor/{numeroInscricaoDevedor}':
     get:
       tags:
@@ -253,7 +253,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/api-divida-ativa-trial/api/{numeroInscricaoDevedor}
       externalDocs:
         description: "Payloads para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/DividaAtiva-Degustacao.pdf
   '/status':
     get:
       tags:

@@ -37,7 +37,7 @@ security:
     Authorization: []
 externalDocs:
   description: "Detalhamento das Notas Fiscais Eletrônicas"
-  url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-NFe.pdf    
+  url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/Informacoes-NFe.pdf    
 paths:
   '/{chave}':
     get:
@@ -246,7 +246,7 @@ paths:
       operationId: https://apigateway.serpro.gov.br/nfe-trial/1/35161147508411011603551000077959551093041003
       externalDocs:
         description: "NFes disponíveis para degustação"
-        url: https://github.com/devserpro/apis/raw/master/portal-desenvolvedor/apis/documentos/NFe-Degustacao.pdf
+        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/NFe-Degustacao.pdf
   '/monitor/status':
     get:
       tags:
