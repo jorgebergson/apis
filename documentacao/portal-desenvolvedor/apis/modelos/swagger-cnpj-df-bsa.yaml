@@ -1,107 +1,138 @@
 openapi: 3.0.1
 info:
-  title: Consulta Massiva CNPJ DF (consulta-cnpj)
+  title: Consulta Massiva CNPJ
   version: 1.0.0
-  description: "\nPara informações de como se autenticar antes de consumir as API,\
-    \ por favor, consulte a documentação em: http://devserpro.github.io/apis/documentacao
-    \  \nO serviço `Consulta Massiva CNPJ` é disponibilizado através do `HTTP REST`\
-    \ oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas\
-    \ no Brasil.\n<br>\n  ## Detalhamento do CNPJ\n\n  Para um detalhamento do CNPJ\
-    \ acesse o link:\n  https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf\n
-    \ <br>\n## Códigos de Retorno não Bilhetados\n| Código de retorno | Resumido |\
-    \ Explicação |\n| ------------- |:--------------------|:-----------------------------------------------------------------------------\
-    \ |\n| &nbsp           | &nbsp    | &nbsp  | \n | 400  | Requisição inválida \
-    \   | O número de inscrição do CNPJ informado não é válido.       |\n| &nbsp \
-    \          | &nbsp    | &nbsp  |\n| 500           | Erro no servidor    | Ocorreu\
-    \ algum erro interno.      |\n| &nbsp           | &nbsp    | &nbsp  |\n| 503 \
-    \          | Serviço Indisponível     |  Algum serviço integrado ao Consulta Massiva\
-    \ CNPJ está indisponível no momento.                         |<br>\n## Solicitando\
-    \ assinatura com Carimbo de Tempo\n\n  Caso deseje que sua solicitação venha com\
-    \ uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisiç\
-    ão, a informação `x-signature: 1`.\n  \n  A assinatura será retornada no cabeç\
-    alho da resposta, com o nome `stamp`.\n<br>\n## Verificando assinatura com Carimbo\
-    \ de Tempo\n\n  Para verificar assinatura de carimbo de tempo, siga as instruç\
-    ões da documentação abaixo:\n  \n[Documentação - Verificação Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)\n\
-    <br>     \n \n## Endereço de Produção\n \n    https://apigateway.serpro.gov.br/consulta-cnpj-df/v1\n\
-    \   \n<br>\n## Endereço de Degustação\n\n    https://apigateway.serpro.gov.br/consulta-cnpj-df-trial/v1\n\
-    \    \n<br>"
+  description: |-
+    O serviço &nbsp; *Consulta Massiva CNPJ* &nbsp; é disponibilizado através do &nbsp; *HTTP REST* &nbsp; oferencendo operação de consulta às informações cadastrais de Pessoas Jurídicas no Brasil.
+    ### API Serpro - Plataforma de Habilitação  
+    O contratante terá acesso a todas as informações relacionadas ao modelo de sustentação comercial e técnica dos serviços API por meio do portal de relacionamento com o cliente Minha Conta, onde as principais funcionalidades são detalhadas no tutorial Área do Cliente.
+    
+    Para informações de como se autenticar antes de consumir a API, por favor, consulte a documentação em [Autenticação](http://devserpro.github.io/apis/documentacao)  
+    ### Códigos de Retorno não Bilhetados 
+    | Código de retorno | Resumido | Explicação |
+    | ------------- |:----------------------|:-----------------------------------------------------------------------------|
+    | 400           | Requisição inválida   | O Número de Inscrição do CNPJ informado não é válido. |
+    | 500           | Erro no servidor      | Ocorreu algum erro interno.      |  
+    | 503           | Serviço indisponível  | Algum serviço integrado ao Consulta Massiva CNPJ está indisponível no momento.  |
+    ### Solicitando assinatura com Carimbo de Tempo
+      Caso deseje que sua solicitação venha com uma assinatura de Carimbo de Tempo, basta incluir, no cabeçalho de sua requisição, a informação: &nbsp; *x-signature:1*. &nbsp; A assinatura será retornada no cabeçalho da resposta, com o nome: &nbsp; *stamp* .
+    ### Verificando assinatura com Carimbo de Tempo
+      Para verificar assinatura de carimbo de tempo, siga as instruções da documentação abaixo:     
+    [Documentação - Verificação de Carimbo de Tempo](https://devserpro.github.io/apis/documentacao/layouts/swagger-ui-master/dist/index.html?bearer=4e1a1858bdd584fdc077fb7d80f39283&url=https://devserpro.github.io/apis/documentacao/layouts/swaggers/carimbo-tempo/swagger-timestampcheck-trial-bsa.json#!/default/post_check)
 servers:
-- url: https://apigateway.serpro.gov.br/consulta-cnpj-df-trial/v1
-  description: Trial
-- url: https://apigateway.serpro.gov.br/consulta-cnpj-df/v1
-  description: Produção
+  - url: 'https://apigateway.serpro.gov.br/consulta-cnpj-df-trial/v1'
+    description: Trial
+  - url: 'https://apigateway.serpro.gov.br/consulta-cnpj-df/v1'
+    description: Produção
 security:
   - APIKEY: []
     OAuth2: []
     Authorization: []
 externalDocs:
-  description: "Detalhamento da Situação Cadastral do CNPJ DF"
+  description: "Detalhamento da Situação Cadastral do CNPJ"
   url: https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/Informacoes-CNPJ.pdf
 paths:
-  /cnpj/{ni}:
+  '/cnpj/{ni}':
     get:
       tags:
-      - Consulta CNPJ DF
-      summary: Consulta o CNPJ DF
+        - Consulta CNPJ
+      summary: Consulta o CNPJ
       x-auth-type: Application & Application User
       x-throttling-tier: Unlimited
       description: |-
-        Retorna os dados do Cadastro Nacional de Pessoa Jurídica DF (CNPJ)
+        Retorna os dados do Cadastro Nacional de Pessoa Jurídica (CNPJ)
+     
       parameters:
-      - name: ni
-        in: path
-        description: Número de inscrição no CNPJ
-        required: true
-        schema:
-          type: string
-      - name: x-signature
-        in: header
-        description: Solicitação de assinatura de carimbo de tempo. Informe 1 para
-          assinar, ou deixe em branco para não assinar.
-        schema:
-          type: string
+        - name: ni
+          in: path
+          description: Número de Inscrição do CPF
+          required: true
+          schema:
+            type: number
+        - name: x-signature
+          in: header
+          required: false
+          description: 'Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.'
+          schema:
+            type: integer
       responses:
-        200:
-          description: Retorna os dados da Pessoa Jurídica
-          content:
-            '*/*':
+        '200':
+          description: Retorna os dados da Pessoa Jurídica.
+          headers:
+            stamp:
+              description: Carimbo de Tempo. Só aparecerá se o cabeçalho x-signature for igual a 1.
               schema:
-                $ref: '#/components/schemas/CNPJ'
-        400:
-          description: O Número de Inscrição informado não é válido
-          content: {}
-        404:
-          description: Não existe Pessoa Jurídica com o Número de Inscrição informado
-          content: {}
-        500:
-          description: Erro interno do servidor
-          content: {}
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CNPJ' 
+              example:   
+                ni: '34238864000168'
+                data_abertura: '1967-06-30'
+                nome_empresarial: SERVICO DE E-COMERCE LTDA
+                nome_fantasia: E-COMERCE
+                cnae_principal:
+                  codigo: '6204000'
+                  descricao: Consultoria em e-comerce
+                natureza_juridica:
+                  codigo: '2011'
+                  descricao: Empresa Pública
+                endereco:
+                  logradouro: ST DE GRANDE AREA NORTE
+                  numero: Q.601
+                  complemento: LOTE V
+                  cep: '70836900'
+                  bairro: ASA NORTE
+                  municipio: BRASILIA
+                  uf: DF
+                situacao_especial: ''
+                situacao_cadastral:
+                  codigo: '1'
+                  data: '2004-05-22'
+                  motivo: ''
+                orgao: '0110100'
+                tipo_estabelecimento: '1'
+                correio_eletronico: ''
+                capital_social: 0
+                porte: '05'
+                telefones:
+                  - ddd: '061'
+                    numero: '4338456'
+                nome_orgao: BRASILIA
+                ente_federativo: BR
+        '400':
+          description: O Número de Inscrição informado não é válido. 
+        '404':
+          description: Não existe Pessoa Jurídica com o Número de Inscrição informado.
+        '500':
+          description: Erro interno do servidor.
       operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
       externalDocs:
         description: "CNPJs para degustação"
-        url: https://devserpro.github.io/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
-  /status:
+        url: https://github.com/devserpro/apis/documentacao/raw/master/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
+  '/status':
     get:
       tags:
-      - Status
+        - Status
       summary: Verifica status da API
       responses:
-        200:
+        '200':
           description: Serviço disponível
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00
-        500:
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00"
+        '500':
           description: Serviço indisponível
           content:
-            '*/*':
+            application/json:
               schema:
                 $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00
+              example:
+                lastUpdateAt: "2019-02-18T11:27:06-03:00" 
 components:
   schemas:
     Status:
@@ -109,32 +140,8 @@ components:
       properties:
         lastUpdateAt:
           type: string
-          format: date-time
-    CodigoDescricao:
-      type: object
-      properties:
-        codigo:
-          type: string
-        descricao:
-          type: string
-    Telefone:
-      type: object
-      properties:
-        ddd:
-          type: string
-        numero:
-          type: string
-    SituacaoCadastral:
-      type: object
-      properties:
-        codigo:
-          type: string
-        motivo:
-          type: string
-        data:
-          type: string
+          format: date-time      
     CNPJ:
-      type: object
       properties:
         ni:
           type: string
@@ -165,17 +172,24 @@ components:
         porte:
           type: string
         telefones:
-          type: array
           items:
             $ref: '#/components/schemas/Telefone'
+          type: array
         nome_orgao:
           type: string
         ente_federativo:
           type: string
         data_situacao_especial:
           type: string
-    Endereco:
       type: object
+    CodigoDescricao:
+      properties:
+        codigo:
+          type: string
+        descricao:
+          type: string
+      type: object
+    Endereco:
       properties:
         bairro:
           type: string
@@ -191,8 +205,34 @@ components:
           type: string
         numero:
           type: string
+      type: object
+    SituacaoCadastral:
+      properties:
+        codigo:
+          type: string
+        motivo:
+          type: string
+        data:
+          type: string
+      type: object
+    Telefone:
+      properties:
+        ddd:
+          type: string
+        numero:
+          type: string
+      type: object
   securitySchemes:
-    Bearer:
+    APIKEY:
       type: apiKey
-      name: Authorization
+      name: x-jwt-assertion
       in: header
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apigateway.serpro.gov.br/token'
+    Authorization:
+      type: http
+      description: Autenticação para ambiente trial
+      scheme: bearer
