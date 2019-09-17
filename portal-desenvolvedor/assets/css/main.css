@@ -3822,6 +3822,15 @@
 			font-family: "Open Sans", serif;
 			font-size: 1.125em;
 		}
+		
+		#header .logoleft {
+		    float: right;
+		    text-align: right; 
+			border-bottom: 0;
+			color: inherit;
+			font-family: "Open Sans", serif;
+			font-size: 1.125em;
+		}
 
 		#header .icons {
 			text-align: right;
@@ -3842,6 +3851,13 @@
 			}
 
 				#header .logo {
+					font-size: 1.25em;
+					margin: 0;
+				}
+				
+				#header .logoleft {
+				    float: right;
+				    text-align: right; 
 					font-size: 1.25em;
 					margin: 0;
 				}
