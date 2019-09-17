@@ -109,8 +109,8 @@ paths:
           description: Erro interno do servidor.
       operationId: https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168
       externalDocs:
-        description: "CNPJs para degustação"
-        url: https://github.com/devserpro/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
+        description: "CNPJs para degustação" devserpro.github.io/
+        url: https://devserpro.github.io/apis/raw/master/documentacao/portal-desenvolvedor/apis/documentos/CNPJ-Degustacao.pdf
   '/status':
     get:
       tags:
