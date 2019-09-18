@@ -18,7 +18,7 @@
             "endpointMock": "/consulta-cnpj-trial/1",
             "urlJsonSwaggerMock": "https://devserpro.github.io/apis/documentacao/layouts/swaggers/cnpj/swagger-cnpj-df-trial-",
             "endpointProducao": "/consulta-cnpj/v1",
-            "urlJsonSwaggerProducao": "https://https://devserpro.github.io/apis/documentacao/layouts/swaggers/cnpj/swagger-cnpj-prod-"
+            "urlJsonSwaggerProducao": "https://devserpro.github.io/apis/documentacao/layouts/swaggers/cnpj/swagger-cnpj-prod-"
         },
         {
             "api": "nfe",
