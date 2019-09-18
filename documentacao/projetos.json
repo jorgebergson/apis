@@ -76,7 +76,7 @@
             "logo": "images/vio-letras.png",
             "style": "width: 161px;",
             "endpointMock": "https://apigateway.serpro.gov.br/viodec-trial/v1/decode",
-            "urlJsonSwaggerMock": "https://devserpro.github.io/apis/layouts/swaggers/vio/swagger-viodec-prod-",
+            "urlJsonSwaggerMock": "https://devserpro.github.io/apis/documentacao/layouts/swaggers/vio/swagger-viodec-prod-",
             "endpointProducao": "https://apigateway.serpro.gov.br/viodec/v1/decode",
             "urlJsonSwaggerProducao": "https://devserpro.github.io/apis/documentacao/layouts/swaggers/vio/swagger-viodec-prod-"
         }
