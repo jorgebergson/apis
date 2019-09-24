@@ -83,7 +83,7 @@
         }
       }
     },
-    "/monitor/status": {
+    "/status": {
       "get": {
         "tags": [
           "Status"
