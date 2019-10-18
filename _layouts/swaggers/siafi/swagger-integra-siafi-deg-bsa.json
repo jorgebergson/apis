@@ -1331,6 +1331,62 @@
         }
       }
     },
+    "/v2/lista-credor": {
+      "post": {
+        "tags": [
+          "Lista de Credor"
+        ],
+        "summary": "Gera uma Lista de Credor",
+        "description": "Gera uma Lista de Credor - LC \n\n## Exemplo\n#### Chamada\n\n    https://apigateway.serpro.gov.br/api-integra-siafi-trial/api/v2/lista-credor\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      \n####  Conteúdo do corpo\n    {\n        \"ugEmitente\": \"010001\",\n        \"gestaoEmitente\": \"\",\n        \"numeroLista\": \"400106\",\n        \"tipoLista\": \"I\",\n        \"suprimentoFundos\": \"N\",\n        \"tipoPagamento\": \"1\",\n        \"quantidadeItens\": \"1\",\n        \"listaItens\": [\n             {\n                \"tipoCredor\": \"2\",\n                \"favorecido\": \"39813134372\",\n                \"bancoOrigem\": \"001\",\n                \"agenciaOrigem\": \"0001\",\n                \"contaCorrenteOrigem\": \"100773\",\n                \"valorCredito\": \"1000\"\n             }\n        ]\n    } \n#### Retorno\n    { \n      \"ug\": \"010001\" ,\n      \"gestao\": \"00001\",\n      \"numero\": \"2019LC500001\" \n    }",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "description": "Dados da Lista de Credores a ser Gerada",
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GeraLC"
+            }
+          },
+          {
+            "name": "x-credencial",
+            "in": "header",
+            "description": "Credenciais de acesso ao SIAFI, no formato [CPF].[UG].[SISTEMA], convertido em Base64. Nesse ambiente de testes, favor não preencher esse campo. Campo obrigatório no ambiente de produção.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres. Máximo 32 caracteres. Máximo 32 caracteres.",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados da Nota de Empenho Gerada",
+            "schema": {
+              "$ref": "#/definitions/ListaCredores"
+            }
+          },
+          "400": {
+            "description": "Algum campo enviado é inválido"
+          },
+          "403": {
+            "description": "Usuário não tem permissão para realizar esta operação"
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
     "/status": {
       "get": {
         "tags": [
@@ -1370,6 +1426,75 @@
         "lastUpdateAt": {
           "type": "string",
           "format": "date-time"
+        }
+      }
+    },
+    "ListaCredores": {
+      "properties": {
+        "ug": {
+          "type": "string"
+        },
+        "gestao": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        }
+      }
+    },
+    "GeraLC": {
+      "properties": {
+        "ugEmitente": {
+          "type": "number"
+        },
+        "gestaoEmitente": {
+          "type": "number"
+        },
+        "favorecido": {
+          "type": "string"
+        },
+        "numeroLista": {
+          "type": "number"
+        },
+        "tipoLista": {
+          "type": "string"
+        },
+        "suprimentoFundos": {
+          "type": "string"
+        },
+        "tipoPagamento": {
+          "type": "string"
+        },
+        "quantidadeItens": {
+          "type": "number"
+        },
+        "listaItens": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ItensCredor"
+          }
+        }
+      }
+    },
+    "ItensCredor": {
+      "properties": {
+        "tipoCredor": {
+          "type": "number"
+        },
+        "favorecido": {
+          "type": "string"
+        },
+        "bancoOrigem": {
+          "type": "number"
+        },
+        "agenciaOrigem": {
+          "type": "number"
+        },
+        "contaCorrenteOrigem": {
+          "type": "string"
+        },
+        "valorCredito": {
+          "type": "number"
         }
       }
     },
