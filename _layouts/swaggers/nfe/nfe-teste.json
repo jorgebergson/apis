@@ -221,6 +221,55 @@
       }
     },
     "/push/solicitacoes": {
+      "post": {
+        "tags": [
+          "Push NF-e"
+        ],
+        "summary": "Incluir solicitação de monitoração",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": " \n\n## Exemplo\n#### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      O cliente pode incluir a partir de uma solicitação várias Notas Fiscais Eletrônicas para serem monitoradas. \n\n      \n#### Conteúdo de entrada\n    { \n      \"chavesMonitoracao\": [ \n            { \n                \"chave\": \"43190788910252000603550010000375791937008290\"  \n            }, \n            { \n                \"chave\": \"43190788910252000603550010000375791937008291\" \n            } \n       ] \n    } \n\n  #### Retorno\n    { \n      \"solicitacaoId\": \"lOYKqr7HfhcDuJA\", \n      \"chavesMonitoracao\": [ \n            { \n                \"chave\": \"43190788910252000603550010000375791937008290\"                \n            }, \n            { \n                \"chave\": \"43190788910252000603550010000375791937008291\" \n            } \n      ], \n      \"dataCriacao\": \"2019-11-20T15:57:39.917Z\", \n      \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n      \"clienteId\": \"00000000000000\"\ \n    } ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "description": "Dados da solicitação de monitoração a ser gerada",
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/incluirSolicitacao"
+            }
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "X-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Retorna os dados de confirmação de inclusão de solicitação.",
+            "schema": {
+              "$ref": "#/definitions/confirmacaoSolicitacao"
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
       "get": {
         "tags": [
           "Push NF-e"
