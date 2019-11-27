@@ -273,46 +273,6 @@
             "description": "Erro interno do servidor"
           }
         }
-      },
-      "get": {
-        "tags": [
-          "Push NF-e"
-        ],
-        "summary": "Consulta todas as solicitações de monitoração de um cliente",
-        "x-auth-type": "Application & Application User",
-        "x-throttling-tier": "Unlimited",
-        "description": " ## Exemplo\n#### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\n#### Conteúdo de entrada\n    { \n      \"url\": \"https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes\" \n    } \n\n  #### \n\n  #### Retorno\n    [ \n      { \n        \"solicitacaoId\": \"al2sDBn6KNVpleB\", \n        \"clienteId\": \"00000000000000\", \n        \"urlNotificacao\": \"http://example.com\", \n        \"dataCriacao\": \"2019-11-20T15:57:18.793Z\", \n        \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n        \"chavesMonitoracao\": [ \n            { \n              \"chave\": \"43190788910252000603550010000375791937008290\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.212Z\" \n            }, \n            { \n              \"chave\": \"43190788910252000603550010000375791937008291\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.213Z\" \n            } \n         ] \n      }, \n      { \n        \"solicitacaoId\": \"dbo5wvBsVy52kpY\", \n        \"clienteId\": \"00000000000000\", \n        \"urlNotificacao\": \"http://example.com\", \n        \"dataCriacao\": \"2019-11-20T15:56:57.729Z\", \n        \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n        \"chavesMonitoracao\": [ \n            { \n              \"chave\": \"43190788910252000603550010000375791937008292\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.214Z\" \n            }, \n              \"chave\": \"43190788910252000603550010000375791937008293\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.214Z\" \n            }\n         ] \n      } \n    ] ",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
-            "name": "X-signature",
-            "in": "header",
-            "type": "string"
-          },
-          {
-            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
-            "name": "X-Request-Tag",
-            "in": "header",
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Retorna todas as solicitações de um cliente",
-            "schema": {
-              "$ref": "#/definitions/consultarSolicitacoes"
-            }
-          },            
-          "500": {
-            "description": "Erro interno do servidor"
-          }
-        }
       }
     },
     "/push/solicitacoes/{solicitacaoId}": {
