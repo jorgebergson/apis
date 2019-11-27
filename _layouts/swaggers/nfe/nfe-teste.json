@@ -1,4 +1,3 @@
-
 {
   "host": "apigateway.serpro.gov.br",
   "security": [
@@ -222,14 +221,14 @@
       }
     },
     "/push/solicitacoes": {
-      "post": {
+      "get": {
         "tags": [
           "Push NF-e"
         ],
-        "summary": "Incluir solicitação de monitoração",
+        "summary": "Consulta todas as solicitações de monitoração de um cliente",
         "x-auth-type": "Application & Application User",
         "x-throttling-tier": "Unlimited",
-        "description": " \n\n## Exemplo\n#### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n      O cliente pode incluir a partir de uma solicitação várias Notas Fiscais Eletrônicas para serem monitoradas. \n\n      \n#### Conteúdo de entrada\n    { \n      \"chavesMonitoracao\": [ \n            { \n                \"chave\": \"43190788910252000603550010000375791937008290\"  \n            }, \n            { \n                \"chave\": \"43190788910252000603550010000375791937008291\" \n            } \n       ] \n    } \n\n  #### Retorno\n    { \n      \"solicitacaoId\": \"lOYKqr7HfhcDuJA\", \n      \"chavesMonitoracao\": [ \n            { \n                \"chave\": \"43190788910252000603550010000375791937008290\"                \n            }, \n            { \n                \"chave\": \"43190788910252000603550010000375791937008291\" \n            } \n       ], \n       \"dataCriacao\": \"2019-11-20T15:57:39.917Z\", \n       \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n       \"clienteId\": \"00000000000000\"\ \n    } ",
+        "description": " ## Exemplo\n#### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes \n    No header: \n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN \n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n #### Conteúdo de entrada \n    {\n      \"url\": \"https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes\" \n    } \n  #### \n  #### Retorno \n    [ \n      { \n        \"solicitacaoId\": \"al2sDBn6KNVpleB\", \n        \"clienteId\": \"00000000000000\", \n        \"urlNotificacao\": \"http://example.com\", \n        \"dataCriacao\": \"2019-11-20T15:57:18.793Z\", \n        \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n        \"chavesMonitoracao\": [ \n            { \n              \"chave\": \"43190788910252000603550010000375791937008290\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:01.212Z\" \n            }, \n            { \n              \"chave\": \"43190788910252000603550010000375791937008291\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:02.213Z\" \n            } \n         ] \n      }, \n      { \n        \"solicitacaoId\": \"dbo5wvBsVy52kpY\", \n        \"clienteId\": \"00000000000000\", \n        \"urlNotificacao\": \"http://example.com\", \n        \"dataCriacao\": \"2019-11-20T15:57:18.793Z\", \n        \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n        \"chavesMonitoracao\": [ \n            { \n              \"chave\": \"43190788910252000603550010000375791937008292\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:03.212Z\" \n            }, \n            { \n              \"chave\": \"43190788910252000603550010000375791937008293\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:04.213Z\" \n            } \n         ] \n      } \n       \n    ] ",
         "consumes": [
           "application/json"
         ],
@@ -237,15 +236,6 @@
           "application/json"
         ],
         "parameters": [
-          {
-            "description": "Dados da solicitação de monitoração a ser gerada",
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/incluirSolicitacao"
-            }
-          },
           {
             "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
             "name": "X-signature",
@@ -260,15 +250,12 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "Retorna os dados de confirmação de inclusão de solicitação.",
+          "200": {
+            "description": "Retorna todas as solicitações de um cliente",
             "schema": {
-              "$ref": "#/definitions/confirmacaoSolicitacao"
-            } 
-          },
-          "412": {
-            "description": "Necessário cadastro de uma URL para receber notificações",
-          },
+              "$ref": "#/definitions/consultarSolicitacoes"
+            }
+          },          
           "500": {
             "description": "Erro interno do servidor"
           }
