@@ -133,6 +133,52 @@
             "description": "Erro interno do servidor"
           }
         }
+      },
+      "put": {
+        "tags": [
+          "Push NF-e"
+        ],
+        "summary": "Atualizar informações do cliente",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": " \n\n## Exemplo\n#### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/clientes\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo)\n\n#### Conteúdo de entrada\n    { \n      \"urlNotificacao\": \"https://cliente.com\" \n    } \n  #### Retorno\n    { \n      \"mensagem\": \"Dados alterados com sucesso.\"\n    } ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "description": "Dados do cliente",
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/atualizarCliente"
+            }
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "X-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dados alterados com sucesso."
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
       }
     },
     "/monitor/status": {
