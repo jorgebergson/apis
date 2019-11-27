@@ -262,6 +262,106 @@
         }
       }
     },
+    "/push/solicitacoes/{solicitacaoId}": {
+      "get": {
+        "tags": [
+          "Push NF-e"
+        ],
+        "summary": "Consulta uma solicitação específica de monitoração de um cliente",
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": " \n\n## Exemplo\n #### Solicitação para degustação: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  al2sDBn6KNVpleB <br><br><br>\n  #### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/solicitacoes/{solicitacaoId}\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n  #### Retorno\n    { \n        \"solicitacaoId\": \"al2sDBn6KNVpleB\", \n        \"clienteId\": \"00000000000000\", \n        \"urlNotificacao\": \"http://example.com\", \n        \"dataCriacao\": \"2019-11-20T15:57:18.793Z\", \n        \"dataExpiracao\": \"2019-12-20T03:00:00.000Z\", \n        \"chavesMonitoracao\": [ \n            { \n              \"chave\": \"43190788910252000603550010000375791937008290\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.212Z\" \n            }, \n            { \n              \"chave\": \"43190788910252000603550010000375791937008291\", \n              \"entregue\": false, \n              \"dataEntrega\": \"2019-11-21T15:15:00.213Z\" \n            } \n         ] \n    } \n \n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [       
+          {
+          "name": "solicitacaoId",
+          "in": "path",
+          "description": "Código da solicitação",
+          "required": true,
+          "type": "string"
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "X-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os dados de uma determinada solicitação.",
+            "schema": {
+              "$ref": "#/definitions/consultarSolicitacao"
+            }
+          },
+          "404": {
+            "description": "A solicitação informada não foi encontrada."
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Push NF-e"
+        ],
+        "summary": "Excluir uma determinada solicitação de monitoração",
+        
+        "x-auth-type": "Application & Application User",
+        "x-throttling-tier": "Unlimited",
+        "description": " \n\n## Exemplo\n #### Solicitação para degustação: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;al2sDBn6KNVpleB \n<br>\n  #### Chamada\n\n    https://valapinfe2.estaleiro.serpro.gov.br/push/{solicitacaoId}\n    \n    No header:\n      x-credencial: NjAxNjU1NzA2NDQuMDEwMDAxLlNJQUZJMjAxOEhN\n      (valor referente às credenciais 60165570644.010001.SIAFI2018HM convertido em Base64. Mais informações na descrição do parâmetro x-credencial, abaixo) \n#### Retorno\n    { \n        \"mensagem\": \"Solicitação excluída com sucesso.\"\n    } \n",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [       
+          {
+          "name": "solicitacaoId",
+          "in": "path",
+          "description": "Código da solicitação",
+          "required": true,
+          "type": "string"
+          },
+          {
+            "description": "Solicitação de assinatura de carimbo de tempo. Informe 1 para assinar, ou deixe em branco para não assinar.",
+            "name": "X-signature",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "description": "Campo opcional para identificar requisições. O conteúdo é um texto livre para que o cliente possa identificar a origem da requisição, não há validação do seu conteúdo pela API. Máximo 32 caracteres",
+            "name": "X-Request-Tag",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Solicitação excluída com sucesso."
+          },
+          "404": {
+            "description": "A solicitação informada não foi encontrada."
+          },
+          "500": {
+            "description": "Erro interno do servidor"
+          }
+        }
+      }
+    },
     "/monitor/status": {
       "get": {
         "tags": [
