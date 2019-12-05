@@ -34,11 +34,9 @@
         "tags": [
           "1 Introdução"
         ],
-        "summary": "Datavalid",
-		"description": "O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. \n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
-         "responses": {
-
-        }
+        "summary": "O Datavalid",
+        "description": "<p style=\"color: red; font: 24px bold; font-weight: bold\">ATENÇÃO: Esta documentação está desatualizada e será desativada até 31/01/2020. Favor acesse e guarde o link da nossa nova documentação, mais completa e atualizada em <a href=\"https://apidocs.datavalidp.estaleiro.serpro.gov.br\">https://apidocs.datavalidp.estaleiro.serpro.gov.br</a></p> O Datavalid é uma solução de análise de informações que garante autenticidade e confiabilidade aos dados em tempo real.  O Datavalid é disponibilizado através de um serviço  `HTTP REST` oferecendo operações que permitem as aplicações realizar validações em dados de Pessoas Físicas e Pessoas Jurídicas. Para pessoas físicas, o Datavalid ainda disponibiliza um recurso biometrico, que funciona comparando a foto da face da pessoa com uma foto de face oficial cadastrada nas bases do governo.\n\n Nessa página, o Datavalid foi documentado utilizando a tecnologia Swagger. Através dessa documentação é possível entender o funcionamento do serviço testar todos os métodos disponíveis para uso. \n\n Utilize os links do menu ao lado para navegar pelas seções da documentação.",
+        "responses": {}
       }
     }
     ,
