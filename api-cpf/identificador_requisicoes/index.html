@@ -36,7 +36,7 @@
     
     
       
-        <title>Teste - Consulta Massiva CPF</title>
+        <title>Identificador opcional de Requisições - Consulta Massiva CPF</title>
       
     
     
@@ -77,6 +77,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#identificador-opcional-de-requisicoes" tabindex="0" class="md-skip">
+        Ir para o conteúdo
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -99,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Teste
+                Identificador opcional de Requisições
               
             </span>
           
@@ -250,10 +254,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Documentação
@@ -305,11 +311,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../identificador_requisicoes/" title="Identificador opcional de Requisições" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Identificador opcional de Requisições
+      </label>
+    
+    <a href="./" title="Identificador opcional de Requisições" class="md-nav__link md-nav__link--active">
       Identificador opcional de Requisições
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#campo-cabecalho-da-requisicao-x-request-tag" class="md-nav__link">
+    Campo cabeçalho da requisição (X-Request-Tag)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -481,15 +525,48 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#campo-cabecalho-da-requisicao-x-request-tag" class="md-nav__link">
+    Campo cabeçalho da requisição (X-Request-Tag)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Teste</h1>
-                
-                
+                <h1 id="identificador-opcional-de-requisicoes">Identificador Opcional de Requisições</h1>
+<h2 id="campo-cabecalho-da-requisicao-x-request-tag">Campo cabeçalho da requisição (X-Request-Tag)</h2>
+<p>Este campo é opcional na utilização das chamadas à API, e serve como identificador de requisições. Caso uma empresa necessite, por exemplo, agrupar a quantidade de requisições realizadas por cada departamento, poderá utilizar este campo de forma a identificar no faturamento a quantidade de requisições de cada item agrupador.</p>
+<p>O campo é de texto livre (string até 32 caracteres) e não possui validação de seu conteúdo. Cabe, portanto, ao cliente manter o controle das informações que são enviadas para esse campo de forma que o relatório de faturamento faça o agrupamento adequado.</p>
+<p>Este atributo pode ser usado pela entidade de classe e/ou grupo econômico na modalidade global com ônus entidade para fins de identificação do associado que realiza a requisição. No caso de entidades de classe ou grupos econômicos que realizem a contratação com ônus para o associado não é necessário realizar o agrupamento pois cada associado irá possuir sua própria chave de consumo.</p>
                 
                   
                 
@@ -507,6 +584,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../carimbo_tempo/" title="Requisições com Carimbo de Tempo" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Requisições com Carimbo de Tempo
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../faq/" title="Dúvidas - FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Dúvidas - FAQ
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
