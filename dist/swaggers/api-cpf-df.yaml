@@ -4,14 +4,16 @@ info:
   title: "Consulta Massiva CPF"
   description: "Chave do ambiente Trial: **Bearer 4e1a1858bdd584fdc077fb7d80f39283**"
 servers:
-  - url: "https://apigateway.serpro.gov.br/consultacpf-df-trial/v1"
+  - url: "https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1"
     description: "Trial"
-  - url: https://apigateway.serpro.gov.br/consultacpf-df/v1"
+  - url: https://apigateway.serpro.gov.br/consulta-cpf-df/v1"
     description: "Produção"
 paths:
   /cpf/{ni}:
     get:
       summary: "Retorna os dados do Cadastro de Pessoa Física (CPF)"
+      tags:
+        - CPF
       description: ""
       parameters:
       - in: "path"
@@ -65,12 +67,18 @@ paths:
   /status:
     get:
       summary: 'Retorna o status da API CPF'
+      tags:
+        - Status
       responses:
         200:
           description: "API Consulta CPF disponível"
         500:
           description: "API Consulta CPF indisponível"
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
   schemas:
     CPF:
       type: object
@@ -93,3 +101,5 @@ components:
               type: string
               description: 'Descrição da situação cadastral'
               example: 'REGULAR'
+security:
+  - bearerAuth: []
