@@ -647,7 +647,7 @@ Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote
 
 <div class="admonition danger">
 <p class="admonition-title">Aviso importante</p>
-<p>O Consumer Key e Consumer Secret identificam seu usuário e seu contrato com o SERPRO. Mantenha essas informações protegidas de forma segura.</p>
+<p>O Consumer Key e Consumer Secret identificam seu usuário e seu contrato com o SERPRO. Mantenha essas informações protegidas.</p>
 </div>
 <h3 id="2-segundo-passo-solicite-o-bearer-token">2. Segundo passo - Solicite o Bearer Token</h3>
 <p>Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.</p>
@@ -696,10 +696,10 @@ https://apigateway.serpro.gov.br/token
 
 
 <h4 id="renovacao-do-token-de-acesso">Renovação do Token de Acesso</h4>
-<p>Atentar que sempre que o token de acesso temporário expirar, o gateway vai retornar um HTTP CODE 401 após realizar uma requisição para uma API. Neste caso, deve ser repetido o passo anteriormente descrito no Segundo Passo <a href="./#2-segundo-passo-solicite-o-bearer-token">Como solicitar o Token de Acesso (Bearer)</a> para geração de um novo token de acesso temporário.</p>
+<p>Atentar que sempre que o token de acesso temporário expirar, o gateway vai retornar um HTTP CODE 401 após realizar uma requisição para uma API. Neste caso, deve ser repetido o Segundo Passo <a href="./#2-segundo-passo-solicite-o-bearer-token">Como solicitar o Token de Acesso (Bearer)</a> para geração de um novo token de acesso temporário.</p>
 <h3 id="4-quarto-passo-fazendo-uma-requisicao">4. Quarto passo - Fazendo uma requisição</h3>
 <h4 id="realizando-consulta-as-apis">Realizando consulta às APIs</h4>
-<p>De posse do Token de Acesso, faça a requisição a um dos serviços, por exemplo da API CPF Trial. </p>
+<p>De posse do Token de Acesso, faça a requisição a API CPF Trial. </p>
 <div class="codehilite"><pre><span></span><code><span class="err">curl -X GET &quot;https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/cpf/40442820135&quot; \</span>
 <span class="err">-H &quot;accept: application/json&quot; \</span>
 <span class="err">-H &quot;Authorization: Bearer 4e1a1858bdd584fdc077fb7d80f39283&quot; \</span>
