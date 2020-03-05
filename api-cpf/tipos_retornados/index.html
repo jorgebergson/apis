@@ -36,7 +36,7 @@
     
     
       
-        <title>Links uteis - API CONSULTA MASSIVA CPF</title>
+        <title>Tipos retornados - API CONSULTA MASSIVA CPF</title>
       
     
     
@@ -77,7 +77,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#documentacao-legada" tabindex="0" class="md-skip">
+      <a href="#campos-retornados-pela-api-consulta-massiva-cpf" tabindex="0" class="md-skip">
         Ir para o conteúdo
       </a>
     
@@ -103,7 +103,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Links uteis
+                Tipos retornados
               
             </span>
           
@@ -170,10 +170,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
     
     <label class="md-nav__link" for="nav-1">
       Versão em Português
@@ -273,10 +275,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1-5" type="checkbox" id="nav-1-5" checked>
     
     <label class="md-nav__link" for="nav-1-5">
       Documentação
@@ -304,11 +308,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tipos_retornados/" title="Tipos retornados" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Tipos retornados
+      </label>
+    
+    <a href="./" title="Tipos retornados" class="md-nav__link md-nav__link--active">
       Tipos retornados
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Índice</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-campos-retornados" class="md-nav__link">
+    Tipos de Campos Retornados
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-situacao-cadastral-retornados" class="md-nav__link">
+    Tipos de Situação Cadastral Retornados
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -828,34 +877,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Índice</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#documentacao-legada" class="md-nav__link">
-    Documentação Legada
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#demonstracao" class="md-nav__link">
-    Demonstração
+  <a href="#tipos-de-campos-retornados" class="md-nav__link">
+    Tipos de Campos Retornados
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#producao" class="md-nav__link">
-    Produção
+      
+        <li class="md-nav__item">
+  <a href="#tipos-de-situacao-cadastral-retornados" class="md-nav__link">
+    Tipos de Situação Cadastral Retornados
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -876,22 +914,77 @@
               
                 
                 
-                  <h1>Links uteis</h1>
-                
-                <h2 id="documentacao-legada">Documentação Legada</h2>
-<p>Links do ambiente de documentação antiga (legado)  </p>
-<div class="admonition warning">
-<p class="admonition-title">Aviso Importante</p>
-<p>Estes links podem conter informação desatualizada. As informações atuais devem ser consultadas em <a href="../api_reference/">Referência da API</a>. Estes links foram apenas para suporte aos clientes. </p>
-</div>
-<h3 id="demonstracao">Demonstração</h3>
-<p><a href="">Plano Novo</a></p>
-<p><a href="">Plano Biometria</a></p>
-<p><a href="">Plano Básico</a></p>
-<h3 id="producao">Produção</h3>
-<p><a href="">Plano Novo</a></p>
-<p><a href="">Plano Biometria</a></p>
-<p><a href="">Plano Básico</a></p>
+                <h1 id="campos-retornados-pela-api-consulta-massiva-cpf">Campos retornados pela API Consulta Massiva CPF</h1>
+<h2 id="tipos-de-campos-retornados">Tipos de Campos Retornados</h2>
+<table>
+<thead>
+<tr>
+<th>Tipos de campos</th>
+<th align="left">Valor de retorno</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NI</td>
+<td align="left">Número de Inscrição no Cadastro de Pessoa Física, no formato 99999999999</td>
+</tr>
+<tr>
+<td>Nome</td>
+<td align="left">Nome da Pessoa Física</td>
+</tr>
+<tr>
+<td>Situação</td>
+<td align="left">Situação Cadastral da Pessoa Física, formada por dois campos: Código e Descrição.</td>
+</tr>
+<tr>
+<td>Situação/Código</td>
+<td align="left">Código da Situação Cadastral da Pessoa Física</td>
+</tr>
+<tr>
+<td>Situação/Descrição</td>
+<td align="left">Descrição da Situação Cadastral da Pessoa Física</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tipos-de-situacao-cadastral-retornados">Tipos de Situação Cadastral Retornados</h2>
+<table>
+<thead>
+<tr>
+<th>Código</th>
+<th align="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td align="left">Regular</td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">Suspensa</td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">Titular Falecido</td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">Pendente de Regularização</td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left">Cancelada por Multiplicidade</td>
+</tr>
+<tr>
+<td>8</td>
+<td align="left">Nula</td>
+</tr>
+<tr>
+<td>9</td>
+<td align="left">Cancelada de Ofício</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -909,6 +1002,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../codigos_retorno/" title="Códigos de retorno" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Anterior
+                </span>
+                Códigos de retorno
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../carimbo_tempo/" title="Requisições com Carimbo de Tempo" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Próximo
+                </span>
+                Requisições com Carimbo de Tempo
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
