@@ -426,7 +426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="#como-autenticar-na-api-cpf" title="Authenticating to the CPF API" class="md-nav__link">
+    <a href="#como-autenticar-na-api-consulta-cpf" title="Authenticating to the CPF API" class="md-nav__link">
       Authenticating to the CPF API
     </a>
   </li>
@@ -642,7 +642,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../es/quick_start/#como-autenticar-na-api-cpf" title="Autenticando a la API de CPF" class="md-nav__link">
+    <a href="../../es/quick_start/#como-autenticar-na-api-consulta-cpf" title="Autenticando a la API de CPF" class="md-nav__link">
       Autenticando a la API de CPF
     </a>
   </li>
@@ -819,23 +819,23 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-primeiro-passo-obtenha-consumer-key-e-consumer-secret" class="md-nav__link">
-    1. Primeiro passo - Obtenha Consumer Key e Consumer Secret
+  <a href="#1-step-one-get-consumer-key-e-consumer-secret" class="md-nav__link">
+    1. Step One - Get Consumer Key e Consumer Secret
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-segundo-passo-solicite-o-bearer-token" class="md-nav__link">
-    2. Segundo passo - Solicite o Bearer Token
+  <a href="#2-second-step-request-the-bearer-token" class="md-nav__link">
+    2. Second step - Request the Bearer Token
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#como-solicitar-o-token-de-acesso-bearer" class="md-nav__link">
-    Como solicitar o Token de Acesso (Bearer)
+  <a href="#how-to-request-the-access-token-bearer" class="md-nav__link">
+    How to request the Access Token (Bearer)
   </a>
   
 </li>
@@ -846,23 +846,23 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-terceiro-passo-receba-o-token" class="md-nav__link">
-    3. Terceiro passo - Receba o Token
+  <a href="#3-third-step-receive-the-token" class="md-nav__link">
+    3. Third step - Receive the Token
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#receba-o-token" class="md-nav__link">
-    Receba o Token
+  <a href="#receive-the-token" class="md-nav__link">
+    Receive the Token
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#renovacao-do-token-de-acesso" class="md-nav__link">
-    Renovação do Token de Acesso
+  <a href="#access-token-renewal" class="md-nav__link">
+    Access Token Renewal
   </a>
   
 </li>
@@ -873,16 +873,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-quarto-passo-fazendo-uma-requisicao" class="md-nav__link">
-    4. Quarto passo - Fazendo uma requisição
+  <a href="#4-step-four-making-a-request" class="md-nav__link">
+    4. Step four - Making a request
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#realizando-consulta-as-apis" class="md-nav__link">
-    Realizando consulta às APIs
+  <a href="#querying-the-apis" class="md-nav__link">
+    Querying the APIs
   </a>
   
 </li>
@@ -936,41 +936,41 @@
                 
                 <h1 id="guias-rapidos">Guias rápidos</h1>
 <h2 id="como-autenticar-na-api-consulta-cpf">Como autenticar na API Consulta CPF</h2>
-<p>As APIs disponibilizadas pela plataforma API SERPRO utilizam o protocolo OAuth2 para realizar a autenticação e autorização de acesso das APIs contratadas. Siga os passos abaixo para se autenticar e consumir o Datavalid.  </p>
-<h3 id="1-primeiro-passo-obtenha-consumer-key-e-consumer-secret">1. Primeiro passo - Obtenha Consumer Key e Consumer Secret</h3>
-<p>Para consumir as APIs, você deverá utilizar os dois códigos (Consumer Key e Consumer Secret) disponibilizados na Área do Cliente. Esses códigos servem para identificar o contrato. As credenciais de acesso devem ser obtidas a partir da <a href="https://cliente.serpro.gov.br" target="_blank">área do cliente Serpro</a>. </p>
-<p>Exemplos de códigos:  </p>
+<p>The APIs provided by the API SERPRO platform use the OAuth2 protocol to perform the authentication and access authorization of the contracted APIs. Follow the steps below to authenticate yourself and consume the Massive CPF Api Api.  </p>
+<h3 id="1-step-one-get-consumer-key-e-consumer-secret">1. Step One - Get Consumer Key e Consumer Secret</h3>
+<p>To consume the APIs, you must use both codes (Consumer Key e Consumer Secret) available in the Client Area. These codes are used to identify the contract. Access credentials must be obtained from the <a href="https://cliente.serpro.gov.br" target="_blank">área do cliente Serpro</a>. </p>
+<p>Code examples: </p>
 <div class="codehilite"><pre><span></span><code>Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb   
 Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote
 </code></pre></div>
 
 
 <div class="admonition danger">
-<p class="admonition-title">Aviso importante</p>
-<p>O Consumer Key e Consumer Secret identificam seu usuário e seu contrato com o SERPRO. Mantenha essas informações protegidas.</p>
+<p class="admonition-title">Important warning</p>
+<p>Consumer Key and Consumer Secret identify their user and their contract with SERPRO. Keep this information protected.</p>
 </div>
-<h3 id="2-segundo-passo-solicite-o-bearer-token">2. Segundo passo - Solicite o Bearer Token</h3>
-<p>Para consultar as APIs, é necessário obter um token de acesso temporário (Bearer). Esse token possui um tempo de validade e sempre que expirado, este passo de requisição de um novo token de acesso deve ser repetido.</p>
-<h4 id="como-solicitar-o-token-de-acesso-bearer">Como solicitar o Token de Acesso (Bearer)</h4>
-<p>Para solicitar o token temporário é necessário realizar uma requisição HTTP POST para o endpoint Token https://apigateway.serpro.gov.br/token, informando as credenciais de acesso (consumerKey:consumerSecret) no HTTP Header Authorization, no formato base64, conforme exemplo abaixo. </p>
+<h3 id="2-second-step-request-the-bearer-token">2. Second step - Request the Bearer Token</h3>
+<p>To consult the APIs, it is necessary to obtain a temporary access token (Bearer). This token has an expiration time and whenever it expires, this step of requesting a new access token must be repeated.</p>
+<h4 id="how-to-request-the-access-token-bearer">How to request the Access Token (Bearer)</h4>
+<p>To request the temporary token it is necessary to make an HTTP POST request to the Token endpoint https://apigateway.serpro.gov.br/token, informing the access credentials (consumerKey: consumerSecret) in HTTP Header Authorization, in base64 format, as shown below.</p>
 <div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">HEAD</span><span class="o">]</span><span class="w"> </span><span class="k">Authorization</span><span class="err">:</span><span class="w"> </span><span class="n">Basic</span><span class="w"> </span><span class="n">base64</span><span class="p">(</span><span class="n">Consumer</span><span class="w"> </span><span class="k">Key</span><span class="err">:</span><span class="n">Consumer</span><span class="w"> </span><span class="n">Secret</span><span class="p">)</span><span class="w"> </span>
 <span class="o">[</span><span class="n">HEAD</span><span class="o">]</span><span class="w"> </span><span class="n">Content</span><span class="o">-</span><span class="nl">Type</span><span class="p">:</span><span class="w"> </span><span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span><span class="w"> </span>
 <span class="o">[</span><span class="n">POST</span><span class="o">]</span><span class="w"> </span><span class="n">grant_type</span><span class="o">=</span><span class="n">client_credentials</span><span class="w"></span>
 </code></pre></div>
 
 
-<p>Para utilização no parâmetro <em>Authorization</em>, é necessário concatenar os códigos Consumer Key e Consumer Secret, separados pelo caracter ":", e converter o resultado em BASE64. 
-No exemplo a seguir, é retornada a string <em>ZGphUjIx[...]IzT3RlCg</em>:</p>
+<p>For use in the * Authorization * parameter, it is necessary to concatenate the Consumer Key and Consumer Secret codes, separated by the character ":", and convert the result to BASE64. 
+In the following example, the string is returned <em>ZGphUjIx[...]IzT3RlCg</em>:</p>
 <div class="codehilite"><pre><span></span><code><span class="nb">echo</span> -n <span class="s2">&quot;djaR21PGoYp1iyK2n2ACOH9REdUb:ObRsAJWOL4fv2Tp27D1vd8fB3Ote&quot;</span> <span class="p">|</span> base64
 </code></pre></div>
 
 
-<p>Resultado:</p>
+<p>Result:</p>
 <div class="codehilite"><pre><span></span><code><span class="err">ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpPYlJzQUpXT0w0ZnYyVHAyN0QxdmQ4ZkIzT3RlCg</span>
 </code></pre></div>
 
 
-<p>Abaixo segue um exemplo de chamada via cUrl:</p>
+<p>Below is an example of a call via cUrl:</p>
 <div class="codehilite"><pre><span></span><code>curl -k -d <span class="s2">&quot;grant_type=client_credentials&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Basic ZGphUjIxUEdvWXAxaXlLMm4yQUNPSDlSRWRVYjpPYlJzQUpXT0w0ZnYyVHAyN0QxdmQ4ZkIzT3RlCg&quot;</span> <span class="se">\</span>
 https://apigateway.serpro.gov.br/token
@@ -979,13 +979,13 @@ https://apigateway.serpro.gov.br/token
 
 <div class="admonition information">
 <p class="admonition-title"><strong>Content-type</strong></p>
-<p>Caso experiencie erros de "415 Unsupported Media Type" na chamada de solicitação do Token, utilize o campo do Header "Content-Type" com o valor "application/x-www-form-urlencoded"</p>
+<p>If you experience errors"415 Unsupported Media Type" in the Token request call, use the "Content-Type" Header field with the value "application/x-www-form-urlencoded"</p>
 <p>[HEAD] Content-type: "application/x-www-form-urlencoded"</p>
 </div>
-<h3 id="3-terceiro-passo-receba-o-token">3. Terceiro passo - Receba o Token</h3>
-<p>Como resultado do passo anterior, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. Este token deve ser informado nos próximos passos.</p>
-<h4 id="receba-o-token">Receba o Token</h4>
-<p>Como resultado, o endpoint informará o token de acesso a API, no campo access_token da mensagem json de retorno. Este token deve ser informado nos próximos passos.</p>
+<h3 id="3-third-step-receive-the-token">3. Third step - Receive the Token</h3>
+<p>As a result of the previous step, the endpoint will inform the API access token, in the access_token field of the return json message. This token must be informed in the next steps.</p>
+<h4 id="receive-the-token">Receive the Token</h4>
+<p>As a result, the endpoint will inform the API access token, in the access_token field of the return json message. This token must be informed in the next steps.</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
     <span class="nt">&quot;scope&quot;</span><span class="p">:</span> <span class="s2">&quot;am_application_scope default&quot;</span><span class="p">,</span> 
     <span class="nt">&quot;token_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer&quot;</span><span class="p">,</span> 
@@ -995,33 +995,33 @@ https://apigateway.serpro.gov.br/token
 </code></pre></div>
 
 
-<h4 id="renovacao-do-token-de-acesso">Renovação do Token de Acesso</h4>
-<p>Atentar que sempre que o token de acesso temporário expirar, o gateway vai retornar um HTTP CODE 401 após realizar uma requisição para uma API. Neste caso, deve ser repetido o Segundo Passo <a href="./#2-segundo-passo-solicite-o-bearer-token">Como solicitar o Token de Acesso (Bearer)</a> para geração de um novo token de acesso temporário.</p>
-<h3 id="4-quarto-passo-fazendo-uma-requisicao">4. Quarto passo - Fazendo uma requisição</h3>
-<h4 id="realizando-consulta-as-apis">Realizando consulta às APIs</h4>
-<p>De posse do Token de Acesso, faça a requisição a API CPF Trial. </p>
+<h4 id="access-token-renewal">Access Token Renewal</h4>
+<p>Note that whenever the temporary access token expires, the gateway will return an HTTP CODE 401 after making a request to an API. In this case, the Second Step must be repeated <a href="./#2-segundo-passo-solicite-o-bearer-token">How to request the Access Token (Bearer)</a> to generate a new temporary access token.</p>
+<h3 id="4-step-four-making-a-request">4. Step four - Making a request</h3>
+<h4 id="querying-the-apis">Querying the APIs</h4>
+<p>In possession of the Access Token, make the request to the CPF Trial API.</p>
 <div class="codehilite"><pre><span></span><code><span class="err">curl -X GET &quot;https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/cpf/40442820135&quot; \</span>
 <span class="err">-H &quot;accept: application/json&quot; \</span>
 <span class="err">-H &quot;Authorization: Bearer 4e1a1858bdd584fdc077fb7d80f39283&quot; \</span>
 </code></pre></div>
 
 
-<p>No exemplo acima foram utilizados os seguintes parâmetros:</p>
+<p>In the example above, the following parameters were used:</p>
 <ul>
 <li>
 <p>[HEADER] Accept: application/json<br />
-Informamos o tipo de dados que estamos requerendo, nesse caso JSON</p>
+We inform the type of data we are requesting, in this case JSON</p>
 </li>
 <li>
 <p>[HEADER] Authorization: Bearer 4e1a1858bdd584fdc077fb7d80f39283<br />
-Informamos o token de acesso recebido</p>
+We inform the access token received</p>
 </li>
 <li>
 <p>[GET] https://apigateway.serpro.gov.br/consulta-cpf-df-trial/api/v1/cpf/40442820135<br />
-Chamamos a url da API e o método desejado. No caso, a url base é "https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/”, e o método é o "cpf/40442820135".</p>
+We call the API url and the desired method. In this case, the base url is "https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/”, and the method is the "cpf/40442820135".</p>
 </li>
 </ul>
-<p>Exemplo de resposta esperada:</p>
+<p>Example of expected response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
 <span class="nt">&quot;ni&quot;</span><span class="p">:</span><span class="s2">&quot;40442820135&quot;</span><span class="p">,</span>
 <span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="s2">&quot;Nome do CPF 404.428.201-35&quot;</span><span class="p">,</span>
@@ -1034,25 +1034,25 @@ Chamamos a url da API e o método desejado. No caso, a url base é "https://apig
 
 
 <div class="admonition warning">
-<p class="admonition-title"><strong>IMPORTANTE</strong></p>
-<p>A chamada à consulta da API CPR Trial acima é apenas para demonstração. As APIs disponíveis e suas respectivas URLs (endpoints) para consumo são disponibilizadas (através da documentação dos seus respectivos swaggers) na seção <a href="../api_reference/">Referência da API</a>.</p>
+<p class="admonition-title"><strong>IMPORTANT</strong></p>
+<p>The CPR Trial API query above is for demonstration purposes only. The available APIs and their respective URLs (endpoints) for consumption are made available (through the documentation of their respective swaggers) in the section <a href="../api_reference/">API Reference</a>.</p>
 </div>
 <h2 id="como-utilizar-a-api-cpf-demonstracao">Como utilizar a API CPF Demonstração</h2>
-<p>API CPF Demonstração é o ambiente de testes da API CPF, com dados de exemplo (Mock), com objetivo de demonstrar o funcionamento da API. Para utilizá-lo:  </p>
+<p>API CPF Demo is the testing environment of the CPF API, with sample data (Mock), in order to demonstrate the API's operation. To use it:  </p>
 <ol>
-<li>Acesse o <a href="../demonstracao/">API CPF Demonstração</a>  </li>
-<li>Escolha o método (endpoint) a testar</li>
-<li>Clique em <strong><em>Try it Out</em></strong></li>
-<li>Insira os cabeçalhos que desejar e/ou altere o conteúdo do corpo da requisição</li>
-<li>Clique em <strong><em>Execute</em></strong></li>
+<li>Access the <a href="../demonstracao/">CPF Demo API</a>  </li>
+<li>Choose the method (endpoint) to test</li>
+<li>click in <strong><em>Try it Out</em></strong></li>
+<li>Insert the headings you want and/or change the content of the request body</li>
+<li>click in <strong><em>Execute</em></strong></li>
 </ol>
 <h3 id="dados-para-testes">Dados para testes</h3>
-<p>Para testar o ambiente Trial, utilize um dos CPF fictícios listados abaixo.</p>
+<p>To test the Trial environment, use one of the fictional CPF listed below.</p>
 <table>
 <thead>
 <tr>
 <th>CPF</th>
-<th>Situação Cadastral</th>
+<th>Registration Situation</th>
 </tr>
 </thead>
 <tbody>
