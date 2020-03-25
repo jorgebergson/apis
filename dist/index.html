@@ -41,9 +41,10 @@
     <script src="./swagger-ui-standalone-preset.js"> </script>
     <script>
     window.onload = function() {
+      var api = new URLSearchParams(document.location.search).get("api");
       // Begin Swagger UI call region
       const ui = SwaggerUIBundle({
-        url: "https://devserpro.github.io/apis/dist/swaggers/api-cpf-df.yaml",
+        url: "https://devserpro.github.io/apis/dist/swaggers/" + api + ".yaml",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
