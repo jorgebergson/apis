@@ -452,7 +452,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick_start/#how-to-authenticate-with-the-cnpj-query-api" title="Authenticating to the CNPJ API" class="md-nav__link">
+    <a href="../quick_start/#how-to-authenticate-in-the-cnpj-consultation-api" title="Authenticating to the CNPJ API" class="md-nav__link">
       Authenticating to the CNPJ API
     </a>
   </li>
@@ -1013,7 +1013,7 @@
                 
                 
                 <h1 id="return-codes">Return codes</h1>
-<p>Requests to the CPF API can return the following HTTP code:</p>
+<p>Requests to the CNPJ API can return the following HTTP code:</p>
 <div class="admonition info">
 <p class="admonition-title">Non-ticketed codes</p>
 <p>The codes <strong> 400 (Invalid request) </strong> and <strong> 500 (Internal server error) </strong> will not be ticketed on billing.</p>
@@ -1024,17 +1024,17 @@
 <h3 id="206-partial-content">206 Partial Content</h3>
 <p>The information was returned, but not completely.</p>
 <h3 id="400-invalid-request">400 Invalid request</h3>
-<p>The CPF number entered is not valid.</p>
+<p>The CNPJ number entered is not valid.</p>
 <h3 id="401-not-authorized">401 Not authorized</h3>
 <p>Problems during authentication.</p>
 <h3 id="403-forbidden">403 forbidden</h3>
-<p>This error occurs when there is a wrong path in the request. Make sure to call the API as follows: "https://apigateway.serpro.gov.br/consulta-cpf-df/v1/cpf/{ni}"</p>
+<p>This error occurs when there is a wrong path in the request. Make sure to call the API as follows: "https://apigateway.serpro.gov.br/consulta-cnpj-df/v1/cnpj/{ni}"</p>
 <h3 id="404-not-found">404 Not found</h3>
-<p>There is no CPF with the registration number informed.</p>
+<p>There is no CNPJ with the registration number informed.</p>
 <h3 id="500-server-error">500 Server error</h3>
 <p>An internal server error has occurred.</p>
 <h3 id="504-gateway-timeout">504 Gateway Timeout</h3>
-<p>There was a network error and the gateway did not respond in time. The request did not reach the API Consulta CPF.</p>
+<p>There was a network error and the gateway did not respond in time. The request did not reach the API Consulta CNPJ.</p>
 <p><br/></p>
                 
                   
