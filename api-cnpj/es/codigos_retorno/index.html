@@ -36,7 +36,7 @@
     
     
       
-        <title>Códigos de retorno - API CONSULTA CNPJ</title>
+        <title>Códigos de retorno - API CONSULTA CPF</title>
       
     
     
@@ -86,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="API CONSULTA CNPJ" aria-label="API CONSULTA CNPJ" class="md-header-nav__button md-logo">
+        <a href="../.." title="API CONSULTA CPF" aria-label="API CONSULTA CPF" class="md-header-nav__button md-logo">
           
             <img alt="logo" src="../../pt/imgs/favicon.png" width="24" height="24">
           
@@ -99,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              API CONSULTA CNPJ
+              API CONSULTA CPF
             </span>
             <span class="md-header-nav__topic">
               
@@ -156,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="API CONSULTA CNPJ" class="md-nav__button md-logo">
+    <a href="../.." title="API CONSULTA CPF" class="md-nav__button md-logo">
       
         <img alt="logo" src="../../pt/imgs/favicon.png" width="48" height="48">
       
     </a>
-    API CONSULTA CNPJ
+    API CONSULTA CPF
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -234,8 +234,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pt/quick_start/#como-autenticar-na-api-consulta-cnpj" title="Como autenticar na API CNPJ" class="md-nav__link">
-      Como autenticar na API CNPJ
+    <a href="../../pt/quick_start/#como-autenticar-na-api-consulta-cpf" title="Como autenticar na API CPF" class="md-nav__link">
+      Como autenticar na API CPF
     </a>
   </li>
 
@@ -246,7 +246,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pt/quick_start/#como-utilizar-a-api-cnpj-demonstracao" title="Como usar a demonstração da API" class="md-nav__link">
+    <a href="../../pt/quick_start/#como-utilizar-a-api-cpf-demonstracao" title="Como usar a demonstração da API" class="md-nav__link">
       Como usar a demonstração da API
     </a>
   </li>
@@ -450,8 +450,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../en/quick_start/#how-to-authenticate-in-the-cnpj-consultation-api" title="Authenticating to the CNPJ API" class="md-nav__link">
-      Authenticating to the CNPJ API
+    <a href="../../en/quick_start/#how-to-authenticate-with-the-cpf-query-api" title="Authenticating to the CPF API" class="md-nav__link">
+      Authenticating to the CPF API
     </a>
   </li>
 
@@ -462,7 +462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../en/quick_start/#how-to-use-the-cnpj-demo-api" title="Using the API Demo" class="md-nav__link">
+    <a href="../../en/quick_start/#how-to-use-the-cpf-demo-api" title="Using the API Demo" class="md-nav__link">
       Using the API Demo
     </a>
   </li>
@@ -668,8 +668,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick_start/#como-autenticarse-con-la-api-de-consulta-cnpj" title="Autenticando a la API de CNPJ" class="md-nav__link">
-      Autenticando a la API de CNPJ
+    <a href="../quick_start/#como-autenticarse-con-la-api-de-consulta-cpf" title="Autenticando a la API de CPF" class="md-nav__link">
+      Autenticando a la API de CPF
     </a>
   </li>
 
@@ -680,7 +680,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick_start/#como-usar-la-api-de-demostracion-de-cnpj" title="Usar la demostración de API" class="md-nav__link">
+    <a href="../quick_start/#como-usar-la-api-de-demostracion-de-cpf" title="Usar la demostración de API" class="md-nav__link">
       Usar la demostración de API
     </a>
   </li>
@@ -999,7 +999,7 @@
                 
                 
                 <h1 id="codigos-de-retorno">Códigos de Retorno</h1>
-<p>Las solicitudes a la API de CNPJ pueden devolver el siguiente código HTTP:</p>
+<p>Las solicitudes a la API de CPF pueden devolver el siguiente código HTTP:</p>
 <div class="admonition info">
 <p class="admonition-title">Códigos no emitidos</p>
 <p>Los códigos <strong> 400 (solicitud no válida) </strong> y <strong> 500 (error interno del servidor) </strong> no se emitirán en la facturación.</p>
@@ -1010,16 +1010,16 @@
 <h3 id="206-contenido-parcial">206 Contenido parcial</h3>
 <p>La información fue devuelta, pero no completamente.</p>
 <h3 id="400-solicitud-invalida">400 Solicitud inválida</h3>
-<p>El número de CNPJ ingresado no es válido.</p>
+<p>El número de CPF ingresado no es válido.</p>
 <h3 id="401-no-autorizado">401 No autorizado</h3>
 <p>Problemas durante la autenticación.
-Este error ocurre cuando hay una ruta incorrecta en la solicitud. Asegúrese de llamar a la API de la siguiente manera: "https://apigateway.serpro.gov.br/consulta-cnpj-df/v1/cnpj/{ni}"</p>
+Este error ocurre cuando hay una ruta incorrecta en la solicitud. Asegúrese de llamar a la API de la siguiente manera: "https://apigateway.serpro.gov.br/consulta-cpf-df/v1/cpf/{ni}"</p>
 <h3 id="404-no-encontrado">404 no encontrado</h3>
-<p>No hay CNPJ con el número de registro informado.</p>
+<p>No hay CPF con el número de registro informado.</p>
 <h3 id="500-error-del-servidor">500 Error del servidor</h3>
 <p>Se ha producido un error interno del servidor.</p>
 <h3 id="504-tiempo-de-espera-de-puerta-de-enlace">504 Tiempo de espera de puerta de enlace</h3>
-<p>Hubo un error de red y la puerta de enlace no respondió a tiempo. La solicitud no llegó al API Consulta CNPJ.</p>
+<p>Hubo un error de red y la puerta de enlace no respondió a tiempo. La solicitud no llegó al API Consulta CPF.</p>
 <p><br/></p>
                 
                   
