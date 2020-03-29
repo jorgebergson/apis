@@ -36,7 +36,7 @@
     
     
       
-        <title>Quick Guides - API CONSULTA CNPJ</title>
+        <title>Quick Guides - API CONSULTA CPF</title>
       
     
     
@@ -86,7 +86,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="API CONSULTA CNPJ" aria-label="API CONSULTA CNPJ" class="md-header-nav__button md-logo">
+        <a href="../.." title="API CONSULTA CPF" aria-label="API CONSULTA CPF" class="md-header-nav__button md-logo">
           
             <img alt="logo" src="../../pt/imgs/favicon.png" width="24" height="24">
           
@@ -99,7 +99,7 @@
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
             <span class="md-header-nav__topic">
-              API CONSULTA CNPJ
+              API CONSULTA CPF
             </span>
             <span class="md-header-nav__topic">
               
@@ -156,12 +156,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="API CONSULTA CNPJ" class="md-nav__button md-logo">
+    <a href="../.." title="API CONSULTA CPF" class="md-nav__button md-logo">
       
         <img alt="logo" src="../../pt/imgs/favicon.png" width="48" height="48">
       
     </a>
-    API CONSULTA CNPJ
+    API CONSULTA CPF
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -234,8 +234,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pt/quick_start/#como-autenticar-na-api-consulta-cnpj" title="Como autenticar na API CNPJ" class="md-nav__link">
-      Como autenticar na API CNPJ
+    <a href="../../pt/quick_start/#como-autenticar-na-api-consulta-cpf" title="Como autenticar na API CPF" class="md-nav__link">
+      Como autenticar na API CPF
     </a>
   </li>
 
@@ -246,7 +246,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pt/quick_start/#como-utilizar-a-api-cnpj-demonstracao" title="Como usar a demonstração da API" class="md-nav__link">
+    <a href="../../pt/quick_start/#como-utilizar-a-api-cpf-demonstracao" title="Como usar a demonstração da API" class="md-nav__link">
       Como usar a demonstração da API
     </a>
   </li>
@@ -450,8 +450,8 @@
 
 
   <li class="md-nav__item">
-    <a href="#how-to-authenticate-in-the-cnpj-consultation-api" title="Authenticating to the CNPJ API" class="md-nav__link">
-      Authenticating to the CNPJ API
+    <a href="#how-to-authenticate-with-the-cpf-query-api" title="Authenticating to the CPF API" class="md-nav__link">
+      Authenticating to the CPF API
     </a>
   </li>
 
@@ -462,7 +462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="#how-to-use-the-cnpj-demo-api" title="Using the API Demo" class="md-nav__link">
+    <a href="#how-to-use-the-cpf-demo-api" title="Using the API Demo" class="md-nav__link">
       Using the API Demo
     </a>
   </li>
@@ -666,8 +666,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../es/quick_start/#como-autenticarse-con-la-api-de-consulta-cnpj" title="Autenticando a la API de CNPJ" class="md-nav__link">
-      Autenticando a la API de CNPJ
+    <a href="../../es/quick_start/#como-autenticarse-con-la-api-de-consulta-cpf" title="Autenticando a la API de CPF" class="md-nav__link">
+      Autenticando a la API de CPF
     </a>
   </li>
 
@@ -678,7 +678,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../es/quick_start/#como-usar-la-api-de-demostracion-de-cnpj" title="Usar la demostración de API" class="md-nav__link">
+    <a href="../../es/quick_start/#como-usar-la-api-de-demostracion-de-cpf" title="Usar la demostración de API" class="md-nav__link">
       Usar la demostración de API
     </a>
   </li>
@@ -1023,7 +1023,7 @@ https://apigateway.serpro.gov.br/token
 <p>Note that whenever the temporary access token expires, the gateway will return an HTTP CODE 401 after making a request to an API. In this case, the Second Step must be repeated <a href="./#2-segundo-passo-solicite-o-bearer-token">How to request the Access Token (Bearer)</a> to generate a new temporary access token.</p>
 <h3 id="4-step-four-making-a-request">4. Step four - Making a request</h3>
 <h4 id="querying-the-apis">Querying the APIs</h4>
-<p>In possession of the Access Token, make the request to the CNPJ Trial API.</p>
+<p>In possession of the Access Token, make the request to the CPF Trial API.</p>
 <div class="codehilite"><pre><span></span><code><span class="err">curl -X GET &quot;https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168&quot; \</span>
 <span class="err">-H &quot;accept: application/json&quot; \</span>
 <span class="err">-H &quot;Authorization: Bearer 4e1a1858bdd584fdc077fb7d80f39283&quot; \</span>
@@ -1096,7 +1096,7 @@ We call the API url and the desired method. In this case, the base url is "https
 <p>The above API CNPJ Consult query is for demonstration purposes only. The available APIs and their respective URLs (endpoints) for consumption are available (through the documentation of their respective swaggers) in the section <a href="../api_reference/">API Reference</a>.</p>
 </div>
 <h2 id="how-to-use-the-cnpj-demo-api">How to use the CNPJ Demo API</h2>
-<p>API CNPJ Demo is the testing environment of the CNPJ API, with sample data (Mock), in order to demonstrate the API's operation. To use it:  </p>
+<p>API CPF Demo is the testing environment of the CPF API, with sample data (Mock), in order to demonstrate the API's operation. To use it:  </p>
 <ol>
 <li>Access the <a href="../demonstracao/">CNPJ Demo API</a>  </li>
 <li>Choose the method (endpoint) to test</li>
