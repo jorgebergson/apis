@@ -835,8 +835,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-authenticate-in-the-cnpj-consultation-api" class="md-nav__link">
-    How to authenticate in the CNPJ Consultation API
+  <a href="#how-to-authenticate-in-the-cpf-consultation-api" class="md-nav__link">
+    How to authenticate in the CPF Consultation API
   </a>
   
     <nav class="md-nav">
@@ -922,8 +922,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-use-the-cnpj-demo-api" class="md-nav__link">
-    How to use the CNPJ Demo API
+  <a href="#how-to-use-the-cpf-demo-api" class="md-nav__link">
+    How to use the CPF Demo API
   </a>
   
     <nav class="md-nav">
@@ -959,8 +959,8 @@
                 
                 
                 <h1 id="quick-guides">Quick Guides</h1>
-<h2 id="how-to-authenticate-in-the-cnpj-consultation-api">How to authenticate in the CNPJ Consultation API</h2>
-<p>The APIs made available by the API SERPRO platform use the OAuth2 protocol to perform the authentication and access authorization of the contracted APIs. Follow the steps below to authenticate and consume the CNPJ api.</p>
+<h2 id="how-to-authenticate-in-the-cpf-consultation-api">How to authenticate in the CPF Consultation API</h2>
+<p>The APIs made available by the API SERPRO platform use the OAuth2 protocol to perform the authentication and access authorization of the contracted APIs. Follow the steps below to authenticate and consume the CPF api.</p>
 <h3 id="1-step-one-get-consumer-key-e-consumer-secret">1. Step One - Get Consumer Key e Consumer Secret</h3>
 <p>To consume the APIs, you must use both codes (Consumer Key e Consumer Secret) available in the Client Area. These codes are used to identify the contract. Access credentials must be obtained from the <a href="https://cliente.serpro.gov.br" target="_blank">área do cliente Serpro</a>. </p>
 <p>Code examples: </p>
@@ -1024,7 +1024,7 @@ https://apigateway.serpro.gov.br/token
 <h3 id="4-step-four-making-a-request">4. Step four - Making a request</h3>
 <h4 id="querying-the-apis">Querying the APIs</h4>
 <p>In possession of the Access Token, make the request to the CPF Trial API.</p>
-<div class="codehilite"><pre><span></span><code><span class="err">curl -X GET &quot;https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168&quot; \</span>
+<div class="codehilite"><pre><span></span><code><span class="err">curl -X GET &quot;https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135&quot; \</span>
 <span class="err">-H &quot;accept: application/json&quot; \</span>
 <span class="err">-H &quot;Authorization: Bearer 4e1a1858bdd584fdc077fb7d80f39283&quot; \</span>
 </code></pre></div>
@@ -1041,52 +1041,18 @@ We inform the type of data we are requesting, in this case JSON</p>
 We inform the access token received</p>
 </li>
 <li>
-<p>[GET] https://apigateway.serpro.gov.br/consulta-cnpj-trial/v1/cnpj/34238864000168<br />
-We call the API url and the desired method. In this case, the base url is "https://apigateway.serpro.gov.br/consulta-cnpj-df-trial/v1/”, and the method is the "cnpj/34238864000168".</p>
+<p>[GET] https://apigateway.serpro.gov.br/consulta-cpf-trial/v1/cpf/40442820135<br />
+We call the API url and the desired method. In this case, the base url is "https://apigateway.serpro.gov.br/consulta-cpf-df-trial/v1/”, and the method is the "cnpj/34238864000168".</p>
 </li>
 </ul>
 <p>Example of expected response:</p>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
-<span class="nt">&quot;ni&quot;</span><span class="p">:</span> <span class="s2">&quot;34238864000168&quot;</span><span class="p">,</span>
-<span class="nt">&quot;data_abertura&quot;</span><span class="p">:</span> <span class="s2">&quot;1967-06-30&quot;</span><span class="p">,</span>
-<span class="nt">&quot;nome_empresarial&quot;</span><span class="p">:</span> <span class="s2">&quot;SERVICO DE E-COMERCE LTDA&quot;</span><span class="p">,</span>
-<span class="nt">&quot;nome_fantasia&quot;</span><span class="p">:</span> <span class="s2">&quot;E-COMERCE&quot;</span><span class="p">,</span>
-<span class="nt">&quot;cnae_principal&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;6204000&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;descricao&quot;</span><span class="p">:</span> <span class="s2">&quot;Consultoria em e-comerce&quot;</span>
-<span class="p">},</span>
-<span class="nt">&quot;natureza_juridica&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;2011&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;descricao&quot;</span><span class="p">:</span> <span class="s2">&quot;Empresa Pública&quot;</span>
-<span class="p">},</span>
-<span class="nt">&quot;endereco&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;logradouro&quot;</span><span class="p">:</span> <span class="s2">&quot;ST DE GRANDE AREA NORTE&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;numero&quot;</span><span class="p">:</span> <span class="s2">&quot;Q.601&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;complemento&quot;</span><span class="p">:</span> <span class="s2">&quot;LOTE V&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cep&quot;</span><span class="p">:</span> <span class="s2">&quot;70836900&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;bairro&quot;</span><span class="p">:</span> <span class="s2">&quot;ASA NORTE&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;municipio&quot;</span><span class="p">:</span> <span class="s2">&quot;BRASILIA&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;uf&quot;</span><span class="p">:</span> <span class="s2">&quot;DF&quot;</span>
-<span class="p">},</span>
-<span class="nt">&quot;situacao_especial&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="nt">&quot;situacao_cadastral&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;codigo&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="s2">&quot;2004-05-22&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;motivo&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
-<span class="p">},</span>
-<span class="nt">&quot;orgao&quot;</span><span class="p">:</span> <span class="s2">&quot;0110100&quot;</span><span class="p">,</span>
-<span class="nt">&quot;tipo_estabelecimento&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-<span class="nt">&quot;correio_eletronico&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-<span class="nt">&quot;capital_social&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-<span class="nt">&quot;porte&quot;</span><span class="p">:</span> <span class="s2">&quot;05&quot;</span><span class="p">,</span>
-<span class="nt">&quot;telefones&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-    <span class="nt">&quot;ddd&quot;</span><span class="p">:</span> <span class="s2">&quot;061&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;numero&quot;</span><span class="p">:</span> <span class="s2">&quot;4338456&quot;</span>
-    <span class="p">}</span>
-<span class="p">],</span>
-<span class="nt">&quot;nome_orgao&quot;</span><span class="p">:</span> <span class="s2">&quot;BRASILIA&quot;</span><span class="p">,</span>
-<span class="nt">&quot;ente_federativo&quot;</span><span class="p">:</span> <span class="s2">&quot;BR&quot;</span>
+<span class="nt">&quot;ni&quot;</span><span class="p">:</span><span class="s2">&quot;40442820135&quot;</span><span class="p">,</span>
+<span class="nt">&quot;nome&quot;</span><span class="p">:</span><span class="s2">&quot;Nome do CPF 404.428.201-35&quot;</span><span class="p">,</span>
+<span class="nt">&quot;situacao&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;codigo&quot;</span><span class="p">:</span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;descricao&quot;</span><span class="p">:</span><span class="s2">&quot;Regular&quot;</span>
+<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 
@@ -1095,53 +1061,88 @@ We call the API url and the desired method. In this case, the base url is "https
 <p class="admonition-title"><strong>IMPORTANT</strong></p>
 <p>The above API CNPJ Consult query is for demonstration purposes only. The available APIs and their respective URLs (endpoints) for consumption are available (through the documentation of their respective swaggers) in the section <a href="../api_reference/">API Reference</a>.</p>
 </div>
-<h2 id="how-to-use-the-cnpj-demo-api">How to use the CNPJ Demo API</h2>
+<h2 id="how-to-use-the-cpf-demo-api">How to use the CPF Demo API</h2>
 <p>API CPF Demo is the testing environment of the CPF API, with sample data (Mock), in order to demonstrate the API's operation. To use it:  </p>
 <ol>
-<li>Access the <a href="../demonstracao/">CNPJ Demo API</a>  </li>
+<li>Access the <a href="../demonstracao/">CPF Demo API</a>  </li>
 <li>Choose the method (endpoint) to test</li>
 <li>click in <strong><em>Try it Out</em></strong></li>
 <li>Insert the headings you want and/or change the content of the request body</li>
 <li>click in <strong><em>Execute</em></strong></li>
 </ol>
 <h3 id="test-data">Test data</h3>
-<p>To test the Trial environment, use one of the fictional CNPJ listed below:</p>
+<p>To test the Trial environment, use one of the fictional CPF listed below:</p>
 <table>
 <thead>
 <tr>
-<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNPJ</th>
+<th>CPF</th>
+<th>Registration Situation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>34238864000168</td>
+<td>40442820135</td>
+<td>Regular CPF</td>
 </tr>
 <tr>
-<td>54447820000155</td>
+<td>63017285995</td>
+<td>Regular CPF</td>
 </tr>
 <tr>
-<td>46768703000165</td>
+<td>91708635203</td>
+<td>Regular CPF</td>
 </tr>
 <tr>
-<td>31151791000184</td>
+<td>58136053391</td>
+<td>Regular CPF</td>
 </tr>
 <tr>
-<td>34428654000132</td>
+<td>40532176871</td>
+<td>Suspended</td>
 </tr>
 <tr>
-<td>06115832000130</td>
+<td>47123586964</td>
+<td>Suspended</td>
 </tr>
 <tr>
-<td>78078291000128</td>
+<td>07691852312</td>
+<td>Regularization Pending</td>
 </tr>
 <tr>
-<td>52293473000128</td>
+<td>10975384600</td>
+<td>Regularization Pending</td>
 </tr>
 <tr>
-<td>07781066000105</td>
+<td>01648527949</td>
+<td>Canceled by Multiplicity</td>
 </tr>
 <tr>
-<td>60367129000164</td>
+<td>47893062592</td>
+<td>Canceled by Multiplicity</td>
+</tr>
+<tr>
+<td>98302514705</td>
+<td>Null</td>
+</tr>
+<tr>
+<td>18025346790</td>
+<td>Null</td>
+</tr>
+<tr>
+<td>64913872591</td>
+<td>Canceled Craft</td>
+</tr>
+<tr>
+<td>52389071686</td>
+<td>Canceled Craft</td>
+</tr>
+<tr>
+<td>05137518743</td>
+<td>Deceased Holder</td>
+</tr>
+<tr>
+<td>08849979878</td>
+<td>Deceased Holder</td>
 </tr>
 </tbody>
 </table>
