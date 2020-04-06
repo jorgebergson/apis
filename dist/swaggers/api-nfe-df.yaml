@@ -41,6 +41,9 @@ paths:
           content:
             application/json:
               schema:
+                $ref: '#/components/schemas/NFe'  
+            application/xml:
+              schema:
                 $ref: '#/components/schemas/NFe'        
           headers:
             stamp:
