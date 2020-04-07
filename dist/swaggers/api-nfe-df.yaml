@@ -76,7 +76,7 @@ paths:
       parameters:
         - in: query
           name: body
-          description: Dados do cliente a ser cadastrado
+          description: URL do cliente a ser cadastrado. A solicitação de monitoração só receberá as devidas notificações se a URL cadastrada terminar com .br ou .com.
           required: true
           schema:
             type: string
