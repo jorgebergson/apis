@@ -34,17 +34,18 @@ paths:
           required: false
           schema:
             type: string
-            maxLength: 32
+            maxLength: 32 
+           
       responses:
         200:
-          description: "Ok - Retorna os dados da NF-e correspondentes à chave informada"
+          description: "Ok - Retorna os dados da NF-e correspondentes à chave informada. Escolha o formato desejado: Json/Xml"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/NFe'  
             application/xml:
               schema:
-                $ref: '#/components/schemas/NFe'        
+                $ref: '#/components/schemas/NFe'       
           headers:
             stamp:
               schema:
@@ -54,6 +55,14 @@ paths:
           description: 'O número da chave informadado não é válido'
           content:
             application/json:
+              schema:
+                type: object
+                properties:
+                  mensagem:
+                    type: string
+                    description: 'Mensagem de retorno de validação'
+                    example: 'NFe <35161147508411011603551000077959551093054321> inválido!'
+            application/xml:
               schema:
                 type: object
                 properties:
