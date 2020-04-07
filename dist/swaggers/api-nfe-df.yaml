@@ -53,23 +53,6 @@ paths:
               description: 'Assinatura de carimbo de tempo, caso solicitada'
         400:
           description: 'O número da chave informadado não é válido'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  mensagem:
-                    type: string
-                    description: 'Mensagem de retorno de validação'
-                    example: 'NFe <35161147508411011603551000077959551093054321> inválido!'
-            application/xml:
-              schema:
-                type: object
-                properties:
-                  mensagem:
-                    type: string
-                    description: 'Mensagem de retorno de validação'
-                    example: 'NFe <35161147508411011603551000077959551093054321> inválido!'
         404:
           description: 'Não existe NFe com o número da chave informado.'
         406:
