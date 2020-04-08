@@ -165,7 +165,7 @@ paths:
             maxLength: 32   
       responses:
         200:
-          description: 'Ok - Cliente atualizado com sucesso.'
+          description: 'Ok - Retorna os dados do Cliente.'
           content:
             application/json:
               schema:
@@ -256,7 +256,7 @@ paths:
       summary: Consulta uma solicitação de monitoração
       tags:
         - Push NFe - Solicitações
-      description: ""
+      description: "Solicitação para degustação: al2sDBn6KNVpleB"
       parameters:
         - in: path
           name: solicitacaoId
@@ -297,6 +297,7 @@ paths:
       summary: Exclui uma solicitação de monitoração
       tags:
         - Push NFe - Solicitações
+      description: "Solicitação para degustação: al2sDBn6KNVpleB"
       parameters:
         - in: path
           name: solicitacaoId
@@ -320,10 +321,6 @@ paths:
       responses:
         200:
           description: 'Ok - Solicitação excluída com sucesso.'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/consultarSolicitacao'   
           headers:
             stamp:
               schema:
@@ -340,9 +337,9 @@ paths:
           - Status
         responses:
           200:
-            description: "API Consulta CPF disponível."
+            description: 'API Consulta CPF disponível.'
           500:
-            description: "API Consulta CPF indisponível."
+            description: 'API Consulta CPF indisponível.'
 components:
   securitySchemes:
     bearerAuth:
@@ -350,10 +347,11 @@ components:
       scheme: bearer
   schemas:
     cadastrarCliente:
-      type: string
+      type: object
       properties:
         urlNotificacao:
           type: string
+          example: 'https://url_cliente.br'
     confirmacaoCadastramentoCliente:
       type: object
       properties:
@@ -368,6 +366,7 @@ components:
       properties:
         urlNotificacao:
           type: string
+          example: 'https://url_cliente.br'
     consultarClientes:
       type: object
       properties:
@@ -385,6 +384,7 @@ components:
         chavesMonitoracao:
           type: array
           items:
+            type: object
             properties:
               chave:
                 type: string
@@ -400,6 +400,12 @@ components:
             properties:
               chave:
                 type: string
+        dataCriacao: 
+          type: string
+        dataExpiracao: 
+          type: string
+        clienteId: 
+          type: string
     consultarSolicitacoes:
       type: array
       items:
