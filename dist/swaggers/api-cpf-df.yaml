@@ -14,7 +14,7 @@ paths:
       summary: "Retorna os dados do Cadastro de Pessoa Física (CPF)"
       tags:
         - CPF
-      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/mkdocs/apis/api-cpf/documentos/cpf_degustacao) "
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-cpf/documentos/cpf_degustacao) "
       parameters:
       - in: "path"
         name: "ni"
