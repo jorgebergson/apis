@@ -14,7 +14,7 @@ paths:
       summary: "Retorna os dados do cadastro de pessoa jurídica (CNPJ)"
       tags:
         - CNPJ
-      description: ""
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-cnpj/documentos/cnpj_degustacao)"
       parameters:
         - in: path
           name: ni
