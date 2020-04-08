@@ -329,23 +329,41 @@ paths:
         404:
           description: A solicitação informada não foi encontrada.
         500:
-          description: Erro interno do servidor
+          description: Erro interno do servidor  
   /monitor/status:
-      get:
-        summary: 'Retorna o status da API CPF'
-        tags:
-          - Status
-        responses:
-          200:
-            description: 'API Consulta CPF disponível.'
-          500:
-            description: 'API Consulta CPF indisponível.'
+    get:
+      tags:
+      - Status
+      summary: Verifica status da API
+      responses:
+        200:
+          description: Serviço disponível
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Status'
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
+        500:
+          description: Serviço indisponível
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Status'
+            lastUpdateAt:
+              example: 2019-02-18T11:27:06-03:00
 components:
-  securitySchemes:
+  securitySchemes: 
     bearerAuth:
       type: http
       scheme: bearer
   schemas:
+    Status:
+      type: object
+      properties:
+        lastUpdateAt:
+          type: string
+          format: date-time 
     cadastrarCliente:
       type: object
       properties:
