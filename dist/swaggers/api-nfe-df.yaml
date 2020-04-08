@@ -330,7 +330,7 @@ paths:
           description: A solicitação informada não foi encontrada.
         500:
           description: Erro interno do servidor
-  /status:
+  /monitor/status:
       get:
         summary: 'Retorna o status da API CPF'
         tags:
