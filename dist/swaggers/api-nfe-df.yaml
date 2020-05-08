@@ -14,7 +14,7 @@ paths:
       summary: Retorna os dados da Nota Fisca Eletrônica - NFe
       tags:
         - NFe
-      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-nfe/documentos/nfe_degustacao)"
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-nfe/pt/quick_start/#como-utilizar-a-api-nfe-demonstracao) "
       parameters:
         - in: path
           name: chave
@@ -165,7 +165,7 @@ paths:
             maxLength: 32   
       responses:
         200:
-          description: 'Ok - Retorna os dados do Cliente.'
+          description: 'Ok - Cliente atualizado com sucesso.'
           content:
             application/json:
               schema:
@@ -256,7 +256,7 @@ paths:
       summary: Consulta uma solicitação de monitoração
       tags:
         - Push NFe - Solicitações
-      description: "Solicitação para degustação: al2sDBn6KNVpleB"
+      description: ""
       parameters:
         - in: path
           name: solicitacaoId
@@ -297,7 +297,6 @@ paths:
       summary: Exclui uma solicitação de monitoração
       tags:
         - Push NFe - Solicitações
-      description: "Solicitação para degustação: al2sDBn6KNVpleB"
       parameters:
         - in: path
           name: solicitacaoId
@@ -321,6 +320,10 @@ paths:
       responses:
         200:
           description: 'Ok - Solicitação excluída com sucesso.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/consultarSolicitacao'   
           headers:
             stamp:
               schema:
@@ -329,47 +332,28 @@ paths:
         404:
           description: A solicitação informada não foi encontrada.
         500:
-          description: Erro interno do servidor  
-  /monitor/status:
-    get:
-      tags:
-      - Status
-      summary: Verifica status da API
-      responses:
-        200:
-          description: Serviço disponível
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00
-        500:
-          description: Serviço indisponível
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/Status'
-            lastUpdateAt:
-              example: 2019-02-18T11:27:06-03:00
+          description: Erro interno do servidor
+  /status:
+      get:
+        summary: 'Retorna o status da API CPF'
+        tags:
+          - Status
+        responses:
+          200:
+            description: "API Consulta CPF disponível."
+          500:
+            description: "API Consulta CPF indisponível."
 components:
-  securitySchemes: 
+  securitySchemes:
     bearerAuth:
       type: http
       scheme: bearer
   schemas:
-    Status:
-      type: object
-      properties:
-        lastUpdateAt:
-          type: string
-          format: date-time 
     cadastrarCliente:
-      type: object
+      type: string
       properties:
         urlNotificacao:
           type: string
-          example: 'https://url_cliente.br'
     confirmacaoCadastramentoCliente:
       type: object
       properties:
@@ -384,7 +368,6 @@ components:
       properties:
         urlNotificacao:
           type: string
-          example: 'https://url_cliente.br'
     consultarClientes:
       type: object
       properties:
@@ -402,7 +385,6 @@ components:
         chavesMonitoracao:
           type: array
           items:
-            type: object
             properties:
               chave:
                 type: string
@@ -418,12 +400,6 @@ components:
             properties:
               chave:
                 type: string
-        dataCriacao: 
-          type: string
-        dataExpiracao: 
-          type: string
-        clienteId: 
-          type: string
     consultarSolicitacoes:
       type: array
       items:
