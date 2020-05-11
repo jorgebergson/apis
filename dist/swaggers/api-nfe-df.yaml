@@ -4,9 +4,9 @@ info:
   title: "Consulta NFe"
   description: "Chave do ambiente Trial: **Bearer 4e1a1858bdd584fdc077fb7d80f39283**"
 servers:
-  - url: "https://apigateway.serpro.gov.br//consulta-nfe-df-trial/api"
+  - url: "https://apigateway.serpro.gov.br/consulta-nfe-df-trial/api"
     description: "Trial"
-  - url: "https://apigateway.serpro.gov.br//consulta-nfe-df/api"
+  - url: "https://apigateway.serpro.gov.br/consulta-nfe-df/api"
     description: "Produção"
 paths:
   /v1/nfe/{chave}:
