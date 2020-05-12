@@ -12,7 +12,7 @@ paths:
   /v2/due/{numero}/{chave}:
     get:
       tags:
-      - Métodos e Testes Consulta
+      - Consulta DUE
       summary: Consulta a DUE
       description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-cnpj/pt/quick_start/#como-utilizar-a-api-cnpj-demonstracao)"
       parameters:
