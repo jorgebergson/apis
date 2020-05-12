@@ -90,12 +90,6 @@ components:
   securitySchemes:
     bearerAuth:
       type: http
-      scheme: bearer
-  schemas:
-    cadastrarCliente:
-      type: string
-      properties:
-        urlNotificacao:
-          type: string      
+      scheme: bearer    
 security:
-  - Bearer: []      
+  - bearerAuth: []     
