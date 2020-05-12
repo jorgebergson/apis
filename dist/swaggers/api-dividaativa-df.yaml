@@ -14,7 +14,7 @@ paths:
       tags:
       - Dívida Ativa DF
       summary: "Consulta dados de inscrição"
-      description: ""
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-divida-ativa/pt/quick_start/#como-utilizar-a-api-divida-ativa-demonstracao)"
       parameters:
       - in: path
         name: numeroInscricao
@@ -47,7 +47,7 @@ paths:
       tags:
       - Dívida Ativa DF
       summary: "Consulta dados do devedor, seja pessoa física ou jurídica"
-      description: ""
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-divida-ativa/pt/quick_start/#como-utilizar-a-api-divida-ativa-demonstracao)"
       parameters:
       - in: path
         name: numeroInscricaoDevedor
