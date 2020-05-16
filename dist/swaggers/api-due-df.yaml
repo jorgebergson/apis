@@ -14,7 +14,7 @@ paths:
       tags:
       - Consulta DUE
       summary: Consulta a DUE
-      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-cnpj/pt/quick_start/#como-utilizar-a-api-XXXX-demonstracao)"
+      description: "Chaves para degustação? &nbsp; [Acesse aqui](https://devserpro.github.io/apis/api-cnpj/pt/quick_start/#como-utilizar-a-api-due-demonstracao)"
       parameters:
       - name: numero
         in: path
